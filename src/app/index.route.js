@@ -11,7 +11,7 @@
     {
         $locationProvider.html5Mode(true);
 
-        $urlRouterProvider.otherwise('/sample');
+        $urlRouterProvider.otherwise('/login');
 
         // State definitions
         $stateProvider
@@ -19,37 +19,33 @@
                 url:'/app',
                 views   : {
                     'main@'         : {
-                        templateUrl: 'app/core/layouts/dashboard.html',
+                        templateUrl: 'app/core/layouts/dbLayout.html',
                         controller : 'MainController as vm'
                     },
                     'toolbar@app'         : {
-                        templateUrl: 'app/toolbar/dashboard/toolbar.html',
+                        templateUrl: 'app/toolbar/dashboard/dbToolbar.html',
                         controller : 'ToolbarController as vm'
                     },
                     'navigation@app'         : {
-                        templateUrl: 'app/navigation/dashboard/dashboard.html',
+                        templateUrl: 'app/navigation/dashboard/dbNavigation.html',
                         controller : 'ToolbarController as vm'
                     },
                     'content@app'         : {
-                        templateUrl: 'app/main/dashboard/content.html',
+                        templateUrl: 'app/main/dashboard/dbContent.html',
                         controller : 'ToolbarController as vm'
                     }
-                    //,
-                    //'toolbar@app'   : {
-                    //    templateUrl: layouts[layoutStyle].toolbar,
-                    //    controller : 'ToolbarController as vm'
-                    //},
-                    //'navigation@app': {
-                    //    templateUrl: layouts[layoutStyle].navigation,
-                    //    controller : 'NavigationController as vm'
-                    //}
-                    //,
-                    //'quickPanel@app': {
-                    //    templateUrl: 'app/quick-panel/quick-panel.html',
-                    //    controller : 'QuickPanelController as vm'
-                    //}
                 }
-            });
+            }).state('login', {
+                url:'/login',
+                views   : {
+                    'main@'         : {
+                        templateUrl: 'app/core/layouts/loginLayout.html',
+                        controller : 'MainController as vm'
+                    }
+                }
+            })
+
+        ;
     }
 
 })();
