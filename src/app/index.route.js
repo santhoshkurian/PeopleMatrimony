@@ -19,8 +19,8 @@
                 url:'/app',
                 views   : {
                     'main@'         : {
-                        templateUrl: 'app/core/layouts/dbLayout.html',
-                        controller : 'MainController as vm'
+                        templateUrl: 'app/core/layouts/dbLayout.html'
+                        //controller : 'InboxController as vm'
                     },
                     'toolbar@app'         : {
                         templateUrl: 'app/toolbar/dashboard/dbToolbar.html',
@@ -28,19 +28,19 @@
                     },
                     'navigation@app'         : {
                         templateUrl: 'app/navigation/dashboard/dbNavigation.html',
-                        controller : 'ToolbarController as vm'
+                        controller : 'NavigationController as vm'
                     },
                     'content@app'         : {
-                        templateUrl: 'app/main/dashboard/dbContent.html',
-                        controller : 'ToolbarController as vm'
+                        templateUrl: 'app/main/dashboard/inbox/inbox.html',
+                        controller : 'InboxController as vm'
                     }
                 }
             }).state('login', {
                 url:'/login',
                 views   : {
                     'main@'         : {
-                        templateUrl: 'app/core/layouts/loginLayout.html',
-                        controller : 'MainController as vm'
+                        templateUrl: 'app/core/layouts/loginLayout.html'
+                        //controller : 'MainController as vm'
                     }
                 }
             })
