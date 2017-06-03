@@ -6,10 +6,13 @@
         .controller('NavigationController', NavigationController);
 
     /** @ngInject */
-    function NavigationController() {
+    function NavigationController($scope, $location) {
+
+        $scope.isActive = function (viewLocation) {
+            return viewLocation === $location.path();
+        };
 
 
-        var vm = this;
         console.log("NavigationController");
 
     }

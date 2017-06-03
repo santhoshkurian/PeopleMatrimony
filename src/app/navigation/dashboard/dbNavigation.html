@@ -5,22 +5,22 @@
 
             <li class="nav-item  active open">
                 <ul class="sub-menu">
-                    <li class="nav-item " id="inbox">
-                        <a ui-sref="app" class="nav-link ">
+                    <li ng-class="{ active: isActive('/app')}" class="nav-item " id="inbox">
+                        <a  ui-sref="app" class="nav-link ">
                             <span class="title">Inbox</span>
                         </a>
                     </li>
-                    <li class="nav-item" id="pending">
+                    <li ng-class="{ active: isActive('/app/pending')}" class="nav-item" id="pending">
                         <a ui-sref="app.pending" class="nav-link ">
                             <span class="title">Pending</span>
                         </a>
                     </li>
-                    <li class="nav-item " id="accept">
+                    <li ng-class="{ active: isActive('/app/accept')}" class="nav-item " id="accept">
                         <a ui-sref="app.accept" class="nav-link ">
                             <span class="title">Accept</span>
                         </a>
                     </li>
-                    <li class="nav-item" id="decline">
+                    <li ng-class="{ active: isActive('/app/decline')}" class="nav-item" id="decline">
                         <a ui-sref="app.decline" class="nav-link ">
                             <span class="title">Decline</span>
                         </a>
