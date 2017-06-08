@@ -49,6 +49,7 @@ var buildStyles = function ()
     };
 
     return gulp.src([
+        path.join(conf.paths.src, '/app/**/*.css'),
             path.join(conf.paths.src, '/app/index.css')
         ])
         .pipe($.inject(injectFiles, injectOptions))
