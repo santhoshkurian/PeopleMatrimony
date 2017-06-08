@@ -24,7 +24,7 @@
                     },
                     'toolbar@app'         : {
                         templateUrl: 'app/toolbar/dashboard/dbToolbar.html',
-                        controller : 'ToolbarController as vm'
+                        controller : 'DashboardToolbarController as vm'
                     },
                     'navigation@app'         : {
                         templateUrl: 'app/navigation/dashboard/dbNavigation.html',
@@ -41,6 +41,14 @@
                     'main@'         : {
                         templateUrl: 'app/core/layouts/loginLayout.html'
                         //controller : 'MainController as vm'
+                    },
+                    'toolbar@login'         : {
+                        templateUrl: 'app/toolbar/login/loginToolbar.html'
+                        //controller : 'ToolbarController as vm'
+                    },
+                    'content@login'         : {
+                        templateUrl: 'app/main/login/loginContent.html',
+                        controller : 'InboxController as vm'
                     }
                 }
             })
