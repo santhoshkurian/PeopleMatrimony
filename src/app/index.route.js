@@ -44,11 +44,11 @@
                     },
                     'toolbar@login'         : {
                         templateUrl: 'app/toolbar/login/loginToolbar.html'
-                        //controller : 'ToolbarController as vm'
+                        //controller : 'LoginController as vm'
                     },
                     'content@login'         : {
                         templateUrl: 'app/main/login/loginContent.html',
-                        controller : 'InboxController as vm'
+                        controller : 'LoginController as vm'
                     }
                 }
             })
