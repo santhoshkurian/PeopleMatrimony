@@ -6,5 +6,5 @@
      * Main module of the Matrimony
      */
     angular
-        .module('matrimony', ['ui.bootstrap','ui.router','toolbar','dashboard']);
+        .module('matrimony', ['ui.bootstrap','ui.router','toolbar','dashboard','footer']);
 })();

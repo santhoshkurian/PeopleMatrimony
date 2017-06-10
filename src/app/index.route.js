@@ -33,6 +33,10 @@
                     'content@app'         : {
                         templateUrl: 'app/main/dashboard/inbox/inbox.html',
                         controller : 'InboxController as vm'
+                    },
+                    'footer@app'         : {
+                        templateUrl: 'app/footer/footer.html',
+                        controller : 'FooterController as vm'
                     }
                 }
             }).state('login', {
