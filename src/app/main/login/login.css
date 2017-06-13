@@ -1,0 +1,7 @@
+.reg-pannel-title{
+    background-color: #f2f7fa;
+}
+.reg-pannel{
+    border-radius: 10px 10px 10px 10px !important;
+    z-index: 2;
+}
