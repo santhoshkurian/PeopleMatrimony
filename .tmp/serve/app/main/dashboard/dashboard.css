@@ -1,0 +1,18 @@
+@media screen and (max-width: 981px) {
+    .page-content {
+        margin-left: 10px!important;
+    }
+
+
+}
+
+@media screen and (min-width: 800px) {
+    .page-content {
+        margin-left: 65px!important;
+    }
+
+
+}
+
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRhc2hib2FyZC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSTtRQUNJLDRCQUE0QjtLQUMvQjs7O0NBR0o7O0FBRUQ7SUFDSTtRQUNJLDRCQUE0QjtLQUMvQjs7O0NBR0oiLCJmaWxlIjoibWFpbi9kYXNoYm9hcmQvZGFzaGJvYXJkLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDk4MXB4KSB7XG4gICAgLnBhZ2UtY29udGVudCB7XG4gICAgICAgIG1hcmdpbi1sZWZ0OiAxMHB4IWltcG9ydGFudDtcbiAgICB9XG5cblxufVxuXG5AbWVkaWEgc2NyZWVuIGFuZCAobWluLXdpZHRoOiA4MDBweCkge1xuICAgIC5wYWdlLWNvbnRlbnQge1xuICAgICAgICBtYXJnaW4tbGVmdDogNjVweCFpbXBvcnRhbnQ7XG4gICAgfVxuXG5cbn1cblxuIl19 */

@@ -1,9 +1,29 @@
 .aboutus-logo{
+    width: 50px;
+    height: 50px;
+    background: #e9ecf3;
     border-radius: 50% !important;
-    color: grey !important;
-    width: 10px;
-    height: 10px;
 }
 .description{
-    color: grey;
+    color: #555;
+    font-size: 0.85em;
+    line-height: 1.8em;
+}
+.padding-0{
+   margin-right: -30px !important;
+}
+.heading{
+    color: #000;
+}
+.heading-space{
+    margin-bottom: -10px !important;
+}
+.foot-text{
+    color: #666;
+    font-size: 0.85em;
+    line-height: 1.8em;
+}
+
+footer{
+    padding-bottom: 0px !important;
 }

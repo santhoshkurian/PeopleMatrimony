@@ -7,9 +7,12 @@
         .controller('FooterController', FooterController);
 
     /** @ngInject */
-    function FooterController()
+    function FooterController($window)
     {
 
         console.log("FooterController")
+        angular.element($window).on('resize', function () {
+            console.log($window.innerWidth);
+        });
     }
 })();
