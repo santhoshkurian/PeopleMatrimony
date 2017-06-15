@@ -19,22 +19,11 @@
     margin-bottom: -10px !important;
 }
 .foot-text{
-    color: #ddd;
+    color: #666;
     font-size: 0.85em;
     line-height: 1.8em;
 }
-.google-plus-icon{
-    background: red;
-    width: 26px;
-    height: 26px;
-    color: #fff;
-    line-height: 26px;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-}
-.facebook-icon{
-    color: blue;;
-}
+
 footer{
-    margin-bottom: -20px !important;
+    padding-bottom: 0px !important;
 }
