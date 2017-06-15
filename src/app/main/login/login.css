@@ -1,7 +1,30 @@
-.reg-pannel-title{
-    background-color: #f2f7fa;
-}
-.reg-pannel{
+
+.reg-pannel {
     border-radius: 10px 10px 10px 10px !important;
     z-index: 2;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+
 }
+
+.reg-pannel-title {
+    background-color: #f2f7fa;
+    border-radius: 10px 10px 0px 0px !important;
+}
+
+.input-rounded {
+    border-radius: 4px 4px 4px 4px !important
+}
+
+.login-pannel-title {
+    background-color: #f2f7fa;
+    border-radius: 10px 10px 0px 0px !important;
+
+}
+
+.login-modal {
+    border-radius: 10px 10px 10px 10px !important;
+    border:hidden !important;
+}
+.sub-text{color: #666}
