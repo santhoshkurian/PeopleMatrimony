@@ -1,22 +1,162 @@
+<div class="col-md-12">
+<div class="portlet light form-fit bordered col-md-offset-6 col-md-5 margin-top-30 reg-pannel" >
+    <div class="portlet-title reg-pannel-title" >
+        <div class="caption">
+            <span class="caption-subject  font-black bold uppercase">Registration</span>
 
-<div class="row text-center">
-    <button type="button" class="btn green" ng-click="vm.open()">Login</button>
+            <div class="caption-helper font-black font-sm">Please take a moment to complete all of the information
+                below.
+            </div>
+        </div>
+
+    </div>
+    <div class="portlet-body form">
+        <!-- BEGIN FORM-->
+        <form action="#" class="form-horizontal  ">
+            <br>
+
+            <div class="form-group">
+                <label class="col-md-3 control-label text-left">PROFILE FOR</label>
+
+                <div class="col-md-8">
+                    <select class="form-control input-rounded">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-3 control-label text-left ">NAME</label>
+
+                <div class="col-md-8">
+                    <input type="email" class="form-control input-rounded" placeholder="Email Address">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-3 control-label">GENDER</label>
+
+                <div class="col-md-8">
+                    <input type="email" class="form-control" placeholder="Email Address">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">DATE OF BIRTH</label>
+
+                <div class="col-md-8">
+                    <input type="email" class="form-control" placeholder="Email Address">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label ">RELIGION</label>
+
+                <div class="col-md-8">
+                    <select class="form-control input-rounded">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-3 control-label">EMAIL</label>
+
+                <div class="col-md-8">
+                    <input type="email" class="form-control input-rounded" placeholder="Email Address">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">MOBILE NUMBER</label>
+
+                <div class="col-md-3">
+                    <select class="form-control input-rounded">
+                        <option>+ 91</option>
+                        <option>+ 04</option>
+                        <option>+ 90</option>
+                        <option>+ 54</option>
+                        <option>+ 65</option>
+                    </select>
+                </div>
+
+                <div class="col-md-5">
+                    <input type="number" class="form-control input-rounded" placeholder="Mobile Number">
+                </div>
+            </div>
+
+            <div class="form-group ">
+                <label class="col-md-3 control-label">PASSWORD</label>
+
+                <div class="col-md-8">
+                    <input type="password" class="form-control input-rounded" placeholder="Password" style="margin-rightt: 5%">
+                </div>
+            </div>
 
 
+            <!--<div class="form-group">-->
+            <!--<label class="col-md-3 control-label">PASSWORD</label>-->
+
+            <!--<div class="col-md-offset-1 col-md-7 input-group">-->
+            <!--<input type="email" class="form-control" placeholder="Email Address"></div>-->
+            <!--</div>-->
+
+            <!--<span class="help-inline"> Inline help. </span>-->
+            <div class="form-group ">
+                <label class="col-md-3 control-label"></label>
+
+                <div class="col-md-8">
+                    <button type="button" class=" center-block col-md-12 btn red input-rounded">
+                        Registration
+                    </button>
+                </div>
+            </div>
+        </form>
+        <!-- END FORM-->
+    </div>
+</div>
 
 </div>
 
+<!--<div class="row text-center">-->
+    <!--<button type="button" class="btn green" ng-click="vm.open()">Login</button>-->
+
+
+
+<!--</div>-->
+
 <script type="text/ng-template" id="myModalContent.html">
-    <div class="modal-header">
-        <h3 class="modal-title" id="modal-title">Login</h3>
+    <div class="modal-header login-pannel-title">
+        <div class="caption">
+            <span class="caption-subject  font-black bold uppercase">Sign In</span></div>
     </div>
+    <!--<div class="pull-right"><i class="close green"></i></div>-->
     <div class="modal-body" id="modal-body">
-        <ul>
-            <li ng-repeat="item in $ctrl.items">
-                <a href="#" ng-click="$event.preventDefault(); vm.selected.item = item">{{ item }}</a>
-            </li>
-        </ul>
-        Selected: <b>{{ $ctrl.selected.item }}</b>
+        <div class="form-group">
+            <label class=" uppercase">Email / Mobile Number / Member Id</label>
+            <input class="form-control spinner" type="text" placeholder="Email / Mobile NUmber / Member ID" />
+        </div>
+        <div class="form-group">
+            <label class=" uppercase"> Password</label>
+            <input class="form-control spinner" type="text" placeholder="Password" />
+        </div>
+        <div class="form-group">
+            <label class="sub-text"> Remember me</label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" icheckbox_flat-red class="icheck"> Checkbox 1 </label>
+            </div>
+        <div class="icheck-inline">
+            <label>
+                <input type="checkbox" class="icheck"> Checkbox 1 </label>
+            </div>
+        </div>
+
+
     </div>
     <div class="modal-footer">
         <button class="btn btn-primary" type="button" ng-click="vm.ok()">Save</button>
