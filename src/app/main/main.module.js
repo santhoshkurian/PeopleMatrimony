@@ -46,18 +46,6 @@
 
                 }
             })
-            .state('profile.edit', {
-                url      : '/edit',
-                views    : {
-                    'content@profile'         : {
-                        templateUrl: 'app/main/profile/editProfile/profile.html',
-                        controller : 'DeclineController as vm'
-                    }
-                },
-                resolve  : {
-
-                }
-            })
             .state('profile.contact', {
                 url      : '/contact',
                 views    : {
