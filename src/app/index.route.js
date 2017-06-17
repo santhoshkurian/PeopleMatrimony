@@ -78,6 +78,10 @@
                                 templateUrl: 'app/core/layouts/profileLayout.html'
                                 //controller : 'MainController as vm'
                             },
+                            'navigation@profile'         : {
+                                templateUrl: 'app/navigation/dashboard/dbNavigation.html',
+                                controller : 'NavigationController as vm'
+                            },
                             'toolbar@profile'         : {
                                 templateUrl: 'app/toolbar/profile/profileToolbar.html',
                                 controller : 'ProfileToolbarController as vm'
