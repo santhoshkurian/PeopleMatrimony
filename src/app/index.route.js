@@ -72,18 +72,18 @@
                             }
                         }
             }).state('profile', {
-                        url:'/reg',
+                        url:'/profile',
                         views   : {
                             'main@'         : {
-                                templateUrl: 'app/core/layouts/loginLayout.html'
+                                templateUrl: 'app/core/layouts/profileLayout.html'
                                 //controller : 'MainController as vm'
                             },
-                            'toolbar@reg'         : {
-                                templateUrl: 'app/toolbar/login/loginToolbar.html'
-                                //controller : 'LoginController as vm'
+                            'toolbar@profile'         : {
+                                templateUrl: 'app/toolbar/profile/profileToolbar.html',
+                                controller : 'ProfileToolbarController as vm'
                             },
-                            'content@reg'         : {
-                                templateUrl: 'app/main/registration/registration.html',
+                            'content@profile'         : {
+                                templateUrl: 'app/main/profile/editProfile/profile.html',
                                 controller : 'RegistrationController as vm'
                             }
                         }

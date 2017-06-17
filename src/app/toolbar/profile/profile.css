@@ -1,0 +1,40 @@
+.main-heading{
+    /*float: left;*/
+    color:white;
+    display: block;
+    width: 100%;
+    height: 35px;
+    padding-left: 20px;
+    font-size: 30px;
+}
+
+.main-heading-actions{
+    /*float: left;*/
+    color:white;
+    padding: 0;
+    height: 75px;
+    margin-left: 15px;
+    font-size: 10px;
+}
+
+.main-tool-link {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    background-color: #333;
+    font-weight: bold;
+}
+.main-tool-link > li a {
+    display: block;
+    float: left;
+    color: white;
+    text-align: center;
+    height: 75px;
+    padding: 30px 8px;
+    text-decoration: none;
+}
+
+.activetoolbar{
+    border-bottom:4px solid white;
+}
