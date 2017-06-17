@@ -4,21 +4,23 @@
         <base href="/">
         <meta charset="utf-8">
         <meta name="description" content="">
-        <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">-->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=device-height, target-densitydpi=medium-dpi" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>people Matrimony</title>
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
         <!-- bower:css -->
-        <!-- run `gulp inject` to automatically populate bower styles dependencies -->
         <!-- endbower -->
         <!-- endbuild -->
 
         <!-- build:css({.tmp/serve,src}) styles/app.css -->
         <!-- inject:css -->
-        <!-- css files will be automatically insert here -->
+        <link rel="stylesheet" href="app/index.css">
+        <link rel="stylesheet" href="app/footer/footer.css">
+        <link rel="stylesheet" href="app/main/dashboard/dashboard.css">
+        <link rel="stylesheet" href="app/navigation/dashboard/dbtoolbar.css">
+        <link rel="stylesheet" href="app/toolbar/dashboard/dbToolbar.css">
         <!-- endinject -->
         <!-- endbuild -->
 
@@ -36,7 +38,6 @@
         <link href="/lib/css/layout.min.css" rel="stylesheet" type="text/css"/>
         <link href="/lib/css/light.min.css" rel="stylesheet" type="text/css"/>
         <link href="/lib/css/custom.min.css" rel="stylesheet" type="text/css"/>
-        <link href="/lib/css/socicon.css" rel="stylesheet" type="text/css"/>
     </head>
 
     <!--[if lt IE 10]>
@@ -53,13 +54,28 @@
 
         <!-- build:js(src) scripts/vendor.js -->
         <!-- bower:js -->
-        <!-- run `gulp inject` to automatically populate bower script dependencies -->
+        <script src="../bower_components/angular/angular.js"></script>
+        <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
         <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
         <!-- inject:js -->
-        <!-- js files will be automatically insert here -->
+        <script src="app/main/main.module.js"></script>
+        <script src="app/main/dashboard/pending/pending.controller.js"></script>
+        <script src="app/main/dashboard/inbox/Inbox.controller.js"></script>
+        <script src="app/main/dashboard/decline/decline.controller.js"></script>
+        <script src="app/main/dashboard/accept/accept.controller.js"></script>
+        <script src="app/toolbar/toolbar.module.js"></script>
+        <script src="app/toolbar/dashboard/dbtoolbar.controller.js"></script>
+        <script src="app/navigation/dashboard/navigation.controller.js"></script>
+        <script src="app/main/login/login.controller.js"></script>
+        <script src="app/footer/footer.module.js"></script>
+        <script src="app/footer/footer.controller.js"></script>
+        <script src="app/index.module.js"></script>
+        <script src="app/index.route.js"></script>
+        <script src="app/index.controller.js"></script>
         <!-- endinject -->
 
         <!-- inject:partials -->
