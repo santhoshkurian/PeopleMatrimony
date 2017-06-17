@@ -85,6 +85,10 @@
                             'content@profile'         : {
                                 templateUrl: 'app/main/profile/editProfile/profile.html',
                                 controller : 'RegistrationController as vm'
+                            },
+                            'footer@profile'         : {
+                                templateUrl: 'app/footer/footer.html',
+                                controller : 'FooterController as vm'
                             }
                         }
             })
