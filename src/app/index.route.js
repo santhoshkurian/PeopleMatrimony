@@ -40,21 +40,53 @@
                     }
                 }
             }).state('login', {
-                url:'/login',
-                views   : {
-                    'main@'         : {
-                        templateUrl: 'app/core/layouts/loginLayout.html'
-                        //controller : 'MainController as vm'
-                    },
-                    'toolbar@login'         : {
-                        templateUrl: 'app/toolbar/login/loginToolbar.html'
-                        //controller : 'LoginController as vm'
-                    },
-                    'content@login'         : {
-                        templateUrl: 'app/main/login/loginContent.html',
-                        controller : 'LoginController as vm'
-                    }
-                }
+                        url:'/login',
+                        views   : {
+                            'main@'         : {
+                                templateUrl: 'app/core/layouts/loginLayout.html'
+                                //controller : 'MainController as vm'
+                            },
+                            'toolbar@login'         : {
+                                templateUrl: 'app/toolbar/login/loginToolbar.html'
+                                //controller : 'LoginController as vm'
+                            },
+                            'content@login'         : {
+                                templateUrl: 'app/main/login/loginContent.html',
+                                controller : 'LoginController as vm'
+                            }
+                        }
+            }).state('reg', {
+                        url:'/reg',
+                        views   : {
+                            'main@'         : {
+                                templateUrl: 'app/core/layouts/loginLayout.html'
+                                //controller : 'MainController as vm'
+                            },
+                            'toolbar@reg'         : {
+                                templateUrl: 'app/toolbar/login/loginToolbar.html'
+                                //controller : 'LoginController as vm'
+                            },
+                            'content@reg'         : {
+                                templateUrl: 'app/main/registration/registration.html',
+                                controller : 'RegistrationController as vm'
+                            }
+                        }
+            }).state('profile', {
+                        url:'/reg',
+                        views   : {
+                            'main@'         : {
+                                templateUrl: 'app/core/layouts/loginLayout.html'
+                                //controller : 'MainController as vm'
+                            },
+                            'toolbar@reg'         : {
+                                templateUrl: 'app/toolbar/login/loginToolbar.html'
+                                //controller : 'LoginController as vm'
+                            },
+                            'content@reg'         : {
+                                templateUrl: 'app/main/registration/registration.html',
+                                controller : 'RegistrationController as vm'
+                            }
+                        }
             })
 
         ;
