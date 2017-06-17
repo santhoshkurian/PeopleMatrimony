@@ -79,7 +79,7 @@
                                 //controller : 'MainController as vm'
                             },
                             'navigation@profile'         : {
-                                templateUrl: 'app/navigation/dashboard/dbNavigation.html',
+                                templateUrl: 'app/navigation/profile/profileNavigation.html',
                                 controller : 'NavigationController as vm'
                             },
                             'toolbar@profile'         : {
