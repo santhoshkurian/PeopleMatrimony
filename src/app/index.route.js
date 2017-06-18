@@ -117,6 +117,30 @@
                         controller: 'FooterController as vm'
                     }
                 }
+            }).state('settings', {
+                url: '/settings',
+                views: {
+                    'main@': {
+                        templateUrl: 'app/core/layouts/settingsLayout.html'
+                        //controller : 'InboxController as vm'
+                    },
+                    'toolbar@settings': {
+                        templateUrl: 'app/toolbar/settings/settingsToolbar.html',
+                        controller: 'SettingsNavController as vm'
+                    },
+                    'navigation@settings': {
+                        templateUrl: 'app/navigation/settings/settingNavigation.html',
+                        controller: 'NavigationController as vm'
+                    },
+                    'content@settings': {
+                        templateUrl: 'app/main/settings/accountsettings/accountSettings.html',
+                        controller: 'AccountSettingsController as vm'
+                    },
+                    'footer@settings': {
+                        templateUrl: 'app/footer/footer.html',
+                        controller: 'FooterController as vm'
+                    }
+                }
             })
 
         ;

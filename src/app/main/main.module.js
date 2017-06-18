@@ -101,6 +101,61 @@
                 resolve  : {
 
                 }
+            }).state('settings.emailalerts', {
+                url      : '/emailalerts',
+                views    : {
+                    'content@settings'         : {
+                        templateUrl: 'app/main/settings/manageEmail/manageEmail.html',
+                        controller: 'ManageEmailController as vm'
+                    }
+                },
+                resolve  : {
+
+                }
+            }).state('settings.contactFilters', {
+                url      : '/contactFilters',
+                views    : {
+                    'content@settings'         : {
+                        templateUrl: 'app/main/settings/contactFilters/contactFilters.html',
+                        controller: 'ContactFiltersController as vm'
+                    }
+                },
+                resolve  : {
+
+                }
+            }).state('settings.privacySettings', {
+                url      : '/privacySettings',
+                views    : {
+                    'content@settings'         : {
+                        templateUrl: 'app/main/settings/privacySettings/privacySettings.html',
+                        controller: 'PrivacySettingsController as vm'
+                    }
+                },
+                resolve  : {
+
+                }
+            }).state('settings.membershipDetails', {
+                url      : '/membershipDetails',
+                views    : {
+                    'content@settings'         : {
+                        templateUrl: 'app/main/settings/membershipDetails/membershipDetails.html',
+                        controller: 'MembershipDetailsController as vm'
+                    }
+                },
+                resolve  : {
+
+                }
+            }).state('settings.deactivateProfile', {
+                url      : '/deactivateProfile',
+                views    : {
+                    'content@settings'         : {
+                        templateUrl: 'app/main/settings/deactivateProfile/deactivateProfile.html',
+                        controller: 'DeactivateProfileController as vm'
+                    }
+                },
+                resolve  : {
+
+                }
             });
 
     }
