@@ -1,0 +1,13 @@
+.activateSettingNavBar {
+     border-left: solid!important;
+     color: #e26a6e;
+
+}
+.activateSettingNavBar >a {
+     color: #e26a6e!important;
+
+}
+.settingnav >li{
+     border-bottom: 1px solid #eef1f5;
+}
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNldHRpbmduYXYuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0tBQ0ssNkJBQTZCO0tBQzdCLGVBQWU7O0NBRW5CO0FBQ0Q7S0FDSyx5QkFBeUI7O0NBRTdCO0FBQ0Q7S0FDSyxpQ0FBaUM7Q0FDckMiLCJmaWxlIjoibmF2aWdhdGlvbi9zZXR0aW5ncy9zZXR0aW5nbmF2LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hY3RpdmF0ZVNldHRpbmdOYXZCYXIge1xuICAgICBib3JkZXItbGVmdDogc29saWQhaW1wb3J0YW50O1xuICAgICBjb2xvcjogI2UyNmE2ZTtcblxufVxuLmFjdGl2YXRlU2V0dGluZ05hdkJhciA+YSB7XG4gICAgIGNvbG9yOiAjZTI2YTZlIWltcG9ydGFudDtcblxufVxuLnNldHRpbmduYXYgPmxpe1xuICAgICBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2VlZjFmNTtcbn0iXX0= */
