@@ -68,6 +68,39 @@
                 resolve  : {
 
                 }
+            }).state('search.advanced', {
+                url      : '/advanced',
+                views    : {
+                    'content@search'         : {
+                        templateUrl: 'app/main/search/advanced/advanced.html',
+                        controller: 'AdvancedSearchController as vm'
+                    }
+                },
+                resolve  : {
+
+                }
+            }).state('search.robo', {
+                url      : '/robo',
+                views    : {
+                    'content@search'         : {
+                        templateUrl: 'app/main/search/robosearch/roboSearch.html',
+                        controller: 'RoboSearchController as vm'
+                    }
+                },
+                resolve  : {
+
+                }
+            }).state('search.searchbyId', {
+                url      : '/searchbyId',
+                views    : {
+                    'content@search'         : {
+                        templateUrl: 'app/main/search/searchbyid/searchById.html',
+                        controller: 'SearchByIdController as vm'
+                    }
+                },
+                resolve  : {
+
+                }
             });
 
     }
