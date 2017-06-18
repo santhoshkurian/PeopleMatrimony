@@ -3,7 +3,7 @@
     color:white;
     display: block;
     width: 100%;
-    height: 35px;
+    height: 35px!important;
     padding-left: 20px;
     font-size: 20px;
 }
@@ -12,9 +12,21 @@
     /*float: left;*/
     color:white;
     padding: 0;
-    height: 75px;
+    height: 35px!important;
     margin-left: 15px;
-    font-size: 10px;
+}
+
+@media screen and (max-width: 1900px) {
+    .main-heading-actions{
+        font-size: 10px;
+    }
+
+}
+@media screen and (max-width: 600px) {
+    .main-heading-actions{
+        font-size: 7px;
+    }
+
 }
 
 .main-tool-link {
@@ -30,8 +42,8 @@
     float: left;
     color: white;
     text-align: center;
-    height: 75px;
-    padding: 30px 8px;
+    height: 45px;
+    padding: 25px 8px;
     text-decoration: none;
 }
 

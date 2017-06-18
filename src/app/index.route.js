@@ -105,7 +105,7 @@
                         controller: 'SearchToolbarController as vm'
                     },
                     'navigation@search': {
-                        templateUrl: 'app/navigation/dashboard/dbNavigation.html',
+                        templateUrl: 'app/navigation/search/searchNavigation.html',
                         controller: 'NavigationController as vm'
                     },
                     'content@search': {

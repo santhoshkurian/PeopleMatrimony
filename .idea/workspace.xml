@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bfa2593e-d0c4-4650-be07-2f4b4b5632d0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/toolbar/dashboard/dbToolbar.html" afterPath="$PROJECT_DIR$/src/app/toolbar/dashboard/dbToolbar.html" />
+    <list default="true" id="bfa2593e-d0c4-4650-be07-2f4b4b5632d0" name="Default" comment="search pages created with toolbar and navigation">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.tmp/serve/index.html" afterPath="$PROJECT_DIR$/.tmp/serve/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/index.route.js" afterPath="$PROJECT_DIR$/src/app/index.route.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/main.module.js" afterPath="$PROJECT_DIR$/src/app/main/main.module.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.tmp/serve/app/toolbar/profile/profile.css" afterPath="$PROJECT_DIR$/.tmp/serve/app/toolbar/profile/profile.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/toolbar/profile/profile.css" afterPath="$PROJECT_DIR$/src/app/toolbar/profile/profile.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/core/layouts/profileLayout.html" afterPath="$PROJECT_DIR$/src/app/core/layouts/profileLayout.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/core/layouts/searchLayout.html" afterPath="$PROJECT_DIR$/src/app/core/layouts/searchLayout.html" />
-    </list>
-    <list id="83e44ed8-4a8f-48b3-86bf-fed429f8f9f5" name="New changelist" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/navigation/search/searchNavigation.html" afterPath="$PROJECT_DIR$/src/app/navigation/search/searchNavigation.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
+    <list id="83e44ed8-4a8f-48b3-86bf-fed429f8f9f5" name="New changelist" comment="" />
     <ignored path="PeopleMatrimony.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,54 +32,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.route.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/index.route.js">
+      <file leaf-file-name="profileLayout.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/core/layouts/profileLayout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="97" column="24" selection-start-line="97" selection-start-column="24" selection-end-line="97" selection-end-column="24" />
+            <state vertical-scroll-proportion="-2.7142856">
+              <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="regular.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/main/search/regular/regular.html">
+      <file leaf-file-name="searchLayout.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/core/layouts/searchLayout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6666667">
-              <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.1904762">
+              <caret line="4" column="52" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="roboSearch.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/search/robosearch/roboSearch.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.785714">
-              <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="searchById.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/search/searchbyid/searchById.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.821428">
-              <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="advanced.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/search/advanced/advanced.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.857142">
-              <caret line="17" column="49" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -137,8 +105,6 @@
         <option value="$PROJECT_DIR$/src/app/footer/footer.controller.js" />
         <option value="$PROJECT_DIR$/src/app/footer/footer.html" />
         <option value="$PROJECT_DIR$/src/app/footer/footer.css" />
-        <option value="$PROJECT_DIR$/src/app/core/layouts/profileLayout.html" />
-        <option value="$PROJECT_DIR$/src/app/toolbar/profile/profile.css" />
         <option value="$PROJECT_DIR$/src/app/navigation/profile/profileNavigation.html" />
         <option value="$PROJECT_DIR$/src/app/main/profile/contactdetails/contactDetails.html" />
         <option value="$PROJECT_DIR$/src/app/main/profile/managephotos/managePhoto.html" />
@@ -146,14 +112,17 @@
         <option value="$PROJECT_DIR$/src/app/toolbar/search/searchtoolbar.controller.js" />
         <option value="$PROJECT_DIR$/src/app/toolbar/profile/profileToolbar.html" />
         <option value="$PROJECT_DIR$/src/app/toolbar/dashboard/dbToolbar.html" />
-        <option value="$PROJECT_DIR$/src/app/core/layouts/searchLayout.html" />
         <option value="$PROJECT_DIR$/src/app/toolbar/search/searchtoolbar.html" />
         <option value="$PROJECT_DIR$/src/app/main/main.module.js" />
         <option value="$PROJECT_DIR$/src/app/main/search/advanced/advanced.html" />
-        <option value="$PROJECT_DIR$/src/app/index.route.js" />
         <option value="$PROJECT_DIR$/src/app/main/search/regular/regular.html" />
         <option value="$PROJECT_DIR$/src/app/main/search/searchbyid/searchById.html" />
         <option value="$PROJECT_DIR$/src/app/main/search/robosearch/roboSearch.html" />
+        <option value="$PROJECT_DIR$/src/app/navigation/search/searchNavigation.html" />
+        <option value="$PROJECT_DIR$/src/app/index.route.js" />
+        <option value="$PROJECT_DIR$/src/app/toolbar/profile/profile.css" />
+        <option value="$PROJECT_DIR$/src/app/core/layouts/profileLayout.html" />
+        <option value="$PROJECT_DIR$/src/app/core/layouts/searchLayout.html" />
       </list>
     </option>
   </component>
@@ -498,7 +467,7 @@
       <workItem from="1497720854741" duration="12000" />
       <workItem from="1497720884967" duration="160000" />
       <workItem from="1497721072516" duration="5319000" />
-      <workItem from="1497757199139" duration="4595000" />
+      <workItem from="1497757199139" duration="6809000" />
     </task>
     <task id="LOCAL-00001" summary="gulp auto inject scc issue fixed">
       <created>1496948721517</created>
@@ -576,7 +545,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33885000" />
+    <option name="totallyTimeSpent" value="36099000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
@@ -592,9 +561,9 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26409018" sideWeight="0.49721116" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1936255" sideWeight="0.5" order="3" side_tool="true" content_ui="combo" x="559" y="113" width="313" height="621" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.238247" sideWeight="0.50765866" order="3" side_tool="true" content_ui="combo" x="559" y="113" width="313" height="621" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.238247" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.238247" sideWeight="0.49234137" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -668,20 +637,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/toolbar/dashboard/dbToolbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/footer/footer.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -781,13 +736,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/navigation/dashboard/dbNavigation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/img/photo2.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -871,20 +819,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/core/layouts/profileLayout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.107143">
-          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/toolbar/profile/profile.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34366927">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/main/dashboard/dashboard.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -964,7 +898,7 @@
         <state vertical-scroll-proportion="0.47841728">
           <caret line="24" column="46" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -990,18 +924,10 @@
         <state vertical-scroll-proportion="0.0952381">
           <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/core/layouts/searchLayout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.7142856">
-          <caret line="4" column="52" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1023,25 +949,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/main/search/advanced/advanced.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.857142">
+        <state vertical-scroll-proportion="0.7619048">
           <caret line="17" column="49" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/index.route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="97" column="24" selection-start-line="97" selection-start-column="24" selection-end-line="97" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/main/search/searchbyid/searchById.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.821428">
+        <state vertical-scroll-proportion="0.61904764">
           <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
           <folding />
         </state>
@@ -1049,7 +965,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/main/search/robosearch/roboSearch.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.785714">
+        <state vertical-scroll-proportion="0.47619048">
           <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
           <folding />
         </state>
@@ -1059,6 +975,62 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6666667">
           <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/navigation/dashboard/dbNavigation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.392857">
+          <caret line="5" column="15" selection-start-line="0" selection-start-column="0" selection-end-line="79" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/navigation/search/searchNavigation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.892858">
+          <caret line="79" column="6" selection-start-line="79" selection-start-column="6" selection-end-line="79" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/dashboard/dbToolbar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="40" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/profile/profile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46604216">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/index.route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.8688525">
+          <caret line="108" column="8" selection-start-line="108" selection-start-column="8" selection-end-line="108" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/core/layouts/profileLayout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.7142856">
+          <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/core/layouts/searchLayout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1904762">
+          <caret line="4" column="52" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
           <folding />
         </state>
       </provider>
