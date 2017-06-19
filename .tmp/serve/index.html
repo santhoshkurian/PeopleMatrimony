@@ -1,0 +1,122 @@
+<!doctype html>
+<html ng-app="matrimony">
+    <head>
+        <base href="/">
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">-->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=device-height, target-densitydpi=medium-dpi" />
+        <title>people Matrimony</title>
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- build:css({.tmp/serve,src}) styles/app.css -->
+        <!-- inject:css -->
+        <link rel="stylesheet" href="app/index.css">
+        <link rel="stylesheet" href="app/footer/footer.css">
+        <link rel="stylesheet" href="app/main/dashboard/dashboard.css">
+        <link rel="stylesheet" href="app/main/login/login.css">
+        <link rel="stylesheet" href="app/navigation/dashboard/dbtoolbar.css">
+        <link rel="stylesheet" href="app/navigation/settings/settingnav.css">
+        <link rel="stylesheet" href="app/toolbar/dashboard/dbToolbar.css">
+        <link rel="stylesheet" href="app/toolbar/profile/profile.css">
+        <!-- endinject -->
+        <!-- endbuild -->
+
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700italic,700,900,900italic'
+              rel='stylesheet' type='text/css'>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
+              type="text/css"/>
+        <link href="/lib/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="/lib/css/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+        <link href="/lib/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="/lib/css/uniform.default.min.css" rel="stylesheet" type="text/css"/>
+        <link href="/lib/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+        <link href="/lib/css/components.min.css" rel="stylesheet" type="text/css"/>
+        <link href="/lib/css/plugins.min.css" rel="stylesheet" type="text/css"/>
+        <link href="/lib/css/layout.min.css" rel="stylesheet" type="text/css"/>
+        <link href="/lib/css/light.min.css" rel="stylesheet" type="text/css"/>
+        <link href="/lib/css/custom.min.css" rel="stylesheet" type="text/css"/>
+        <link href="/lib/css/socicon.css" rel="stylesheet" type="text/css"/>
+    </head>
+
+    <!--[if lt IE 10]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+        your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <body md-theme="{{vm.themes.active.name}}" md-theme-watch ng-controller="IndexController as vm"
+          class="{{state.current.bodyClass || ''}}">
+
+
+
+        <div id="main" class="animate-slide-up" ui-view="main" layout="column"></div>
+
+        <!-- build:js(src) scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="../bower_components/angular/angular.js"></script>
+        <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
+        <!-- inject:js -->
+        <script src="app/main/main.module.js"></script>
+        <script src="app/navigation/message/sent/sentNav.controller.js"></script>
+        <script src="app/navigation/message/inbox/inboxNav.controller.js"></script>
+        <script src="app/main/settings/privacySettings/privacySettings.controller.js"></script>
+        <script src="app/main/settings/membershipDetails/membershipDetails.controller.js"></script>
+        <script src="app/main/settings/manageEmail/manageEmail.controller.js"></script>
+        <script src="app/main/settings/deactivateProfile/deactivateProfile.controller.js"></script>
+        <script src="app/main/settings/contactFilters/contactFilters.controller.js"></script>
+        <script src="app/main/settings/accountsettings/accountSettings.controller.js"></script>
+        <script src="app/main/search/searchbyid/searchById.controller.js"></script>
+        <script src="app/main/search/robosearch/roboSearch.controller.js"></script>
+        <script src="app/main/search/regular/regularSearch.controller.js"></script>
+        <script src="app/main/search/advanced/advancedSearch.controller.js"></script>
+        <script src="app/main/dashboard/pending/pending.controller.js"></script>
+        <script src="app/main/dashboard/inbox/Inbox.controller.js"></script>
+        <script src="app/main/dashboard/decline/decline.controller.js"></script>
+        <script src="app/main/dashboard/accept/accept.controller.js"></script>
+        <script src="app/toolbar/toolbar.module.js"></script>
+        <script src="app/toolbar/search/searchtoolbar.controller.js"></script>
+        <script src="app/toolbar/profile/profileToolbar.controller.js"></script>
+        <script src="app/toolbar/message/messagetoolbar.controller.js"></script>
+        <script src="app/toolbar/dashboard/dbtoolbar.controller.js"></script>
+        <script src="app/navigation/settings/settingNav.controller.js"></script>
+        <script src="app/navigation/dashboard/navigation.controller.js"></script>
+        <script src="app/main/registration/registration.controller.js"></script>
+        <script src="app/main/profile/profile.controller.js"></script>
+        <script src="app/main/login/login.controller.js"></script>
+        <script src="app/footer/footer.module.js"></script>
+        <script src="app/footer/footer.controller.js"></script>
+        <script src="app/index.module.js"></script>
+        <script src="app/index.route.js"></script>
+        <script src="app/index.controller.js"></script>
+        <!-- endinject -->
+
+        <!-- inject:partials -->
+        <!-- angular templates will be automatically converted in js and inserted here -->
+        <!-- endinject -->
+        <!-- endbuild -->
+        <!-- BEGIN CORE PLUGINS -->
+        <script src="/lib/js/jquery.min.js" type="text/javascript"></script>
+        <script src="/lib/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="/lib/js/js.cookie.min.js" type="text/javascript"></script>
+        <script src="/lib/js/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+        <script src="/lib/js/jquery.slimscroll.min.js" type="text/javascript"></script>
+        <script src="/lib/js/jquery.blockui.min.js" type="text/javascript"></script>
+        <script src="/lib/js/jquery.uniform.min.js" type="text/javascript"></script>
+        <script src="/lib/js/bootstrap-switch.min.js" type="text/javascript"></script>
+        <script src="/lib/js/app.min.js" type="text/javascript"></script>
+        <script src="/lib/js/layout.min.js" type="text/javascript"></script>
+        <script src="/lib/js/demo.min.js" type="text/javascript"></script>
+        <script src="/lib/js/quick-sidebar.min.js" type="text/javascript"></script>
+    </body>
+</html>

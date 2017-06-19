@@ -6,7 +6,7 @@
         .controller('LoginController', LoginController);
 
     /** @ngInject */
-    function LoginController($uibModal) {
+    function LoginController($uibModal,$state) {
         //var vm = this;
         console.log("LoginController");
 

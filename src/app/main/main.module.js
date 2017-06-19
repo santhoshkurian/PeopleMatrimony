@@ -156,6 +156,22 @@
                 resolve  : {
 
                 }
+            }).state('messages.sent', {
+                url      : '/sent',
+                views    : {
+                    'content@message'         : {
+                        templateUrl: 'app/main/settings/deactivateProfile/deactivateProfile.html',
+                        controller: 'DeactivateProfileController as vm'
+                    }
+                ,
+                'navigation@message': {
+                    templateUrl: 'app/navigation/message/sent/sentNavigation.html',
+                    controller: 'SentNavController as vm'
+                }
+                },
+                resolve  : {
+
+                }
             });
 
     }
