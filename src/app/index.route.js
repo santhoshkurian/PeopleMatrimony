@@ -61,7 +61,7 @@
                         //controller : 'MainController as vm'
                     },
                     'toolbar@reg': {
-                        templateUrl: 'app/toolbar/login/loginToolbar.html'
+                        templateUrl: 'app/toolbar/login/registrationToolbar.html'
                         //controller : 'LoginController as vm'
                     },
                     'content@reg': {
