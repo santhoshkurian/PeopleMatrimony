@@ -19,7 +19,6 @@
 
         //vm.open = function () {
 
-
             var modalInstance = $uibModal.open({
                 animation: vm.animationsEnabled,
                 ariaLabelledBy: 'modal-title',
@@ -39,7 +38,17 @@
             }, function () {
                 $log.info('Modal dismissed at: ' + new Date());
             });
+
+
+
+        vm.registerCandidate = function () {
+            console.log("efgegf")
+            $state.go('reg');
+          //  $uibModalInstance.close(vm.selected.item);
         };
+
+
+    };
 
     //}
     angular.module('dashboard').controller('ModalInstanceCtrl', function ($uibModalInstance, items,$state) {
