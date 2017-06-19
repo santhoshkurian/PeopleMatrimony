@@ -19,7 +19,7 @@
                     <label class="col-md-3 control-label text-left">PROFILE FOR</label>
 
                     <div class="col-md-8">
-                        <select class="form-control input-rounded">
+                        <select class="form-control input-rounded" placeholder="Profile for">
                             <option>Option 1</option>
                             <option>Option 2</option>
                             <option>Option 3</option>
@@ -33,22 +33,40 @@
                     <label class="col-md-3 control-label text-left ">NAME</label>
 
                     <div class="col-md-8">
-                        <input type="email" class="form-control input-rounded" placeholder="Email Address">
+                        <input type="email" class="form-control input-rounded" placeholder="Name">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-md-3 control-label">GENDER</label>
 
-                    <div class="col-md-8">
-                        <input type="email" class="form-control" placeholder="Email Address">
+                    <div class="col-md-8 margin-right-30">
+                        <div class="radio-list">
+                            <div class="col-md-4">
+
+                                <label class="radio-inline">
+                                    <input type="radio" name="gender" id="male" value="MALE" ng-model="candidate.gender"
+                                           checked> Male </label>
+                            </div>
+                            <div class="col-md-4">
+
+                                <label class="radio-inline ">
+                                    <input type="radio" name="gender"  id="female" value="FEMALE"
+                                           ng-model="candidate.gender"> Female</label>
+                            </div>
+                        </div>
+
+                        <!--<div >-->
+
+                        <!--<input type="email" class="form-control" placeholder="Email Address">-->
+                        <!--</div>-->
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label">DATE OF BIRTH</label>
 
                     <div class="col-md-8">
-                        <input type="email" class="form-control" placeholder="Email Address">
+                        <input type="date" class="form-control input-rounded" placeholder="Date of Birth">
                     </div>
                 </div>
                 <div class="form-group">
@@ -112,7 +130,8 @@
                     <label class="col-md-3 control-label"></label>
 
                     <div class="col-md-8">
-                        <button type="button" class=" center-block col-md-12 btn red input-rounded" ng-click="vm.registerCandidate()">
+                        <button type="button" class=" center-block col-md-12 btn red input-rounded"
+                                ng-click="vm.registerCandidate()">
                             Registration
                         </button>
                     </div>
@@ -139,7 +158,8 @@
     <div class="modal-body" id="modal-body">
         <div class="form-group">
             <label class=" uppercase">Email / Mobile Number / Member Id</label>
-            <input class="form-control spinner input-rounded" type="text" placeholder="Email / Mobile NUmber / Member ID"/>
+            <input class="form-control spinner input-rounded" type="text"
+                   placeholder="Email / Mobile NUmber / Member ID"/>
         </div>
         <div class="form-group">
             <label class=" uppercase"> Password</label>
@@ -164,7 +184,9 @@
             </button>
         </div>
         <div>
-            <label class="pull-left custon-text"> Dont have an account? &nbsp;<a href="" class="font-red-mint" ng-click="vm.cancel()"> Sign up here</a></label>
+            <label class="pull-left custon-text"> Dont have an account? &nbsp;<a href="" class="font-red-mint"
+                                                                                 ng-click="vm.cancel()"> Sign up
+                here</a></label>
 
         </div>
 

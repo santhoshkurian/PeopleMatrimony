@@ -25,8 +25,24 @@
 
 .login-modal {
     border-radius: 10px 10px 10px 10px !important;
-    border:hidden !important;
+    border: hidden !important;
 }
-.sub-text{color: #666}
 
-.custom-text{color: #8b8b8b}
+.sub-text {
+    color: #b7b7b7
+}
+
+#b7b7b7
+.custom-text {
+    color: #8b8b8b
+}
+
+.registration-details {
+    background-color: #fefefe !important;
+}
+
+.font-weight {
+    font-weight: 600;
+    font-size: 11px;
+    color: #363636 !important;
+}
