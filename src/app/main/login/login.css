@@ -17,6 +17,14 @@
     border-radius: 4px 4px 4px 4px !important
 }
 
+.input-rounded-pratial-right {
+    border-radius: 0px 4px 4px 0px !important;
+}
+
+.input-rounded-pratial-left {
+    border-radius: 4px 0px 0px 4px !important;
+}
+
 .login-pannel-title {
     background-color: #f2f7fa;
     border-radius: 10px 10px 0px 0px !important;
@@ -47,4 +55,14 @@
     font-weight: 600;
     font-size: 11px;
     color: #363636 !important;
+}
+
+.border-rounded-top{
+    border-radius: 4px 4px 0px 0px !important;
+}
+.border-rounded-bottom{
+    border-radius: 0px 0px 4px 4px !important;
+}
+.border-rounded{
+    border-radius: 4px 4px 4px 4px !important;
 }
