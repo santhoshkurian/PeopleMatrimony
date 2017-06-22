@@ -30,6 +30,10 @@
                         templateUrl: 'app/navigation/dashboard/dbNavigation.html',
                         controller : 'NavigationController as vm'
                     },
+                    'dbNavigationRight@app'         : {
+                        templateUrl: 'app/navigation/dashboard-right/dashBoardRight.html',
+                        controller : 'DashBoardRightController as vm'
+                    },
                     'content@app'         : {
                         templateUrl: 'app/main/dashboard/inbox/inbox.html',
                         controller : 'InboxController as vm'

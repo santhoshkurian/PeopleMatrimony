@@ -1,80 +1,243 @@
 <div class="page-sidebar-wrapper">
-       <div class="page-sidebar navbar-collapse collapse" style="border-radius: 10px">
-                <ul class="page-sidebar-menu   " style="background-color: white" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-
-
+    <div class="page-sidebar navbar-collapse collapse" style="border-radius: 10px">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="page-sidebar-menu menu-panel  "  data-keep-expanded="false"
+                    data-auto-scroll="true" data-slide-speed="200">
                     <li class="nav-item  active open">
-                        <ul class="sub-menu" >
-                            <li style="background-color:#e8e6e8;height:37px;padding: 9px 14px 9px 30px;" class="nav-item " id="inbox">
-                                    <span class="title"><b>Inbox</b></span>
-                            </li>
-                            <li ng-class="{ active: isActive('/app/pending')}" class="nav-item" id="pending">
-                                <a ui-sref="app.pending" class="nav-link ">
-                                    <span class="title">Pending</span>
-                                </a>
-                            </li>
-                            <li ng-class="{ active: isActive('/app/accept')}" class="nav-item " id="accept">
-                                <a ui-sref="app.accept" class="nav-link ">
-                                    <span class="title">Accept</span>
-                                </a>
-                            </li>
-                            <li ng-class="{ active: isActive('/app/decline')}" class="nav-item" id="decline">
-                                <a ui-sref="app.decline" class="nav-link ">
-                                    <span class="title">Decline</span>
-                                </a>
-                            </li>
-
-
-                            <li  style="background-color:#e8e6e8;height:37px;padding: 9px 14px 9px 30px" class="nav-item">
-                                    <span class="title"><b>Sent</b></span>
-                            </li>
-                            <li class="nav-item" >
-
-                            </li>
-
-                        </ul>
+                        <div class="row">
+                            <div class="col-md-12 margin-top-10 margin-bottom-10">
+                                <div class="row ">
+                                    <div class="col-md-12">
+                                        <div class="row ">
+                                            <div class=" col-xs-4 col-sm-4 col-md-3 ">
+                                                <img class="profile-image spacer" ng-src="../assets/images/prof1.jpg"/>
+                                            </div>
+                                            <div class="col-md-1 hidden-xs hidden-sm"></div>
+                                            <div class="col-xs-8 col-sm-8 col-md-7">
+                                                <div class="row ">
+                                                    <div class="col-md-12">
+                                                        <span><span class="profile-name">Prem Joea</span>&nbsp;<span
+                                                                class="profile-id">(PD12345)</span></span>
+                                                    </div>
+                                                </div>
+                                                <div class="row ">
+                                                    <div class="col-md-12">
+                                                        <span class="menu-option">Add more Photo</span>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <span class="menu-option">Edit Profile</span>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <span class="menu-option">Edit partner preference</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--<div class="col-md-1"></div>-->
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item active open nav-footer">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row ">
+                                    <div class=" col-xs-6 col-sm-6 col-md-6 ">
+                                        <span class="account-type">Account Type :&nbsp;<span class="cuurent-account">Free</span> </span>
+                                    </div>
+                                    <div class=" col-xs-6 col-sm-6 col-md-6 ">
+                                        <span class="upgrade-info">upgrade now >></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                 </ul>
-                <ul class="page-sidebar-menu   " style="background-color: white" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                <ul class="page-sidebar-menu menu-panel panel-top-space  "  data-keep-expanded="false"
+                    data-auto-scroll="true" data-slide-speed="200">
 
 
                     <li class="nav-item  active open">
                         <ul class="sub-menu">
-                            <li ng-class="{ active: isActive('/app')}" class="nav-item " id="inbox">
-                                <a ui-sref="app" class="nav-link ">
-                                    <span class="title">Inbox</span>
-                                </a>
+                            <li class="nav-item nav-header">
+                                <span class=""><span class="nav-header-text">Inbox</span></span>
                             </li>
-                            <li ng-class="{ active: isActive('/app/pending')}" class="nav-item" id="pending">
+                            <li ng-class="{ active: isActive('/app/pending')}" class="nav-item" >
                                 <a ui-sref="app.pending" class="nav-link ">
-                                    <span class="title">Pending</span>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-10 col-sm-10 col-xs-10">
+                                                    <span class="title">Pending</span>
+                                                </div>
+                                                <div class="col-md-1 col-sm-1 col-xs-1">
+                                                    <span class="">0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </a>
                             </li>
-                            <li ng-class="{ active: isActive('/app/accept')}" class="nav-item " id="accept">
+                            <li ng-class="{ active: isActive('/app/accept')}" class="nav-item " >
                                 <a ui-sref="app.accept" class="nav-link ">
-                                    <span class="title">Accept</span>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-10 col-sm-10 col-xs-10">
+                                                    <span class="title">Accepted</span>
+                                                </div>
+                                                <div class="col-md-1 col-sm-1 col-xs-1">
+                                                    <span class="">0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </a>
                             </li>
-                            <li ng-class="{ active: isActive('/app/decline')}" class="nav-item" id="decline">
+                            <li ng-class="{ active: isActive('/app/decline')}" class="nav-item" >
                                 <a ui-sref="app.decline" class="nav-link ">
-                                    <span class="title">Decline</span>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-10 col-sm-10 col-xs-10">
+                                                    <span class="title">Declined</span>
+                                                </div>
+                                                <div class="col-md-1 col-sm-1 col-xs-1">
+                                                    <span class="">0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </a>
                             </li>
-                            <!--<li class="nav-item  ">-->
-                            <!--<a href="layout_boxed_page.html" class="nav-link ">-->
-                            <!--<span class="title">Boxed Page</span>-->
-                            <!--</a>-->
-                            <!--</li>-->
-                            <!--<li class="nav-item  active open">-->
-                            <!--<a href="layout_blank_page.html" class="nav-link ">-->
-                            <!--<span class="title">Blank Page</span>-->
-                            <!--<span class="selected"></span>-->
-                            <!--</a>-->
-                            <!--</li>-->
+
+
+                            <li class="nav-item nav-header">
+                                <span class=""><span class="nav-header-text">Sent</span></span>
+                            </li>
+                            <li ng-class="{ active: isActive('/app/pending')}" class="nav-item" >
+                                <a ui-sref="app.pending" class="nav-link ">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-10 col-sm-10 col-xs-10">
+                                                    <span class="title">Sent</span>
+                                                </div>
+                                                <div class="col-md-1 col-sm-1 col-xs-1">
+                                                    <span class="">0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li ng-class="{ active: isActive('/app/accept')}" class="nav-item " >
+                                <a ui-sref="app.accept" class="nav-link ">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-10 col-sm-10 col-xs-10">
+                                                    <span class="title">A Waiting Reply</span>
+                                                </div>
+                                                <div class="col-md-1 col-sm-1 col-xs-1">
+                                                    <span class="">0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+
+                            </li>
+
                         </ul>
                     </li>
                 </ul>
-        <!-- END SIDEBAR MENU -->
+                <ul class="page-sidebar-menu menu-panel panel-top-space  "  data-keep-expanded="false"
+                    data-auto-scroll="true" data-slide-speed="200">
+
+
+                    <li class="nav-item  active open">
+                        <ul class="sub-menu">
+                            <li class="nav-item nav-header">
+                                <span class=""><span class="nav-header-text">Explore</span></span>
+                            </li>
+                            <li ng-class="{ active: isActive('/app/pending')}" class="nav-item" >
+                                <a ui-sref="app.pending" class="nav-link ">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-10 col-sm-10 col-xs-10">
+                                                    <span class="title important-options">Viewd profiles</span>
+                                                </div>
+                                                <div class="col-md-1 col-sm-1 col-xs-1">
+                                                    <span class="">0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li ng-class="{ active: isActive('/app/accept')}" class="nav-item " >
+                                <a ui-sref="app.accept" class="nav-link ">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-10 col-sm-10 col-xs-10">
+                                                    <span class="title important-options">Ignored members</span>
+                                                </div>
+                                                <div class="col-md-1 col-sm-1 col-xs-1">
+                                                    <span class="">0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li ng-class="{ active: isActive('/app/decline')}" class="nav-item" >
+                                <a ui-sref="app.decline" class="nav-link ">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-10 col-sm-10 col-xs-10">
+                                                    <span class="title important-options">Declined</span>
+                                                </div>
+                                                <div class="col-md-1 col-sm-1 col-xs-1">
+                                                    <span class="">0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li ng-class="{ active: isActive('/app/pending')}" class="nav-item" >
+                                <a ui-sref="app.pending" class="nav-link ">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-10 col-sm-10 col-xs-10">
+                                                    <span class="title important-options">Blocked members</span>
+                                                </div>
+                                                <div class="col-md-1 col-sm-1 col-xs-1">
+                                                    <span class="">0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+                </ul>
+                <!-- END SIDEBAR MENU -->
+            </div>
+        </div>
     </div>
     <!-- END SIDEBAR -->
 </div>

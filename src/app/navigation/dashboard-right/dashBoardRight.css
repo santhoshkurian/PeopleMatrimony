@@ -2,9 +2,10 @@
     background-color: #e9ecf3 !important;
 }
 
-.profile-image {
-    height: 75px;
-    width: 75px;
+.imgae-circle {
+    height: 70px;
+    width: 70px;
+    border-radius: 50px !important;
 
 }
 
@@ -15,17 +16,12 @@
 .profile-name {
     color: black;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .profile-id {
     font-size: 12px;
-    color: #666;
-}
-
-.menu-option {
-    color: red;
-    font-size: 10px;
+    color: #D8D8D8;
 }
 
 .account-type {
@@ -55,22 +51,24 @@
     text-transform: uppercase;
 }
 
-.upgrade-info {
-    color: red;
-    font-size: 10px;
-    text-transform: uppercase;
-    font-weight: 500;
-}
 .title{
     text-transform: uppercase;
 }
-.important-options{
+.send-intrest{
     color: red;
     font-weight: 500;
+    font-size: 13px;
 }
 .menu-panel{
     background-color: white;
 }
 .panel-top-space{
     margin-top: 20px !important;
+}
+.profile-details{
+    color: #555;
+    font-size: 10px;
+}
+hr {
+    margin: 10px 0 !important;
 }
