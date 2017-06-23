@@ -66,3 +66,11 @@
 .border-rounded{
     border-radius: 4px 4px 4px 4px !important;
 }
+.form-panel{
+    background-color:#ffffff ;
+    height: auto;
+   /* border: 1px solid #e7ecf1!important;
+    padding: 12px 20px 15px;
+    margin-bottom: 25px;
+*/
+}
