@@ -1,0 +1,3 @@
+.page-sidebar, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover {
+     background-color: #e9ecf3!important;
+}

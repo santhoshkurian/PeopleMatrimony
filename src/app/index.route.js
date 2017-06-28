@@ -1,5 +1,4 @@
-(function ()
-{
+(function () {
     'use strict';
 
     angular
@@ -7,8 +6,7 @@
         .config(routeConfig);
 
     /** @ngInject */
-    function routeConfig($stateProvider, $urlRouterProvider, $locationProvider)
-    {
+    function routeConfig($stateProvider, $urlRouterProvider, $locationProvider) {
         $locationProvider.html5Mode(true);
 
         $urlRouterProvider.otherwise('/login');
@@ -16,19 +14,19 @@
         // State definitions
         $stateProvider
             .state('app', {
-                url:'/app',
-                views   : {
-                    'main@'         : {
+                url: '/app',
+                views: {
+                    'main@': {
                         templateUrl: 'app/core/layouts/dbLayout.html'
                         //controller : 'InboxController as vm'
                     },
-                    'toolbar@app'         : {
+                    'toolbar@app': {
                         templateUrl: 'app/toolbar/dashboard/dbToolbar.html',
-                        controller : 'DashboardToolbarController as vm'
+                        controller: 'DashboardToolbarController as vm'
                     },
-                    'navigation@app'         : {
+                    'navigation@app': {
                         templateUrl: 'app/navigation/dashboard/dbNavigation.html',
-                        controller : 'NavigationController as vm'
+                        controller: 'NavigationController as vm'
                     },
                     'dbNavigationRight@app'         : {
                         templateUrl: 'app/navigation/dashboard-right/dashBoardRight.html',
@@ -36,27 +34,139 @@
                     },
                     'content@app'         : {
                         templateUrl: 'app/main/dashboard/inbox/inbox.html',
-                        controller : 'InboxController as vm'
+                        controller: 'InboxController as vm'
                     },
-                    'footer@app'         : {
+                    'footer@app': {
                         templateUrl: 'app/footer/footer.html',
-                        controller : 'FooterController as vm'
+                        controller: 'FooterController as vm'
                     }
                 }
             }).state('login', {
-                url:'/login',
-                views   : {
-                    'main@'         : {
+                url: '/login',
+                views: {
+                    'main@': {
                         templateUrl: 'app/core/layouts/loginLayout.html'
                         //controller : 'MainController as vm'
                     },
-                    'toolbar@login'         : {
+                    'toolbar@login': {
                         templateUrl: 'app/toolbar/login/loginToolbar.html'
                         //controller : 'LoginController as vm'
                     },
-                    'content@login'         : {
+                    'content@login': {
                         templateUrl: 'app/main/login/loginContent.html',
-                        controller : 'LoginController as vm'
+                        controller: 'LoginController as vm'
+                    }
+                }
+            }).state('reg', {
+                url: '/reg',
+                views: {
+                    'main@': {
+                        templateUrl: 'app/core/layouts/loginLayout.html'
+                        //controller : 'MainController as vm'
+                    },
+                    'toolbar@reg': {
+                        templateUrl: 'app/toolbar/login/registrationToolbar.html'
+                        //controller : 'LoginController as vm'
+                    },
+                    'content@reg': {
+                        templateUrl: 'app/main/registration/registration.html',
+                        controller: 'RegistrationController as vm'
+                    }
+                }
+            }).state('profile', {
+                url: '/profile',
+                views: {
+                    'main@': {
+                        templateUrl: 'app/core/layouts/profileLayout.html'
+                        //controller : 'MainController as vm'
+                    },
+                    'navigation@profile': {
+                        templateUrl: 'app/navigation/profile/profileNavigation.html',
+                        controller: 'NavigationController as vm'
+                    },
+                    'toolbar@profile': {
+                        templateUrl: 'app/toolbar/profile/profileToolbar.html',
+                        controller: 'ProfileToolbarController as vm'
+                    },
+                    'content@profile': {
+                        templateUrl: 'app/main/profile/editProfile/profile.html',
+                        controller: 'RegistrationController as vm'
+                    },
+                    'footer@profile': {
+                        templateUrl: 'app/footer/footer.html',
+                        controller: 'FooterController as vm'
+                    }
+                }
+            }).state('search', {
+                url: '/search',
+                views: {
+                    'main@': {
+                        templateUrl: 'app/core/layouts/searchLayout.html'
+                        //controller : 'InboxController as vm'
+                    },
+                    'toolbar@search': {
+                        templateUrl: 'app/toolbar/search/searchtoolbar.html',
+                        controller: 'SearchToolbarController as vm'
+                    },
+                    'navigation@search': {
+                        templateUrl: 'app/navigation/search/searchNavigation.html',
+                        controller: 'NavigationController as vm'
+                    },
+                    'content@search': {
+                        templateUrl: 'app/main/search/regular/regular.html',
+                        controller: 'RegularSearchController as vm'
+                    },
+                    'footer@search': {
+                        templateUrl: 'app/footer/footer.html',
+                        controller: 'FooterController as vm'
+                    }
+                }
+            }).state('settings', {
+                url: '/settings',
+                views: {
+                    'main@': {
+                        templateUrl: 'app/core/layouts/settingsLayout.html'
+                        //controller : 'InboxController as vm'
+                    },
+                    'toolbar@settings': {
+                        templateUrl: 'app/toolbar/settings/settingsToolbar.html',
+                        controller: 'SettingsNavController as vm'
+                    },
+                    'navigation@settings': {
+                        templateUrl: 'app/navigation/settings/settingNavigation.html',
+                        controller: 'NavigationController as vm'
+                    },
+                    'content@settings': {
+                        templateUrl: 'app/main/settings/accountsettings/accountSettings.html',
+                        controller: 'AccountSettingsController as vm'
+                    },
+                    'footer@settings': {
+                        templateUrl: 'app/footer/footer.html',
+                        controller: 'FooterController as vm'
+                    }
+                }
+            }).state('messages', {
+                url: '/messages',
+                views: {
+                    'main@': {
+                        templateUrl: 'app/core/layouts/messageLayout.html'
+                        //controller : 'InboxController as vm'
+                    },
+                    'toolbar@messages': {
+                        templateUrl: 'app/toolbar/message/messagetoolbar.html',
+                        controller: 'MessageToolbarController as vm'
+                    },
+                    'navigation@messages': {
+                        templateUrl: 'app/navigation/settings/settingNavigation.html',
+                        controller: 'NavigationController as vm'
+                    },
+                    'content@messages': {
+                        templateUrl: 'app/main/settings/accountsettings/accountSettings.html',
+                        controller: 'AccountSettingsController as vm'
+                    },
+                    'footer@messages': {
+                        templateUrl: 'app/footer/footer.html',
+                        controller: 'FooterController as vm'
                     }
                 }
             })

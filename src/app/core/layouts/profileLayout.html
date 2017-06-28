@@ -1,1 +1,30 @@
-View Profile
+<span class="page-container-bg-solid page-header-fixed page-sidebar-closed-hide-logo">
+<div ui-view="toolbar"></div>
+<div class="clearfix"></div>
+
+<div class="page-container" style="margin-top: 180px">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-2">
+
+                <div ui-view="navigation"></div>
+                    </div>
+                    <div class="col-md-10">
+
+                    <div ui-view="content"></div>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-1"></div>
+
+    </div>
+
+</div>
+    <div class="clearfix"></div>
+    <div ui-view="footer"></div>
+
+</span>

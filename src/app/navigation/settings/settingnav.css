@@ -1,0 +1,12 @@
+.activateSettingNavBar {
+     border-left: solid!important;
+     color: #e26a6e;
+
+}
+.activateSettingNavBar >a {
+     color: #e26a6e!important;
+
+}
+.settingnav >li{
+     border-bottom: 1px solid #eef1f5;
+}

@@ -17,6 +17,14 @@
     border-radius: 4px 4px 4px 4px !important
 }
 
+.input-rounded-pratial-right {
+    border-radius: 0px 4px 4px 0px !important;
+}
+
+.input-rounded-pratial-left {
+    border-radius: 4px 0px 0px 4px !important;
+}
+
 .login-pannel-title {
     background-color: #f2f7fa;
     border-radius: 10px 10px 0px 0px !important;
@@ -25,6 +33,50 @@
 
 .login-modal {
     border-radius: 10px 10px 10px 10px !important;
-    border:hidden !important;
+    border: hidden !important;
 }
-.sub-text{color: #666}
+
+.sub-text {
+    color: #b7b7b7
+}
+
+#b7b7b7
+.custom-text {
+    color: #8b8b8b
+}
+
+.registration-details {
+    background-color: #fefefe !important;
+    height: 56px !important;
+    /*margin-bottom: 4px;*/
+}
+
+.font-weight {
+    font-weight: 600;
+    font-size: 11px;
+    color: #363636 !important;
+}
+
+.border-rounded-top{
+    border-radius: 4px 4px 0px 0px !important;
+}
+.border-rounded-bottom{
+    border-radius: 0px 0px 4px 4px !important;
+}
+.border-rounded{
+    border-radius: 4px 4px 4px 4px !important;
+}
+.form-panel{
+    background-color:#ffffff ;
+    height: auto;
+   /* border: 1px solid #e7ecf1!important;
+    padding: 12px 20px 15px;
+    margin-bottom: 25px;
+*/
+}
+.settings-heading{
+    color:#00ac8d !important;
+    font-size:14pt!important;
+    font-weight: 300 !important;
+}
+.margn{margin-top: -2%}
