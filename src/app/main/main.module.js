@@ -159,12 +159,12 @@
             }).state('messages.sent', {
                 url      : '/sent',
                 views    : {
-                    'content@message'         : {
-                        templateUrl: 'app/main/settings/deactivateProfile/deactivateProfile.html',
-                        controller: 'DeactivateProfileController as vm'
+                    'content@messages'         : {
+                        templateUrl: 'app/main/message/message.html',
+                        controller: 'MessageController as vm'
                     }
                 ,
-                'navigation@message': {
+                'navigation@messages': {
                     templateUrl: 'app/navigation/message/sent/sentNavigation.html',
                     controller: 'SentNavController as vm'
                 }
