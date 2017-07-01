@@ -36,9 +36,26 @@
         height: 75px;
         padding: 30px 8px;
         text-decoration: none;
+        font-size: 10px;
+
     }
 
 }
+
+@media screen and (max-width: 1120px) {
+    .page-header-fixed .page-container {
+        margin-top: 150px!important;
+    }
+
+}
+@media screen and (max-width: 990px) {
+    .page-header-fixed .page-container {
+        margin-top:17px!important;
+    }
+
+}
+
+
 
 @media screen and (max-width: 810px) {
     .page-header.navbar .page-actions {
