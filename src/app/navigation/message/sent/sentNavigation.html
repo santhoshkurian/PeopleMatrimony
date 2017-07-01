@@ -1,0 +1,27 @@
+<div class="page-sidebar-wrapper">
+       <div class="page-sidebar navbar-collapse collapse" style="border-radius: 10px">
+                <ul class="page-sidebar-menu   " style="background-color: white" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+
+
+                    <li class="nav-item  active open">
+                        <ul class="sub-menu settingnav" >
+                            <li style="background-color:#e8e6e8;height:37px;padding: 9px 14px 9px 30px;" class="nav-item " >
+                                    <span class="title"><b>Settings</b></span>
+                            </li>
+                            <li  ng-class="{ activateSettingNavBar: isActive('/settings')}" class="nav-item " >
+                                <a ui-sref="settings" class="nav-link ">
+                                    <span >SENT</span>
+                                </a>
+                            </li>
+                            <li ng-class="{ activateSettingNavBar: isActive('/settings/emailalerts')}" class="nav-item" id="pending">
+                                <a ui-sref="settings.emailalerts" class="nav-link ">
+                                    <span class="title">Awaiting Replay</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+        <!-- END SIDEBAR MENU -->
+    </div>
+    <!-- END SIDEBAR -->
+</div>

@@ -157,12 +157,12 @@
                         controller: 'MessageToolbarController as vm'
                     },
                     'navigation@messages': {
-                        templateUrl: 'app/navigation/settings/settingNavigation.html',
-                        controller: 'NavigationController as vm'
+                        templateUrl: 'app/navigation/message/inbox/inboxNavigation.html',
+                        controller: 'InboxNavController as vm'
                     },
                     'content@messages': {
-                        templateUrl: 'app/main/settings/accountsettings/accountSettings.html',
-                        controller: 'AccountSettingsController as vm'
+                        templateUrl: 'app/main/message/message.html',
+                        controller: 'MessageController as vm'
                     },
                     'footer@messages': {
                         templateUrl: 'app/footer/footer.html',

@@ -6,11 +6,11 @@
 
 /*}*/
 
-/*@media screen and (min-width: 800px) {*/
-    /*.page-content {*/
-        /*margin-left: 65px!important;*/
-    /*}*/
+@media screen and (max-width: 1190px) and (min-width:1000px) {
+    .page-bar {
+        display: none !important;
+    }
 
 
-/*}*/
+}
 
