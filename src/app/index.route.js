@@ -181,7 +181,7 @@
                         controller: 'MatchesToolbarController as vm'
                     },
                     'navigation@matches': {
-                        templateUrl: 'app/navigation/message/inbox/inboxNavigation.html',
+                        templateUrl: 'app/navigation/matches/matchesNavigation.html',
                         controller: 'InboxNavController as vm'
                     },
                     'content@matches': {
