@@ -169,6 +169,30 @@
                         controller: 'FooterController as vm'
                     }
                 }
+            }).state('matches', {
+                url: '/matches',
+                views: {
+                    'main@': {
+                        templateUrl: 'app/core/layouts/matchesLayout.html'
+                        //controller : 'InboxController as vm'
+                    },
+                    'toolbar@matches': {
+                        templateUrl: 'app/toolbar/matches/matchestoolbar.html',
+                        controller: 'MatchesToolbarController as vm'
+                    },
+                    'navigation@matches': {
+                        templateUrl: 'app/navigation/message/inbox/inboxNavigation.html',
+                        controller: 'InboxNavController as vm'
+                    },
+                    'content@matches': {
+                        templateUrl: 'app/main/message/message.html',
+                        controller: 'MessageController as vm'
+                    },
+                    'footer@matches': {
+                        templateUrl: 'app/footer/footer.html',
+                        controller: 'FooterController as vm'
+                    }
+                }
             }).state('searchresult', {
                 url: '/searchresult',
                 views: {
