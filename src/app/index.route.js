@@ -185,8 +185,8 @@
                         controller: 'InboxNavController as vm'
                     },
                     'content@matches': {
-                        templateUrl: 'app/main/message/message.html',
-                        controller: 'MessageController as vm'
+                        templateUrl: 'app/main/matches/matches.html',
+                        controller: 'MatchesController as vm'
                     },
                     'footer@matches': {
                         templateUrl: 'app/footer/footer.html',
