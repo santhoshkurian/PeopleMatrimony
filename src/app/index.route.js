@@ -204,14 +204,14 @@
                         templateUrl: 'app/toolbar/searchresults/searchresultstoolbar.html',
                         controller: 'SearchResultsToolbarController as vm'
                     },
-                    //'navigation@searchresult': {
-                    //    templateUrl: 'app/navigation/message/inbox/inboxNavigation.html',
-                    //    controller: 'InboxNavController as vm'
-                    //},
-                    //'content@searchresult': {
-                    //    templateUrl: 'app/main/message/message.html',
-                    //    controller: 'MessageController as vm'
-                    //},
+                    'navigation@searchresult': {
+                        templateUrl: 'app/navigation/searchresults/searchResultsNavigation.html',
+                        controller: 'InboxNavController as vm'
+                    },
+                    'content@searchresult': {
+                        templateUrl: 'app/main/searchresults/searchresults.html',
+                        controller: 'SearchResultsController as vm'
+                    },
                     'footer@searchresult': {
                         templateUrl: 'app/footer/footer.html',
                         controller: 'FooterController as vm'
