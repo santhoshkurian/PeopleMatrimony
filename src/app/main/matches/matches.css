@@ -10,7 +10,25 @@ hr.style1{
     border-top: 1px solid #8c8b8b;
 }
 
+.profile-sort{
+    color: #00c29e !important;
+}
+.filter-check-box{
+    cursor: pointer;
+    padding-left: 18px !important;
+    padding-right: 0 !important;
+    min-width: 18px;
+    min-height: 18px;
+    margin-right: 10px !important;
+    margin-left: 8px !important;
+    padding-top: 10px !important;
+    top: 4px !important;
+    position: relative;
+}
 
+input[type=checkbox]:checked{
+    background: rgba(255,82,82,0.87) !important;
+}
 
 
 
