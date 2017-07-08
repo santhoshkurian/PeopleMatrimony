@@ -1,0 +1,39 @@
+.pagination-wrapper-active{
+    width: 20px;
+    height: 20px;
+    border-radius: 50% !important;
+    background: white;
+    text-align: center;
+    margin-left: 3px;
+
+}
+.pagination-wrapper-inactive{
+    width: 20px;
+    height: 20px;
+    border-radius: 50% !important;
+    background: red;
+    text-align: center;
+    margin-left: 3px;
+}
+.non-active-page{
+    color: black !important;
+    cursor: pointer;
+}
+.active-page{
+    color: white !important;
+    cursor: pointer;
+}
+.navigation-button{
+    color: black !important;
+    cursor: pointer;
+    font-weight: 600;
+}
+.navigation-button-disabled{
+    color: gray !important;
+    font-weight: 600;
+}
+
+.pagination-ul li{
+    list-style: none;
+    display: inline-block;
+}

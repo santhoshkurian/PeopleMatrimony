@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('dashboard',[])
+        .module('dashboard',['ui.bootstrap.pagination'])
         .config(config);
 
     /** @ngInject */

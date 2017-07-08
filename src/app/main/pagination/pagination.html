@@ -1,0 +1,10 @@
+<div class="pagination">
+    <ul class="pagination-ul">
+    <li class="pagination-buttons">
+        <a ng-class="[noPrevious()?'navigation-button-disabled':'navigation-button']" ng-click="selectPrevious()">Previous</a></li>
+    <li ng-repeat="page in pages" ng-class="[isActive(page)?'pagination-wrapper-inactive':'pagination-wrapper-active']">
+        <a ng-class="[isActive(page)?'active-page':'non-active-page']"  ng-click="selectPage(page)">{{page}}</a>
+    </li>
+    <li class="pagination-buttons" style="margin-left: 3px" ><a  ng-class="[noNext()?'navigation-button-disabled':'navigation-button']" ng-click="selectNext()">Next</a></li>
+</ul>
+</div>

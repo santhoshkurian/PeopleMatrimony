@@ -7,6 +7,50 @@
             <!-- BEGIN PAGE BASE CONTENT -->
 
             <div class="row">
+
+                <div class="col-md-12 ">
+                    <!-- BEGIN SAMPLE FORM PORTLET-->
+                    <div class="portlet light bordered">
+                        <div class="portlet-body form">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <span class="profile-completeness-heading"> Profile Completeness</span>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <uib-progressbar class="profile-progress-bar" animate="true" value="dynamic"
+                                                             type="success"><b>10%</b></uib-progressbar>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                    <div class="col-md-1">
+                                        <span ng-class="isFirstMessage()?'notification-navigator-disabled':'notification-navigator'">
+                                             <i class="fa fa-angle-left " ng-click="loadPreviosMessage()"></i>
+                                        </span>
+
+                                    </div>
+                                    <div class="col-md-10">
+                                        <span class="text-center">
+                                            {{messages[messageIndex]}}
+                                        </span>
+
+                                    </div>
+                                    <span ng-class="isLastMessage()?'notification-navigator-disabled':'notification-navigator'">
+                                             <i class="fa fa-angle-right " ng-click="loadNextMessage()"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
                 <div class="col-md-12 ">
                     <!-- BEGIN SAMPLE FORM PORTLET-->
                     <div class="portlet light bordered">
@@ -42,6 +86,39 @@
                             </div>
                         </div>
                         <div class="portlet-body form">
+                            <div class="row ">
+                                <div class=" col-xs-3 col-sm-3 col-md-2 ">
+                                    <img class="imgae-circle"
+                                         ng-src="../assets/images/prof1.jpg"/>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 hidden-md hidden-lg"></div>
+                                <div class="col-xs-7 col-sm-7 col-md-6">
+                                    <div class="row ">
+                                        <div class="col-md-12">
+                                                        <span><span class="profile-name">Priya Renjini</span>&nbsp;<span
+                                                                class="profile-id"> (PD12345)</span></span>
+                                        </div>
+                                    </div>
+                                    <div class="row ">
+                                        <div class="col-md-12">
+                                                                        <span class="profile-details">
+                                                                            25,5.3cms,Tamil,Hindu,Manal Tamilnadu, India
+                                                                        </span>
+                                        </div>
+                                    </div>
+                                    <div class="row ">
+                                        <div class="col-md-12">
+                                            <div style="margin-top:20px"><a
+                                                    style="font-size:13px;color: red;margin-right: 20px"> Send
+                                                Interest</a><a style="font-size:13px;color: red"> View Profile</a></div>
+
+                                            <hr/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 hidden-xs hidden-sm"></div>
+                            </div>
+
 
                         </div>
                     </div>
@@ -66,11 +143,12 @@
                         </div>
                         <div class="portlet-body form">
                             <div class="row ">
-                                <div class=" col-xs-2 col-sm-2 col-md-2 ">
+                                <div class=" col-xs-3 col-sm-3 col-md-2 ">
                                     <img class="imgae-circle"
                                          ng-src="../assets/images/prof1.jpg"/>
                                 </div>
-                                <div class="col-xs-7 col-sm-7 col-md-7">
+                                <div class="col-xs-1 col-sm-1 hidden-md hidden-lg"></div>
+                                <div class="col-xs-7 col-sm-7 col-md-6">
                                     <div class="row ">
                                         <div class="col-md-12">
                                                         <span><span class="profile-name">Priya Renjini</span>&nbsp;<span
@@ -86,13 +164,15 @@
                                     </div>
                                     <div class="row ">
                                         <div class="col-md-12">
-                                            <div style="margin-top:20px"><a style="font-size:13px;color: red;margin-right: 20px"> Send Interest</a><a style="font-size:13px;color: red"> View Profile</a></div>
+                                            <div style="margin-top:20px"><a
+                                                    style="font-size:13px;color: red;margin-right: 20px"> Send
+                                                Interest</a><a style="font-size:13px;color: red"> View Profile</a></div>
 
                                             <hr/>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3 hidden-xs hidden-sm"></div>
+                                <div class="col-md-2 hidden-xs hidden-sm"></div>
                             </div>
 
 
@@ -119,11 +199,12 @@
                         </div>
                         <div class="portlet-body form">
                             <div class="row ">
-                                <div class=" col-xs-2 col-sm-2 col-md-2 ">
+                                <div class=" col-xs-3 col-sm-3 col-md-2 ">
                                     <img class="imgae-circle"
                                          ng-src="../assets/images/prof1.jpg"/>
                                 </div>
-                                <div class="col-xs-7 col-sm-7 col-md-7">
+                                <div class="col-xs-1 col-sm-1 hidden-md hidden-lg"></div>
+                                <div class="col-xs-7 col-sm-7 col-md-6">
                                     <div class="row ">
                                         <div class="col-md-12">
                                                         <span><span class="profile-name">Priya Renjini</span>&nbsp;<span
@@ -139,13 +220,15 @@
                                     </div>
                                     <div class="row ">
                                         <div class="col-md-12">
-                                            <div style="margin-top:20px"><a style="font-size:13px;color: red;margin-right: 20px"> Send Interest</a><a style="font-size:13px;color: red"> View Profile</a></div>
+                                            <div style="margin-top:20px"><a
+                                                    style="font-size:13px;color: red;margin-right: 20px"> Send
+                                                Interest</a><a style="font-size:13px;color: red"> View Profile</a></div>
 
                                             <hr/>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3 hidden-xs hidden-sm"></div>
+                                <div class="col-md-2 hidden-xs hidden-sm"></div>
                             </div>
                         </div>
                     </div>
