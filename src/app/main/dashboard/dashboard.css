@@ -46,6 +46,15 @@
 .alert-button{
     border-radius: 10px !important;
 }
+.paginate-message{
+    font-size: 14px;
+    color: red;
+}
+.page-action-navigation i{
+    font-size: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
 
 /*.progress {*/
     /*height: 15px !important;*/
