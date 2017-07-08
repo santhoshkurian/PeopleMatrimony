@@ -217,9 +217,31 @@
                         controller: 'FooterController as vm'
                     }
                 }
-            })
-
-        ;
+            }).state('viewProfile', {
+                url: '/view-profile',
+                views: {
+                    'main@': {
+                        templateUrl: 'app/core/layouts/viewProfileLayout.html'
+                        //controller : 'InboxController as vm'
+                    },
+                    'toolbar@viewProfile': {
+                        templateUrl: 'app/toolbar/dashboard/dbToolbar.html',
+                        controller: 'DashboardToolbarController as vm'
+                    },
+                    'navigation@viewProfile': {
+                        templateUrl: 'app/navigation/view-profile/viewProfileNav.html',
+                        controller: 'DashBoardRightController as vm'
+                    },
+                    'content@viewProfile'         : {
+                        templateUrl: 'app/main/view-profile/viewProfile.html',
+                        controller: 'InboxController as vm'
+                    },
+                    'footer@viewProfile': {
+                        templateUrl: 'app/footer/footer.html',
+                        controller: 'FooterController as vm'
+                    }
+                }
+            });
     }
 
 })();
