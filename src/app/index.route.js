@@ -218,7 +218,7 @@
                     }
                 }
             }).state('viewProfile', {
-                url: '/view-profile',
+                url: '/viewProfile',
                 views: {
                     'main@': {
                         templateUrl: 'app/core/layouts/viewProfileLayout.html'
