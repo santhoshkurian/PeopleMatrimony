@@ -10,240 +10,257 @@
 
                 <div class="col-md-12 ">
                     <!-- BEGIN SAMPLE FORM PORTLET-->
-                    <div class="portlet light bordered">
-                        <div class="portlet-body form">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <span class="profile-completeness-heading"> Profile Completeness</span>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <uib-progressbar class="profile-progress-bar" animate="true" value="dynamic"
-                                                             type="success"><b>10%</b></uib-progressbar>
+                    <div class="col-md-12 ">
+                        <div class="portlet light bordered">
+                            <div class="portlet-body form">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <span class="profile-completeness-heading"> Profile Completeness</span>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <uib-progressbar class="profile-progress-bar" animate="true"
+                                                                 value="dynamic"
+                                                                 type="success"><b>10%</b></uib-progressbar>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <hr/>
-                                <div class="col-md-12">
-                                    <div class="row">
-                                    <div class="col-md-1">
+                                    <hr/>
+                                    <div class="col-md-12 margin-top-10">
+                                        <div class="row">
+                                            <div class="col-md-1 col-sm-1 col-xs-1">
                                         <span ng-class="isFirstMessage()?'notification-navigator-disabled':'notification-navigator'">
                                              <i class="fa fa-angle-left " ng-click="loadPreviosMessage()"></i>
                                         </span>
 
-                                    </div>
-                                    <div class="col-md-10">
-                                        <span class="text-center">
-                                            {{messages[messageIndex]}}
-                                        </span>
+                                            </div>
+                                            <div class="hidden-md hidden-lg col-sm-1 col-xs-1"></div>
+                                            <div class="col-md-10 col-sm-8 col-xs-8">
+                                                <span>
+                                                <b>{{messages[messageIndex]}}</b>
+                                                </span>
 
-                                    </div>
+                                            </div>
+                                            <div class="hidden-md hidden-lg col-sm-1 col-xs-1"></div>
+                                            <div class="col-md-1 col-sm-1 col-xs-1">
                                     <span ng-class="isLastMessage()?'notification-navigator-disabled':'notification-navigator'">
                                              <i class="fa fa-angle-right " ng-click="loadNextMessage()"></i>
                                         </span>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <div class="col-md-12 margin-top-20">
+                                        <div class="text-center">
+                                        <button class="btn red btn-lg alert-button" type="button">
+                                            Add Details
+                                        </button>
+                                            </div>
+                                    </div>
+
+
                                 </div>
                             </div>
 
                         </div>
                     </div>
 
-                </div>
-
-                <div class="col-md-12 ">
-                    <!-- BEGIN SAMPLE FORM PORTLET-->
-                    <div class="portlet light bordered">
-                        <div class="portlet-title">
-                            <div class="caption ">
-                                <span class="caption-subject"> Recently Updated</span>
-                            </div>
-                            <div class="actions">
-                                <div class="btn-group">
-                                    <a class="btn btn-sm green dropdown-toggle" href="javascript:;"
-                                       data-toggle="dropdown"> Actions
-                                        <i class="fa fa-angle-down"></i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="fa fa-pencil"></i> Edit </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="fa fa-trash-o"></i> Delete </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="fa fa-ban"></i> Ban </a>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li>
-                                            <a href="javascript:;"> Make admin </a>
-                                        </li>
-                                    </ul>
+                    <div class="col-md-12 ">
+                        <!-- BEGIN SAMPLE FORM PORTLET-->
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption ">
+                                    <span class="caption-subject"> Recently Updated</span>
+                                </div>
+                                <div class="actions">
+                                    <div class="btn-group">
+                                        <a class="btn btn-sm green dropdown-toggle" href="javascript:;"
+                                           data-toggle="dropdown"> Actions
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <i class="fa fa-pencil"></i> Edit </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <i class="fa fa-trash-o"></i> Delete </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <i class="fa fa-ban"></i> Ban </a>
+                                            </li>
+                                            <li class="divider"></li>
+                                            <li>
+                                                <a href="javascript:;"> Make admin </a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="portlet-body form">
-                            <div class="row ">
-                                <div class=" col-xs-3 col-sm-3 col-md-2 ">
-                                    <img class="imgae-circle"
-                                         ng-src="../assets/images/prof1.jpg"/>
-                                </div>
-                                <div class="col-xs-1 col-sm-1 hidden-md hidden-lg"></div>
-                                <div class="col-xs-7 col-sm-7 col-md-6">
-                                    <div class="row ">
-                                        <div class="col-md-12">
+                            <div class="portlet-body form">
+                                <div class="row ">
+                                    <div class=" col-xs-3 col-sm-3 col-md-2 ">
+                                        <img class="imgae-circle"
+                                             ng-src="../assets/images/prof1.jpg"/>
+                                    </div>
+                                    <div class="col-xs-1 col-sm-1 hidden-md hidden-lg"></div>
+                                    <div class="col-xs-7 col-sm-7 col-md-6">
+                                        <div class="row ">
+                                            <div class="col-md-12">
                                                         <span><span class="profile-name">Priya Renjini</span>&nbsp;<span
                                                                 class="profile-id"> (PD12345)</span></span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row ">
-                                        <div class="col-md-12">
+                                        <div class="row ">
+                                            <div class="col-md-12">
                                                                         <span class="profile-details">
                                                                             25,5.3cms,Tamil,Hindu,Manal Tamilnadu, India
                                                                         </span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row ">
-                                        <div class="col-md-12">
-                                            <div style="margin-top:20px"><a
-                                                    style="font-size:13px;color: red;margin-right: 20px"> Send
-                                                Interest</a><a style="font-size:13px;color: red"> View Profile</a></div>
+                                        <div class="row ">
+                                            <div class="col-md-12">
+                                                <div style="margin-top:20px"><a
+                                                        style="font-size:13px;color: red;margin-right: 20px"> Send
+                                                    Interest</a><a style="font-size:13px;color: red"> View Profile</a>
+                                                </div>
 
-                                            <hr/>
+                                                <hr/>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="col-md-2 hidden-xs hidden-sm"></div>
                                 </div>
-                                <div class="col-md-2 hidden-xs hidden-sm"></div>
+
+
                             </div>
-
-
                         </div>
+
                     </div>
 
-                </div>
-
-                <div class="col-md-12 ">
-                    <!-- BEGIN SAMPLE FORM PORTLET-->
-                    <div class="portlet light bordered">
-                        <div class="portlet-title">
-                            <div class="caption ">
-                                <span class="caption-subject  "> New Matches</span>
-                            </div>
-                            <div class="actions">
-                                <div class="btn-group">
-                                    <a class="btn btn-sm green dropdown-toggle" href="javascript:;"
-                                       data-toggle="dropdown"> Actions
-                                        <i class="fa fa-angle-down"></i>
-                                    </a>
+                    <div class="col-md-12 ">
+                        <!-- BEGIN SAMPLE FORM PORTLET-->
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption ">
+                                    <span class="caption-subject  "> New Matches</span>
+                                </div>
+                                <div class="actions">
+                                    <div class="btn-group">
+                                        <a class="btn btn-sm green dropdown-toggle" href="javascript:;"
+                                           data-toggle="dropdown"> Actions
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="portlet-body form">
-                            <div class="row ">
-                                <div class=" col-xs-3 col-sm-3 col-md-2 ">
-                                    <img class="imgae-circle"
-                                         ng-src="../assets/images/prof1.jpg"/>
-                                </div>
-                                <div class="col-xs-1 col-sm-1 hidden-md hidden-lg"></div>
-                                <div class="col-xs-7 col-sm-7 col-md-6">
-                                    <div class="row ">
-                                        <div class="col-md-12">
+                            <div class="portlet-body form">
+                                <div class="row ">
+                                    <div class=" col-xs-3 col-sm-3 col-md-2 ">
+                                        <img class="imgae-circle"
+                                             ng-src="../assets/images/prof1.jpg"/>
+                                    </div>
+                                    <div class="col-xs-1 col-sm-1 hidden-md hidden-lg"></div>
+                                    <div class="col-xs-7 col-sm-7 col-md-6">
+                                        <div class="row ">
+                                            <div class="col-md-12">
                                                         <span><span class="profile-name">Priya Renjini</span>&nbsp;<span
                                                                 class="profile-id"> (PD12345)</span></span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row ">
-                                        <div class="col-md-12">
+                                        <div class="row ">
+                                            <div class="col-md-12">
                                                                         <span class="profile-details">
                                                                             25,5.3cms,Tamil,Hindu,Manal Tamilnadu, India
                                                                         </span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row ">
-                                        <div class="col-md-12">
-                                            <div style="margin-top:20px"><a
-                                                    style="font-size:13px;color: red;margin-right: 20px"> Send
-                                                Interest</a><a style="font-size:13px;color: red"> View Profile</a></div>
+                                        <div class="row ">
+                                            <div class="col-md-12">
+                                                <div style="margin-top:20px"><a
+                                                        style="font-size:13px;color: red;margin-right: 20px"> Send
+                                                    Interest</a><a style="font-size:13px;color: red"> View Profile</a>
+                                                </div>
 
-                                            <hr/>
+                                                <hr/>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="col-md-2 hidden-xs hidden-sm"></div>
                                 </div>
-                                <div class="col-md-2 hidden-xs hidden-sm"></div>
+
+
                             </div>
-
-
                         </div>
+
                     </div>
 
-                </div>
-
-                <div class="col-md-12 ">
-                    <!-- BEGIN SAMPLE FORM PORTLET-->
-                    <div class="portlet light bordered">
-                        <div class="portlet-title">
-                            <div class="caption ">
-                                <span class="caption-subject  ">Who viewed my Profile</span>
-                            </div>
-                            <div class="actions">
-                                <div class="btn-group">
-                                    <a class="btn btn-sm green dropdown-toggle" href="javascript:;"
-                                       data-toggle="dropdown"> Actions
-                                        <i class="fa fa-angle-down"></i>
-                                    </a>
+                    <div class="col-md-12 ">
+                        <!-- BEGIN SAMPLE FORM PORTLET-->
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption ">
+                                    <span class="caption-subject  ">Who viewed my Profile</span>
+                                </div>
+                                <div class="actions">
+                                    <div class="btn-group">
+                                        <a class="btn btn-sm green dropdown-toggle" href="javascript:;"
+                                           data-toggle="dropdown"> Actions
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="portlet-body form">
-                            <div class="row ">
-                                <div class=" col-xs-3 col-sm-3 col-md-2 ">
-                                    <img class="imgae-circle"
-                                         ng-src="../assets/images/prof1.jpg"/>
-                                </div>
-                                <div class="col-xs-1 col-sm-1 hidden-md hidden-lg"></div>
-                                <div class="col-xs-7 col-sm-7 col-md-6">
-                                    <div class="row ">
-                                        <div class="col-md-12">
+                            <div class="portlet-body form">
+                                <div class="row ">
+                                    <div class=" col-xs-3 col-sm-3 col-md-2 ">
+                                        <img class="imgae-circle"
+                                             ng-src="../assets/images/prof1.jpg"/>
+                                    </div>
+                                    <div class="col-xs-1 col-sm-1 hidden-md hidden-lg"></div>
+                                    <div class="col-xs-7 col-sm-7 col-md-6">
+                                        <div class="row ">
+                                            <div class="col-md-12">
                                                         <span><span class="profile-name">Priya Renjini</span>&nbsp;<span
                                                                 class="profile-id"> (PD12345)</span></span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row ">
-                                        <div class="col-md-12">
+                                        <div class="row ">
+                                            <div class="col-md-12">
                                                                         <span class="profile-details">
                                                                             25,5.3cms,Tamil,Hindu,Manal Tamilnadu, India
                                                                         </span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row ">
-                                        <div class="col-md-12">
-                                            <div style="margin-top:20px"><a
-                                                    style="font-size:13px;color: red;margin-right: 20px"> Send
-                                                Interest</a><a style="font-size:13px;color: red"> View Profile</a></div>
+                                        <div class="row ">
+                                            <div class="col-md-12">
+                                                <div style="margin-top:20px"><a
+                                                        style="font-size:13px;color: red;margin-right: 20px"> Send
+                                                    Interest</a><a style="font-size:13px;color: red"> View Profile</a>
+                                                </div>
 
-                                            <hr/>
+                                                <hr/>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="col-md-2 hidden-xs hidden-sm"></div>
                                 </div>
-                                <div class="col-md-2 hidden-xs hidden-sm"></div>
                             </div>
                         </div>
+
                     </div>
 
                 </div>
+                <!-- END PAGE TITLE -->
 
             </div>
-            <!-- END PAGE TITLE -->
+            <!-- END PAGE HEAD-->
+            <!-- BEGIN PAGE BREADCRUMB -->
 
+
+            <!-- END PAGE BASE CONTENT -->
         </div>
-        <!-- END PAGE HEAD-->
-        <!-- BEGIN PAGE BREADCRUMB -->
-
-
-        <!-- END PAGE BASE CONTENT -->
+        <!-- END CONTENT BODY -->
     </div>
-    <!-- END CONTENT BODY -->
-</div>
