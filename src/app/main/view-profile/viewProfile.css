@@ -71,3 +71,17 @@ height: 50px;
     background-color: #f4f4f4;
     font-size: 18px;
 }
+.vp-main-action .vp-main-link2{
+    padding: 20px;
+    border: 1px solid #eef1f5;
+    background-color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    color: #777777;
+
+}
+.vp-main-action .active-link{
+    color: #ca0f03;
+    border-bottom: 4px solid #ca0f03;
+
+}
