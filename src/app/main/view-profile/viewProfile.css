@@ -43,6 +43,19 @@ font-size: 18px}
 color: #363636;
 font-size: 16px}
 
+.vp-sub-action{
+    font-size: 27px;
+    text-align: center;
+    font-weight: 600;
+    margin: 20px;
+}
+.vp-sub-action button{
+width: 100px;
+height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
 .vp-image{
     width: 230px;height: 280px
 }
@@ -51,4 +64,10 @@ font-size: 16px}
     margin-right: -20px!important;
     margin-bottom: -30px!important;
     margin-top: 10px!important;
+}
+.vp-main-action .vp-main-link{
+    padding: 20px;
+    border: 1px solid #eef1f5;
+    background-color: #f4f4f4;
+    font-size: 18px;
 }
