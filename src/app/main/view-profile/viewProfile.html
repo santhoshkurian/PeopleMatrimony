@@ -12,7 +12,7 @@
 
                     <div class="col-md-12 ">
 
-                        <div class="portlet light bordered">
+                        <div class="portlet light border-rounded">
                             <div class="portlet-title">
 
                                 <div class="caption ">
@@ -120,7 +120,7 @@
 
                             <div class=" row vp-main-action">
                                 <div style="text-transform: uppercase;text-align: center;">
-                                    <div class="col-md-6 vp-main-link2 active-link"
+                                    <div class="col-md-6 vp-main-link2 active-link" ng-click="selectType()"
                                             > Personal Information
                                     </div>
                                     <div class="col-md-6 vp-main-link2"> Parter Preferences
@@ -134,112 +134,251 @@
                         </div>
 
 
-                        <div class="portlet light bordered">
+                        <div class="portlet light border-rounded">
                             <div class="portlet-title">
                                 <div class="caption ">
-                                    <span class="caption-subject  "> New Matches</span>
+                                    <!--<i class="icon-settings font-red-sunglo"></i>-->
+                                    <span class=" uppercase"><i class="fa fa-pencil icon-color"></i>&nbsp; Few words about my son</span>
                                 </div>
-                                <div class="actions">
-                                    <div class="row">
-                                        <div class="col-md-12 page-action-navigation">
 
-                                            <span class="paginate-message"> View all</span>
-                                            <i class="fa fa-angle-left "></i>
-                                            <i class="fa fa-angle-right "></i>
-
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             <div class="portlet-body form">
-                                <div class="row ">
-                                    <div class=" col-xs-3 col-sm-3 col-md-2 ">
-                                        <img class="imgae-circle"
-                                             ng-src="../assets/images/prof1.jpg"/>
-                                    </div>
-                                    <div class="col-xs-1 col-sm-1 hidden-md hidden-lg"></div>
-                                    <div class="col-xs-7 col-sm-7 col-md-6">
-                                        <div class="row ">
-                                            <div class="col-md-12">
-                                                        <span><span class="profile-name">Priya Renjini</span>&nbsp;<span
-                                                                class="profile-id"> (PD12345)</span></span>
-                                            </div>
-                                        </div>
-                                        <div class="row ">
-                                            <div class="col-md-12">
-                                                                        <span class="profile-details">
-                                                                            25,5.3cms,Tamil,Hindu,Manal Tamilnadu, India
-                                                                        </span>
-                                            </div>
-                                        </div>
-                                        <div class="row ">
-                                            <div class="col-md-12">
-                                                <div style="margin-top:20px"><a
-                                                        style="font-size:13px;color: red;margin-right: 20px"> Send
-                                                    Interest</a><a style="font-size:13px;color: red"> View Profile</a>
-                                                </div>
-
-                                                <hr/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2 hidden-xs hidden-sm"></div>
-                                </div>
-
+                                <p> My son is a cam and understanding boy.He respects traditional values and also has modern outlook. He loves reading
+                                    books and hearing music.</p>
 
                             </div>
                         </div>
 
-                        <div class="portlet light bordered">
+                        <div class="portlet light border-rounded">
                             <div class="portlet-title">
                                 <div class="caption ">
-                                    <span class="caption-subject  ">Who viewed my Profile</span>
+                                    <span class=" uppercase"><i class=" fa fa-clone icon-color"></i> &nbsp;Basic Details</span>
                                 </div>
-                                <div class="actions">
-                                    <div class="row">
-                                        <div class="col-md-12 page-action-navigation">
 
-                                            <span class="paginate-message"> View all</span>
-                                            <i class="fa fa-angle-left "></i>
-                                            <i class="fa fa-angle-right "></i>
+                            </div>
+                            <div class="portlet-body form  form-horizontal">
 
-                                        </div>
+                                <div class="form-group">
+
+                                    <div class="col-md-4">
+                                        <label class="font-weight-head "> Age</label>
+                                        <p class="details">28 Yrs</p>
+
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label class=" font-weight-head  "> Height</label>
+                                        <p class="details ">5 ft 11 in/180 cms</p>
+
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label class=" font-weight-head  "> Weight</label>
+                                        <p class="details ">80 kg</p>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class=" font-weight-head  "> Body Type</label>
+                                        <p class="details ">Average</p>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class=" font-weight-head  "> Complexion</label>
+                                        <p class="details ">Wheatish Brown</p>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class=" font-weight-head  "> Physical Type</label>
+                                        <p class="details ">Normal</p>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class=" font-weight-head  "> Mother Tongue</label>
+                                        <p class="details ">Malayalam</p>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class=" font-weight-head  "> Marital Status</label>
+                                        <p class="details ">Never Married</p>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class=" font-weight-head  "> Eating Habits</label>
+                                        <p class="details ">Non veg</p>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class=" font-weight-head  "> Drinking Habits</label>
+                                        <p class="details ">Non Drinker</p>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class=" font-weight-head  "> Somking Habits</label>
+                                        <p class="details ">Non Smoker</p>
+
                                     </div>
                                 </div>
                             </div>
-                            <div class="portlet-body form">
-                                <div class="row ">
-                                    <div class=" col-xs-3 col-sm-3 col-md-2 ">
-                                        <img class="imgae-circle"
-                                             ng-src="../assets/images/prof1.jpg"/>
-                                    </div>
-                                    <div class="col-xs-1 col-sm-1 hidden-md hidden-lg"></div>
-                                    <div class="col-xs-7 col-sm-7 col-md-6">
-                                        <div class="row ">
-                                            <div class="col-md-12">
-                                                        <span><span class="profile-name">Priya Renjini</span>&nbsp;<span
-                                                                class="profile-id"> (PD12345)</span></span>
-                                            </div>
-                                        </div>
-                                        <div class="row ">
-                                            <div class="col-md-12">
-                                                                        <span class="profile-details">
-                                                                            25,5.3cms,Tamil,Hindu,Manal Tamilnadu, India
-                                                                        </span>
-                                            </div>
-                                        </div>
-                                        <div class="row ">
-                                            <div class="col-md-12">
-                                                <div style="margin-top:20px"><a
-                                                        style="font-size:13px;color: red;margin-right: 20px"> Send
-                                                    Interest</a><a style="font-size:13px;color: red"> View Profile</a>
-                                                </div>
+                        </div>
 
-                                                <hr/>
-                                            </div>
-                                        </div>
+                        <div class="portlet light border-rounded">
+                            <div class="portlet-title">
+                                <div class="caption ">
+                                    <span class=" uppercase"><i class=" fa fa-clone icon-color"></i> &nbsp;Religious Information</span>
+                                </div>
+
+                            </div>
+                            <div class="portlet-body form  form-horizontal">
+
+                                <div class="form-group">
+
+                                    <div class="col-md-4">
+                                        <label class="font-weight-head "> Religion</label>
+                                        <p class="details">Hindu</p>
+
                                     </div>
-                                    <div class="col-md-2 hidden-xs hidden-sm"></div>
+
+                                    <div class="col-md-4">
+                                        <label class=" font-weight-head  "> Caste /Sub caste</label>
+                                        <p class="details ">Nadar</p>
+
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label class=" font-weight-head  "> Gothram</label>
+                                        <p class="details ">Not available</p>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class=" font-weight-head  "> Star / Rassi</label>
+                                        <p class="details ">Not available</p>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class=" font-weight-head  "> Chevvai Dosham / Rassi</label>
+                                        <p class="details ">No</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portlet light border-rounded">
+                            <div class="portlet-title">
+                                <div class="caption ">
+                                    <span class=" uppercase"><i class=" fa fa-mortar-board icon-color"></i> &nbsp;Professional Information</span>
+                                </div>
+
+                            </div>
+                            <div class="portlet-body form  form-horizontal">
+
+                                <div class="form-group">
+
+                                    <div class="col-md-4">
+                                        <label class="font-weight-head "> Education</label>
+                                        <p class="details">BE</p>
+
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label class=" font-weight-head  "> Educational in Detail</label>
+                                        <p class="details ">Not available</p>
+
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label class=" font-weight-head  "> Occupation</label>
+                                        <p class="details ">Web Developer</p>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class=" font-weight-head  "> Employed in</label>
+                                        <p class="details ">Not available</p>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class=" font-weight-head  "> Annaul Income</label>
+                                        <p class="details ">Rs 7,00,000</p>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="portlet light border-rounded">
+                            <div class="portlet-title">
+                                <div class="caption ">
+                                    <span class=" uppercase"><i class=" fa fa-users icon-color"></i> &nbsp;Family Details</span>
+                                </div>
+
+                            </div>
+                            <div class="portlet-body form  form-horizontal">
+
+                                <div class="form-group">
+
+                                    <div class="col-md-4">
+                                        <label class="font-weight-head "> Family Values</label>
+                                        <p class="details">Traditional</p>
+
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label class=" font-weight-head  "> Ancestral Origin</label>
+                                        <p class="details ">Not specified</p>
+
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label class=" font-weight-head  "> Family Type</label>
+                                        <p class="details ">Nuclear</p>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class=" font-weight-head  "> No of Brother(s)</label>
+                                        <p class="details ">Non</p>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class=" font-weight-head  "> Number of sister(s) </label>
+                                        <p class="details ">1 / Not married</p>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class=" font-weight-head  "> Family Status</label>
+                                        <p class="details ">Upper Middle Class</p>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class=" font-weight-head  "> Father's Status </label>
+                                        <p class="details ">Bussinesman</p>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class=" font-weight-head  "> Mother's Status </label>
+                                        <p class="details ">Home maker</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portlet light border-rounded">
+                            <div class="portlet-title">
+                                <div class="caption ">
+                                    <span class=" uppercase"><i class=" fa fa-users icon-color"></i> &nbsp; About My Family</span>
+                                </div>
+
+                            </div>
+                            <div class="portlet-body form  form-horizontal">
+
+                                <div class="form-group">
+
+                                    <div class="col-md-12">
+                                        <p class="details">My son is a cam and understanding boy.He respects traditional values and also has modern outlook. He loves reading
+                                            books and hearing music.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

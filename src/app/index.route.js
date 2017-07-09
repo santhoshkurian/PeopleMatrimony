@@ -234,7 +234,7 @@
                     },
                     'content@viewProfile'         : {
                         templateUrl: 'app/main/view-profile/viewProfile.html',
-                        controller: 'InboxController as vm'
+                        controller: 'ViewProfileController as vm'
                     },
                     'footer@viewProfile': {
                         templateUrl: 'app/footer/footer.html',
