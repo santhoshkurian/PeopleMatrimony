@@ -120,10 +120,12 @@
 
                             <div class=" row vp-main-action">
                                 <div style="text-transform: uppercase;text-align: center;">
-                                    <div class="col-md-6 vp-main-link2 active-link" ng-click="selectType()"
+                                    <div class="col-md-6 vp-main-link2 "
+                                         ng-class="{'active-link': viewType == 'personal'}" ng-click="selectType('personal')"
                                             > Personal Information
                                     </div>
-                                    <div class="col-md-6 vp-main-link2"> Parter Preferences
+                                    <div class="col-md-6 vp-main-link2" ng-class="{'active-link': viewType == 'partner'}"
+                                         ng-click="selectType('partner')"> Parter Preferences
                                     </div>
 
 

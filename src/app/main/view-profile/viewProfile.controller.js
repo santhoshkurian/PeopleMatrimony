@@ -7,8 +7,11 @@
 
     /** @ngInject */
     function ViewProfileController($scope) {
-        function selectType(){
-            console.log("check");
+
+        $scope.viewType = 'personal';
+        $scope.selectType = selectType;
+        function selectType(type){
+            $scope.viewType = type;
         }
     }
 })();
