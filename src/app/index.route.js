@@ -182,7 +182,7 @@
                     },
                     'navigation@matches': {
                         templateUrl: 'app/navigation/matches/matchesNavigation.html',
-                        controller: 'InboxNavController as vm'
+                        controller: 'MatchesNavigationController as vm'
                     },
                     'content@matches': {
                         templateUrl: 'app/main/matches/matches.html',
