@@ -1,0 +1,87 @@
+
+@media (min-width: 992px){
+    .page-content-wrapper1{
+        width: 90%!important;
+
+    }
+
+    .page-content1 {
+        margin-left: -25px;
+        margin-top: 0;
+        min-height: 600px;
+        padding: 10px 0 0 20px;
+    }
+    .side-bar-right{
+        width: 38%!important;
+    }
+
+    .nav-header-profile {
+        background-color: white !important;
+        height: 37px !important;
+        padding: 13px 14px 9px 30px !important;
+        font-size: 18px;
+    }
+}
+
+.vp-main{
+    font-size: 22px;
+    font-weight: bold;
+}
+.vp-main-sub{
+    font-size: 11px;
+}
+
+.profile-table tbody tr td{
+    padding: 6px;
+}
+
+.profile-table tbody tr .first-row{
+color: lightblue;
+font-size: 18px}
+
+.profile-table tbody tr .third-row{
+color: #363636;
+font-size: 16px}
+
+.vp-sub-action{
+    font-size: 27px;
+    text-align: center;
+    font-weight: 600;
+    margin: 20px;
+}
+.vp-sub-action button{
+width: 100px;
+height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.vp-image{
+    width: 230px;height: 280px
+}
+.vp-main-action{
+    margin-left: -20px!important;
+    margin-right: -20px!important;
+    margin-bottom: -30px!important;
+    margin-top: 10px!important;
+}
+.vp-main-action .vp-main-link{
+    padding: 20px;
+    border: 1px solid #eef1f5;
+    background-color: #f4f4f4;
+    font-size: 18px;
+}
+.vp-main-action .vp-main-link2{
+    padding: 20px;
+    border: 1px solid #eef1f5;
+    background-color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    color: #777777;
+
+}
+.vp-main-action .active-link{
+    color: #ca0f03;
+    border-bottom: 4px solid #ca0f03;
+
+}

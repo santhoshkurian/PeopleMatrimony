@@ -172,6 +172,54 @@
                 resolve  : {
 
                 }
+            }).state('messages.pending', {
+                url      : '/pending',
+                views    : {
+                    'content@messages'         : {
+                        templateUrl: 'app/main/message/inbox/pending/messagePending.html',
+                        controller: 'MessagePendingController as vm'
+                    }
+                ,
+                'navigation@messages': {
+                    templateUrl: 'app/navigation/message/inbox/inboxNavigation.html',
+                    controller: 'InboxNavController as vm'
+                }
+                },
+                resolve  : {
+
+                }
+            }).state('messages.accept', {
+                url      : '/accept',
+                views    : {
+                    'content@messages'         : {
+                        templateUrl: 'app/main/message/inbox/accepted/messageAccepted.html',
+                        controller: 'MessageAcceptedController as vm'
+                    }
+                ,
+                'navigation@messages': {
+                    templateUrl: 'app/navigation/message/inbox/inboxNavigation.html',
+                    controller: 'InboxNavController as vm'
+                }
+                },
+                resolve  : {
+
+                }
+            }).state('messages.declined', {
+                url      : '/declined',
+                views    : {
+                    'content@messages'         : {
+                        templateUrl: 'app/main/message/inbox/declined/messageDeclined.html',
+                        controller: 'MessageDeclinedController as vm'
+                    }
+                ,
+                'navigation@messages': {
+                    templateUrl: 'app/navigation/message/inbox/inboxNavigation.html',
+                    controller: 'InboxNavController as vm'
+                }
+                },
+                resolve  : {
+
+                }
             });
 
     }
