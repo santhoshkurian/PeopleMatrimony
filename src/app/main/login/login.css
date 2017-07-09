@@ -56,6 +56,12 @@
     font-size: 11px;
     color: #363636 !important;
 }
+.font-weight-head{
+     font-size: 12px;
+    color: #838383 !important;
+}
+.details{ font-size: 14px;
+    color: #373737 !important;}
 
 .border-rounded-top{
     border-radius: 4px 4px 0px 0px !important;
@@ -80,3 +86,5 @@
     font-weight: 300 !important;
 }
 .margn{margin-top: -2%}
+.icon-color{color: #4cbcac}
+/*.margin-right-buttons{margin-right: 5px;}*/
