@@ -268,6 +268,27 @@
                         controller: 'FooterController as vm'
                     }
                 }
+            }).state('managephoto', {
+                url: '/managephoto',
+                views: {
+                    'main@': {
+                        templateUrl: 'app/core/layouts/managePhotoLayout.html'
+                        //controller : 'InboxController as vm'
+                    },
+                    'toolbar@managephoto': {
+                        templateUrl: 'app/toolbar/managephoto/managephotoToolbar.html',
+                        controller: 'ManagePhotoController as vm'
+                    },
+                    'content@managephoto': {
+                        templateUrl: 'app/main/managephotos/managephoto.html',
+                        controller: 'ManagePhotoController as vm'
+                    },
+
+                    'footer@managephoto': {
+                        templateUrl: 'app/footer/footer.html',
+                        controller: 'FooterController as vm'
+                    }
+                }
             });
     }
 
