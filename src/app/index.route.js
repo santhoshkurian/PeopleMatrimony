@@ -241,6 +241,33 @@
                         controller: 'FooterController as vm'
                     }
                 }
+            }).state('recomendation', {
+                url: '/recomendation',
+                views: {
+                    'main@': {
+                        templateUrl: 'app/core/layouts/recomendation.html'
+                        //controller : 'InboxController as vm'
+                    },
+                    'toolbar@recomendation': {
+                        templateUrl: 'app/toolbar/dashboard/dbToolbar.html',
+                        controller: 'DashboardToolbarController as vm'
+                    },
+                    'content@recomendation': {
+                        templateUrl: 'app/main/recomendation/recomendation.html',
+                        controller: 'ReconmendationController as vm'
+                    },
+                    'content-top@recomendation': {
+                        templateUrl: 'app/main/recomendation/recomendationTop.html',
+                        controller: 'ReconmendationController as vm'
+                    },
+                    'navigation@recomendation': {
+                        templateUrl: 'app/navigation/recomendation/recomendation.html'
+                    },
+                    'footer@recomendation': {
+                        templateUrl: 'app/footer/footer.html',
+                        controller: 'FooterController as vm'
+                    }
+                }
             });
     }
 

@@ -1,0 +1,658 @@
+<!--<div class="page-content-wrapper page-content-wrapper1">-->
+    <!--&lt;!&ndash; BEGIN CONTENT BODY &ndash;&gt;-->
+    <!--<div class="page-content1">-->
+        <!--&lt;!&ndash; BEGIN PAGE HEAD&ndash;&gt;-->
+        <!--<div class="page-head">-->
+
+            <!-- BEGIN PAGE BASE CONTENT -->
+            <!--<div class="row">-->
+
+                <!--<div class="col-md-12 ">-->
+                    <!--<div class="col-md-12 ">-->
+
+                    <!--<div class="portlet light border-rounded">-->
+                    <!--</div>-->
+                        <!--</div>-->
+
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="row">-->
+
+                <!--<div class="col-md-12 ">-->
+
+                    <!--<div class="col-md-12 ">-->
+
+                        <div class="portlet light border-rounded">
+                            <div class="portlet-title">
+
+                                <div class="caption ">
+                                    <span class="vp-main"> Priya Rajani</span><br>
+                                    <span class="vp-main-sub"> Profile created by parents</span>
+                                </div>
+
+                                <div class="actions" style="font-size: 20px">
+                                    <i class="fa fa-ellipsis-v"></i>
+
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div class="row ">
+                                    <div class=" col-xs-12 col-sm-6 col-md-4 ">
+                                        <img class="vp-image" ng-src="../assets/images/profile2.jpg"/>
+                                    </div>
+                                    <div class="col-xs-7 col-sm-6 col-md-6">
+                                        <div class="row " style="">
+                                            <table class="profile-table">
+                                                <tbody style="padding: 20px!important;">
+                                                <tr>
+                                                    <td width="10%"></td>
+                                                    <td width="5%"></td>
+                                                    <td width="75%"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="first-row"><i class="icon-user-follow"></i></td>
+                                                    <td class="second-row">|</td>
+                                                    <td class="third-row">22 yrs,5`7</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="first-row"><i class="icon-book-open"></i></td>
+                                                    <td class="second-row">|</td>
+                                                    <td class="third-row">Tamil</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="first-row"><i class="icon-users"></i></td>
+                                                    <td class="second-row">|</td>
+                                                    <td class="third-row">Vaniyakullak Kshathriya</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="first-row"><i class="fa fa-star"></i></td>
+                                                    <td class="second-row">|</td>
+                                                    <td class="third-row">Swathi</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="first-row"><i class="fa fa-graduation-cap"></i></td>
+                                                    <td class="second-row">|</td>
+                                                    <td class="third-row">Btech</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="first-row"><i class="fa fa-briefcase"></i></td>
+                                                    <td class="second-row">|</td>
+                                                    <td class="third-row">Software engineer</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="first-row"><i class="fa fa-map-marker"></i></td>
+                                                    <td class="second-row">|</td>
+                                                    <td class="third-row">Bangalore</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-2 hidden-xs hidden-sm"></div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 vp-sub-action">
+                                        <span>Connect her with ?</span>
+                                        <button class="btn red">YES</button>
+                                        <button class="btn ">SKIP</button>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class=" row vp-main-action">
+                                <div style="text-transform: uppercase;text-align: center;">
+                                    <div class="col-md-4 vp-main-link"
+                                            ><i
+                                            class="fa fa-star-o"></i> Shortlist
+                                    </div>
+                                    <div class="col-md-4 vp-main-link"
+                                            >
+                                        <i class="fa fa-phone"></i> Call now
+                                    </div>
+                                    <div class="col-md-4 vp-main-link"
+                                            ><i
+                                            class="fa fa-commenting-o"></i> Chat now
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="portlet light "
+                             style="padding-top: 0px">
+
+                            <div class=" row vp-main-action">
+                                <div style="text-transform: uppercase;text-align: center;">
+                                    <div class="col-md-6 vp-main-link2 "
+                                         ng-class="{'active-link': viewType == 'personal'}"
+                                         ng-click="selectType('personal')"
+                                            > Personal Information
+                                    </div>
+                                    <div class="col-md-6 vp-main-link2"
+                                         ng-class="{'active-link': viewType == 'partner'}"
+                                         ng-click="selectType('partner')"> Parter Preferences
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div ng-if="viewType == 'personal'">
+                            <div class="portlet light border-rounded">
+                                <div class="portlet-title">
+                                    <div class="caption ">
+                                        <!--<i class="icon-settings font-red-sunglo"></i>-->
+                                        <span class=" uppercase"><i class="fa fa-pencil icon-color"></i>&nbsp; Few words about my son</span>
+                                    </div>
+
+                                </div>
+                                <div class="portlet-body form">
+                                    <p> My son is a cam and understanding boy.He respects traditional values and also
+                                        has modern outlook. He loves reading
+                                        books and hearing music.</p>
+
+                                </div>
+                            </div>
+
+                            <div class="portlet light border-rounded">
+                                <div class="portlet-title">
+                                    <div class="caption ">
+                                        <span class=" uppercase"><i class=" fa fa-clone icon-color"></i> &nbsp;Basic Details</span>
+                                    </div>
+
+                                </div>
+                                <div class="portlet-body form  form-horizontal">
+
+                                    <div class="form-group">
+
+                                        <div class="col-md-4">
+                                            <label class="font-weight-head "> Age</label>
+
+                                            <p class="details">28 Yrs</p>
+
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label class=" font-weight-head  "> Height</label>
+
+                                            <p class="details ">5 ft 11 in/180 cms</p>
+
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label class=" font-weight-head  "> Weight</label>
+
+                                            <p class="details ">80 kg</p>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class=" font-weight-head  "> Body Type</label>
+
+                                            <p class="details ">Average</p>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class=" font-weight-head  "> Complexion</label>
+
+                                            <p class="details ">Wheatish Brown</p>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class=" font-weight-head  "> Physical Type</label>
+
+                                            <p class="details ">Normal</p>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class=" font-weight-head  "> Mother Tongue</label>
+
+                                            <p class="details ">Malayalam</p>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class=" font-weight-head  "> Marital Status</label>
+
+                                            <p class="details ">Never Married</p>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class=" font-weight-head  "> Eating Habits</label>
+
+                                            <p class="details ">Non veg</p>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class=" font-weight-head  "> Drinking Habits</label>
+
+                                            <p class="details ">Non Drinker</p>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class=" font-weight-head  "> Somking Habits</label>
+
+                                            <p class="details ">Non Smoker</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portlet light border-rounded">
+                                <div class="portlet-title">
+                                    <div class="caption ">
+                                        <span class=" uppercase"><i class=" fa fa-clone icon-color"></i> &nbsp;Religious Information</span>
+                                    </div>
+
+                                </div>
+                                <div class="portlet-body form  form-horizontal">
+
+                                    <div class="form-group">
+
+                                        <div class="col-md-4">
+                                            <label class="font-weight-head "> Religion</label>
+
+                                            <p class="details">Hindu</p>
+
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label class=" font-weight-head  "> Caste /Sub caste</label>
+
+                                            <p class="details ">Nadar</p>
+
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label class=" font-weight-head  "> Gothram</label>
+
+                                            <p class="details ">Not available</p>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class=" font-weight-head  "> Star / Rassi</label>
+
+                                            <p class="details ">Not available</p>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class=" font-weight-head  "> Chevvai Dosham / Rassi</label>
+
+                                            <p class="details ">No</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portlet light border-rounded">
+                                <div class="portlet-title">
+                                    <div class="caption ">
+                                        <span class=" uppercase"><i class=" fa fa-mortar-board icon-color"></i> &nbsp;Professional Information</span>
+                                    </div>
+
+                                </div>
+                                <div class="portlet-body form  form-horizontal">
+
+                                    <div class="form-group">
+
+                                        <div class="col-md-4">
+                                            <label class="font-weight-head "> Education</label>
+
+                                            <p class="details">BE</p>
+
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label class=" font-weight-head  "> Educational in Detail</label>
+
+                                            <p class="details ">Not available</p>
+
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label class=" font-weight-head  "> Occupation</label>
+
+                                            <p class="details ">Web Developer</p>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class=" font-weight-head  "> Employed in</label>
+
+                                            <p class="details ">Not available</p>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class=" font-weight-head  "> Annaul Income</label>
+
+                                            <p class="details ">Rs 7,00,000</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="portlet light border-rounded">
+                                <div class="portlet-title">
+                                    <div class="caption ">
+                                        <span class=" uppercase"><i class=" fa fa-users icon-color"></i> &nbsp;Family Details</span>
+                                    </div>
+
+                                </div>
+                                <div class="portlet-body form  form-horizontal">
+
+                                    <div class="form-group">
+
+                                        <div class="col-md-4">
+                                            <label class="font-weight-head "> Family Values</label>
+
+                                            <p class="details">Traditional</p>
+
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label class=" font-weight-head  "> Ancestral Origin</label>
+
+                                            <p class="details ">Not specified</p>
+
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label class=" font-weight-head  "> Family Type</label>
+
+                                            <p class="details ">Nuclear</p>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class=" font-weight-head  "> No of Brother(s)</label>
+
+                                            <p class="details ">Non</p>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class=" font-weight-head  "> Number of sister(s) </label>
+
+                                            <p class="details ">1 / Not married</p>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class=" font-weight-head  "> Family Status</label>
+
+                                            <p class="details ">Upper Middle Class</p>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class=" font-weight-head  "> Father's Status </label>
+
+                                            <p class="details ">Bussinesman</p>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class=" font-weight-head  "> Mother's Status </label>
+
+                                            <p class="details ">Home maker</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portlet light border-rounded">
+                                <div class="portlet-title">
+                                    <div class="caption ">
+                                        <span class=" uppercase"><i class=" fa fa-users icon-color"></i> &nbsp; About My Family</span>
+                                    </div>
+
+                                </div>
+                                <div class="portlet-body form  form-horizontal">
+
+                                    <div class="form-group">
+
+                                        <div class="col-md-12">
+                                            <p class="details">My son is a cam and understanding boy.He respects
+                                                traditional values and also has modern outlook. He loves reading
+                                                books and hearing music.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div ng-if="viewType == 'partner'">
+                            <div class="portlet light border-rounded">
+                                <div class="portlet-title">
+                                    <div class="caption ">
+                                        <!--<i class="icon-settings font-red-sunglo"></i>-->
+                                        <span class=" uppercase"><i class="fa fa-pencil icon-color"></i>&nbsp; Her Partenr preference</span>
+                                    </div>
+
+                                </div>
+                                <div class="portlet-body form">
+                                    <div class="row">
+                                        <div class="col-md-4"></div>
+                                        <div class="col-md-4 page">
+                                            <div class="c100 p50 p12" style="border-radius: 50%!important;">
+                                                <span>100%</span>
+                                                <div class="slice">
+                                                    <div class="bar"></div>
+                                                    <div class="fill"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4"></div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="portlet-title">
+                                    <div class="caption ">
+                                        <!--<i class="icon-settings font-red-sunglo"></i>-->
+                                        <span class=" uppercase"><i class="fa fa-pencil icon-color"></i>&nbsp; Basic Preference</span>
+                                    </div>
+
+                                </div>
+                                <div class="portlet-body form">
+                                    <div class="table-scrollable table-scrollable-borderless">
+                                        <table class="table table-hover table-light">
+                                            <tbody>
+                                            <tr>
+                                                <td> Age </td>
+                                                <td> 28 Yrs </td>
+                                                <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> Height </td>
+                                                <td> 5 Ft 11 in/180 cms </td>
+                                                <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> Physical Type </td>
+                                                <td> Normal </td>
+                                                <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> Mother Tongue </td>
+                                                <td> Malayalam </td>
+                                                <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> Marital Status </td>
+                                                <td> Never Married </td>
+                                                <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> Eating Habits </td>
+                                                <td> Non Veg </td>
+                                                <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> Drinking Habits </td>
+                                                <td> Non Drinker </td>
+                                                <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> Smoking Habits </td>
+                                                <td> Non Smoker </td>
+                                                <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="portlet-title">
+                                    <div class="caption ">
+                                        <!--<i class="icon-settings font-red-sunglo"></i>-->
+                                        <span class=" uppercase"><i class="fa fa-pencil icon-color"></i>&nbsp; Religious Preference</span>
+                                    </div>
+
+                                </div>
+                                <div class="portlet-body form">
+                                    <div class="table-scrollable table-scrollable-borderless">
+                                        <table class="table table-hover table-light">
+                                            <tbody>
+                                            <tr>
+                                                <td> Religion </td>
+                                                <td> Hindu </td>
+                                                <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> Caste </td>
+                                                <td> Gramini </td>
+                                                <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> Sub Caste </td>
+                                                <td> Any Sub Caste  </td>
+                                                <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td> Gothram </td>
+                                                <td> Any</td>
+                                                <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> Star </td>
+                                                <td> Aswini </td>
+                                                <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
+                                            </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="portlet-title">
+                                    <div class="caption ">
+                                        <!--<i class="icon-settings font-red-sunglo"></i>-->
+                                        <span class=" uppercase">
+                                            <i class="fa fa-pencil icon-color"></i>&nbsp; Education & Profession Preference</span>
+                                    </div>
+
+                                </div>
+                                <div class="portlet-body form">
+                                    <div class="table-scrollable table-scrollable-borderless">
+                                        <table class="table table-hover table-light">
+                                            <tbody>
+                                            <tr>
+                                                <td> Education </td>
+                                                <td> Any Education </td>
+                                                <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> Occupation </td>
+                                                <td> Any Occupation </td>
+                                                <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> Annual Income </td>
+                                                <td> Any Annual Income  </td>
+                                                <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
+                                            </tr>
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="portlet-title">
+                                    <div class="caption ">
+                                        <!--<i class="icon-settings font-red-sunglo"></i>-->
+                                        <span class=" uppercase">
+                                            <i class="fa fa-pencil icon-color"></i>&nbsp; Location & Citizenship Preference</span>
+                                    </div>
+
+                                </div>
+                                <div class="portlet-body form">
+                                    <div class="table-scrollable table-scrollable-borderless">
+                                        <table class="table table-hover table-light">
+                                            <tbody>
+                                            <tr>
+                                                <td> Country </td>
+                                                <td> India </td>
+                                                <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> Residing State </td>
+                                                <td> Kerala </td>
+                                                <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> Residing City </td>
+                                                <td> Ernakulam  </td>
+                                                <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> Citizenship </td>
+                                                <td> Any  </td>
+                                                <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
+                                            </tr>
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="portlet-title">
+                                    <div class="caption ">
+                                        <!--<i class="icon-settings font-red-sunglo"></i>-->
+                                        <span class=" uppercase">
+                                            <i class="fa fa-pencil icon-color"></i>&nbsp; What We are looking for</span>
+                                    </div>
+
+                                </div>
+                                <div class="portlet-body form">
+                                    <p>
+                                        My son is a calm and understanding boy. He respects tradiational values and also has modern outlook.
+                                        He loves reading and hearing musics.
+
+                                    </p>                                </div>
+                            </div>
+
+
+                        </div>
+
+                    <!--</div>-->
+                    <!-- END PAGE TITLE -->
+
+                <!--</div>-->
+                <!--&lt;!&ndash; END PAGE HEAD&ndash;&gt;-->
+                <!--&lt;!&ndash; BEGIN PAGE BREADCRUMB &ndash;&gt;-->
+
+
+                <!--&lt;!&ndash; END PAGE BASE CONTENT &ndash;&gt;-->
+            <!--</div>-->
+            <!-- END CONTENT BODY -->
+        <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->

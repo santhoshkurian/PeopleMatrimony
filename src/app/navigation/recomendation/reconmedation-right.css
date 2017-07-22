@@ -1,0 +1,10 @@
+.add-photo-grayed-out{
+    height: 300px !important;
+    background-color: #ddd !important;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.add-photo-grayed-out-text{
+    font-size: 18px;
+    text-transform: uppercase;
+}
