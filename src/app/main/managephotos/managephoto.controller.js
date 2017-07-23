@@ -8,6 +8,11 @@
     /** @ngInject */
     function ManagePhotoController($scope) {
         console.log("ManagePhotoController");
+        $scope.viewType = 'managephoto';
+        $scope.selectType = selectType;
+        function selectType(type){
+            $scope.viewType = type;
+        }
 
     }
 
