@@ -88,3 +88,20 @@
 .margn{margin-top: -2%}
 .icon-color{color: #4cbcac}
 /*.margin-right-buttons{margin-right: 5px;}*/
+.message-name-text{font-size:14pt!important;
+    font-weight: 400 !important;
+}
+.style-cls{color:#838383;
+padding-top:5px;}
+.details-style{
+    color:#777777
+}
+.notification-style{
+    color:#27a492;
+    font-size:12pt!important;
+    font-weight: 400 !important;
+}
+.notification-details{
+   font-size:12pt!important;
+    font-weight: 400 !important; 
+}
