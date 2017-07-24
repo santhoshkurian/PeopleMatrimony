@@ -160,14 +160,30 @@
                 url      : '/sent',
                 views    : {
                     'content@messages'         : {
-                        templateUrl: 'app/main/message/message.html',
-                        controller: 'MessageController as vm'
+                        templateUrl: 'app/main/message/sent/sent.html',
+                        controller: 'MessageDeclinedController as vm'
                     }
-                ,
-                'navigation@messages': {
-                    templateUrl: 'app/navigation/message/sent/sentNavigation.html',
-                    controller: 'SentNavController as vm'
+                    ,
+                    'navigation@messages': {
+                        templateUrl: 'app/navigation/message/sent/sentNavigation.html',
+                        controller: 'SentNavController as vm'
+                    }
+                },
+                resolve  : {
+
                 }
+            }).state('messages.awaiting', {
+                url      : '/awaiting',
+                views    : {
+                    'content@messages'         : {
+                        templateUrl: 'app/main/message/sent/sent.html',
+                        controller: 'MessageDeclinedController as vm'
+                    }
+                    ,
+                    'navigation@messages': {
+                        templateUrl: 'app/navigation/message/sent/sentNavigation.html',
+                        controller: 'SentNavController as vm'
+                    }
                 },
                 resolve  : {
 
@@ -215,6 +231,22 @@
                 'navigation@messages': {
                     templateUrl: 'app/navigation/message/inbox/inboxNavigation.html',
                     controller: 'InboxNavController as vm'
+                }
+                },
+                resolve  : {
+
+                }
+            }).state('sent', {
+                url      : '/sent',
+                views    : {
+                    'content@sent'         : {
+                        templateUrl: 'app/main/message/sent/sent.html',
+                        controller: 'MessageDeclinedController as vm'
+                    }
+                ,
+                'navigation@sent': {
+                    templateUrl: 'app/navigation/message/sent/sentNavigation.html',
+                    controller: 'SentNavController as vm'
                 }
                 },
                 resolve  : {

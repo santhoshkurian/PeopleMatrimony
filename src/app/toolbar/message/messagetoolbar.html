@@ -49,7 +49,7 @@
 									<img alt="" class="img-circle" src="../assets/img/avatar9.jpg" /> </a>
 								<ul class="dropdown-menu dropdown-menu-default">
 									<li>
-										<a ui-sref="profile"">
+										<a ui-sref="profile">
 											<i class="icon-user"></i> My Profile </a>
 									</li>
 									<li>
@@ -81,7 +81,7 @@
 				<div class="main-heading-actions">
 					<ul class="main-tool-link uppercase">
 						<li><a ng-class="{ activetoolbar: isActive('/messages')}" ui-sref="messages">Inbox</a></li>
-						<li><a ng-class="{ activetoolbar: isActive('/messages/sent')}" ui-sref="messages.sent">Sent all</a></li>
+						<li><a ng-class="{ activetoolbar: isActive('/messages/sent') || isActive('/messages/awaiting')}" ui-sref="messages.sent">Sent all</a></li>
 						<li><a ng-class="{ activetoolbar: isActive('/messages/chat')}" ui-sref="messages.chat">Chat</a></li>
 						<li><a ng-class="{ activetoolbar: isActive('/messages/filtered')}" ui-sref="messages.filtered">Filtered</a></li>
 					</ul>
