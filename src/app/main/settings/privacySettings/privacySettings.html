@@ -11,38 +11,239 @@
                     <!-- BEGIN SAMPLE FORM PORTLET-->
                     <div class="portlet light bordered">
                         <div class="portlet-title">
-                            <div class="caption font-red-sunglo">
-                                <i class="icon-settings font-red-sunglo"></i>
-                                <span class="caption-subject bold uppercase"> Privacy Settings</span>
-                            </div>
-                            <div class="actions">
-                                <div class="btn-group">
-                                    <a class="btn btn-sm green dropdown-toggle" href="javascript:;" data-toggle="dropdown"> Actions
-                                        <i class="fa fa-angle-down"></i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="fa fa-pencil"></i> Edit </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="fa fa-trash-o"></i> Delete </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="fa fa-ban"></i> Ban </a>
-                                        </li>
-                                        <li class="divider"> </li>
-                                        <li>
-                                            <a href="javascript:;"> Make admin </a>
-                                        </li>
-                                    </ul>
+                            <div class="caption ">
+                                <span class=" caption-subject  font-black  uppercase" style="font-weight: 600;">
+                                    Privacy Settings</span>
+
+                                <div class="caption-helper font-black font-sm">With the help of filters you can choose
+                                    who can contact you.
                                 </div>
                             </div>
                         </div>
                         <div class="portlet-body form">
+                       <div class="row">
+                           <div class="col-md-12">
+                               <div class="form-group ">
 
+                                   <div class="col-md-12 col-sm-12 col-xs-12 margin-top-10">
+
+                                               <label class=" " style="font-weight:600 !important; "> Phone privacy</label>
+                                               <i style="cursor: pointer" ng-click="openPhonePrivacy()" class="pull-right fa"
+                                                  ng-class="{'fa-angle-down': phonePrivacy, 'fa-angle-right': !phonePrivacy}"></i>
+
+                                   </div>
+                                   <div ng-show="phonePrivacy">
+                                   <div class="col-md-12 margin-top-10">
+                                       <label class="checkbox-inline" class="custon-text">
+                                           <input type="radio" icheckbox_flat-red class="icheck ">
+                                           Visibile All Premium Members</label>
+                                   </div>
+
+                                   <div class="col-md-12 margin-top-10 ">
+                                       <label class="checkbox-inline" class="custon-text">
+                                           <input type="radio" icheckbox_flat-red class="icheck ">
+                                           Visible to Premium members you wish to Connect with.</label>
+                                   </div>
+                                       <div class="col-md-12 margin-top-10 ">
+                                           <label class="checkbox-inline" class="custon-text">
+                                               <input type="radio" icheckbox_flat-red class="icheck ">
+                                               Not Visible to anyone.</label>
+                                       </div>
+                                   </div>
+                               </div>
+                               <hr/>
+                               <div class="form-group ">
+
+                                   <div class="col-md-12 col-sm-12 col-xs-12 margin-top-10">
+
+                                               <label class=" " style="font-weight:600 !important; "> Photo privacy</label>
+
+                                               <i style="cursor: pointer" ng-click="openPhotoPrivacy()" class="pull-right fa"
+                                                  ng-class="{'fa-angle-down': photoPrivacy, 'fa-angle-right': !photoPrivacy}"></i>
+                                       </div>
+
+                                   <div ng-show="photoPrivacy">
+                                       <div class="col-md-12 margin-top-10 ">
+                                           <label class="checkbox-inline" class="custon-text">
+                                               <input type="radio" icheckbox_flat-red class="icheck ">
+                                               Visible to all <i style="margin-left: 2px;" class="fa fa-question-circle"></i></label>
+                                       </div>
+
+                                       <div class="col-md-12 margin-top-10 ">
+                                           <label class="checkbox-inline" class="custon-text">
+                                               <input type="radio" icheckbox_flat-red class="icheck ">
+                                               Visible to ony invitation sent/accepted <i style="margin-left: 2px;" class="fa fa-question-circle"></i></label>
+                                       </div>
+                                       <div class="col-md-12 margin-top-10 ">
+                                           <label class="checkbox-inline" class="custon-text">
+                                               <input type="radio" icheckbox_flat-red class="icheck ">
+                                               Password Protected <i style="margin-left: 2px;" class="fa fa-question-circle"></i></label>
+                                       </div>
+                                       <div class="col-md-12 margin-top-10">
+                                           <div class="row margin-top-20" >
+                                               <div class="col-md-9 col-md-offest-2">
+                                                   <div class="col-md-12" style="font-size: 18px;color:#4cbcac;margin-bottom: 25px">
+                                                       This is how the photo will look to other members
+                                                   </div>
+                                                   <div class="col-md-6">
+                                                       <div style="height: 200px;width:200px;font-size:40px;text-align: center;line-height: 200px;background-image: url('../assets/images/prof1.jpg');opacity: .2 "><i style="opacity: 1" class="fa fa-expeditedssl"></i>
+                                                           <!--<img style="height: 200px;opacity: .2"-->
+                                                           <!--ng-src="../assets/images/prof1.jpg"/>-->
+                                                       </div>
+                                                   </div>
+                                                   <div class="col-md-6">
+                                                       <div class="row">
+                                                           <div class="col-md-12" style="border-bottom: 1px solid #eef1f5;">
+                                                               <table width="100%" style="margin-bottom: 10px;" class="match-table">
+                                                                   <tr>
+                                                                       <td width="30%" class="first-row">Age/Height</td>
+                                                                       <td width="5%">:</td>
+                                                                       <td width="45%">25,5`7</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                       <td class="first-row">Religion</td>
+                                                                       <td>:</td>
+                                                                       <td>Hindu</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                       <td class="first-row">Mother Tongue</td>
+                                                                       <td>:</td>
+                                                                       <td>Tamil</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                       <td class="first-row">Community</td>
+                                                                       <td>:</td>
+                                                                       <td>Vaniyakullak Kshathriya</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                       <td class="first-row">Star</td>
+                                                                       <td>:</td>
+                                                                       <td>Swathi</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                       <td class="first-row">Education</td>
+                                                                       <td>:</td>
+                                                                       <td>Btech</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                       <td class="first-row">Profession/Income</td>
+                                                                       <td>:</td>
+                                                                       <td>Software engineer</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                       <td class="first-row">Location</td>
+                                                                       <td>:</td>
+                                                                       <td>Bangalore</td>
+                                                                   </tr>
+                                                               </table>
+                                                           </div>
+
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                       </div>
+
+                                   </div>
+                               </div>
+                               <div class="form-group ">
+
+                                   <div class="col-md-12 col-sm-12 col-xs-12 margin-top-10">
+                                               <label class=" " style="font-weight:600 !important; "> Visitor Settings</label>
+                                               <i style="cursor: pointer" ng-click="openVisitorSettings()" class="pull-right fa"
+                                                  ng-class="{'fa-angle-down': visitorSettings, 'fa-angle-right': !visitorSettings}"></i>
+
+                                   </div>
+                                   <div ng-show="visitorSettings">
+                                       <div class="col-md-12 margin-top-10 ">
+                                           <label class="checkbox-inline" class="custon-text">
+                                               <input type="radio" icheckbox_flat-red class="icheck ">
+                                               Let Other members know I have visite their profiles</label>
+                                       </div>
+
+                                       <div class="col-md-12 margin-top-10 ">
+                                           <label class="checkbox-inline" class="custon-text">
+                                               <input type="radio" icheckbox_flat-red class="icheck ">
+                                               Do not Let Other members know I have visite their profiles</label>
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="form-group ">
+
+                                   <div class="col-md-12 col-sm-12 col-xs-12 margin-top-10">
+
+                                               <label class=" " style="font-weight:600 !important; "> Shortlist settings</label>
+
+                                               <i style="cursor: pointer" ng-click="openShortlistSettings()" class="pull-right fa"
+                                                  ng-class="{'fa-angle-down': shortlistSettings, 'fa-angle-right': !shortlistSettings}"></i>
+
+
+                                   </div>
+                                   <div ng-show="shortlistSettings">
+                                       <div class="col-md-12 margin-top-10 ">
+                                           <label class="checkbox-inline" class="custon-text">
+                                               <input type="radio" icheckbox_flat-red class="icheck ">
+                                               Let Other members know I have shortlisted their profiles</label>
+                                       </div>
+
+                                       <div class="col-md-12 margin-top-10 ">
+                                           <label class="checkbox-inline" class="custon-text">
+                                               <input type="radio" icheckbox_flat-red class="icheck ">
+                                              Do not Let Other members know I have shortlisted their profiles</label>
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="form-group ">
+
+                                   <div class="col-md-12 col-sm-12 col-xs-12 margin-top-10">
+
+                                               <label class=" " style="font-weight:600 !important; "> Do not Disturb</label>
+
+                                               <i style="cursor: pointer" ng-click="openDonotDisturb()" class="pull-right fa"
+                                                  ng-class="{'fa-angle-down': donotDisturb, 'fa-angle-right': !donotDisturb}"></i>
+
+                                   </div>
+                                   <div ng-show="donotDisturb">
+                                       <div class="col-md-12 margin-top-10 ">
+                                           <label style="margin-left: 15px" class="checkbox-inline" class="custon-text">
+                                               <input type="checkbox" icheckbox_flat-red class="icheck ">
+                                               Peoplesmatrimoney.com can only call me on premium membership<i style="margin-left: 2px;" class="fa fa-question-circle"></i>
+                                           </label>
+                                       </div>
+
+                                       <div class="col-md-12 margin-top-10 ">
+                                           <label style="margin-left: 15px" class="checkbox-inline" class="custon-text">
+                                               <input type="checkbox" icheckbox_flat-red class="icheck ">
+                                               Peoplesmatrimoney.com can only call me on premium members who wish to connect with me<i style="margin-left: 2px;" class="fa fa-question-circle"></i>
+                                           </label>
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="form-group ">
+
+                                   <div class="col-md-12 col-sm-12 col-xs-12 margin-top-10">
+
+                                               <label class=" " style="font-weight:600 !important; "> Profile privacy</label>
+                                               <i style="cursor: pointer" ng-click="openProfilePrivacy()" class="pull-right fa"
+                                                  ng-class="{'fa-angle-down': profilePrivacy, 'fa-angle-right': !profilePrivacy}"></i>
+
+                                   </div>
+                                   <div ng-show="profilePrivacy">
+                                       <div class="col-md-12 margin-top-10 ">
+                                           <label class="checkbox-inline" class="custon-text">
+                                               <input type="radio" icheckbox_flat-red class="icheck ">
+                                               Visibile All Including unregistered(Photo and name not visible on profile) </label>
+                                       </div>
+
+                                       <div class="col-md-12 margin-top-10 ">
+                                           <label class="checkbox-inline" class="custon-text">
+                                               <input type="radio" icheckbox_flat-red class="icheck ">
+                                              Only Visible to Registered members</label>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
                         </div>
                     </div>
 
