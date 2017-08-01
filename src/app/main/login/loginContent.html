@@ -19,7 +19,7 @@
                     <label class="col-md-3 control-label text-left">PROFILE FOR</label>
 
                     <div class="col-md-8">
-                        <select class="form-control input-rounded" placeholder="Profile for">
+                        <select class="form-control input-rounded" ng-model="reg.profile_for" placeholder="Profile for">
                             <option>Option 1</option>
                             <option>Option 2</option>
                             <option>Option 3</option>
@@ -33,7 +33,7 @@
                     <label class="col-md-3 control-label text-left ">NAME</label>
 
                     <div class="col-md-8">
-                        <input type="email" class="form-control input-rounded" placeholder="Name">
+                        <input type="text" class="form-control input-rounded" placeholder="Name" ng-model="reg.name">
                     </div>
                 </div>
 
@@ -45,14 +45,14 @@
                             <div class="col-md-4">
 
                                 <label class="radio-inline">
-                                    <input type="radio" name="gender" id="male" value="MALE" ng-model="candidate.gender"
+                                    <input type="radio" name="gender" ng-model="reg.gender" id="male" value="MALE" ng-model="candidate.gender"
                                            checked> Male </label>
                             </div>
                             <div class="col-md-4">
 
                                 <label class="radio-inline ">
                                     <input type="radio" name="gender"  id="female" value="FEMALE"
-                                           ng-model="candidate.gender"> Female</label>
+                                           ng-model="reg.gender"> Female</label>
                             </div>
                         </div>
 
@@ -66,19 +66,19 @@
                     <label class="col-md-3 control-label">DATE OF BIRTH</label>
 
                     <div class="col-md-8">
-                        <input type="date" class="form-control input-rounded" placeholder="Date of Birth">
+                        <input type="date" class="form-control input-rounded" ng-model="reg.dob" placeholder="Date of Birth">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label ">RELIGION</label>
 
                     <div class="col-md-8">
-                        <select class="form-control input-rounded">
-                            <option>Option 1</option>
-                            <option>Option 2</option>
-                            <option>Option 3</option>
-                            <option>Option 4</option>
-                            <option>Option 5</option>
+                        <select class="form-control input-rounded" ng-model="reg.religion">
+                            <option value=1>Option 1</option>
+                            <option value=2>Option 2</option>
+                            <option value=3>Option 3</option>
+                            <option value=4>Option 4</option>
+                            <option value=5>Option 5</option>
                         </select>
                     </div>
                 </div>
@@ -87,14 +87,14 @@
                     <label class="col-md-3 control-label">EMAIL</label>
 
                     <div class="col-md-8">
-                        <input type="email" class="form-control input-rounded" placeholder="Email Address">
+                        <input type="email" ng-model="reg.email" class="form-control input-rounded" placeholder="Email Address">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label">MOBILE NUMBER</label>
 
                     <div class="col-md-3">
-                        <select class="form-control input-rounded">
+                        <select class="form-control input-rounded" ng-model="reg.code">
                             <option>+ 91</option>
                             <option>+ 04</option>
                             <option>+ 90</option>
@@ -104,7 +104,7 @@
                     </div>
 
                     <div class="col-md-5">
-                        <input type="number" class="form-control input-rounded" placeholder="Mobile Number">
+                        <input type="number" class="form-control input-rounded" ng-model="reg.mobile" placeholder="Mobile Number">
                     </div>
                 </div>
 
@@ -112,7 +112,7 @@
                     <label class="col-md-3 control-label">PASSWORD</label>
 
                     <div class="col-md-8">
-                        <input type="password" class="form-control input-rounded" placeholder="Password"
+                        <input type="password" class="form-control input-rounded" ng-model="reg.password" placeholder="Password"
                                style="margin-rightt: 5%">
                     </div>
                 </div>
