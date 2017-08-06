@@ -8,6 +8,9 @@
     /** @ngInject */
     function LoginController($uibModal,$state,$http,$scope,storageService) {
         //var vm = this;
+        $scope.login = {
+            username:null,password:null
+        }
         console.log("LoginController");
 
         $scope.reg={
@@ -73,16 +76,32 @@
     };
 
     //}
-    angular.module('dashboard').controller('ModalInstanceCtrl', function ($uibModalInstance, items,$state) {
+    angular.module('dashboard').controller('ModalInstanceCtrl', function ($scope,storageService,$http,$uibModalInstance, items,$state) {
         var vm = this;
         vm.items = items;
         vm.selected = {
             item: vm.items[0]
         };
 
-        vm.ok = function () {
-            $state.go('app');
-            $uibModalInstance.close(vm.selected.item);
+
+
+        vm.ok = function (login) {
+            console.log(login);
+            //
+
+            $http({
+                method: 'GET',
+                url: 'https://devapi.peoplematrimony.com/user/login?'+
+                'username='+login.username+'&password='+login.password
+            }).then(function successCallback(response) {
+                $uibModalInstance.close(vm.selected.item);
+                storageService.set("token",response.data.access_token)
+                storageService.set("id",response.data.id_people)
+                $state.go('app');
+
+            }, function errorCallback(response) {
+                $scope.message = response.data.message;
+            });
         };
 
         vm.cancel = function () {

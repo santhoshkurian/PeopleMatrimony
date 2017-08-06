@@ -155,15 +155,16 @@
             <span class="caption-subject  font-black bold uppercase">Sign In</span></div>
     </div>
     <!--<div class="pull-right"><i class="close green"></i></div>-->
+   <div class="col-md-12" style="text-align: center;color:red">{{message}}</div>
     <div class="modal-body" id="modal-body">
         <div class="form-group">
             <label class=" uppercase">Email / Mobile Number / Member Id</label>
             <input class="form-control spinner input-rounded" type="text"
-                   placeholder="Email / Mobile NUmber / Member ID"/>
+                   placeholder="Email / Mobile NUmber / Member ID" ng-model="login.username"/>
         </div>
         <div class="form-group">
             <label class=" uppercase"> Password</label>
-            <input class="form-control spinner input-rounded" type="password" placeholder="Password"/>
+            <input class="form-control spinner input-rounded" type="password" ng-model="login.password" placeholder="Password"/>
         </div>
         <div class="form-group">
             <label class="checkbox-inline" class="custon-text">
@@ -176,7 +177,7 @@
     </div>
     <div class="modal-footer login-modal-footer">
         <div>
-            <button type="button" class=" center-block col-md-5 btn red input-rounded" ng-click="vm.ok()">
+            <button type="button" class=" center-block col-md-5 btn red input-rounded" ng-click="vm.ok(login)">
                 Sign in
             </button>
             <button type="button" class=" center-block col-md-5 btn btn-default input-rounded" ng-click="vm.cancel()">
