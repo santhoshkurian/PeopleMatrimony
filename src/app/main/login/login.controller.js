@@ -53,11 +53,11 @@
                 'country_code='+$scope.reg+'&email='+$scope.reg.email+'&' +
                 'mobile='+$scope.reg.mobile+'&password='+$scope.reg.password+'&source=111'
             }).then(function successCallback(response) {
-                console.log(response.data.access_token);
+                //console.log(response.data.access_token);
                 storageService.set("token",response.data.access_token)
                 storageService.set("id",response.data.id_people)
 
-                //$state.go('reg')
+                $state.go('reg')
 
 
             }, function errorCallback(response) {
