@@ -3,17 +3,33 @@
 
     angular
         .module('matrimony')
-        .factory('storageService', ['$rootScope', function($rootScope) {
+        .factory('storageService', ['$rootScope', function ($rootScope) {
 
             return {
-                get: function(key) {
+                get: function (key) {
                     return localStorage.getItem(key);
                 },
-                set: function(key, data) {
+                set: function (key, data) {
                     localStorage.setItem(key, data);
                 }
             };
         }])
+
+        .run(function ($rootScope, $state,storageService) {
+
+            $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+
+                console.log(toState);
+                console.log(storageService.get("token"));
+                console.log(event);
+                if(storageService.get("token") != null){
+                    $state.go(toState.name)
+                }else{
+                    $state.go("login");
+                }
+
+            });
+        })
         .config(routeConfig);
 
     /** @ngInject */
@@ -39,11 +55,11 @@
                         templateUrl: 'app/navigation/dashboard/dbNavigation.html',
                         controller: 'NavigationController as vm'
                     },
-                    'dbNavigationRight@app'         : {
+                    'dbNavigationRight@app': {
                         templateUrl: 'app/navigation/dashboard-right/dashBoardRight.html',
-                        controller : 'DashBoardRightController as vm'
+                        controller: 'DashBoardRightController as vm'
                     },
-                    'content@app'         : {
+                    'content@app': {
                         templateUrl: 'app/main/dashboard/inbox/inbox.html',
                         controller: 'InboxController as vm'
                     },
@@ -243,7 +259,7 @@
                         templateUrl: 'app/navigation/view-profile/viewProfileNav.html',
                         controller: 'DashBoardRightController as vm'
                     },
-                    'content@viewProfile'         : {
+                    'content@viewProfile': {
                         templateUrl: 'app/main/view-profile/viewProfile.html',
                         controller: 'ViewProfileController as vm'
                     },
@@ -304,7 +320,7 @@
 
     }
 
-    function initRun(){
+    function initRun() {
         console.log("run");
 
     }
