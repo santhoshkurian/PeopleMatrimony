@@ -6,7 +6,7 @@
         .controller('LoginController', LoginController);
 
     /** @ngInject */
-    function LoginController($uibModal,$state,$http,$scope) {
+    function LoginController($uibModal,$state,$http,$scope,storageService) {
         //var vm = this;
         console.log("LoginController");
 
@@ -46,23 +46,27 @@
 
 
         vm.registerCandidate = function () {
-            console.log($scope.reg);
             $http({
                 method: 'POST',
                 url: 'https://devapi.peoplematrimony.com/user?step=1&profile_for='+$scope.reg.profile_for+'&' +
                 'name='+$scope.reg.name+'&gender='+$scope.reg.gender+'&dob='+$scope.reg.dob+'&religion='+parseInt($scope.reg.religion)+'&mothertongue=5&' +
                 'country_code='+$scope.reg+'&email='+$scope.reg.email+'&' +
-                'mobile='+$scope.reg.mobile+'&password='+$scope.reg.password+'&source=111&src=fb&fb_id=test'
+                'mobile='+$scope.reg.mobile+'&password='+$scope.reg.password+'&source=111'
             }).then(function successCallback(response) {
-                console.log(response);
-                // this callback will be called asynchronously
-                // when the response is available
+                console.log(response.data.access_token);
+                storageService.set("token",response.data.access_token)
+                storageService.set("id",response.data.id_people)
+
+                //$state.go('reg')
+
+
             }, function errorCallback(response) {
                 console.log(response);
 
-                // called asynchronously if an error occurs
-                // or server returns response with an error status.
+
             });
+            //$state.go('reg')
+
         };
 
 
