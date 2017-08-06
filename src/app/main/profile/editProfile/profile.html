@@ -17,18 +17,31 @@
                             </div>
                             <div class="actions">
                                 <div class="btn-group">
-                                    <a class="btn btn-sm red input-rounded" href="javascript:;"> EDIT
+                                    <a class="btn btn-sm red input-rounded" ng-click="editAction('about')"> EDIT
 
                                     </a>
 
                                 </div>
                             </div>
                         </div>
-                        <div class="portlet-body form">
-                            <p> My son is a cam and understanding boy.He respects traditional values and also has modern outlook. He loves reading
-                                books and hearing music.</p>
+                        <div class="portlet-body form" >
+                            <p ng-hide="about"> {{profile.login_user.aboutme}}</p>
+                            <div  ng-show="about">
+                                <textarea class="form-control" rows="3" ng-model="profile.login_user.aboutme"></textarea>
+                            </div>
+
+                            <hr>
+                        <div class="actions" style="text-align: right" ng-show="about">
+                                <button type="button" ng-click="editAction('about')" class=" btn btn-default input-rounded " ng-click="">
+                                    Cancel
+                                </button> &nbsp;
+                                <button type="button" ng-click="aboutme()"class=" btn btn-default red input-rounded " style="color:#ffffea" >
+                                    Save
+                                </button>
 
                         </div>
+                        </div>
+
                     </div>
 
                 </div>
@@ -39,7 +52,7 @@
                             <div class="caption ">
                                 <span class=" uppercase"><i class=" fa fa-file-text icon-color"></i> &nbsp;Basic details</span>
                             </div>
-                            <div class="actions">
+                            <div class="actions pull-right">
                                 <div class="">
                                     <button type="button" class=" btn btn-default input-rounded " ng-click="">
                                         Cancel
