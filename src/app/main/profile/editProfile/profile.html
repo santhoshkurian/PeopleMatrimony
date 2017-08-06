@@ -70,31 +70,30 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Profile created for</label>
 
-                                    <select class="form-control input-rounded ">
+                                    <select class="form-control input-rounded " ng-model="profile.login_user.profile_for">
                                         <option>Select</option>
-                                        <option>Son</option>
-                                        <option>Daughter</option>
-                                        <option>Others</option>
-
+                                        <option value="son">Son</option>
+                                        <option value="daughter">Daughter</option>
                                     </select>
                                 </div>
 
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight  "> Age </label>
 
-                                    <select class="form-control input-rounded ">
+                                    <select class="form-control input-rounded " ng-model="profile.login_user.age">
                                         <option>Select </option>
-                                        <option>18</option>
-                                        <option>19</option>
-                                        <option>20</option>
-                                        <option>21</option>
-                                        <option>22</option>
-                                        <option>23</option>
-                                        <option>25</option>
-                                        <option>26</option>
-                                        <option>27</option>
-                                        <option>28</option>
-                                        <option>29</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                        <option value="24">24</option>
+                                        <option value="25">25</option>
+                                        <option value="26">26</option>
+                                        <option value="27">27</option>
+                                        <option value="28">28</option>
+                                        <option value="29">29</option>
                                     </select>
                                 </div>
 
@@ -105,12 +104,11 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Height</label>
 
-                                    <select class="form-control input-rounded ">
+                                    <select class="form-control input-rounded " ng-model="profile.login_user.height">
                                         <option>Select</option>
-                                        <option>5Ft 11In / 178 cm</option>
-                                        <option>6Ft 0In / 180 cm</option>
-                                        <option>5ft 0In / 150 cm</option>
-                                        <option>Others</option>
+                                        <option value="170">5Ft 11In / 178 cm</option>
+                                        <option  value="171">6Ft 0In / 180 cm</option>
+                                        <option  value="172">5ft 0In / 150 cm</option>
 
                                     </select>
                                 </div>
@@ -118,15 +116,14 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight  "> Weight</label>
 
-                                    <select class="form-control input-rounded ">
+                                    <select class="form-control input-rounded " ng-model="profile.login_user.weight">
                                         <option>Select </option>
-                                        <option>50Kg 115 Lbs</option>
-                                        <option>60Kg /135 Lbs</option>
-                                        <option>70Kg / 155 Lbs</option>
-                                        <option>80Kg / 175 Lbs</option>
-                                        <option>90kg / 195Lbs</option>
-                                        <option>Above 100 kg</option>
-                                        <option>Others</option>
+                                        <option  value="50">50Kg 115 Lbs</option>
+                                        <option  value="60">60Kg /135 Lbs</option>
+                                        <option  value="70">70Kg / 155 Lbs</option>
+                                        <option  value="75">75Kg / 175 Lbs</option>
+                                        <option  value="80">80Kg / 175 Lbs</option>
+
 
 
                                     </select>
@@ -138,10 +135,12 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Body Type</label>
 
-                                    <select class="form-control input-rounded ">
+                                    <select class="form-control input-rounded " ng-model="profile.login_user.body_type">
                                         <option>Select</option>
-                                        <option>Average</option>
-                                        <option>Others</option>
+                                        <option value="slim">Slim</option>
+                                        <option value="athletic">Athletic</option>
+                                        <option value="average">Average</option>
+                                        <option value="heavy">Heavy</option>
 
                                     </select>
                                 </div>
@@ -149,10 +148,12 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight  "> Complexion toung</label>
 
-                                    <select class="form-control input-rounded ">
+                                    <select class="form-control input-rounded " ng-model="profile.login_user.complexion">
                                         <option>Select</option>
-                                        <option>Whestish Brown</option>
-                                        <option>Others</option>
+                                        <option value="fair">Fair</option>
+                                        <option value="wheatish">Wheatish</option>
+                                        <option value="brown">Brown</option>
+                                        <option value="dark">Dark</option>
                                     </select>
                                 </div>
 
@@ -162,25 +163,25 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Physical Type</label>
 
-                                    <select class="form-control input-rounded ">
+                                    <select class="form-control input-rounded " ng-model="profile.login_user.physical_status">
                                         <option>Select</option>
-                                        <option>Normal</option>
-                                        <option>Others</option>
+                                        <option value="normal">Normal</option>
+                                        <option value="challenged">Challenged</option>
                                     </select>
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class=" uppercase font-weight  "> Mother toung</label>
+                                    <label class=" uppercase font-weight  "> Mother toungue</label>
 
-                                    <select class="form-control input-rounded ">
+                                    <select class="form-control input-rounded " ng-model="profile.login_user.mothertongue">
                                         <option>Select </option>
-                                        <option>Malayalam</option>
-                                        <option>Tamil</option>
-                                        <option>Telengu</option>
-                                        <option>Kanada</option>
-                                        <option>English</option>
-                                        <option>Hindi</option>
-                                        <option>Others</option>
+                                        <option value="1">Malayalam</option>
+                                        <option value="2">Tamil</option>
+                                        <option value="3">Telengu</option>
+                                        <option value="4">Kanada</option>
+                                        <option value="5">English</option>
+                                        <option value="6">Hindi</option>
+                                        <option value="7">Others</option>
 
 
                                     </select>
@@ -192,23 +193,25 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Marital Status</label>
 
-                                    <select class="form-control input-rounded ">
+                                    <select class="form-control input-rounded " ng-model="profile.login_user.marital_status">
                                         <option>Select</option>
-                                        <option>Never Married</option>
-                                        <option>Divorced</option>
-                                        <option>Others</option>
+                                        <option value="unmarried">Never Married</option>
+                                        <option value="married"> Married</option>
+                                        <option value="divorced">Divorced</option>
+                                        <option value="widow">Widow</option>
+                                        <option value="widower">widower</option>
 
                                     </select>
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class=" uppercase font-weight  "> Eating habbits</label>
+                                    <label class=" uppercase font-weight  "> Eating habits</label>
 
-                                    <select class="form-control input-rounded ">
+                                    <select class="form-control input-rounded " ng-model="profile.login_user.eating_habit">
                                         <option>Select</option>
-                                        <option>Vegiterian</option>
-                                        <option>Non Vegiterian</option>
-                                        <option>Others</option>
+                                        <option value="vegetarian">Vegiterian</option>
+                                        <option value="nonvegetarian">Non Vegiterian</option>
+                                        <option value="eggeterian">Eggeterian</option>
                                     </select>
                                 </div>
 
@@ -218,10 +221,10 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Drinking habits</label>
 
-                                    <select class="form-control input-rounded ">
+                                    <select class="form-control input-rounded " ng-model="profile.login_user.drinking_habit">
                                         <option>Select</option>
-                                        <option>Non-Drinker</option>
-                                        <option>Others</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
 
                                     </select>
                                 </div>
@@ -229,10 +232,10 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight  "> Smoking Habits </label>
 
-                                    <select class="form-control input-rounded ">
+                                    <select class="form-control input-rounded " ng-model="profile.login_user.smoking_habit">
                                         <option>Select </option>
-                                        <option>Non-smoker</option>
-                                        <option>Others</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
                                     </select>
                                 </div>
 
@@ -246,7 +249,7 @@
                                     <button type="button" class=" btn btn-default input-rounded " ng-click="">
                                         Cancel
                                     </button> &nbsp;
-                                    <button type="button" class=" btn btn-default red input-rounded " style="color:#ffffea" ng-click="">
+                                    <button type="button" ng-click="basic()" class=" btn btn-default red input-rounded " style="color:#ffffea" ng-click="">
                                         Save
                                     </button>
 

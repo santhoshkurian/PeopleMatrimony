@@ -8,6 +8,7 @@
     /** @ngInject */
     function ProfileController($http, $scope, storageService) {
         $scope.about = false;
+        $scope.basic = false;
 
         $http({
             method: 'GET',
@@ -23,6 +24,7 @@
 
         $scope.editAction = editAction;
         $scope.aboutme = aboutme;
+        $scope.basic = basic;
 
         $scope.profile1 = {
             "login_user": {
@@ -31,7 +33,7 @@
                 "profile_for": "",
                 "name": "san",
                 "gender": "male",
-                "age": 1487,
+                "age": 14,
                 "height": null,
                 "weight": null,
                 "id_mothertongue": 5,
@@ -152,6 +154,29 @@
                 $scope.about = !$scope.about;
 
             }, function errorCallback(response) {
+            });
+        }
+        function basic() {
+            console.log($scope.profile)
+            $http({
+                method: 'PUT',
+                url: 'https://devapi.peoplematrimony.com/user/edit/' + storageService.get('id') + '?' +
+                'block=basic&' +
+                'age=' + $scope.profile.login_user.age +
+                '&weight=' + $scope.profile.login_user.weight +
+                '&height=' + $scope.profile.login_user.height +
+                '&mothertongue=' + $scope.profile.login_user.mothertongue +
+                '&marital_status=' + $scope.profile.login_user.marital_status +
+                '&physical_status=' + $scope.profile.login_user.physical_status +
+                '&eating_habit=' + $scope.profile.login_user.eating_habit +
+                '&drinking_habit=' + $scope.profile.login_user.drinking_habit +
+                '&smoking_habit=' + $scope.profile.login_user.smoking_habit +
+                '&token=' + storageService.get("token")
+            }).then(function successCallback(response) {
+console.log("success",response)
+            }, function errorCallback(response) {
+                console.log("error",response)
+
             });
         }
 
