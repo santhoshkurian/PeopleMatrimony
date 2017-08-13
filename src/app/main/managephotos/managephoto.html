@@ -100,6 +100,14 @@
                             </div>
                         </div>
 
+                        <div class="row">
+                            <div class="col-sm-3" ng-repeat="image in images">
+                                <div class="thumbnail">
+                                    <img ng-src="{{image.thumbnail}}" alt="{{image.description}}">
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
                     <div ng-if="viewType == 'privacy'">

@@ -22,7 +22,7 @@
                 console.log(toState);
                 console.log(storageService.get("token"));
                 console.log(event);
-                if(storageService.get("token") != null){
+                if(storageService.get("token") != null && storageService.get("id") != null){
                     $state.go(toState.name)
                 }else{
                     $state.go("login");
