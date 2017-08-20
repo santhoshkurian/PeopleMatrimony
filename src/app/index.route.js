@@ -104,12 +104,12 @@
                 url: '/profile',
                 views: {
                     'main@': {
-                        templateUrl: 'app/core/layouts/profileLayout.html'
-                        //controller : 'MainController as vm'
+                        templateUrl: 'app/core/layouts/profileLayout.html',
+                        controller : 'ProfileController as vm'
                     },
                     'navigation@profile': {
                         templateUrl: 'app/navigation/profile/profileNavigation.html',
-                        controller: 'NavigationController as vm'
+                        //controller: 'NavigationController as vm'
                     },
                     'toolbar@profile': {
                         templateUrl: 'app/toolbar/profile/profileToolbar.html',
@@ -117,7 +117,7 @@
                     },
                     'content@profile': {
                         templateUrl: 'app/main/profile/editProfile/profile.html',
-                        controller: 'ProfileController as vm'
+                        //controller: 'ProfileController as vm'
                     },
                     'footer@profile': {
                         templateUrl: 'app/footer/footer.html',
