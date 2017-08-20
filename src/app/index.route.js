@@ -44,16 +44,16 @@
                 url: '/app',
                 views: {
                     'main@': {
-                        templateUrl: 'app/core/layouts/dbLayout.html'
-                        //controller : 'InboxController as vm'
+                        templateUrl: 'app/core/layouts/dbLayout.html',
+                        controller: 'DashboardController as vm'
                     },
                     'toolbar@app': {
                         templateUrl: 'app/toolbar/dashboard/dbToolbar.html',
-                        controller: 'DashboardToolbarController as vm'
+                        //controller: 'DashboardController as vm'
                     },
                     'navigation@app': {
                         templateUrl: 'app/navigation/dashboard/dbNavigation.html',
-                        controller: 'NavigationController as vm'
+                        //controller: 'DashboardController as vm'
                     },
                     'dbNavigationRight@app': {
                         templateUrl: 'app/navigation/dashboard-right/dashBoardRight.html',
@@ -61,11 +61,11 @@
                     },
                     'content@app': {
                         templateUrl: 'app/main/dashboard/inbox/inbox.html',
-                        controller: 'InboxController as vm'
+                        //controller: 'DashboardController as vm'
                     },
                     'footer@app': {
                         templateUrl: 'app/footer/footer.html',
-                        controller: 'FooterController as vm'
+                        //controller: 'FooterController as vm'
                     }
                 }
             }).state('login', {
