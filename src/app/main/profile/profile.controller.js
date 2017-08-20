@@ -8,7 +8,11 @@
     /** @ngInject */
     function ProfileController($http, $scope, storageService) {
         $scope.about = false;
+        $scope.fabout = false;
         $scope.basic = false;
+        $scope.location = true;
+        $scope.relogious = true;
+        $scope.education = true;
 
         $scope.countryList = [];
         $scope.stateList = [];
@@ -54,6 +58,7 @@
 
         $scope.editAction = editAction;
         $scope.aboutme = aboutme;
+        $scope.aboutfamily = aboutfamily;
         $scope.basic = basic;
         $scope.selectCountry = selectCountry;
         $scope.selectState = selectState;
@@ -215,6 +220,17 @@
                 'block=about&about=' + $scope.profile.login_user.aboutme + '&token=' + storageService.get("token")
             }).then(function successCallback(response) {
                 $scope.about = !$scope.about;
+
+            }, function errorCallback(response) {
+            });
+        }
+        function aboutfamily() {
+            $http({
+                method: 'PUT',
+                url: 'https://devapi.peoplematrimony.com/user/edit/' + storageService.get('id') + '?' +
+                'block=fdetail&about=' + $scope.profile.login_user.about_family + '&token=' + storageService.get("token")
+            }).then(function successCallback(response) {
+                $scope.fabout = !$scope.fabout;
 
             }, function errorCallback(response) {
             });

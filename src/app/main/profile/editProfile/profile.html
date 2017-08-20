@@ -24,22 +24,27 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="portlet-body form" >
+                        <div class="portlet-body form">
                             <p ng-hide="about"> {{profile.login_user.aboutme}}</p>
-                            <div  ng-show="about">
-                                <textarea class="form-control" rows="3" ng-model="profile.login_user.aboutme"></textarea>
+
+                            <div ng-show="about">
+                                <textarea class="form-control" rows="3"
+                                          ng-model="profile.login_user.aboutme"></textarea>
                             </div>
 
                             <hr>
-                        <div class="actions" style="text-align: right" ng-show="about">
-                                <button type="button" ng-click="editAction('about')" class=" btn btn-default input-rounded " ng-click="">
+                            <div class="actions" style="text-align: right" ng-show="about">
+                                <button type="button" ng-click="editAction('about')"
+                                        class=" btn btn-default input-rounded " ng-click="">
                                     Cancel
-                                </button> &nbsp;
-                                <button type="button" ng-click="aboutme()"class=" btn btn-default red input-rounded " style="color:#ffffea" >
+                                </button>
+                                &nbsp;
+                                <button type="button" ng-click="aboutme()" class=" btn btn-default red input-rounded "
+                                        style="color:#ffffea">
                                     Save
                                 </button>
 
-                        </div>
+                            </div>
                         </div>
 
                     </div>
@@ -56,8 +61,10 @@
                                 <div class="">
                                     <button type="button" class=" btn btn-default input-rounded " ng-click="">
                                         Cancel
-                                    </button> &nbsp;
-                                    <button type="button" class=" btn btn-default red input-rounded " style="color:#ffffea" ng-click="">
+                                    </button>
+                                    &nbsp;
+                                    <button type="button" class=" btn btn-default red input-rounded "
+                                            style="color:#ffffea" ng-click="">
                                         Save
                                     </button>
 
@@ -70,7 +77,8 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Profile created for</label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.profile_for">
+                                    <select class="form-control input-rounded "
+                                            ng-model="profile.login_user.profile_for">
                                         <option>Select</option>
                                         <option value="son">Son</option>
                                         <option value="daughter">Daughter</option>
@@ -81,7 +89,7 @@
                                     <label class=" uppercase font-weight  "> Age </label>
 
                                     <select class="form-control input-rounded " ng-model="profile.login_user.age">
-                                        <option>Select </option>
+                                        <option>Select</option>
                                         <option value="18">18</option>
                                         <option value="19">19</option>
                                         <option value="20">20</option>
@@ -107,8 +115,8 @@
                                     <select class="form-control input-rounded " ng-model="profile.login_user.height">
                                         <option>Select</option>
                                         <option value="170">5Ft 11In / 178 cm</option>
-                                        <option  value="171">6Ft 0In / 180 cm</option>
-                                        <option  value="172">5ft 0In / 150 cm</option>
+                                        <option value="171">6Ft 0In / 180 cm</option>
+                                        <option value="172">5ft 0In / 150 cm</option>
 
                                     </select>
                                 </div>
@@ -117,13 +125,12 @@
                                     <label class=" uppercase font-weight  "> Weight</label>
 
                                     <select class="form-control input-rounded " ng-model="profile.login_user.weight">
-                                        <option>Select </option>
-                                        <option  value="50">50Kg 115 Lbs</option>
-                                        <option  value="60">60Kg /135 Lbs</option>
-                                        <option  value="70">70Kg / 155 Lbs</option>
-                                        <option  value="75">75Kg / 175 Lbs</option>
-                                        <option  value="80">80Kg / 175 Lbs</option>
-
+                                        <option>Select</option>
+                                        <option value="50">50Kg 115 Lbs</option>
+                                        <option value="60">60Kg /135 Lbs</option>
+                                        <option value="70">70Kg / 155 Lbs</option>
+                                        <option value="75">75Kg / 175 Lbs</option>
+                                        <option value="80">80Kg / 175 Lbs</option>
 
 
                                     </select>
@@ -148,7 +155,8 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight  "> Complexion toung</label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.complexion">
+                                    <select class="form-control input-rounded "
+                                            ng-model="profile.login_user.complexion">
                                         <option>Select</option>
                                         <option value="fair">Fair</option>
                                         <option value="wheatish">Wheatish</option>
@@ -163,7 +171,8 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Physical Type</label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.physical_status">
+                                    <select class="form-control input-rounded "
+                                            ng-model="profile.login_user.physical_status">
                                         <option>Select</option>
                                         <option value="normal">Normal</option>
                                         <option value="challenged">Challenged</option>
@@ -173,17 +182,11 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight  "> Mother toungue</label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.mothertongue">
-                                        <option>Select </option>
-                                        <option value="1">Malayalam</option>
-                                        <option value="2">Tamil</option>
-                                        <option value="3">Telengu</option>
-                                        <option value="4">Kanada</option>
-                                        <option value="5">English</option>
-                                        <option value="6">Hindi</option>
-                                        <option value="7">Others</option>
-
-
+                                    <select class="form-control input-rounded " ng-model="mothertongue"
+                                            ng-click="selectMothertongue(mothertongue)">
+                                        <option ng-repeat="obj in motherTongueList" value="{{obj}}">
+                                            {{obj.mothertongue}}
+                                        </option>
                                     </select>
                                 </div>
 
@@ -193,7 +196,8 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Marital Status</label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.marital_status">
+                                    <select class="form-control input-rounded "
+                                            ng-model="profile.login_user.marital_status">
                                         <option>Select</option>
                                         <option value="unmarried">Never Married</option>
                                         <option value="married"> Married</option>
@@ -207,7 +211,8 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight  "> Eating habits</label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.eating_habit">
+                                    <select class="form-control input-rounded "
+                                            ng-model="profile.login_user.eating_habit">
                                         <option>Select</option>
                                         <option value="vegetarian">Vegiterian</option>
                                         <option value="nonvegetarian">Non Vegiterian</option>
@@ -221,7 +226,8 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Drinking habits</label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.drinking_habit">
+                                    <select class="form-control input-rounded "
+                                            ng-model="profile.login_user.drinking_habit">
                                         <option>Select</option>
                                         <option value="yes">Yes</option>
                                         <option value="no">No</option>
@@ -232,8 +238,9 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight  "> Smoking Habits </label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.smoking_habit">
-                                        <option>Select </option>
+                                    <select class="form-control input-rounded "
+                                            ng-model="profile.login_user.smoking_habit">
+                                        <option>Select</option>
                                         <option value="yes">Yes</option>
                                         <option value="no">No</option>
                                     </select>
@@ -248,8 +255,10 @@
                                 <div class="col-md-3 col-md-offset-3 " style="padding-left:5.2%">
                                     <button type="button" class=" btn btn-default input-rounded " ng-click="">
                                         Cancel
-                                    </button> &nbsp;
-                                    <button type="button" ng-click="basic()" class=" btn btn-default red input-rounded " style="color:#ffffea" ng-click="">
+                                    </button>
+                                    &nbsp;
+                                    <button type="button" ng-click="basic()" class=" btn btn-default red input-rounded "
+                                            style="color:#ffffea" ng-click="">
                                         Save
                                     </button>
 
@@ -269,7 +278,8 @@
                             </div>
                             <div class="actions">
                                 <div class="btn-group">
-                                    <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea" ng-click="">
+                                    <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea"
+                                            ng-click="editAction('location')">
                                         EDIT
                                     </button>
 
@@ -277,20 +287,24 @@
                             </div>
                         </div>
                         <div class="portlet-body form  form-horizontal">
+                            <span ng-hide="location">
                             <div class="form-group">
 
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Country</label>
 
-                                    <select class="form-control input-rounded " ng-model="country" ng-click="selectCountry(country)">
-                                        <option ng-repeat="obj in countryList" value="{{obj}}">{{obj.country_name}}</option>
+                                    <select class="form-control input-rounded " ng-model="country"
+                                            ng-click="selectCountry(country)">
+                                        <option ng-repeat="obj in countryList" value="{{obj}}">{{obj.country_name}}
+                                        </option>
                                     </select>
                                 </div>
 
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight  "> State </label>
 
-                                    <select class="form-control input-rounded " ng-model="state" ng-click="selectState(state)">
+                                    <select class="form-control input-rounded " ng-model="state"
+                                            ng-click="selectState(state)">
                                         <option ng-repeat="obj in stateList" value="{{obj}}">{{obj.state_name}}</option>
                                     </select>
                                 </div>
@@ -302,7 +316,8 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> City</label>
 
-                                    <select class="form-control input-rounded " ng-model="city" ng-click="selectCity(city)">
+                                    <select class="form-control input-rounded " ng-model="city"
+                                            ng-click="selectCity(city)">
                                         <option ng-repeat="obj in cityList" value="{{obj}}">{{obj.city_name}}</option>
                                     </select>
                                 </div>
@@ -311,51 +326,53 @@
                                     <label class=" uppercase font-weight  "> Citizenship</label>
 
                                     <select class="form-control input-rounded " ng-model="profile.login_user.weight">
-                                        <option>Select </option>
-                                        <option  value="50">50Kg 115 Lbs</option>
-                                        <option  value="60">60Kg /135 Lbs</option>
-                                        <option  value="70">70Kg / 155 Lbs</option>
-                                        <option  value="75">75Kg / 175 Lbs</option>
-                                        <option  value="80">80Kg / 175 Lbs</option>
-
+                                        <option>Select</option>
+                                        <option value="50">50Kg 115 Lbs</option>
+                                        <option value="60">60Kg /135 Lbs</option>
+                                        <option value="70">70Kg / 155 Lbs</option>
+                                        <option value="75">75Kg / 175 Lbs</option>
+                                        <option value="80">80Kg / 175 Lbs</option>
 
 
                                     </select>
                                 </div>
 
                             </div>
-                                                        <hr>
-
-
-
+                                </span>
+                            <span ng-show="location">
 
 
                             <div class="form-group">
 
                                 <div class="col-md-4">
                                     <label class="font-weight-head "> Country</label>
+
                                     <p class="details">India</p>
 
                                 </div>
 
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> State</label>
+
                                     <p class="details ">Tamil Nadu</p>
 
                                 </div>
 
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> City</label>
+
                                     <p class="details ">Chennai</p>
 
                                 </div>
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Citizenship</label>
+
                                     <p class="details ">Indian</p>
 
                                 </div>
 
                             </div>
+                                </span>
                         </div>
                     </div>
                 </div>
@@ -369,7 +386,8 @@
                             </div>
                             <div class="actions">
                                 <div class="btn-group">
-                                    <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea" ng-click="">
+                                    <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea"
+                                            ng-click="editAction('relogious')">
                                         EDIT
                                     </button>
 
@@ -377,12 +395,14 @@
                             </div>
                         </div>
                         <div class="portlet-body form  form-horizontal">
+                            <span ng-hide="relogious">
                             <div class="form-group">
 
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Religion</label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.profile_for">
+                                    <select class="form-control input-rounded "
+                                            ng-model="profile.login_user.profile_for">
                                         <option ng-repeat="obj in religonList" value="obj">{{obj.religion}}</option>
                                     </select>
                                 </div>
@@ -391,13 +411,12 @@
                                     <label class=" uppercase font-weight  "> Caste /Sub caste</label>
 
                                     <select class="form-control input-rounded " ng-model="profile.login_user.weight">
-                                        <option>Select </option>
-                                        <option  value="50">50Kg 115 Lbs</option>
-                                        <option  value="60">60Kg /135 Lbs</option>
-                                        <option  value="70">70Kg / 155 Lbs</option>
-                                        <option  value="75">75Kg / 175 Lbs</option>
-                                        <option  value="80">80Kg / 175 Lbs</option>
-
+                                        <option>Select</option>
+                                        <option value="50">50Kg 115 Lbs</option>
+                                        <option value="60">60Kg /135 Lbs</option>
+                                        <option value="70">70Kg / 155 Lbs</option>
+                                        <option value="75">75Kg / 175 Lbs</option>
+                                        <option value="80">80Kg / 175 Lbs</option>
 
 
                                     </select>
@@ -412,8 +431,8 @@
                                     <select class="form-control input-rounded " ng-model="profile.login_user.height">
                                         <option>Select</option>
                                         <option value="170">5Ft 11In / 178 cm</option>
-                                        <option  value="171">6Ft 0In / 180 cm</option>
-                                        <option  value="172">5ft 0In / 150 cm</option>
+                                        <option value="171">6Ft 0In / 180 cm</option>
+                                        <option value="172">5ft 0In / 150 cm</option>
 
                                     </select>
                                 </div>
@@ -422,13 +441,12 @@
                                     <label class=" uppercase font-weight  "> Star / Rassi</label>
 
                                     <select class="form-control input-rounded " ng-model="profile.login_user.weight">
-                                        <option>Select </option>
-                                        <option  value="50">50Kg 115 Lbs</option>
-                                        <option  value="60">60Kg /135 Lbs</option>
-                                        <option  value="70">70Kg / 155 Lbs</option>
-                                        <option  value="75">75Kg / 175 Lbs</option>
-                                        <option  value="80">80Kg / 175 Lbs</option>
-
+                                        <option>Select</option>
+                                        <option value="50">50Kg 115 Lbs</option>
+                                        <option value="60">60Kg /135 Lbs</option>
+                                        <option value="70">70Kg / 155 Lbs</option>
+                                        <option value="75">75Kg / 175 Lbs</option>
+                                        <option value="80">80Kg / 175 Lbs</option>
 
 
                                     </select>
@@ -444,49 +462,54 @@
                                     <select class="form-control input-rounded " ng-model="profile.login_user.height">
                                         <option>Select</option>
                                         <option value="170">5Ft 11In / 178 cm</option>
-                                        <option  value="171">6Ft 0In / 180 cm</option>
-                                        <option  value="172">5ft 0In / 150 cm</option>
+                                        <option value="171">6Ft 0In / 180 cm</option>
+                                        <option value="172">5ft 0In / 150 cm</option>
 
                                     </select>
                                 </div>
 
 
-
                             </div>
 
-
-
+</span>
+                                                        <span ng-show="relogious">
 
                             <div class="form-group">
 
                                 <div class="col-md-4">
                                     <label class="font-weight-head "> Religion</label>
+
                                     <p class="details">Hindu</p>
 
                                 </div>
 
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Caste /Sub caste</label>
+
                                     <p class="details ">Nadar</p>
 
                                 </div>
 
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Gothram</label>
+
                                     <p class="details ">Not available</p>
 
                                 </div>
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Star / Rassi</label>
+
                                     <p class="details ">Not available</p>
 
                                 </div>
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Chevvai Dosham / Rassi</label>
+
                                     <p class="details ">No</p>
 
                                 </div>
                             </div>
+                                                            </span>
                         </div>
                     </div>
                 </div>
@@ -500,7 +523,8 @@
                             </div>
                             <div class="actions">
                                 <div class="btn-group">
-                                    <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea" ng-click="">
+                                    <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea"
+                                            ng-click="editAction('education')">
                                         EDIT
                                     </button>
 
@@ -508,6 +532,7 @@
                             </div>
                         </div>
                         <div class="portlet-body form  form-horizontal">
+                            <span ng-hide="education">
                             <div class="form-group">
 
                                 <div class="col-md-6">
@@ -516,8 +541,8 @@
                                     <select class="form-control input-rounded " ng-model="profile.login_user.height">
                                         <option>Select</option>
                                         <option value="170">5Ft 11In / 178 cm</option>
-                                        <option  value="171">6Ft 0In / 180 cm</option>
-                                        <option  value="172">5ft 0In / 150 cm</option>
+                                        <option value="171">6Ft 0In / 180 cm</option>
+                                        <option value="172">5ft 0In / 150 cm</option>
 
                                     </select>
                                 </div>
@@ -526,13 +551,12 @@
                                     <label class=" uppercase font-weight  "> Educational in detail</label>
 
                                     <select class="form-control input-rounded " ng-model="profile.login_user.weight">
-                                        <option>Select </option>
-                                        <option  value="50">50Kg 115 Lbs</option>
-                                        <option  value="60">60Kg /135 Lbs</option>
-                                        <option  value="70">70Kg / 155 Lbs</option>
-                                        <option  value="75">75Kg / 175 Lbs</option>
-                                        <option  value="80">80Kg / 175 Lbs</option>
-
+                                        <option>Select</option>
+                                        <option value="50">50Kg 115 Lbs</option>
+                                        <option value="60">60Kg /135 Lbs</option>
+                                        <option value="70">70Kg / 155 Lbs</option>
+                                        <option value="75">75Kg / 175 Lbs</option>
+                                        <option value="80">80Kg / 175 Lbs</option>
 
 
                                     </select>
@@ -547,8 +571,8 @@
                                     <select class="form-control input-rounded " ng-model="profile.login_user.height">
                                         <option>Select</option>
                                         <option value="170">5Ft 11In / 178 cm</option>
-                                        <option  value="171">6Ft 0In / 180 cm</option>
-                                        <option  value="172">5ft 0In / 150 cm</option>
+                                        <option value="171">6Ft 0In / 180 cm</option>
+                                        <option value="172">5ft 0In / 150 cm</option>
 
                                     </select>
                                 </div>
@@ -557,13 +581,12 @@
                                     <label class=" uppercase font-weight  "> Employed in</label>
 
                                     <select class="form-control input-rounded " ng-model="profile.login_user.weight">
-                                        <option>Select </option>
-                                        <option  value="50">50Kg 115 Lbs</option>
-                                        <option  value="60">60Kg /135 Lbs</option>
-                                        <option  value="70">70Kg / 155 Lbs</option>
-                                        <option  value="75">75Kg / 175 Lbs</option>
-                                        <option  value="80">80Kg / 175 Lbs</option>
-
+                                        <option>Select</option>
+                                        <option value="50">50Kg 115 Lbs</option>
+                                        <option value="60">60Kg /135 Lbs</option>
+                                        <option value="70">70Kg / 155 Lbs</option>
+                                        <option value="75">75Kg / 175 Lbs</option>
+                                        <option value="80">80Kg / 175 Lbs</option>
 
 
                                     </select>
@@ -579,49 +602,53 @@
                                     <select class="form-control input-rounded " ng-model="profile.login_user.height">
                                         <option>Select</option>
                                         <option value="170">5Ft 11In / 178 cm</option>
-                                        <option  value="171">6Ft 0In / 180 cm</option>
-                                        <option  value="172">5ft 0In / 150 cm</option>
+                                        <option value="171">6Ft 0In / 180 cm</option>
+                                        <option value="172">5ft 0In / 150 cm</option>
 
                                     </select>
                                 </div>
 
 
-
                             </div>
-
-
-
+</span>
+                            <span ng-show="education">
 
                             <div class="form-group">
 
                                 <div class="col-md-4">
                                     <label class="font-weight-head "> Education</label>
+
                                     <p class="details">BE</p>
 
                                 </div>
 
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Educational in Detail</label>
+
                                     <p class="details ">Not available</p>
 
                                 </div>
 
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Occupation</label>
+
                                     <p class="details ">Web Developer</p>
 
                                 </div>
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Employed in</label>
+
                                     <p class="details ">Not available</p>
 
                                 </div>
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Annaul Income</label>
+
                                     <p class="details ">Rs 7,00,000</p>
 
                                 </div>
                             </div>
+                                </span>
                         </div>
 
                     </div>
@@ -631,11 +658,13 @@
                     <div class="portlet light border-rounded">
                         <div class="portlet-title">
                             <div class="caption ">
-                                <span class=" uppercase"><i class=" fa fa-users icon-color"></i> &nbsp;Family Details</span>
+                                <span class=" uppercase"><i
+                                        class=" fa fa-users icon-color"></i> &nbsp;Family Details</span>
                             </div>
                             <div class="actions">
                                 <div class="btn-group">
-                                    <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea" ng-click="">
+                                    <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea"
+                                            ng-click="">
                                         EDIT
                                     </button>
 
@@ -648,43 +677,51 @@
 
                                 <div class="col-md-4">
                                     <label class="font-weight-head "> Family Values</label>
+
                                     <p class="details">Traditional</p>
 
                                 </div>
 
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Ancestral Origin</label>
+
                                     <p class="details ">Not specified</p>
 
                                 </div>
 
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Family Type</label>
+
                                     <p class="details ">Nuclear</p>
 
                                 </div>
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> No of Brother(s)</label>
+
                                     <p class="details ">Non</p>
 
                                 </div>
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Number of sister(s) </label>
+
                                     <p class="details ">1 / Not married</p>
 
                                 </div>
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Family Status</label>
+
                                     <p class="details ">Upper Middle Class</p>
 
                                 </div>
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Father's Status </label>
+
                                     <p class="details ">Bussinesman</p>
 
                                 </div>
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Mother's Status </label>
+
                                     <p class="details ">Home maker</p>
 
                                 </div>
@@ -702,24 +739,37 @@
                             </div>
                             <div class="actions">
                                 <div class="btn-group">
-                                    <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea" ng-click="">
+                                    <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea"
+                                            ng-click="editAction('fabout')">
                                         EDIT
                                     </button>
 
                                 </div>
                             </div>
                         </div>
-                        <div class="portlet-body form  form-horizontal">
+                        <div class="portlet-body form">
+                            <p ng-hide="fabout"> {{profile.login_user.about_family}}</p>
 
-                            <div class="form-group">
+                            <div ng-show="fabout">
+                                <textarea class="form-control" rows="3"
+                                          ng-model="profile.login_user.about_family"></textarea>
+                            </div>
 
-                                <div class="col-md-12">
-                                    <p class="details">My son is a cam and understanding boy.He respects traditional values and also has modern outlook. He loves reading
-                                        books and hearing music.
-                                    </p>
-                                </div>
+                            <hr>
+                            <div class="actions" style="text-align: right" ng-show="fabout">
+                                <button type="button" ng-click="editAction('fabout')"
+                                        class=" btn btn-default input-rounded " ng-click="">
+                                    Cancel
+                                </button>
+                                &nbsp;
+                                <button type="button" ng-click="aboutfamily()" class=" btn btn-default red input-rounded "
+                                        style="color:#ffffea">
+                                    Save
+                                </button>
+
                             </div>
                         </div>
+
                     </div>
                 </div>
 
@@ -736,7 +786,8 @@
                             </div>
                             <div class="actions">
                                 <div class="btn-group">
-                                    <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea" ng-click="">
+                                    <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea"
+                                            ng-click="">
                                         EDIT
                                     </button>
                                 </div>
@@ -747,11 +798,13 @@
                                 <div class="col-md-12">
                                     <div class="col-md-4">
                                         <label class=" font-weight-head  "> Age </label>
+
                                         <p class="details ">28 Years</p>
 
                                     </div>
                                     <div class="col-md-4">
                                         <label class=" font-weight-head  "> Height </label>
+
                                         <p class="details ">6 Ft 0In / 180 cm </p>
 
                                     </div>
@@ -759,30 +812,36 @@
 
                                     <div class="col-md-4">
                                         <label class=" font-weight-head  "> Physical Type </label>
+
                                         <p class="details ">Normal </p>
                                     </div>
 
                                     <div class="col-md-4">
 
                                         <label class=" font-weight-head  "> Mother Tongue </label>
+
                                         <p class="details ">Malayalam </p>
 
                                     </div>
 
                                     <div class="col-md-4">
                                         <label class=" font-weight-head  "> Marital Status </label>
+
                                         <p class="details ">Never married</p>
                                     </div>
                                     <div class="col-md-4">
                                         <label class=" font-weight-head  "> Eating Habits </label>
+
                                         <p class="details ">Non Vegitarian</p>
                                     </div>
                                     <div class="col-md-4">
                                         <label class=" font-weight-head  "> Drinking Habits </label>
+
                                         <p class="details ">Non-Drinker </p>
                                     </div>
                                     <div class="col-md-4">
                                         <label class=" font-weight-head  "> Smoking Habits</label>
+
                                         <p class="details ">Non-Smoker </p>
                                     </div>
                                 </div>
@@ -799,7 +858,8 @@
                             </div>
                             <div class="actions">
                                 <div class="btn-group">
-                                    <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea" ng-click="">
+                                    <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea"
+                                            ng-click="">
                                         EDIT
                                     </button>
 
@@ -812,28 +872,33 @@
 
                                 <div class="col-md-4">
                                     <label class="font-weight-head "> Religion</label>
+
                                     <p class="details">Hindu</p>
 
                                 </div>
 
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Caste /Sub caste</label>
+
                                     <p class="details ">Nadar</p>
 
                                 </div>
 
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Gothram</label>
+
                                     <p class="details ">Not available</p>
 
                                 </div>
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Star / Rassi</label>
+
                                     <p class="details ">Not available</p>
 
                                 </div>
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Chevvai Dosham / Rassi</label>
+
                                     <p class="details ">No</p>
 
                                 </div>
@@ -850,7 +915,8 @@
                             </div>
                             <div class="actions">
                                 <div class="btn-group">
-                                    <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea" ng-click="">
+                                    <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea"
+                                            ng-click="">
                                         EDIT
                                     </button>
 
@@ -863,15 +929,18 @@
 
                                 <div class="col-md-4">
                                     <label class="font-weight-head "> Education</label>
+
                                     <p class="details">BE</p>
                                 </div>
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Occupation</label>
+
                                     <p class="details ">Web Developer</p>
                                 </div>
 
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Annaul Income</label>
+
                                     <p class="details ">Any Annual Income</p>
 
                                 </div>
@@ -889,7 +958,8 @@
                             </div>
                             <div class="actions">
                                 <div class="btn-group">
-                                    <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea" ng-click="">
+                                    <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea"
+                                            ng-click="">
                                         EDIT
                                     </button>
 
@@ -902,23 +972,27 @@
 
                                 <div class="col-md-4">
                                     <label class="font-weight-head "> Country</label>
+
                                     <p class="details">India</p>
 
                                 </div>
 
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> State</label>
+
                                     <p class="details ">Tamil Nadu</p>
 
                                 </div>
 
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> City</label>
+
                                     <p class="details ">Chennai</p>
 
                                 </div>
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Citizenship</label>
+
                                     <p class="details ">Indian</p>
 
                                 </div>
@@ -936,7 +1010,8 @@
                             </div>
                             <div class="actions">
                                 <div class="btn-group">
-                                    <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea" ng-click="">
+                                    <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea"
+                                            ng-click="">
                                         EDIT
                                     </button>
 
@@ -948,7 +1023,8 @@
                             <div class="form-group">
 
                                 <div class="col-md-12">
-                                    <p class="details">My son is a cam and understanding boy. He respects traditional values and also has modern outlook. He loves reading
+                                    <p class="details">My son is a cam and understanding boy. He respects traditional
+                                        values and also has modern outlook. He loves reading
                                         books and hearing music.
                                     </p>
                                 </div>
@@ -961,9 +1037,6 @@
     </div>
 
 
-
-
-
     <!-- END PAGE TITLE -->
 
 </div>
@@ -971,8 +1044,6 @@
 
 <!-- END PAGE HEAD-->
 <!-- BEGIN PAGE BREADCRUMB -->
-
-
 
 
 <!-- END PAGE BASE CONTENT -->
