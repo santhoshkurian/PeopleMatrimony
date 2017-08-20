@@ -20,11 +20,11 @@
 
                     <div class="col-md-8">
                         <select class="form-control input-rounded" ng-model="reg.profile_for" placeholder="Profile for">
-                            <option>Option 1</option>
-                            <option>Option 2</option>
-                            <option>Option 3</option>
-                            <option>Option 4</option>
-                            <option>Option 5</option>
+                            <option >Select</option>
+                            <option value="Son">Son</option>
+                            <option value="Daughter">Daughter</option>
+                            <option value="Myself">Myself</option>
+
                         </select>
                     </div>
                 </div>
@@ -72,13 +72,11 @@
                 <div class="form-group">
                     <label class="col-md-3 control-label ">RELIGION</label>
 
+
                     <div class="col-md-8">
-                        <select class="form-control input-rounded" ng-model="reg.religion">
-                            <option value=1>Option 1</option>
-                            <option value=2>Option 2</option>
-                            <option value=3>Option 3</option>
-                            <option value=4>Option 4</option>
-                            <option value=5>Option 5</option>
+                        <select class="form-control input-rounded "
+                                ng-model="reg.religion">
+                            <option ng-repeat="obj in religonList" value="obj.id_religion">{{obj.religion}}</option>
                         </select>
                     </div>
                 </div>

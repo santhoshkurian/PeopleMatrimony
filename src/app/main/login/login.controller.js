@@ -6,8 +6,10 @@
         .controller('LoginController', LoginController);
 
     /** @ngInject */
-    function LoginController($uibModal,$state,$http,$scope,storageService) {
+    function LoginController($uibModal,$state,$http,$scope,storageService,$log) {
         //var vm = this;
+        $scope.religonList = [];
+
         $scope.login = {
             username:null,password:null
         }
@@ -16,6 +18,19 @@
         $scope.reg={
 
         };
+
+        $http({
+            method: 'GET',
+            url: 'http://devapi.peoplematrimony.com/populate'
+        }).then(function successCallback(response) {
+
+            $scope.religonList = response.data.religon;
+
+            //$scope.profile = response.data;
+        }, function errorCallback(response) {
+            //console.log(response)
+
+        });
 
         var vm = this;
         vm.open;
@@ -76,12 +91,14 @@
     };
 
     //}
-    angular.module('dashboard').controller('ModalInstanceCtrl', function ($scope,storageService,$http,$uibModalInstance, items,$state) {
+    angular.module('dashboard').controller('ModalInstanceCtrl', function ($scope,storageService,$http,$uibModalInstance, items,$state,$log) {
         var vm = this;
+
         vm.items = items;
         vm.selected = {
             item: vm.items[0]
         };
+
 
 
 
