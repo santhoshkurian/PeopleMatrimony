@@ -150,21 +150,25 @@
 <!--</div>-->
 
 <script type="text/ng-template" id="myModalContent.html">
+    <form name="loginForm">
+
     <div class="modal-header login-pannel-title">
         <div class="caption">
             <span class="caption-subject  font-black bold uppercase">Sign In</span></div>
     </div>
     <!--<div class="pull-right"><i class="close green"></i></div>-->
    <div class="col-md-12" style="text-align: center;color:red;padding:20px">{{message}}</div>
+
     <div class="modal-body" id="modal-body">
+
         <div class="form-group">
             <label class=" uppercase">Email / Mobile Number / Member Id</label>
             <input class="form-control spinner input-rounded" type="text"
-                   placeholder="Email / Mobile NUmber / Member ID" ng-model="login.username"/>
+                   placeholder="Email / Mobile NUmber / Member ID" ng-model="login.username" required/>
         </div>
         <div class="form-group">
             <label class=" uppercase"> Password</label>
-            <input class="form-control spinner input-rounded" type="password" ng-model="login.password" placeholder="Password"/>
+            <input required class="form-control spinner input-rounded" type="password" ng-model="login.password" placeholder="Password"/>
         </div>
         <div class="form-group">
             <label class="checkbox-inline" class="custon-text">
@@ -177,7 +181,7 @@
     </div>
     <div class="modal-footer login-modal-footer">
         <div>
-            <button type="button" class=" center-block col-md-5 btn red input-rounded" ng-click="vm.ok(login)">
+            <button ng-disabled="loginForm.$invalid" type="button" class=" center-block col-md-5 btn red input-rounded" ng-click="vm.ok(login)">
                 Sign in
             </button>
             <button type="button" class=" center-block col-md-5 btn btn-default input-rounded" ng-click="vm.cancel()">
@@ -185,7 +189,7 @@
             </button>
         </div>
         <div>
-            <label class="pull-left custon-text"> Dont have an account? &nbsp;<a href="" class="font-red-mint"
+            <label class="pull-left custon-text"> Don't have an account? &nbsp;<a href="" class="font-red-mint"
                                                                                  ng-click="vm.cancel()"> Sign up
                 here</a></label>
 
@@ -195,4 +199,5 @@
         <!--<button class="btn btn-primary" type="button" ng-click="vm.ok()">Save</button>-->
         <!--<button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>-->
     </div>
+        </form>
 </script>
