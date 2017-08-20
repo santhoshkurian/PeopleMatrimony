@@ -11,6 +11,8 @@
         $scope.basic = false;
 
         $scope.countryList = [];
+        $scope.stateList = [];
+        $scope.cityList = [];
         $scope.motherTongueList = [];
         $scope.religonList = [];
         $scope.starsList = [];
@@ -54,9 +56,36 @@
         $scope.aboutme = aboutme;
         $scope.basic = basic;
         $scope.selectCountry = selectCountry;
+        $scope.selectState = selectState;
 
         function selectCountry(obj){
-            console.log(obj.id_country);
+            console.log(JSON.parse(obj));
+            var country = JSON.parse(obj);
+
+            $http({
+                method: 'GET',
+                url: 'http://devapi.peoplematrimony.com/populate?id_country='+country.id_country
+            }).then(function successCallback(response) {
+                $scope.stateList = response.data.states;
+            }, function errorCallback(response) {
+
+            });
+
+
+        }
+
+        function selectState(obj){
+            var state = JSON.parse(obj);
+
+            $http({
+                method: 'GET',
+                url: 'http://devapi.peoplematrimony.com/populate?id_state='+state.id_state
+            }).then(function successCallback(response) {
+                $scope.cityList = response.data.cities;
+            }, function errorCallback(response) {
+
+            });
+
 
         }
 

@@ -283,27 +283,15 @@
                                     <label class=" uppercase font-weight "> Country</label>
 
                                     <select class="form-control input-rounded " ng-model="country" ng-click="selectCountry(country)">
-                                        <option ng-repeat="obj in countryList" value="obj">{{obj.country_name}}</option>
+                                        <option ng-repeat="obj in countryList" value="{{obj}}">{{obj.country_name}}</option>
                                     </select>
                                 </div>
 
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight  "> State </label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.age">
-                                        <option>Select </option>
-                                        <option value="18">18</option>
-                                        <option value="19">19</option>
-                                        <option value="20">20</option>
-                                        <option value="21">21</option>
-                                        <option value="22">22</option>
-                                        <option value="23">23</option>
-                                        <option value="24">24</option>
-                                        <option value="25">25</option>
-                                        <option value="26">26</option>
-                                        <option value="27">27</option>
-                                        <option value="28">28</option>
-                                        <option value="29">29</option>
+                                    <select class="form-control input-rounded " ng-model="state" ng-click="selectState(state)">
+                                        <option ng-repeat="obj in stateList" value="{{obj}}">{{obj.state_name}}</option>
                                     </select>
                                 </div>
 
@@ -314,12 +302,8 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> City</label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.height">
-                                        <option>Select</option>
-                                        <option value="170">5Ft 11In / 178 cm</option>
-                                        <option  value="171">6Ft 0In / 180 cm</option>
-                                        <option  value="172">5ft 0In / 150 cm</option>
-
+                                    <select class="form-control input-rounded " ng-model="city" ng-click="selectCity(city)">
+                                        <option ng-repeat="obj in cityList" value="{{obj}}">{{obj.city_name}}</option>
                                     </select>
                                 </div>
 
