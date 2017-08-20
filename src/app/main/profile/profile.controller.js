@@ -10,6 +10,15 @@
         $scope.about = false;
         $scope.basic = false;
 
+        $scope.countryList = [];
+        $scope.motherTongueList = [];
+        $scope.religonList = [];
+        $scope.starsList = [];
+        $scope.occupationCategoryList = [];
+        $scope.occupationList = [];
+        $scope.educationCategoryList = [];
+        $scope.educationList = [];
+
         $http({
             method: 'GET',
             url: 'https://devapi.peoplematrimony.com/user/view?' +
@@ -22,9 +31,34 @@
 
         });
 
+        $http({
+            method: 'GET',
+            url: 'http://devapi.peoplematrimony.com/populate'
+        }).then(function successCallback(response) {
+            console.log(response)
+            $scope.countryList = response.data.countries;
+            $scope.motherTongueList = response.data.mothertongue;
+            $scope.religonList = response.data.religon;
+            $scope.starsList = response.data.stars;
+            $scope.occupationCategoryList = response.data.occupation_category;
+            $scope.educationCategoryList = response.data.education_category;
+
+            //$scope.profile = response.data;
+        }, function errorCallback(response) {
+            //console.log(response)
+
+        });
+
+
         $scope.editAction = editAction;
         $scope.aboutme = aboutme;
         $scope.basic = basic;
+        $scope.selectCountry = selectCountry;
+
+        function selectCountry(obj){
+            console.log(obj.id_country);
+
+        }
 
         $scope.profile1 = {
             "login_user": {

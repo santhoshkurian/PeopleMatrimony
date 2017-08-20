@@ -282,10 +282,8 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Country</label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.profile_for">
-                                        <option>Select</option>
-                                        <option value="son">Son</option>
-                                        <option value="daughter">Daughter</option>
+                                    <select class="form-control input-rounded " ng-model="country" ng-click="selectCountry(country)">
+                                        <option ng-repeat="obj in countryList" value="obj">{{obj.country_name}}</option>
                                     </select>
                                 </div>
 
@@ -400,12 +398,8 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Religion</label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.height">
-                                        <option>Select</option>
-                                        <option value="170">5Ft 11In / 178 cm</option>
-                                        <option  value="171">6Ft 0In / 180 cm</option>
-                                        <option  value="172">5ft 0In / 150 cm</option>
-
+                                    <select class="form-control input-rounded " ng-model="profile.login_user.profile_for">
+                                        <option ng-repeat="obj in religonList" value="obj">{{obj.religion}}</option>
                                     </select>
                                 </div>
 
