@@ -9,6 +9,7 @@
     function LoginController($uibModal,$state,$http,$scope,storageService,$log) {
         //var vm = this;
         $scope.religonList = [];
+        $scope.message=null;
 
         $scope.login = {
             username:null,password:null
@@ -64,6 +65,7 @@
 
 
         vm.registerCandidate = function () {
+            console.log($scope.reg);
             $http({
                 method: 'POST',
                 url: 'https://devapi.peoplematrimony.com/user?step=1&profile_for='+$scope.reg.profile_for+'&' +
@@ -80,6 +82,7 @@
 
             }, function errorCallback(response) {
                 console.log(response);
+                $scope.message = response.data.message;
 
 
             });
