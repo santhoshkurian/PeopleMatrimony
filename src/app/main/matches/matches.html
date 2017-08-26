@@ -48,6 +48,7 @@
                             </div>
                         </div>
                     </div>
+                    <div style="padding: 20px;color: red;text-align: center">{{message}}</div>
                                         <span ng-repeat="item in matches">
 
                     <div class="portlet light bordered">
@@ -145,10 +146,10 @@
                             </div>
                             <div class=" row vp-main-action" >
                                 <div style="text-transform: uppercase;text-align: center;">
-                                    <div class="col-md-3"
-                                         style="padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro"><i
+                                    <button class="col-md-3"
+                                         style="padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro;cursor: pointer" ng-click="shortlist(item.id_people)"><i
                                             class="fa fa-star-o"></i> Shortlist
-                                    </div>
+                                    </button>
                                     <div class="col-md-3"
                                          style="padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro;text-align: center">
                                         <i class="fa fa-phone"></i> Call now
