@@ -200,20 +200,17 @@
                 url: '/matches',
                 views: {
                     'main@': {
-                        templateUrl: 'app/core/layouts/matchesLayout.html'
-                        //controller : 'InboxController as vm'
+                        templateUrl: 'app/core/layouts/matchesLayout.html',
+                        controller : 'MatchesController as vm'
                     },
                     'toolbar@matches': {
-                        templateUrl: 'app/toolbar/matches/matchestoolbar.html',
-                        controller: 'MatchesToolbarController as vm'
+                        templateUrl: 'app/toolbar/matches/matchestoolbar.html'
                     },
                     'navigation@matches': {
-                        templateUrl: 'app/navigation/matches/matchesNavigation.html',
-                        controller: 'MatchesNavigationController as vm'
+                        templateUrl: 'app/navigation/matches/matchesNavigation.html'
                     },
                     'content@matches': {
                         templateUrl: 'app/main/matches/matches.html',
-                        controller: 'MatchesController as vm'
                     },
                     'footer@matches': {
                         templateUrl: 'app/footer/footer.html',
