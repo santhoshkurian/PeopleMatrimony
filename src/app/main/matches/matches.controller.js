@@ -47,43 +47,76 @@
         }
 
         $scope.shortlist = shortlist;
-        $scope.matches = matches;
+        $scope.newMatches = newMatches;
         $scope.notYetViewed = notYetViewed;
         $scope.viewed = viewed;
         $scope.shortlisted = shortlisted;
         $scope.mutalmatches = mutalmatches;
         $scope.mutalmatches = more;
 
-        function matches(){
+        function newMatches(){
+            $scope.mainlink = "newMatches";
+            $scope.message = null;
+
+            $http({
+                method: 'GET',
+                url: 'https://devapi.peoplematrimony.com/matches/new?' +
+                '&token=' + storageService.get("token")
+            }).then(function successCallback(response) {
+                console.log(response)
+                $scope.matches = response.data.matches;
+            }, function errorCallback(response) {
+                console.log(response);
+            });
 
         }
          function notYetViewed(){
              $scope.mainlink = "notYetViewed";
+             $scope.message = null;
+
              $scope.matches= [];
 
 
          }
         function viewed(){
             $scope.mainlink = "viewed";
+            $scope.message = null;
+
             $scope.matches= [];
 
 
         }
         function shortlisted(){
             $scope.mainlink = "shortlisted";
+            $scope.message = null;
+
             $scope.matches= [];
+            $http({
+                method: 'GET',
+                url: 'http://devapi.peoplematrimony.com/list/shortlist?' +
+                '&token=' + storageService.get("token")+'&id='+storageService.get("id")
+            }).then(function successCallback(response) {
+                console.log(response)
+                $scope.matches = response.data.matches;
+            }, function errorCallback(response) {
+                console.log(response);
+            });
 
 
 
         }
         function mutalmatches(){
             $scope.mainlink = "mutalmatches";
+            $scope.message = null;
+
             $scope.matches= [];
 
 
         }
         function more(){
             $scope.mainlink = "more";
+            $scope.message = null;
+
             $scope.matches= [];
 
 
