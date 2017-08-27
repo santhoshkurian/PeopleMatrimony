@@ -151,6 +151,24 @@
         }
 
 
+        $scope.height = {start: null, end: null};
+
+
+        $scope.heightfilter = heightfilter;
+        function heightfilter() {
+            $http({
+                method: 'POST',
+                url: 'https://devapi.peoplematrimony.com/matches?' +
+                '&token=' + storageService.get("token")+'&type=search&height_start='+$scope.height.start+'&height_end='+$scope.height.end
+            }).then(function successCallback(response) {
+                console.log(response)
+                $scope.matches = response.data.matches;
+            }, function errorCallback(response) {
+                console.log(response);
+            });
+        }
+
+
         function shortlist(id) {
             $http({
                 method: 'GET',
