@@ -182,8 +182,9 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight  "> Mother toungue</label>
 
-                                    <select class="form-control input-rounded " ng-model="mothertongue"
-                                            ng-click="selectMothertongue(mothertongue)">
+                                    <select class="form-control input-rounded "
+                                            ng-model="profile.login_user.id_mothertongue"
+                                            ng-click="selectMothertongue(profile.login_user.id_mothertongue)">
                                         <option ng-repeat="obj in motherTongueList" value="{{obj}}">
                                             {{obj.mothertongue}}
                                         </option>
@@ -293,8 +294,8 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Country</label>
 
-                                    <select class="form-control input-rounded " ng-model="country"
-                                            ng-click="selectCountry(country)">
+                                    <select class="form-control input-rounded " ng-model="profile.login_user.country"
+                                            ng-click="selectCountry(profile.login_user.country)">
                                         <option ng-repeat="obj in countryList" value="{{obj}}">{{obj.country_name}}
                                         </option>
                                     </select>
@@ -303,7 +304,7 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight  "> State </label>
 
-                                    <select class="form-control input-rounded " ng-model="state"
+                                    <select class="form-control input-rounded " ng-model="profile.login_user.state"
                                             ng-click="selectState(state)">
                                         <option ng-repeat="obj in stateList" value="{{obj}}">{{obj.state_name}}</option>
                                     </select>
@@ -316,7 +317,7 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> City</label>
 
-                                    <select class="form-control input-rounded " ng-model="city"
+                                    <select class="form-control input-rounded " ng-model="profile.login_user.city"
                                             ng-click="selectCity(city)">
                                         <option ng-repeat="obj in cityList" value="{{obj}}">{{obj.city_name}}</option>
                                     </select>
@@ -402,22 +403,22 @@
                                     <label class=" uppercase font-weight "> Religion</label>
 
                                     <select class="form-control input-rounded "
-                                            ng-model="profile.login_user.profile_for">
-                                        <option ng-repeat="obj in religonList" value="obj">{{obj.religion}}</option>
+                                            ng-model="reliegion" ng-init="reliegion == profile.login_user.id_religion"
+                                            ng-click="selectReliegion(reliegion)"
+                                            >
+                                        <option>Select</option>
+                                        <option ng-repeat="obj in religonList" value="{{obj.religion_id}}">{{obj.religion}}</option>
                                     </select>
                                 </div>
 
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight  "> Caste /Sub caste</label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.weight">
+                                    <select class="form-control input-rounded " ng-model="caste"
+                                            ng-init="caste == profile.login_user.id_caste"
+                                            ng-click="profile.login_user.id_caste = caste">
                                         <option>Select</option>
-                                        <option value="50">50Kg 115 Lbs</option>
-                                        <option value="60">60Kg /135 Lbs</option>
-                                        <option value="70">70Kg / 155 Lbs</option>
-                                        <option value="75">75Kg / 175 Lbs</option>
-                                        <option value="80">80Kg / 175 Lbs</option>
-
+                                        <option ng-repeat="obj in castList" value="{{obj.id_caste}}">{{obj.caste}}</option>
 
                                     </select>
                                 </div>
@@ -428,11 +429,8 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Gothram</label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.height">
+                                    <select class="form-control input-rounded ">
                                         <option>Select</option>
-                                        <option value="170">5Ft 11In / 178 cm</option>
-                                        <option value="171">6Ft 0In / 180 cm</option>
-                                        <option value="172">5ft 0In / 150 cm</option>
 
                                     </select>
                                 </div>
@@ -440,13 +438,9 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight  "> Star / Rassi</label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.weight">
+                                    <select class="form-control input-rounded " ng-model="profile.login_user.id_star">
                                         <option>Select</option>
-                                        <option value="50">50Kg 115 Lbs</option>
-                                        <option value="60">60Kg /135 Lbs</option>
-                                        <option value="70">70Kg / 155 Lbs</option>
-                                        <option value="75">75Kg / 175 Lbs</option>
-                                        <option value="80">80Kg / 175 Lbs</option>
+                                        <option ng-repeat="obj in starsList" value="{{obj}}">{{obj.star}}</option>
 
 
                                     </select>
@@ -459,17 +453,18 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Chevvai Dosham / Rassi</label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.height">
+                                    <select class="form-control input-rounded " ng-model="profile.login_user.dosham">
                                         <option>Select</option>
-                                        <option value="170">5Ft 11In / 178 cm</option>
-                                        <option value="171">6Ft 0In / 180 cm</option>
-                                        <option value="172">5ft 0In / 150 cm</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+
 
                                     </select>
                                 </div>
 
 
                             </div>
+
 
 </span>
                                                         <span ng-show="relogious">
@@ -479,14 +474,16 @@
                                 <div class="col-md-4">
                                     <label class="font-weight-head "> Religion</label>
 
-                                    <p class="details">Hindu</p>
+                                    <p ng-if="profile.login_user.religion != null" class="details">{{profile.login_user.religion}}</p>
+                                    <p ng-if="profile.login_user.religion == null" class="details">Not available</p>
 
                                 </div>
 
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Caste /Sub caste</label>
 
-                                    <p class="details ">Nadar</p>
+                                    <p ng-if="profile.login_user.caste != null" class="details ">{{profile.login_user.caste}}</p>
+                                    <p ng-if="profile.login_user.caste == null" class="details ">Not available</p>
 
                                 </div>
 
@@ -499,17 +496,31 @@
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Star / Rassi</label>
 
-                                    <p class="details ">Not available</p>
+                                    <p ng-if="profile.login_user.star != null" class="details ">{{profile.login_user.star}}</p>
+                                    <p ng-if="profile.login_user.star == null" class="details ">Not available</p>
 
                                 </div>
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Chevvai Dosham / Rassi</label>
 
-                                    <p class="details ">No</p>
+                                    <p ng-if="profile.login_user.dosham != null" class="details ">{{profile.login_user.dosham}}</p>
+                                    <p ng-if="profile.login_user.dosham == null" class="details ">Not available</p>
 
                                 </div>
                             </div>
                                                             </span>
+                            <div class="actions" style="text-align: right" ng-show="!relogious">
+                                <button type="button" ng-click="editReligion('relogious')"
+                                        class=" btn btn-default input-rounded " ng-click="">
+                                    Cancel
+                                </button>
+                                &nbsp;
+                                <button type="button" ng-click="saveReliegion()" class=" btn btn-default red input-rounded "
+                                        style="color:#ffffea">
+                                    Save
+                                </button>
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -762,7 +773,8 @@
                                     Cancel
                                 </button>
                                 &nbsp;
-                                <button type="button" ng-click="aboutfamily()" class=" btn btn-default red input-rounded "
+                                <button type="button" ng-click="aboutfamily()"
+                                        class=" btn btn-default red input-rounded "
                                         style="color:#ffffea">
                                     Save
                                 </button>

@@ -24,6 +24,7 @@
         $scope.occupationList = [];
         $scope.educationCategoryList = [];
         $scope.educationList = [];
+        $scope.castList = [];
 
         $http({
             method: 'GET',
@@ -32,6 +33,9 @@
         }).then(function successCallback(response) {
             console.log(response)
             $scope.profile = response.data;
+            if($scope.profile.login_user.id_religion != null){
+                $scope.selectReliegion($scope.profile.login_user.id_religion);
+            }
         }, function errorCallback(response) {
             console.log(response)
 
@@ -57,11 +61,14 @@
 
 
         $scope.editAction = editAction;
+        $scope.editReligion = editReligion;
         $scope.aboutme = aboutme;
         $scope.aboutfamily = aboutfamily;
         $scope.basic = basic;
         $scope.selectCountry = selectCountry;
         $scope.selectState = selectState;
+        $scope.selectReliegion = selectReliegion;
+        $scope.saveReliegion = saveReliegion;
 
         function selectCountry(obj){
             console.log(JSON.parse(obj));
@@ -92,6 +99,17 @@
             });
 
 
+        }
+
+        function selectReliegion(id){
+            $http({
+                method: 'GET',
+                url: 'http://devapi.peoplematrimony.com/populate?id_mothertongue='+$scope.profile.login_user.id_mothertongue+'&id_religion='+id
+            }).then(function successCallback(response) {
+                $scope.castList = response.data.caste;
+            }, function errorCallback(response) {
+
+            });
         }
 
         $scope.profile1 = {
@@ -212,6 +230,9 @@
         function editAction(action) {
             $scope[action] = !$scope[action];
         }
+        function editReligion(relogious) {
+            $scope[relogious] = !$scope[relogious];
+        }
 
         function aboutme() {
             $http({
@@ -253,6 +274,25 @@
                 '&token=' + storageService.get("token")
             }).then(function successCallback(response) {
 console.log("success",response)
+            }, function errorCallback(response) {
+                console.log("error",response)
+
+            });
+        }
+        function saveReliegion() {
+            console.log($scope.profile)
+            $http({
+                method: 'PUT',
+                url: 'https://devapi.peoplematrimony.com/user/edit/' + storageService.get('id') + '?' +
+                'block=religious&' +
+                'religion=' + $scope.profile.login_user.id_religion +
+                'caste=' + $scope.profile.login_user.id_caste +
+                //'gothra=' + $scope.profile.login_user.age +
+                'star=' + $scope.profile.login_user.id_star +
+                'dosham=' + $scope.profile.login_user.dosham +
+                '&token=' + storageService.get("token")
+            }).then(function successCallback(response) {
+                $scope.relogious = !$scope.relogious;
             }, function errorCallback(response) {
                 console.log("error",response)
 
