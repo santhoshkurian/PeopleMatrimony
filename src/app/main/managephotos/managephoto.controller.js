@@ -9,6 +9,8 @@
     function ManagePhotoController($scope,storageService,$http) {
         console.log("ManagePhotoController");
         $scope.viewType = 'managephoto';
+        $scope.image_url = storageService.get("image_url");
+
         $scope.uploadmsg = '';
         $scope.groupName = '';
         $scope.hidegroup = true;
