@@ -7,6 +7,8 @@
 
     /** @ngInject */
     function ProfileController($http, $scope, storageService) {
+        $scope.image_url = storageService.get("image_url");
+
         $scope.about = false;
         $scope.fabout = false;
         $scope.basic = false;

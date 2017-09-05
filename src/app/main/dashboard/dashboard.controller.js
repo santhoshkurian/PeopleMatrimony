@@ -10,6 +10,8 @@
 
         $scope.logout = logout;
 
+        $scope.image_url = storageService.get("image_url");
+
 
         $scope.isActive = function (viewLocation) {
             return viewLocation === $location.path();
@@ -35,8 +37,20 @@
             url: 'https://devapi.peoplematrimony.com/user/view?' +
             'view_id=' + storageService.get("id") + '&token=' + storageService.get("token")
         }).then(function successCallback(response) {
-            console.log(response)
+            console.log(response.data.login_user.images[0])
             $scope.profile = response.data;
+            if(response.data.login_user.images.length > 0) {
+                var count;
+                for (count = 0; count < response.data.login_user.images.length; count++) {
+                    var obj = response.data.login_user.images[count];
+                    if(obj.is_primary == 1){
+                        storageService.set("image_url",obj.image)
+
+                    }
+                }
+            }
+
+
         }, function errorCallback(response) {
             console.log(response)
 
