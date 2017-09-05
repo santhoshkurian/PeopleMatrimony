@@ -4,7 +4,11 @@
             <div class="row">
                 <div class="col-md-12  " style="text-align:center;margin-top: 20px">
                     <span class="bold">Profile Picture</span><br>
-<div style="margin: 20px;font-size: 10px;color:grey">You are not yet uploaded even a single photo. Upload photo and add a face to your profile    </div>            </div>
+
+                    <div style="margin: 20px;font-size: 10px;color:grey">You are not yet uploaded even a single photo.
+                        Upload photo and add a face to your profile
+                    </div>
+                </div>
                 <div class="col-md-12 " style="text-align:center;margin-top: 20px">
                     <img style="width: 100px;height: 130px;!important;" src="assets/images/prof1.jpg"/>
                 </div>
@@ -50,9 +54,9 @@
                 <div class="col-md-12 ">
                     <!-- BEGIN SAMPLE FORM PORTLET-->
                     <div class="portlet light "
-                         style="padding-top: 0px">
+                         style="padding-top: 0px"  ng-if="viewType != 'group'">
 
-                        <div class=" row vp-main-action">
+                        <div class=" row vp-main-action" >
                             <div style="text-transform: uppercase;text-align: center;">
                                 <div class="col-md-6 vp-main-link2 "
                                      ng-class="{'active-link': viewType == 'managephoto'}"
@@ -85,9 +89,9 @@
                                       <div class="upload-btn-wrapper">
                                           <button class="btn"
                                                   style="background-image:url('../assets/images/upload.png');width: 180px;height: 180px "></button>
-                                          <input type = "file" file-model = "myFile" name="myFile" />
+                                          <input type="file" file-model="myFile" name="myFile"/>
                                       </div>
-                                                         <button ng-click = "uploadFile()">upload me</button>
+                                                         <button ng-click="uploadFile()">upload me</button>
 
 
                                 </span></div>
@@ -95,11 +99,10 @@
                                     </div>
                                     <div class="col-md-1"></div>
                                     <div class="col-md-6">
-                                        <button type="button" class="btn btn-primary">Facebook</button>
 
                                         <div class="fileUpload btn btn-primary">
                                             <span>Upload</span>
-                                            <input type="file" id="myFile" class="upload" >
+                                            <input type="file" id="myFile" class="upload">
 
                                         </div>
 
@@ -110,134 +113,194 @@
                         </div>
 
                         <!--<input type="file" id="myFile">-->
-                        <button ng-click = "uploadFile()">Try it</button>
+                        <button ng-click="uploadFile()">Try it</button>
 
                     </div>
+                </div>
+                <div class="col-md-12" ng-if="viewType != 'group'">
+
+                    <div class="row">
+                        <div class="col-sm-3" ng-click="group('general')">
+
+
+                            <div class="thumbnail">
+
+                                <div style="height: 150px;width: 100%;line-height: 140px;text-align:center">
+                                    <b>General</b>
+                                </div>
+
+                                <!--<img ng-src="{{image.image}}" alt="{{image.description}}">-->
+                            </div>
+                        </div>
+                        <div class="col-sm-3" ng-click="group('family')">
+
+
+                            <div class="thumbnail">
+
+                                <div style="height: 150px;width: 100%;line-height: 140px;text-align:center">
+                                    <b>Family & Friends</b>
+                                </div>
+
+                                <!--<img ng-src="{{image.image}}" alt="{{image.description}}">-->
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3" ng-click="group('others')">
+
+
+                            <div class="thumbnail">
+
+                                <div style="height: 150px;width: 100%;line-height: 140px;text-align:center">
+                                    <b>Others</b>
+                                </div>
+
+                                <!--<img ng-src="{{image.image}}" alt="{{image.description}}">-->
+                            </div>
+                        </div>
                     </div>
+                </div>
+
+                <div class="col-md-12" ng-if="viewType == 'group'">
+
+                    <div >
+                        <div class="row">
+                            <div class="col-md-12" style="height: 50px;width:100%;line-height:50px;
+                      font-size: 20px;font-weight: bold;color: #0086B3"><span
+                                    ng-click="backtomain()"><< {{groupName}}</span></div>
+
+                        </div>
+
+
                         <div class="row">
                             <div class="col-sm-3" ng-repeat="image in images">
+
+
                                 <div class="thumbnail">
-                                    <img ng-src="{{image.thumbnail}}" alt="{{image.description}}">
+                                    <img ng-src="{{image.image}}" alt="{{image.description}}">
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div ng-if="viewType == 'privacy'">
+                <div class="portlet light border-rounded">
+                    <div class="portlet-title">
+                        <div class="caption ">
+                            <!--<i class="icon-settings font-red-sunglo"></i>-->
+                            <span class=" uppercase">Choose Display options</span>
+
+                            <div style="font-size: 10px">Choose Display options</div>
                         </div>
 
                     </div>
+                    <div class="portlet-body form">
+                        <div class="row">
 
-                    <div ng-if="viewType == 'privacy'">
-                        <div class="portlet light border-rounded">
-                            <div class="portlet-title">
-                                <div class="caption ">
-                                    <!--<i class="icon-settings font-red-sunglo"></i>-->
-                                    <span class=" uppercase">Choose Display options</span>
-
-                                    <div style="font-size: 10px">Choose Display options</div>
-                                </div>
-
+                            <div class="col-md-12">
+                                <input type="radio">Visible to all
                             </div>
-                            <div class="portlet-body form">
-                                <div class="row">
-
-                                    <div class="col-md-12">
-                                        <input type="radio">Visible to all
-                                    </div>
-                                    <div class="col-md-12">
-                                        <input type="radio">Visible only on invitation sent/accepted
-                                    </div>
-                                    <div class="col-md-12">
-                                        <input type="radio">Password protected
-                                    </div>
-                                </div>
-                                <div class="row">
-
-                                </div>
-
-                                <div class="row margin-top-20" >
-                                    <div class="col-md-9 col-md-offest-2">
-                                    <div class="col-md-12" style="font-size: 18px;color:#4cbcac;margin-bottom: 25px">
-                                        This is how the photo will look to other members
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div style="height: 200px;width:200px;font-size:40px;text-align: center;line-height: 200px;background-image: url('../assets/images/prof1.jpg');opacity: .2 "><i style="opacity: 1" class="fa fa-expeditedssl"></i>
-                                        <!--<img style="height: 200px;opacity: .2"-->
-                                             <!--ng-src="../assets/images/prof1.jpg"/>-->
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row">
-                                            <div class="col-md-12" style="border-bottom: 1px solid #eef1f5;">
-                                                <table width="100%" style="margin-bottom: 10px;" class="match-table">
-                                                    <tr>
-                                                        <td width="30%" class="first-row">Age/Height</td>
-                                                        <td width="5%">:</td>
-                                                        <td width="45%">25,5`7</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="first-row">Religion</td>
-                                                        <td>:</td>
-                                                        <td>Hindu</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="first-row">Mother Tongue</td>
-                                                        <td>:</td>
-                                                        <td>Tamil</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="first-row">Community</td>
-                                                        <td>:</td>
-                                                        <td>Vaniyakullak Kshathriya</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="first-row">Star</td>
-                                                        <td>:</td>
-                                                        <td>Swathi</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="first-row">Education</td>
-                                                        <td>:</td>
-                                                        <td>Btech</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="first-row">Profession/Income</td>
-                                                        <td>:</td>
-                                                        <td>Software engineer</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="first-row">Location</td>
-                                                        <td>:</td>
-                                                        <td>Bangalore</td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-
-                                <div class="row  " style="border-radius: 10px;margin:20px">
-                                    <button class="btn btn-sm red-mint" style="border-radius: 20px"><i class="fa fa-camera"></i> Save settings
-                                    </button>
-                                </div>
-
+                            <div class="col-md-12">
+                                <input type="radio">Visible only on invitation sent/accepted
                             </div>
+                            <div class="col-md-12">
+                                <input type="radio">Password protected
+                            </div>
+                        </div>
+                        <div class="row">
 
                         </div>
 
+                        <div class="row margin-top-20">
+                            <div class="col-md-9 col-md-offest-2">
+                                <div class="col-md-12" style="font-size: 18px;color:#4cbcac;margin-bottom: 25px">
+                                    This is how the photo will look to other members
+                                </div>
+                                <div class="col-md-6">
+                                    <div style="height: 200px;width:200px;font-size:40px;text-align: center;line-height: 200px;background-image: url('../assets/images/prof1.jpg');opacity: .2 ">
+                                        <i style="opacity: 1" class="fa fa-expeditedssl"></i>
+                                        <!--<img style="height: 200px;opacity: .2"-->
+                                        <!--ng-src="../assets/images/prof1.jpg"/>-->
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-12" style="border-bottom: 1px solid #eef1f5;">
+                                            <table width="100%" style="margin-bottom: 10px;" class="match-table">
+                                                <tr>
+                                                    <td width="30%" class="first-row">Age/Height</td>
+                                                    <td width="5%">:</td>
+                                                    <td width="45%">25,5`7</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="first-row">Religion</td>
+                                                    <td>:</td>
+                                                    <td>Hindu</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="first-row">Mother Tongue</td>
+                                                    <td>:</td>
+                                                    <td>Tamil</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="first-row">Community</td>
+                                                    <td>:</td>
+                                                    <td>Vaniyakullak Kshathriya</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="first-row">Star</td>
+                                                    <td>:</td>
+                                                    <td>Swathi</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="first-row">Education</td>
+                                                    <td>:</td>
+                                                    <td>Btech</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="first-row">Profession/Income</td>
+                                                    <td>:</td>
+                                                    <td>Software engineer</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="first-row">Location</td>
+                                                    <td>:</td>
+                                                    <td>Bangalore</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row  " style="border-radius: 10px;margin:20px">
+                            <button class="btn btn-sm red-mint" style="border-radius: 20px"><i class="fa fa-camera"></i>
+                                Save settings
+                            </button>
+                        </div>
 
                     </div>
 
                 </div>
 
+
             </div>
-            <!-- END PAGE TITLE -->
 
         </div>
-        <!-- END PAGE HEAD-->
-        <!-- BEGIN PAGE BREADCRUMB -->
 
-
-        <!-- END PAGE BASE CONTENT -->
     </div>
-    <!-- END CONTENT BODY -->
+    <!-- END PAGE TITLE -->
+
+</div>
+<!-- END PAGE HEAD-->
+<!-- BEGIN PAGE BREADCRUMB -->
+
+
+<!-- END PAGE BASE CONTENT -->
+</div>
+<!-- END CONTENT BODY -->
 </div>
