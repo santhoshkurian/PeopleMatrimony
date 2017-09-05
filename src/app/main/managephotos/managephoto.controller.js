@@ -9,11 +9,15 @@
     function ManagePhotoController($scope,storageService,$http) {
         console.log("ManagePhotoController");
         $scope.viewType = 'managephoto';
+        $scope.uploadmsg = '';
         $scope.groupName = '';
         $scope.hidegroup = true;
         $scope.selectType = selectType;
         $scope.group = group;
         $scope.backtomain = backtomain;
+
+
+
         function selectType(type){
             $scope.viewType = type;
         }
@@ -30,6 +34,8 @@
 
             $scope.viewType = 'group';
             $scope.hidegroup = false;
+
+
 
             $http({
                 method: 'GET',
@@ -50,34 +56,36 @@
 
 
 
-        $scope.images =[]
-
-
+        $scope.images =[];
+        $scope.general = $scope.images.length;
 
         $scope.uploadFile = function () {
             var file = document.getElementById("myFile");
-            console.log(file.files[0]);
-            var k = "https://devapi.peoplematrimony.com/image/upload";
-            var  j = new FormData;
-            j.append("id", storageService.get("id")),
-                j.append("token", storageService.get("token")),
-                j.append("image",file.files[0]);
+            $scope.uploadmsg= 'Uploading ....';
+                var k = "https://devapi.peoplematrimony.com/image/upload";
+                var j = new FormData;
+                j.append("id", storageService.get("id")),
+                    j.append("token", storageService.get("token")),
+                    j.append("image", file.files[0]);
 
 
                 $http({
                     method: "post",
                     url: "https://devapi.peoplematrimony.com/image/upload",
-                        headers: {"Content-Type": void 0},
-                        transformRequest: angular.identity,
-                    data : j
+                    headers: {"Content-Type": void 0},
+                    transformRequest: angular.identity,
+                    data: j
                 }).then(function successCallback(response) {
                     console.log(response)
+                    $scope.uploadmsg= 'Uploaded Successfully';
 
                     $http({
                         method: 'GET',
-                        url: 'https://devapi.peoplematrimony.com/user/image/'+storageService.get("id")+'?token=' + storageService.get("token")
+                        url: 'https://devapi.peoplematrimony.com/user/image/' + storageService.get("id") + '?token=' + storageService.get("token")
                     }).then(function successCallback(response) {
-                        console.log("check",response)
+                        console.log("check", response)
+                        $scope.uploadmsg= '';
+
                         $scope.images = response.data.user.images;
 
 
@@ -85,7 +93,6 @@
                         console.log(response)
 
                     });
-
 
 
                 }, function errorCallback(response) {
