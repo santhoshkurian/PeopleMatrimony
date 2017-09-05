@@ -17,7 +17,25 @@
         $scope.selectType = selectType;
         $scope.group = group;
         $scope.backtomain = backtomain;
+        $scope.changeProfilePic = changeProfilePic;
 
+
+
+        function changeProfilePic(image){
+           console.log(image);
+            $http({
+                method: 'post',
+                url: 'https://devapi.peoplematrimony.com/image/primary?token=' + storageService.get("token")+'&id='+storageService.get("token")+'&number='+image.number
+            }).then(function successCallback(response) {
+                console.log("update",response)
+                $scope.image_url = storageService.set("image_url",image.image);
+
+
+            }, function errorCallback(response) {
+                console.log(response)
+
+            });
+        }
 
 
         function selectType(type){
