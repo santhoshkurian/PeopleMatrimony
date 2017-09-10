@@ -52,8 +52,7 @@
 
             <div class="row">
 
-
-                <div class="col-md-12 ">
+               <div class="col-md-12 ">
                     <!-- BEGIN SAMPLE FORM PORTLET-->
                     <div class="portlet light "
                          style="padding-top: 0px" ng-if="viewType != 'group'">
@@ -91,7 +90,9 @@
                                       <div class="upload-btn-wrapper">
                                           <button class="btn"
                                                   style="background-image:url('../assets/images/upload.png');width: 180px;height: 180px "></button>
-                                          <input type="file" id="myFile1" onchange="angular.element(this).scope().uploadFile(this.files)" class="upload">
+                                          <input type="file" id="myFile1"
+                                                 onchange="angular.element(this).scope().uploadFile(this.files)"
+                                                 class="upload">
                                       </div>
 
 
@@ -99,19 +100,22 @@
                                         </div>
                                     </div>
                                     <div class="col-md-1"></div>
-                                    <div class="col-md-6" >
-                                            <div ng-if="uploadmsg != ''" class=" alert-dismissable">
-                                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
-                                              {{uploadmsg}}. </div>
+                                    <div class="col-md-6">
+                                        <div ng-if="uploadmsg != ''" class=" alert-dismissable">
+                                            <button type="button" class="close" data-dismiss="alert"
+                                                    aria-hidden="true"></button>
+                                            {{uploadmsg}}.
+                                        </div>
 
                                         <div class="fileUpload btn btn-sm red-mint">
                                             <span><i class="fa fa-camera"></i> My Computer
                                             </span>
-                                            <input type="file" id="myFile" onchange="angular.element(this).scope().uploadFile(this.files)" class="upload">
+                                            <input type="file" id="myFile"
+                                                   onchange="angular.element(this).scope().uploadFile(this.files)"
+                                                   class="upload">
                                         </div>
                                         <!--<div >{{fileName}}</div>-->
                                         <!--<button ng-click="uploadFile()">Try it</button>-->
-
 
 
                                     </div>
@@ -123,7 +127,7 @@
 
                     </div>
                 </div>
-                <div class="col-md-12" ng-if="viewType == 'managephoto'  ">
+                <div class="col-md-12" ng-if="viewType == 'managephoto'">
 
                     <div class="row">
                         <div class="col-sm-3" ng-click="group('general')">
@@ -141,27 +145,27 @@
                         <!--<div class="col-sm-3" ng-click="group('family')">-->
 
 
-                            <!--<div class="thumbnail">-->
+                        <!--<div class="thumbnail">-->
 
-                                <!--<div style="height: 150px;width: 100%;line-height: 140px;text-align:center">-->
-                                    <!--<b>Family & Friends</b>-->
-                                <!--</div>-->
+                        <!--<div style="height: 150px;width: 100%;line-height: 140px;text-align:center">-->
+                        <!--<b>Family & Friends</b>-->
+                        <!--</div>-->
 
-                                <!--&lt;!&ndash;<img ng-src="{{image.image}}" alt="{{image.description}}">&ndash;&gt;-->
-                            <!--</div>-->
+                        <!--&lt;!&ndash;<img ng-src="{{image.image}}" alt="{{image.description}}">&ndash;&gt;-->
+                        <!--</div>-->
                         <!--</div>-->
 
                         <!--<div class="col-sm-3" ng-click="group('others')">-->
 
 
-                            <!--<div class="thumbnail">-->
+                        <!--<div class="thumbnail">-->
 
-                                <!--<div style="height: 150px;width: 100%;line-height: 140px;text-align:center">-->
-                                    <!--<b>Others</b>-->
-                                <!--</div>-->
+                        <!--<div style="height: 150px;width: 100%;line-height: 140px;text-align:center">-->
+                        <!--<b>Others</b>-->
+                        <!--</div>-->
 
-                                <!--&lt;!&ndash;<img ng-src="{{image.image}}" alt="{{image.description}}">&ndash;&gt;-->
-                            <!--</div>-->
+                        <!--&lt;!&ndash;<img ng-src="{{image.image}}" alt="{{image.description}}">&ndash;&gt;-->
+                        <!--</div>-->
                         <!--</div>-->
                     </div>
                 </div>
@@ -172,7 +176,7 @@
                         <div class="row">
                             <div class="col-md-12" style="height: 50px;width:100%;line-height:50px;
                       font-size: 20px;font-weight: bold;color: #0086B3"><span
-                                    ng-click="backtomain()"><< {{groupName}}</span></div>
+                                    ng-click="backtomain()"> {{groupName}}</span></div>
 
                         </div>
 
@@ -185,8 +189,9 @@
                                     <img ng-src="{{image.image}}" alt="{{image.description}}">
                                 </div>
                                 <div>
-                                    <input type="checkbox" ng-model="profilePic" ng-value="{{image.number}}" ng-click="changeProfilePic(image)">
-                                    </div>
+                                    <input type="checkbox" ng-model="profilePic" ng-value="{{image.number}}"
+                                           ng-click="changeProfilePic(image)">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -305,11 +310,5 @@
     <!-- END PAGE TITLE -->
 
 </div>
-<!-- END PAGE HEAD-->
-<!-- BEGIN PAGE BREADCRUMB -->
 
-
-<!-- END PAGE BASE CONTENT -->
-</div>
-<!-- END CONTENT BODY -->
 </div>
