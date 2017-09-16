@@ -161,7 +161,7 @@
                 views    : {
                     'content@messages'         : {
                         templateUrl: 'app/main/message/sent/sent.html',
-                        controller: 'MessageDeclinedController as vm'
+                        controller: 'SentController as vm'
                     }
                     ,
                     'navigation@messages': {
@@ -176,8 +176,8 @@
                 url      : '/awaiting',
                 views    : {
                     'content@messages'         : {
-                        templateUrl: 'app/main/message/sent/sent.html',
-                        controller: 'MessageDeclinedController as vm'
+                        templateUrl: 'app/main/message/awaitingReply/awaiting.html',
+                        controller: 'AwaitingController as vm'
                     }
                     ,
                     'navigation@messages': {
