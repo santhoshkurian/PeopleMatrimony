@@ -57,6 +57,7 @@
         $scope.notYetViewed = notYetViewed;
         $scope.viewed = viewed;
         $scope.shortlisted = shortlisted;
+        $scope.sendInterest = sendInterest;
         $scope.mutalmatches = mutalmatches;
         $scope.mutalmatches = more;
 
@@ -182,6 +183,26 @@
                 console.log(response)
                 if (response.data.message == 'Already exists') {
                     $scope.message = "Already Shortlisted";
+                }
+
+            });
+
+
+        }
+
+        function sendInterest(id) {
+            $http({
+                method: 'GET',
+                url: 'http://devapi.peoplematrimony.com/connect/send?' +
+                '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&partner=' + id
+            }).then(function successCallback(response) {
+                console.log(response)
+                $scope.message = "send interest successfully";
+
+            }, function errorCallback(response) {
+                console.log(response)
+                if (response.data.code == '400') {
+                    $scope.message = "Already send a Interest";
                 }
 
             });
