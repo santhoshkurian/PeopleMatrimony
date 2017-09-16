@@ -11,6 +11,8 @@
         $scope.logout = logout;
 
         $scope.image_url = storageService.get("image_url");
+        $scope.name = storageService.get("name");
+        $scope.id = storageService.get("id");
 
 
         $scope.isActive = function (viewLocation) {
@@ -39,16 +41,16 @@
         }).then(function successCallback(response) {
             console.log(response.data.login_user.images[0])
             $scope.profile = response.data;
-            if(response.data.login_user.images.length > 0) {
-                var count;
-                for (count = 0; count < response.data.login_user.images.length; count++) {
-                    var obj = response.data.login_user.images[count];
-                    if(obj.is_primary == 1){
-                        storageService.set("image_url",obj.image)
-
-                    }
-                }
-            }
+            //if(response.data.login_user.images.length > 0) {
+            //    var count;
+            //    for (count = 0; count < response.data.login_user.images.length; count++) {
+            //        var obj = response.data.login_user.images[count];
+            //        if(obj.is_primary == 1){
+            //            storageService.set("image_url",obj.image)
+            //
+            //        }
+            //    }
+            //}
 
 
         }, function errorCallback(response) {

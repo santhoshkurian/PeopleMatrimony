@@ -116,7 +116,10 @@
             }).then(function successCallback(response) {
                 $uibModalInstance.close(vm.selected.item);
                 storageService.set("token",response.data.access_token)
-                storageService.set("id",response.data.id_people)
+                storageService.set("id",response.data.id_people);
+                storageService.set("image_url",response.data.image);
+                storageService.set("name",response.data.name);
+
                 $state.go('app');
 
             }, function errorCallback(response) {
