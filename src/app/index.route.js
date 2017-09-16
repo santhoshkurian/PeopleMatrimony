@@ -188,8 +188,8 @@
                         controller: 'InboxNavController as vm'
                     },
                     'content@messages': {
-                        templateUrl: 'app/main/message/message.html',
-                        controller: 'MessageController as vm'
+                        templateUrl: 'app/main/message/inbox/pending/messagePending.html',
+                        controller: 'MessagePendingController as vm'
                     },
                     'footer@messages': {
                         templateUrl: 'app/footer/footer.html',
