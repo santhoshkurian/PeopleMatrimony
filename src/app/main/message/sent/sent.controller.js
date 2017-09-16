@@ -9,6 +9,7 @@
     function SentController($http,storageService,$scope) {
         var vm = this;
         $scope.sent_all = [];
+        $scope.deleteSent = deleteSent;
         console.log("SentController102");
         $http({
             method: 'GET',
@@ -20,9 +21,33 @@
 
         }, function errorCallback(response) {
             console.log(response)
-
-
         });
+
+
+        function deleteSent(comId){
+            console.log(comId);
+            $http({
+                method: 'GET',
+                url: 'http://devapi.peoplematrimony.com/inbox/delete?' +
+                '&token=' + storageService.get("token") + '&type=sent'+'&com_id='+comId
+            }).then(function successCallback(response) {
+                $http({
+                    method: 'GET',
+                    url: 'http://devapi.peoplematrimony.com/inbox?' +
+                    '&token=' + storageService.get("token") + '&type=all_sent'
+                }).then(function successCallback(response) {
+                    console.log(response)
+                    $scope.sent_all = response.data.list;
+
+                }, function errorCallback(response) {
+                    console.log(response)
+                });
+            }, function errorCallback(response) {
+                console.log(response)
+            });
+        }
+
+
 
 
 
