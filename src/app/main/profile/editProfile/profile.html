@@ -16,12 +16,14 @@
                                 <span class=" uppercase"><i class="fa fa-pencil icon-color"></i>&nbsp; Few words about my son</span>
                             </div>
                             <div class="actions">
+                                <span ng-hide="about">
                                 <div class="btn-group">
                                     <a class="btn btn-sm red input-rounded" ng-click="editAction('about')"> EDIT
 
                                     </a>
 
                                 </div>
+                                    </span>
                             </div>
                         </div>
                         <div class="portlet-body form">
@@ -56,29 +58,171 @@
                         <div class="portlet-title">
                             <div class="caption ">
                                 <span class=" uppercase"><i class=" fa fa-file-text icon-color"></i> &nbsp;Basic details</span>
+
                             </div>
-                            <div class="actions pull-right">
-                                <div class="">
-                                    <button type="button" class=" btn btn-default input-rounded " ng-click="">
-                                        Cancel
-                                    </button>
-                                    &nbsp;
-                                    <button type="button" class=" btn btn-default red input-rounded "
-                                            style="color:#ffffea" ng-click="">
-                                        Save
+                            <div class="actions">
+                                <span ng-hide="basic">
+                                <div class="btn-group">
+                                    <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea"
+                                            ng-click="editAction('basic')">
+                                        EDIT
                                     </button>
 
                                 </div>
+                                    </span>
                             </div>
                         </div>
                         <div class="portlet-body form  form-horizontal">
+                            <span ng-hide="basic">
+
+
+                            <div class="form-group">
+
+                                <div class="col-md-4">
+                                    <label class="font-weight-head "> Profile For</label>
+
+                                    <p ng-if="profile.login_user.profile_for != null && profile.login_user.profile_for != ''" class="details">
+                                        {{profile.login_user.profile_for}}
+                                    </p>
+
+                                    <p ng-if="profile.login_user.profile_for == null ||profile.login_user.profile_for == '' " class="details">
+                                        Not available
+                                    </p>
+
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class=" font-weight-head  "> Age</label>
+
+                                    <p ng-if="profile.login_user.age != null" class="details">
+                                        {{profile.login_user.age}}
+                                    </p>
+
+                                    <p ng-if="profile.login_user.age == null " class="details">Not available</p>
+
+
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class=" font-weight-head  "> Height</label>
+
+                                    <p ng-if="profile.login_user.height != null" class="details">
+                                        {{profile.login_user.height}}
+                                    </p>
+
+                                    <p ng-if="profile.login_user.height == null ||profile.login_user.height == '' " class="details">Not available</p>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <label class=" font-weight-head  "> Weight</label>
+
+                                    <p ng-if="profile.login_user.weight != null" class="details">
+                                        {{profile.login_user.weight}}
+                                    </p>
+
+                                    <p ng-if="profile.login_user.weight == null ||profile.login_user.weight == '' " class="details">Not available</p>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="font-weight-head "> Body Type</label>
+
+                                    <p ng-if="profile.login_user.body_type != null && profile.login_user.body_type != ''" class="details">
+                                        {{profile.login_user.body_type}}
+                                    </p>
+
+                                    <p ng-if="profile.login_user.body_type == null ||profile.login_user.body_type == '' " class="details">
+                                        Not available
+                                    </p>
+
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class=" font-weight-head  "> Complexion Tounge</label>
+
+                                    <p ng-if="profile.login_user.complexion != null" class="details">
+                                        {{profile.login_user.complexion}}
+                                    </p>
+
+                                    <p ng-if="profile.login_user.complexion == null " class="details">Not available</p>
+
+
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class=" font-weight-head  "> Physical Type</label>
+
+                                    <p ng-if="profile.login_user.physical_status != null" class="details">
+                                        {{profile.login_user.physical_status}}
+                                    </p>
+
+                                    <p ng-if="profile.login_user.physical_status == null ||profile.login_user.physical_status == '' " class="details">Not available</p>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <label class=" font-weight-head  "> Mother Tongue</label>
+
+                                    <p ng-if="profile.login_user.mothertongue != null" class="details">
+                                        {{profile.login_user.mothertongue}}
+                                    </p>
+
+                                    <p ng-if="profile.login_user.mothertongue == null ||profile.login_user.mothertongue == '' " class="details">Not available</p>
+
+                                </div> <div class="col-md-4">
+                                    <label class="font-weight-head "> Marital Status</label>
+
+                                    <p ng-if="profile.login_user.marital_status != null && profile.login_user.marital_status != ''" class="details">
+                                        {{profile.login_user.marital_status}}
+                                    </p>
+
+                                    <p ng-if="profile.login_user.marital_status == null ||profile.login_user.marital_status == '' " class="details">
+                                        Not available
+                                    </p>
+
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class=" font-weight-head  ">Eating Habit</label>
+
+                                    <p ng-if="profile.login_user.eating_habit != null && profile.login_user.eating_habit != '' " class="details">
+                                        {{profile.login_user.eating_habit}}
+                                    </p>
+
+                                    <p ng-if="profile.login_user.eating_habit == null || profile.login_user.eating_habit == '' " class="details">Not available</p>
+
+
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class=" font-weight-head  "> Drinking Habit</label>
+
+                                    <p ng-if="profile.login_user.drinking_habit != null" class="details">
+                                        {{profile.login_user.drinking_habit}}
+                                    </p>
+
+                                    <p ng-if="profile.login_user.drinking_habit == null ||profile.login_user.drinking_habit == '' " class="details">Not available</p>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <label class=" font-weight-head  "> Smoking Habit</label>
+
+                                    <p ng-if="profile.login_user.smoking_habit != null" class="details">
+                                        {{profile.login_user.smoking_habit}}
+                                    </p>
+
+                                    <p ng-if="profile.login_user.smoking_habit == null ||profile.login_user.smoking_habit == '' " class="details">Not available</p>
+
+                                </div>
+
+                            </div>
+                                </span>
+                            <span ng-show="basic">
                             <div class="form-group">
 
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Profile created for</label>
 
                                     <select class="form-control input-rounded "
-                                            ng-model="profile.login_user.profile_for">
+                                            ng-model="profile.login_user.profile_for" ng-init="profile_for == profile.login_user.profile_for">
                                         <option>Select</option>
                                         <option value="son">Son</option>
                                         <option value="daughter">Daughter</option>
@@ -88,7 +232,7 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight  "> Age </label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.age">
+                                    <select class="form-control input-rounded " ng-model="profile.login_user.age" ng-init="age == profile.login_user.age">
                                         <option>Select</option>
                                         <option value="18">18</option>
                                         <option value="19">19</option>
@@ -112,7 +256,8 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Height</label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.height">
+                                    <select class="form-control input-rounded "
+                                            ng-model="profile.login_user.height" ng-init="profile.login_user.height == profile.login_user.height">
                                         <option>Select</option>
                                         <option value="170">5Ft 11In / 178 cm</option>
                                         <option value="171">6Ft 0In / 180 cm</option>
@@ -124,7 +269,8 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight  "> Weight</label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.weight">
+                                    <select class="form-control input-rounded " ng-model="profile.login_user.weight" ng-init="weight == profile.login_user.weight"
+                                            >
                                         <option>Select</option>
                                         <option value="50">50Kg 115 Lbs</option>
                                         <option value="60">60Kg /135 Lbs</option>
@@ -142,7 +288,7 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Body Type</label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.body_type">
+                                    <select class="form-control input-rounded " ng-model="profile.login_user.body_type" ng-init="body_type == profile.login_user.weight">
                                         <option>Select</option>
                                         <option value="slim">Slim</option>
                                         <option value="athletic">Athletic</option>
@@ -156,7 +302,8 @@
                                     <label class=" uppercase font-weight  "> Complexion toung</label>
 
                                     <select class="form-control input-rounded "
-                                            ng-model="profile.login_user.complexion">
+                                            ng-model="profile.login_user.complexion" ng-init="complexion == profile.login_user.complexion"
+                                            >
                                         <option>Select</option>
                                         <option value="fair">Fair</option>
                                         <option value="wheatish">Wheatish</option>
@@ -172,7 +319,9 @@
                                     <label class=" uppercase font-weight "> Physical Type</label>
 
                                     <select class="form-control input-rounded "
-                                            ng-model="profile.login_user.physical_status">
+                                            ng-init="physical_status == profile.login_user.physical_status"
+                                            ng-model="profile.login_user.physical_status"
+                                            >
                                         <option>Select</option>
                                         <option value="normal">Normal</option>
                                         <option value="challenged">Challenged</option>
@@ -183,6 +332,7 @@
                                     <label class=" uppercase font-weight  "> Mother toungue</label>
 
                                     <select class="form-control input-rounded "
+                                            ng-init="id_mothertongue == profile.login_user.id_mothertongue"
                                             ng-model="profile.login_user.id_mothertongue"
                                             ng-click="selectMothertongue(profile.login_user.id_mothertongue)">
                                         <option ng-repeat="obj in motherTongueList" value="{{obj}}">
@@ -198,6 +348,7 @@
                                     <label class=" uppercase font-weight "> Marital Status</label>
 
                                     <select class="form-control input-rounded "
+                                            ng-init="marital_status == profile.login_user.id_mothertongue"
                                             ng-model="profile.login_user.marital_status">
                                         <option>Select</option>
                                         <option value="unmarried">Never Married</option>
@@ -213,6 +364,7 @@
                                     <label class=" uppercase font-weight  "> Eating habits</label>
 
                                     <select class="form-control input-rounded "
+                                            ng-init="eating_habit == profile.login_user.eating_habit"
                                             ng-model="profile.login_user.eating_habit">
                                         <option>Select</option>
                                         <option value="vegetarian">Vegiterian</option>
@@ -228,7 +380,9 @@
                                     <label class=" uppercase font-weight "> Drinking habits</label>
 
                                     <select class="form-control input-rounded "
-                                            ng-model="profile.login_user.drinking_habit">
+                                            ng-model="profile.login_user.drinking_habit"
+                                            ng-init="drinking_habit == profile.login_user.drinking_habit"
+                                            >
                                         <option>Select</option>
                                         <option value="yes">Yes</option>
                                         <option value="no">No</option>
@@ -254,17 +408,18 @@
                                 <div class="col-md-6"></div>
 
                                 <div class="col-md-3 col-md-offset-3 " style="padding-left:5.2%">
-                                    <button type="button" class=" btn btn-default input-rounded " ng-click="">
+                                    <button type="button" class=" btn btn-default input-rounded " ng-click="editBasic('basic')">
                                         Cancel
                                     </button>
                                     &nbsp;
-                                    <button type="button" ng-click="basic()" class=" btn btn-default red input-rounded "
+                                    <button type="button" ng-click="basicSave()" class=" btn btn-default red input-rounded "
                                             style="color:#ffffea" ng-click="">
                                         Save
                                     </button>
 
                                 </div>
                             </div>
+                                </span>
                         </div>
                     </div>
                 </div>
@@ -280,7 +435,7 @@
                             <div class="actions">
                                 <div class="btn-group">
                                     <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea"
-                                            ng-click="editAction('location')">
+                                            ng-click="c('location')">
                                         EDIT
                                     </button>
 
@@ -404,10 +559,12 @@
 
                                     <select class="form-control input-rounded "
                                             ng-model="reliegion" ng-init="reliegion == profile.login_user.id_religion"
-                                            ng-click="selectReliegion(reliegion)"
+                                            ng-click="selectReliegion(profile.login_user.id_religion)"
                                             >
                                         <option>Select</option>
-                                        <option ng-repeat="obj in religonList" value="{{obj.religion_id}}">{{obj.religion}}</option>
+                                        <option ng-repeat="obj in religonList" value="{{obj.religion_id}}">
+                                            {{obj.religion}}
+                                        </option>
                                     </select>
                                 </div>
 
@@ -418,7 +575,8 @@
                                             ng-init="caste == profile.login_user.id_caste"
                                             ng-click="profile.login_user.id_caste = caste">
                                         <option>Select</option>
-                                        <option ng-repeat="obj in castList" value="{{obj.id_caste}}">{{obj.caste}}</option>
+                                        <option ng-repeat="obj in castList" value="{{obj.id_caste}}">{{obj.caste}}
+                                        </option>
 
                                     </select>
                                 </div>
@@ -474,7 +632,9 @@
                                 <div class="col-md-4">
                                     <label class="font-weight-head "> Religion</label>
 
-                                    <p ng-if="profile.login_user.religion != null" class="details">{{profile.login_user.religion}}</p>
+                                    <p ng-if="profile.login_user.religion != null" class="details">
+                                        {{profile.login_user.religion}}</p>
+
                                     <p ng-if="profile.login_user.religion == null" class="details">Not available</p>
 
                                 </div>
@@ -482,7 +642,9 @@
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Caste /Sub caste</label>
 
-                                    <p ng-if="profile.login_user.caste != null" class="details ">{{profile.login_user.caste}}</p>
+                                    <p ng-if="profile.login_user.caste != null" class="details ">
+                                        {{profile.login_user.caste}}</p>
+
                                     <p ng-if="profile.login_user.caste == null" class="details ">Not available</p>
 
                                 </div>
@@ -496,26 +658,32 @@
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Star / Rassi</label>
 
-                                    <p ng-if="profile.login_user.star != null" class="details ">{{profile.login_user.star}}</p>
+                                    <p ng-if="profile.login_user.star != null" class="details ">
+                                        {{profile.login_user.star}}</p>
+
                                     <p ng-if="profile.login_user.star == null" class="details ">Not available</p>
 
                                 </div>
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Chevvai Dosham / Rassi</label>
 
-                                    <p ng-if="profile.login_user.dosham != null" class="details ">{{profile.login_user.dosham}}</p>
+                                    <p ng-if="profile.login_user.dosham != null" class="details ">
+                                        {{profile.login_user.dosham}}</p>
+
                                     <p ng-if="profile.login_user.dosham == null" class="details ">Not available</p>
 
                                 </div>
                             </div>
                                                             </span>
+
                             <div class="actions" style="text-align: right" ng-show="!relogious">
                                 <button type="button" ng-click="editReligion('relogious')"
                                         class=" btn btn-default input-rounded " ng-click="">
                                     Cancel
                                 </button>
                                 &nbsp;
-                                <button type="button" ng-click="saveReliegion()" class=" btn btn-default red input-rounded "
+                                <button type="button" ng-click="saveReliegion()"
+                                        class=" btn btn-default red input-rounded "
                                         style="color:#ffffea">
                                     Save
                                 </button>

@@ -33,7 +33,7 @@
             url: 'https://devapi.peoplematrimony.com/user/view?' +
             'view_id=' + storageService.get("id") + '&token=' + storageService.get("token")
         }).then(function successCallback(response) {
-            console.log(response)
+            console.log("dddd",response)
             $scope.profile = response.data;
             if($scope.profile.login_user.id_religion != null){
                 $scope.selectReliegion($scope.profile.login_user.id_religion);
@@ -64,9 +64,10 @@
 
         $scope.editAction = editAction;
         $scope.editReligion = editReligion;
+        $scope.editBasic = editBasic;
         $scope.aboutme = aboutme;
         $scope.aboutfamily = aboutfamily;
-        $scope.basic = basic;
+        $scope.basicSave = basicSave;
         $scope.selectCountry = selectCountry;
         $scope.selectState = selectState;
         $scope.selectReliegion = selectReliegion;
@@ -104,14 +105,18 @@
         }
 
         function selectReliegion(id){
-            $http({
-                method: 'GET',
-                url: 'http://devapi.peoplematrimony.com/populate?id_mothertongue='+$scope.profile.login_user.id_mothertongue+'&id_religion='+id
-            }).then(function successCallback(response) {
-                $scope.castList = response.data.caste;
-            }, function errorCallback(response) {
+            if(!isNaN(id)) {
+                console.log(id);
+                $http({
+                    method: 'GET',
+                    url: 'http://devapi.peoplematrimony.com/populate?id_mothertongue=' + $scope.profile.login_user.id_mothertongue + '&id_religion=' + id
+                }).then(function successCallback(response) {
+                    $scope.castList = response.data.caste;
+                    console.log(response.data.caste);
+                }, function errorCallback(response) {
 
-            });
+                });
+            }
         }
 
         $scope.profile1 = {
@@ -235,6 +240,11 @@
         function editReligion(relogious) {
             $scope[relogious] = !$scope[relogious];
         }
+        function editBasic(action) {
+            $scope[action] = !$scope[action];
+        }
+
+
 
         function aboutme() {
             $http({
@@ -258,7 +268,7 @@
             }, function errorCallback(response) {
             });
         }
-        function basic() {
+        function basicSave() {
             console.log($scope.profile)
             $http({
                 method: 'PUT',
@@ -267,6 +277,8 @@
                 'age=' + $scope.profile.login_user.age +
                 '&weight=' + $scope.profile.login_user.weight +
                 '&height=' + $scope.profile.login_user.height +
+                '&body_type =' + $scope.profile.login_user.body_type  +
+                '&complexion  =' + $scope.profile.login_user.complexion   +
                 '&mothertongue=' + $scope.profile.login_user.mothertongue +
                 '&marital_status=' + $scope.profile.login_user.marital_status +
                 '&physical_status=' + $scope.profile.login_user.physical_status +
@@ -275,7 +287,7 @@
                 '&smoking_habit=' + $scope.profile.login_user.smoking_habit +
                 '&token=' + storageService.get("token")
             }).then(function successCallback(response) {
-console.log("success",response)
+                $scope.basic  = !$scope.basic;
             }, function errorCallback(response) {
                 console.log("error",response)
 
