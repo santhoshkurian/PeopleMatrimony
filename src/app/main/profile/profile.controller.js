@@ -8,6 +8,8 @@
     /** @ngInject */
     function ProfileController($http, $scope, storageService) {
         $scope.image_url = storageService.get("image_url");
+        $scope.name = storageService.get("name");
+        $scope.id = storageService.get("id");
 
         $scope.about = false;
         $scope.fabout = false;
@@ -28,20 +30,7 @@
         $scope.educationList = [];
         $scope.castList = [];
 
-        $http({
-            method: 'GET',
-            url: 'https://devapi.peoplematrimony.com/user/view?' +
-            'view_id=' + storageService.get("id") + '&token=' + storageService.get("token")
-        }).then(function successCallback(response) {
-            console.log(response)
-            $scope.profile = response.data;
-            if($scope.profile.login_user.id_religion != null){
-                $scope.selectReliegion($scope.profile.login_user.id_religion);
-            }
-        }, function errorCallback(response) {
-            console.log(response)
 
-        });
 
         $http({
             method: 'GET',
@@ -54,7 +43,20 @@
             $scope.starsList = response.data.stars;
             $scope.occupationCategoryList = response.data.occupation_category;
             $scope.educationCategoryList = response.data.education_category;
+            $http({
+                method: 'GET',
+                url: 'https://devapi.peoplematrimony.com/user/view?' +
+                'view_id=' + storageService.get("id") + '&token=' + storageService.get("token")
+            }).then(function successCallback(response) {
+                console.log(response)
+                $scope.profile = response.data;
+                if($scope.profile.login_user.id_religion != null){
+                    $scope.selectReliegion($scope.profile.login_user.id_religion);
+                }
+            }, function errorCallback(response) {
+                console.log(response)
 
+            });
             //$scope.profile = response.data;
         }, function errorCallback(response) {
             //console.log(response)
@@ -267,8 +269,9 @@
                 'age=' + $scope.profile.login_user.age +
                 '&weight=' + $scope.profile.login_user.weight +
                 '&height=' + $scope.profile.login_user.height +
-                '&mothertongue=' + $scope.profile.login_user.mothertongue +
+                '&mothertongue=' + parseInt($scope.profile.login_user.id_mothertongue) +
                 '&marital_status=' + $scope.profile.login_user.marital_status +
+                '&complexion=' + $scope.profile.login_user.complexion +
                 '&physical_status=' + $scope.profile.login_user.physical_status +
                 '&eating_habit=' + $scope.profile.login_user.eating_habit +
                 '&drinking_habit=' + $scope.profile.login_user.drinking_habit +
