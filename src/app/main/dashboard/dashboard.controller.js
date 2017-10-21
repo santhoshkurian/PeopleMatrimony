@@ -27,6 +27,8 @@
             }).then(function successCallback(response) {
                 storageService.set("token",null);
                 storageService.set("id",null);
+                storageService.set("image_url",null);
+                storageService.set("name",null);
                 $state.go('login');
 
             }, function errorCallback(response) {

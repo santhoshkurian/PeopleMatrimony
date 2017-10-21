@@ -23,7 +23,7 @@
                 console.log(storageService.get("token"));
                 console.log(event);
                 if(storageService.get("token") != null && storageService.get("id") != null){
-                    $state.go(toState.name)
+                    $state.go(toState)
                 }else{
                     $state.go("login");
                 }
@@ -85,7 +85,7 @@
                     }
                 }
             }).state('reg', {
-                url: '/reg',
+                url: '/reg/:reg_id',
                 views: {
                     'main@': {
                         templateUrl: 'app/core/layouts/loginLayout.html'

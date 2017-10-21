@@ -77,7 +77,9 @@
                 storageService.set("token",response.data.access_token)
                 storageService.set("id",response.data.id_people)
 
-                $state.go('reg')
+                $state.go('reg',{
+                    reg_id: $scope.reg.religion
+                })
 
 
             }, function errorCallback(response) {
@@ -107,7 +109,6 @@
 
         vm.ok = function (login) {
             console.log(login);
-            //
 
             $http({
                 method: 'GET',
