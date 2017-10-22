@@ -123,6 +123,39 @@
                         templateUrl: 'app/footer/footer.html',
                         controller: 'FooterController as vm'
                     }
+                },
+                resolve :{
+                    populate:function($http){
+                       return $http({
+                            method: 'GET',
+                            url: 'http://devapi.peoplematrimony.com/populate'
+                        }).then(function successCallback(response) {
+                            console.log(response)
+                            return response.data;
+
+                        }, function errorCallback(response) {
+                            //console.log(response)
+                            return response;
+
+
+                        });
+                    },
+                    profile:function(storageService,$http){
+
+                        return $http({
+                            method: 'GET',
+                            url: 'https://devapi.peoplematrimony.com/user/view?' +
+                            'view_id=' + storageService.get("id") + '&token=' + storageService.get("token")
+                        }).then(function successCallback(response) {
+                            console.log(response)
+                            return response.data;
+
+                        }, function errorCallback(response) {
+                            console.log(response)
+
+                        });
+                    }
+
                 }
             }).state('search', {
                 url: '/search',

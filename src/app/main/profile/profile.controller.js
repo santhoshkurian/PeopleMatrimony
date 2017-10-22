@@ -6,10 +6,22 @@
         .controller('ProfileController', ProfileController);
 
     /** @ngInject */
-    function ProfileController($http, $scope, storageService) {
+    function ProfileController($http, $scope, storageService,populate,profile,$window) {
+
+        $window.pageYOffset
         $scope.image_url = storageService.get("image_url");
         $scope.name = storageService.get("name");
         $scope.id = storageService.get("id");
+
+        $scope.profile= profile;
+        console.log("profile",$scope.profile)
+
+        $scope.countryList = populate.countries;
+        $scope.motherTongueList = populate.mothertongue;
+        $scope.religonList = populate.religon;
+        $scope.starsList = populate.stars;
+        $scope.occupationCategoryList = populate.occupation_category;
+        $scope.educationCategoryList = populate.education_category;
 
         $scope.about = false;
         $scope.fabout = false;
@@ -18,51 +30,11 @@
         $scope.relogious = true;
         $scope.education = true;
 
-        $scope.countryList = [];
         $scope.stateList = [];
         $scope.cityList = [];
-        $scope.motherTongueList = [];
-        $scope.religonList = [];
-        $scope.starsList = [];
-        $scope.occupationCategoryList = [];
         $scope.occupationList = [];
-        $scope.educationCategoryList = [];
         $scope.educationList = [];
         $scope.castList = [];
-
-
-
-        $http({
-            method: 'GET',
-            url: 'http://devapi.peoplematrimony.com/populate'
-        }).then(function successCallback(response) {
-            console.log(response)
-            $scope.countryList = response.data.countries;
-            $scope.motherTongueList = response.data.mothertongue;
-            $scope.religonList = response.data.religon;
-            $scope.starsList = response.data.stars;
-            $scope.occupationCategoryList = response.data.occupation_category;
-            $scope.educationCategoryList = response.data.education_category;
-            $http({
-                method: 'GET',
-                url: 'https://devapi.peoplematrimony.com/user/view?' +
-                'view_id=' + storageService.get("id") + '&token=' + storageService.get("token")
-            }).then(function successCallback(response) {
-                console.log(response)
-                $scope.profile = response.data;
-                if($scope.profile.login_user.id_religion != null){
-                    $scope.selectReliegion($scope.profile.login_user.id_religion);
-                }
-            }, function errorCallback(response) {
-                console.log(response)
-
-            });
-            //$scope.profile = response.data;
-        }, function errorCallback(response) {
-            //console.log(response)
-
-        });
-
 
         $scope.editAction = editAction;
         $scope.editReligion = editReligion;
@@ -73,11 +45,21 @@
         $scope.selectState = selectState;
         $scope.selectReliegion = selectReliegion;
         $scope.saveReliegion = saveReliegion;
+        $scope.saveLocation = saveLocation;
+
+        if($scope.profile.login_user.id_religion != null){
+            $scope.selectReliegion($scope.profile.login_user.id_religion);
+        }
+
+
+
+
+
+
+
 
         function selectCountry(obj){
-            console.log(JSON.parse(obj));
             var country = JSON.parse(obj);
-
             $http({
                 method: 'GET',
                 url: 'http://devapi.peoplematrimony.com/populate?id_country='+country.id_country
@@ -93,10 +75,12 @@
         function selectState(obj){
             var state = JSON.parse(obj);
 
+
             $http({
                 method: 'GET',
                 url: 'http://devapi.peoplematrimony.com/populate?id_state='+state.id_state
             }).then(function successCallback(response) {
+                console.log(response)
                 $scope.cityList = response.data.cities;
             }, function errorCallback(response) {
 
@@ -266,7 +250,7 @@
                 method: 'PUT',
                 url: 'https://devapi.peoplematrimony.com/user/edit/' + storageService.get('id') + '?' +
                 'block=basic&' +
-                'age=' + $scope.profile.login_user.age +
+                'age=' + parseInt($scope.profile.login_user.age) +
                 '&weight=' + $scope.profile.login_user.weight +
                 '&height=' + $scope.profile.login_user.height +
                 '&mothertongue=' + parseInt($scope.profile.login_user.id_mothertongue) +
@@ -278,7 +262,7 @@
                 '&smoking_habit=' + $scope.profile.login_user.smoking_habit +
                 '&token=' + storageService.get("token")
             }).then(function successCallback(response) {
-console.log("success",response)
+                console.log("success",response)
             }, function errorCallback(response) {
                 console.log("error",response)
 
@@ -291,10 +275,31 @@ console.log("success",response)
                 url: 'https://devapi.peoplematrimony.com/user/edit/' + storageService.get('id') + '?' +
                 'block=religious&' +
                 'religion=' + $scope.profile.login_user.id_religion +
-                'caste=' + $scope.profile.login_user.id_caste +
+                '&caste=' + $scope.profile.login_user.id_caste +
                 //'gothra=' + $scope.profile.login_user.age +
-                'star=' + $scope.profile.login_user.id_star +
-                'dosham=' + $scope.profile.login_user.dosham +
+                '&star=' + $scope.profile.login_user.id_star +
+                '&dosham=' + $scope.profile.login_user.dosham +
+                '&token=' + storageService.get("token")
+            }).then(function successCallback(response) {
+                $scope.relogious = !$scope.relogious;
+            }, function errorCallback(response) {
+                console.log("error",response)
+
+            });
+        }
+
+
+        function saveLocation() {
+            console.log($scope.profile)
+            $http({
+                method: 'PUT',
+                url: 'https://devapi.peoplematrimony.com/user/edit/' + storageService.get('id') + '?' +
+                'block=location&' +
+                'religion=' + $scope.profile.login_user.id_religion +
+                '&country=' + $scope.profile.login_user.id_caste +
+                '&state=' + $scope.profile.login_user.id_star +
+                '&city=' + $scope.profile.login_user.dosham +
+                '&nationality=1'+
                 '&token=' + storageService.get("token")
             }).then(function successCallback(response) {
                 $scope.relogious = !$scope.relogious;

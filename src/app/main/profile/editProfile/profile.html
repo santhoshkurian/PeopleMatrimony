@@ -270,8 +270,8 @@
                                     <label class=" uppercase font-weight  "> Mother toungue</label>
 
                                     <select class="form-control input-rounded "
-                                            ng-model="profile.login_user.id_mothertongue">
-                                        <option ng-repeat="obj in motherTongueList" ng-selected="obj.id_mothertongue == profile.login_user.id_mothertongue" value="{{obj.id_mothertongue}}">
+                                            ng-model="profile.login_user.mothertongue">
+                                        <option ng-repeat="obj in motherTongueList" ng-selected="obj.mothertongue == profile.login_user.mothertongue" value="{{obj.mothertongue}}">
                                             {{obj.mothertongue}}
                                         </option>
                                     </select>
@@ -382,7 +382,7 @@
 
                                     <select class="form-control input-rounded " ng-model="profile.login_user.country"
                                             ng-click="selectCountry(profile.login_user.country)">
-                                        <option ng-repeat="obj in countryList" value="{{obj}}">{{obj.country_name}}
+                                        <option ng-repeat="obj in countryList" ng-selected="obj.id_city == profile.login_user.id_city" value="{{obj}}">{{obj.country_name}}
                                         </option>
                                     </select>
                                 </div>
@@ -391,7 +391,7 @@
                                     <label class=" uppercase font-weight  "> State </label>
 
                                     <select class="form-control input-rounded " ng-model="profile.login_user.state"
-                                            ng-click="selectState(state)">
+                                            ng-click="selectState(profile.login_user.state)">
                                         <option ng-repeat="obj in stateList" value="{{obj}}">{{obj.state_name}}</option>
                                     </select>
                                 </div>
