@@ -13,8 +13,6 @@
         $scope.name = storageService.get("name");
         $scope.id = storageService.get("id");
 
-        $scope.profile= profile;
-        console.log("profile",$scope.profile)
 
         $scope.countryList = populate.countries;
         $scope.motherTongueList = populate.mothertongue;
@@ -22,6 +20,10 @@
         $scope.starsList = populate.stars;
         $scope.occupationCategoryList = populate.occupation_category;
         $scope.educationCategoryList = populate.education_category;
+        $scope.profile= profile;
+        console.log("profile",$scope.profile)
+
+
 
         $scope.about = false;
         $scope.fabout = false;
