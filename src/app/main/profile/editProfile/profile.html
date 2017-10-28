@@ -379,20 +379,18 @@
 
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Country</label>
-aaaaa{{location.country}}
-                                    <!--<select class="form-control input-rounded " ng-model="location.country"-->
-                                            <!--ng-click="selectCountry(profile.login_user.country)">-->
-                                        <!--<option ng-repeat="obj in countryList" ng-selected="obj.id_country == location.country" value="{{obj.id_country}}">{{obj.country_name}}-->
-                                        <!--</option>-->
-                                    <!--</select>-->
+                                    <select class="form-control input-rounded " ng-model="setLocation.country"
+                                            ng-click="selectCountry(setLocation.country)"
+                                            ng-options="item.country_name for item in countryList track by item.id_country">
+                                    </select>
                                 </div>
 
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight  "> State </label>
 
-                                    <select class="form-control input-rounded " ng-model="location.state"
-                                            ng-click="selectState(profile.login_user.state)">
-                                        <option ng-repeat="obj in stateList" value="{{obj}}">{{obj.state_name}}</option>
+                                    <select class="form-control input-rounded " ng-model="setLocation.state"
+                                            ng-click="selectState(setLocation.state)"
+                                            ng-options="item.state_name for item in stateList track by item.id_state">
                                     </select>
                                 </div>
 
@@ -403,24 +401,20 @@ aaaaa{{location.country}}
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> City</label>
 
-                                    <select class="form-control input-rounded " ng-model="location.city"
-                                            ng-click="selectCity(city)">
-                                        <option ng-repeat="obj in cityList" value="{{obj}}">{{obj.city_name}}</option>
+                                    <select class="form-control input-rounded " ng-model="setLocation.city"
+                                            ng-click="selectCity(setLocation.city)"
+                                            ng-options="item.city_name for item in cityList track by item.id_city"
+                                            >
                                     </select>
                                 </div>
 
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight  "> Citizenship</label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.weight">
-                                        <option>Select</option>
-                                        <option value="50">50Kg 115 Lbs</option>
-                                        <option value="60">60Kg /135 Lbs</option>
-                                        <option value="70">70Kg / 155 Lbs</option>
-                                        <option value="75">75Kg / 175 Lbs</option>
-                                        <option value="80">80Kg / 175 Lbs</option>
-
-
+                                    <select class="form-control input-rounded " ng-model="setLocation.nationality"
+                                            ng-click="selectCity(setLocation.nationality)"
+                                            ng-options="item.country_name for item in countryList track by item.id_country"
+                                            >
                                     </select>
                                 </div>
 

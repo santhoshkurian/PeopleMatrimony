@@ -38,11 +38,13 @@
         $scope.educationList = [];
         $scope.castList = [];
 
-        $scope.location= {country:1,state:null,city:null};
+        $scope.setLocation= {country:null,state:null,city:null};
 
         $scope.editAction = editAction;
         $scope.editReligion = editReligion;
         $scope.editLocation = editLocation;
+
+
         $scope.aboutme = aboutme;
         $scope.aboutfamily = aboutfamily;
         $scope.basic = basic;
@@ -64,10 +66,10 @@
 
 
         function selectCountry(obj){
-            var country = JSON.parse(obj);
+            //var country = JSON.parse(obj);
             $http({
                 method: 'GET',
-                url: 'http://devapi.peoplematrimony.com/populate?id_country='+country.id_country
+                url: 'http://devapi.peoplematrimony.com/populate?id_country='+obj.id_country
             }).then(function successCallback(response) {
                 $scope.stateList = response.data.states;
             }, function errorCallback(response) {
@@ -78,12 +80,11 @@
         }
 
         function selectState(obj){
-            var state = JSON.parse(obj);
 
 
             $http({
                 method: 'GET',
-                url: 'http://devapi.peoplematrimony.com/populate?id_state='+state.id_state
+                url: 'http://devapi.peoplematrimony.com/populate?id_state='+obj.id_state
             }).then(function successCallback(response) {
                 console.log(response)
                 $scope.cityList = response.data.cities;
@@ -229,11 +230,59 @@
 
         function editLocation(obj) {
             $scope[obj] = !$scope[obj];
-            //$scope.countryList = populate.countries;
-            $scope.location.country = 1;
+            $scope.countryList = populate.countries;
+            if($scope.profile.login_user.id_country != null) {
+                $scope.countryList.filter(function (a) {
+                    if (a.id_country === $scope.profile.login_user.id_country) {
+                        $scope.setLocation.country = a;
+                    }
+                    if (a.id_country === $scope.profile.login_user.nationality) {
+                        $scope.setLocation.nationality = a;
+                    }
+
+                })
+                if($scope.profile.login_user.id_state != null) {
+                    $http({
+                        method: 'GET',
+                        url: 'http://devapi.peoplematrimony.com/populate?id_country=' + $scope.profile.login_user.id_country
+                    }).then(function successCallback(response) {
+                        $scope.stateList = response.data.states;
+                        $scope.stateList.filter(function (a) {
+                            if (a.id_state === $scope.profile.login_user.id_state) {
+                                $scope.setLocation.state = a;
+                            }
+                        })
+                        if($scope.profile.login_user.id_city != null) {
+
+                            $http({
+                                method: 'GET',
+                                url: 'http://devapi.peoplematrimony.com/populate?id_state='+$scope.profile.login_user.id_state
+                            }).then(function successCallback(response) {
+                                $scope.cityList = response.data.cities;
+                                $scope.cityList.filter(function (a) {
+                                    if (a.id_city === $scope.profile.login_user.id_city) {
+                                        $scope.setLocation.city = a;
+                                    }
+                                });
+                            }, function errorCallback(response) {
+
+                            });
+                        }
+
+                        }, function errorCallback(response) {
+
+                    });
+                }
+
+
+
+
+            }
 
 
         }
+
+
 
         function aboutme() {
             $http({
