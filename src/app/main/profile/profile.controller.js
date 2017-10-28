@@ -14,7 +14,7 @@
         $scope.id = storageService.get("id");
 
 
-        $scope.countryList = populate.countries;
+
         $scope.motherTongueList = populate.mothertongue;
         $scope.religonList = populate.religon;
         $scope.starsList = populate.stars;
@@ -38,8 +38,11 @@
         $scope.educationList = [];
         $scope.castList = [];
 
+        $scope.location= {country:1,state:null,city:null};
+
         $scope.editAction = editAction;
         $scope.editReligion = editReligion;
+        $scope.editLocation = editLocation;
         $scope.aboutme = aboutme;
         $scope.aboutfamily = aboutfamily;
         $scope.basic = basic;
@@ -224,6 +227,14 @@
             $scope[relogious] = !$scope[relogious];
         }
 
+        function editLocation(obj) {
+            $scope[obj] = !$scope[obj];
+            //$scope.countryList = populate.countries;
+            $scope.location.country = 1;
+
+
+        }
+
         function aboutme() {
             $http({
                 method: 'PUT',
@@ -251,18 +262,17 @@
             $http({
                 method: 'PUT',
                 url: 'https://devapi.peoplematrimony.com/user/edit/' + storageService.get('id') + '?' +
-                'block=basic&' +
-                'age=' + parseInt($scope.profile.login_user.age) +
+                'token=' + storageService.get("token")+'&block=basic&' +
                 '&weight=' + $scope.profile.login_user.weight +
+                '&body_type=' + $scope.profile.login_user.body_type +
                 '&height=' + $scope.profile.login_user.height +
                 '&mothertongue=' + parseInt($scope.profile.login_user.id_mothertongue) +
                 '&marital_status=' + $scope.profile.login_user.marital_status +
                 '&complexion=' + $scope.profile.login_user.complexion +
                 '&physical_status=' + $scope.profile.login_user.physical_status +
-                '&eating_habit=' + $scope.profile.login_user.eating_habit +
-                '&drinking_habit=' + $scope.profile.login_user.drinking_habit +
-                '&smoking_habit=' + $scope.profile.login_user.smoking_habit +
-                '&token=' + storageService.get("token")
+                '&eating_habits=' + $scope.profile.login_user.eating_habit +
+                '&drinking_habits=' + $scope.profile.login_user.drinking_habit +
+                '&smoking_habits=' + $scope.profile.login_user.smoking_habit
             }).then(function successCallback(response) {
                 console.log("success",response)
             }, function errorCallback(response) {
@@ -297,8 +307,7 @@
                 method: 'PUT',
                 url: 'https://devapi.peoplematrimony.com/user/edit/' + storageService.get('id') + '?' +
                 'block=location&' +
-                'religion=' + $scope.profile.login_user.id_religion +
-                '&country=' + $scope.profile.login_user.id_caste +
+                '&country=' + $scope.profile.login_user.country +
                 '&state=' + $scope.profile.login_user.id_star +
                 '&city=' + $scope.profile.login_user.dosham +
                 '&nationality=1'+

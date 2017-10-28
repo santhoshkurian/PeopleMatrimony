@@ -57,19 +57,19 @@
                             <div class="caption ">
                                 <span class=" uppercase"><i class=" fa fa-file-text icon-color"></i> &nbsp;Basic details</span>
                             </div>
-                            <div class="actions pull-right">
-                                <div class="">
-                                    <button type="button" class=" btn btn-default input-rounded " ng-click="">
-                                        Cancel
-                                    </button>
-                                    &nbsp;
-                                    <button type="button" class=" btn btn-default red input-rounded "
-                                            style="color:#ffffea" ng-click="">
-                                        Save
-                                    </button>
+                            <!--<div class="actions pull-right">-->
+                                <!--<div class="">-->
+                                    <!--<button type="button" class=" btn btn-default input-rounded " ng-click="">-->
+                                        <!--Cancel-->
+                                    <!--</button>-->
+                                    <!--&nbsp;-->
+                                    <!--<button type="button" class=" btn btn-default red input-rounded "-->
+                                            <!--style="color:#ffffea" ng-click="">-->
+                                        <!--Save-->
+                                    <!--</button>-->
 
-                                </div>
-                            </div>
+                                <!--</div>-->
+                            <!--</div>-->
                         </div>
                         <div class="portlet-body form  form-horizontal">
                             <div class="form-group">
@@ -366,7 +366,7 @@
                             <div class="actions">
                                 <div class="btn-group">
                                     <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea"
-                                            ng-click="editAction('location')">
+                                            ng-click="editLocation('location')">
                                         EDIT
                                     </button>
 
@@ -379,18 +379,18 @@
 
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Country</label>
-
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.country"
-                                            ng-click="selectCountry(profile.login_user.country)">
-                                        <option ng-repeat="obj in countryList" ng-selected="obj.id_city == profile.login_user.id_city" value="{{obj}}">{{obj.country_name}}
-                                        </option>
-                                    </select>
+aaaaa{{location.country}}
+                                    <!--<select class="form-control input-rounded " ng-model="location.country"-->
+                                            <!--ng-click="selectCountry(profile.login_user.country)">-->
+                                        <!--<option ng-repeat="obj in countryList" ng-selected="obj.id_country == location.country" value="{{obj.id_country}}">{{obj.country_name}}-->
+                                        <!--</option>-->
+                                    <!--</select>-->
                                 </div>
 
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight  "> State </label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.state"
+                                    <select class="form-control input-rounded " ng-model="location.state"
                                             ng-click="selectState(profile.login_user.state)">
                                         <option ng-repeat="obj in stateList" value="{{obj}}">{{obj.state_name}}</option>
                                     </select>
@@ -403,7 +403,7 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> City</label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.city"
+                                    <select class="form-control input-rounded " ng-model="location.city"
                                             ng-click="selectCity(city)">
                                         <option ng-repeat="obj in cityList" value="{{obj}}">{{obj.city_name}}</option>
                                     </select>
@@ -434,30 +434,47 @@
                                 <div class="col-md-4">
                                     <label class="font-weight-head "> Country</label>
 
-                                    <p class="details">India</p>
+                                    <p class="details">{{profile.login_user.country_name}}</p>
 
                                 </div>
 
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> State</label>
 
-                                    <p class="details ">Tamil Nadu</p>
+                                    <p class="details ">{{profile.login_user.state_name}}</p>
 
                                 </div>
 
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> City</label>
 
-                                    <p class="details ">Chennai</p>
+                                    <p class="details ">{{profile.login_user.city_name}}</p>
 
                                 </div>
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Citizenship</label>
 
-                                    <p class="details ">Indian</p>
+                                    <p class="details "></p>
 
                                 </div>
 
+                            </div>
+                                <hr>
+
+                            <div class="form-group">
+                                <div class="col-md-6"></div>
+
+                                <div class="col-md-3 col-md-offset-3 " style="padding-left:5.2%">
+                                    <button type="button" class=" btn btn-default input-rounded " ng-click="">
+                                        Cancel
+                                    </button>
+                                    &nbsp;
+                                    <button type="button" ng-click="basic()" class=" btn btn-default red input-rounded "
+                                            style="color:#ffffea" ng-click="">
+                                        Save
+                                    </button>
+
+                                </div>
                             </div>
                                 </span>
                         </div>
