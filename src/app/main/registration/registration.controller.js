@@ -6,7 +6,7 @@
         .controller('RegistrationController', RegistrationController);
 
     /** @ngInject */
-    function RegistrationController(storageService,$scope,$http,$stateParams,$state) {
+    function RegistrationController(storageService,$scope,$http,$stateParams,$state,populate) {
         //var vm = this;
         console.log("RegistrationController");
         console.log("stateParams",$stateParams.reg_id);
@@ -19,6 +19,12 @@
         $scope.cityList = [];
         $scope.motherTongueList = [];
         $scope.religonList = [];
+        $scope.countryList = populate.countries;
+        $scope.motherTongueList = populate.mothertongue;
+        $scope.religonList = populate.religon;
+        $scope.starsList = populate.stars;
+        $scope.occupationCategoryList = populate.occupation_category;
+        $scope.educationCategoryList = populate.education_category;
 
         $scope.selectCountry = selectCountry;
         $scope.selectState = selectState;
@@ -77,35 +83,35 @@
         }
 
 
-
-        $http({
-            method: 'GET',
-            url: 'http://devapi.peoplematrimony.com/populate'
-        }).then(function successCallback(response) {
-            console.log(response)
-            $scope.countryList = response.data.countries;
-            $scope.motherTongueList = response.data.mothertongue;
-            $scope.religonList = response.data.religon;
-            $scope.starsList = response.data.stars;
-            $scope.occupationCategoryList = response.data.occupation_category;
-            $scope.educationCategoryList = response.data.education_category;
-            $http({
-                method: 'GET',
-                url: 'https://devapi.peoplematrimony.com/user/view?' +
-                'view_id=' + storageService.get("id") + '&token=' + storageService.get("token")
-            }).then(function successCallback(response) {
-                console.log(response)
-                $scope.profile = response.data;
-
-            }, function errorCallback(response) {
-                console.log(response)
-
-            });
-            //$scope.profile = response.data;
-        }, function errorCallback(response) {
-            //console.log(response)
-
-        });
+        //
+        //$http({
+        //    method: 'GET',
+        //    url: 'http://devapi.peoplematrimony.com/populate'
+        //}).then(function successCallback(response) {
+        //    console.log(response)
+        //    $scope.countryList = response.data.countries;
+        //    $scope.motherTongueList = response.data.mothertongue;
+        //    $scope.religonList = response.data.religon;
+        //    $scope.starsList = response.data.stars;
+        //    $scope.occupationCategoryList = response.data.occupation_category;
+        //    $scope.educationCategoryList = response.data.education_category;
+        //    $http({
+        //        method: 'GET',
+        //        url: 'https://devapi.peoplematrimony.com/user/view?' +
+        //        'view_id=' + storageService.get("id") + '&token=' + storageService.get("token")
+        //    }).then(function successCallback(response) {
+        //        console.log(response)
+        //        $scope.profile = response.data;
+        //
+        //    }, function errorCallback(response) {
+        //        console.log(response)
+        //
+        //    });
+        //    //$scope.profile = response.data;
+        //}, function errorCallback(response) {
+        //    //console.log(response)
+        //
+        //});
 
 
         vm.registerCandidateStep2 = function () {
