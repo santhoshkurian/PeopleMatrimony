@@ -6,9 +6,11 @@
         .controller('ManageEmailController', ManageEmailController);
 
     /** @ngInject */
-    function ManageEmailController() {
+    function ManageEmailController(alert,$scope) {
         var vm = this;
-        console.log("ManageEmailController");
+        console.log(alert);
+        $scope.alert = alert;
+
 
     }
 })();

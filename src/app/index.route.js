@@ -222,6 +222,19 @@
                         templateUrl: 'app/footer/footer.html',
                         controller: 'FooterController as vm'
                     }
+                },
+                resolve :{
+                    account:function($http,storageService){
+                        return $http({
+                            method: 'GET',
+                            url: 'http://devapi.peoplematrimony.com/settings?id='+storageService.get("id")+
+                            '&type=account&token='+storageService.get('token')
+                        }).then(function successCallback(response) {
+                            return response.data;
+                        }, function errorCallback(response) {
+                            return response;
+                        });
+                    }
                 }
             }).state('messages', {
                 url: '/messages',
