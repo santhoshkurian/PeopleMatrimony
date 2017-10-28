@@ -14,6 +14,7 @@
         $scope.setLocation= {country:null,state:null,city:null,nationality:null,nationality_name:null};
         $scope.setReligion= {religion:null,caste:null,star:null};
         $scope.setProfession= {education:null,occupation:null,occupation_cat:null};
+        $scope.setFamily= {orgin:null,orgin_name:null};
         $scope.countryList = populate.countries;
 
 
@@ -25,15 +26,21 @@
         $scope.occupationCategoryList = populate.occupation_category;
         $scope.educationCategoryList = populate.education_category;
         $scope.educationList = populate.education;
-        console.log( $scope.educationList)
         $scope.occupation = populate.occupation;
         $scope.profile= profile;
-        if($scope.profile.login_user.nationality != 0) {
+        if($scope.profile.login_user.nationality != null && $scope.profile.login_user.nationality != 0) {
             $scope.countryList.filter(function (a) {
                 if (a.id_country === $scope.profile.login_user.nationality) {
                     $scope.setLocation.nationality_name = a.country_name;
                 }
 
+            })
+        }
+        if($scope.profile.login_user.ancestral_origin != null && $scope.profile.login_user.ancestral_origin != 0) {
+            $scope.countryList.filter(function (a) {
+                if (a.id_country === $scope.profile.login_user.ancestral_origin) {
+                    $scope.setFamily.orgin_name = a.country_name;
+                }
             })
         }
         console.log("profile",$scope.profile)
@@ -46,6 +53,7 @@
         $scope.location = true;
         $scope.relogious = true;
         $scope.education = true;
+        $scope.fdetails = true;
 
         $scope.stateList = [];
         $scope.cityList = [];
@@ -56,6 +64,7 @@
         $scope.editReligion = editReligion;
         $scope.editLocation = editLocation;
         $scope.editProfession = editProfession;
+        $scope.editFamilyDetails = editFamilyDetails;
 
 
         $scope.aboutme = aboutme;
@@ -67,6 +76,7 @@
         $scope.saveReliegion = saveReliegion;
         $scope.saveLocation = saveLocation;
         $scope.saveProfession = saveProfession;
+        $scope.saveFamilyDetails = saveFamilyDetails;
 
         if($scope.profile.login_user.id_religion != null){
             $scope.selectReliegion($scope.profile.login_user.id_religion);
@@ -355,6 +365,20 @@
 
         }
 
+        function editFamilyDetails(obj) {
+            $scope[obj] = !$scope[obj];
+            if($scope.profile.login_user.ancestral_origin != null && $scope.profile.login_user.ancestral_origin != 0) {
+                $scope.countryList.filter(function (a) {
+                    if (a.id_country === $scope.profile.login_user.ancestral_origin) {
+                        $scope.setFamily.orgin = a;
+                    }
+                })
+            }
+
+
+
+        }
+
 
 
         function aboutme() {
@@ -463,6 +487,34 @@
                 '&income=' + $scope.profile.login_user.income +
                 '&occu_cat=' + $scope.setProfession.occupation_cat.id_occupation_category +
                 '&occupation='+$scope.setProfession.occupation.id_occupation
+            }).then(function successCallback(response) {
+                $state.transitionTo($state.current, $stateParams, {
+                    reload: true,
+                    inherit: false,
+                    notify: true
+                });
+                           }, function errorCallback(response) {
+                console.log("error",response)
+
+            });
+        }
+
+        function saveFamilyDetails() {
+            $http({
+                method: 'PUT',
+                url: 'http://devapi.peoplematrimony.com/user/edit/' + storageService.get('id') + '?' +
+                'token=' +storageService.get("token") +
+                '&block=family' +
+                '&brother=' +$scope.profile.login_user.brother +
+                '&brother_married=' +$scope.profile.login_user.brother_married +
+                '&family_status=' +$scope.profile.login_user.family_status +
+                '&father_status=' +$scope.profile.login_user.father_status +
+                '&mother_status=' +$scope.profile.login_user.mother_status +
+                '&origin=20' +$scope.setFamily.orgin != null?$scope.setFamily.orgin.id_country:null +
+                '&sister=' +$scope.profile.login_user.sister +
+                '&sister_married=' +$scope.profile.login_user.sister_married +
+                '&type=' +$scope.profile.login_user.family_type +
+                '&values='+$scope.profile.login_user.family_values
             }).then(function successCallback(response) {
                 $state.transitionTo($state.current, $stateParams, {
                     reload: true,
