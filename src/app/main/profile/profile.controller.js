@@ -12,6 +12,9 @@
         $scope.image_url = storageService.get("image_url");
         $scope.name = storageService.get("name");
         $scope.id = storageService.get("id");
+        $scope.setLocation= {country:null,state:null,city:null,nationality:null,nationality_name:null};
+        $scope.countryList = populate.countries;
+
 
 
 
@@ -21,6 +24,14 @@
         $scope.occupationCategoryList = populate.occupation_category;
         $scope.educationCategoryList = populate.education_category;
         $scope.profile= profile;
+        if($scope.profile.login_user.nationality != null) {
+            $scope.countryList.filter(function (a) {
+                if (a.id_country === $scope.profile.login_user.nationality) {
+                    $scope.setLocation.nationality_name = a.country_name;
+                }
+
+            })
+        }
         console.log("profile",$scope.profile)
 
 
@@ -38,7 +49,6 @@
         $scope.educationList = [];
         $scope.castList = [];
 
-        $scope.setLocation= {country:null,state:null,city:null};
 
         $scope.editAction = editAction;
         $scope.editReligion = editReligion;
@@ -66,7 +76,6 @@
 
 
         function selectCountry(obj){
-            //var country = JSON.parse(obj);
             $http({
                 method: 'GET',
                 url: 'http://devapi.peoplematrimony.com/populate?id_country='+obj.id_country
@@ -75,13 +84,9 @@
             }, function errorCallback(response) {
 
             });
-
-
         }
 
         function selectState(obj){
-
-
             $http({
                 method: 'GET',
                 url: 'http://devapi.peoplematrimony.com/populate?id_state='+obj.id_state
@@ -91,8 +96,6 @@
             }, function errorCallback(response) {
 
             });
-
-
         }
 
         function selectReliegion(id){
@@ -230,7 +233,6 @@
 
         function editLocation(obj) {
             $scope[obj] = !$scope[obj];
-            $scope.countryList = populate.countries;
             if($scope.profile.login_user.id_country != null) {
                 $scope.countryList.filter(function (a) {
                     if (a.id_country === $scope.profile.login_user.id_country) {
