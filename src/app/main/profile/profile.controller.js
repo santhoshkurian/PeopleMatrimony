@@ -8,12 +8,12 @@
     /** @ngInject */
     function ProfileController($http, $scope,$state, storageService,$stateParams,populate,profile,$window) {
 
-        $window.pageYOffset
         $scope.image_url = storageService.get("image_url");
         $scope.name = storageService.get("name");
         $scope.id = storageService.get("id");
         $scope.setLocation= {country:null,state:null,city:null,nationality:null,nationality_name:null};
         $scope.setReligion= {religion:null,caste:null,star:null};
+        $scope.setProfession= {education:null,occupation:null,occupation_cat:null};
         $scope.countryList = populate.countries;
 
 
@@ -24,6 +24,9 @@
         $scope.starsList = populate.stars;
         $scope.occupationCategoryList = populate.occupation_category;
         $scope.educationCategoryList = populate.education_category;
+        $scope.educationList = populate.education;
+        console.log( $scope.educationList)
+        $scope.occupation = populate.occupation;
         $scope.profile= profile;
         if($scope.profile.login_user.nationality != 0) {
             $scope.countryList.filter(function (a) {
@@ -46,14 +49,13 @@
 
         $scope.stateList = [];
         $scope.cityList = [];
-        $scope.occupationList = [];
-        $scope.educationList = [];
         $scope.castList = [];
 
 
         $scope.editAction = editAction;
         $scope.editReligion = editReligion;
         $scope.editLocation = editLocation;
+        $scope.editProfession = editProfession;
 
 
         $scope.aboutme = aboutme;
@@ -64,6 +66,7 @@
         $scope.selectReliegion = selectReliegion;
         $scope.saveReliegion = saveReliegion;
         $scope.saveLocation = saveLocation;
+        $scope.saveProfession = saveProfession;
 
         if($scope.profile.login_user.id_religion != null){
             $scope.selectReliegion($scope.profile.login_user.id_religion);
@@ -269,15 +272,8 @@
                         $scope.setReligion.star = a;
                     }
                 })
-
-
-
             }
-
-
-
         }
-
         function editLocation(obj) {
             $scope[obj] = !$scope[obj];
             if($scope.profile.login_user.id_country != 0) {
@@ -326,6 +322,34 @@
 
 
 
+            }
+
+
+        }
+
+        function editProfession(obj) {
+            $scope[obj] = !$scope[obj];
+            if($scope.profile.login_user.id_education != null && $scope.profile.login_user.id_education != 0) {
+                $scope.educationList.filter(function (a) {
+                    if (a.id_education === $scope.profile.login_user.id_education) {
+                        $scope.setProfession.education = a;
+                    }
+                })
+            }
+
+            if($scope.profile.login_user.id_occupation != null && $scope.profile.login_user.id_occupation != 0) {
+                $scope.occupation.filter(function (a) {
+                    if (a.id_occupation === $scope.profile.login_user.id_occupation) {
+                        $scope.setProfession.occupation = a;
+                    }
+                })
+            }
+            if($scope.profile.login_user.id_occucategory != null && $scope.profile.login_user.id_occucategory != 0) {
+                $scope.occupationCategoryList.filter(function (a) {
+                    if (a.id_occupation_category === $scope.profile.login_user.id_occucategory) {
+                        $scope.setProfession.occupation_cat = a;
+                    }
+                })
             }
 
 
@@ -408,8 +432,6 @@
 
             });
         }
-
-
         function saveLocation() {
             $http({
                 method: 'PUT',
@@ -419,6 +441,28 @@
                 '&state=' + $scope.setLocation.state.id_state +
                 '&city=' + $scope.setLocation.city.id_city +
                 '&nationality='+$scope.setLocation.nationality.id_country
+            }).then(function successCallback(response) {
+                $state.transitionTo($state.current, $stateParams, {
+                    reload: true,
+                    inherit: false,
+                    notify: true
+                });
+                           }, function errorCallback(response) {
+                console.log("error",response)
+
+            });
+        }
+
+        function saveProfession() {
+            $http({
+                method: 'PUT',
+                url: 'https://devapi.peoplematrimony.com/user/edit/' + storageService.get('id') + '?' +
+                'token=' + storageService.get("token") +'&block=profession&' +
+                '&edu_detail=' + $scope.profile.login_user.education_detail +
+                '&education=' + $scope.setProfession.education.id_education +
+                '&income=' + $scope.profile.login_user.income +
+                '&occu_cat=' + $scope.setProfession.occupation_cat.id_occupation_category +
+                '&occupation='+$scope.setProfession.occupation.id_occupation
             }).then(function successCallback(response) {
                 $state.transitionTo($state.current, $stateParams, {
                     reload: true,
