@@ -13,6 +13,7 @@
         $scope.name = storageService.get("name");
         $scope.id = storageService.get("id");
         $scope.setLocation= {country:null,state:null,city:null,nationality:null,nationality_name:null};
+        $scope.setReligion= {religion:null,caste:null,star:null};
         $scope.countryList = populate.countries;
 
 
@@ -102,12 +103,15 @@
             }
         }
 
-        function selectReliegion(id){
-            if(id != null) {
+        function selectReliegion(religion){
+
+            console.log(religion)
+            if(religion != null) {
                 $http({
                     method: 'GET',
-                    url: 'http://devapi.peoplematrimony.com/populate?id_mothertongue=' + $scope.profile.login_user.id_mothertongue + '&id_religion=' + id
+                    url: 'http://devapi.peoplematrimony.com/populate?id_mothertongue=' + $scope.profile.login_user.id_mothertongue + '&id_religion=' + religion.id_religion
                 }).then(function successCallback(response) {
+                    console.log(response)
                     $scope.castList = response.data.caste;
                 }, function errorCallback(response) {
 
@@ -235,6 +239,43 @@
         }
         function editReligion(relogious) {
             $scope[relogious] = !$scope[relogious];
+            if($scope.profile.login_user.id_religion != null|| $scope.profile.login_user.id_religion != 0){
+                $scope.religonList.filter(function (a) {
+                    if (a.id_religion === $scope.profile.login_user.id_religion) {
+                        $scope.setReligion.religion = a;
+                    }
+                })
+                $http({
+                    method: 'GET',
+                    url: 'http://devapi.peoplematrimony.com/populate?id_mothertongue=' + $scope.profile.login_user.id_mothertongue + '&id_religion=' + $scope.profile.login_user.id_religion
+                }).then(function successCallback(response) {
+                    console.log(response)
+                    $scope.castList = response.data.caste;
+                    $scope.castList.filter(function (a) {
+                        if (a.id_caste === $scope.profile.login_user.id_caste) {
+                            $scope.setReligion.caste = a;
+                        }
+                    })
+                }, function errorCallback(response) {
+
+                });
+
+
+            }
+
+            if($scope.profile.login_user.id_star != null && $scope.profile.login_user.id_star != 0){
+                $scope.starsList.filter(function (a) {
+                    if (a.id_star === $scope.profile.login_user.id_star) {
+                        $scope.setReligion.star = a;
+                    }
+                })
+
+
+
+            }
+
+
+
         }
 
         function editLocation(obj) {
@@ -349,14 +390,19 @@
                 method: 'PUT',
                 url: 'https://devapi.peoplematrimony.com/user/edit/' + storageService.get('id') + '?' +
                 'block=religious&' +
-                'religion=' + $scope.profile.login_user.id_religion +
-                '&caste=' + $scope.profile.login_user.id_caste +
-                //'gothra=' + $scope.profile.login_user.age +
-                '&star=' + $scope.profile.login_user.id_star +
+                'religion=' + $scope.setReligion.religion.id_religion +
+                '&caste=' + $scope.setReligion.caste.id_caste +
+                '&gothra=' + $scope.profile.login_user.gothra +
+                '&mothertongue=' + $scope.profile.login_user.id_mothertongue +
+                '&star=' + $scope.setReligion.star.id_star +
                 '&dosham=' + $scope.profile.login_user.dosham +
                 '&token=' + storageService.get("token")
             }).then(function successCallback(response) {
-                $scope.relogious = !$scope.relogious;
+                $state.transitionTo($state.current, $stateParams, {
+                    reload: true,
+                    inherit: false,
+                    notify: true
+                });
             }, function errorCallback(response) {
                 console.log("error",response)
 

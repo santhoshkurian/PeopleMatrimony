@@ -486,7 +486,7 @@
                             <div class="actions">
                                 <div class="btn-group">
                                     <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea"
-                                            ng-click="editAction('relogious')">
+                                            ng-click="editReligion('relogious')">
                                         EDIT
                                     </button>
 
@@ -500,24 +500,20 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Religion</label>
 
-                                    <select class="form-control input-rounded "
-                                            ng-model="reliegion" ng-init="reliegion == profile.login_user.id_religion"
-                                            ng-click="selectReliegion(reliegion)"
-                                            >
-                                        <option>Select</option>
-                                        <option ng-repeat="obj in religonList" value="{{obj.religion_id}}">{{obj.religion}}</option>
+                                    <select class="form-control input-rounded " ng-model="setReligion.religion"
+                                            ng-click="selectReliegion(setReligion.religion)"
+                                            ng-options="item.religion for item in religonList track by item.id_religion">
                                     </select>
+
+
                                 </div>
 
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight  "> Caste /Sub caste</label>
 
-                                    <select class="form-control input-rounded " ng-model="caste"
-                                            ng-init="caste == profile.login_user.id_caste"
-                                            ng-click="profile.login_user.id_caste = caste">
-                                        <option>Select</option>
-                                        <option ng-repeat="obj in castList" value="{{obj.id_caste}}">{{obj.caste}}</option>
 
+                                    <select class="form-control input-rounded " ng-model="setReligion.caste"
+                                            ng-options="item.caste for item in castList track by item.id_caste">
                                     </select>
                                 </div>
 
@@ -527,20 +523,14 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Gothram</label>
 
-                                    <select class="form-control input-rounded ">
-                                        <option>Select</option>
+                                    <input type="text"  class="form-control  input-rounded"  ng-model="profile.login_user.gothra">
 
-                                    </select>
                                 </div>
 
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight  "> Star / Rassi</label>
-
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.id_star">
-                                        <option>Select</option>
-                                        <option ng-repeat="obj in starsList" value="{{obj}}">{{obj.star}}</option>
-
-
+                                    <select class="form-control input-rounded " ng-model="setReligion.star"
+                                            ng-options="item.star for item in starsList track by item.id_star">
                                     </select>
                                 </div>
 
@@ -555,13 +545,24 @@
                                         <option>Select</option>
                                         <option value="yes">Yes</option>
                                         <option value="no">No</option>
-
-
                                     </select>
                                 </div>
 
 
                             </div>
+                                <hr/>
+                                <div class="actions" style="text-align: right" >
+                                    <button type="button" ng-click="editReligion('relogious')"
+                                            class=" btn btn-default input-rounded " ng-click="">
+                                        Cancel
+                                    </button>
+                                    &nbsp;
+                                    <button type="button" ng-click="saveReliegion()" class=" btn btn-default red input-rounded "
+                                            style="color:#ffffea">
+                                        Save
+                                    </button>
+
+                                </div>
 
 
 </span>
@@ -588,7 +589,7 @@
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Gothram</label>
 
-                                    <p class="details ">Not available</p>
+                                    <p class="details ">{{profile.login_user.gothra}}</p>
 
                                 </div>
                                 <div class="col-md-4">
@@ -607,18 +608,7 @@
                                 </div>
                             </div>
                                                             </span>
-                            <div class="actions" style="text-align: right" ng-show="!relogious">
-                                <button type="button" ng-click="editReligion('relogious')"
-                                        class=" btn btn-default input-rounded " ng-click="">
-                                    Cancel
-                                </button>
-                                &nbsp;
-                                <button type="button" ng-click="saveReliegion()" class=" btn btn-default red input-rounded "
-                                        style="color:#ffffea">
-                                    Save
-                                </button>
 
-                            </div>
                         </div>
                     </div>
                 </div>
