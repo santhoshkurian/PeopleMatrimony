@@ -6,7 +6,7 @@
         .controller('ProfileController', ProfileController);
 
     /** @ngInject */
-    function ProfileController($http, $scope, storageService,populate,profile,$window) {
+    function ProfileController($http, $scope,$state, storageService,$stateParams,populate,profile,$window) {
 
         $window.pageYOffset
         $scope.image_url = storageService.get("image_url");
@@ -24,7 +24,7 @@
         $scope.occupationCategoryList = populate.occupation_category;
         $scope.educationCategoryList = populate.education_category;
         $scope.profile= profile;
-        if($scope.profile.login_user.nationality != null) {
+        if($scope.profile.login_user.nationality != 0) {
             $scope.countryList.filter(function (a) {
                 if (a.id_country === $scope.profile.login_user.nationality) {
                     $scope.setLocation.nationality_name = a.country_name;
@@ -76,37 +76,43 @@
 
 
         function selectCountry(obj){
-            $http({
-                method: 'GET',
-                url: 'http://devapi.peoplematrimony.com/populate?id_country='+obj.id_country
-            }).then(function successCallback(response) {
-                $scope.stateList = response.data.states;
-            }, function errorCallback(response) {
+            if(obj != null) {
+                $http({
+                    method: 'GET',
+                    url: 'http://devapi.peoplematrimony.com/populate?id_country=' + obj.id_country
+                }).then(function successCallback(response) {
+                    $scope.stateList = response.data.states;
+                }, function errorCallback(response) {
 
-            });
+                });
+            }
         }
 
         function selectState(obj){
-            $http({
-                method: 'GET',
-                url: 'http://devapi.peoplematrimony.com/populate?id_state='+obj.id_state
-            }).then(function successCallback(response) {
-                console.log(response)
-                $scope.cityList = response.data.cities;
-            }, function errorCallback(response) {
+            if(obj != null) {
+                $http({
+                    method: 'GET',
+                    url: 'http://devapi.peoplematrimony.com/populate?id_state=' + obj.id_state
+                }).then(function successCallback(response) {
+                    console.log(response)
+                    $scope.cityList = response.data.cities;
+                }, function errorCallback(response) {
 
-            });
+                });
+            }
         }
 
         function selectReliegion(id){
-            $http({
-                method: 'GET',
-                url: 'http://devapi.peoplematrimony.com/populate?id_mothertongue='+$scope.profile.login_user.id_mothertongue+'&id_religion='+id
-            }).then(function successCallback(response) {
-                $scope.castList = response.data.caste;
-            }, function errorCallback(response) {
+            if(id != null) {
+                $http({
+                    method: 'GET',
+                    url: 'http://devapi.peoplematrimony.com/populate?id_mothertongue=' + $scope.profile.login_user.id_mothertongue + '&id_religion=' + id
+                }).then(function successCallback(response) {
+                    $scope.castList = response.data.caste;
+                }, function errorCallback(response) {
 
-            });
+                });
+            }
         }
 
         $scope.profile1 = {
@@ -233,7 +239,7 @@
 
         function editLocation(obj) {
             $scope[obj] = !$scope[obj];
-            if($scope.profile.login_user.id_country != null) {
+            if($scope.profile.login_user.id_country != 0) {
                 $scope.countryList.filter(function (a) {
                     if (a.id_country === $scope.profile.login_user.id_country) {
                         $scope.setLocation.country = a;
@@ -243,7 +249,7 @@
                     }
 
                 })
-                if($scope.profile.login_user.id_state != null) {
+                if($scope.profile.login_user.id_state != 0) {
                     $http({
                         method: 'GET',
                         url: 'http://devapi.peoplematrimony.com/populate?id_country=' + $scope.profile.login_user.id_country
@@ -254,7 +260,7 @@
                                 $scope.setLocation.state = a;
                             }
                         })
-                        if($scope.profile.login_user.id_city != null) {
+                        if($scope.profile.login_user.id_city != 0) {
 
                             $http({
                                 method: 'GET',
@@ -320,12 +326,18 @@
                 '&mothertongue=' + parseInt($scope.profile.login_user.id_mothertongue) +
                 '&marital_status=' + $scope.profile.login_user.marital_status +
                 '&complexion=' + $scope.profile.login_user.complexion +
-                '&physical_status=' + $scope.profile.login_user.physical_status +
+                '&physical_type=' + $scope.profile.login_user.physical_status +
                 '&eating_habits=' + $scope.profile.login_user.eating_habit +
                 '&drinking_habits=' + $scope.profile.login_user.drinking_habit +
                 '&smoking_habits=' + $scope.profile.login_user.smoking_habit
             }).then(function successCallback(response) {
                 console.log("success",response)
+                $state.transitionTo($state.current, $stateParams, {
+                    reload: true,
+                    inherit: false,
+                    notify: true
+                });
+
             }, function errorCallback(response) {
                 console.log("error",response)
 
@@ -353,19 +365,21 @@
 
 
         function saveLocation() {
-            console.log($scope.profile)
             $http({
                 method: 'PUT',
                 url: 'https://devapi.peoplematrimony.com/user/edit/' + storageService.get('id') + '?' +
-                'block=location&' +
-                '&country=' + $scope.profile.login_user.country +
-                '&state=' + $scope.profile.login_user.id_star +
-                '&city=' + $scope.profile.login_user.dosham +
-                '&nationality=1'+
-                '&token=' + storageService.get("token")
+                'token=' + storageService.get("token") +'&block=location&' +
+                '&country=' + $scope.setLocation.country.id_country +
+                '&state=' + $scope.setLocation.state.id_state +
+                '&city=' + $scope.setLocation.city.id_city +
+                '&nationality='+$scope.setLocation.nationality.id_country
             }).then(function successCallback(response) {
-                $scope.relogious = !$scope.relogious;
-            }, function errorCallback(response) {
+                $state.transitionTo($state.current, $stateParams, {
+                    reload: true,
+                    inherit: false,
+                    notify: true
+                });
+                           }, function errorCallback(response) {
                 console.log("error",response)
 
             });
