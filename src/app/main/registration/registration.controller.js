@@ -25,6 +25,10 @@
         $scope.starsList = populate.stars;
         $scope.occupationCategoryList = populate.occupation_category;
         $scope.educationCategoryList = populate.education_category;
+        $scope.educationList = populate.education;
+        $scope.occupation = populate.occupation;
+        $scope.setProfession= {education:null,occupation:null};
+
 
         $scope.selectCountry = selectCountry;
         $scope.selectState = selectState;
@@ -125,9 +129,9 @@
                 'state='+$scope.step2.state+'&' +
                 'city='+$scope.step2.city+'&' +
                 'height='+$scope.step2.height+'&' +
-                'education=1&' +
-                'occupation=1&' +
-                'step=2&' +
+                'education=' +$scope.setProfession.education.id_education+
+                '&occupation=' +$scope.setProfession.occupation.id_occupation+
+                '&step=2&' +
                 'token='+storageService.get('token')
             }).then(function successCallback(response) {
                 //console.log(response.data.access_token);
