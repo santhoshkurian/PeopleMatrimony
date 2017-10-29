@@ -1165,13 +1165,13 @@
                                     <div class="col-md-4">
                                         <label class=" font-weight-head  "> Age </label>
 
-                                        <p class="details ">28 Years</p>
+                                        <p class="details ">{{profile.login_user.preferences.age_start}}-{{profile.login_user.preferences.age_end}} Years</p>
 
                                     </div>
                                     <div class="col-md-4">
                                         <label class=" font-weight-head  "> Height </label>
 
-                                        <p class="details ">6 Ft 0In / 180 cm </p>
+                                        <p class="details ">{{profile.login_user.preferences.height_start}}-{{profile.login_user.preferences.height_end}} cms </p>
 
                                     </div>
 
@@ -1179,36 +1179,36 @@
                                     <div class="col-md-4">
                                         <label class=" font-weight-head  "> Physical Type </label>
 
-                                        <p class="details ">Normal </p>
+                                        <p class="details ">{{profile.login_user.preferences.physical_status}} </p>
                                     </div>
 
                                     <div class="col-md-4">
 
                                         <label class=" font-weight-head  "> Mother Tongue </label>
 
-                                        <p class="details ">Malayalam </p>
+                                        <p class="details ">{{profile.login_user.preferences.mothertongue_txt}} </p>
 
                                     </div>
 
                                     <div class="col-md-4">
                                         <label class=" font-weight-head  "> Marital Status </label>
 
-                                        <p class="details ">Never married</p>
+                                        <p class="details ">{{profile.login_user.preferences.marital_status}}</p>
                                     </div>
                                     <div class="col-md-4">
                                         <label class=" font-weight-head  "> Eating Habits </label>
 
-                                        <p class="details ">Non Vegitarian</p>
+                                        <p class="details ">{{profile.login_user.preferences.eating_habits}}</p>
                                     </div>
                                     <div class="col-md-4">
                                         <label class=" font-weight-head  "> Drinking Habits </label>
 
-                                        <p class="details ">Non-Drinker </p>
+                                        <p class="details ">{{profile.login_user.preferences.drinking_habits}}</p>
                                     </div>
                                     <div class="col-md-4">
                                         <label class=" font-weight-head  "> Smoking Habits</label>
 
-                                        <p class="details ">Non-Smoker </p>
+                                        <p class="details ">{{profile.login_user.preferences.smoking_habits}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -1223,36 +1223,36 @@
     <div class="col-md-6">
                                             <select class=" form-control input-rounded " ng-model="profile.login_user.preferences.age_start">
                                                 <option>Select</option>
-                                                <option value="18">18</option>
-                                                <option value="19">19</option>
-                                                <option value="20">20</option>
-                                                <option value="21">21</option>
-                                                <option value="22">22</option>
-                                                <option value="23">23</option>
-                                                <option value="24">24</option>
-                                                <option value="25">25</option>
-                                                <option value="26">26</option>
-                                                <option value="27">27</option>
-                                                <option value="28">28</option>
-                                                <option value="29">29</option>
+                                                <option ng-selected = "profile.login_user.preferences.age_start == 18" value="18">18</option>
+                                                <option ng-selected = "profile.login_user.preferences.age_start == 19" value="19">19</option>
+                                                <option ng-selected = "profile.login_user.preferences.age_start == 20" value="20">20</option>
+                                                <option ng-selected = "profile.login_user.preferences.age_start == 21" value="21">21</option>
+                                                <option ng-selected = "profile.login_user.preferences.age_start == 22" value="22">22</option>
+                                                <option ng-selected = "profile.login_user.preferences.age_start == 23" value="23">23</option>
+                                                <option ng-selected = "profile.login_user.preferences.age_start == 24" value="24">24</option>
+                                                <option ng-selected = "profile.login_user.preferences.age_start == 25" value="25">25</option>
+                                                <option ng-selected = "profile.login_user.preferences.age_start == 26" value="26">26</option>
+                                                <option ng-selected = "profile.login_user.preferences.age_start == 27" value="27">27</option>
+                                                <option ng-selected = "profile.login_user.preferences.age_start == 28" value="28">28</option>
+                                                <option ng-selected = "profile.login_user.preferences.age_start == 29"value="29">29</option>
                                             </select>
         </div>
     <div class="col-md-6">
 
     <select class="form-control input-rounded " ng-model="profile.login_user.preferences.age_end">
                                                 <option>Select</option>
-                                                <option value="18">18</option>
-                                                <option value="19">19</option>
-                                                <option value="20">20</option>
-                                                <option value="21">21</option>
-                                                <option value="22">22</option>
-                                                <option value="23">23</option>
-                                                <option value="24">24</option>
-                                                <option value="25">25</option>
-                                                <option value="26">26</option>
-                                                <option value="27">27</option>
-                                                <option value="28">28</option>
-                                                <option ng-selected = "profile.login_user.preferences.age_end == 60" value="60">29</option>
+                                                <option ng-selected = "profile.login_user.preferences.age_end == 18" value="18">18</option>
+                                                <option ng-selected = "profile.login_user.preferences.age_end == 19" value="19">19</option>
+                                                <option ng-selected = "profile.login_user.preferences.age_end == 20"value="20">20</option>
+                                                <option ng-selected = "profile.login_user.preferences.age_end == 21" value="21">21</option>
+                                                <option ng-selected = "profile.login_user.preferences.age_end == 22" value="22">22</option>
+                                                <option ng-selected = "profile.login_user.preferences.age_end == 23" value="23">23</option>
+                                                <option ng-selected = "profile.login_user.preferences.age_end == 24" value="24">24</option>
+                                                <option ng-selected = "profile.login_user.preferences.age_end == 25" value="25">25</option>
+                                                <option ng-selected = "profile.login_user.preferences.age_end == 26" value="26">26</option>
+                                                <option ng-selected = "profile.login_user.preferences.age_end == 27" value="27">27</option>
+                                                <option ng-selected = "profile.login_user.preferences.age_end == 28" value="28">28</option>
+                                                <option ng-selected = "profile.login_user.preferences.age_end == 29" value="29">29</option>
                                             </select>
         </div>
     </div>
@@ -1618,7 +1618,7 @@
                             <div class="actions">
                                 <div class="btn-group">
                                     <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea"
-                                            ng-click="">
+                                            ng-click="editPartnerReligion('preligion')">
                                         EDIT
                                     </button>
 
@@ -1626,42 +1626,117 @@
                             </div>
                         </div>
                         <div class="portlet-body form  form-horizontal">
+                            <span ng-show="preligion">
 
                             <div class="form-group">
 
                                 <div class="col-md-4">
                                     <label class="font-weight-head "> Religion</label>
 
-                                    <p class="details">Hindu</p>
+                                    <p class="details">{{profile.login_user.preferences.religion_txt}}</p>
 
                                 </div>
 
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Caste /Sub caste</label>
 
-                                    <p class="details ">Nadar</p>
+                                    <p class="details ">{{profile.login_user.preferences.caste_txt}}</p>
 
                                 </div>
 
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Gothram</label>
 
-                                    <p class="details ">Not available</p>
+                                    <p class="details ">{{profile.login_user.preferences.gothra}}</p>
 
                                 </div>
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Star / Rassi</label>
 
-                                    <p class="details ">Not available</p>
+                                    <p class="details ">{{profile.login_user.preferences.star_txt}}</p>
 
                                 </div>
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Chevvai Dosham / Rassi</label>
 
-                                    <p class="details ">No</p>
+                                    <p class="details ">{{profile.login_user.preferences.dosham}}</p>
 
                                 </div>
                             </div>
+                                </span>
+                                                        <span ng-hide="preligion">
+
+                                                               <div class="form-group">
+
+                                                                   <div class="col-md-6">
+                                                                       <label class=" uppercase font-weight "> Religion</label>
+
+                                                                       <select class="form-control input-rounded " ng-model="setPartnerReligion.religion"
+                                                                               ng-click="selectReliegion(setPartnerReligion.religion)"
+                                                                               ng-options="item.religion for item in religonList track by item.id_religion">
+                                                                       </select>
+
+
+                                                                   </div>
+
+                                                                   <div class="col-md-6">
+                                                                       <label class=" uppercase font-weight  "> Caste /Sub caste</label>
+
+
+                                                                       <select class="form-control input-rounded " ng-model="setPartnerReligion.caste"
+                                                                               ng-options="item.caste for item in castList track by item.id_caste">
+                                                                       </select>
+                                                                   </div>
+
+                                                               </div>
+                            <div class="form-group">
+
+                                <div class="col-md-6">
+                                    <label class=" uppercase font-weight "> Gothram</label>
+
+                                    <input type="text" class="form-control  input-rounded"
+                                           ng-model="profile.login_user.preferences.gothra">
+
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class=" uppercase font-weight  "> Star / Rassi</label>
+                                    <select class="form-control input-rounded " ng-model="setPartnerReligion.star"
+                                            ng-options="item.star for item in starsList track by item.id_star">
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <div class="col-md-6">
+                                    <label class=" uppercase font-weight "> Chevvai Dosham / Rassi</label>
+
+                                    <select class="form-control input-rounded " ng-model="profile.login_user.preferences.dosham">
+                                        <option>Select</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                </div>
+
+
+                            </div>
+                                <hr/>
+                                <div class="actions" style="text-align: right">
+                                    <button type="button" ng-click="editReligion('relogious')"
+                                            class=" btn btn-default input-rounded " ng-click="">
+                                        Cancel
+                                    </button>
+                                    &nbsp;
+                                    <button type="button" ng-click="savePartnerReliegion()"
+                                            class=" btn btn-default red input-rounded "
+                                            style="color:#ffffea">
+                                        Save
+                                    </button>
+
+                                </div>
+</span>
                         </div>
                     </div>
                 </div>
