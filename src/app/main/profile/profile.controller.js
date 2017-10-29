@@ -444,35 +444,21 @@
 
         function savePartnerBasic() {
 
-            'http://devapi.peoplematrimony.com/user/edit/pref/PM186113?' +
-            'token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MDkzNDU2OTMsInN1YiI6IlBNMTg2MTEzIn0' +
-            '.MQTNYQ28UG2F2dKcu-nW3RiuJkY9YS0qHtX2jhJJu00&' +
-            'age_end=60&' +
-            'age_start=1487&' +
-            'block=basic&' +
-            'drinking_habits=yes&' +
-            'eating_habits=non+vegetarian&' +
-            'height_end=145&' +
-            'height_start=140' +
-            '&id=PM186113' +
-            '&marital_status=married' +
-            '&mothertongue=5' +
-            '&physical_status=challenged' +
-            '&smoking_habits=yes'
+
             $http({
                 method: 'PUT',
                 url: 'https://devapi.peoplematrimony.com/user/edit/pref/' + storageService.get('id') + '?' +
-                'token=' + storageService.get("token")+'&block=basic&' +
+                'token=' + storageService.get("token")+'&block=basic' +
                 '&age_end=' + $scope.profile.login_user.preferences.age_end +
                 '&age_start=' + $scope.profile.login_user.preferences.age_start +
-                '&drinking_habits=' + $scope.profile.login_user.preferences.drinking_habit +
-                '&eating_habits=' + $scope.profile.login_user.preferences.eating_habit +
-                '&smoking_habits=' + $scope.profile.login_user.preferences.smoking_habit+
+                '&drinking_habits=' + $scope.profile.login_user.preferences.drinking_habits +
+                '&eating_habits=' + $scope.profile.login_user.preferences.eating_habits +
+                '&smoking_habits=' + $scope.profile.login_user.preferences.smoking_habits+
                 '&height_end=' + $scope.profile.login_user.preferences.height_end +
                 '&height_start=' + $scope.profile.login_user.preferences.height_start +
                 '&marital_status=' + $scope.profile.login_user.preferences.marital_status +
-                '&mothertongue=' + parseInt($scope.profile.login_user.preferences.preferences) +
-                '&physical_status=' + $scope.profile.login_user.physical_status
+                '&mothertongue=' + parseInt($scope.profile.login_user.preferences.mothertongue) +
+                '&physical_status=' + $scope.profile.login_user.preferences.physical_status
             }).then(function successCallback(response) {
                 console.log("success",response)
                 $state.transitionTo($state.current, $stateParams, {
