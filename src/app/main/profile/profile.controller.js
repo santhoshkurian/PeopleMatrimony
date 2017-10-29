@@ -12,9 +12,11 @@
         $scope.name = storageService.get("name");
         $scope.id = storageService.get("id");
         $scope.setLocation= {country:null,state:null,city:null,nationality:null,nationality_name:null};
+        $scope.setPartnerLocation= {country:null,state:null,city:null,nationality:null,nationality_name:null};
         $scope.setReligion= {religion:null,caste:null,star:null};
         $scope.setPartnerReligion= {religion:null,caste:null,star:null};
         $scope.setProfession= {education:null,occupation:null,occupation_cat:null};
+        $scope.setPartnerProfession= {education:null,occupation:null,occupation_cat:null};
         $scope.setFamily= {orgin:null,orgin_name:null};
         $scope.countryList = populate.countries;
 
@@ -59,6 +61,9 @@
         $scope.education = true;
         $scope.fdetails = true;
         $scope.preligion = true;
+        $scope.pLocation = true;
+        $scope.pedu = true;
+        $scope.ptype = true;
 
         $scope.partnerBasic = true;
 
@@ -70,14 +75,18 @@
         $scope.editAction = editAction;
         $scope.editReligion = editReligion;
         $scope.editLocation = editLocation;
+        $scope.editPartnerLocation = editPartnerLocation;
         $scope.editProfession = editProfession;
         $scope.editFamilyDetails = editFamilyDetails
         ;
         $scope.editPartnerBasic = editPartnerBasic;
+        $scope.editPartnerType = editPartnerType;
         $scope.editPartnerReligion = editPartnerReligion;
+        $scope.editPartnerEdu = editPartnerEdu;
 
 
         $scope.aboutme = aboutme;
+        $scope.savePartnerAbout = savePartnerAbout;
         $scope.aboutfamily = aboutfamily;
         $scope.basic = basic;
         $scope.selectCountry = selectCountry;
@@ -86,7 +95,9 @@
         $scope.saveReliegion = saveReliegion;
         $scope.savePartnerReliegion = savePartnerReliegion;
         $scope.saveLocation = saveLocation;
+        $scope.savePartnerLocation = savePartnerLocation;
         $scope.saveProfession = saveProfession;
+        $scope.savePartnerProfession = savePartnerProfession;
         $scope.saveFamilyDetails = saveFamilyDetails;
         $scope.savePartnerBasic = savePartnerBasic;
         if($scope.profile.login_user.id_religion != null){
@@ -345,6 +356,60 @@
 
 
         }
+        function editPartnerLocation(obj) {
+            $scope[obj] = !$scope[obj];
+            if($scope.profile.login_user.preferences.country != null && $scope.profile.login_user.preferences.country != 0) {
+                $scope.countryList.filter(function (a) {
+                    if (a.id_country == $scope.profile.login_user.preferences.country) {
+                        $scope.setPartnerLocation.country = a;
+                    }
+                    if (a.id_country == $scope.profile.login_user.preferences.nationality) {
+                        $scope.setPartnerLocation.nationality = a;
+                    }
+
+                })
+                if($scope.profile.login_user.preferences.state != null
+                    && $scope.profile.login_user.preferences.state != 0) {
+                    $http({
+                        method: 'GET',
+                        url: 'http://devapi.peoplematrimony.com/populate?id_country=' + $scope.profile.login_user.preferences.country
+                    }).then(function successCallback(response) {
+                        $scope.stateList = response.data.states;
+                        $scope.stateList.filter(function (a) {
+                            if (a.id_state == $scope.profile.login_user.preferences.state) {
+                                $scope.setPartnerLocation.state = a;
+                            }
+                        })
+                        if($scope.profile.login_user.preferences.city != null && $scope.profile.login_user.preferences.city != 0) {
+
+                            $http({
+                                method: 'GET',
+                                url: 'http://devapi.peoplematrimony.com/populate?id_state='+$scope.profile.login_user.preferences.state
+                            }).then(function successCallback(response) {
+                                $scope.cityList = response.data.cities;
+                                $scope.cityList.filter(function (a) {
+                                    if (a.id_city == $scope.profile.login_user.preferences.city) {
+                                        $scope.setPartnerLocation.city = a;
+                                    }
+                                });
+                            }, function errorCallback(response) {
+
+                            });
+                        }
+
+                    }, function errorCallback(response) {
+
+                    });
+                }
+
+
+
+
+            }
+
+
+        }
+
         function editProfession(obj) {
             $scope[obj] = !$scope[obj];
             if($scope.profile.login_user.id_education != null && $scope.profile.login_user.id_education != 0) {
@@ -389,6 +454,28 @@
 
         function editPartnerBasic(obj) {
             $scope[obj] = !$scope[obj];
+        }
+        function editPartnerType(obj) {
+            $scope[obj] = !$scope[obj];
+        }
+
+        function editPartnerEdu(obj) {
+            $scope[obj] = !$scope[obj];
+            if($scope.profile.login_user.preferences.education != null && $scope.profile.login_user.preferences.education != 0) {
+                $scope.educationList.filter(function (a) {
+                    if (a.id_education == $scope.profile.login_user.preferences.education) {
+                        $scope.setPartnerProfession.education = a;
+                    }
+                })
+            }
+
+            if($scope.profile.login_user.preferences.occupation != null && $scope.profile.login_user.preferences.occupation != 0) {
+                $scope.occupation.filter(function (a) {
+                    if (a.id_occupation == $scope.profile.login_user.preferences.occupation) {
+                        $scope.setPartnerProfession.occupation = a;
+                    }
+                })
+            }
         }
         function editPartnerReligion(obj) {
             $scope[obj] = !$scope[obj];
@@ -438,6 +525,19 @@
                 'block=about&about=' + $scope.profile.login_user.aboutme + '&token=' + storageService.get("token")
             }).then(function successCallback(response) {
                 $scope.about = !$scope.about;
+
+            }, function errorCallback(response) {
+            });
+        }
+        function savePartnerAbout() {
+
+              $http({
+                method: 'PUT',
+                url: 'https://devapi.peoplematrimony.com/user/edit/pref/' + storageService.get('id') + '?' +
+                'block=about' +
+                '&about=' + $scope.profile.login_user.preferences.about_partner + '&token=' + storageService.get("token")
+            }).then(function successCallback(response) {
+                $scope.ptype = !$scope.ptype;
 
             }, function errorCallback(response) {
             });
@@ -581,6 +681,28 @@
 
             });
         }
+
+        function savePartnerLocation() {
+
+            $http({
+                method: 'PUT',
+                url: 'http://devapi.peoplematrimony.com/user/edit/pref/' + storageService.get('id') + '?' +
+                'token=' + storageService.get("token") +'&block=location' +
+                '&country=' + $scope.setPartnerLocation.country.id_country +
+                '&state=' + $scope.setPartnerLocation.state.id_state +
+                '&city=' + $scope.setPartnerLocation.city.id_city +
+                '&nationality='+$scope.setPartnerLocation.nationality.id_country
+            }).then(function successCallback(response) {
+                $state.transitionTo($state.current, $stateParams, {
+                    reload: true,
+                    inherit: false,
+                    notify: true
+                });
+                           }, function errorCallback(response) {
+                console.log("error",response)
+
+            });
+        }
         function saveProfession() {
             $http({
                 method: 'PUT',
@@ -591,6 +713,28 @@
                 '&income=' + $scope.profile.login_user.income +
                 '&occu_cat=' + $scope.setProfession.occupation_cat.id_occupation_category +
                 '&occupation='+$scope.setProfession.occupation.id_occupation
+            }).then(function successCallback(response) {
+                $state.transitionTo($state.current, $stateParams, {
+                    reload: true,
+                    inherit: false,
+                    notify: true
+                });
+                           }, function errorCallback(response) {
+                console.log("error",response)
+
+            });
+        }
+
+        function savePartnerProfession() {
+
+            $http({
+                method: 'PUT',
+                url: 'https://devapi.peoplematrimony.com/user/edit/pref/' + storageService.get('id') + '?' +
+                'token=' + storageService.get("token") +'&block=profession' +
+                '&id=' + storageService.get('id') +
+                '&education=' + $scope.setPartnerProfession.education.id_education +
+                '&income=' + $scope.profile.login_user.preferences.income +
+                '&occupation='+$scope.setPartnerProfession.occupation.id_occupation
             }).then(function successCallback(response) {
                 $state.transitionTo($state.current, $stateParams, {
                     reload: true,
