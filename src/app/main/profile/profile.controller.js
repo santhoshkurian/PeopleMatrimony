@@ -55,6 +55,8 @@
         $scope.education = true;
         $scope.fdetails = true;
 
+        $scope.partnerBasic = true;
+
         $scope.stateList = [];
         $scope.cityList = [];
         $scope.castList = [];
@@ -64,7 +66,9 @@
         $scope.editReligion = editReligion;
         $scope.editLocation = editLocation;
         $scope.editProfession = editProfession;
-        $scope.editFamilyDetails = editFamilyDetails;
+        $scope.editFamilyDetails = editFamilyDetails
+        ;
+        $scope.editPartnerBasic = editPartnerBasic;
 
 
         $scope.aboutme = aboutme;
@@ -77,7 +81,7 @@
         $scope.saveLocation = saveLocation;
         $scope.saveProfession = saveProfession;
         $scope.saveFamilyDetails = saveFamilyDetails;
-
+        $scope.savePartnerBasic = savePartnerBasic;
         if($scope.profile.login_user.id_religion != null){
             $scope.selectReliegion($scope.profile.login_user.id_religion);
         }
@@ -101,7 +105,6 @@
                 });
             }
         }
-
         function selectState(obj){
             if(obj != null) {
                 $http({
@@ -115,7 +118,6 @@
                 });
             }
         }
-
         function selectReliegion(religion){
 
             console.log(religion)
@@ -336,7 +338,6 @@
 
 
         }
-
         function editProfession(obj) {
             $scope[obj] = !$scope[obj];
             if($scope.profile.login_user.id_education != null && $scope.profile.login_user.id_education != 0) {
@@ -364,7 +365,6 @@
 
 
         }
-
         function editFamilyDetails(obj) {
             $scope[obj] = !$scope[obj];
             if($scope.profile.login_user.ancestral_origin != null && $scope.profile.login_user.ancestral_origin != 0) {
@@ -374,6 +374,15 @@
                     }
                 })
             }
+
+
+
+        }
+
+
+        function editPartnerBasic(obj) {
+            $scope[obj] = !$scope[obj];
+
 
 
 
@@ -432,6 +441,51 @@
 
             });
         }
+
+        function savePartnerBasic() {
+
+            'http://devapi.peoplematrimony.com/user/edit/pref/PM186113?' +
+            'token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MDkzNDU2OTMsInN1YiI6IlBNMTg2MTEzIn0' +
+            '.MQTNYQ28UG2F2dKcu-nW3RiuJkY9YS0qHtX2jhJJu00&' +
+            'age_end=60&' +
+            'age_start=1487&' +
+            'block=basic&' +
+            'drinking_habits=yes&' +
+            'eating_habits=non+vegetarian&' +
+            'height_end=145&' +
+            'height_start=140' +
+            '&id=PM186113' +
+            '&marital_status=married' +
+            '&mothertongue=5' +
+            '&physical_status=challenged' +
+            '&smoking_habits=yes'
+            $http({
+                method: 'PUT',
+                url: 'https://devapi.peoplematrimony.com/user/edit/pref/' + storageService.get('id') + '?' +
+                'token=' + storageService.get("token")+'&block=basic&' +
+                '&age_end=' + $scope.profile.login_user.preferences.age_end +
+                '&age_start=' + $scope.profile.login_user.preferences.age_start +
+                '&drinking_habits=' + $scope.profile.login_user.preferences.drinking_habit +
+                '&eating_habits=' + $scope.profile.login_user.preferences.eating_habit +
+                '&smoking_habits=' + $scope.profile.login_user.preferences.smoking_habit+
+                '&height_end=' + $scope.profile.login_user.preferences.height_end +
+                '&height_start=' + $scope.profile.login_user.preferences.height_start +
+                '&marital_status=' + $scope.profile.login_user.preferences.marital_status +
+                '&mothertongue=' + parseInt($scope.profile.login_user.preferences.preferences) +
+                '&physical_status=' + $scope.profile.login_user.physical_status
+            }).then(function successCallback(response) {
+                console.log("success",response)
+                $state.transitionTo($state.current, $stateParams, {
+                    reload: true,
+                    inherit: false,
+                    notify: true
+                });
+
+            }, function errorCallback(response) {
+                console.log("error",response)
+
+            });
+        }
         function saveReliegion() {
             console.log($scope.profile)
             $http({
@@ -476,7 +530,6 @@
 
             });
         }
-
         function saveProfession() {
             $http({
                 method: 'PUT',
@@ -498,7 +551,6 @@
 
             });
         }
-
         function saveFamilyDetails() {
             $http({
                 method: 'PUT',
