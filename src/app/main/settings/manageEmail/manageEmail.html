@@ -27,7 +27,9 @@
 
                                 <div class="col-md-1 margin-top-10">
 
-                                    <input type="checkbox" icheckbox_flat-red class="icheck " ng-checked="alert.daily_matchwatch == 1" ng-model="alert.daily_matchwatch">
+                                    <input type="checkbox" icheckbox_flat-red class="icheck "
+                                           ng-true-value="'1'" ng-false-value="'0'" ng-model="alert.daily_matchwatch"
+                                            ng-click="updateAlert('daily_matchwatch')">
                                 </div>
                                 <div class="col-md-10">
 
@@ -44,7 +46,8 @@
                                 <div class="col-md-1 margin-top-10">
 
                                     <input type="checkbox" icheckbox_flat-red class="icheck "
-                                           ng-checked="alert.weekly_photomatch == 1" ng-model="alert.weekly_photomatch">
+                                           ng-true-value="'1'" ng-false-value="'0'" ng-model="alert.weekly_photomatch"
+                                           ng-click="updateAlert('weekly_photomatch')">
                                 </div>
                                 <div class="col-md-10">
 
@@ -61,7 +64,8 @@
                                 <div class="col-md-1 margin-top-10">
 
                                     <input type="checkbox" icheckbox_flat-red class="icheck "
-                                           ng-checked="alert.weekly_horoscope == 1" ng-model="alert.weekly_horoscope">
+                                           ng-true-value="'1'" ng-false-value="'0'"
+                                           ng-model="alert.weekly_horoscope" ng-click="updateAlert('weekly_horoscope')">
                                 </div>
                                 <div class="col-md-10">
 
@@ -78,7 +82,9 @@
                                 <div class="col-md-1 margin-top-10">
 
                                     <input type="checkbox" icheckbox_flat-red class="icheck "
-                                           ng-checked="alert.similar_profiles == 1" ng-model="alert.similar_profiles">
+                                           ng-true-value="'1'" ng-false-value="'0'"
+                                           ng-model="alert.similar_profiles"
+                                           ng-click="updateAlert('similar_profiles')">
                                 </div>
                                 <div class="col-md-10">
 
@@ -95,7 +101,10 @@
 
                                 <div class="col-md-1 margin-top-10">
 
-                                    <input type="checkbox" icheckbox_flat-red class="icheck " ng-checked="alert.communication == 1" ng-model="alert.communication">
+                                    <input type="checkbox" icheckbox_flat-red class="icheck "
+                                           ng-true-value="'1'" ng-false-value="'0'"
+                                           ng-model="alert.communication"
+                                           ng-click="updateAlert('communication')">
                                 </div>
                                 <div class="col-md-10">
 
@@ -113,7 +122,9 @@
                                 <div class="col-md-1 margin-top-10">
 
                                     <input type="checkbox" icheckbox_flat-red class="icheck "
-                                           ng-checked="alert.auto_login == 1" ng-model="alert.auto_login">
+                                           ng-true-value="'1'" ng-false-value="'0'"
+                                           ng-model="alert.auto_login"
+                                           ng-click="updateAlert('auto_login')">
                                 </div>
                                 <div class="col-md-10">
 
