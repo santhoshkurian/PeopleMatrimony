@@ -6,9 +6,26 @@
         .controller('ContactFiltersController', ContactFiltersController);
 
     /** @ngInject */
-    function ContactFiltersController() {
+    function ContactFiltersController(contact,$scope,$http,storageService) {
         var vm = this;
-        console.log("ContactFiltersController");
+        $scope.contact= contact;
+        $scope.updateContact = updateContact;
+
+
+        function updateContact(obj){
+console.log(obj);
+            $http({
+                method: 'POST',
+                url: 'http://devapi.peoplematrimony.com/settings/contact?' +
+                'token=' +storageService.get('token')+
+                '&id=' +storageService.get('id')+
+                '&contact='+obj
+            }).then(function successCallback(response) {
+            }, function errorCallback(response) {
+
+
+            });
+        }
 
     }
 })();

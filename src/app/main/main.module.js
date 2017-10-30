@@ -133,6 +133,19 @@
                     }
                 },
                 resolve  : {
+                    contact:function($http,storageService){
+                        return $http({
+                            method: 'GET',
+                            url: 'http://devapi.peoplematrimony.com/settings?' +
+                            'id='+storageService.get("id")+
+                            '&type=contact' +
+                            '&token='+storageService.get('token')
+                        }).then(function successCallback(response) {
+                            return response.data;
+                        }, function errorCallback(response) {
+                            return response;
+                        });
+                    }
 
                 }
             }).state('settings.privacySettings', {
