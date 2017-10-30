@@ -6,10 +6,12 @@
         .controller('PrivacySettingsController', PrivacySettingsController);
 
     /** @ngInject */
-    function PrivacySettingsController($scope,privacy,$http,storageService) {
+    function PrivacySettingsController($scope,privacy,profile,$http,storageService) {
         var vm = this;
         console.log(privacy)
         $scope.privacy = privacy;
+        $scope.profile = profile;
+        console.log(profile);
 
         $scope.phonePrivacy = false;
         $scope.photoPrivacy = false;
