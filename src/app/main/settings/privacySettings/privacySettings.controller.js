@@ -6,14 +6,47 @@
         .controller('PrivacySettingsController', PrivacySettingsController);
 
     /** @ngInject */
-    function PrivacySettingsController($scope) {
+    function PrivacySettingsController($scope,privacy) {
         var vm = this;
+        console.log(privacy)
+        $scope.privacy = privacy;
+
         $scope.phonePrivacy = false;
         $scope.photoPrivacy = false;
         $scope.visitorSettings = false;
         $scope.shortlistSettings = false;
         $scope.donotDisturb = false;
         $scope.profilePrivacy = false;
+
+        $scope.editPhonePrivacy = editPhonePrivacy;
+        $scope.editPhotoPrivacy = editPhotoPrivacy;
+        $scope.editVisitorSettings = editVisitorSettings;
+        $scope.editShortlistSettings = editShortlistSettings;
+        $scope.editDonotDisturb = editDonotDisturb;
+        $scope.editProfilePrivacy = editProfilePrivacy;
+
+        function editPhonePrivacy(){
+
+        }
+
+        function editPhotoPrivacy(){
+
+        }
+
+        function editVisitorSettings(){
+
+        }
+
+        function editShortlistSettings(){
+
+        }
+
+        function editProfilePrivacy(){
+
+        }
+
+
+
         $scope.openPhonePrivacy = function() {
             $scope.phonePrivacy = !$scope.phonePrivacy;
         }

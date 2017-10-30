@@ -35,18 +35,20 @@
                                    <div ng-show="phonePrivacy">
                                    <div class="col-md-12 margin-top-10">
                                        <label class="checkbox-inline" class="custon-text">
-                                           <input type="radio" icheckbox_flat-red class="icheck ">
+                                           <input type="radio"  class="icheck " ng-model="privacy.phone" value="all">
                                            Visibile All Premium Members</label>
                                    </div>
 
                                    <div class="col-md-12 margin-top-10 ">
                                        <label class="checkbox-inline" class="custon-text">
-                                           <input type="radio" icheckbox_flat-red class="icheck ">
+                                           <input type="radio" icheckbox_flat-red class="icheck " ng-model="privacy.phone"
+                                                  ng-click="editPhonePrivacy(privacy.phone)" value="custom">
                                            Visible to Premium members you wish to Connect with.</label>
                                    </div>
                                        <div class="col-md-12 margin-top-10 ">
-                                           <label class="checkbox-inline" class="custon-text">
-                                               <input type="radio" icheckbox_flat-red class="icheck ">
+                                           <label class="checkbox-inline" class="custon-text" >
+                                               <input type="radio"  class="icheck " ng-model="privacy.phone"
+                                                      ng-click="editPhonePrivacy(privacy.phone)" value="never">
                                                Not Visible to anyone.</label>
                                        </div>
                                    </div>
@@ -65,18 +67,21 @@
                                    <div ng-show="photoPrivacy">
                                        <div class="col-md-12 margin-top-10 ">
                                            <label class="checkbox-inline" class="custon-text">
-                                               <input type="radio" icheckbox_flat-red class="icheck ">
+                                               <input type="radio" icheckbox_flat-red class="icheck " ng-model="privacy.photo"
+                                                      ng-click="editPhotoPrivacy(privacy.photo)" value="all">
                                                Visible to all <i style="margin-left: 2px;" class="fa fa-question-circle"></i></label>
                                        </div>
 
                                        <div class="col-md-12 margin-top-10 ">
                                            <label class="checkbox-inline" class="custon-text">
-                                               <input type="radio" icheckbox_flat-red class="icheck ">
+                                               <input type="radio" icheckbox_flat-red class="icheck " ng-model="privacy.photo"
+                                                      ng-click="editPhotoPrivacy(privacy.photo)" value="request">
                                                Visible to ony invitation sent/accepted <i style="margin-left: 2px;" class="fa fa-question-circle"></i></label>
                                        </div>
                                        <div class="col-md-12 margin-top-10 ">
                                            <label class="checkbox-inline" class="custon-text">
-                                               <input type="radio" icheckbox_flat-red class="icheck ">
+                                               <input type="radio" icheckbox_flat-red class="icheck " ng-model="privacy.photo"
+                                                      ng-click="editPhotoPrivacy(privacy.photo)" value="protected">
                                                Password Protected <i style="margin-left: 2px;" class="fa fa-question-circle"></i></label>
                                        </div>
                                        <div class="col-md-12 margin-top-10">
@@ -157,13 +162,13 @@
                                    <div ng-show="visitorSettings">
                                        <div class="col-md-12 margin-top-10 ">
                                            <label class="checkbox-inline" class="custon-text">
-                                               <input type="radio" icheckbox_flat-red class="icheck ">
+                                               <input type="radio"  class="icheck " ng-click="editVisitorSettings(privacy.view)"   ng-model="privacy.view" value="show">
                                                Let Other members know I have visite their profiles</label>
                                        </div>
 
                                        <div class="col-md-12 margin-top-10 ">
                                            <label class="checkbox-inline" class="custon-text">
-                                               <input type="radio" icheckbox_flat-red class="icheck ">
+                                               <input type="radio" icheckbox_flat-red class="icheck " ng-click="editVisitorSettings(privacy.view)" ng-model="privacy.view" value="never">
                                                Do not Let Other members know I have visite their profiles</label>
                                        </div>
                                    </div>
@@ -182,13 +187,13 @@
                                    <div ng-show="shortlistSettings">
                                        <div class="col-md-12 margin-top-10 ">
                                            <label class="checkbox-inline" class="custon-text">
-                                               <input type="radio" icheckbox_flat-red class="icheck ">
+                                               <input type="radio"  class="icheck " ng-click="editShortlistSettings(privacy.shortlist)" ng-model="privacy.shortlist" value="show">
                                                Let Other members know I have shortlisted their profiles</label>
                                        </div>
 
                                        <div class="col-md-12 margin-top-10 ">
                                            <label class="checkbox-inline" class="custon-text">
-                                               <input type="radio" icheckbox_flat-red class="icheck ">
+                                               <input type="radio"  class="icheck " ng-click="editShortlistSettings(privacy.shortlist)" ng-model="privacy.shortlist" value="never">
                                               Do not Let Other members know I have shortlisted their profiles</label>
                                        </div>
                                    </div>
@@ -206,15 +211,15 @@
                                    <div ng-show="donotDisturb">
                                        <div class="col-md-12 margin-top-10 ">
                                            <label style="margin-left: 15px" class="checkbox-inline" class="custon-text">
-                                               <input type="checkbox" icheckbox_flat-red class="icheck ">
-                                               Peoplesmatrimoney.com can only call me on premium membership<i style="margin-left: 2px;" class="fa fa-question-circle"></i>
+                                               <input type="radio"  class="icheck" ng-click="editDonotDisturb(privacy.contact)" ng-model="privacy.contact" value="membership">
+                                               Peoples matrimony.com can only call me on premium membership<i style="margin-left: 2px;" class="fa fa-question-circle"></i>
                                            </label>
                                        </div>
 
                                        <div class="col-md-12 margin-top-10 ">
                                            <label style="margin-left: 15px" class="checkbox-inline" class="custon-text">
-                                               <input type="checkbox" icheckbox_flat-red class="icheck ">
-                                               Peoplesmatrimoney.com can only call me on premium members who wish to connect with me<i style="margin-left: 2px;" class="fa fa-question-circle"></i>
+                                               <input type="radio"  class="icheck" ng-click="editDonotDisturb(privacy.contact)" ng-model="privacy.contact" value="connet">
+                                               Peoples matrimony.com can only call me on premium members who wish to connect with me<i style="margin-left: 2px;" class="fa fa-question-circle"></i>
                                            </label>
                                        </div>
                                    </div>
@@ -231,13 +236,13 @@
                                    <div ng-show="profilePrivacy">
                                        <div class="col-md-12 margin-top-10 ">
                                            <label class="checkbox-inline" class="custon-text">
-                                               <input type="radio" icheckbox_flat-red class="icheck ">
+                                               <input type="radio"  class="icheck" ng-click="editProfilePrivacy(privacy.profile)" ng-model="privacy.profile" value="all">
                                                Visibile All Including unregistered(Photo and name not visible on profile) </label>
                                        </div>
 
                                        <div class="col-md-12 margin-top-10 ">
                                            <label class="checkbox-inline" class="custon-text">
-                                               <input type="radio" icheckbox_flat-red class="icheck ">
+                                               <input type="radio" icheckbox_flat-red class="icheck" ng-click="editProfilePrivacy(privacy.profile)" ng-model="privacy.profile" value="custom">
                                               Only Visible to Registered members</label>
                                        </div>
                                    </div>
