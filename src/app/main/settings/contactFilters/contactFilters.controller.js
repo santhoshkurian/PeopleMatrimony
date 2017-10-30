@@ -13,7 +13,6 @@
 
 
         function updateContact(obj){
-console.log(obj);
             $http({
                 method: 'POST',
                 url: 'http://devapi.peoplematrimony.com/settings/contact?' +
