@@ -51,6 +51,7 @@
                     </div>
 
                     <div class="portlet light bordered border-rounded">
+                        <div class="col-md-12" style="text-align: center;color: red">{{passwordMsg}}</div>
                         <div class="portlet-title" style="border: hidden">
                             <div class="caption ">
                                 <span class=" caption-subject  font-black  uppercase">Change password</span>
@@ -66,21 +67,21 @@
                                 <div class="col-md-12">
                                     <label class=" uppercase  "> Current password</label>
 
-                                    <input type="text" class="form-control input-rounded"
-                                           placeholder="Current Password"></div>
+                                    <input type="password" class="form-control input-rounded"
+                                           placeholder="Current Password" ng-model="password.current"></div>
                             </div>
                             <div class="form-group">
 
                                 <div class="col-md-6">
                                     <label class=" uppercase  "> New Password</label>
 
-                                    <input type="text" class="form-control input-rounded"
-                                           placeholder="New password"></div>
+                                    <input type="password" class="form-control input-rounded"
+                                           placeholder="New password" ng-model="password.newPassword"></div>
                                 <div class="col-md-6">
                                     <label class=" uppercase  "> Confirm password</label>
 
-                                    <input type="text" class="form-control input-rounded"
-                                           placeholder="Confirm password"></div>
+                                    <input type="password" class="form-control input-rounded"
+                                           placeholder="Confirm password" ng-model="password.confirmPassword"></div>
                             </div>
                             <hr>
                             <div class="form-group">
@@ -91,7 +92,7 @@
                                                 ng-click="">
                                             Cancel
                                         </button>&nbsp;<button type="button" class=" btn red input-rounded"
-                                                               ng-click="">
+                                                               ng-click="SavePassword()">
                                         Change Password
                                     </button>
                                     </div>
