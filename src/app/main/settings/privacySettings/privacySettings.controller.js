@@ -6,7 +6,7 @@
         .controller('PrivacySettingsController', PrivacySettingsController);
 
     /** @ngInject */
-    function PrivacySettingsController($scope,privacy) {
+    function PrivacySettingsController($scope,privacy,$http,storageService) {
         var vm = this;
         console.log(privacy)
         $scope.privacy = privacy;
@@ -25,23 +25,94 @@
         $scope.editDonotDisturb = editDonotDisturb;
         $scope.editProfilePrivacy = editProfilePrivacy;
 
-        function editPhonePrivacy(){
+        function editPhonePrivacy(obj){
+            console.log(obj)
+            $http({
+                method: 'POST',
+                url: 'http://devapi.peoplematrimony.com/settings/privacy?' +
+                'token=' +storageService.get('token')+
+                '&id=' +storageService.get('id')+
+                '&phone='+obj
+            }).then(function successCallback(response) {
+            }, function errorCallback(response) {
+
+
+            });
 
         }
 
-        function editPhotoPrivacy(){
+        function editPhotoPrivacy(obj){
+            $http({
+                method: 'POST',
+                url: 'http://devapi.peoplematrimony.com/settings/privacy?' +
+                'token=' +storageService.get('token')+
+                '&id=' +storageService.get('id')+
+                '&photo='+obj
+            }).then(function successCallback(response) {
+            }, function errorCallback(response) {
+
+
+            });
 
         }
 
-        function editVisitorSettings(){
+        function editVisitorSettings(obj){
+            $http({
+                method: 'POST',
+                url: 'http://devapi.peoplematrimony.com/settings/privacy?' +
+                'token=' +storageService.get('token')+
+                '&id=' +storageService.get('id')+
+                '&view='+obj
+            }).then(function successCallback(response) {
+            }, function errorCallback(response) {
+
+
+            });
 
         }
 
-        function editShortlistSettings(){
+        function editShortlistSettings(obj){
+            $http({
+                method: 'POST',
+                url: 'http://devapi.peoplematrimony.com/settings/privacy?' +
+                'token=' +storageService.get('token')+
+                '&id=' +storageService.get('id')+
+                '&shortlist='+obj
+            }).then(function successCallback(response) {
+            }, function errorCallback(response) {
+
+
+            });
 
         }
 
-        function editProfilePrivacy(){
+        function editDonotDisturb(obj){
+            $http({
+                method: 'POST',
+                url: 'http://devapi.peoplematrimony.com/settings/privacy?' +
+                'token=' +storageService.get('token')+
+                '&id=' +storageService.get('id')+
+                '&contact='+obj
+            }).then(function successCallback(response) {
+            }, function errorCallback(response) {
+
+
+            });
+
+        }
+
+        function editProfilePrivacy(obj){
+            $http({
+                method: 'POST',
+                url: 'http://devapi.peoplematrimony.com/settings/privacy?' +
+                'token=' +storageService.get('token')+
+                '&id=' +storageService.get('id')+
+                '&profile='+obj
+            }).then(function successCallback(response) {
+            }, function errorCallback(response) {
+
+
+            });
 
         }
 
