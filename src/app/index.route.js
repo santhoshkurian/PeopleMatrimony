@@ -16,7 +16,18 @@
         }])
 
         .run(function ($rootScope, $state,storageService) {
+            $rootScope
+                .$on('$stateChangeStart',
+                function(event, toState, toParams, fromState, fromParams){
+                    $("#ui-view").html("");
+                    $(".page-loading").removeClass("page-loading-hidden");
+                });
 
+            $rootScope
+                .$on('$stateChangeSuccess',
+                function(event, toState, toParams, fromState, fromParams){
+                    $(".page-loading").addClass("page-loading-hidden");
+                });
             $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
 
                 console.log(toState);
@@ -29,6 +40,9 @@
                 }
 
             });
+
+
+
         })
         .config(routeConfig);
 

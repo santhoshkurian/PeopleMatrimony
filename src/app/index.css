@@ -16,6 +16,9 @@ html, body. div{
 }
 
 
-
+.page-loading-hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
 
 
