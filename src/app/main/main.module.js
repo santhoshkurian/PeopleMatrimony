@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('dashboard',['ui.bootstrap.pagination'])
+        .module('dashboard',['angularUtils.directives.dirPagination'])
         .config(config);
 
     /** @ngInject */

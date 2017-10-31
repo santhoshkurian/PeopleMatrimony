@@ -5,7 +5,12 @@
         <div class="page-head">
             <div class="row">
                 <div class="col-md-12 text-right">
-                    <pagination total-elements="50" num-pages="10" ng-model="currentPage" ng-change="pageChange()" current-page="currentPage" class="pagination-small"></pagination>
+                    <dir-pagination-controls
+                            max-size="5"
+                            direction-links="true"
+                            boundary-links="true" >
+                    </dir-pagination-controls>
+                    <!--<pagination total-elements="50" num-pages="10" ng-model="currentPage" ng-change="pageChange()" current-page="currentPage" class="pagination-small"></pagination>-->
                 </div>
                 <div class="col-md-12 ">
                     <div class="portlet light bordered ">
@@ -49,7 +54,7 @@
                         </div>
                     </div>
                     <div style="color: red;text-align: center">{{message}}</div>
-                                        <span ng-repeat="item in matches">
+                                        <span dir-paginate="item in matches|itemsPerPage:5">
 
                     <div class="portlet light bordered">
                         <div class="portlet-title" style="border-bottom: 0px">
@@ -187,6 +192,14 @@
                         </div>
                     </div>
 </span>
+                    <div class="col-md-12 text-right">
+                        <dir-pagination-controls
+                                max-size="5"
+                                direction-links="true"
+                                boundary-links="true" >
+                        </dir-pagination-controls>
+                        <!--<pagination total-elements="50" num-pages="10" ng-model="currentPage" ng-change="pageChange()" current-page="currentPage" class="pagination-small"></pagination>-->
+                    </div>
 
                 </div>
             </div>
