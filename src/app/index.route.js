@@ -18,18 +18,27 @@
         .run(function ($rootScope, $state,storageService) {
             $rootScope
                 .$on('$stateChangeStart',
-                function(event, toState, toParams, fromState, fromParams){
+                function(event, toState, toParams, fromState, fromParams,$scope){
+                    console.log("start")
+                    console.log(toState)
+                    $scope.toState = toState;
                     $("#ui-view").html("");
                     $(".page-loading").removeClass("page-loading-hidden");
+                    if($scope.toState.name !='login') {
+                        $("#body-filter").addClass("page-grey-color");
+                        $(".page-loading").addClass("page-loading-hidden");
+
+                    }
                 });
 
             $rootScope
                 .$on('$stateChangeSuccess',
                 function(event, toState, toParams, fromState, fromParams){
                     $(".page-loading").addClass("page-loading-hidden");
+                    $("#body-filter").removeClass("page-grey-color");
                 });
             $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
-
+console.log("end")
                 console.log(toState);
                 console.log(storageService.get("token"));
                 console.log(event);
