@@ -18,12 +18,12 @@ html, body. div{
 
 .page-loading-hidden {
     display: none !important;
-    /*visibility: hidden !important;*/
-    opacity: .1!important;
+    visibility: hidden !important;
 }
 
+
 .page-grey-color{
-    filter: grayscale(100%)!important;
+    filter: grayscale(80%)!important;
 }
 
 

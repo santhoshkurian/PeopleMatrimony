@@ -36,6 +36,7 @@
                 function(event, toState, toParams, fromState, fromParams){
                     $(".page-loading").addClass("page-loading-hidden");
                     $("#body-filter").removeClass("page-grey-color");
+
                 });
             $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
 console.log("end")
