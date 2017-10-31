@@ -31,18 +31,9 @@
                     }
                 });
 
-            $rootScope
-                .$on('$stateChangeSuccess',
-                function(event, toState, toParams, fromState, fromParams){
-                    $(".page-loading").addClass("page-loading-hidden");
-                    $("#body-filter").removeClass("page-grey-color");
-
-                });
-            $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
-console.log("end")
-                console.log(toState);
-                console.log(storageService.get("token"));
-                console.log(event);
+        $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+                $(".page-loading").addClass("page-loading-hidden");
+                $("#body-filter").removeClass("page-grey-color");
                 if(storageService.get("token") != null && storageService.get("id") != null){
                     $state.go(toState)
                 }else{
