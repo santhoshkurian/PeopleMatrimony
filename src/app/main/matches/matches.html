@@ -61,7 +61,7 @@
                             <div class="caption ">
                                 <span class="caption-subject font-red-sunglo bold"> {{item.name}}</span> <span>({{item.id_people}})</span>
                                 <br/>
-                                <span style="font-size: 9px"> Profile created by parents</span>
+                                <span ng-if="item.profile_for != null && item.profile_for != ''" style="font-size: 9px"> Profile created by {{item.profile_for}}</span>
                             </div>
                             <div class="actions">
                                 <div class="btn-group">
@@ -91,12 +91,12 @@
                         </div>
                         <div class="portlet-body form">
                             <div class="row">
-                                <div class="col-md-3">
-                                    <img style="height: 200px"
+                                <div class="col-md-3" style="text-align: center;margin-bottom: 10px">
+                                    <img style="height: 150px"
                                          ng-src="../assets/images/prof1.jpg"/>
                                 </div>
                                 <div class="col-md-9">
-                                    <div class="row">
+                                    <div class="row" >
                                         <div class="col-md-12" style="border-bottom: 1px solid #eef1f5;">
                                             <table width="100%" style="margin-bottom: 10px;" class="match-table">
                                                 <tr>
