@@ -61,6 +61,9 @@
         $scope.mutalmatches = mutalmatches;
         $scope.mutalmatches = more;
 
+
+
+
         function newMatches() {
             $scope.mainlink = "newMatches";
             $scope.message = null;
@@ -210,6 +213,13 @@
 
         }
 
+        $scope.images=[{ "image": "/assets/images/profile2.jpg",
+            "status": "pending",
+            "is_primary": 0,
+            "is_validated": 0,
+            "number": 20,
+            "category": "general"}]
+
 
         $http({
             method: 'GET',
@@ -222,7 +232,35 @@
             console.log(response);
         });
 
+
+
+
+
+
+        $scope.imageBackward = imageBackward;
+        $scope.imageForward = imageForward;
+
+        function imageBackward(){
+            console.log("imageBackward")
+        }
+
+function imageForward(){
+            console.log("imageForward")
+        }
+
+
     }
+
+
+
+
+
+
+
+
+
+
+
 
 
 })();

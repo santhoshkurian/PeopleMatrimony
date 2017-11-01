@@ -91,17 +91,17 @@
                         </div>
                         <div class="portlet-body form">
                             <div class="row">
-                                <div class="col-md-3" style="text-align: center;background-color: #eaeef1">
+                                <div class="col-md-3" style="text-align: center;">
 
                                     <div style="width: 100%;margin-bottom: 10px;margin-top: 10px;line-height: 150px">
-                                        <span class="pull-left ">
-                                            <a href="javascript:;" class="btn btn-icon-only default">
+                                        <span ng-if="images.length > 0" class="pull-left ">
+                                            <a ng-click="imageBackward()" class="btn-circle  default">
                                             <i class="icon-control-rewind"></i>
                                         </a></span>
-                                        <span><img style="height: 130px;"
-                                                   ng-src="../assets/images/prof1.jpg"/></span>
+                                        <span><img style="height: 150px;"
+                                                   ng-src="{{images[0].image}}"/></span>
                                         <span class="pull-right">
-                                            <a href="javascript:;" class="btn btn-icon-only default">
+                                            <a ng-click="imageForward()" class="btn-circle  default">
                                             <i class="icon-control-forward"></i>
                                         </a>
                                         </span>
