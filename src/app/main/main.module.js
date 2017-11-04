@@ -290,6 +290,17 @@
                 }
                 },
                 resolve  : {
+                    pending:function($http,storageService){
+                        return $http({
+                            method: 'GET',
+                            url: 'http://devapi.peoplematrimony.com/inbox?' +
+                            '&token=' + storageService.get("token") + '&type=pending'
+                        }).then(function successCallback(response) {
+                            return response.data;
+                        }, function errorCallback(response) {
+                            return response;
+                        });
+                    }
 
                 }
             }).state('messages.accept', {
@@ -306,7 +317,17 @@
                 }
                 },
                 resolve  : {
-
+                    accept:function($http,storageService){
+                        return $http({
+                            method: 'GET',
+                            url: 'http://devapi.peoplematrimony.com/inbox?' +
+                            '&token=' + storageService.get("token") + '&type=accepted'
+                        }).then(function successCallback(response) {
+                            return response.data;
+                        }, function errorCallback(response) {
+                            return response;
+                        });
+                    }
                 }
             }).state('messages.declined', {
                 url      : '/declined',
@@ -322,6 +343,17 @@
                 }
                 },
                 resolve  : {
+                    declined:function($http,storageService){
+                        return $http({
+                            method: 'GET',
+                            url: 'http://devapi.peoplematrimony.com/inbox?' +
+                            '&token=' + storageService.get("token") + '&type=declined'
+                        }).then(function successCallback(response) {
+                            return response.data;
+                        }, function errorCallback(response) {
+                            return response;
+                        });
+                    }
 
                 }
             }).state('sent', {

@@ -8,8 +8,11 @@
 
 			<div class="row">
 				<div class="col-md-12 text-right">
-					<pagination total-elements="50" num-pages="10" ng-model="currentPage" ng-change="pageChange()" current-page="currentPage"
-						class="pagination-small"></pagination>
+					<dir-pagination-controls
+							max-size="5"
+							direction-links="true"
+							boundary-links="true" >
+					</dir-pagination-controls>
 				</div>
 				<div class="col-md-12 ">
 					<div class="portlet light  border-rounded ">
@@ -53,28 +56,38 @@
 
 
 			</div>
+			            <span dir-paginate="item in pending|itemsPerPage:5">
+
 			<div class="portlet light  border-rounded">
 
 				<div class="portlet-body form">
 
 					<div class="col-md-3">
 						<div class="row">
+							<div class="col-md-2"><input type="checkbox" class="filter-check-box" ></div>
+							<div class="col-md-10">
 
-							<div class="col-md-3"><input class="filter-check-box" type="checkbox" /></div>
-							<div class="col-md-3"><img style="height: 80px;width: 80px" ng-src="../assets/images/prof1.jpg" />
+								<img ng-if="item.user.gender == 'female'"style="height: 100%;width: 100%"
+									 ng-src="../assets/defaultImages/female_card.jpg"/>
+								<img ng-if="item.user.gender == 'male'"style="height: 100%;width: 100%"
+									 ng-src="../assets/defaultImages/male_card.jpg"/>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-9">
 						<div class="row">
 
-							<div class="col-md-5"><label class="message-name-text">Keerthi Suresh </label> &nbsp;<label class="style-cls">(356598)</label></div>
-							<div class="col-md-4"><i class="fa fa-circle " style="color:#56bb55 ;padding-top:5px;"></i>&nbsp;<label>Online</label></div>
-							<div class="col-md-3 pull-right"><label class="style-cls">12-Dec-2017</label><i class="fa fa-trash  pull-right style-cls " style="padding-top:5px;"></i></div>
+							<div class="col-md-5"><label class="message-name-text">{{item.user.name}}</label> &nbsp;<label
+									class="style-cls">({{item.user.id_people}})</label></div>
+							<div ng-if="item.user.isOnline = 'online'" class="col-md-4"><i class="fa fa-circle " style="color:#56bb55 ;padding-top:5px;"></i>&nbsp;<label>Online</label>
+							</div>
+							<div class="col-md-3 pull-right"><label class="style-cls">{{item.date}}</label><i
+									class="fa fa-trash  pull-right style-cls " ng-click="deleteAwaiting(item.com_id)" style="padding-top:5px;"></i></div>
 						</div>
 						<div class="row">
 							<div class="col-md-12 details-style">
-								23 Yrs, 5Ft/152cm, Tamil, Hindu, Mani Telugu Chettiar, B-Tech, Software Professional, Chennai, Tamil Nadu, Indian.
+								{{item.user.age}} Yrs, {{item.user.height}}cms, {{item.user.mothertongue}}, {{item.user.religion}}, {{item.user.caste}},{{item.user.education}}, {{item.user.occupation}},
+								{{item.user.city_name}}, {{item.user.state_name}}, {{item.user.country_name}}.
 							</div>
 
 						</div>
@@ -82,16 +95,17 @@
 						<div class="row">
 							<div class="col-md-12 notification-style uppercase">INTEREST SENT</div>
 
-							<div class="col-md-12 notification-details">You have sent a request to her</div>
+							<div class="col-md-12 notification-details">{{item.content}}</div>
 						</div>
 						<div class="row margin-top-10">
 							<div class="col-md-12">
 								<button type="button" class=" uppercase btn red input-rounded" ng-click="">
-                                            Call Now
-                                        </button>&nbsp;
-								<button type="button" class=" uppercase btn btn-default  input-rounded" ng-click="">
-                                        Send Interest
-                                    </button>
+									Call Now
+								</button>
+								&nbsp;
+								<button disabled="item.user.interest == 'sent'" type="button" class=" uppercase btn btn-default input-rounded" ng-click="">
+									Send Interest
+								</button>
 
 							</div>
 						</div>
@@ -103,205 +117,14 @@
 				</div>
 			</div>
 
-			<div class="portlet light  border-rounded">
-
-				<div class="portlet-body form">
-
-					<div class="col-md-3">
-						<div class="row">
-
-							<div class="col-md-3"><input class="filter-check-box" type="checkbox" /></div>
-							<div class="col-md-3"><img style="height: 80px;width: 80px" ng-src="../assets/images/prof1.jpg" />
-							</div>
-						</div>
-					</div>
-					<div class="col-md-9">
-						<div class="row">
-
-							<div class="col-md-5"><label class="message-name-text">Rithika </label> &nbsp;<label class="style-cls">(356598)</label></div>
-							<div class="col-md-4"><i class="fa fa-circle " style="color:#56bb55 ;padding-top:5px;"></i>&nbsp;<label>Online</label></div>
-							<div class="col-md-3 pull-right"><label class="style-cls">12-Dec-2017</label><i class="fa fa-trash  pull-right style-cls " style="padding-top:5px;"></i></div>
-						</div>
-						<div class="row">
-							<div class="col-md-12 details-style">
-								23 Yrs, 5Ft/152cm, Tamil, Hindu, Mani Telugu Chettiar, B-Tech, Software Professional, Chennai, Tamil Nadu, Indian.
-							</div>
-
-						</div>
-						<hr>
-						<div class="row">
-							<div class="col-md-12 notification-style uppercase">INTEREST SENT</div>
-
-							<div class="col-md-12 notification-details">You have sent a request to her</div>
-						</div>
-						<div class="row margin-top-10">
-							<div class="col-md-12">
-								<button type="button" class=" uppercase btn red input-rounded" ng-click="">
-                                            Call Now
-                                        </button>&nbsp;
-								<button type="button" class=" uppercase btn btn-default  input-rounded" ng-click="">
-                                        Send Interest
-                                    </button>
-
-							</div>
-						</div>
-					</div>
-
-					<div class="row">
-
-					</div>
-				</div>
-			</div>
-			<div class="portlet light  border-rounded">
-
-				<div class="portlet-body form">
-
-					<div class="col-md-3">
-						<div class="row">
-
-							<div class="col-md-3"><input class="filter-check-box" type="checkbox" /></div>
-							<div class="col-md-3"><img style="height: 80px;width: 80px" ng-src="../assets/images/prof1.jpg" />
-							</div>
-						</div>
-					</div>
-					<div class="col-md-9">
-						<div class="row">
-
-							<div class="col-md-5"><label class="message-name-text">Priya Anand </label> &nbsp;<label class="style-cls">(356598)</label></div>
-							<div class="col-md-4"></div>
-							<div class="col-md-3 pull-right"><label class="style-cls">12-Dec-2017</label><i class="fa fa-trash  pull-right style-cls " style="padding-top:5px;"></i></div>
-						</div>
-						<div class="row">
-							<div class="col-md-12 details-style">
-								23 Yrs, 5Ft/152cm, Tamil, Hindu, Mani Telugu Chettiar, B-Tech, Software Professional, Chennai, Tamil Nadu, Indian.
-							</div>
-
-						</div>
-						<hr>
-						<div class="row">
-							<div class="col-md-12 notification-style uppercase">Interest Recived</div>
-
-							<div class="col-md-12 notification-details">She is interested in your profile. Would you like to know more about her?</div>
-						</div>
-						<div class="row margin-top-10">
-							<div class="col-md-12">
-								<button type="button" class=" uppercase btn red input-rounded" ng-click="">
-                                            Yes
-                                        </button>&nbsp;
-								<button type="button" class=" uppercase btn btn-default  input-rounded" ng-click="">
-                                        Not Interested
-                                    </button>
-
-							</div>
-						</div>
-					</div>
-
-					<div class="row">
-
-					</div>
-				</div>
-			</div>
-
-			<div class="portlet light  border-rounded">
-
-				<div class="portlet-body form">
-
-					<div class="col-md-3">
-						<div class="row">
-
-							<div class="col-md-3"><input class="filter-check-box" type="checkbox" /></div>
-							<div class="col-md-3"><img style="height: 80px;width: 80px" ng-src="../assets/images/prof1.jpg" />
-							</div>
-						</div>
-					</div>
-					<div class="col-md-9">
-						<div class="row">
-
-							<div class="col-md-5"><label class="message-name-text">Priya Ranjini </label> &nbsp;<label class="style-cls">(356598)</label></div>
-							<div class="col-md-4"><i class="fa fa-circle " style="color:#56bb55 ;padding-top:5px;"></i>&nbsp;<label>Online</label></div>
-							<div class="col-md-3 pull-right"><label class="style-cls">12-Dec-2017</label><i class="fa fa-trash  pull-right style-cls " style="padding-top:5px;"></i></div>
-						</div>
-						<div class="row">
-							<div class="col-md-12 details-style">
-								23 Yrs, 5Ft/152cm, Tamil, Hindu, Mani Telugu Chettiar, B-Tech, Software Professional, Chennai, Tamil Nadu, Indian.
-							</div>
-
-						</div>
-						<hr>
-						<div class="row">
-							<div class="col-md-12 notification-style uppercase">Add photo request</div>
-
-							<div class="col-md-12 notification-details">She has requested you to add photo and you have noy added it yet.</div>
-						</div>
-						<div class="row margin-top-10">
-							<div class="col-md-12">
-								<button type="button" class=" uppercase btn red input-rounded" ng-click="">
-                                            Add photo
-                                                                                    </button>&nbsp;
-								<button type="button" class=" uppercase btn btn-default  input-rounded" ng-click="">
-Not interested                                    </button>
-<label class="pull-right  font-red-mint"> +2 More Conversations</label>
-							</div>
-						</div>
-					</div>
-
-					<div class="row">
-
-					</div>
-				</div>
-			</div>
-			<div class="portlet light  border-rounded">
-
-				<div class="portlet-body form">
-
-					<div class="col-md-3">
-						<div class="row">
-
-							<div class="col-md-3"><input class="filter-check-box" type="checkbox" /></div>
-							<div class="col-md-3"><img style="height: 80px;width: 80px" ng-src="../assets/images/prof1.jpg" />
-							</div>
-						</div>
-					</div>
-					<div class="col-md-9">
-						<div class="row">
-
-							<div class="col-md-5"><label class="message-name-text">Vijaya Lakshmi </label> &nbsp;<label class="style-cls">(356598)</label></div>
-							<div class="col-md-4"><i class="fa fa-circle " style="color:#56bb55 ;padding-top:5px;"></i>&nbsp;<label>Online</label></div>
-							<div class="col-md-3 pull-right"><label class="style-cls">12-Dec-2017</label><i class="fa fa-trash  pull-right style-cls " style="padding-top:5px;"></i></div>
-						</div>
-						<div class="row">
-							<div class="col-md-12 details-style">
-								23 Yrs, 5Ft/152cm, Tamil, Hindu, Mani Telugu Chettiar, B-Tech, Software Professional, Chennai, Tamil Nadu, Indian.
-							</div>
-
-						</div>
-						<hr>
-						<div class="row">
-							<div class="col-md-12 notification-style uppercase">Horoscope Request</div>
-
-							<div class="col-md-12 notification-details">She has requested you to add horoscope.</div>
-						</div>
-						<div class="row margin-top-10">
-							<div class="col-md-12">
-								<button type="button" class=" uppercase btn red input-rounded" ng-click="">
-                                            Add Horoscope
-                                                      </button>&nbsp;
-								<button type="button" class=" uppercase btn btn-default  input-rounded" ng-click="">
-Not interested                                    </button>
-								<label class="pull-right  font-red-mint"> +3 More Conversations</label>
-							</div>
-						</div>
-					</div>
-
-					<div class="row">
-
-					</div>
-				</div>
-			</div>
+</span>
 
 			<div class="col-md-12 text-right">
-				<pagination total-elements="50" num-pages="10" ng-model="currentPage" ng-change="pageChange()" current-page="currentPage"
-					class="pagination-small"></pagination>
+				<dir-pagination-controls
+						max-size="5"
+						direction-links="true"
+						boundary-links="true" >
+				</dir-pagination-controls>
 			</div>
 
 

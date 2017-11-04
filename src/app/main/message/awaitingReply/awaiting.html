@@ -65,9 +65,11 @@
                             <div class="col-md-2"><input type="checkbox" class="filter-check-box" ></div>
                             <div class="col-md-10">
 
-                            <img style="height: 100%;width: 100%"
-                                                       ng-src="../assets/defaultImages/female_card.jpg"/>
-                        </div>
+                                <img ng-if="item.user.gender == 'female'"style="height: 100%;width: 100%"
+                                     ng-src="../assets/defaultImages/female_card.jpg"/>
+                                <img ng-if="item.user.gender == 'male'"style="height: 100%;width: 100%"
+                                     ng-src="../assets/defaultImages/male_card.jpg"/>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-9">

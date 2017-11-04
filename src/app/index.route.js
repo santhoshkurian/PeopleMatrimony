@@ -274,6 +274,19 @@
                         templateUrl: 'app/footer/footer.html',
                         controller: 'FooterController as vm'
                     }
+                },
+                resolve:{
+                    pending:function($http,storageService){
+                        return $http({
+                            method: 'GET',
+                            url: 'http://devapi.peoplematrimony.com/inbox?' +
+                            '&token=' + storageService.get("token") + '&type=pending'
+                        }).then(function successCallback(response) {
+                            return response.data;
+                        }, function errorCallback(response) {
+                            return response;
+                        });
+                    }
                 }
             }).state('matches', {
                 url: '/matches',

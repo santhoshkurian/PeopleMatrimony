@@ -6,8 +6,9 @@
         .controller('MessageAcceptedController', MessageAcceptedController);
 
     /** @ngInject */
-    function MessageAcceptedController() {
+    function MessageAcceptedController($scope,accept) {
         var vm = this;
+        $scope.accept = accept.list;
         console.log("MessageAcceptedController");
 
     }

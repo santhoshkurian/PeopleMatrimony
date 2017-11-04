@@ -6,8 +6,9 @@
         .controller('MessageDeclinedController', MessageDeclinedController);
 
     /** @ngInject */
-    function MessageDeclinedController() {
+    function MessageDeclinedController(declined,$scope) {
         var vm = this;
+        $scope.declined = declined.list;
         console.log("MessageDeclinedController");
 
     }
