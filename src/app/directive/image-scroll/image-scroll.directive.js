@@ -3,19 +3,19 @@
 
     angular
         .module('matrimony')
-        .directive('userinfo', function () {
+        .directive('imageinfo', function () {
             return {
                 restrict: 'E',
                 scope: {
-                    user: '=',
+                    images: '=',
                     gender: '='
                 },
                 templateUrl: '/app/directive/image-scroll/image-scroll.html',
                 controller: function ($scope) {
                     $scope.display ='';
-                    $scope.size = $scope.user.length;
+                    $scope.size = $scope.images.length;
                     if($scope.size != 0) {
-                        $scope.display = $scope.user[0].image;
+                        $scope.display = $scope.images[0].image;
                         $scope.pos = 0;
                     }
 
@@ -32,13 +32,13 @@
                     $scope.imageForward = function () {
                         if($scope.pos < $scope.size-1) {
                             $scope.pos = $scope.pos +1;
-                            $scope.display = $scope.user[$scope.pos].image;
+                            $scope.display = $scope.images[$scope.pos].image;
                         }
                     };
                     $scope.imageBackward = function () {
                         if($scope.pos > 0) {
                             $scope.pos = $scope.pos -1;
-                            $scope.display = $scope.user[$scope.pos].image;
+                            $scope.display = $scope.images[$scope.pos].image;
                         }
                     };
                 },
