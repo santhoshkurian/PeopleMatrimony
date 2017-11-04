@@ -26,4 +26,23 @@ html, body. div{
     filter: grayscale(80%)!important;
 }
 
+.pagination>li>a, .pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    line-height: 1.42857;
+    border-radius: 20px!important;
+    text-decoration: none;
+    color: grey;
+    font-weight: bold;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-left: -1px;
+}
+.pagination .active>a, .pagination .active>a:hover {
+    background: red!important;
+    border-color: grey;
+    color: #333;
+}
+
 
