@@ -1,13 +1,13 @@
 <!--User :<b>{{user}}</b> <b>{{user.image}}</b><a ng-click="addCustomer()">ssssss</a>-->
 <div style="width: 100%;margin-bottom: 10px;margin-top: 10px;line-height: 150px">
                                         <span  class="pull-left ">
-                                            <a ng-click="imageBackward()" class="btn-circle  default">
+                                            <a ng-if="size > 1" ng-click="imageBackward()" class="btn-circle  default">
                                                 <i class="icon-control-rewind"></i>
                                             </a></span>
                                         <span><img ng-src="{{display}}" style="height: 150px;"
                                                    ng-src=""/></span>
                                         <span class="pull-right">
-                                            <a ng-click="imageForward()" class="btn-circle  default">
+                                            <a ng-if="size > 1" ng-click="imageForward()" class="btn-circle  default">
                                                 <i class="icon-control-forward"></i>
                                             </a>
                                         </span>
