@@ -60,6 +60,7 @@
         $scope.sendInterest = sendInterest;
         $scope.mutalmatches = mutalmatches;
         $scope.mutalmatches = more;
+        $scope.myInterval = 3000;
 
 
 
@@ -218,6 +219,11 @@
             "is_primary": 0,
             "is_validated": 0,
             "number": 20,
+            "category": "general"},{ "image": "/assets/images/prof1.jpg",
+            "status": "pending",
+            "is_primary": 0,
+            "is_validated": 0,
+            "number": 20,
             "category": "general"}]
 
 
@@ -240,8 +246,9 @@
         $scope.imageBackward = imageBackward;
         $scope.imageForward = imageForward;
 
-        function imageBackward(){
-            console.log("imageBackward")
+        function imageBackward(obj,o){
+            console.log(obj)
+            return {img:$scope.images[o+1],pos:o+1}
         }
 
 function imageForward(){
