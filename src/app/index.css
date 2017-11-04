@@ -20,6 +20,9 @@ html, body. div{
     display: none !important;
     visibility: hidden !important;
 }
+.page-loading{
+    margin-left: -115px!important;
+}
 
 
 .page-grey-color{

@@ -6,25 +6,11 @@
         .controller('SentController', SentController);
 
     /** @ngInject */
-    function SentController($http,storageService,$scope) {
+    function SentController($http,storageService,$scope,sent) {
         var vm = this;
-        $scope.sent_all = [];
+        $scope.sent_all = sent.list;
         $scope.deleteSent = deleteSent;
-        console.log("SentController102");
-        $http({
-            method: 'GET',
-            url: 'http://devapi.peoplematrimony.com/inbox?' +
-            '&token=' + storageService.get("token") + '&type=all_sent'
-        }).then(function successCallback(response) {
-            console.log(response)
-            $scope.sent_all = response.data.list;
-
-        }, function errorCallback(response) {
-            console.log(response)
-        });
-
-
-        function deleteSent(comId){
+           function deleteSent(comId){
             console.log(comId);
             $http({
                 method: 'GET',
@@ -36,11 +22,8 @@
                     url: 'http://devapi.peoplematrimony.com/inbox?' +
                     '&token=' + storageService.get("token") + '&type=all_sent'
                 }).then(function successCallback(response) {
-                    console.log(response)
                     $scope.sent_all = response.data.list;
-
                 }, function errorCallback(response) {
-                    console.log(response)
                 });
             }, function errorCallback(response) {
                 console.log(response)

@@ -237,6 +237,17 @@
                     }
                 },
                 resolve  : {
+                    sent:function($http,storageService){
+                        return $http({
+                            method: 'GET',
+                            url: 'http://devapi.peoplematrimony.com/inbox?' +
+                            '&token=' + storageService.get("token") + '&type=all_sent'
+                        }).then(function successCallback(response) {
+                            return response.data;
+                        }, function errorCallback(response) {
+                            return response;
+                        });
+                    }
 
                 }
             }).state('messages.awaiting', {
@@ -253,7 +264,17 @@
                     }
                 },
                 resolve  : {
-
+                    awaitingReply:function($http,storageService){
+                        return $http({
+                            method: 'GET',
+                            url: 'http://devapi.peoplematrimony.com/inbox?' +
+                            '&token=' + storageService.get("token") + '&type=awaiting_reply'
+                        }).then(function successCallback(response) {
+                            return response.data;
+                        }, function errorCallback(response) {
+                            return response;
+                        });
+                    }
                 }
             }).state('messages.pending', {
                 url      : '/pending',

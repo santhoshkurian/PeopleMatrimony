@@ -8,9 +8,11 @@
 
             <div class="row">
                 <div class="col-md-12 text-right">
-                    <pagination total-elements="50" num-pages="10" ng-model="currentPage" ng-change="pageChange()"
-                                current-page="currentPage"
-                                class="pagination-small"></pagination>
+                    <dir-pagination-controls
+                            max-size="5"
+                            direction-links="true"
+                            boundary-links="true" >
+                    </dir-pagination-controls>
                 </div>
                 <div class="col-md-12 ">
                     <div class="portlet light  border-rounded ">
@@ -53,7 +55,7 @@
 
 
             </div>
-            <span ng-repeat="item in sent_all">
+            <span dir-paginate="item in sent_all|itemsPerPage:5">
             <div class="portlet light  border-rounded">
 
                 <div class="portlet-body form">
@@ -114,9 +116,11 @@
 
 
             <div class="col-md-12 text-right">
-                <pagination total-elements="50" num-pages="10" ng-model="currentPage" ng-change="pageChange()"
-                            current-page="currentPage"
-                            class="pagination-small"></pagination>
+                <dir-pagination-controls
+                        max-size="5"
+                        direction-links="true"
+                        boundary-links="true" >
+                </dir-pagination-controls>
             </div>
 
 
