@@ -34,10 +34,13 @@
         $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
                 $(".page-loading").addClass("page-loading-hidden");
                 $("#body-filter").removeClass("page-grey-color");
-                if(storageService.get("token") != null && storageService.get("id") != null){
-                    $state.go(toState)
-                }else{
+                if((storageService.get("token") == null && storageService.get("id") == null) ||
+                    (storageService.get("token") == 'null' && storageService.get("id") == 'null')){
                     $state.go("login");
+
+
+                }else{
+                    $state.go(toState);
                 }
 
             });
