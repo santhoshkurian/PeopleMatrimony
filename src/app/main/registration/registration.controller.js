@@ -12,6 +12,8 @@
         console.log("stateParams",$stateParams.reg_id);
 
         var vm = this;
+        $scope.edu_id = 0;
+        $scope.pro_id = 0;
         $scope.castList = [];
         $scope.motherTongueList = [];
         $scope.countryList = [];
@@ -44,13 +46,13 @@
 
 
         $scope.step2 = {
-            marital_status:null,
+            marital_status:'unmarried',
             mothertongue:null,
-            caste:null,
-            country:null,
-            state:null,
-            city:null,
-            height:null,
+            caste:0,
+            country:0,
+            state:0,
+            city:0,
+            height:0,
             education:null,
             occupation:null,
             step:2,
@@ -119,7 +121,13 @@
 
 
         vm.registerCandidateStep2 = function () {
-            console.log($scope.reg);
+            console.log($scope.step2);
+            if($scope.setProfession.education != null){
+                $scope.edu_id = $scope.setProfession.education.id_education;
+            }
+            if($scope.setProfession.occupation != null){
+                $scope.pro_id = $scope.setProfession.occupation.id_occupation;
+            }
             $http({
                 method: 'POST',
                 url: 'https://devapi.peoplematrimony.com/user?id_people=' +storageService.get('id')+
@@ -129,8 +137,8 @@
                 'state='+$scope.step2.state+'&' +
                 'city='+$scope.step2.city+'&' +
                 'height='+$scope.step2.height+'&' +
-                'education=' +$scope.setProfession.education.id_education+
-                '&occupation=' +$scope.setProfession.occupation.id_occupation+
+                'education=' +$scope.edu_id+
+                '&occupation=' +$scope.pro_id+
                 '&step=2&' +
                 'token='+storageService.get('token')
             }).then(function successCallback(response) {

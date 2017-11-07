@@ -74,7 +74,7 @@
 
         vm.registerCandidate = function () {
             console.log($scope.reg);
-            /*$http({
+            $http({
                 method: 'POST',
                 url: 'https://devapi.peoplematrimony.com/user?step=1&profile_for='+$scope.reg.profile_for+'&' +
                 'name='+$scope.reg.name+'&gender='+$scope.reg.gender+'&dob='+$scope.reg.dob+'&religion='+parseInt($scope.reg.religion)+'&mothertongue=5&' +
@@ -95,7 +95,7 @@
                 $scope.message = response.data.message;
 
 
-            });*/
+            });
             //$state.go('reg')
 
         };
