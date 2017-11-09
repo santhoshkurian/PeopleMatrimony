@@ -1174,7 +1174,10 @@
                                         <label class=" font-weight-head  "> Height </label>
 
                                         <p class="details ">
-                                            {{profile.login_user.preferences.height_start}}-{{profile.login_user.preferences.height_end}}
+                                            {{profile.login_user.preferences.height_start}}
+                                            <span ng-if="profile.login_user.preferences.height_end != null &&
+                                            profile.login_user.preferences.height_end != ''">
+                                            -{{profile.login_user.preferences.height_end}}</span>
                                             cms </p>
 
                                     </div>
