@@ -67,27 +67,29 @@
 
         }*/
 
-        var modalInstance = $uibModal.open({
-            animation: vm.animationsEnabled,
-            ariaLabelledBy: 'modal-title',
-            ariaDescribedBy: 'modal-body',
-            templateUrl: 'myModalContent.html',
-            controller: 'ModalInstanceCtrl',
-            controllerAs: 'vm',
-            resolve: {
-                items: function () {
-                    return vm.items;
+
+        vm.open = function () {
+            var modalInstance = $uibModal.open({
+                animation: vm.animationsEnabled,
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'myModalContent.html',
+                controller: 'ModalInstanceCtrl',
+                controllerAs: 'vm',
+                resolve: {
+                    items: function () {
+                        return vm.items;
+                    }
                 }
-            }
-        });
+            });
 
-        modalInstance.result.then(function (selectedItem) {
-            vm.selected = selectedItem;
-        }, function () {
-            $log.info('Modal dismissed at: ' + new Date());
-        });
+            modalInstance.result.then(function (selectedItem) {
+                vm.selected = selectedItem;
+            }, function () {
+                $log.info('Modal dismissed at: ' + new Date());
+            });
 
-
+        }
 
 
 

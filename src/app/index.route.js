@@ -90,8 +90,8 @@
                 url: '/login',
                 views: {
                     'main@': {
-                        templateUrl: 'app/core/layouts/loginLayout.html'
-                        //controller : 'MainController as vm'
+                        templateUrl: 'app/core/layouts/loginLayout.html',
+                        controller: 'LoginController as vm'
                     },
                     'toolbar@login': {
                         templateUrl: 'app/toolbar/login/loginToolbar.html'
@@ -99,7 +99,6 @@
                     },
                     'content@login': {
                         templateUrl: 'app/main/login/loginContent.html',
-                        controller: 'LoginController as vm'
                     }
                 }
             }).state('reg', {

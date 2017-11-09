@@ -23,8 +23,7 @@
                     <label class="col-md-3 control-label text-left">PROFILE FOR</label>
 
                     <div class="col-md-8">
-                        <select class="form-control input-rounded" ng-model="reg.profile_for" placeholder="Profile for">
-                            <option >Select</option>
+                        <select class="form-control input-rounded" ng-model="reg.profile_for">
                             <option value="Son">Son</option>
                             <option value="Daughter">Daughter</option>
                             <option value="Myself">Myself</option>
@@ -47,13 +46,22 @@
                     <div class="col-md-8 margin-right-30">
                             <div class="col-md-4">
 
-                                    <input type="radio" name="gender" ng-model="reg.gender" value="male" ng-model="reg.gender"
-                                           > Male </input>
-                            </div>
-                            <div class="col-md-4">
+                                    <label class="checkbox-inline" class="custon-text">
+                                        <input type="radio" icheckbox_flat-red class="icheck " ng-model="reg.gender"
+                                               name="gender" value="male">
+                                        Male
+                                    </label>
 
-                                    <input type="radio" name="gender"   value="female"
-                                           ng-model="reg.gender"> Female</input>
+
+                            </div>
+                            <div class="col-md-8">
+                                <label class="checkbox-inline" class="custon-text">
+                                    <input type="radio"  icheckbox_flat-red class="icheck "  ng-model="reg.gender"
+                                           name="gender" value="female">
+                                    Female
+                                </label>
+
+
                         </div>
 
                         <!--<div >-->
