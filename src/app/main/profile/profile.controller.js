@@ -614,16 +614,27 @@
             });
         }
         function saveReliegion() {
-            console.log($scope.profile)
+            var reg_id = 0;
+            var caste_id = 0;
+            var star_id = 0;
+            if($scope.setReligion.religion != null){
+                reg_id = $scope.setReligion.religion.id_religion;
+            }
+            if($scope.setReligion.star != null){
+                star_id = $scope.setReligion.star.id_star;
+            }
+            if($scope.setReligion.caste != null){
+                caste_id = $scope.setReligion.caste.id_caste;
+            }
             $http({
                 method: 'PUT',
                 url: 'https://devapi.peoplematrimony.com/user/edit/' + storageService.get('id') + '?' +
                 'block=religious&' +
-                'religion=' + $scope.setReligion.religion.id_religion +
-                '&caste=' + $scope.setReligion.caste.id_caste +
+                'religion=' + reg_id +
+                '&caste=' + caste_id +
                 '&gothra=' + $scope.profile.login_user.gothra +
                 '&mothertongue=' + $scope.profile.login_user.id_mothertongue +
-                '&star=' + $scope.setReligion.star.id_star +
+                '&star=' + star_id +
                 '&dosham=' + $scope.profile.login_user.dosham +
                 '&token=' + storageService.get("token")
             }).then(function successCallback(response) {
@@ -639,15 +650,28 @@
         }
 
         function savePartnerReliegion() {
+            var reg_id = 0;
+            var caste_id = 0;
+            var star_id = 0;
+            if($scope.setPartnerReligion.religion != null){
+                reg_id = $scope.setPartnerReligion.religion.id_religion;
+            }
+            if($scope.setPartnerReligion.star != null){
+                star_id = $scope.setPartnerReligion.star.id_star;
+            }
+            if($scope.setPartnerReligion.caste != null){
+                caste_id = $scope.setPartnerReligion.caste.id_caste;
+            }
+
 
             $http({
                 method: 'PUT',
                 url: 'https://devapi.peoplematrimony.com/user/edit/pref/' + storageService.get('id') + '?' +
                 'block=religious&' +
-                'religion=' + $scope.setPartnerReligion.religion.id_religion +
-                '&caste=' + $scope.setPartnerReligion.caste.id_caste +
+                'religion=' + reg_id +
+                '&caste=' + caste_id +
                 '&gothra=' + $scope.profile.login_user.preferences.gothra +
-                '&star=' + $scope.setPartnerReligion.star.id_star +
+                '&star=' + star_id +
                 '&dosham=' + $scope.profile.login_user.preferences.dosham +
                 '&token=' + storageService.get("token")
             }).then(function successCallback(response) {
@@ -662,14 +686,30 @@
             });
         }
         function saveLocation() {
+            var country_id = 0;
+            var state_id = 0;
+            var city_id = 0;
+            var nationality_id = 0;
+            if($scope.setLocation.country != null){
+                country_id = $scope.setLocation.country.id_country
+            }
+            if($scope.setLocation.state != null){
+                state_id = $scope.setLocation.state.id_state
+            }
+            if($scope.setLocation.city != null){
+                city_id = $scope.setLocation.city.id_city
+            }
+            if($scope.setLocation.nationality != null){
+                nationality_id = $scope.setLocation.nationality.id_country
+            }
             $http({
                 method: 'PUT',
                 url: 'https://devapi.peoplematrimony.com/user/edit/' + storageService.get('id') + '?' +
                 'token=' + storageService.get("token") +'&block=location&' +
-                '&country=' + $scope.setLocation.country.id_country +
-                '&state=' + $scope.setLocation.state.id_state +
-                '&city=' + $scope.setLocation.city.id_city +
-                '&nationality='+$scope.setLocation.nationality.id_country
+                '&country=' + country_id +
+                '&state=' + state_id +
+                '&city=' + city_id +
+                '&nationality='+nationality_id
             }).then(function successCallback(response) {
                 $state.transitionTo($state.current, $stateParams, {
                     reload: true,
@@ -683,15 +723,32 @@
         }
 
         function savePartnerLocation() {
+            var country_id = 0;
+            var state_id = 0;
+            var city_id = 0;
+            var nationality_id = 0;
+            if($scope.setPartnerLocation.country != null){
+                country_id = $scope.setPartnerLocation.country.id_country
+            }
+            if($scope.setPartnerLocation.state != null){
+                state_id = $scope.setPartnerLocation.state.id_state
+            }
+
+            if($scope.setPartnerLocation.city != null){
+                city_id = $scope.setPartnerLocation.city.id_city
+            }
+            if($scope.setPartnerLocation.nationality != null){
+                nationality_id = $scope.setPartnerLocation.nationality.id_country
+            }
 
             $http({
                 method: 'PUT',
                 url: 'http://devapi.peoplematrimony.com/user/edit/pref/' + storageService.get('id') + '?' +
                 'token=' + storageService.get("token") +'&block=location' +
-                '&country=' + $scope.setPartnerLocation.country.id_country +
-                '&state=' + $scope.setPartnerLocation.state.id_state +
-                '&city=' + $scope.setPartnerLocation.city.id_city +
-                '&nationality='+$scope.setPartnerLocation.nationality.id_country
+                '&country=' + country_id +
+                '&state=' + state_id +
+                '&city=' + city_id +
+                '&nationality='+nationality_id
             }).then(function successCallback(response) {
                 $state.transitionTo($state.current, $stateParams, {
                     reload: true,
@@ -704,15 +761,27 @@
             });
         }
         function saveProfession() {
+            var edu_id = 0;
+            var occu_id = 0;
+            var cat_id = 0;
+            if($scope.setProfession.education != null){
+                edu_id = $scope.setProfession.education.id_education;
+            }
+            if($scope.setProfession.occupation_cat != null){
+                cat_id = $scope.setProfession.occupation_cat.id_occupation_category;
+            }
+            if($scope.setProfession.occupation != null){
+                occu_id = $scope.setProfession.occupation.id_occupation;
+            }
             $http({
                 method: 'PUT',
                 url: 'https://devapi.peoplematrimony.com/user/edit/' + storageService.get('id') + '?' +
                 'token=' + storageService.get("token") +'&block=profession&' +
                 '&edu_detail=' + $scope.profile.login_user.education_detail +
-                '&education=' + $scope.setProfession.education.id_education +
+                '&education=' + edu_id +
                 '&income=' + $scope.profile.login_user.income +
-                '&occu_cat=' + $scope.setProfession.occupation_cat.id_occupation_category +
-                '&occupation='+$scope.setProfession.occupation.id_occupation
+                '&occu_cat=' + cat_id +
+                '&occupation='+occu_id
             }).then(function successCallback(response) {
                 $state.transitionTo($state.current, $stateParams, {
                     reload: true,
@@ -726,15 +795,24 @@
         }
 
         function savePartnerProfession() {
+            var edu_id = 0;
+            var occu_id = 0;
+            var cat_id = 0;
+            if($scope.setPartnerProfession.education != null){
+                edu_id = $scope.setPartnerProfession.education.id_education;
+            }
+            if($scope.setPartnerProfession.occupation != null){
+                occu_id = $scope.setPartnerProfession.occupation.id_occupation;
+            }
 
             $http({
                 method: 'PUT',
                 url: 'https://devapi.peoplematrimony.com/user/edit/pref/' + storageService.get('id') + '?' +
                 'token=' + storageService.get("token") +'&block=profession' +
                 '&id=' + storageService.get('id') +
-                '&education=' + $scope.setPartnerProfession.education.id_education +
+                '&education=' + edu_id +
                 '&income=' + $scope.profile.login_user.preferences.income +
-                '&occupation='+$scope.setPartnerProfession.occupation.id_occupation
+                '&occupation='+occu_id
             }).then(function successCallback(response) {
                 $state.transitionTo($state.current, $stateParams, {
                     reload: true,

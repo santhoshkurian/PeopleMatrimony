@@ -798,7 +798,7 @@
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Annaul Income</label>
 
-                                    <p class="details ">{{profile.login_user.income}}</p>
+                                    <p class="details "ng-if="profile.login_user.income != null">{{profile.login_user.income}}</p>
 
                                 </div>
                             </div>
@@ -1951,7 +1951,7 @@
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Annaul Income</label>
 
-                                    <p class="details ">{{profile.login_user.preferences.income}}</p>
+                                    <p class="details " ng-if="profile.login_user.preferences.income != null">{{profile.login_user.preferences.income}}</p>
 
                                 </div>
                             </div>
@@ -2118,7 +2118,7 @@
                                     &nbsp;
                                     <button type="button" ng-click="savePartnerLocation()"
                                             class=" btn btn-default red input-rounded "
-                                            style="color:#ffffea" ng-click="">
+                                            style="color:#ffffea" >
                                         Save
                                     </button>
 

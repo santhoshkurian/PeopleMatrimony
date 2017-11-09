@@ -65,7 +65,7 @@
                                 <span class=""><span class="nav-header-text">Inbox</span></span>
                             </li>
                             <li ng-class="{ active: isActive('/app/pending')}" class="nav-item" >
-                                <a ui-sref="app.pending" class="nav-link ">
+                                <a ui-sref="messages" class="nav-link ">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="row">
@@ -81,7 +81,7 @@
                                 </a>
                             </li>
                             <li ng-class="{ active: isActive('/app/accept')}" class="nav-item " >
-                                <a ui-sref="app.accept" class="nav-link ">
+                                <a ui-sref="messages.accept" class="nav-link ">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="row">
@@ -97,7 +97,7 @@
                                 </a>
                             </li>
                             <li ng-class="{ active: isActive('/app/decline')}" class="nav-item" >
-                                <a ui-sref="app.decline" class="nav-link ">
+                                <a ui-sref="messages.declined" class="nav-link ">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="row">
@@ -118,7 +118,7 @@
                                 <span class=""><span class="nav-header-text">Sent</span></span>
                             </li>
                             <li ng-class="{ active: isActive('/app/pending')}" class="nav-item" >
-                                <a ui-sref="app.pending" class="nav-link ">
+                                <a ui-sref="messages.sent" class="nav-link ">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="row">
@@ -134,7 +134,7 @@
                                 </a>
                             </li>
                             <li ng-class="{ active: isActive('/app/accept')}" class="nav-item " >
-                                <a ui-sref="app.accept" class="nav-link ">
+                                <a ui-sref="messages.awaiting" class="nav-link ">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="row">
