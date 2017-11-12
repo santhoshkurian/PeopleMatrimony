@@ -46,7 +46,7 @@
 								<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 									<!--<span class="username username-hide-on-mobile"> Doe </span>-->
 									<!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
-									<img alt="" class="img-circle" src="../assets/img/avatar9.jpg" /> </a>
+									<img alt="" class="img-circle" ng-src="{{image_url}}" /> </a>
 								<ul class="dropdown-menu dropdown-menu-default">
 									<li>
 										<a ui-sref="profile">
@@ -59,7 +59,7 @@
 									<li class="divider"></li>
 
 									<li>
-										<a ui-sref="login">
+										<a ng-click="logout()">
 											<i class="icon-key"></i> Log Out </a>
 									</li>
 								</ul>
@@ -85,7 +85,7 @@
 						<li><a ng-class="{ activetoolbar: mainlink =='viewed' }" ng-click="viewed()" >Viewed and not contacted(55)</a></li>
 						<li><a ng-class="{ activetoolbar: mainlink =='shortlisted' }" ng-click="shortlisted()" >Shortlisted(35)</a></li>
 						<li><a ng-class="{ activetoolbar: mainlink =='mutalmatches' }" ng-click="mutalmatches()" >Mutal matches(40)</a></li>
-						<li><a ng-class="{ activetoolbar: mainlink =='more' }" ng-click="more()" >More </a></li>
+						<!--<li><a ng-class="{ activetoolbar: mainlink =='more' }" ng-click="more()" >More </a></li>-->
 					</ul>
 				</div>
 

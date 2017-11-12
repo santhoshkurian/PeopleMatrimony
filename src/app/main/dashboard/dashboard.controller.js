@@ -14,11 +14,6 @@
         $scope.name = storageService.get("name");
         $scope.id = storageService.get("id");
 
-
-        $scope.isActive = function (viewLocation) {
-            return viewLocation === $location.path();
-        };
-
         function logout(){
             $http({
                 method: 'GET',
@@ -35,6 +30,12 @@
 
             });
         }
+
+
+
+        $scope.isActive = function (viewLocation) {
+            return viewLocation === $location.path();
+        };
 
         $http({
             method: 'GET',
