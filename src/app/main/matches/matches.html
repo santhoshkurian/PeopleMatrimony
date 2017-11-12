@@ -4,6 +4,7 @@
         <!-- BEGIN PAGE HEAD-->
         <div class="page-head">
             <div class="row">
+
                 <div class="col-md-12 text-right">
                     <dir-pagination-controls
                             max-size="5"
@@ -11,7 +12,9 @@
                             boundary-links="true" >
                     </dir-pagination-controls>
                 </div>
+
                 <div class="col-md-12 ">
+
                     <div class="portlet light bordered ">
                         <div class="portlet-title " style="border-bottom: 0px">
                             <div class="caption green" style="font-size: 12px">
@@ -52,6 +55,11 @@
                             </div>
                         </div>
                     </div>
+                        <div  ng-if="matches.length == 0" class="portlet light  border-rounded ">
+                            <div class="alert alert-success">
+                                No results found
+                            </div>
+                        </div>
                     <div style="color: red;text-align: center">{{message}}</div>
                                         <span dir-paginate="item in matches|itemsPerPage:5">
 
