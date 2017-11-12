@@ -435,7 +435,7 @@
 
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Country</label>
-                                    <select class="form-control input-rounded " ng-model="setLocation.country"
+                                    <select  class="form-control input-rounded " ng-model="setLocation.country"
                                             ng-click="selectCountry(setLocation.country)"
                                             ng-options="item.country_name for item in countryList track by item.id_country">
                                     </select>
@@ -1962,7 +1962,7 @@
                                                                  <div class="col-md-6">
                                                                      <label class=" uppercase font-weight "> Education</label>
 
-                                                                     <select class="form-control input-rounded " ng-model="setPartnerProfession.education"
+                                                                     <select multiple="multiple" class="multi-select form-control input-rounded " ng-model="setPartnerProfession.education"
                                                                              ng-options="item.education for item in educationList track by item.id_education">
                                                                      </select>
                                                                  </div>

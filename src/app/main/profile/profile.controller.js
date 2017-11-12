@@ -798,7 +798,9 @@
             var edu_id = 0;
             var occu_id = 0;
             var cat_id = 0;
+            console.log($scope.setPartnerProfession);
             if($scope.setPartnerProfession.education != null){
+
                 edu_id = $scope.setPartnerProfession.education.id_education;
             }
             if($scope.setPartnerProfession.occupation != null){
