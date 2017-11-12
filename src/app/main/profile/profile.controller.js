@@ -16,7 +16,7 @@
         $scope.setReligion= {religion:null,caste:null,star:null};
         $scope.setPartnerReligion= {religion:null,caste:null,star:null};
         $scope.setProfession= {education:null,occupation:null,occupation_cat:null};
-        $scope.setPartnerProfession= {education:null,occupation:null,occupation_cat:null};
+        $scope.setPartnerProfession= {education:[],occupation:[],occupation_cat:null};
         $scope.setFamily= {orgin:null,orgin_name:null};
         $scope.countryList = populate.countries;
 
@@ -462,19 +462,30 @@
         function editPartnerEdu(obj) {
             $scope[obj] = !$scope[obj];
             if($scope.profile.login_user.preferences.education != null && $scope.profile.login_user.preferences.education != 0) {
-                $scope.educationList.filter(function (a) {
-                    if (a.id_education == $scope.profile.login_user.preferences.education) {
-                        $scope.setPartnerProfession.education = a;
-                    }
-                })
+
+                var array = $scope.profile.login_user.preferences.education.split('~');
+                for (var i = 0; i < array.length; i++) {
+                    $scope.educationList.filter(function (a) {
+                        if (a.id_education == array[i]) {
+                            $scope.setPartnerProfession.education.push(a);
+                        }
+                    })
+                }
+
             }
 
             if($scope.profile.login_user.preferences.occupation != null && $scope.profile.login_user.preferences.occupation != 0) {
-                $scope.occupation.filter(function (a) {
-                    if (a.id_occupation == $scope.profile.login_user.preferences.occupation) {
-                        $scope.setPartnerProfession.occupation = a;
-                    }
-                })
+                var array = $scope.profile.login_user.preferences.occupation.split('~');
+
+                for (var i = 0; i < array.length; i++) {
+                    $scope.occupation.filter(function (a) {
+                        if (a.id_occupation == array[i]) {
+                            $scope.setPartnerProfession.occupation.push(a);
+                        }
+                    })
+                }
+
+
             }
         }
         function editPartnerReligion(obj) {
@@ -798,13 +809,19 @@
             var edu_id = 0;
             var occu_id = 0;
             var cat_id = 0;
-            console.log($scope.setPartnerProfession);
-            if($scope.setPartnerProfession.education != null){
-
-                edu_id = $scope.setPartnerProfession.education.id_education;
+            if($scope.setPartnerProfession.education.length > 0){
+                var edu_arr = [];
+                for (var i = 0; i < $scope.setPartnerProfession.education.length; i++) {
+                    edu_arr.push($scope.setPartnerProfession.education[i].id_education);
+                }
+                edu_id = edu_arr.join('~');
             }
-            if($scope.setPartnerProfession.occupation != null){
-                occu_id = $scope.setPartnerProfession.occupation.id_occupation;
+            if($scope.setPartnerProfession.occupation.length > 0){
+                var occ_arr = [];
+                for (var i = 0; i < $scope.setPartnerProfession.occupation.length; i++) {
+                    occ_arr.push($scope.setPartnerProfession.occupation[i].id_occupation);
+                }
+                occu_id = occ_arr.join('~');
             }
 
             $http({

@@ -1842,7 +1842,7 @@
                                                                        <label class=" uppercase font-weight ">
                                                                            Religion</label>
 
-                                                                       <select class="form-control input-rounded "
+                                                                       <select multiple="multiple" class="multi-select form-control input-rounded "
                                                                                ng-model="setPartnerReligion.religion"
                                                                                ng-click="selectReliegion(setPartnerReligion.religion)"
                                                                                ng-options="item.religion for item in religonList track by item.id_religion">
@@ -1856,7 +1856,7 @@
                                                                            /Sub caste</label>
 
 
-                                                                       <select class="form-control input-rounded "
+                                                                       <select multiple="multiple" class="multi-select form-control input-rounded "
                                                                                ng-model="setPartnerReligion.caste"
                                                                                ng-options="item.caste for item in castList track by item.id_caste">
                                                                        </select>
@@ -1875,7 +1875,7 @@
 
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight  "> Star / Rassi</label>
-                                    <select class="form-control input-rounded " ng-model="setPartnerReligion.star"
+                                    <select multiple="multiple" class="multi-select form-control input-rounded " ng-model="setPartnerReligion.star"
                                             ng-options="item.star for item in starsList track by item.id_star">
                                     </select>
                                 </div>
@@ -1970,7 +1970,7 @@
                                                                  <div class="col-md-6">
                                                                      <label class=" uppercase font-weight "> Occupation</label>
 
-                                                                     <select class="form-control input-rounded " ng-model="setPartnerProfession.occupation"
+                                                                     <select multiple="multiple" class="multi-select form-control input-rounded " ng-model="setPartnerProfession.occupation"
                                                                              ng-options="item.occupation for item in occupation track by item.id_occupation">
                                                                      </select>
                                                                  </div>
