@@ -8,6 +8,7 @@
     /** @ngInject */
     function AccountSettingsController(account,$scope,storageService,$state,$http,$stateParams) {
         console.log(account)
+
         $scope.email = account.email;
         $scope.passwordMsg = null;
 
