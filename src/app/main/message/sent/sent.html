@@ -7,13 +7,7 @@
             <!-- BEGIN PAGE BASE CONTENT -->
 
             <div class="row">
-                <div class="col-md-12 text-right">
-                    <dir-pagination-controls
-                            max-size="5"
-                            direction-links="true"
-                            boundary-links="true" >
-                    </dir-pagination-controls>
-                </div>
+
                 <div class="col-md-12 ">
                     <div class="portlet light  border-rounded ">
                         <div class="portlet-title " style="border-bottom: 0px">
@@ -52,7 +46,20 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="col-md-12">
+                    <div ng-if="sent_all.length == 0" class="portlet light  border-rounded ">
+                        <div class="alert alert-success">
+                            No results found
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 text-right">
+                    <dir-pagination-controls
+                            max-size="5"
+                            direction-links="true"
+                            boundary-links="true" >
+                    </dir-pagination-controls>
+                </div>
 
             </div>
             <span dir-paginate="item in sent_all|itemsPerPage:5">
