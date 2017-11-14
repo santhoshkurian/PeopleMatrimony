@@ -1,0 +1,38 @@
+<div class="page-content-wrapper page-content-wrapper1">
+    <!-- BEGIN CONTENT BODY -->
+    <div class="page-content1">
+        <!-- BEGIN PAGE HEAD-->
+        <div class="page-head">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="portlet light " style="padding-top: 0px">
+                        <div class=" row vp-main-action">
+                            <div style="text-transform: uppercase;text-align: center;">
+                                <div class="col-md-6 vp-main-link2 "
+                                     ng-class="{'active-link': viewType == 'classic'}"
+                                     ng-click="selectType('classic')"
+                                        > Classic
+                                </div>
+                                <div class="col-md-6 vp-main-link2"
+                                     ng-class="{'active-link': viewType == 'flexible'}"
+                                     ng-click="selectType('flexible')"> Flexxible plan
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="row margin-top-40">
+                            <div class="col-md -12 margin-top-40">
+                                <div ng-if="viewType == 'classic'">classic</div>
+                                <div ng-if="viewType == 'flexible'">flexible</div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
