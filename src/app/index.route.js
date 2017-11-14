@@ -407,6 +407,26 @@
                         controller: 'FooterController as vm'
                     }
                 }
+            }).state('payment',{
+                url: '/payment',
+                views: {
+                    'main@': {
+                        templateUrl: 'app/core/layouts/paymentLayout.html'
+                        //controller : 'InboxController as vm'
+                    },
+                    'toolbar@payment': {
+                        templateUrl: 'app/toolbar/dashboard/dbToolbar.html',
+                        controller: 'DashboardToolbarController as vm'
+                    },
+                    'content@payment': {
+                        templateUrl: 'app/main/payment/payment.html',
+                        controller: 'PaymentController as vm'
+                    },
+                    'footer@payment': {
+                        templateUrl: 'app/footer/footer.html',
+                        controller: 'FooterController as vm'
+                    }
+                }
             });
 
     }
