@@ -99,6 +99,10 @@
                     },
                     'content@login': {
                         templateUrl: 'app/main/login/loginContent.html',
+                    },
+                    'footer@login': {
+                        templateUrl: 'app/footer/footer.html',
+                        controller: 'FooterController as vm'
                     }
                 }
             }).state('reg', {

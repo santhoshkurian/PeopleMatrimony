@@ -19,6 +19,7 @@
         $scope.setPartnerProfession= {education:[],occupation:[],occupation_cat:null};
         $scope.setFamily= {orgin:null,orgin_name:null};
         $scope.countryList = populate.countries;
+        $scope.selectMotherTounge = null;
 
 
 
@@ -31,6 +32,14 @@
         $scope.educationList = populate.education;
         $scope.occupation = populate.occupation;
         $scope.profile= profile;
+        if($scope.profile.login_user.id_mothertongue != null && $scope.profile.login_user.id_mothertongue != 0){
+            $scope.motherTongueList.filter(function (a) {
+                if (a.id_mothertongue === $scope.profile.login_user.id_mothertongue) {
+                    $scope.selectMotherTounge = a;
+                }
+
+            })
+        }
         if($scope.profile.login_user.nationality != null && $scope.profile.login_user.nationality != 0) {
 
 
@@ -566,6 +575,11 @@
         }
         function basic() {
             console.log($scope.profile)
+            console.log($scope.selectMotherTounge);
+            var selectMother = 0;
+            if($scope.selectMotherTounge != null){
+                selectMother = $scope.selectMotherTounge.id_mothertongue;
+            }
             $http({
                 method: 'PUT',
                 url: 'https://devapi.peoplematrimony.com/user/edit/' + storageService.get('id') + '?' +
@@ -573,7 +587,7 @@
                 '&weight=' + $scope.profile.login_user.weight +
                 '&body_type=' + $scope.profile.login_user.body_type +
                 '&height=' + $scope.profile.login_user.height +
-                '&mothertongue=' + parseInt($scope.profile.login_user.id_mothertongue) +
+                '&mothertongue=' + selectMother +
                 '&marital_status=' + $scope.profile.login_user.marital_status +
                 '&complexion=' + $scope.profile.login_user.complexion +
                 '&physical_type=' + $scope.profile.login_user.physical_status +
