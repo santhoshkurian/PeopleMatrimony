@@ -6,13 +6,22 @@
         .controller('DashboardController', DashboardController);
 
     /** @ngInject */
-    function DashboardController($scope, $location,$http,storageService, $state) {
+    function DashboardController($scope, $location,$http,storageService,newMatches,recentUpdated,$state,profileCompleteness) {
 
+        console.log(profileCompleteness);
+        console.log(newMatches);
+        $scope.messages = profileCompleteness.percentage.data;
         $scope.logout = logout;
 
         $scope.image_url = storageService.get("image_url");
         $scope.name = storageService.get("name");
         $scope.id = storageService.get("id");
+
+        $scope.newMatches = newMatches;
+        $scope.recentUpdated = recentUpdated;
+
+
+
 
         function logout(){
             $http({
@@ -63,9 +72,11 @@
 
 
 
-        $scope.messages = ["Add carrear details to get more time responses", "Add education details to get more time responses"]
+        //$scope.messages = ["Add carrear details to get more time responses", "Add education details to get more time responses"]
         $scope.messageIndex = 0;
         $scope.loadNextMessage = function () {
+            console.log("load message")
+            console.log($scope.messages.length)
             if ($scope.messageIndex < $scope.messages.length - 1) {
                 $scope.messageIndex = $scope.messageIndex +1;
             }

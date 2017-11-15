@@ -38,7 +38,7 @@
                                             <div class="hidden-md hidden-lg col-sm-1 col-xs-1"></div>
                                             <div class="col-md-10 col-sm-8 col-xs-8">
                                                 <span>
-                                                <b>{{messages[messageIndex]}}</b>
+                                                <b>{{messages[messageIndex].message}}</b>
                                                 </span>
 
                                             </div>
@@ -65,7 +65,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-12 ">
+                    <div class="col-md-12 " ng-if="recentUpdated.matches.length > 0">
                         <!-- BEGIN SAMPLE FORM PORTLET-->
                         <div class="portlet light bordered">
                             <div class="portlet-title">
@@ -87,23 +87,25 @@
                                 </div>
                             </div>
                             <div class="portlet-body form">
-                                <div class="row ">
+                                <div class="row" ng-repeat="item in recentUpdated.matches">
                                     <div class=" col-xs-3 col-sm-3 col-md-2 ">
                                         <img class="imgae-circle"
                                              ng-src="../assets/images/prof1.jpg"/>
                                     </div>
                                     <div class="col-xs-1 col-sm-1 hidden-md hidden-lg"></div>
                                     <div class="col-xs-7 col-sm-7 col-md-6">
+
                                         <div class="row ">
                                             <div class="col-md-12">
-                                                        <span><a ui-sref="viewProfile" class="profile-name">Priya Renjini</a>&nbsp;<span
-                                                                class="profile-id"> (PD12345)</span></span>
+                                                        <span><a ui-sref="viewProfile" class="profile-name">{{item.name}}</a>&nbsp;<span
+                                                                class="profile-id"> ({{item.id_people}})</span></span>
                                             </div>
                                         </div>
                                         <div class="row ">
                                             <div class="col-md-12">
                                                                         <span class="profile-details">
-                                                                            25,5.3cms,Tamil,Hindu,Manal Tamilnadu, India
+                                                                            {{item.age}},<span ng-if="item.height != null">{{item.height}}cms</span>,{{item.mothertongue}},{{item.caste}},{{item.star}} ,
+                                                                            {{item.state_name}}, {{item.country_name}}
                                                                         </span>
                                             </div>
                                         </div>
@@ -147,23 +149,29 @@
                                 </div>
                             </div>
                             <div class="portlet-body form">
-                                <div class="row ">
+                                <div class="row" ng-repeat="item in newMatches.matches">
                                     <div class=" col-xs-3 col-sm-3 col-md-2 ">
-                                        <img class="imgae-circle"
-                                             ng-src="../assets/images/prof1.jpg"/>
+                                        <img ng-if="item.images.length > 0" class="imgae-circle"
+                                             ng-src="{{item.images[0]}}"/>
+                                        <img ng-if="item.gender == 'male'" class="imgae-circle"
+                                             ng-src="/assets/defaultImages/male_card.jpg"/>
+<img ng-if="item.gender == 'female'" class="imgae-circle"
+                                             ng-src="/assets/defaultImages/female_card.jpg"/>
                                     </div>
                                     <div class="col-xs-1 col-sm-1 hidden-md hidden-lg"></div>
                                     <div class="col-xs-7 col-sm-7 col-md-6">
+
                                         <div class="row ">
                                             <div class="col-md-12">
-                                                        <span><a ui-sref="viewProfile" class="profile-name">Priya Renjini</a>&nbsp;<span
-                                                                class="profile-id"> (PD12345)</span></span>
+                                                        <span><a ui-sref="viewProfile" class="profile-name">{{item.name}}</a>&nbsp;<span
+                                                                class="profile-id"> ({{item.id_people}})</span></span>
                                             </div>
                                         </div>
                                         <div class="row ">
                                             <div class="col-md-12">
                                                                         <span class="profile-details">
-                                                                            25,5.3cms,Tamil,Hindu,Manal Tamilnadu, India
+                                                                            {{item.age}},<span ng-if="item.height != null">{{item.height}}cms</span>,{{item.mothertongue}},{{item.caste}},{{item.star}} ,
+                                                                            {{item.state_name}}, {{item.country_name}}
                                                                         </span>
                                             </div>
                                         </div>
@@ -180,6 +188,7 @@
                                     </div>
                                     <div class="col-md-2 hidden-xs hidden-sm"></div>
                                 </div>
+
 
 
                             </div>
