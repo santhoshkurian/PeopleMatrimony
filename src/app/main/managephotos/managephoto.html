@@ -91,7 +91,7 @@
                                           <button class="btn"
                                                   style="background-image:url('../assets/images/upload.png');width: 180px;height: 180px "></button>
                                           <input type="file" id="myFile1"
-                                                 onchange="angular.element(this).scope().uploadFile(this.files)"
+                                                 onchange="angular.element(this).scope().uploadFile1(this.files)"
                                                  class="upload">
                                       </div>
 
@@ -116,6 +116,9 @@
                                         </div>
                                         <!--<div >{{fileName}}</div>-->
                                         <!--<button ng-click="uploadFile()">Try it</button>-->
+                                        <div style="margin-top:20px">
+                                        <img style="height:300px" ng-src="{{recentUpload}}"></img>
+                                             </div>
 
 
                                     </div>

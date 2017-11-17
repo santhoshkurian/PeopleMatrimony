@@ -85,6 +85,56 @@
                         templateUrl: 'app/footer/footer.html',
                         //controller: 'FooterController as vm'
                     }
+                },resolve :{
+                    profileCompleteness:function($http,storageService){
+                        return $http({
+                            method: 'GET',
+                            url: 'http://devapi.peoplematrimony.com/completeprofile?'+
+                            'id=' + storageService.get("id") + 'p_debug=1&token=' + storageService.get("token")
+                        }).then(function successCallback(response) {
+                            console.log(response)
+                            return response.data;
+
+                        }, function errorCallback(response) {
+                            //console.log(response)
+                            return response;
+
+
+                        });
+                    },
+                    newMatches:function($http,storageService){
+                        return $http({
+                            method: 'GET',
+                            url: 'http://devapi.peoplematrimony.com/matches/new??'+
+                            'id=' + storageService.get("id") + 'p_debug=1&token=' + storageService.get("token")
+                        }).then(function successCallback(response) {
+                            console.log(response)
+                            return response.data;
+
+                        }, function errorCallback(response) {
+                            //console.log(response)
+                            return response;
+
+
+                        });
+                    },
+                    recentUpdated:function($http,storageService){
+                        return $http({
+                            method: 'GET',
+                            url: 'http://devapi.peoplematrimony.com/list/recentupdated??'+
+                            'id=' + storageService.get("id") + 'p_debug=1&token=' + storageService.get("token")
+                        }).then(function successCallback(response) {
+                            console.log(response)
+                            return response.data;
+
+                        }, function errorCallback(response) {
+                            //console.log(response)
+                            return response;
+
+
+                        });
+                    }
+
                 }
             }).state('login', {
                 url: '/login',
@@ -99,6 +149,10 @@
                     },
                     'content@login': {
                         templateUrl: 'app/main/login/loginContent.html',
+                    },
+                    'footer@login': {
+                        templateUrl: 'app/footer/footer.html',
+                        controller: 'FooterController as vm'
                     }
                 }
             }).state('reg', {

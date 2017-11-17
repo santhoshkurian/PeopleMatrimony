@@ -91,6 +91,9 @@
         function newMatches() {
             $scope.mainlink = "newMatches";
             $scope.message = null;
+            $scope.showResult = false;
+            console.log('new Matches');
+
 
             $http({
                 method: 'GET',
@@ -99,6 +102,9 @@
             }).then(function successCallback(response) {
                 console.log(response)
                 $scope.matches = response.data.matches;
+                if($scope.matches.length == 0){
+                    $scope.showResult = true;
+                }
             }, function errorCallback(response) {
                 console.log(response);
             });
@@ -108,8 +114,20 @@
         function notYetViewed() {
             $scope.mainlink = "notYetViewed";
             $scope.message = null;
-
-            $scope.matches = [];
+            $scope.showResult = false;
+            $http({
+                method: 'GET',
+                url: 'http://devapi.peoplematrimony.com/list/ignore?' +
+                '&token=' + storageService.get("token") + '&id=' + storageService.get("id")
+            }).then(function successCallback(response) {
+                console.log(response)
+                $scope.matches = response.data.matches;
+                if($scope.matches.length == 0){
+                    $scope.showResult = true;
+                }
+            }, function errorCallback(response) {
+                console.log(response);
+            });
 
 
         }
@@ -117,8 +135,22 @@
         function viewed() {
             $scope.mainlink = "viewed";
             $scope.message = null;
+            $scope.showResult = false;
+            $http({
+                method: 'GET',
+                url: 'http://devapi.peoplematrimony.com/list/viewed?' +
+                '&token=' + storageService.get("token") + '&id=' + storageService.get("id")
+            }).then(function successCallback(response) {
+                console.log(response)
+                $scope.matches = response.data.matches;
+                if($scope.matches.length == 0){
+                    $scope.showResult = true;
+                }
+            }, function errorCallback(response) {
+                console.log(response);
+            });
 
-            $scope.matches = [];
+
 
 
         }
@@ -126,6 +158,8 @@
         function shortlisted() {
             $scope.mainlink = "shortlisted";
             $scope.message = null;
+            $scope.showResult = false;
+
 
             $scope.matches = [];
             $http({
@@ -135,6 +169,9 @@
             }).then(function successCallback(response) {
                 console.log(response)
                 $scope.matches = response.data.matches;
+                if($scope.matches.length > 0){
+                    $scope.showResult = true;
+                }
             }, function errorCallback(response) {
                 console.log(response);
             });
@@ -145,8 +182,13 @@
         function mutalmatches() {
             $scope.mainlink = "mutalmatches";
             $scope.message = null;
+            $scope.showResult = false;
+
 
             $scope.matches = [];
+            if($scope.matches.length > 0){
+                $scope.showResult = true;
+            }
 
 
         }
