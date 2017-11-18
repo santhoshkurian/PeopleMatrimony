@@ -12,6 +12,11 @@
         function selectType(type){
             $scope.viewType = type;
         }
+        $scope.selectedOption = 'classic-classic';
+        $scope.setSelectedOption = setSelectedOption;
+        function setSelectedOption(type){
+            $scope.selectedOption = type;
+        }
     }
 }());
 

@@ -1,0 +1,57 @@
+.vp-main-action .vp-main-link2 {
+    padding: 20px;
+    border: 1px solid #eef1f5;
+    background-color: #ffffff;
+    font-size: 14px !important;
+    font-weight: bold;
+    color: #777777;
+}
+.payment-box{
+    border: 1px solid #777777;
+    height: 301px;
+    /*margin-right: 25px;*/
+    margin-top: 25px;
+}
+.feature-header-text {
+    color: red;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.feature-header {
+   background-color: #E4E8EB;
+}
+.price-detail{
+    border-right: 1px solid #777777;
+}
+.col-md-border {
+
+    border-right: 1px solid red !important;
+}
+.old-price {
+    text-decoration: line-through;
+}
+.new-price {
+    font-weight: 600;
+}
+.selected-payment {
+    background-color: red;
+}
+
+.feature-box{
+    border: 1px solid red !important;
+    height: 100px !important;
+}
+.greeen-icon{
+    color: #00AC8D;
+}
+
+@media (max-width: 991px) {
+    .payment-box{
+        border: 1px solid #777777;
+        height: 301px
+        /*margin-right: 25px;*/
+        margin-top: 25px;
+        margin-bottom: 50px;
+    }
+}
+
