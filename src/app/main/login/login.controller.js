@@ -148,7 +148,12 @@
                 $uibModalInstance.close(vm.selected.item);
                 storageService.set("token",response.data.access_token)
                 storageService.set("id",response.data.id_people);
-                storageService.set("image_url",response.data.image);
+                if(response.data.image == ''){
+                    storageService.set("image_url","assets/defaultImages/avatar.png");
+                }else{
+                    storageService.set("image_url",response.data.image);
+
+                }
                 storageService.set("name",response.data.name);
 
                 $state.go('app');

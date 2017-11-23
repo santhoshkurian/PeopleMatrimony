@@ -169,7 +169,7 @@
             }).then(function successCallback(response) {
                 console.log(response)
                 $scope.matches = response.data.matches;
-                if($scope.matches.length > 0){
+                if($scope.matches.length == 0){
                     $scope.showResult = true;
                 }
             }, function errorCallback(response) {
@@ -186,7 +186,7 @@
 
 
             $scope.matches = [];
-            if($scope.matches.length > 0){
+            if($scope.matches.length == 0){
                 $scope.showResult = true;
             }
 
