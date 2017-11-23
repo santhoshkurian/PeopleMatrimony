@@ -6,11 +6,12 @@
         .controller('DashboardController', DashboardController);
 
     /** @ngInject */
-    function DashboardController($scope, $location,$http,storageService,newMatches,viewed,recentUpdated,$state,profileCompleteness) {
+    function DashboardController($scope, $location,$http,storageService,newMatches,discoverMatches,viewed,recentUpdated,$state,profileCompleteness) {
 
         console.log(profileCompleteness);
         console.log(newMatches);
         console.log("viewed",viewed);
+        console.log("discoverMatches",discoverMatches);
         console.log("profileCompleteness",profileCompleteness);
         $scope.messages = profileCompleteness.percentage.data;
         $scope.logout = logout;
@@ -23,6 +24,7 @@
         $scope.newMatches = newMatches;
         $scope.recentUpdated = recentUpdated;
         $scope.viewed = viewed;
+        $scope.discover = discoverMatches.matches;
 
 
 

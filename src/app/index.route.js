@@ -149,6 +149,22 @@
 
 
                         });
+                    },
+                    discoverMatches:function($http,storageService){
+                        return $http({
+                            method: 'GET',
+                            url: 'http://devapi.peoplematrimony.com/v1/matches/discover?'+
+                            'id=' + storageService.get("id") + '&p_debug=1&token=' + storageService.get("token")
+                        }).then(function successCallback(response) {
+                            console.log(response)
+                            return response.data;
+
+                        }, function errorCallback(response) {
+                            //console.log(response)
+                            return response;
+
+
+                        });
                     }
 
                 }
