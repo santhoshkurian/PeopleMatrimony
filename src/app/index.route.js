@@ -502,7 +502,6 @@
                     },
                     'toolbar@payment': {
                         templateUrl: 'app/toolbar/dashboard/dbToolbar.html',
-                        controller: 'DashboardToolbarController as vm'
                     },
                     'content@payment': {
                         templateUrl: 'app/main/payment/payment.html',
