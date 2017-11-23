@@ -201,6 +201,10 @@
                     'content@reg': {
                         templateUrl: 'app/main/registration/registration.html',
                         controller: 'RegistrationController as vm'
+                    },
+                    'footer@reg': {
+                        templateUrl: 'app/footer/footer.html',
+                        controller: 'FooterController as vm'
                     }
                 },
                 resolve :{
