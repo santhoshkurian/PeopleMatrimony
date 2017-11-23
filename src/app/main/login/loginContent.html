@@ -24,10 +24,14 @@
 
                     <div class="col-md-8">
                         <select class="form-control input-rounded" ng-model="reg.profile_for">
-                            <option value="Son">Son</option>
-                            <option value="Daughter">Daughter</option>
-                            <option value="Myself">Myself</option>
-
+                            <option value="" ng-selected="true" selected="selected">Select</option>
+                            <option value="myself">My self</option>
+                            <option value="daughter">Daughter</option>
+                            <option value="son">Son</option>
+                            <option value="brother">Brother</option>
+                            <option value="sister">Sister</option>
+                            <option value="relative">Relative</option>
+                            <option value="friend">Friend</option>
                         </select>
                     </div>
                 </div>
