@@ -6,9 +6,10 @@
         .controller('SearchResultsController', SearchResultsController);
 
     /** @ngInject */
-    function SearchResultsController() {
+    function SearchResultsController($stateParams) {
         var vm = this;
         console.log("SearchResultsController");
+        console.log($stateParams.name);
 
     }
 })();

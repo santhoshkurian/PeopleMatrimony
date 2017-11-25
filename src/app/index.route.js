@@ -424,6 +424,9 @@
                         templateUrl: 'app/footer/footer.html',
                         controller: 'FooterController as vm'
                     }
+                },
+                params:{
+                    name:null
                 }
             }).state('viewProfile', {
                 url: '/viewProfile',
