@@ -305,6 +305,23 @@
                         templateUrl: 'app/footer/footer.html',
                         controller: 'FooterController as vm'
                     }
+                },
+                resolve : {
+                    populate: function ($http) {
+                        return $http({
+                            method: 'GET',
+                            url: 'http://devapi.peoplematrimony.com/populate'
+                        }).then(function successCallback(response) {
+                            console.log(response)
+                            return response.data;
+
+                        }, function errorCallback(response) {
+                            //console.log(response)
+                            return response;
+
+
+                        });
+                    }
                 }
             }).state('settings', {
                 url: '/settings',

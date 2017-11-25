@@ -6,9 +6,22 @@
         .controller('RegularSearchController', RegularSearchController);
 
     /** @ngInject */
-    function RegularSearchController($scope,$state) {
+    function RegularSearchController($scope,$state,populate) {
         var vm = this;
         console.log("RegularSearchController");
+        console.log(populate);
+
+        $scope.motherTongueList = populate.mothertongue;
+        $scope.religonList = populate.religon;
+        $scope.starsList = populate.stars;
+        $scope.occupationCategoryList = populate.occupation_category;
+        $scope.educationCategoryList = populate.education_category;
+        $scope.educationList = populate.education;
+        $scope.occupation = populate.occupation;
+        $scope.countryList = populate.countries;
+
+
+        $scope.multiValue = {religion:null,mothertongue:null,education:null,education_category:null}
 
         $scope.regular = {
             age_start:null,
@@ -22,7 +35,7 @@
             country:null,
             state:null,
             city:null,
-            matrial_status:null,
+            marital_status:null,
             name:null,
             gender:null,
         };
