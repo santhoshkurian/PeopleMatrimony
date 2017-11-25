@@ -119,6 +119,8 @@
                 }).then(function successCallback(response) {
                     console.log(response)
                     $scope.uploadmsg= 'Uploaded Successfully';
+                    $scope.recentUpload= 'http://devapi.peoplematrimony.com'+response.data.path+'/'+response.data.name;
+
 
                     $http({
                         method: 'GET',
