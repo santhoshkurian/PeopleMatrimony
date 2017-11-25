@@ -82,7 +82,7 @@
                     </div>-->
                     <div class="col-md-6">
                         <p class="input-group">
-                            <input type="text" class="form-control" uib-datepicker-popup ng-model="reg.dob" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                            <input type="text" readonly='readonly' class="form-control" uib-datepicker-popup="{{format}}" uib-datepicker-popup ng-model="reg.dob" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
           <span class="input-group-btn">
             <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
           </span>
