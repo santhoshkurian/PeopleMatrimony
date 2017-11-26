@@ -6,7 +6,7 @@
         .controller('MessageDeclinedController', MessageDeclinedController);
 
     /** @ngInject */
-    function MessageDeclinedController(declined,$scope,storageService) {
+    function MessageDeclinedController(declined,$scope,storageService,resourceUrl) {
         var vm = this;
         $scope.declined = declined.list;
         console.log("MessageDeclinedController");
@@ -15,12 +15,12 @@
         function deleteDeclined(comId) {
             $http({
                 method: 'GET',
-                url: 'http://devapi.peoplematrimony.com/inbox/delete?' +
+                url: resourceUrl.url()+'inbox/delete?' +
                 '&token=' + storageService.get("token") + '&type=declined' + '&com_id=' + comId
             }).then(function successCallback(response) {
                 $http({
                     method: 'GET',
-                    url: 'http://devapi.peoplematrimony.com/inbox?' +
+                    url: resourceUrl.url()+'inbox?' +
                     '&token=' + storageService.get("token") + '&type=declined'
                 }).then(function successCallback(response) {
                     console.log(response)

@@ -38,6 +38,10 @@
             marital_status:null,
             name:null,
             gender:null,
+            showProfile:{withPhoto:false,withHoroscope:false,onlineRightNow:false},
+            dontShowProfile:{ignoredProfile:false,profileAlreadyContacted:false,viewed:false,shortlisted:false},
+            maritalStatus:{any:false,unmarried:false,widow:false,divorced:false,divorce_awaiting:false},
+            multiple:$scope.multiValue
         };
 
         $scope.search = search;

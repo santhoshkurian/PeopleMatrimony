@@ -6,7 +6,7 @@
         .controller('RegistrationController', RegistrationController);
 
     /** @ngInject */
-    function RegistrationController(storageService,$scope,$http,$stateParams,$state,populate) {
+    function RegistrationController(resourceUrl,storageService,$scope,$http,$stateParams,$state,populate) {
         //var vm = this;
         console.log("RegistrationController");
         console.log("stateParams",$stateParams.reg_id);
@@ -37,7 +37,7 @@
 
         $http({
             method: 'GET',
-            url: 'http://devapi.peoplematrimony.com/populate?id_mothertongue=1&id_religion='+$stateParams.reg_id
+            url: resourceUrl.url()+'populate?id_mothertongue=1&id_religion='+$stateParams.reg_id
         }).then(function successCallback(response) {
             $scope.castList = response.data.caste;
         }, function errorCallback(response) {
@@ -64,7 +64,7 @@
 
             $http({
                 method: 'GET',
-                url: 'http://devapi.peoplematrimony.com/populate?id_country='+$scope.step2.country
+                url: resourceUrl.url()+'populate?id_country='+$scope.step2.country
             }).then(function successCallback(response) {
                 $scope.stateList = response.data.states;
             }, function errorCallback(response) {
@@ -78,7 +78,7 @@
 
             $http({
                 method: 'GET',
-                url: 'http://devapi.peoplematrimony.com/populate?id_state='+$scope.step2.state
+                url: resourceUrl.url()+'populate?id_state='+$scope.step2.state
             }).then(function successCallback(response) {
                 $scope.cityList = response.data.cities;
             }, function errorCallback(response) {
@@ -92,7 +92,7 @@
         //
         //$http({
         //    method: 'GET',
-        //    url: 'http://devapi.peoplematrimony.com/populate'
+        //    url: resourceUrl.url()+'populate'
         //}).then(function successCallback(response) {
         //    console.log(response)
         //    $scope.countryList = response.data.countries;
@@ -103,7 +103,7 @@
         //    $scope.educationCategoryList = response.data.education_category;
         //    $http({
         //        method: 'GET',
-        //        url: 'https://devapi.peoplematrimony.com/user/view?' +
+        //        url: resourceUrl.url()+'user/view?' +
         //        'view_id=' + storageService.get("id") + '&token=' + storageService.get("token")
         //    }).then(function successCallback(response) {
         //        console.log(response)
@@ -130,7 +130,7 @@
             }
             $http({
                 method: 'POST',
-                url: 'https://devapi.peoplematrimony.com/user?id_people=' +storageService.get('id')+
+                url: resourceUrl.url()+'user?id_people=' +storageService.get('id')+
                 '&marital_status='+$scope.step2.marital_status+'&' +
                 'caste='+$scope.step2.caste+'&' +
                 'country='+$scope.step2.country+'&' +

@@ -14,37 +14,43 @@
                 }
             };
         }])
+        .factory('resourceUrl', [function () {
+            return {
+                url: function () {
+                    return "http://devapi.peoplematrimony.com/";
+                }
+            }
+        }])
 
-        .run(function ($rootScope, $state,storageService) {
+        .run(function ($rootScope, $state, storageService) {
             $rootScope
                 .$on('$stateChangeStart',
-                function(event, toState, toParams, fromState, fromParams,$scope){
+                function (event, toState, toParams, fromState, fromParams, $scope) {
                     console.log("start")
                     console.log(toState)
                     $scope.toState = toState;
                     $("#ui-view").html("");
                     $(".page-loading").removeClass("page-loading-hidden");
-                    if($scope.toState.name !='login') {
+                    if ($scope.toState.name != 'login') {
                         $("#body-filter").addClass("page-grey-color");
                         $(".page-loading").addClass("page-loading-hidden");
 
                     }
                 });
 
-        $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+            $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
                 $(".page-loading").addClass("page-loading-hidden");
                 $("#body-filter").removeClass("page-grey-color");
-                if((storageService.get("token") == null && storageService.get("id") == null) ||
-                    (storageService.get("token") == 'null' && storageService.get("id") == 'null')){
+                if ((storageService.get("token") == null && storageService.get("id") == null) ||
+                    (storageService.get("token") == 'null' && storageService.get("id") == 'null')) {
                     $state.go("login");
 
 
-                }else{
+                } else {
                     $state.go(toState);
                 }
 
             });
-
 
 
         })
@@ -85,11 +91,11 @@
                         templateUrl: 'app/footer/footer.html',
                         //controller: 'FooterController as vm'
                     }
-                },resolve :{
-                    profileCompleteness:function($http,storageService){
+                }, resolve: {
+                    profileCompleteness: function ($http,resourceUrl, storageService) {
                         return $http({
                             method: 'GET',
-                            url: 'http://devapi.peoplematrimony.com/completeprofile?'+
+                            url: resourceUrl.url()+'completeprofile?' +
                             'id=' + storageService.get("id") + 'p_debug=1&token=' + storageService.get("token")
                         }).then(function successCallback(response) {
                             console.log(response)
@@ -102,10 +108,10 @@
 
                         });
                     },
-                    newMatches:function($http,storageService){
+                    newMatches: function ($http,resourceUrl, storageService) {
                         return $http({
                             method: 'GET',
-                            url: 'http://devapi.peoplematrimony.com/matches/new??'+
+                            url: resourceUrl.url()+'matches/new??' +
                             'id=' + storageService.get("id") + 'p_debug=1&token=' + storageService.get("token")
                         }).then(function successCallback(response) {
                             console.log(response)
@@ -118,10 +124,10 @@
 
                         });
                     },
-                    recentUpdated:function($http,storageService){
+                    recentUpdated: function ($http,resourceUrl, storageService) {
                         return $http({
                             method: 'GET',
-                            url: 'http://devapi.peoplematrimony.com/list/recentupdated??'+
+                            url: resourceUrl.url()+'list/recentupdated??' +
                             'id=' + storageService.get("id") + 'p_debug=1&token=' + storageService.get("token")
                         }).then(function successCallback(response) {
                             console.log(response)
@@ -134,10 +140,10 @@
 
                         });
                     },
-                    viewed:function($http,storageService){
+                    viewed: function ($http,resourceUrl, storageService) {
                         return $http({
                             method: 'GET',
-                            url: 'http://devapi.peoplematrimony.com/list/viewed??'+
+                            url: resourceUrl.url()+'list/viewed??' +
                             'id=' + storageService.get("id") + 'p_debug=1&token=' + storageService.get("token")
                         }).then(function successCallback(response) {
                             console.log(response)
@@ -150,10 +156,10 @@
 
                         });
                     },
-                    discoverMatches:function($http,storageService){
+                    discoverMatches: function ($http,resourceUrl, storageService) {
                         return $http({
                             method: 'GET',
-                            url: 'http://devapi.peoplematrimony.com/v1/matches/discover?'+
+                            url: resourceUrl.url()+'v1/matches/discover?' +
                             'id=' + storageService.get("id") + '&p_debug=1&token=' + storageService.get("token")
                         }).then(function successCallback(response) {
                             console.log(response)
@@ -207,11 +213,11 @@
                         controller: 'FooterController as vm'
                     }
                 },
-                resolve :{
-                    populate:function($http){
+                resolve: {
+                    populate: function ($http,resourceUrl) {
                         return $http({
                             method: 'GET',
-                            url: 'http://devapi.peoplematrimony.com/populate'
+                            url: resourceUrl.url()+'populate'
                         }).then(function successCallback(response) {
                             console.log(response)
                             return response.data;
@@ -230,7 +236,7 @@
                 views: {
                     'main@': {
                         templateUrl: 'app/core/layouts/profileLayout.html',
-                        controller : 'ProfileController as vm'
+                        controller: 'ProfileController as vm'
                     },
                     'navigation@profile': {
                         templateUrl: 'app/navigation/profile/profileNavigation.html',
@@ -249,11 +255,11 @@
                         controller: 'FooterController as vm'
                     }
                 },
-                resolve :{
-                    populate:function($http){
-                       return $http({
+                resolve: {
+                    populate: function ($http,resourceUrl) {
+                        return $http({
                             method: 'GET',
-                            url: 'http://devapi.peoplematrimony.com/populate'
+                            url: resourceUrl.url()+'populate'
                         }).then(function successCallback(response) {
                             console.log(response)
                             return response.data;
@@ -265,11 +271,11 @@
 
                         });
                     },
-                    profile:function(storageService,$http){
+                    profile: function (storageService,resourceUrl, $http) {
 
                         return $http({
                             method: 'GET',
-                            url: 'https://devapi.peoplematrimony.com/user/view?' +
+                            url: resourceUrl.url()+'user/view?' +
                             'view_id=' + storageService.get("id") + '&token=' + storageService.get("token")
                         }).then(function successCallback(response) {
                             console.log(response)
@@ -306,11 +312,11 @@
                         controller: 'FooterController as vm'
                     }
                 },
-                resolve : {
-                    populate: function ($http) {
+                resolve: {
+                    populate: function ($http,resourceUrl) {
                         return $http({
                             method: 'GET',
-                            url: 'http://devapi.peoplematrimony.com/populate'
+                            url: resourceUrl.url()+'populate'
                         }).then(function successCallback(response) {
                             console.log(response)
                             return response.data;
@@ -347,12 +353,12 @@
                         controller: 'FooterController as vm'
                     }
                 },
-                resolve :{
-                    account:function($http,storageService){
+                resolve: {
+                    account: function ($http,resourceUrl, storageService) {
                         return $http({
                             method: 'GET',
-                            url: 'http://devapi.peoplematrimony.com/settings?id='+storageService.get("id")+
-                            '&type=account&token='+storageService.get('token')
+                            url: resourceUrl.url()+'settings?id=' + storageService.get("id") +
+                            '&type=account&token=' + storageService.get('token')
                         }).then(function successCallback(response) {
                             return response.data;
                         }, function errorCallback(response) {
@@ -384,11 +390,11 @@
                         controller: 'FooterController as vm'
                     }
                 },
-                resolve:{
-                    pending:function($http,storageService){
+                resolve: {
+                    pending: function ($http, storageService,resourceUrl) {
                         return $http({
                             method: 'GET',
-                            url: 'http://devapi.peoplematrimony.com/inbox?' +
+                            url: resourceUrl.url()+'inbox?' +
                             '&token=' + storageService.get("token") + '&type=pending'
                         }).then(function successCallback(response) {
                             return response.data;
@@ -402,7 +408,7 @@
                 views: {
                     'main@': {
                         templateUrl: 'app/core/layouts/matchesLayout.html',
-                        controller : 'MatchesController as vm'
+                        controller: 'MatchesController as vm'
                     },
                     'toolbar@matches': {
                         templateUrl: 'app/toolbar/matches/matchestoolbar.html'
@@ -442,8 +448,8 @@
                         controller: 'FooterController as vm'
                     }
                 },
-                params:{
-                    name:null
+                params: {
+                    name: null
                 }
             }).state('viewProfile', {
                 url: '/viewProfile',
@@ -517,7 +523,7 @@
                         controller: 'FooterController as vm'
                     }
                 }
-            }).state('payment',{
+            }).state('payment', {
                 url: '/payment',
                 views: {
                     'main@': {

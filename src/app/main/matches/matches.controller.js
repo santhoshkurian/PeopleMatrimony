@@ -6,7 +6,7 @@
         .controller('MatchesController', MatchesController);
 
     /** @ngInject */
-    function MatchesController($scope, storageService, $http, $location,$state) {
+    function MatchesController($scope, storageService,resourceUrl, $http, $location,$state) {
 
 
         $scope.isActive = function (viewLocation) {
@@ -22,7 +22,7 @@
         function logout(){
             $http({
                 method: 'GET',
-                url: 'https://devapi.peoplematrimony.com/user/logout?'+
+                url: resourceUrl.url()+'user/logout?'+
                 'id_people='+storageService.get("id")+'&token='+storageService.get("token")
             }).then(function successCallback(response) {
                 storageService.set("token",null);
@@ -97,7 +97,7 @@
 
             $http({
                 method: 'GET',
-                url: 'https://devapi.peoplematrimony.com/matches/new?' +
+                url: resourceUrl.url()+'matches/new?' +
                 '&token=' + storageService.get("token")
             }).then(function successCallback(response) {
                 console.log(response)
@@ -117,7 +117,7 @@
             $scope.showResult = false;
             $http({
                 method: 'GET',
-                url: 'http://devapi.peoplematrimony.com/list/ignore?' +
+                url: resourceUrl.url()+'list/ignore?' +
                 '&token=' + storageService.get("token") + '&id=' + storageService.get("id")
             }).then(function successCallback(response) {
                 console.log(response)
@@ -138,7 +138,7 @@
             $scope.showResult = false;
             $http({
                 method: 'GET',
-                url: 'http://devapi.peoplematrimony.com/list/viewed?' +
+                url: resourceUrl.url()+'list/viewed?' +
                 '&token=' + storageService.get("token") + '&id=' + storageService.get("id")
             }).then(function successCallback(response) {
                 console.log(response)
@@ -164,7 +164,7 @@
             $scope.matches = [];
             $http({
                 method: 'GET',
-                url: 'http://devapi.peoplematrimony.com/list/shortlist?' +
+                url: resourceUrl.url()+'list/shortlist?' +
                 '&token=' + storageService.get("token") + '&id=' + storageService.get("id")
             }).then(function successCallback(response) {
                 console.log(response)
@@ -210,7 +210,7 @@
         function agefilter() {
             $http({
                 method: 'POST',
-                url: 'https://devapi.peoplematrimony.com/matches?' +
+                url: resourceUrl.url()+'matches?' +
                 '&token=' + storageService.get("token")+'&type=search&age_start='+$scope.age.start+'&age_end='+$scope.age.end
             }).then(function successCallback(response) {
                 console.log(response)
@@ -228,7 +228,7 @@
         function heightfilter() {
             $http({
                 method: 'POST',
-                url: 'https://devapi.peoplematrimony.com/matches?' +
+                url: resourceUrl.url()+'matches?' +
                 '&token=' + storageService.get("token")+'&type=search&height_start='+$scope.height.start+'&height_end='+$scope.height.end
             }).then(function successCallback(response) {
                 console.log(response)
@@ -242,7 +242,7 @@
         function shortlist(id) {
             $http({
                 method: 'GET',
-                url: 'http://devapi.peoplematrimony.com/do/shortlist?' +
+                url: resourceUrl.url()+'do/shortlist?' +
                 '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&view_id=' + id
             }).then(function successCallback(response) {
                 console.log(response)
@@ -262,7 +262,7 @@
         function sendInterest(id) {
             $http({
                 method: 'GET',
-                url: 'http://devapi.peoplematrimony.com/connect/send?' +
+                url: resourceUrl.url()+'connect/send?' +
                 '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&partner=' + id
             }).then(function successCallback(response) {
                 console.log(response)
@@ -294,7 +294,7 @@
 
         $http({
             method: 'GET',
-            url: 'https://devapi.peoplematrimony.com/matches/new?' +
+            url: resourceUrl.url()+'matches/new?' +
             '&token=' + storageService.get("token")
         }).then(function successCallback(response) {
             console.log(response)

@@ -6,7 +6,7 @@
         .controller('AccountSettingsController', AccountSettingsController);
 
     /** @ngInject */
-    function AccountSettingsController(account,$scope,storageService,$state,$http,$stateParams) {
+    function AccountSettingsController(resourceUrl,account,$scope,storageService,$state,$http,$stateParams) {
         console.log(account)
 
         $scope.email = account.email;
@@ -19,7 +19,7 @@
         function changeEmail(){
             $http({
                 method: 'POST',
-                url: 'http://devapi.peoplematrimony.com/user/contact?' +
+                url: resourceUrl.url()+'user/contact?' +
                 'token=' +storageService.get('token')+
                 '&id_people=' +storageService.get('id')+
                 '&type=email&' +
@@ -43,7 +43,7 @@
 
             $http({
                 method: 'POST',
-                url: 'http://devapi.peoplematrimony.com/settings/account?' +
+                url: resourceUrl.url()+'settings/account?' +
                 'token=' +storageService.get('token')+
                 '&id_people=' +storageService.get('id')+
                 '&current=' +$scope.password.current+

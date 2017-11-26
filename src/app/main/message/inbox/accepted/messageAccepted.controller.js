@@ -6,7 +6,7 @@
         .controller('MessageAcceptedController', MessageAcceptedController);
 
     /** @ngInject */
-    function MessageAcceptedController($scope,accept,storageService) {
+    function MessageAcceptedController($scope,accept,storageService,resourceUrl) {
         var vm = this;
         $scope.accept = accept.list;
         $scope.deleteAccept = deleteAccept;
@@ -14,12 +14,12 @@
         function deleteAccept(comId) {
             $http({
                 method: 'GET',
-                url: 'http://devapi.peoplematrimony.com/inbox/delete?' +
+                url: resourceUrl.url()+'inbox/delete?' +
                 '&token=' + storageService.get("token") + '&type=accepted' + '&com_id=' + comId
             }).then(function successCallback(response) {
                 $http({
                     method: 'GET',
-                    url: 'http://devapi.peoplematrimony.com/inbox?' +
+                    url: resourceUrl.url()+'inbox?' +
                     '&token=' + storageService.get("token") + '&type=declined'
                 }).then(function successCallback(response) {
                     console.log(response)

@@ -6,7 +6,7 @@
         .controller('ManageEmailController', ManageEmailController);
 
     /** @ngInject */
-    function ManageEmailController(alert,$scope,$http,storageService) {
+    function ManageEmailController(resourceUrl,alert,$scope,$http,storageService) {
         var vm = this;
         console.log(alert);
         $scope.alert = alert;
@@ -18,7 +18,7 @@
 
                 $http({
                     method: 'POST',
-                    url: 'http://devapi.peoplematrimony.com/settings/email?' +
+                    url: resourceUrl.url()+'settings/email?' +
                     'token=' +storageService.get('token')+
                     '&id=' +storageService.get('id')+
                     '&'+obj+'='+$scope.alert[obj]

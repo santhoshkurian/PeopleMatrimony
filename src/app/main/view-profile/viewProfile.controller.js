@@ -16,7 +16,7 @@
 
         $http({
             method: 'GET',
-            url: 'https://devapi.peoplematrimony.com/user/view?'+
+            url: resourceUrl.url()+'user/view?'+
             'view_id='+storageService.get("id")+'&token='+storageService.get("token")
         }).then(function successCallback(response) {
            console.log(response)

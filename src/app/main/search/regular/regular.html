@@ -27,7 +27,7 @@
 
                                     <label class=" uppercase font-weight "> Age</label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.age">
+                                    <select class="form-control input-rounded " ng-model="regular.age_start">
                                         <option>Select</option>
                                         <option value="18">18</option>
                                         <option value="19">19</option>
@@ -47,7 +47,7 @@
                                 <div class="col-md-2">
                                     <label class=" uppercase font-weight "> &nbsp;</label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.age">
+                                    <select class="form-control input-rounded " ng-model="regular.age_end">
                                         <option>Select</option>
                                         <option value="18">18</option>
                                         <option value="19">19</option>
@@ -69,7 +69,7 @@
                                 <div class="col-md-2 col-md-offset-2">
                                     <label class=" uppercase font-weight "> Height</label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.height">
+                                    <select class="form-control input-rounded " ng-model="regular.height_start">
                                         <option>Select</option>
                                         <option ng-selected="profile.login_user.height == 137" value="137">137 cms
                                         </option>
@@ -187,7 +187,7 @@
                                 <div class="col-md-2 ">
                                     <label class=" uppercase font-weight "> &nbsp;</label>
 
-                                    <select class="form-control input-rounded " ng-model="profile.login_user.height">
+                                    <select class="form-control input-rounded " ng-model="regular.height_end">
                                         <option>Select</option>
                                         <option ng-selected="profile.login_user.height == 137" value="137">137 cms
                                         </option>
@@ -309,23 +309,23 @@
 
                                 <div class="col-md-12">
                                     <label class="checkbox-inline" class="custon-text">
-                                        <input type="checkbox" icheckbox_flat-red class="icheck " ng-model="any">
+                                        <input type="checkbox" icheckbox_flat-red class="icheck " ng-model="regular.maritalStatus.any">
                                         Any</label>
 
                                     <label class="checkbox-inline" class="custon-text">
-                                        <input type="checkbox" icheckbox_flat-red class="icheck " ng-model="unmarriedy">
+                                        <input type="checkbox" icheckbox_flat-red class="icheck " ng-model="regular.maritalStatus.unmarried">
                                         Unmarried</label>
 
                                     <label class="checkbox-inline" class="custon-text">
-                                        <input type="checkbox" icheckbox_flat-red class="icheck " ng-model="widow">
+                                        <input type="checkbox" icheckbox_flat-red class="icheck " ng-model="regular.maritalStatus.widow">
                                         Widow</label>
 
                                     <label class="checkbox-inline" class="custon-text">
-                                        <input type="checkbox" icheckbox_flat-red class="icheck " ng-model="divorced">
+                                        <input type="checkbox" icheckbox_flat-red class="icheck " ng-model="regular.maritalStatus.divorced">
                                         Divorced</label>
                                     <label class="checkbox-inline" class="custon-text">
                                         <input type="checkbox" icheckbox_flat-red class="icheck "
-                                               ng-model="awaitingDivorce">
+                                               ng-model="regular.maritalStatus.divorce_awaiting">
                                         Divorce awaiting</label>
                                 </div>
                             </div>
@@ -406,17 +406,17 @@
 
                                 <div class="col-md-12">
                                     <label class="checkbox-inline" class="custon-text">
-                                        <input type="checkbox" icheckbox_flat-red class="icheck " ng-model="withPhoto">
+                                        <input type="checkbox" icheckbox_flat-red class="icheck " ng-model="regular.showProfile.withPhoto">
                                         With Photo</label>
 
                                     <label class="checkbox-inline" class="custon-text">
                                         <input type="checkbox" icheckbox_flat-red class="icheck "
-                                               ng-model="withHoroscope">
+                                               ng-model="regular.showProfile.withHoroscope">
                                         With Horoscope</label>
 
                                     <label class="checkbox-inline" class="custon-text">
                                         <input type="checkbox" icheckbox_flat-red class="icheck "
-                                               ng-model="onlineRightNow">
+                                               ng-model="regular.showProfile.onlineRightNow">
                                         Online Right Now</label>
                                 </div>
                             </div>
@@ -428,22 +428,22 @@
                                 <div class="col-md-12">
                                     <label class="checkbox-inline" class="custon-text">
                                         <input type="checkbox" icheckbox_flat-red class="icheck "
-                                               ng-model="ignoredProfiles">
+                                               ng-model="regular.dontShowProfile.ignoredProfile">
                                         Ignored Profiles</label>
 
                                     <label class="checkbox-inline" class="custon-text">
                                         <input type="checkbox" icheckbox_flat-red class="icheck "
-                                               ng-model="profilesAlreadyContacted">
+                                               ng-model="regular.dontShowProfile.profileAlreadyContacted">
                                         Profiles Already Contacted</label>
 
                                     <label class="checkbox-inline" class="custon-text">
                                         <input type="checkbox" icheckbox_flat-red class="icheck "
-                                               ng-model="viewedProfiles">
+                                               ng-model="regular.dontShowProfile.viewed">
                                         Viewed Profiles</label>
 
                                     <label class="checkbox-inline" class="custon-text">
                                         <input type="checkbox" icheckbox_flat-red class="icheck "
-                                               ng-model="shortlistedProfiles">
+                                               ng-model="regular.dontShowProfile.shortlisted">
                                         Shortlisted Profiles</label>
                                 </div>
                             </div>

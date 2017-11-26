@@ -6,7 +6,7 @@
         .controller('ManagePhotoController', ManagePhotoController);
 
     /** @ngInject */
-    function ManagePhotoController($scope,storageService,$http,$state) {
+    function ManagePhotoController(resourceUrl,$scope,storageService,$http,$state) {
         console.log("ManagePhotoController");
         $scope.viewType = 'managephoto';
         $scope.logout = logout;
@@ -18,7 +18,7 @@
         function logout(){
             $http({
                 method: 'GET',
-                url: 'https://devapi.peoplematrimony.com/user/logout?'+
+                url: resourceUrl.url()+'user/logout?'+
                 'id_people='+storageService.get("id")+'&token='+storageService.get("token")
             }).then(function successCallback(response) {
                 storageService.set("token",null);
@@ -46,7 +46,7 @@
            console.log(image);
             $http({
                 method: 'post',
-                url: 'https://devapi.peoplematrimony.com/image/primary?token=' + storageService.get("token")+'&id='+storageService.get("token")+'&number='+image.number
+                url: resourceUrl.url()+'image/primary?token=' + storageService.get("token")+'&id='+storageService.get("token")+'&number='+image.number
             }).then(function successCallback(response) {
                 console.log("update",response)
                 $scope.image_url = storageService.set("image_url",image.image);
@@ -80,7 +80,7 @@
 
             $http({
                 method: 'GET',
-                url: 'https://devapi.peoplematrimony.com/user/image/'+storageService.get("id")+'?token=' + storageService.get("token")
+                url: resourceUrl.url()+'user/image/'+storageService.get("id")+'?token=' + storageService.get("token")
             }).then(function successCallback(response) {
                 console.log("check",response)
                 $scope.images = response.data.user.images;
@@ -124,7 +124,7 @@
 
                     $http({
                         method: 'GET',
-                        url: 'https://devapi.peoplematrimony.com/user/image/' + storageService.get("id") + '?token=' + storageService.get("token")
+                        url: resourceUrl.url()+'user/image/' + storageService.get("id") + '?token=' + storageService.get("token")
                     }).then(function successCallback(response) {
                         console.log("check", response)
                         $scope.uploadmsg= '';
@@ -180,7 +180,7 @@
 
                     $http({
                         method: 'GET',
-                        url: 'https://devapi.peoplematrimony.com/user/image/' + storageService.get("id") + '?token=' + storageService.get("token")
+                        url: resourceUrl.url()+'user/image/' + storageService.get("id") + '?token=' + storageService.get("token")
                     }).then(function successCallback(response) {
                         console.log("check", response)
                         $scope.uploadmsg= '';

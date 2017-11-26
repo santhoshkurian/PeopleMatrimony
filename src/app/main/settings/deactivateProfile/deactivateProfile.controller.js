@@ -6,7 +6,7 @@
         .controller('DeactivateProfileController', DeactivateProfileController);
 
     /** @ngInject */
-    function DeactivateProfileController(deactivate,$scope,$http,storageService) {
+    function DeactivateProfileController(resourceUrl,deactivate,$scope,$http,storageService) {
         var vm = this;
         console.log(deactivate);
         $scope.deactivate = deactivate.duration;
@@ -17,7 +17,7 @@
             console.log($scope.deactivate);
             $http({
                 method: 'POST',
-                url: 'http://devapi.peoplematrimony.com/settings/profile?' +
+                url: resourceUrl.url()+'settings/profile?' +
                 'token=' +storageService.get('token')+
                 '&id=' +storageService.get('id')+
                 '&duration='+$scope.deactivate

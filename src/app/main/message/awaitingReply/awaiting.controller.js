@@ -6,7 +6,7 @@
         .controller('AwaitingController', AwaitingController);
 
     /** @ngInject */
-    function AwaitingController($http,storageService,$scope,awaitingReply) {
+    function AwaitingController($http,resourceUrl,storageService,$scope,awaitingReply) {
         var vm = this;
         $scope.awaiting = awaitingReply.list;
         $scope.deleteAwaiting = deleteAwaiting;
@@ -15,12 +15,12 @@
             console.log(comId);
             $http({
                 method: 'GET',
-                url: 'http://devapi.peoplematrimony.com/inbox/delete?' +
+                url: resourceUrl.url()+'inbox/delete?' +
                 '&token=' + storageService.get("token") + '&type=awaiting_reply' + '&com_id=' + comId
             }).then(function successCallback(response) {
                 $http({
                     method: 'GET',
-                    url: 'http://devapi.peoplematrimony.com/inbox?' +
+                    url: resourceUrl.url()+'inbox?' +
                     '&token=' + storageService.get("token") + '&type=awaiting_reply'
                 }).then(function successCallback(response) {
                     console.log(response)

@@ -110,11 +110,11 @@
                     }
                 },
                 resolve  : {
-                    alert:function($http,storageService){
+                    alert:function($http,storageService,resourceUrl){
 
                         return $http({
                             method: 'GET',
-                            url: 'http://devapi.peoplematrimony.com/settings?id='+storageService.get("id")+
+                            url: resourceUrl.url()+'settings?id='+storageService.get("id")+
                             '&type=email&token='+storageService.get('token')
                         }).then(function successCallback(response) {
                             return response.data;
@@ -133,10 +133,10 @@
                     }
                 },
                 resolve  : {
-                    contact:function($http,storageService){
+                    contact:function($http,storageService,resourceUrl){
                         return $http({
                             method: 'GET',
-                            url: 'http://devapi.peoplematrimony.com/settings?' +
+                            url: resourceUrl.url()+'settings?' +
                             'id='+storageService.get("id")+
                             '&type=contact' +
                             '&token='+storageService.get('token')
@@ -160,7 +160,7 @@
                     privacy:function($http,storageService){
                         return $http({
                             method: 'GET',
-                            url: 'http://devapi.peoplematrimony.com/settings?' +
+                            url: resourceUrl.url()+'settings?' +
                             'id='+storageService.get("id")+
                             '&type=privacy' +
                             '&token='+storageService.get('token')
@@ -170,11 +170,11 @@
                             return response;
                         });
                     },
-                    profile:function(storageService,$http){
+                    profile:function(storageService,resourceUrl,$http){
 
                         return $http({
                             method: 'GET',
-                            url: 'https://devapi.peoplematrimony.com/user/view?' +
+                            url: resourceUrl.url()+'user/view?' +
                             'view_id=' + storageService.get("id") + '&token=' + storageService.get("token")
                         }).then(function successCallback(response) {
                             console.log(response)
@@ -208,10 +208,10 @@
                     }
                 },
                 resolve  : {
-                    deactivate:function($http,storageService){
+                    deactivate:function($http,resourceUrl,storageService){
                         return $http({
                             method: 'GET',
-                            url: 'http://devapi.peoplematrimony.com/settings?' +
+                            url: resourceUrl.url()+'settings?' +
                             'id='+storageService.get("id")+
                             '&type=profile' +
                             '&token='+storageService.get('token')
@@ -237,10 +237,10 @@
                     }
                 },
                 resolve  : {
-                    sent:function($http,storageService){
+                    sent:function($http,resourceUrl,storageService){
                         return $http({
                             method: 'GET',
-                            url: 'http://devapi.peoplematrimony.com/inbox?' +
+                            url: resourceUrl.url()+'inbox?' +
                             '&token=' + storageService.get("token") + '&type=all_sent'
                         }).then(function successCallback(response) {
                             return response.data;
@@ -264,10 +264,10 @@
                     }
                 },
                 resolve  : {
-                    awaitingReply:function($http,storageService){
+                    awaitingReply:function($http,resourceUrl,storageService){
                         return $http({
                             method: 'GET',
-                            url: 'http://devapi.peoplematrimony.com/inbox?' +
+                            url: resourceUrl.url()+'inbox?' +
                             '&token=' + storageService.get("token") + '&type=awaiting_reply'
                         }).then(function successCallback(response) {
                             return response.data;
@@ -290,10 +290,10 @@
                 }
                 },
                 resolve  : {
-                    pending:function($http,storageService){
+                    pending:function($http,resourceUrl,storageService){
                         return $http({
                             method: 'GET',
-                            url: 'http://devapi.peoplematrimony.com/inbox?' +
+                            url: resourceUrl.url()+'inbox?' +
                             '&token=' + storageService.get("token") + '&type=pending'
                         }).then(function successCallback(response) {
                             return response.data;
@@ -317,10 +317,10 @@
                 }
                 },
                 resolve  : {
-                    accept:function($http,storageService){
+                    accept:function($http,resourceUrl,storageService){
                         return $http({
                             method: 'GET',
-                            url: 'http://devapi.peoplematrimony.com/inbox?' +
+                            url: resourceUrl.url()+'inbox?' +
                             '&token=' + storageService.get("token") + '&type=accepted'
                         }).then(function successCallback(response) {
                             return response.data;
@@ -343,10 +343,10 @@
                 }
                 },
                 resolve  : {
-                    declined:function($http,storageService){
+                    declined:function($http,resourceUrl,storageService){
                         return $http({
                             method: 'GET',
-                            url: 'http://devapi.peoplematrimony.com/inbox?' +
+                            url: resourceUrl.url()+'inbox?' +
                             '&token=' + storageService.get("token") + '&type=declined'
                         }).then(function successCallback(response) {
                             return response.data;

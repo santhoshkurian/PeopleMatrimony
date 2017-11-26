@@ -20,7 +20,7 @@
 //        function logout(){
 //            $http({
 //                method: 'GET',
-//                url: 'https://devapi.peoplematrimony.com/user/logout?'+
+//                url: resourceUrl.url()+'user/logout?'+
 //                'id_people='+storageService.get("id")+'&token='+storageService.get("token")
 //            }).then(function successCallback(response) {
 //                storageService.set("token",null);

@@ -6,7 +6,7 @@
         .controller('DashboardController', DashboardController);
 
     /** @ngInject */
-    function DashboardController($scope, $location,$http,storageService,newMatches,discoverMatches,viewed,recentUpdated,$state,profileCompleteness) {
+    function DashboardController($scope, $location,$http,storageService,newMatches,discoverMatches,viewed,recentUpdated,resourceUrl,$state,profileCompleteness) {
 
         console.log(profileCompleteness);
         console.log(newMatches);
@@ -32,7 +32,7 @@
         function logout(){
             $http({
                 method: 'GET',
-                url: 'https://devapi.peoplematrimony.com/user/logout?'+
+                url: resourceUrl.url()+'user/logout?'+
                 'id_people='+storageService.get("id")+'&token='+storageService.get("token")
             }).then(function successCallback(response) {
                 storageService.set("token",null);
@@ -54,7 +54,7 @@
 
         $http({
             method: 'GET',
-            url: 'https://devapi.peoplematrimony.com/user/view?' +
+            url: resourceUrl.url()+'user/view?' +
             'view_id=' + storageService.get("id") + '&token=' + storageService.get("token")
         }).then(function successCallback(response) {
             console.log(response.data.login_user.images[0])

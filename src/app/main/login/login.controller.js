@@ -6,7 +6,7 @@
         .controller('LoginController', LoginController);
 
     /** @ngInject */
-    function LoginController($uibModal,$state,$http,$scope,storageService,$log) {
+    function LoginController(resourceUrl,$uibModal,$state,$http,$scope,storageService,$log) {
         //var vm = this;
         $scope.religonList = [];
         $scope.message=null;
@@ -116,7 +116,7 @@
 
         $http({
             method: 'GET',
-            url: 'http://devapi.peoplematrimony.com/populate'
+            url: resourceUrl.url()+'populate'
         }).then(function successCallback(response) {
 
             $scope.religonList = response.data.religon;
@@ -192,7 +192,7 @@
             console.log($scope.reg);
             $http({
                 method: 'POST',
-                url: 'https://devapi.peoplematrimony.com/user?step=1&profile_for='+$scope.reg.profile_for+'&' +
+                url: resourceUrl.url()+'user?step=1&profile_for='+$scope.reg.profile_for+'&' +
                 'name='+$scope.reg.name+'&gender='+$scope.reg.gender+'&dob='+$scope.reg.dob+'&religion='+parseInt($scope.reg.religion)+'&mothertongue=5&' +
                 'country_code='+$scope.reg+'&email='+$scope.reg.email+'&' +
                 'mobile='+$scope.reg.mobile+'&password='+$scope.reg.password+'&source=111'
@@ -220,7 +220,7 @@
     };
 
     //}
-    angular.module('dashboard').controller('ModalInstanceCtrl', function ($scope,storageService,$http,$uibModalInstance, items,$state,$log) {
+    angular.module('dashboard').controller('ModalInstanceCtrl', function ($scope,storageService,$http,resourceUrl,$uibModalInstance, items,$state,$log) {
         var vm = this;
 
         vm.items = items;
@@ -236,7 +236,7 @@
 
             $http({
                 method: 'GET',
-                url: 'https://devapi.peoplematrimony.com/user/login?'+
+                url: resourceUrl.url()+'user/login?'+
                 'username='+login.username+'&password='+login.password
             }).then(function successCallback(response) {
                 $uibModalInstance.close(vm.selected.item);

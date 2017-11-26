@@ -6,7 +6,7 @@
         .controller('PrivacySettingsController', PrivacySettingsController);
 
     /** @ngInject */
-    function PrivacySettingsController($scope,privacy,profile,$http,storageService) {
+    function PrivacySettingsController(resourceUrl,$scope,privacy,profile,$http,storageService) {
         var vm = this;
         console.log(privacy)
         $scope.privacy = privacy;
@@ -31,7 +31,7 @@
             console.log(obj)
             $http({
                 method: 'POST',
-                url: 'http://devapi.peoplematrimony.com/settings/privacy?' +
+                url: resourceUrl.url()+'settings/privacy?' +
                 'token=' +storageService.get('token')+
                 '&id=' +storageService.get('id')+
                 '&phone='+obj
@@ -46,7 +46,7 @@
         function editPhotoPrivacy(obj){
             $http({
                 method: 'POST',
-                url: 'http://devapi.peoplematrimony.com/settings/privacy?' +
+                url: resourceUrl.url()+'settings/privacy?' +
                 'token=' +storageService.get('token')+
                 '&id=' +storageService.get('id')+
                 '&photo='+obj
@@ -61,7 +61,7 @@
         function editVisitorSettings(obj){
             $http({
                 method: 'POST',
-                url: 'http://devapi.peoplematrimony.com/settings/privacy?' +
+                url: resourceUrl.url()+'settings/privacy?' +
                 'token=' +storageService.get('token')+
                 '&id=' +storageService.get('id')+
                 '&view='+obj
@@ -76,7 +76,7 @@
         function editShortlistSettings(obj){
             $http({
                 method: 'POST',
-                url: 'http://devapi.peoplematrimony.com/settings/privacy?' +
+                url: resourceUrl.url()+'settings/privacy?' +
                 'token=' +storageService.get('token')+
                 '&id=' +storageService.get('id')+
                 '&shortlist='+obj
@@ -91,7 +91,7 @@
         function editDonotDisturb(obj){
             $http({
                 method: 'POST',
-                url: 'http://devapi.peoplematrimony.com/settings/privacy?' +
+                url: resourceUrl.url()+'settings/privacy?' +
                 'token=' +storageService.get('token')+
                 '&id=' +storageService.get('id')+
                 '&contact='+obj
@@ -106,7 +106,7 @@
         function editProfilePrivacy(obj){
             $http({
                 method: 'POST',
-                url: 'http://devapi.peoplematrimony.com/settings/privacy?' +
+                url: resourceUrl.url()+'settings/privacy?' +
                 'token=' +storageService.get('token')+
                 '&id=' +storageService.get('id')+
                 '&profile='+obj

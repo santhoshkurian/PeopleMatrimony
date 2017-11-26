@@ -6,8 +6,7 @@
         .controller('ProfileController', ProfileController);
 
     /** @ngInject */
-    function ProfileController($http, $scope,$state, storageService,$stateParams,populate,profile,$window) {
-
+    function ProfileController($http, $scope,$state,resourceUrl,storageService,$stateParams,populate,profile,$window) {
         $scope.image_url = storageService.get("image_url");
         $scope.name = storageService.get("name");
         $scope.id = storageService.get("id");
@@ -124,7 +123,7 @@
             if(obj != null) {
                 $http({
                     method: 'GET',
-                    url: 'http://devapi.peoplematrimony.com/populate?id_country=' + obj.id_country
+                    url: resourceUrl.url()+'populate?id_country=' + obj.id_country
                 }).then(function successCallback(response) {
                     $scope.stateList = response.data.states;
                 }, function errorCallback(response) {
@@ -136,7 +135,7 @@
             if(obj != null) {
                 $http({
                     method: 'GET',
-                    url: 'http://devapi.peoplematrimony.com/populate?id_state=' + obj.id_state
+                    url: resourceUrl.url()+'populate?id_state=' + obj.id_state
                 }).then(function successCallback(response) {
                     console.log(response)
                     $scope.cityList = response.data.cities;
@@ -151,7 +150,7 @@
             if(religion != null) {
                 $http({
                     method: 'GET',
-                    url: 'http://devapi.peoplematrimony.com/populate?id_mothertongue=' + $scope.profile.login_user.id_mothertongue + '&id_religion=' + religion.id_religion
+                    url: resourceUrl.url()+'populate?id_mothertongue=' + $scope.profile.login_user.id_mothertongue + '&id_religion=' + religion.id_religion
                 }).then(function successCallback(response) {
                     console.log(response)
                     $scope.castList = response.data.caste;
@@ -174,7 +173,7 @@
                 })
                 $http({
                     method: 'GET',
-                    url: 'http://devapi.peoplematrimony.com/populate?id_mothertongue=' + $scope.profile.login_user.id_mothertongue + '&id_religion=' + $scope.profile.login_user.id_religion
+                    url: resourceUrl.url()+'populate?id_mothertongue=' + $scope.profile.login_user.id_mothertongue + '&id_religion=' + $scope.profile.login_user.id_religion
                 }).then(function successCallback(response) {
                     console.log(response)
                     $scope.castList = response.data.caste;
@@ -213,7 +212,7 @@
                 if($scope.profile.login_user.id_state != 0) {
                     $http({
                         method: 'GET',
-                        url: 'http://devapi.peoplematrimony.com/populate?id_country=' + $scope.profile.login_user.id_country
+                        url: resourceUrl.url()+'populate?id_country=' + $scope.profile.login_user.id_country
                     }).then(function successCallback(response) {
                         $scope.stateList = response.data.states;
                         $scope.stateList.filter(function (a) {
@@ -225,7 +224,7 @@
 
                             $http({
                                 method: 'GET',
-                                url: 'http://devapi.peoplematrimony.com/populate?id_state='+$scope.profile.login_user.id_state
+                                url: resourceUrl.url()+'populate?id_state='+$scope.profile.login_user.id_state
                             }).then(function successCallback(response) {
                                 $scope.cityList = response.data.cities;
                                 $scope.cityList.filter(function (a) {
@@ -266,7 +265,7 @@
                     && $scope.profile.login_user.preferences.state != 0) {
                     $http({
                         method: 'GET',
-                        url: 'http://devapi.peoplematrimony.com/populate?id_country=' + $scope.profile.login_user.preferences.country
+                        url: resourceUrl.url()+'populate?id_country=' + $scope.profile.login_user.preferences.country
                     }).then(function successCallback(response) {
                         $scope.stateList = response.data.states;
                         $scope.stateList.filter(function (a) {
@@ -278,7 +277,7 @@
 
                             $http({
                                 method: 'GET',
-                                url: 'http://devapi.peoplematrimony.com/populate?id_state='+$scope.profile.login_user.preferences.state
+                                url: resourceUrl.url()+'populate?id_state='+$scope.profile.login_user.preferences.state
                             }).then(function successCallback(response) {
                                 $scope.cityList = response.data.cities;
                                 $scope.cityList.filter(function (a) {
@@ -396,7 +395,7 @@
                 })
                 $http({
                     method: 'GET',
-                    url: 'http://devapi.peoplematrimony.com/populate?id_mothertongue=' + $scope.profile.login_user.id_mothertongue + '&id_religion=' + $scope.profile.login_user.preferences.religion
+                    url: resourceUrl.url()+'populate?id_mothertongue=' + $scope.profile.login_user.id_mothertongue + '&id_religion=' + $scope.profile.login_user.preferences.religion
                 }).then(function successCallback(response) {
                     console.log(response)
                     $scope.castList = response.data.caste;
@@ -426,7 +425,7 @@
         function aboutme() {
             $http({
                 method: 'PUT',
-                url: 'https://devapi.peoplematrimony.com/user/edit/' + storageService.get('id') + '?' +
+                url: resourceUrl.url()+'user/edit/' + storageService.get('id') + '?' +
                 'block=about&about=' + $scope.profile.login_user.aboutme + '&token=' + storageService.get("token")
             }).then(function successCallback(response) {
                 $scope.about = !$scope.about;
@@ -438,7 +437,7 @@
 
               $http({
                 method: 'PUT',
-                url: 'https://devapi.peoplematrimony.com/user/edit/pref/' + storageService.get('id') + '?' +
+                url: resourceUrl.url()+'user/edit/pref/' + storageService.get('id') + '?' +
                 'block=about' +
                 '&about=' + $scope.profile.login_user.preferences.about_partner + '&token=' + storageService.get("token")
             }).then(function successCallback(response) {
@@ -450,7 +449,7 @@
         function aboutfamily() {
             $http({
                 method: 'PUT',
-                url: 'https://devapi.peoplematrimony.com/user/edit/' + storageService.get('id') + '?' +
+                url: resourceUrl.url()+'user/edit/' + storageService.get('id') + '?' +
                 'block=fdetail&about=' + $scope.profile.login_user.about_family + '&token=' + storageService.get("token")
             }).then(function successCallback(response) {
                 $scope.fabout = !$scope.fabout;
@@ -467,7 +466,7 @@
             }
             $http({
                 method: 'PUT',
-                url: 'https://devapi.peoplematrimony.com/user/edit/' + storageService.get('id') + '?' +
+                url: resourceUrl.url()+'user/edit/' + storageService.get('id') + '?' +
                 'token=' + storageService.get("token")+'&block=basic&' +
                 '&weight=' + $scope.profile.login_user.weight +
                 '&body_type=' + $scope.profile.login_user.body_type +
@@ -498,7 +497,7 @@
 
             $http({
                 method: 'PUT',
-                url: 'https://devapi.peoplematrimony.com/user/edit/pref/' + storageService.get('id') + '?' +
+                url: resourceUrl.url()+'user/edit/pref/' + storageService.get('id') + '?' +
                 'token=' + storageService.get("token")+'&block=basic' +
                 '&age_end=' + $scope.profile.login_user.preferences.age_end +
                 '&age_start=' + $scope.profile.login_user.preferences.age_start +
@@ -538,7 +537,7 @@
             }
             $http({
                 method: 'PUT',
-                url: 'https://devapi.peoplematrimony.com/user/edit/' + storageService.get('id') + '?' +
+                url: resourceUrl.url()+'user/edit/' + storageService.get('id') + '?' +
                 'block=religious&' +
                 'religion=' + reg_id +
                 '&caste=' + caste_id +
@@ -576,7 +575,7 @@
 
             $http({
                 method: 'PUT',
-                url: 'https://devapi.peoplematrimony.com/user/edit/pref/' + storageService.get('id') + '?' +
+                url: resourceUrl.url()+'user/edit/pref/' + storageService.get('id') + '?' +
                 'block=religious&' +
                 'religion=' + reg_id +
                 '&caste=' + caste_id +
@@ -614,7 +613,7 @@
             }
             $http({
                 method: 'PUT',
-                url: 'https://devapi.peoplematrimony.com/user/edit/' + storageService.get('id') + '?' +
+                url: resourceUrl.url()+'user/edit/' + storageService.get('id') + '?' +
                 'token=' + storageService.get("token") +'&block=location&' +
                 '&country=' + country_id +
                 '&state=' + state_id +
@@ -653,7 +652,7 @@
 
             $http({
                 method: 'PUT',
-                url: 'http://devapi.peoplematrimony.com/user/edit/pref/' + storageService.get('id') + '?' +
+                url: resourceUrl.url()+'user/edit/pref/' + storageService.get('id') + '?' +
                 'token=' + storageService.get("token") +'&block=location' +
                 '&country=' + country_id +
                 '&state=' + state_id +
@@ -685,7 +684,7 @@
             }
             $http({
                 method: 'PUT',
-                url: 'https://devapi.peoplematrimony.com/user/edit/' + storageService.get('id') + '?' +
+                url: resourceUrl.url()+'user/edit/' + storageService.get('id') + '?' +
                 'token=' + storageService.get("token") +'&block=profession&' +
                 '&edu_detail=' + $scope.profile.login_user.education_detail +
                 '&education=' + edu_id +
@@ -725,7 +724,7 @@
 
             $http({
                 method: 'PUT',
-                url: 'https://devapi.peoplematrimony.com/user/edit/pref/' + storageService.get('id') + '?' +
+                url: resourceUrl.url()+'user/edit/pref/' + storageService.get('id') + '?' +
                 'token=' + storageService.get("token") +'&block=profession' +
                 '&id=' + storageService.get('id') +
                 '&education=' + edu_id +
@@ -745,7 +744,7 @@
         function saveFamilyDetails() {
             $http({
                 method: 'PUT',
-                url: 'http://devapi.peoplematrimony.com/user/edit/' + storageService.get('id') + '?' +
+                url: resourceUrl.url()+'user/edit/' + storageService.get('id') + '?' +
                 'token=' +storageService.get("token") +
                 '&block=family' +
                 '&brother=' +$scope.profile.login_user.brother +

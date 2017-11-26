@@ -6,7 +6,7 @@
         .controller('MessagePendingController', MessagePendingController);
 
     /** @ngInject */
-    function MessagePendingController(pending,$scope) {
+    function MessagePendingController(pending,$scope,resourceUrl,storageService) {
         var vm = this;
         $scope.pending = pending.list;
 
@@ -15,12 +15,12 @@
         function deletePending(comId) {
             $http({
                 method: 'GET',
-                url: 'http://devapi.peoplematrimony.com/inbox/delete?' +
+                url: resourceUrl.url()+'inbox/delete?' +
                 '&token=' + storageService.get("token") + '&type=pending' + '&com_id=' + comId
             }).then(function successCallback(response) {
                 $http({
                     method: 'GET',
-                    url: 'http://devapi.peoplematrimony.com/inbox?' +
+                    url: resourceUrl.url()+'inbox?' +
                     '&token=' + storageService.get("token") + '&type=pending'
                 }).then(function successCallback(response) {
                     console.log(response)
