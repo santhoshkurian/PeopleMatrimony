@@ -24,7 +24,7 @@
         $scope.newMatches = newMatches;
         $scope.recentUpdated = recentUpdated;
         $scope.viewed = viewed;
-        $scope.discover = discoverMatches.matches;
+        $scope.discover = discoverMatches;
 
 
 

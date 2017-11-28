@@ -186,14 +186,17 @@
         }
 
 
-
-
         vm.registerCandidate = function () {
             console.log($scope.reg);
+            var date1 = $scope.reg.dob;
+            date1 = new Date(date1);
+            date1 = date1.toString().replace('(India Standard Time)','(IST)');;
+            console.log(date1);
+
             $http({
                 method: 'POST',
                 url: resourceUrl.url()+'user?step=1&profile_for='+$scope.reg.profile_for+'&' +
-                'name='+$scope.reg.name+'&gender='+$scope.reg.gender+'&dob='+$scope.reg.dob+'&religion='+parseInt($scope.reg.religion)+'&mothertongue=5&' +
+                'name='+$scope.reg.name+'&gender='+$scope.reg.gender+'&dob='+date1+'&religion='+parseInt($scope.reg.religion)+'&mothertongue=5&' +
                 'country_code='+$scope.reg+'&email='+$scope.reg.email+'&' +
                 'mobile='+$scope.reg.mobile+'&password='+$scope.reg.password+'&source=111'
             }).then(function successCallback(response) {
