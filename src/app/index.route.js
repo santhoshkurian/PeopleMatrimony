@@ -452,7 +452,7 @@
                     name: null
                 }
             }).state('viewProfile', {
-                url: '/viewProfile',
+                url: '/viewProfile/:view_id',
                 views: {
                     'main@': {
                         templateUrl: 'app/core/layouts/viewProfileLayout.html'
@@ -460,11 +460,11 @@
                     },
                     'toolbar@viewProfile': {
                         templateUrl: 'app/toolbar/dashboard/dbToolbar.html',
-                        controller: 'DashboardToolbarController as vm'
+                        //controller: 'DashboardToolbarController as vm'
                     },
                     'navigation@viewProfile': {
                         templateUrl: 'app/navigation/view-profile/viewProfileNav.html',
-                        controller: 'DashBoardRightController as vm'
+                        //controller: 'DashBoardRightController as vm'
                     },
                     'content@viewProfile': {
                         templateUrl: 'app/main/view-profile/viewProfile.html',
@@ -473,6 +473,18 @@
                     'footer@viewProfile': {
                         templateUrl: 'app/footer/footer.html',
                         controller: 'FooterController as vm'
+                    }
+                },resolve: {
+                    viewProfile: function ($http, storageService,resourceUrl,$stateParams) {
+                        return  $http({
+                            method: 'GET',
+                            url: resourceUrl.url()+'user/view?'+
+                            'view_id='+$stateParams.view_id+'&token='+storageService.get("token")
+                        }).then(function successCallback(response) {
+                            return response.data;
+                        }, function errorCallback(response) {
+                            return response;
+                        });
                     }
                 }
             }).state('recomendation', {

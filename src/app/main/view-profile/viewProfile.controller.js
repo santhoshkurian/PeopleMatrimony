@@ -6,7 +6,7 @@
         .controller('ViewProfileController', ViewProfileController);
 
     /** @ngInject */
-    function ViewProfileController($scope,$http,storageService) {
+    function ViewProfileController($scope,$http,storageService,resourceUrl,viewProfile) {
 
         $scope.viewType = 'personal';
         $scope.selectType = selectType;
@@ -14,17 +14,9 @@
             $scope.viewType = type;
         }
 
-        $http({
-            method: 'GET',
-            url: resourceUrl.url()+'user/view?'+
-            'view_id='+storageService.get("id")+'&token='+storageService.get("token")
-        }).then(function successCallback(response) {
-           console.log(response)
-        }, function errorCallback(response) {
-            console.log(response)
-
-        });
-
+        $scope.view = viewProfile.user;
+        $scope.pref = viewProfile.user.preferences;
+       console.log("view Profile",JSON.stringify(viewProfile));
 
 
     }

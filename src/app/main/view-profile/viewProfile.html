@@ -16,8 +16,8 @@
                             <div class="portlet-title">
 
                                 <div class="caption ">
-                                    <span class="vp-main"> Priya Rajani</span><br>
-                                    <span class="vp-main-sub"> Profile created by parents</span>
+                                    <span class="vp-main">{{view.name}}</span><br>
+                                    <!--<span class="vp-main-sub"> Profile created by parents</span>-->
                                 </div>
 
                                 <div class="actions" style="font-size: 20px">
@@ -27,9 +27,13 @@
                             </div>
                             <div class="portlet-body form">
                                 <div class="row ">
-                                    <div class=" col-xs-12 col-sm-6 col-md-4 ">
-                                        <img class="vp-image" ng-src="../assets/images/profile2.jpg"/>
-                                    </div>
+                                    <div class=" col-xs-12 col-sm-6 col-md-4 " style="text-align: center;line-height: 180px">
+                                        <img style="height: 150px" ng-if="item.images.length > 0"
+                                             ng-src="{{view.images[0]}}"/>
+                                        <img style="height: 150px" ng-if="view.gender == 'male'"
+                                             ng-src="/assets/defaultImages/male_card.jpg"/>
+                                        <img style="height: 150px" ng-if="view.gender == 'female'"
+                                             ng-src="/assets/defaultImages/female_card.jpg"/>                                    </div>
                                     <div class="col-xs-7 col-sm-6 col-md-6">
                                         <div class="row " style="">
                                             <table class="profile-table">
@@ -42,37 +46,37 @@
                                                 <tr>
                                                     <td class="first-row"><i class="icon-user-follow"></i></td>
                                                     <td class="second-row">|</td>
-                                                    <td class="third-row">22 yrs,5`7</td>
+                                                    <td class="third-row">{{view.age}} yrs,{{view.height}} cms</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="first-row"><i class="icon-book-open"></i></td>
                                                     <td class="second-row">|</td>
-                                                    <td class="third-row">Tamil</td>
+                                                    <td class="third-row">{{view.mothertongue}}</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="first-row"><i class="icon-users"></i></td>
                                                     <td class="second-row">|</td>
-                                                    <td class="third-row">Vaniyakullak Kshathriya</td>
+                                                    <td class="third-row">{{view.caste}}</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="first-row"><i class="fa fa-star"></i></td>
                                                     <td class="second-row">|</td>
-                                                    <td class="third-row">Swathi</td>
+                                                    <td class="third-row">{{view.star}}</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="first-row"><i class="fa fa-graduation-cap"></i></td>
                                                     <td class="second-row">|</td>
-                                                    <td class="third-row">Btech</td>
+                                                    <td class="third-row">{{view.education_detail}}</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="first-row"><i class="fa fa-briefcase"></i></td>
                                                     <td class="second-row">|</td>
-                                                    <td class="third-row">Software engineer</td>
+                                                    <td class="third-row">{{view.occupation}}</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="first-row"><i class="fa fa-map-marker"></i></td>
                                                     <td class="second-row">|</td>
-                                                    <td class="third-row">Bangalore</td>
+                                                    <td class="third-row">{{view.city_name}}</td>
                                                 </tr>
                                                 </tbody>
                                             </table>
@@ -141,14 +145,12 @@
                                 <div class="portlet-title">
                                     <div class="caption ">
                                         <!--<i class="icon-settings font-red-sunglo"></i>-->
-                                        <span class=" uppercase"><i class="fa fa-pencil icon-color"></i>&nbsp; Few words about my son</span>
+                                        <span class=" uppercase"><i class="fa fa-pencil icon-color"></i>&nbsp; Few words about my <span ng-if="view.gender == 'male'">son</span><span ng-if="view.gender == 'female'">daughter</span></span>
                                     </div>
 
                                 </div>
                                 <div class="portlet-body form">
-                                    <p> My son is a cam and understanding boy.He respects traditional values and also
-                                        has modern outlook. He loves reading
-                                        books and hearing music.</p>
+                                    <p> {{city_name.about}}</p>
 
                                 </div>
                             </div>
@@ -167,27 +169,27 @@
                                         <div class="col-md-4">
                                             <label class="font-weight-head "> Age</label>
 
-                                            <p class="details">28 Yrs</p>
+                                            <p class="details">{{view.age}} Yrs</p>
 
                                         </div>
 
                                         <div class="col-md-4">
                                             <label class=" font-weight-head  "> Height</label>
 
-                                            <p class="details ">5 ft 11 in/180 cms</p>
+                                            <p class="details ">{{view.height}} cms</p>
 
                                         </div>
 
                                         <div class="col-md-4">
                                             <label class=" font-weight-head  "> Weight</label>
 
-                                            <p class="details ">80 kg</p>
+                                            <p class="details ">{{view.weigh}} kg</p>
 
                                         </div>
                                         <div class="col-md-4">
                                             <label class=" font-weight-head  "> Body Type</label>
 
-                                            <p class="details ">Average</p>
+                                            <p class="details ">{{view.body_type}}</p>
 
                                         </div>
                                         <div class="col-md-4">
@@ -199,37 +201,37 @@
                                         <div class="col-md-4">
                                             <label class=" font-weight-head  "> Physical Type</label>
 
-                                            <p class="details ">Normal</p>
+                                            <p class="details ">{{view.complexion}}</p>
 
                                         </div>
                                         <div class="col-md-4">
                                             <label class=" font-weight-head  "> Mother Tongue</label>
 
-                                            <p class="details ">Malayalam</p>
+                                            <p class="details ">{{view.mothertongue}}</p>
 
                                         </div>
                                         <div class="col-md-4">
                                             <label class=" font-weight-head  "> Marital Status</label>
 
-                                            <p class="details ">Never Married</p>
+                                            <p class="details ">{{view.marital_status}}</p>
 
                                         </div>
                                         <div class="col-md-4">
                                             <label class=" font-weight-head  "> Eating Habits</label>
 
-                                            <p class="details ">Non veg</p>
+                                            <p class="details ">{{view.eating_habit}}</p>
 
                                         </div>
                                         <div class="col-md-4">
                                             <label class=" font-weight-head  "> Drinking Habits</label>
 
-                                            <p class="details ">Non Drinker</p>
+                                            <p class="details ">{{view.drinking_habit}}</p>
 
                                         </div>
                                         <div class="col-md-4">
                                             <label class=" font-weight-head  "> Somking Habits</label>
 
-                                            <p class="details ">Non Smoker</p>
+                                            <p class="details ">{{view.smoking_habit}}</p>
 
                                         </div>
                                     </div>
@@ -250,33 +252,33 @@
                                         <div class="col-md-4">
                                             <label class="font-weight-head "> Religion</label>
 
-                                            <p class="details">Hindu</p>
+                                            <p class="details">{{view.religion}}</p>
 
                                         </div>
 
                                         <div class="col-md-4">
                                             <label class=" font-weight-head  "> Caste /Sub caste</label>
 
-                                            <p class="details ">Nadar</p>
+                                            <p class="details ">{{view.caste}}</p>
 
                                         </div>
 
                                         <div class="col-md-4">
                                             <label class=" font-weight-head  "> Gothram</label>
 
-                                            <p class="details ">Not available</p>
+                                            <p class="details ">{{view.gothram}}</p>
 
                                         </div>
                                         <div class="col-md-4">
                                             <label class=" font-weight-head  "> Star / Rassi</label>
 
-                                            <p class="details ">Not available</p>
+                                            <p class="details ">{{view.star}}</p>
 
                                         </div>
                                         <div class="col-md-4">
                                             <label class=" font-weight-head  "> Chevvai Dosham / Rassi</label>
 
-                                            <p class="details ">No</p>
+                                            <p class="details ">{{view.dosham}}</p>
 
                                         </div>
                                     </div>
@@ -297,33 +299,21 @@
                                         <div class="col-md-4">
                                             <label class="font-weight-head "> Education</label>
 
-                                            <p class="details">BE</p>
-
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <label class=" font-weight-head  "> Educational in Detail</label>
-
-                                            <p class="details ">Not available</p>
+                                            <p class="details">{{view.education_detail}}</p>
 
                                         </div>
 
                                         <div class="col-md-4">
                                             <label class=" font-weight-head  "> Occupation</label>
 
-                                            <p class="details ">Web Developer</p>
+                                            <p class="details ">{{view.occupation}}</p>
 
                                         </div>
+
                                         <div class="col-md-4">
-                                            <label class=" font-weight-head  "> Employed in</label>
+                                            <label class=" font-weight-head  "> Annual Income</label>
 
-                                            <p class="details ">Not available</p>
-
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label class=" font-weight-head  "> Annaul Income</label>
-
-                                            <p class="details ">Rs 7,00,000</p>
+                                            <p class="details ">{{view.income}}</p>
 
                                         </div>
                                     </div>
@@ -345,51 +335,51 @@
                                         <div class="col-md-4">
                                             <label class="font-weight-head "> Family Values</label>
 
-                                            <p class="details">Traditional</p>
+                                            <p class="details">{{view.family_values}}</p>
 
                                         </div>
 
                                         <div class="col-md-4">
                                             <label class=" font-weight-head  "> Ancestral Origin</label>
 
-                                            <p class="details ">Not specified</p>
+                                            <p class="details ">{{view.ancestral_origin}}</p>
 
                                         </div>
 
                                         <div class="col-md-4">
                                             <label class=" font-weight-head  "> Family Type</label>
 
-                                            <p class="details ">Nuclear</p>
+                                            <p class="details ">{{view.family_type}}</p>
 
                                         </div>
                                         <div class="col-md-4">
                                             <label class=" font-weight-head  "> No of Brother(s)</label>
 
-                                            <p class="details ">Non</p>
+                                            <p class="details ">{{view.brother}}</p>
 
                                         </div>
                                         <div class="col-md-4">
                                             <label class=" font-weight-head  "> Number of sister(s) </label>
 
-                                            <p class="details ">1 / Not married</p>
+                                            <p class="details ">{{view.sister}}</p>
 
                                         </div>
                                         <div class="col-md-4">
                                             <label class=" font-weight-head  "> Family Status</label>
 
-                                            <p class="details ">Upper Middle Class</p>
+                                            <p class="details ">{{view.family_status}}</p>
 
                                         </div>
                                         <div class="col-md-4">
                                             <label class=" font-weight-head  "> Father's Status </label>
 
-                                            <p class="details ">Bussinesman</p>
+                                            <p class="details ">{{view.father_status}}</p>
 
                                         </div>
                                         <div class="col-md-4">
                                             <label class=" font-weight-head  "> Mother's Status </label>
 
-                                            <p class="details ">Home maker</p>
+                                            <p class="details ">{{view.mother_status}}</p>
 
                                         </div>
                                     </div>
@@ -408,9 +398,7 @@
                                     <div class="form-group">
 
                                         <div class="col-md-12">
-                                            <p class="details">My son is a cam and understanding boy.He respects
-                                                traditional values and also has modern outlook. He loves reading
-                                                books and hearing music.
+                                            <p class="details">{{view.about_family}}
                                             </p>
                                         </div>
                                     </div>
@@ -458,42 +446,42 @@
                                             <tbody>
                                             <tr>
                                                 <td> Age </td>
-                                                <td> 28 Yrs </td>
+                                                <td> {{pref.age_start}}-{{pref.age_end}} Yrs </td>
                                                 <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
                                             </tr>
                                             <tr>
                                                 <td> Height </td>
-                                                <td> 5 Ft 11 in/180 cms </td>
+                                                <td> {{pref.height_start}}-{{pref.height_end}} cms </td>
                                                 <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
                                             </tr>
                                             <tr>
                                                 <td> Physical Type </td>
-                                                <td> Normal </td>
+                                                <td> {{pref.physical_status}} </td>
                                                 <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
                                             </tr>
                                             <tr>
                                                 <td> Mother Tongue </td>
-                                                <td> Malayalam </td>
+                                                <td> {{pref.mothertongue}} </td>
                                                 <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
                                             </tr>
                                             <tr>
                                                 <td> Marital Status </td>
-                                                <td> Never Married </td>
+                                                <td> {{pref.marital_status}} </td>
                                                 <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
                                             </tr>
                                             <tr>
                                                 <td> Eating Habits </td>
-                                                <td> Non Veg </td>
+                                                <td> {{pref.eating_habits}} </td>
                                                 <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
                                             </tr>
                                             <tr>
                                                 <td> Drinking Habits </td>
-                                                <td> Non Drinker </td>
+                                                <td> {{pref.drinking_habits}} </td>
                                                 <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
                                             </tr>
                                             <tr>
                                                 <td> Smoking Habits </td>
-                                                <td> Non Smoker </td>
+                                                <td> {{pref.smoking_habits}} </td>
                                                 <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
                                             </tr>
                                             </tbody>
@@ -513,28 +501,24 @@
                                             <tbody>
                                             <tr>
                                                 <td> Religion </td>
-                                                <td> Hindu </td>
+                                                <td> {{pref.religion}} </td>
                                                 <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
                                             </tr>
                                             <tr>
                                                 <td> Caste </td>
-                                                <td> Gramini </td>
-                                                <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
-                                            </tr>
-                                            <tr>
-                                                <td> Sub Caste </td>
-                                                <td> Any Sub Caste  </td>
+                                                <td> {{pref.caste}} </td>
                                                 <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
                                             </tr>
 
+
                                             <tr>
                                                 <td> Gothram </td>
-                                                <td> Any</td>
+                                                <td> {{pref.gothram}}</td>
                                                 <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
                                             </tr>
                                             <tr>
                                                 <td> Star </td>
-                                                <td> Aswini </td>
+                                                <td> {{pref.star}} </td>
                                                 <td><i class="fa fa-check-circle" style="color: #009926"></i> </td>                </td>
                                             </tr>
 
