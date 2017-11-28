@@ -6,7 +6,7 @@
         .controller('DashboardController', DashboardController);
 
     /** @ngInject */
-    function DashboardController($scope, $location,$http,storageService,newMatches,discoverMatches,viewed,recentUpdated,resourceUrl,$state,profileCompleteness) {
+    function DashboardController($scope,$timeout, $location,$http,storageService,newMatches,discoverMatches,viewed,recentUpdated,resourceUrl,$state,profileCompleteness) {
 
         console.log(profileCompleteness);
         console.log(newMatches);
@@ -25,9 +25,33 @@
         $scope.recentUpdated = recentUpdated;
         $scope.viewed = viewed;
         $scope.discover = discoverMatches;
+        $scope.sendInterest = sendInterest;
 
 
 
+        function sendInterest(id) {
+            $http({
+                method: 'GET',
+                url: resourceUrl.url()+'connect/send?' +
+                '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&partner=' + id
+            }).then(function successCallback(response) {
+                console.log(response)
+                $scope.message = "send interest successfully";
+                $timeout(function() { $scope.message = '';}, 2000);
+
+
+            }, function errorCallback(response) {
+                console.log(response)
+                if (response.data.code == '400') {
+                    $scope.message = "Already send a Interest";
+                    $timeout(function() { $scope.message = '';}, 2000);
+
+                }
+
+            });
+
+
+        }
 
         function logout(){
             $http({

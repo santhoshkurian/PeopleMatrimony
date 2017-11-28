@@ -64,6 +64,7 @@
 
                         </div>
                     </div>
+                    <div style="color: red;text-align: center;margin-bottom: 20px">{{message}}</div>
 
                     <div class="col-md-12 " ng-if="recentUpdated.matches.length > 0">
                         <!-- BEGIN SAMPLE FORM PORTLET-->
@@ -178,7 +179,7 @@
                                         <div class="row ">
                                             <div class="col-md-12">
                                                 <div style="margin-top:20px"><a
-                                                        style="font-size:13px;color: red;margin-right: 20px"> Send
+                                                        style="font-size:13px;color: red;margin-right: 20px" ng-click="sendInterest(item.id_people)"> Send
                                                     Interest</a><a style="font-size:13px;color: red"> View Profile</a>
                                                 </div>
 
