@@ -8,6 +8,9 @@
     /** @ngInject */
     function ViewProfileController($scope,$http,storageService,resourceUrl,viewProfile) {
 
+        $scope.image_url = storageService.get("image_url");
+        $scope.name = storageService.get("name");
+        $scope.id = storageService.get("id");
         $scope.viewType = 'personal';
         $scope.selectType = selectType;
         function selectType(type){

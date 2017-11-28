@@ -15,6 +15,7 @@
         console.log("profileCompleteness",profileCompleteness);
         $scope.messages = profileCompleteness.percentage.data;
         $scope.logout = logout;
+        $scope.viewProfile = viewProfile;
         $scope.value = profileCompleteness.percentage.percentage;
 
         $scope.image_url = storageService.get("image_url");
@@ -27,6 +28,9 @@
         $scope.discover = discoverMatches;
         $scope.sendInterest = sendInterest;
 
+        function viewProfile(id){
+            $state.go('viewProfile',{view_id:id});
+        }
 
 
         function sendInterest(id) {

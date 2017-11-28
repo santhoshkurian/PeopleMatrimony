@@ -455,8 +455,8 @@
                 url: '/viewProfile/:view_id',
                 views: {
                     'main@': {
-                        templateUrl: 'app/core/layouts/viewProfileLayout.html'
-                        //controller : 'InboxController as vm'
+                        templateUrl: 'app/core/layouts/viewProfileLayout.html',
+                        controller: 'ViewProfileController as vm'
                     },
                     'toolbar@viewProfile': {
                         templateUrl: 'app/toolbar/dashboard/dbToolbar.html',
@@ -467,8 +467,7 @@
                         //controller: 'DashBoardRightController as vm'
                     },
                     'content@viewProfile': {
-                        templateUrl: 'app/main/view-profile/viewProfile.html',
-                        controller: 'ViewProfileController as vm'
+                        templateUrl: 'app/main/view-profile/viewProfile.html'
                     },
                     'footer@viewProfile': {
                         templateUrl: 'app/footer/footer.html',
