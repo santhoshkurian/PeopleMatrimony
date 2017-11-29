@@ -7,16 +7,15 @@
             <li class="nav-item  active open">
                 <ul class="sub-menu settingnav">
                     <li style="background-color:#e8e6e8;height:37px;padding: 9px 14px 9px 30px;" class="nav-item ">
-                        <span ><b>Matches</b></span>
+                        <span><b>Matches</b></span>
                     </li>
                     <li ng-class="{ activateSettingNavBar: isActive('/settings')}">
                         <div style="margin: 20px" class="matches ">
-                            <div>New matches</div>
-                            <div>Profiles yet to be viewed <span> (118)</span></div>
-                            <div>Profiles viewed & not<span> (18)</span></div>
-                            <div>Contacted matches <span> (35)</span></div>
-                            <div>Mutal matches <span> (40)</span></div>
-                            <div>Shortlisted matches <span> (6)</span></div>
+                            <div><a >New matches</a></div>
+                            <div><a >Yet to be viewed</a></div>
+                            <div><a  >Viewed and not contacted</a></div>
+                            <div><a  >Shortlisted</a></div>
+                            <div><a  >Mutal matches</a></div>
                         </div>
 
                     </li>
@@ -59,10 +58,30 @@
                                         <div class="col-md-4 margin-bottom-10">
                                             <div class="row">
                                                 <div class="col-md-12 margin-top-10">
-                                                    <select class="custom-form-control">
-                                                        <option>18</option>
-                                                        <option>19</option>
-                                                        <option>20</option>
+                                                    <select class="custom-form-control" ng-model="age.start">
+                                                        <option value="18">18</option>
+                                                        <option value="19">19</option>
+                                                        <option value="20">20</option>
+                                                        <option value="21">21</option>
+                                                        <option value="22">22</option>
+                                                        <option value="23">23</option>
+                                                        <option value="24">24</option>
+                                                        <option value="25">25</option>
+                                                        <option value="26">26</option>
+                                                        <option value="27">27</option>
+                                                        <option value="28">28</option>
+                                                        <option value="29">29</option>
+                                                        <option value="30">30</option>
+                                                        <option value="31">31</option>
+                                                        <option value="32">32</option>
+                                                        <option value="33">33</option>
+                                                        <option value="34">34</option>
+                                                        <option value="35">35</option>
+                                                        <option value="36">36</option>
+                                                        <option value="37">37</option>
+                                                        <option value="38">38</option>
+                                                        <option value="39">39</option>
+                                                        <option value="40">40</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -70,10 +89,30 @@
                                         <div class="col-md-4 margin-bottom-10">
                                             <div class="row">
                                                 <div class="col-md-12 margin-top-10">
-                                                    <select class="custom-form-control">
-                                                        <option>18</option>
-                                                        <option>19</option>
-                                                        <option>20</option>
+                                                    <select class="custom-form-control" ng-model="age.end">
+                                                        <option value="18">18</option>
+                                                        <option value="19">19</option>
+                                                        <option value="20">20</option>
+                                                        <option value="21">21</option>
+                                                        <option value="22">22</option>
+                                                        <option value="23">23</option>
+                                                        <option value="24">24</option>
+                                                        <option value="25">25</option>
+                                                        <option value="26">26</option>
+                                                        <option value="27">27</option>
+                                                        <option value="28">28</option>
+                                                        <option value="29">29</option>
+                                                        <option value="30">30</option>
+                                                        <option value="31">31</option>
+                                                        <option value="32">32</option>
+                                                        <option value="33">33</option>
+                                                        <option value="34">34</option>
+                                                        <option value="35">35</option>
+                                                        <option value="36">36</option>
+                                                        <option value="37">37</option>
+                                                        <option value="38">38</option>
+                                                        <option value="39">39</option>
+                                                        <option value="40">40</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -83,7 +122,7 @@
                                                 <div class="col-md-12 margin-top-10">
                                                     <button type="button"
                                                             class="pull-left btn btn-sm btn-outline custom-button"><span
-                                                            class="btn-label-text">Submit</span></button>
+                                                            class="btn-label-text" ng-click="agefilter()">Submit</span></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -101,10 +140,62 @@
                                         <div class="col-md-4 margin-bottom-10">
                                             <div class="row">
                                                 <div class="col-md-12 margin-top-10">
-                                                    <select class="custom-form-control">
-                                                        <option>18</option>
-                                                        <option>19</option>
-                                                        <option>20</option>
+                                                    <select class="custom-form-control" ng-model="height.start">
+
+                                                        <option value="140">140</option>
+                                                        <option value="141">141</option>
+                                                        <option value="142">142</option>
+                                                        <option value="143">143</option>
+                                                        <option value="144">144</option>
+                                                        <option value="145">145</option>
+                                                        <option value="146">146</option>
+                                                        <option value="147">147</option>
+                                                        <option value="148">148</option>
+                                                        <option value="149">149</option>
+                                                        <option value="150">150</option>
+                                                        <option value="151">151</option>
+                                                        <option value="152">152</option>
+                                                        <option value="153">153</option>
+                                                        <option value="154">154</option>
+                                                        <option value="155">155</option>
+                                                        <option value="156">156</option>
+                                                        <option value="157">157</option>
+                                                        <option value="158">158</option>
+                                                        <option value="159">159</option>
+                                                        <option value="160">160</option>
+                                                        <option value="161">161</option>
+                                                        <option value="162">162</option>
+                                                        <option value="163">163</option>
+                                                        <option value="164">164</option>
+                                                        <option value="165">165</option>
+                                                        <option value="166">166</option>
+                                                        <option value="167">167</option>
+                                                        <option value="168">168</option>
+                                                        <option value="169">169</option>
+                                                        <option value="170">170</option>
+                                                        <option value="171">171</option>
+                                                        <option value="172">172</option>
+                                                        <option value="173">173</option>
+                                                        <option value="174">174</option>
+                                                        <option value="175">175</option>
+                                                        <option value="176">176</option>
+                                                        <option value="177">177</option>
+                                                        <option value="178">178</option>
+                                                        <option value="179">179</option>
+                                                        <option value="180">180</option>
+                                                        <option value="181">181</option>
+                                                        <option value="182">182</option>
+                                                        <option value="183">183</option>
+                                                        <option value="184">184</option>
+                                                        <option value="185">185</option>
+                                                        <option value="186">186</option>
+                                                        <option value="187">187</option>
+                                                        <option value="188">188</option>
+                                                        <option value="189">189</option>
+                                                        <option value="190">190</option>
+                                                        <option value="191">191</option>
+                                                        <option value="192">192</option>
+
                                                     </select>
                                                 </div>
                                             </div>
@@ -112,10 +203,60 @@
                                         <div class="col-md-4 margin-bottom-10">
                                             <div class="row">
                                                 <div class="col-md-12 margin-top-10">
-                                                    <select class="custom-form-control">
-                                                        <option>18</option>
-                                                        <option>19</option>
-                                                        <option>20</option>
+                                                    <select class="custom-form-control" ng-model="height.end">
+                                                        <option value="140">140</option>
+                                                        <option value="141">141</option>
+                                                        <option value="142">142</option>
+                                                        <option value="143">143</option>
+                                                        <option value="144">144</option>
+                                                        <option value="145">145</option>
+                                                        <option value="146">146</option>
+                                                        <option value="147">147</option>
+                                                        <option value="148">148</option>
+                                                        <option value="149">149</option>
+                                                        <option value="150">150</option>
+                                                        <option value="151">151</option>
+                                                        <option value="152">152</option>
+                                                        <option value="153">153</option>
+                                                        <option value="154">154</option>
+                                                        <option value="155">155</option>
+                                                        <option value="156">156</option>
+                                                        <option value="157">157</option>
+                                                        <option value="158">158</option>
+                                                        <option value="159">159</option>
+                                                        <option value="160">160</option>
+                                                        <option value="161">161</option>
+                                                        <option value="162">162</option>
+                                                        <option value="163">163</option>
+                                                        <option value="164">164</option>
+                                                        <option value="165">165</option>
+                                                        <option value="166">166</option>
+                                                        <option value="167">167</option>
+                                                        <option value="168">168</option>
+                                                        <option value="169">169</option>
+                                                        <option value="170">170</option>
+                                                        <option value="171">171</option>
+                                                        <option value="172">172</option>
+                                                        <option value="173">173</option>
+                                                        <option value="174">174</option>
+                                                        <option value="175">175</option>
+                                                        <option value="176">176</option>
+                                                        <option value="177">177</option>
+                                                        <option value="178">178</option>
+                                                        <option value="179">179</option>
+                                                        <option value="180">180</option>
+                                                        <option value="181">181</option>
+                                                        <option value="182">182</option>
+                                                        <option value="183">183</option>
+                                                        <option value="184">184</option>
+                                                        <option value="185">185</option>
+                                                        <option value="186">186</option>
+                                                        <option value="187">187</option>
+                                                        <option value="188">188</option>
+                                                        <option value="189">189</option>
+                                                        <option value="190">190</option>
+                                                        <option value="191">191</option>
+                                                        <option value="192">192</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -125,7 +266,7 @@
                                                 <div class="col-md-12 margin-top-10">
                                                     <button type="button"
                                                             class="pull-left btn btn-sm btn-outline custom-button"><span
-                                                            class="btn-label-text">Submit</span></button>
+                                                            class="btn-label-text" ng-click="heightfilter()">Submit</span></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -145,8 +286,29 @@
                                         <div class="col-md-12 margin-top-10 margin-bottom-10">
                                             <div ng-repeat="mstatus in martialStatus" class="row">
                                                 <div class="col-md-12">
-                                            <span ng-if="(!showFirstmartialStatus && $index == 0) || showFirstmartialStatus" class="pull-left refined-search-sub-label">
-                                                {{mstatus.name}} (<span class="refined-search-sub-label-count">{{mstatus.count}}</span>)
+                                            <span  class="pull-left refined-search-sub-label">
+                                                <input type="radio" name="matrialstatus">{{mstatus.name}}
+                                            </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 margin-top-10">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <span class="pull-left refined-search-header">MotherTongue</span>
+                                        </div>
+                                    </div>
+                                    <div class="row refined-search-area">
+                                        <div class="col-md-12 margin-top-10 margin-bottom-10">
+                                            <div ng-repeat="obj in populate.mothertongue | limitTo:mtcount" class="row">
+                                                <div class="col-md-12">
+                                            <span  class="pull-left refined-search-sub-label">
+                                               <input type="checkbox" /> {{obj.mothertongue}}
                                             </span>
                                                 </div>
                                             </div>
@@ -154,8 +316,8 @@
                                         <div class="col-md-12 margin-bottom-10">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <span class="show-more-less pull-left" ng-click="showMoreMStatus()" ng-if="!showFirstmartialStatus">More</span>
-                                                    <span class="show-more-less pull-left" ng-click="showMoreMStatus()" ng-if="showFirstmartialStatus">Less</span>
+                                                    <span class="show-more-less pull-left" ng-click="showMoreMStatus('mtcount','more')">More</span>
+                                                    <span class="show-more-less pull-right" ng-click="showMoreMStatus('mtcount','less')">Less</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -166,15 +328,15 @@
                                 <div class="col-md-12 margin-top-10">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <span class="pull-left refined-search-header">Mother Tongue</span>
+                                            <span class="pull-left refined-search-header">Religion</span>
                                         </div>
                                     </div>
                                     <div class="row refined-search-area">
                                         <div class="col-md-12 margin-top-10 margin-bottom-10">
-                                            <div ng-repeat="obj in languages" class="row">
+                                            <div ng-repeat="obj in populate.religon | limitTo:relcount" class="row">
                                                 <div class="col-md-12">
-                                            <span ng-if="(!showFirstLanguage && $index == 0) || showFirstLanguage" class="pull-left refined-search-sub-label">
-                                                {{obj.name}} (<span class="refined-search-sub-label-count">{{obj.count}}</span>)
+                                            <span  class="pull-left refined-search-sub-label">
+                                               <input type="checkbox" /> {{obj.religion}}
                                             </span>
                                                 </div>
                                             </div>
@@ -182,8 +344,8 @@
                                         <div class="col-md-12 margin-bottom-10">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <span class="show-more-less pull-left" ng-click="showMoreLanguage()" ng-if="!showFirstLanguage">More</span>
-                                                    <span class="show-more-less pull-left" ng-click="showMoreLanguage()" ng-if="showFirstLanguage">Less</span>
+                                                    <span class="show-more-less pull-left" ng-click="showMoreMStatus('relcount','more')">More</span>
+                                                    <span class="show-more-less pull-right" ng-click="showMoreMStatus('relcount','less')">Less</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -194,15 +356,15 @@
                                 <div class="col-md-12 margin-top-10">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <span class="pull-left refined-search-header">Division</span>
+                                            <span class="pull-left refined-search-header">Star</span>
                                         </div>
                                     </div>
                                     <div class="row refined-search-area">
                                         <div class="col-md-12 margin-top-10 margin-bottom-10">
-                                            <div ng-repeat="obj in divisions" class="row">
+                                            <div ng-repeat="obj in populate.stars | limitTo:starcount" class="row">
                                                 <div class="col-md-12">
-                                            <span ng-if="(!showDivisions && $index == 0) || showDivisions" class="pull-left refined-search-sub-label">
-                                                {{obj.name}} (<span class="refined-search-sub-label-count">{{obj.count}}</span>)
+                                            <span  class="pull-left refined-search-sub-label">
+                                               <input type="checkbox" /> {{obj.star}}
                                             </span>
                                                 </div>
                                             </div>
@@ -210,36 +372,8 @@
                                         <div class="col-md-12 margin-bottom-10">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <span class="show-more-less pull-left" ng-click="showMoreDivisions()" ng-if="!showDivisions">More</span>
-                                                    <span class="show-more-less pull-left" ng-click="showMoreDivisions()" ng-if="showDivisions">Less</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12 margin-top-10">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <span class="pull-left refined-search-header">Stars</span>
-                                        </div>
-                                    </div>
-                                    <div class="row refined-search-area">
-                                        <div class="col-md-12 margin-top-10 margin-bottom-10">
-                                            <div ng-repeat="obj in stars" class="row">
-                                                <div class="col-md-12">
-                                            <span ng-if="(!showStars && $index == 0) || showStars" class="pull-left refined-search-sub-label">
-                                                {{obj.name}} (<span class="refined-search-sub-label-count">{{obj.count}}</span>)
-                                            </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12 margin-bottom-10">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <span class="show-more-less pull-left" ng-click="showMoreStars()" ng-if="!showStars">More</span>
-                                                    <span class="show-more-less pull-left" ng-click="showMoreStars()" ng-if="showStars">Less</span>
+                                                    <span class="show-more-less pull-left" ng-click="showMoreMStatus('starcount','more')">More</span>
+                                                    <span class="show-more-less pull-right" ng-click="showMoreMStatus('starcount','less')">Less</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -255,10 +389,10 @@
                                     </div>
                                     <div class="row refined-search-area">
                                         <div class="col-md-12 margin-top-10 margin-bottom-10">
-                                            <div ng-repeat="obj in stars" class="row">
+                                            <div ng-repeat="obj in populate.education | limitTo:educount" class="row">
                                                 <div class="col-md-12">
-                                            <span ng-if="(!showStars && $index == 0) || showStars" class="pull-left refined-search-sub-label">
-                                                {{obj.name}} (<span class="refined-search-sub-label-count">{{obj.count}}</span>)
+                                            <span  class="pull-left refined-search-sub-label">
+                                               <input type="checkbox" /> {{obj.education}}
                                             </span>
                                                 </div>
                                             </div>
@@ -266,8 +400,37 @@
                                         <div class="col-md-12 margin-bottom-10">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <span class="show-more-less pull-left" ng-click="showMoreStars()" ng-if="!showStars">More</span>
-                                                    <span class="show-more-less pull-left" ng-click="showMoreStars()" ng-if="showStars">Less</span>
+                                                    <span class="show-more-less pull-left" ng-click="showMoreMStatus('educount','more')">More</span>
+                                                    <span class="show-more-less pull-right" ng-click="showMoreMStatus('educount','less')">Less</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12 margin-top-10">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <span class="pull-left refined-search-header">Employed In</span>
+                                        </div>
+                                    </div>
+                                    <div class="row refined-search-area">
+                                        <div class="col-md-12 margin-top-10 margin-bottom-10">
+                                            <div ng-repeat="obj in populate.occupation_category | limitTo:ocuCatcount" class="row">
+                                                <div class="col-md-12">
+                                            <span  class="pull-left refined-search-sub-label">
+                                               <input type="checkbox" /> {{obj.occupation_category}}
+                                            </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 margin-bottom-10">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <span class="show-more-less pull-left" ng-click="showMoreMStatus('ocuCatcount','more')">More</span>
+                                                    <span class="show-more-less pull-right" ng-click="showMoreMStatus('ocuCatcount','less')">Less</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -278,15 +441,15 @@
                                 <div class="col-md-12 margin-top-10">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <span class="pull-left refined-search-header">Employed in</span>
+                                            <span class="pull-left refined-search-header">Occupation</span>
                                         </div>
                                     </div>
                                     <div class="row refined-search-area">
                                         <div class="col-md-12 margin-top-10 margin-bottom-10">
-                                            <div ng-repeat="obj in stars" class="row">
+                                            <div ng-repeat="obj in populate.occupation | limitTo:ocucount" class="row">
                                                 <div class="col-md-12">
-                                            <span ng-if="(!showStars && $index == 0) || showStars" class="pull-left refined-search-sub-label">
-                                                {{obj.name}} (<span class="refined-search-sub-label-count">{{obj.count}}</span>)
+                                            <span  class="pull-left refined-search-sub-label">
+                                               <input type="checkbox" /> {{obj.occupation}}
                                             </span>
                                                 </div>
                                             </div>
@@ -294,42 +457,17 @@
                                         <div class="col-md-12 margin-bottom-10">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <span class="show-more-less pull-left" ng-click="showMoreStars()" ng-if="!showStars">More</span>
-                                                    <span class="show-more-less pull-left" ng-click="showMoreStars()" ng-if="showStars">Less</span>
+                                                    <span class="show-more-less pull-left" ng-click="showMoreMStatus('ocucount','more')">More</span>
+                                                    <span class="show-more-less pull-right" ng-click="showMoreMStatus('ocucount','less')">Less</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-12 margin-top-10">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <span class="pull-left refined-search-header">Occupassion</span>
-                                        </div>
-                                    </div>
-                                    <div class="row refined-search-area">
-                                        <div class="col-md-12 margin-top-10 margin-bottom-10">
-                                            <div ng-repeat="obj in stars" class="row">
-                                                <div class="col-md-12">
-                                            <span ng-if="(!showStars && $index == 0) || showStars" class="pull-left refined-search-sub-label">
-                                                {{obj.name}} (<span class="refined-search-sub-label-count">{{obj.count}}</span>)
-                                            </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12 margin-bottom-10">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <span class="show-more-less pull-left" ng-click="showMoreStars()" ng-if="!showStars">More</span>
-                                                    <span class="show-more-less pull-left" ng-click="showMoreStars()" ng-if="showStars">Less</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+
+
                         </div>
 
 
@@ -337,6 +475,7 @@
                 </ul>
             </li>
         </ul>
+        <!-- END SIDEBAR MENU -->
     </div>
     <!-- END SIDEBAR -->
 </div>

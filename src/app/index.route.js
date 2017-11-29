@@ -423,25 +423,39 @@
                         templateUrl: 'app/footer/footer.html',
                         controller: 'FooterController as vm'
                     }
+                },resolve:{
+                    populate: function ($http,resourceUrl) {
+                        return $http({
+                            method: 'GET',
+                            url: resourceUrl.url()+'populate'
+                        }).then(function successCallback(response) {
+                            console.log(response)
+                            return response.data;
+
+                        }, function errorCallback(response) {
+                            //console.log(response)
+                            return response;
+
+
+                        });
+                    }
                 }
-            }).state('searchresult', {
+            })
+            .state('searchresult', {
                 url: '/searchresult',
                 views: {
                     'main@': {
-                        templateUrl: 'app/core/layouts/searchResultLayout.html'
-                        //controller : 'InboxController as vm'
+                        templateUrl: 'app/core/layouts/searchResultLayout.html',
+                        controller: 'SearchResultsController as vm'
                     },
                     'toolbar@searchresult': {
-                        templateUrl: 'app/toolbar/searchresults/searchresultstoolbar.html',
-                        controller: 'SearchResultsToolbarController as vm'
+                        templateUrl: 'app/toolbar/searchresults/searchresultstoolbar.html'
                     },
                     'navigation@searchresult': {
-                        templateUrl: 'app/navigation/searchresults/searchResultsNavigation.html',
-                        controller: 'InboxNavController as vm'
+                        templateUrl: 'app/navigation/searchresults/searchResultsNavigation.html'
                     },
                     'content@searchresult': {
                         templateUrl: 'app/main/searchresults/searchresults.html',
-                        controller: 'SearchResultsController as vm'
                     },
                     'footer@searchresult': {
                         templateUrl: 'app/footer/footer.html',
@@ -450,6 +464,22 @@
                 },
                 params: {
                     name: null
+                },resolve:{
+                    populate: function ($http,resourceUrl) {
+                        return $http({
+                            method: 'GET',
+                            url: resourceUrl.url()+'populate'
+                        }).then(function successCallback(response) {
+                            console.log(response)
+                            return response.data;
+
+                        }, function errorCallback(response) {
+                            //console.log(response)
+                            return response;
+
+
+                        });
+                    }
                 }
             }).state('viewProfile', {
                 url: '/viewProfile/:view_id',

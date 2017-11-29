@@ -6,12 +6,21 @@
         .controller('MatchesController', MatchesController);
 
     /** @ngInject */
-    function MatchesController($scope, storageService,resourceUrl, $http, $location,$state) {
+    function MatchesController($scope, storageService,populate,resourceUrl, $http, $location,$state) {
 
 
         $scope.isActive = function (viewLocation) {
             return viewLocation === $location.path();
         };
+
+        $scope.populate = populate;
+        console.log($scope.populate);
+        $scope.mtcount = 4;
+        $scope.educount = 4;
+        $scope.ocuCatcount = 4;
+        $scope.ocucount = 4;
+        $scope.starcount = 4;
+        $scope.relcount = 4;
 
         $scope.logout = logout;
 
@@ -42,27 +51,22 @@
         $scope.showFirstLanguage = false;
         $scope.showDivisions = false;
         $scope.showStars = false;
-        $scope.martialStatus = [{name: "Married", count: 10}, {name: "Never Married", count: 100}, {
-            name: "Widow",
-            count: 50
+        $scope.martialStatus = [{name: "Married"}, {name: "Never Married"}, {
+            name: "Widow"
+        }, {
+            name: "Divorced"
+        }, {
+            name: "Widower"
         }];
-        $scope.languages = [{name: "Malayalam", count: 10}, {name: "English", count: 100}, {name: "Hindhi", count: 50}];
-        $scope.divisions = [{name: "Born Again", count: 10}, {name: "English", count: 100}, {
-            name: "Hindhi",
-            count: 50
-        }];
-        $scope.stars = [{name: "Rohini", count: 10}, {name: "Aaayillyam", count: 100}, {name: "Pooradam", count: 50}];
-        $scope.showMoreMStatus = function () {
-            $scope.showFirstmartialStatus = !$scope.showFirstmartialStatus;
-        }
-        $scope.showMoreLanguage = function () {
-            $scope.showFirstLanguage = !$scope.showFirstLanguage;
-        }
-        $scope.showMoreDivisions = function () {
-            $scope.showDivisions = !$scope.showDivisions;
-        }
-        $scope.showMoreStars = function () {
-            $scope.showStars = !$scope.showStars;
+
+        $scope.showMoreMStatus = function (obj1,action) {
+            if(action == 'more'){
+                $scope[obj1] = $scope[obj1]+4;
+            }
+            if(action == 'less' && $scope[obj1] > 4){
+                $scope[obj1] = $scope[obj1]-4;
+            }
+
         }
 
 
