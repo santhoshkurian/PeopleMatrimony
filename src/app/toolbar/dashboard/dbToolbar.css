@@ -23,6 +23,19 @@
     vertical-align: middle!important;
     height: 75px;
 }
+.tool-link > li {
+    float: left;
+}
+.tool-link > li a {
+    display: block;
+    color: white;
+    text-align: center;
+    height: 75px;
+    padding: 30px 8px;
+    text-decoration: none;
+    font-size: 10px;
+
+}
 
 
 @media screen and (max-width: 1900px) {
