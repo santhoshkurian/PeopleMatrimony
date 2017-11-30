@@ -290,7 +290,7 @@
                                             <div ng-repeat="mstatus in martialStatus" class="row">
                                                 <div class="col-md-12">
                                             <span  class="pull-left refined-search-sub-label">
-                                                <input type="radio" name="matrialstatus">{{mstatus.name}}
+                                                <input type="radio" value="{{mstatus.count}}" ng-model="match.mstatus" ng-click="search()" name="matrialstatus">{{mstatus.name}}
                                             </span>
                                                 </div>
                                             </div>
@@ -311,7 +311,7 @@
                                             <div ng-repeat="obj in populate.mothertongue | limitTo:mtcount" class="row">
                                                 <div class="col-md-12">
                                             <span  class="pull-left refined-search-sub-label">
-                                               <input type="checkbox" /> {{obj.mothertongue}}
+                                               <input type="checkbox" value="{{obj.id_mothertongue}}" name="motherTongue" ng-click="search()"/> {{obj.mothertongue}}
                                             </span>
                                                 </div>
                                             </div>
@@ -339,7 +339,7 @@
                                             <div ng-repeat="obj in populate.religon | limitTo:relcount" class="row">
                                                 <div class="col-md-12">
                                             <span  class="pull-left refined-search-sub-label">
-                                               <input type="checkbox" /> {{obj.religion}}
+                                               <input type="checkbox" value="{{obj.id_religion}}" name="religion" ng-click="search()"/> {{obj.religion}}
                                             </span>
                                                 </div>
                                             </div>
@@ -367,7 +367,7 @@
                                             <div ng-repeat="obj in populate.stars | limitTo:starcount" class="row">
                                                 <div class="col-md-12">
                                             <span  class="pull-left refined-search-sub-label">
-                                               <input type="checkbox" /> {{obj.star}}
+                                               <input type="checkbox" value="{{obj.id_star}}" name="star" ng-click="search()" /> {{obj.star}}
                                             </span>
                                                 </div>
                                             </div>
@@ -395,7 +395,7 @@
                                             <div ng-repeat="obj in populate.education | limitTo:educount" class="row">
                                                 <div class="col-md-12">
                                             <span  class="pull-left refined-search-sub-label">
-                                               <input type="checkbox" /> {{obj.education}}
+                                               <input type="checkbox" value="{{obj.id_education}}" name="education" ng-click="search()" /> {{obj.education}}
                                             </span>
                                                 </div>
                                             </div>
@@ -424,7 +424,7 @@
                                             <div ng-repeat="obj in populate.occupation_category | limitTo:ocuCatcount" class="row">
                                                 <div class="col-md-12">
                                             <span  class="pull-left refined-search-sub-label">
-                                               <input type="checkbox" /> {{obj.occupation_category}}
+                                               <input type="checkbox" value="{{obj.id_occupation_category}}" name="employed" ng-click="search()"/> {{obj.occupation_category}}
                                             </span>
                                                 </div>
                                             </div>
@@ -452,7 +452,7 @@
                                             <div ng-repeat="obj in populate.occupation | limitTo:ocucount" class="row">
                                                 <div class="col-md-12">
                                             <span  class="pull-left refined-search-sub-label">
-                                               <input type="checkbox" /> {{obj.occupation}}
+                                               <input type="checkbox" value="{{obj.id_occupation}}" name="occupation" ng-click="search()"/> {{obj.occupation}}
                                             </span>
                                                 </div>
                                             </div>

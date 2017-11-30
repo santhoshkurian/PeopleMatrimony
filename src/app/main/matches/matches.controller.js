@@ -51,13 +51,11 @@
         $scope.showFirstLanguage = false;
         $scope.showDivisions = false;
         $scope.showStars = false;
-        $scope.martialStatus = [{name: "Married"}, {name: "Never Married"}, {
-            name: "Widow"
-        }, {
-            name: "Divorced"
-        }, {
-            name: "Widower"
-        }];
+        $scope.martialStatus = [{name: "Married",count:"married"},
+            {name: "Never Married",count:"unmarried"},
+            {name: "Widow",count:"widow"},
+            {name: "Divorced",count:"divorced"},
+            {name: "Widower",count:"widower"}];
 
         $scope.showMoreMStatus = function (obj1,action) {
             if(action == 'more'){
@@ -207,6 +205,8 @@
         }
 
 
+
+
         $scope.age = {start: null, end: null};
 
 
@@ -215,7 +215,7 @@
             $http({
                 method: 'POST',
                 url: resourceUrl.url()+'matches?' +
-                '&token=' + storageService.get("token")+'&type=search&age_start='+$scope.age.start+'&age_end='+$scope.age.end
+                '&token=' + storageService.get("token")+'&age_start='+$scope.age.start+'&age_end='+$scope.age.end
             }).then(function successCallback(response) {
                 console.log(response)
                 $scope.matches = response.data.matches;
@@ -307,22 +307,93 @@
             console.log(response);
         });
 
+        $scope.match = {mstatus:null}
 
+        $scope.search = function(){
+            var query = [];
 
+            $scope.motherTongueIdList=[];
+            $("input:checkbox[name=motherTongue]:checked").each(function(){
+                $scope.motherTongueIdList.push($(this).val());
+            });
 
+            $scope.starIdList=[];
+            $("input:checkbox[name=star]:checked").each(function(){
+                $scope.starIdList.push($(this).val());
+            });
 
+            $scope.religionIdList=[];
+            $("input:checkbox[name=religion]:checked").each(function(){
+                $scope.religionIdList.push($(this).val());
+            });
 
-        $scope.imageBackward = imageBackward;
-        $scope.imageForward = imageForward;
+            $scope.educationIdList=[];
+            $("input:checkbox[name=education]:checked").each(function(){
+                $scope.educationIdList.push($(this).val());
+            });
 
-        function imageBackward(obj,o){
-            console.log(obj)
-            return {img:$scope.images[o+1],pos:o+1}
+            $scope.employedIdList=[];
+            $("input:checkbox[name=employed]:checked").each(function(){
+                $scope.employedIdList.push($(this).val());
+            });
+            $scope.occupationIdList=[];
+            $("input:checkbox[name=occupation]:checked").each(function(){
+                $scope.occupationIdList.push($(this).val());
+            });
+
+            if($scope.match.mstatus != null){
+                query.push("marital_status="+$scope.match.mstatus)
+            }
+            if($scope.age.start != null){
+                query.push("age_start="+$scope.age.start)
+            }
+            if($scope.age.end != null){
+                query.push("age_end="+$scope.age.end)
+            }
+            if($scope.height.start != null){
+                query.push("height_start="+$scope.height.start)
+            }
+            if($scope.height.end != null){
+                query.push("height_end="+$scope.height.end)
+            }
+            if($scope.motherTongueIdList.length > 0){
+                var m = $scope.motherTongueIdList;
+                query.push("mothertongue="+ m.join("~"))
+            }
+            if($scope.religionIdList.length > 0){
+                var m = $scope.religionIdList;
+                query.push("religion="+ m.join("~"))
+            }
+            if($scope.starIdList.length > 0){
+                var m = $scope.starIdList;
+                query.push("star="+ m.join("~"))
+            }
+            if($scope.educationIdList.length > 0){
+                var m = $scope.educationIdList;
+                query.push("education="+ m.join("~"))
+            }
+            if($scope.employedIdList.length > 0){
+                var m = $scope.employedIdList;
+                query.push("occu_cat="+ m.join("~"))
+            }
+            if($scope.occupationIdList.length > 0){
+                var m = $scope.occupationIdList;
+                query.push("occupation="+ m.join("~"))
+            }
+            $http({
+                method: 'POST',
+                url: resourceUrl.url()+'matches?' +
+                '&token=' + storageService.get("token")+"&"+query
+            }).then(function successCallback(response) {
+                console.log(response)
+                $scope.matches = response.data.matches;
+            }, function errorCallback(response) {
+                console.log(response);
+            });
+
         }
 
-function imageForward(){
-            console.log("imageForward")
-        }
+
 
 
     }
