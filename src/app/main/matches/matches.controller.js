@@ -6,7 +6,7 @@
         .controller('MatchesController', MatchesController);
 
     /** @ngInject */
-    function MatchesController($scope, storageService,populate,resourceUrl, $http, $location,$state) {
+    function MatchesController($scope, storageService,populate,$timeout,resourceUrl, $http, $location,$state) {
 
 
         $scope.isActive = function (viewLocation) {
@@ -271,12 +271,16 @@
             }).then(function successCallback(response) {
                 console.log(response)
                 $scope.message = "send interest successfully";
+                $timeout(function() { $scope.message = '';}, 2000);
+
 
             }, function errorCallback(response) {
                 console.log(response)
                 if (response.data.code == '400') {
                     $scope.message = "Already send a Interest";
                 }
+                $timeout(function() { $scope.message = '';}, 2000);
+
 
             });
 
