@@ -21,7 +21,6 @@
                 url: resourceUrl.url()+'pin/'+$scope.memberId
             }).then(function successCallback(response) {
                 console.log(response)
-                $state.go('login')
             }, function errorCallback(response) {
 
             });
