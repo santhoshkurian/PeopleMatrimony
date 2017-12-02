@@ -433,7 +433,7 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <span ng-if="populate.occupation_category.length >= ocuCatcount" class="show-more-less pull-left" ng-click="showMoreMStatus('ocuCatcount','more')">More</span>
-                                                    <span ng-if="occupation_category.length != 4" class="show-more-less pull-right" ng-click="showMoreMStatus('ocuCatcount','less')">Less</span>
+                                                    <span ng-if="ocuCatcount != 4" class="show-more-less pull-right" ng-click="showMoreMStatus('ocuCatcount','less')">Less</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -461,7 +461,7 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <span ng-if="populate.occupation.length > ocucount" class="show-more-less pull-left" ng-click="showMoreMStatus('ocucount','more')">More</span>
-                                                    <span ng-if="populate.occupation.length != 4" class="show-more-less pull-right" ng-click="showMoreMStatus('ocucount','less')">Less</span>
+                                                    <span ng-if="ocucount != 4" class="show-more-less pull-right" ng-click="showMoreMStatus('ocucount','less')">Less</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -470,176 +470,6 @@
                             </div>
 
 
-
-
-                            <!--<div class="row">-->
-                                <!--<div class="col-md-12 margin-top-10">-->
-                                    <!--<div class="row">-->
-                                        <!--<div class="col-md-12">-->
-                                            <!--<span class="pull-left refined-search-header">Mother Tongue</span>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                    <!--<div class="row refined-search-area">-->
-                                        <!--<div class="col-md-12 margin-top-10 margin-bottom-10">-->
-                                            <!--<div ng-repeat="obj in languages" class="row">-->
-                                                <!--<div class="col-md-12">-->
-                                            <!--<span ng-if="(!showFirstLanguage && $index == 0) || showFirstLanguage" class="pull-left refined-search-sub-label">-->
-                                                <!--{{obj.name}} (<span class="refined-search-sub-label-count">{{obj.count}}</span>)-->
-                                            <!--</span>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                        <!--<div class="col-md-12 margin-bottom-10">-->
-                                            <!--<div class="row">-->
-                                                <!--<div class="col-md-12">-->
-                                                    <!--<span class="show-more-less pull-left" ng-click="showMoreLanguage()" ng-if="!showFirstLanguage">More</span>-->
-                                                    <!--<span class="show-more-less pull-left" ng-click="showMoreLanguage()" ng-if="showFirstLanguage">Less</span>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<div class="row">-->
-                                <!--<div class="col-md-12 margin-top-10">-->
-                                    <!--<div class="row">-->
-                                        <!--<div class="col-md-12">-->
-                                            <!--<span class="pull-left refined-search-header">Division</span>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                    <!--<div class="row refined-search-area">-->
-                                        <!--<div class="col-md-12 margin-top-10 margin-bottom-10">-->
-                                            <!--<div ng-repeat="obj in divisions" class="row">-->
-                                                <!--<div class="col-md-12">-->
-                                            <!--<span ng-if="(!showDivisions && $index == 0) || showDivisions" class="pull-left refined-search-sub-label">-->
-                                                <!--{{obj.name}} (<span class="refined-search-sub-label-count">{{obj.count}}</span>)-->
-                                            <!--</span>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                        <!--<div class="col-md-12 margin-bottom-10">-->
-                                            <!--<div class="row">-->
-                                                <!--<div class="col-md-12">-->
-                                                    <!--<span class="show-more-less pull-left" ng-click="showMoreDivisions()" ng-if="!showDivisions">More</span>-->
-                                                    <!--<span class="show-more-less pull-left" ng-click="showMoreDivisions()" ng-if="showDivisions">Less</span>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<div class="row">-->
-                                <!--<div class="col-md-12 margin-top-10">-->
-                                    <!--<div class="row">-->
-                                        <!--<div class="col-md-12">-->
-                                            <!--<span class="pull-left refined-search-header">Stars</span>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                    <!--<div class="row refined-search-area">-->
-                                        <!--<div class="col-md-12 margin-top-10 margin-bottom-10">-->
-                                            <!--<div ng-repeat="obj in stars" class="row">-->
-                                                <!--<div class="col-md-12">-->
-                                            <!--<span ng-if="(!showStars && $index == 0) || showStars" class="pull-left refined-search-sub-label">-->
-                                                <!--{{obj.name}} (<span class="refined-search-sub-label-count">{{obj.count}}</span>)-->
-                                            <!--</span>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                        <!--<div class="col-md-12 margin-bottom-10">-->
-                                            <!--<div class="row">-->
-                                                <!--<div class="col-md-12">-->
-                                                    <!--<span class="show-more-less pull-left" ng-click="showMoreStars()" ng-if="!showStars">More</span>-->
-                                                    <!--<span class="show-more-less pull-left" ng-click="showMoreStars()" ng-if="showStars">Less</span>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<div class="row">-->
-                                <!--<div class="col-md-12 margin-top-10">-->
-                                    <!--<div class="row">-->
-                                        <!--<div class="col-md-12">-->
-                                            <!--<span class="pull-left refined-search-header">Education</span>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                    <!--<div class="row refined-search-area">-->
-                                        <!--<div class="col-md-12 margin-top-10 margin-bottom-10">-->
-                                            <!--<div ng-repeat="obj in stars" class="row">-->
-                                                <!--<div class="col-md-12">-->
-                                            <!--<span ng-if="(!showStars && $index == 0) || showStars" class="pull-left refined-search-sub-label">-->
-                                                <!--{{obj.name}} (<span class="refined-search-sub-label-count">{{obj.count}}</span>)-->
-                                            <!--</span>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                        <!--<div class="col-md-12 margin-bottom-10">-->
-                                            <!--<div class="row">-->
-                                                <!--<div class="col-md-12">-->
-                                                    <!--<span class="show-more-less pull-left" ng-click="showMoreStars()" ng-if="!showStars">More</span>-->
-                                                    <!--<span class="show-more-less pull-left" ng-click="showMoreStars()" ng-if="showStars">Less</span>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<div class="row">-->
-                                <!--<div class="col-md-12 margin-top-10">-->
-                                    <!--<div class="row">-->
-                                        <!--<div class="col-md-12">-->
-                                            <!--<span class="pull-left refined-search-header">Employed in</span>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                    <!--<div class="row refined-search-area">-->
-                                        <!--<div class="col-md-12 margin-top-10 margin-bottom-10">-->
-                                            <!--<div ng-repeat="obj in stars" class="row">-->
-                                                <!--<div class="col-md-12">-->
-                                            <!--<span ng-if="(!showStars && $index == 0) || showStars" class="pull-left refined-search-sub-label">-->
-                                                <!--{{obj.name}} (<span class="refined-search-sub-label-count">{{obj.count}}</span>)-->
-                                            <!--</span>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                        <!--<div class="col-md-12 margin-bottom-10">-->
-                                            <!--<div class="row">-->
-                                                <!--<div class="col-md-12">-->
-                                                    <!--<span class="show-more-less pull-left" ng-click="showMoreStars()" ng-if="!showStars">More</span>-->
-                                                    <!--<span class="show-more-less pull-left" ng-click="showMoreStars()" ng-if="showStars">Less</span>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<div class="row">-->
-                                <!--<div class="col-md-12 margin-top-10">-->
-                                    <!--<div class="row">-->
-                                        <!--<div class="col-md-12">-->
-                                            <!--<span class="pull-left refined-search-header">Occupassion</span>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                    <!--<div class="row refined-search-area">-->
-                                        <!--<div class="col-md-12 margin-top-10 margin-bottom-10">-->
-                                            <!--<div ng-repeat="obj in stars" class="row">-->
-                                                <!--<div class="col-md-12">-->
-                                            <!--<span ng-if="(!showStars && $index == 0) || showStars" class="pull-left refined-search-sub-label">-->
-                                                <!--{{obj.name}} (<span class="refined-search-sub-label-count">{{obj.count}}</span>)-->
-                                            <!--</span>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                        <!--<div class="col-md-12 margin-bottom-10">-->
-                                            <!--<div class="row">-->
-                                                <!--<div class="col-md-12">-->
-                                                    <!--<span class="show-more-less pull-left" ng-click="showMoreStars()" ng-if="!showStars">More</span>-->
-                                                    <!--<span class="show-more-less pull-left" ng-click="showMoreStars()" ng-if="showStars">Less</span>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                            <!--</div>-->
                         </div>
 
 
