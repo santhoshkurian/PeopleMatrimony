@@ -162,10 +162,13 @@
                 var m = $scope.occupationIdList;
                 query.push("occupation="+ m.join("~"))
             }
+            if(query.length > 0 ){
+                query = "&"+query.join('&')
+            }
             $http({
                 method: 'POST',
                 url: resourceUrl.url()+'matches?' +
-                '&token=' + storageService.get("token")+"&type=search&"+query
+                '&token=' + storageService.get("token")+"&type=search"+query
             }).then(function successCallback(response) {
                 console.log(response)
                 $scope.matches = response.data.matches;

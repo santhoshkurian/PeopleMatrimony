@@ -125,7 +125,7 @@
                                                 <div class="col-md-12 margin-top-10">
                                                     <button type="button"
                                                             class="pull-left btn btn-sm btn-outline custom-button"><span
-                                                            class="btn-label-text" ng-click="agefilter()">Submit</span></button>
+                                                            class="btn-label-text" ng-click="search()">Submit</span></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -206,7 +206,7 @@
                                         <div class="col-md-4 margin-bottom-10">
                                             <div class="row">
                                                 <div class="col-md-12 margin-top-10">
-                                                    <select class="custom-form-control" ng-model="height.end">
+                                                    <select class="custom-form-control"  ng-model="height.end">
                                                         <option value="140">140</option>
                                                         <option value="141">141</option>
                                                         <option value="142">142</option>
@@ -269,7 +269,7 @@
                                                 <div class="col-md-12 margin-top-10">
                                                     <button type="button"
                                                             class="pull-left btn btn-sm btn-outline custom-button"><span
-                                                            class="btn-label-text" ng-click="heightfilter()">Submit</span></button>
+                                                            class="btn-label-text" ng-click="search()">Submit</span></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -319,8 +319,8 @@
                                         <div class="col-md-12 margin-bottom-10">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <span class="show-more-less pull-left" ng-click="showMoreMStatus('mtcount','more')">More</span>
-                                                    <span class="show-more-less pull-right" ng-click="showMoreMStatus('mtcount','less')">Less</span>
+                                                    <span ng-if="populate.mothertongue.length > mtcount" class="show-more-less pull-left" ng-click="showMoreMStatus('mtcount','more')">More</span>
+                                                    <span ng-if="mtcount != 4" class="show-more-less pull-right" ng-click="showMoreMStatus('mtcount','less')">Less</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -347,8 +347,8 @@
                                         <div class="col-md-12 margin-bottom-10">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <span class="show-more-less pull-left" ng-click="showMoreMStatus('relcount','more')">More</span>
-                                                    <span class="show-more-less pull-right" ng-click="showMoreMStatus('relcount','less')">Less</span>
+                                                    <span ng-if="populate.religon.length > relcount" class="show-more-less pull-left" ng-click="showMoreMStatus('relcount','more')">More</span>
+                                                    <span ng-if="relcount != 4" class="show-more-less pull-right" ng-click="showMoreMStatus('relcount','less')">Less</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -375,8 +375,8 @@
                                         <div class="col-md-12 margin-bottom-10">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <span class="show-more-less pull-left" ng-click="showMoreMStatus('starcount','more')">More</span>
-                                                    <span class="show-more-less pull-right" ng-click="showMoreMStatus('starcount','less')">Less</span>
+                                                    <span ng-if="populate.stars.length > starcount" class="show-more-less pull-left" ng-click="showMoreMStatus('starcount','more')">More</span>
+                                                    <span ng-if="starcount != 4" class="show-more-less pull-right" ng-click="showMoreMStatus('starcount','less')">Less</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -403,8 +403,8 @@
                                         <div class="col-md-12 margin-bottom-10">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <span class="show-more-less pull-left" ng-click="showMoreMStatus('educount','more')">More</span>
-                                                    <span class="show-more-less pull-right" ng-click="showMoreMStatus('educount','less')">Less</span>
+                                                    <span ng-if="populate.education.length > educount" class="show-more-less pull-left" ng-click="showMoreMStatus('educount','more')">More</span>
+                                                    <span ng-if="educount != 4" class="show-more-less pull-right" ng-click="showMoreMStatus('educount','less')">Less</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -432,8 +432,8 @@
                                         <div class="col-md-12 margin-bottom-10">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <span class="show-more-less pull-left" ng-click="showMoreMStatus('ocuCatcount','more')">More</span>
-                                                    <span class="show-more-less pull-right" ng-click="showMoreMStatus('ocuCatcount','less')">Less</span>
+                                                    <span ng-if="populate.occupation_category.length >= ocuCatcount" class="show-more-less pull-left" ng-click="showMoreMStatus('ocuCatcount','more')">More</span>
+                                                    <span ng-if="occupation_category.length != 4" class="show-more-less pull-right" ng-click="showMoreMStatus('ocuCatcount','less')">Less</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -460,8 +460,8 @@
                                         <div class="col-md-12 margin-bottom-10">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <span class="show-more-less pull-left" ng-click="showMoreMStatus('ocucount','more')">More</span>
-                                                    <span class="show-more-less pull-right" ng-click="showMoreMStatus('ocucount','less')">Less</span>
+                                                    <span ng-if="populate.occupation.length > ocucount" class="show-more-less pull-left" ng-click="showMoreMStatus('ocucount','more')">More</span>
+                                                    <span ng-if="ocucount != 4" class="show-more-less pull-right" ng-click="showMoreMStatus('ocucount','less')">Less</span>
                                                 </div>
                                             </div>
                                         </div>
