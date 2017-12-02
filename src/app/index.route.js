@@ -231,6 +231,44 @@
                     }
 
                 }
+            })
+            .state('step2', {
+                url: '/step2',
+                views: {
+                    'main@': {
+                        templateUrl: 'app/core/layouts/loginLayout.html'
+                        //controller : 'MainController as vm'
+                    },
+                    'toolbar@step2': {
+                        templateUrl: 'app/toolbar/login/registrationStep2Toolbar.html'
+                    },
+                    'content@step2': {
+                        templateUrl: 'app/main/registration2/registrationStep2.html',
+                        controller: 'RegistrationStep2Controller as vm'
+                    },
+                    'footer@step2': {
+                        templateUrl: 'app/footer/footer.html',
+                        controller: 'FooterController as vm'
+                    }
+                },
+                resolve: {
+                    populate: function ($http,resourceUrl) {
+                        return $http({
+                            method: 'GET',
+                            url: resourceUrl.url()+'populate'
+                        }).then(function successCallback(response) {
+                            console.log(response)
+                            return response.data;
+
+                        }, function errorCallback(response) {
+                            //console.log(response)
+                            return response;
+
+
+                        });
+                    }
+
+                }
             }).state('profile', {
                 url: '/profile',
                 views: {

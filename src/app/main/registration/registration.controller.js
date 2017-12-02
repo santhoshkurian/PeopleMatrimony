@@ -146,7 +146,7 @@
                 //storageService.set("token", response.data.access_token)
                 //storageService.set("id", response.data.id_people)
 
-                $state.go('login')
+                $state.go('step2')
 
 
             }, function errorCallback(response) {
