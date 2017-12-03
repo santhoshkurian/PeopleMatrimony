@@ -9,12 +9,12 @@
     function SearchResultsController($timeout,$state,populate,$scope,$http,$stateParams,resourceUrl,storageService) {
         var vm = this;
         console.log("SearchResultsController");
-        console.log($stateParams.search);
+        console.log($stateParams.name);
         $scope.showResult = false;
-        if($stateParams.search == null){
+        if($stateParams.name == null){
             $state.go('search')
         }else {
-            $scope.regular = $stateParams.search;
+            $scope.regular = $stateParams.name;
             var query = [];
             if($scope.regular.age_start != null){
                 query.push("age_start="+$scope.regular.age_start)

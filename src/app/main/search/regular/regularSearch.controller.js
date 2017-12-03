@@ -83,7 +83,7 @@
                     $scope.regular.country.push(a.id_country);
                 })
             }
-            $state.go("searchresult",{ search : $scope.regular})
+            $state.go("searchresult",{ name : $scope.regular})
         }
 
     }
