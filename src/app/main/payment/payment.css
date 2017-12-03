@@ -48,7 +48,7 @@
 @media (max-width: 991px) {
     .payment-box{
         border: 1px solid #777777;
-        height: 301px
+        height: 301px;
         /*margin-right: 25px;*/
         margin-top: 25px;
         margin-bottom: 50px;
