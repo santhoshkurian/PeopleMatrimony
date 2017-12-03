@@ -9,11 +9,10 @@
     function SearchResultsController($timeout,$state,populate,$scope,$http,$stateParams,resourceUrl,storageService) {
         var vm = this;
         console.log("SearchResultsController");
-        console.log($stateParams.name);
+        console.log($state.params.name);
         $scope.showResult = false;
-        if($stateParams.name == null){
-            $state.go('search')
-        }else {
+        if($state.params.name != null){
+
             $scope.regular = $stateParams.name;
             var query = [];
             if($scope.regular.age_start != null){
@@ -30,6 +29,10 @@
             }
 
             if($scope.regular.mothertongue.length > 0){
+                $.each($scope.regular.mothertongue, function (index, value) {
+                    $('input[name="motherTongue"][value="' + value.toString() + '"]').prop("checked", true);
+                });
+
                 var m = $scope.regular.mothertongue;
                 query.push("mothertongue="+ m.join("~"));
             }
@@ -81,6 +84,9 @@
             }, function errorCallback(response) {
                 console.log(response);
             });
+        }else {
+            $state.go('search')
+
         }
 
 
