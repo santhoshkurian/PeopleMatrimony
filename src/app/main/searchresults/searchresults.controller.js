@@ -10,6 +10,7 @@
         var vm = this;
         console.log("SearchResultsController");
         console.log($stateParams.search);
+        $scope.showResult = false;
         if($stateParams.search == null){
             $state.go('search')
         }else {
@@ -64,6 +65,12 @@
             }).then(function successCallback(response) {
                 console.log(response)
                 $scope.matches = response.data.matches;
+                if($scope.matches.length == 0){
+                    $scope.showResult = true;
+                }else{
+                    $scope.showResult = false;
+
+                }
             }, function errorCallback(response) {
                 console.log(response);
             });
@@ -141,6 +148,8 @@
         $scope.match = {mstatus:null}
 
         $scope.search = function(){
+            $scope.showResult = false;
+
             var query = [];
 
             $scope.motherTongueIdList=[];
@@ -221,6 +230,11 @@
             }).then(function successCallback(response) {
                 console.log(response)
                 $scope.matches = response.data.matches;
+                if($scope.matches.length == 0){
+                    $scope.showResult = true
+                }else{
+                    $scope.showResult = false;
+                }
             }, function errorCallback(response) {
                 console.log(response);
             });
