@@ -9,9 +9,9 @@
     function SearchResultsController($timeout,$state,populate,$scope,$http,$stateParams,resourceUrl,storageService) {
         var vm = this;
         console.log("SearchResultsController");
-        console.log($state.params.name);
+        console.log($stateParams.name);
         $scope.showResult = false;
-        if($state.params.name != null){
+        if($stateParams.name != null){
 
             $scope.regular = $stateParams.name;
             var query = [];
@@ -29,10 +29,6 @@
             }
 
             if($scope.regular.mothertongue.length > 0){
-                $.each($scope.regular.mothertongue, function (index, value) {
-                    $('input[name="motherTongue"][value="' + value.toString() + '"]').prop("checked", true);
-                });
-
                 var m = $scope.regular.mothertongue;
                 query.push("mothertongue="+ m.join("~"));
             }
