@@ -21,17 +21,21 @@
         $scope.countryList = populate.countries;
 
 
-        $scope.multiValue = {religion:null,mothertongue:null,education:null,education_category:null}
+        $scope.multiValue = {religion:[],mothertongue:[],education:[],education_category:[]}
 
         $scope.regular = {
             age_start:null,
             age_end:null,
             height_start:null,
             height_end:null,
-            mothertongue:null,
-            religion:null,
-            caste:null,
-            occupation:null,
+            mothertongue:[],
+            religion:[],
+            caste:[],
+            star:[],
+            occupation:[],
+            education:[],
+            education_category:[],
+            occu_category:[],
             country:null,
             state:null,
             city:null,
@@ -46,7 +50,27 @@
 
         $scope.search = search;
         function search(){
-            $state.go("searchresult",{ name : $scope.regular})
+            if($scope.multiValue.mothertongue.length  > 0){
+                $scope.multiValue.mothertongue.filter(function (a) {
+                    $scope.regular.mothertongue.push(a.id_mothertongue);
+                })
+            }
+            if($scope.multiValue.religion.length  > 0){
+                $scope.multiValue.religion.filter(function (a) {
+                    $scope.regular.religion.push(a.id_religion);
+                })
+            }
+            if($scope.multiValue.education.length  > 0){
+                $scope.multiValue.education.filter(function (a) {
+                    $scope.regular.education.push(a.id_education);
+                })
+            }
+            if($scope.multiValue.education_category.length  > 0){
+                $scope.multiValue.education_category.filter(function (a) {
+                    $scope.regular.education_category.push(a.id_education_category);
+                })
+            }
+            $state.go("searchresult",{ search : $scope.regular})
         }
 
     }

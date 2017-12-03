@@ -501,7 +501,7 @@
                     }
                 },
                 params: {
-                    name: null
+                    search: null
                 },resolve:{
                     populate: function ($http,resourceUrl) {
                         return $http({
