@@ -63,6 +63,7 @@
                             No results found
                         </div>
                     </div>
+                    <div style="color: red;text-align: center">{{message}}</div>
 
 
 
@@ -163,21 +164,21 @@
                             </div>
                             <div class=" row vp-main-action" ng-if="mainlink !='shortlisted'">
                                 <div style="text-transform: uppercase;text-align: center;">
-                                    <div class="col-md-3"
-                                         style="padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro;cursor: pointer" ng-click="shortlist(item.id_people)"><i
-                                            class="fa fa-star-o"></i> Shortlist
+                                    <div class="col-md-3 col-sm-3 col-xs-3"
+                                         style="height:60px;font-size:14px;padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro;cursor: pointer" ng-click="shortlist(item.id_people)"><i
+                                            class="fa fa-star-o"></i><span class="hidden-sm hidden-xs"> Shortlist</span>
                                     </div>
-                                    <div class="col-md-3"
-                                         style="padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro;text-align: center">
-                                        <i class="fa fa-phone"></i> Call now
+                                    <div class="col-md-3 col-sm-3 col-xs-3"
+                                         style="height:60px;font-size:14px;padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro;cursor: pointer">
+                                        <i class="fa fa-phone"></i> <span class="hidden-sm hidden-xs"> Call now</span>
                                     </div>
-                                    <div class="col-md-3"
-                                         style="padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro"><i
-                                            class="fa fa-commenting-o"></i> Chat now
+                                    <div class="col-md-3 col-sm-3 col-xs-3"
+                                         style="height:60px;font-size:14px;padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro;cursor: pointer"><i
+                                            class="fa fa-commenting-o"></i> <span class="hidden-sm hidden-xs">  Chat now</span>
                                     </div>
-                                    <div class="col-md-3" ng-click="sendInterest(item.id_people)"
-                                         style="padding: 20px;border: 1px solid #eef1f5;background-color: #e7505a"><i
-                                            class="fa fa-heart" style="color: white!important;font-size: 18px"></i> Send Interest
+                                    <div class="col-md-3 col-sm-3 col-xs-3" ng-click="sendInterest(item.id_people)"
+                                         style="height:60px;font-size:14px;padding: 20px;border: 1px solid #eef1f5;background-color: #e7505a;cursor: pointer"><i
+                                            class="fa fa-heart" style="color: white!important;font-size: 18px"></i><span class="hidden-sm hidden-xs"> Send Interest</span>
                                     </div>
 
                                 </div>

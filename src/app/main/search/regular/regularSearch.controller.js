@@ -21,7 +21,7 @@
         $scope.countryList = populate.countries;
 
 
-        $scope.multiValue = {religion:[],mothertongue:[],education:[],education_category:[],occupation:[]}
+        $scope.multiValue = {religion:[],mothertongue:[],education:[],education_category:[],occupation:[],country:[]}
 
         $scope.regular = {
             age_start:null,
