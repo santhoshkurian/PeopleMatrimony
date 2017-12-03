@@ -287,7 +287,7 @@
 
         }
 
-        $scope.images=[{ "image": "/assets/images/profile2.jpg",
+        $scope.images=[{ "image": "/assets/images/loginimage.jpg",
             "status": "pending",
             "is_primary": 0,
             "is_validated": 0,
