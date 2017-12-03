@@ -54,6 +54,13 @@
                 var m = $scope.regular.occupation;
                 query.push("occupation="+ m.join("~"))
             }
+            if($scope.regular.country.length > 0){
+                var m = $scope.regular.country;
+                query.push("country="+ m.join("~"))
+            }
+            if($scope.regular.maritalStatus != null){
+                query.push("marital_status="+$scope.regular.maritalStatus)
+            }
             if(query.length > 0 ){
                 query = "&"+query.join('&')
             }
