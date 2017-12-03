@@ -1,13 +1,14 @@
-<div style="width: 100%;margin-bottom: 10px;margin-top: 10px;line-height: 150px">
-                                        <span class="pull-left ">
-                                            <a ng-if="size > 1" ng-click="imageBackward()" class="btn-circle  default">
-                                                <i class="icon-control-rewind"></i>
-                                            </a></span>
+<div style="width: 100%;margin-bottom: 10px;margin-top: 10px;line-height: 150px;">
+
                                         <span><img ng-src="{{display}}" width="150" height="auto"
                                                    /></span>
-                                        <span class="pull-right">
-                                            <a ng-if="size > 1" ng-click="imageForward()" class="btn-circle  default">
-                                                <i class="icon-control-forward"></i>
+
+</div>
+<div style="width: 100%;">
+                                            <a style="margin-left: 40px" ng-if="size > 1" ng-click="imageBackward()" class="btn-circle  default pull-left">
+                                                <i class="icon-arrow-left"></i>
                                             </a>
-                                        </span>
+                                            <a  style="margin-right: 40px"ng-if="size > 1" ng-click="imageForward()" class="btn-circle  default pull-right">
+                                                <i class="icon-arrow-right"></i>
+                                            </a>
 </div>
