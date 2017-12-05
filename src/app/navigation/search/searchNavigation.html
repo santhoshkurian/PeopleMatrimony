@@ -6,13 +6,14 @@
         </div>
 
         <div class="row border-rounded-bottom" style="background-color:white;padding: 9px 14px 9px 9px;">
-            <div class="col-md-12 " style="border-bottom: 1px solid #ddd;padding-bottom: 10px;padding-top: 10px">
+            <span >
+            <div class="col-md-12 " style="border-bottom: 1px solid #ddd;padding-bottom: 10px;padding-top: 10px" ng-repeat = "item in searchList.search">
                 <div class="row">
                     <div class="col-md-8">
-                        <span class="bold">Search1</span>
+                        <span class="bold">{{item.search_name}}</span>
                         <br/>
                         <br/>
-                        <span><a style="color: red">Edit</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+                        <span><a style="color: red" >Edit</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
                                 style="color: red">Delete</a></span>
                     </div>
                     <div class="col-md4" style="line-height: 50px;text-align: center">
@@ -22,22 +23,9 @@
 
                 </div>
             </div>
-            <div class="col-md-12 " style="border-bottom: 1px solid #ddd;padding-bottom: 10px;padding-top: 10px">
-                <div class="row">
-                    <div class="col-md-8">
-                        <span class="bold">Search1</span>
-                        <br/>
-                        <br/>
-                        <span><a style="color: red">Edit</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
-                                style="color: red">Delete</a></span>
-                    </div>
-                    <div class="col-md4" style="line-height: 50px;text-align: center">
-                        <button class="btn btn-sm red">Search</button>
-                    </div>
 
+                </span>
 
-                </div>
-            </div>
 
 
 

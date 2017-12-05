@@ -339,7 +339,7 @@
                     },
                     'navigation@search': {
                         templateUrl: 'app/navigation/search/searchNavigation.html',
-                        controller: 'NavigationController as vm'
+                        controller: 'RegularSearchController as vm'
                     },
                     'content@search': {
                         templateUrl: 'app/main/search/regular/regular.html',
@@ -355,6 +355,21 @@
                         return $http({
                             method: 'GET',
                             url: resourceUrl.url()+'populate'
+                        }).then(function successCallback(response) {
+                            console.log(response)
+                            return response.data;
+
+                        }, function errorCallback(response) {
+                            //console.log(response)
+                            return response;
+
+
+                        });
+                    },
+                    searchList: function ($http,resourceUrl,storageService) {
+                        return $http({
+                            method: 'GET',
+                            url: resourceUrl.url()+'saved_search?p_debug=1&id='+storageService.get('id')
                         }).then(function successCallback(response) {
                             console.log(response)
                             return response.data;
@@ -477,6 +492,7 @@
 
                         });
                     }
+
                 }
             })
             .state('searchresult', {

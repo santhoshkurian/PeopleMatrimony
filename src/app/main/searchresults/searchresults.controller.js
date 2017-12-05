@@ -29,32 +29,32 @@
             }
 
             if($scope.regular.mothertongue.length > 0){
-                var m = $scope.regular.mothertongue;
+                var m = $scope.regular.mothertongueList;
                 query.push("mothertongue="+ m.join("~"));
             }
 
             if($scope.regular.religion.length > 0){
-                var m = $scope.regular.religion;
+                var m = $scope.regular.religionList;
                 query.push("religion="+ m.join("~"))
             }
             if($scope.regular.star.length > 0){
-                var m = $scope.$scope.regular.star;
+                var m = $scope.$scope.regular.starList;
                 query.push("star="+ m.join("~"))
             }
             if($scope.regular.education.length > 0){
-                var m = $scope.regular.education;
+                var m = $scope.regular.educationList;
                 query.push("education="+ m.join("~"))
             }
-            if($scope.regular.occu_category.length > 0){
-                var m = $scope.regular.occu_category;
+            if($scope.regular.occu_categoryList.length > 0){
+                var m = $scope.regular.occu_categoryList;
                 query.push("occu_cat="+ m.join("~"))
             }
-            if($scope.regular.occupation.length > 0){
-                var m = $scope.regular.occupation;
+            if($scope.regular.occupationList.length > 0){
+                var m = $scope.regular.occupationList;
                 query.push("occupation="+ m.join("~"))
             }
-            if($scope.regular.country.length > 0){
-                var m = $scope.regular.country;
+            if($scope.regular.countryList.length > 0){
+                var m = $scope.regular.countryList;
                 query.push("country="+ m.join("~"))
             }
             if($scope.regular.maritalStatus != null){
