@@ -109,8 +109,51 @@
 
             });
 
-            //$state.go("searchresult",{ name : $scope.regular})
+            storageService.set('regular_search',JSON.stringify($scope.regular));
+            $state.go("searchresult")
+
+
         }
+
+
+        $scope.searchexist = searchexist;
+
+        function searchexist(obj){
+            console.log(obj.param);
+            $scope.a = obj.param;
+
+            $scope.regular1 = {
+                id:storageService.get('id'),
+                name:'regular',
+                type:'search',
+                age_start:$scope.a.age_start,
+                age_end:$scope.a.age_end,
+                height_start:$scope.a.height_start,
+                height_end:$scope.a.height_end,
+                mothertongueList:$scope.a.mothertongueList,
+                religionList:$scope.a.religionList,
+                casteList:$scope.a.casteList,
+                starList:$scope.a.starList,
+                occupationList:$scope.a.occupationList,
+                educationList:$scope.a.educationList,
+                education_categoryList:$scope.a.education_categoryList,
+                occu_categoryList:$scope.a.occu_categoryList,
+                countryList:$scope.a.countryList,
+                state:$scope.a.state,
+                city:$scope.a.city,
+                marital_status:$scope.a.marital_status,
+                gender:$scope.a.gender,
+                showProfile:$scope.a.showProfile,
+                dontShowProfile:$scope.a.dontShowProfile,
+                maritalStatus:$scope.a.maritalStatus,
+            };
+            storageService.set('regular_search',JSON.stringify($scope.regular1));
+
+            $state.go("searchresult")
+
+
+        }
+
 
     }
 })();

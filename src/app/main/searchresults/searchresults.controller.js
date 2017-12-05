@@ -9,11 +9,11 @@
     function SearchResultsController($timeout,$state,populate,$scope,$http,$stateParams,resourceUrl,storageService) {
         var vm = this;
         console.log("SearchResultsController");
-        console.log($stateParams.name);
+        console.log(storageService.get('regular_search'));
         $scope.showResult = false;
-        if($stateParams.name != null){
+        if(storageService.get('regular_search') != null){
 
-            $scope.regular = $stateParams.name;
+            $scope.regular = JSON.parse(storageService.get('regular_search'));
             var query = [];
             if($scope.regular.age_start != null){
                 query.push("age_start="+$scope.regular.age_start)
@@ -28,33 +28,33 @@
                 query.push("height_end="+$scope.regular.height_end)
             }
 
-            if($scope.regular.mothertongue.length > 0){
-                var m = $scope.regular.mothertongueList;
+            if($scope.regular.mothertongueList.length > 0){
+                var m = $scope.regular.mothertongue;
                 query.push("mothertongue="+ m.join("~"));
             }
 
-            if($scope.regular.religion.length > 0){
-                var m = $scope.regular.religionList;
+            if($scope.regular.religionList.length > 0){
+                var m = $scope.regular.religion;
                 query.push("religion="+ m.join("~"))
             }
-            if($scope.regular.star.length > 0){
-                var m = $scope.$scope.regular.starList;
+            if($scope.regular.starList.length > 0){
+                var m = $scope.$scope.regular.star;
                 query.push("star="+ m.join("~"))
             }
-            if($scope.regular.education.length > 0){
-                var m = $scope.regular.educationList;
+            if($scope.regular.educationList.length > 0){
+                var m = $scope.regular.education;
                 query.push("education="+ m.join("~"))
             }
             if($scope.regular.occu_categoryList.length > 0){
-                var m = $scope.regular.occu_categoryList;
+                var m = $scope.regular.occu_category;
                 query.push("occu_cat="+ m.join("~"))
             }
             if($scope.regular.occupationList.length > 0){
-                var m = $scope.regular.occupationList;
+                var m = $scope.regular.occupation;
                 query.push("occupation="+ m.join("~"))
             }
             if($scope.regular.countryList.length > 0){
-                var m = $scope.regular.countryList;
+                var m = $scope.regular.country;
                 query.push("country="+ m.join("~"))
             }
             if($scope.regular.maritalStatus != null){
@@ -104,37 +104,10 @@
 
         $scope.age = {start: null, end: null};
 
-        //$scope.agefilter = agefilter;
-        //function agefilter() {
-        //    $http({
-        //        method: 'POST',
-        //        url: resourceUrl.url()+'matches?' +
-        //        '&token=' + storageService.get("token")+'&type=search&age_start='+$scope.age.start+'&age_end='+$scope.age.end
-        //    }).then(function successCallback(response) {
-        //        console.log(response)
-        //        $scope.matches = response.data.matches;
-        //    }, function errorCallback(response) {
-        //        console.log(response);
-        //    });
-        //}
-
 
         $scope.height = {start: null, end: null};
 
 
-        //$scope.heightfilter = heightfilter;
-        //function heightfilter() {
-        //    $http({
-        //        method: 'POST',
-        //        url: resourceUrl.url()+'matches?' +
-        //        '&token=' + storageService.get("token")+'&type=search&height_start='+$scope.height.start+'&height_end='+$scope.height.end
-        //    }).then(function successCallback(response) {
-        //        console.log(response)
-        //        $scope.matches = response.data.matches;
-        //    }, function errorCallback(response) {
-        //        console.log(response);
-        //    });
-        //}
 
         $scope.martialStatus = [{name: "Married"}, {name: "Never Married"}, {
             name: "Widow"
@@ -252,28 +225,28 @@
             if($scope.height.end != null){
                 query.push("height_end="+$scope.height.end)
             }
-            if($scope.motherTongueIdList.length > 0){
-                var m = $scope.motherTongueIdList;
+            if($scope.motherTongueList.length > 0){
+                var m = $scope.motherTongueList;
                 query.push("mothertongue="+ m.join("~"))
             }
-            if($scope.religionIdList.length > 0){
-                var m = $scope.religionIdList;
+            if($scope.religionList.length > 0){
+                var m = $scope.religionList;
                 query.push("religion="+ m.join("~"))
             }
-            if($scope.starIdList.length > 0){
-                var m = $scope.starIdList;
+            if($scope.starList.length > 0){
+                var m = $scope.starList;
                 query.push("star="+ m.join("~"))
             }
-            if($scope.educationIdList.length > 0){
-                var m = $scope.educationIdList;
+            if($scope.educationList.length > 0){
+                var m = $scope.educationList;
                 query.push("education="+ m.join("~"))
             }
-            if($scope.employedIdList.length > 0){
-                var m = $scope.employedIdList;
-                query.push("occu_cat="+ m.join("~"))
-            }
-            if($scope.occupationIdList.length > 0){
-                var m = $scope.occupationIdList;
+            //if($scope.employedIdList.length > 0){
+            //    var m = $scope.employedIdList;
+            //    query.push("occu_cat="+ m.join("~"))
+            //}
+            if($scope.occupationList.length > 0){
+                var m = $scope.occupationList;
                 query.push("occupation="+ m.join("~"))
             }
             if(query.length > 0 ){
