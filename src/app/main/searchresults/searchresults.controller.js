@@ -29,32 +29,32 @@
             }
 
             if($scope.regular.mothertongueList.length > 0){
-                var m = $scope.regular.mothertongue;
+                var m = $scope.regular.mothertongueList;
                 query.push("mothertongue="+ m.join("~"));
             }
 
             if($scope.regular.religionList.length > 0){
-                var m = $scope.regular.religion;
+                var m = $scope.regular.religionList;
                 query.push("religion="+ m.join("~"))
             }
             if($scope.regular.starList.length > 0){
-                var m = $scope.$scope.regular.star;
+                var m = $scope.$scope.regular.starList;
                 query.push("star="+ m.join("~"))
             }
             if($scope.regular.educationList.length > 0){
-                var m = $scope.regular.education;
+                var m = $scope.regular.educationList;
                 query.push("education="+ m.join("~"))
             }
             if($scope.regular.occu_categoryList.length > 0){
-                var m = $scope.regular.occu_category;
+                var m = $scope.regular.occu_categoryList;
                 query.push("occu_cat="+ m.join("~"))
             }
             if($scope.regular.occupationList.length > 0){
-                var m = $scope.regular.occupation;
+                var m = $scope.regular.occupationList;
                 query.push("occupation="+ m.join("~"))
             }
             if($scope.regular.countryList.length > 0){
-                var m = $scope.regular.country;
+                var m = $scope.regular.countryList;
                 query.push("country="+ m.join("~"))
             }
             if($scope.regular.maritalStatus != null){

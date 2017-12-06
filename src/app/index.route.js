@@ -330,20 +330,18 @@
                 url: '/search',
                 views: {
                     'main@': {
-                        templateUrl: 'app/core/layouts/searchLayout.html'
-                        //controller : 'InboxController as vm'
+                        templateUrl: 'app/core/layouts/searchLayout.html',
+                        controller: 'RegularSearchController as vm'
                     },
                     'toolbar@search': {
                         templateUrl: 'app/toolbar/search/searchtoolbar.html',
                         controller: 'SearchToolbarController as vm'
                     },
                     'navigation@search': {
-                        templateUrl: 'app/navigation/search/searchNavigation.html',
-                        controller: 'RegularSearchController as vm'
+                        templateUrl: 'app/navigation/search/searchNavigation.html'
                     },
                     'content@search': {
-                        templateUrl: 'app/main/search/regular/regular.html',
-                        controller: 'RegularSearchController as vm'
+                        templateUrl: 'app/main/search/regular/regular.html'
                     },
                     'footer@search': {
                         templateUrl: 'app/footer/footer.html',

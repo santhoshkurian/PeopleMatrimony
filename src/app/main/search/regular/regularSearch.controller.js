@@ -14,6 +14,7 @@
         console.log(searchList);
         $scope.searchList = searchList;
 
+
         $scope.motherTongueList = populate.mothertongue;
         $scope.religonList = populate.religon;
         $scope.starsList = populate.stars;
@@ -22,6 +23,7 @@
         $scope.educationList = populate.education;
         $scope.occupation = populate.occupation;
         $scope.countryList = populate.countries;
+        $scope.regular = {maritalStatus:"any"}
 
 
         $scope.multiValue = {religion:[],mothertongue:[],education:[],education_category:[],occupation:[],country:[]}
@@ -51,6 +53,104 @@
             dontShowProfile:{ignoredProfile:false,profileAlreadyContacted:false,viewed:false,shortlisted:false},
             maritalStatus:null,
         };
+
+
+        $scope.editSearch = function(obj){
+            $scope.a = obj.param;
+
+            $scope.regular = {
+                id:storageService.get('id'),
+                name:'regular',
+                type:'search',
+                age_start:$scope.a.age_start,
+                age_end:$scope.a.age_end,
+                height_start:$scope.a.height_start,
+                height_end:$scope.a.height_end,
+                mothertongueList:$scope.a.mothertongueList,
+                religionList:$scope.a.religionList,
+                casteList:$scope.a.casteList,
+                starList:$scope.a.starList,
+                occupationList:$scope.a.occupationList,
+                educationList:$scope.a.educationList,
+                education_categoryList:$scope.a.education_categoryList,
+                occu_categoryList:$scope.a.occu_categoryList,
+                countryList:$scope.a.countryList,
+                state:$scope.a.state,
+                city:$scope.a.city,
+                marital_status:$scope.a.marital_status,
+                gender:$scope.a.gender,
+                showProfile:$scope.a.showProfile,
+                dontShowProfile:$scope.a.dontShowProfile,
+                maritalStatus:$scope.a.maritalStatus,
+            };
+
+            if($scope.regular.religionList.length > 0){
+                var array = $scope.regular.religionList;
+                for (var i = 0; i < array.length; i++) {
+                    $scope.religonList.filter(function (a) {
+                        if (a.id_religion === array[i]) {
+                            $scope.multiValue.religion.push(a);
+                        }
+                    })
+                }
+            }
+            if($scope.regular.mothertongueList.length > 0){
+                var array = $scope.regular.mothertongueList;
+                for (var i = 0; i < array.length; i++) {
+                    $scope.motherTongueList.filter(function (a) {
+                        if (a.id_mothertongue === array[i]) {
+                            $scope.multiValue.mothertongue.push(a);
+                        }
+                    })
+                }
+            }
+
+            if($scope.regular.countryList.length > 0){
+                var array = $scope.regular.countryList;
+                for (var i = 0; i < array.length; i++) {
+                    $scope.countryList.filter(function (a) {
+                        if (a.id_occupation === array[i]) {
+                            $scope.multiValue.country.push(a);
+                        }
+                    })
+                }
+            }
+
+            if($scope.regular.occupationList.length > 0){
+                var array = $scope.regular.occupationList;
+                for (var i = 0; i < array.length; i++) {
+                    $scope.countryList.filter(function (a) {
+                        if (a.id_occupation === array[i]) {
+                            $scope.multiValue.occupation.push(a);
+                        }
+                    })
+                }
+            }
+
+            if($scope.regular.educationList.length > 0){
+                var array = $scope.regular.educationList;
+                for (var i = 0; i < array.length; i++) {
+                    $scope.educationList.filter(function (a) {
+                        if (a.id_education_category === array[i]) {
+                            $scope.multiValue.education_category.push(a);
+                        }
+                    })
+                }
+            }
+
+            if($scope.regular.education_categoryList.length > 0){
+                var array = $scope.regular.education_categoryList;
+                for (var i = 0; i < array.length; i++) {
+                    $scope.educationCategoryList.filter(function (a) {
+                        if (a.id_education === array[i]) {
+                            $scope.multiValue.education.push(a);
+                        }
+                    })
+                }
+            }
+
+
+        }
 
 
 
@@ -96,6 +196,8 @@
                 $scope.regular.country = $scope.regular.countryList.join('~');
             }
 
+
+            console.log($scope.regular);
 
             $http({
                 method: 'POST',
@@ -153,6 +255,9 @@
 
 
         }
+
+
+
 
 
     }
