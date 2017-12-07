@@ -39,6 +39,7 @@
         $scope.group = group;
         $scope.backtomain = backtomain;
         $scope.changeProfilePic = changeProfilePic;
+        $scope.removeProfilePic = removeProfilePic;
 
 
 
@@ -51,6 +52,32 @@
                 console.log("update",response)
                 $scope.image_url = storageService.set("image_url",image.image);
 
+
+            }, function errorCallback(response) {
+                console.log(response)
+
+            });
+        }
+
+        function removeProfilePic(image){
+           console.log(image);
+            $http({
+                method: 'post',
+                url: resourceUrl.url()+'image/delete?token=' + storageService.get("token")+'&id='+storageService.get("token")+'&number='+image.number
+            }).then(function successCallback(response) {
+
+                $http({
+                    method: 'GET',
+                    url: resourceUrl.url()+'user/image/'+storageService.get("id")+'?token=' + storageService.get("token")
+                }).then(function successCallback(response) {
+                    console.log("check",response)
+                    $scope.images = response.data.user.images;
+
+
+                }, function errorCallback(response) {
+                    console.log(response)
+
+                });
 
             }, function errorCallback(response) {
                 console.log(response)
