@@ -49,8 +49,9 @@
                 method: 'post',
                 url: resourceUrl.url()+'image/primary?token=' + storageService.get("token")+'&id='+storageService.get("token")+'&number='+image.number
             }).then(function successCallback(response) {
-                console.log("update",response)
-                $scope.image_url = storageService.set("image_url",image.image);
+                console.log("update",response);
+                storageService.set("image_url",image.image);
+                $scope.image_url = storageService.get("image_url");
 
 
             }, function errorCallback(response) {
