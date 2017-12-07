@@ -87,6 +87,11 @@
         $scope.mutalmatches = more;
         $scope.myInterval = 3000;
 
+        $scope.viewProfile = viewProfile;
+        function viewProfile(id){
+            $state.go('viewProfile',{view_id:id});
+        }
+
 
 
 

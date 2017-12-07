@@ -10,6 +10,11 @@
         var vm = this;
         console.log("SearchResultsController");
         console.log(storageService.get('regular_search'));
+
+        $scope.viewProfile = viewProfile;
+        function viewProfile(id){
+            $state.go('viewProfile',{view_id:id});
+        }
         $scope.showResult = false;
         if(storageService.get('regular_search') != null){
 
