@@ -6,7 +6,7 @@
         .controller('DashboardController', DashboardController);
 
     /** @ngInject */
-    function DashboardController($scope,$timeout,populate,$location,$http,storageService,newMatches,discoverMatches,viewed,recentUpdated,resourceUrl,$state,profileCompleteness) {
+    function DashboardController($scope,$timeout,$stateParams,populate,$location,$http,storageService,newMatches,discoverMatches,viewed,recentUpdated,resourceUrl,$state,profileCompleteness) {
 
         console.log(profileCompleteness);
         console.log(newMatches);
@@ -28,6 +28,9 @@
         $scope.viewed = viewed;
         $scope.discover = discoverMatches;
         $scope.sendInterest = sendInterest;
+        $scope.addDetails = addDetails;
+
+
 
         $scope.profileComp = {income:'',id_occupation:'',ancestral_origin:'',education_detail:'',father_status:'',mother_status:'',parent_mobile:'',smoking_habit:'',drinking_habit:''};
         $scope.setProfession= {occupation_cat:null};
@@ -36,6 +39,32 @@
         function viewProfile(id){
             $state.go('viewProfile',{view_id:id});
         }
+
+        function addDetails(obj){
+
+            if(obj == 'id_occupation') {
+                if($scope.setProfession.occupation_cat != null) {
+                    $scope.profileComp.id_occupation = $scope.setProfession.occupation_cat.id_occupation_category;
+                }
+            }
+            console.log($scope.profileComp);
+
+            $http({
+                method: 'POST',
+                url: resourceUrl.url()+'completeprofile/save?p_debug=1&id=' +storageService.get('id')+
+                '&table=p_users' +
+                '&field=' + obj + '&value='+$scope.profileComp[obj]+'&token=' + storageService.get("token")
+            }).then(function successCallback(response) {
+                $state.transitionTo($state.current, $stateParams, {
+                    reload: true,
+                    inherit: false,
+                    notify: true
+                });
+            }, function errorCallback(response) {
+            });
+
+
+        };
 
 
         function sendInterest(id) {

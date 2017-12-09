@@ -133,7 +133,7 @@
 
                                     <div class="col-md-12 margin-top-20" ng-if="!(messages[messageIndex].message == 'Add a photo now & get more responses.') ">
                                         <div class="text-center">
-                                            <button class="btn red btn-lg alert-button" type="button">
+                                            <button class="btn red btn-lg alert-button" ng-click="addDetails(messages[messageIndex].field)">
                                                 Add Details
                                             </button>
                                         </div>
