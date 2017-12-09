@@ -50,7 +50,88 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-12 margin-top-20">
+                                    <div class="col-md-12 margin-top-20" ng-if="messages[messageIndex].message == 'Add a photo now & get more responses.'">
+                                        <div class="text-center">
+                                            <a class="btn red btn-lg alert-button" ui-sref="managephoto">
+                                                Upload
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-12 margin-top-20" ng-if="messages[messageIndex].field == 'ancestral_origin'">
+                                        <input type="text" class="form-control  input-rounded" placeholder="Add Ancestral Origin"
+                                               ng-model="profileComp.ancestral_origin">
+
+                                    </div>
+
+                                    <div class="col-md-12 margin-top-20" ng-if="messages[messageIndex].field == 'income'">
+                                        <input type="text" class="form-control  input-rounded" placeholder="Add Income"
+                                               ng-model="profileComp.income">
+
+                                        </div>
+                                    <div class="col-md-12 margin-top-20" ng-if="messages[messageIndex].field == 'education_detail'">
+                                        <input type="text" class="form-control  input-rounded" placeholder="Add Educaional Details"
+                                               ng-model="profileComp.education_detail">
+
+                                    </div>
+                                    <div class="col-md-12 margin-top-20" ng-if="messages[messageIndex].field == 'smoking_habit'">
+                                        <select class="form-control input-rounded "
+                                                ng-model="profileComp.smoking_habit">
+                                            <option>Select</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-12 margin-top-20" ng-if="messages[messageIndex].field == 'id_occupation'">
+                                        <select class="form-control input-rounded " ng-model="setProfession.occupation_cat"
+                                                ng-options="item.occupation_category for item in occupationCategoryList track by item.id_occupation_category">
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-12 margin-top-20" ng-if="messages[messageIndex].field == 'drinking_habit'">
+                                        <select class="form-control input-rounded "
+                                                ng-model="profileComp.drinking_habit">
+                                            <option>Select</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+
+                                        </div>
+
+                                    <div class="col-md-12 margin-top-20" ng-if="messages[messageIndex].field == 'parent_mobile'">
+                                        <input type="text" class="form-control  input-rounded" placeholder="Add Parent Mobile Number"
+                                               ng-model="profileComp.parent_mobile">
+
+                                        </div>
+
+                                    <div class="col-md-12 margin-top-20" ng-if="messages[messageIndex].field == 'father_status'">
+                                        <select class="form-control input-rounded "
+                                                ng-model="profileComp.father_status">
+                                            <option value="">Select</option>
+                                            <option value="employed">Employed</option>
+                                            <option value="business">Business Man</option>
+                                            <option value="professional">Professional</option>
+                                            <option value="retired">Retired</option>
+                                            <option value="notemployed">Not Employed</option>
+                                            <option value="passedaway">Passed Away</option>
+                                        </select>
+                                        </div>
+                                    <div class="col-md-12 margin-top-20" ng-if="messages[messageIndex].field == 'mother_status'">
+
+                                        <select class="form-control input-rounded "
+                                                ng-model="mother_status.mother_status">
+                                            <option value="">Select</option>
+                                            <option value="homemaker">Homemaker</option>
+                                            <option value="employed">Employed</option>
+                                            <option value="business">Business Woman</option>
+                                            <option value="professional">Professional</option>
+                                            <option value="retired">Retired</option>
+                                            <option value="passedaway">Passed Away</option>
+                                        </select>
+                                        </div>
+
+                                    <div class="col-md-12 margin-top-20" ng-if="!(messages[messageIndex].message == 'Add a photo now & get more responses.') ">
                                         <div class="text-center">
                                             <button class="btn red btn-lg alert-button" type="button">
                                                 Add Details

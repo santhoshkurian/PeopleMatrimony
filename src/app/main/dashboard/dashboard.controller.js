@@ -6,7 +6,7 @@
         .controller('DashboardController', DashboardController);
 
     /** @ngInject */
-    function DashboardController($scope,$timeout, $location,$http,storageService,newMatches,discoverMatches,viewed,recentUpdated,resourceUrl,$state,profileCompleteness) {
+    function DashboardController($scope,$timeout,populate,$location,$http,storageService,newMatches,discoverMatches,viewed,recentUpdated,resourceUrl,$state,profileCompleteness) {
 
         console.log(profileCompleteness);
         console.log(newMatches);
@@ -15,6 +15,8 @@
         console.log("profileCompleteness",profileCompleteness);
         $scope.messages = profileCompleteness.percentage.data;
         $scope.logout = logout;
+        $scope.occupationCategoryList = populate.occupation_category;
+
         $scope.value = profileCompleteness.percentage.percentage;
 
         $scope.image_url = storageService.get("image_url");
@@ -26,6 +28,9 @@
         $scope.viewed = viewed;
         $scope.discover = discoverMatches;
         $scope.sendInterest = sendInterest;
+
+        $scope.profileComp = {income:'',id_occupation:'',ancestral_origin:'',education_detail:'',father_status:'',mother_status:'',parent_mobile:'',smoking_habit:'',drinking_habit:''};
+        $scope.setProfession= {occupation_cat:null};
 
         $scope.viewProfile = viewProfile;
         function viewProfile(id){
