@@ -6,7 +6,7 @@
         .controller('RegularSearchController', RegularSearchController);
 
     /** @ngInject */
-    function RegularSearchController($scope,$state,$http,populate,resourceUrl,storageService,searchList) {
+    function RegularSearchController($scope,$state,$http,$stateParams,populate,resourceUrl,storageService,searchList) {
         var vm = this;
         console.log("RegularSearchController");
         console.log(populate);
@@ -23,7 +23,8 @@
         $scope.educationList = populate.education;
         $scope.occupation = populate.occupation;
         $scope.countryList = populate.countries;
-        $scope.regular = {maritalStatus:"any"}
+        $scope.regular = {maritalStatus:"any"};
+        $scope.message = '';
 
 
         $scope.multiValue = {religion:[],mothertongue:[],education:[],education_category:[],occupation:[],country:[]}
@@ -51,9 +52,28 @@
             gender:null,
             showProfile:{withPhoto:false,withHoroscope:false,onlineRightNow:false},
             dontShowProfile:{ignoredProfile:false,profileAlreadyContacted:false,viewed:false,shortlisted:false},
-            maritalStatus:null,
+            maritalStatus:null
         };
 
+        $scope.deleteSearch = function(id){
+            $http({
+                method: 'POST',
+                url: resourceUrl.url()+'matches/delete?p1_debug=1' +
+                '&token='+storageService.get('token')+
+                "&id="+storageService.get('id')+
+                "&id_search="+id
+            }).then(function successCallback(response) {
+                $scope.message="deleted Successfully";
+                $state.transitionTo($state.current, $stateParams, {
+                    reload: true,
+                    inherit: false,
+                    notify: true
+                });
+
+            }, function errorCallback(response) {
+
+            });
+        };
 
         $scope.editSearch = function(obj){
             $scope.a = obj.param;
@@ -152,10 +172,6 @@
 
         }
 
-
-
-
-
         $scope.search = search;
         function search(){
             if($scope.multiValue.mothertongue.length  > 0){
@@ -195,10 +211,6 @@
                 });
                 $scope.regular.country = $scope.regular.countryList.join('~');
             }
-
-
-            console.log($scope.regular);
-
             $http({
                 method: 'POST',
                 url: resourceUrl.url()+'matches/save?p1_debug=1&token='+storageService.get('token'),
@@ -219,7 +231,6 @@
 
 
         $scope.searchexist = searchexist;
-
         function searchexist(obj){
             console.log(obj.param);
             $scope.a = obj.param;
