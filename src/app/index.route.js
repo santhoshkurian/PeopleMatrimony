@@ -72,20 +72,17 @@
                         controller: 'DashboardController as vm'
                     },
                     'toolbar@app': {
-                        templateUrl: 'app/toolbar/dashboard/dbToolbar.html',
-                        //controller: 'DashboardController as vm'
+                        templateUrl: 'app/toolbar/dashboard/dbToolbar.html'
                     },
                     'navigation@app': {
-                        templateUrl: 'app/navigation/dashboard/dbNavigation.html',
-                        //controller: 'DashboardController as vm'
+                        templateUrl: 'app/navigation/dashboard/dbNavigation.html'
                     },
                     'dbNavigationRight@app': {
                         templateUrl: 'app/navigation/dashboard-right/dashBoardRight.html',
                         controller: 'DashBoardRightController as vm'
                     },
                     'content@app': {
-                        templateUrl: 'app/main/dashboard/inbox/inbox.html',
-                        //controller: 'DashboardController as vm'
+                        templateUrl: 'app/main/dashboard/dashboard.html',
                     },
                     'footer@app': {
                         templateUrl: 'app/footer/footer.html',

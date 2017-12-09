@@ -52,8 +52,8 @@
             $http({
                 method: 'POST',
                 url: resourceUrl.url()+'completeprofile/save?p_debug=1&id=' +storageService.get('id')+
-                '&table=p_users' +
-                '&field=' + obj + '&value='+$scope.profileComp[obj]+'&token=' + storageService.get("token")
+                '&table=' +obj.table+
+                '&field=' + obj.field + '&value='+$scope.profileComp[obj.field]+'&token=' + storageService.get("token")
             }).then(function successCallback(response) {
                 $state.transitionTo($state.current, $stateParams, {
                     reload: true,
