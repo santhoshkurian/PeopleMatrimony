@@ -257,9 +257,13 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <span class="pull-left refined-search-header">Martial status</span>
+                                            <span class="pull-right refined-search-header">
+                                                <a href="javascript:;" class="btn btn-circle btn-icon-only default">
+                                                <i class="fa fa-user"></i>
+                                            </a> </span>
                                         </div>
                                     </div>
-                                    <div class="row refined-search-area">
+                                    <div class="row refined-search-area" ng-hide="mstatusDiv">
                                         <div class="col-md-12 margin-top-10 margin-bottom-10">
                                             <div ng-repeat="mstatus in martialStatus" class="row">
                                                 <div class="col-md-12">
@@ -290,7 +294,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-12 margin-bottom-10">
+                                        <div class="col-md-12 margin-bottom-10" ng-hide="motherTongueDiv">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <span ng-if="populate.mothertongue.length > mtcount" class="show-more-less pull-left" ng-click="showMoreMStatus('mtcount','more')">More</span>

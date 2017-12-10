@@ -404,7 +404,7 @@
                     },
                     'navigation@settings': {
                         templateUrl: 'app/navigation/settings/settingNavigation.html',
-                        controller: 'NavigationController as vm'
+                        controller: 'SettingsNavController as vm'
                     },
                     'content@settings': {
                         templateUrl: 'app/main/settings/accountsettings/accountSettings.html',
