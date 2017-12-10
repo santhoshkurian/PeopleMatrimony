@@ -14,6 +14,13 @@
         console.log(searchList);
         $scope.searchList = searchList;
 
+        $scope.viewId = '';
+        $scope.viewById = viewById;
+        function viewById(id){
+            $state.go('search.searchbyId',{id:id})
+
+        };
+
 
         $scope.motherTongueList = populate.mothertongue;
         $scope.religonList = populate.religon;

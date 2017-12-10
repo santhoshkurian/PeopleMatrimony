@@ -39,6 +39,9 @@
                     'content@search'         : {
                         templateUrl: 'app/main/search/advanced/advanced.html',
                         controller: 'AdvancedSearchController as vm'
+                    },
+                    'navigation@search': {
+                        templateUrl: 'app/navigation/search/searchNavigationAdvanced.html'
                     }
                 },
                 params: {
@@ -73,12 +76,15 @@
 
                 }
             }).state('search.searchbyId', {
-                url      : '/searchbyId',
+                url      : '/searchbyId/:id',
                 views    : {
                     'content@search'         : {
                         templateUrl: 'app/main/search/searchbyid/searchById.html',
                         controller: 'SearchByIdController as vm'
-                    }
+                    },
+                'navigation@search': {
+                    templateUrl: 'app/navigation/search/searchNavigationAdvanced.html'
+                }
                 },
                 resolve  : {
 
