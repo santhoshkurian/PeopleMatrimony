@@ -67,6 +67,18 @@
 
         }
 
+        $scope.mstatusDiv = true;
+        $scope.motherTongueDiv = true;
+        $scope.religionDiv = true;
+        $scope.starDiv = true;
+        $scope.eduDiv = true;
+        $scope.empDiv = true;
+        $scope.ocuDiv = true;
+        $scope.selectFacet = selectFacet;
+        function selectFacet(obj){
+            $scope[obj]=!$scope[obj];
+        }
+
 
         var vm = this;
         $scope.matches = [];

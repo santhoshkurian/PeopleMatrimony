@@ -258,9 +258,8 @@
                                         <div class="col-md-12">
                                             <span class="pull-left refined-search-header">Martial status</span>
                                             <span class="pull-right refined-search-header">
-                                                <a href="javascript:;" class="btn btn-circle btn-icon-only default">
-                                                <i class="fa fa-user"></i>
-                                            </a> </span>
+                                                <a ng-if="mstatusDiv" ng-click="selectFacet('mstatusDiv')"><i class="fa fa-angle-right"></i></a>
+                                                <a  ng-if="!mstatusDiv" ng-click="selectFacet('mstatusDiv')"><i class="fa fa-angle-down"></i></a> </span>
                                         </div>
                                     </div>
                                     <div class="row refined-search-area" ng-hide="mstatusDiv">
@@ -282,9 +281,13 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <span class="pull-left refined-search-header">MotherTongue</span>
+                                             <span class="pull-right refined-search-header">
+                                                <a ng-if="motherTongueDiv" ng-click="selectFacet('motherTongueDiv')"><i class="fa fa-angle-right"></i></a>
+                                                <a  ng-if="!motherTongueDiv" ng-click="selectFacet('motherTongueDiv')"><i class="fa fa-angle-down"></i></a> </span>
+
                                         </div>
                                     </div>
-                                    <div class="row refined-search-area">
+                                    <div class="row refined-search-area" ng-hide="motherTongueDiv">
                                         <div class="col-md-12 margin-top-10 margin-bottom-10">
                                             <div ng-repeat="obj in populate.mothertongue | limitTo:mtcount" class="row">
                                                 <div class="col-md-12">
@@ -310,9 +313,13 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <span class="pull-left refined-search-header">Religion</span>
+                                             <span class="pull-right refined-search-header">
+                                                <a ng-if="religionDiv" ng-click="selectFacet('religionDiv')"><i class="fa fa-angle-right"></i></a>
+                                                <a  ng-if="!religionDiv" ng-click="selectFacet('religionDiv')"><i class="fa fa-angle-down"></i></a> </span>
+
                                         </div>
                                     </div>
-                                    <div class="row refined-search-area">
+                                    <div class="row refined-search-area" ng-hide="religionDiv">
                                         <div class="col-md-12 margin-top-10 margin-bottom-10">
                                             <div ng-repeat="obj in populate.religon | limitTo:relcount" class="row">
                                                 <div class="col-md-12">
@@ -338,9 +345,13 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <span class="pull-left refined-search-header">Star</span>
+                                            <span class="pull-right refined-search-header">
+                                                <a ng-if="starDiv" ng-click="selectFacet('starDiv')"><i class="fa fa-angle-right"></i></a>
+                                                <a  ng-if="!starDiv" ng-click="selectFacet('starDiv')"><i class="fa fa-angle-down"></i></a> </span>
+
                                         </div>
                                     </div>
-                                    <div class="row refined-search-area">
+                                    <div class="row refined-search-area" ng-hide="starDiv">
                                         <div class="col-md-12 margin-top-10 margin-bottom-10">
                                             <div ng-repeat="obj in populate.stars | limitTo:starcount" class="row">
                                                 <div class="col-md-12">
@@ -366,10 +377,14 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <span class="pull-left refined-search-header">Education</span>
+                                            <span class="pull-right refined-search-header">
+                                                <a ng-if="eduDiv" ng-click="selectFacet('eduDiv')"><i class="fa fa-angle-right"></i></a>
+                                                <a  ng-if="!eduDiv" ng-click="selectFacet('eduDiv')"><i class="fa fa-angle-down"></i></a> </span>
+
                                         </div>
                                     </div>
-                                    <div class="row refined-search-area">
-                                        <div class="col-md-12 margin-top-10 margin-bottom-10">
+                                    <div class="row refined-search-area" ng-hide="eduDiv">
+                                        <div class="col-md-12 margin-top-10 margin-bottom-10" >
                                             <div ng-repeat="obj in populate.education | limitTo:educount" class="row">
                                                 <div class="col-md-12">
                                             <span  class="pull-left refined-search-sub-label">
@@ -395,9 +410,13 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <span class="pull-left refined-search-header">Employed In</span>
+                                        <span class="pull-right refined-search-header">
+                                                <a ng-if="empDiv" ng-click="selectFacet('empDiv')"><i class="fa fa-angle-right"></i></a>
+                                                <a  ng-if="!empDiv" ng-click="selectFacet('empDiv')"><i class="fa fa-angle-down"></i></a> </span>
+
                                         </div>
                                     </div>
-                                    <div class="row refined-search-area">
+                                    <div class="row refined-search-area" ng-hide="empDiv">
                                         <div class="col-md-12 margin-top-10 margin-bottom-10">
                                             <div ng-repeat="obj in populate.occupation_category | limitTo:ocuCatcount" class="row">
                                                 <div class="col-md-12">
@@ -423,9 +442,13 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <span class="pull-left refined-search-header">Occupation</span>
+                                        <span class="pull-right refined-search-header">
+                                                <a ng-if="ocuDiv" ng-click="selectFacet('ocuDiv')"><i class="fa fa-angle-right"></i></a>
+                                                <a  ng-if="!ocuDiv" ng-click="selectFacet('ocuDiv')"><i class="fa fa-angle-down"></i></a> </span>
+
                                         </div>
                                     </div>
-                                    <div class="row refined-search-area">
+                                    <div class="row refined-search-area" ng-hide="ocuDiv">
                                         <div class="col-md-12 margin-top-10 margin-bottom-10">
                                             <div ng-repeat="obj in populate.occupation | limitTo:ocucount" class="row">
                                                 <div class="col-md-12">

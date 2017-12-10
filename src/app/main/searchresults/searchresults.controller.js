@@ -13,11 +13,22 @@
 
         $scope.mstatusDiv = true;
         $scope.motherTongueDiv = true;
+        $scope.religionDiv = true;
+        $scope.starDiv = true;
+        $scope.eduDiv = true;
+        $scope.empDiv = true;
+        $scope.ocuDiv = true;
+        $scope.selectFacet = selectFacet;
+        function selectFacet(obj){
+            $scope[obj]=!$scope[obj];
+        }
 
         $scope.viewProfile = viewProfile;
         function viewProfile(id){
             $state.go('viewProfile',{view_id:id});
         }
+
+
         $scope.showResult = false;
         if(storageService.get('regular_search') != null){
 
