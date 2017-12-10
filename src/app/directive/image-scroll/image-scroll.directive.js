@@ -18,8 +18,8 @@
                         $scope.display = $scope.images[0].image;
                         $scope.pos = 0;
                     }
-
                     if($scope.size == 0) {
+                        console.log("check",$scope.gender);
                         if($scope.gender == 'female'){
                             $scope.display = "/assets/defaultImages/female_card.jpg";
                         }
