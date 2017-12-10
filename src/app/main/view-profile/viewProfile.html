@@ -151,7 +151,7 @@
 
                                 </div>
                                 <div class="portlet-body form">
-                                    <p> {{city_name.about}}</p>
+                                    <p> {{view.about}}</p>
 
                                 </div>
                             </div>
@@ -170,7 +170,8 @@
                                         <div class="col-md-4">
                                             <label class="font-weight-head "> Age</label>
 
-                                            <p class="details">{{view.age}} Yrs</p>
+                                            <p class="details"><span ng-if="view.age !=null ||  view.age !=''">{{view.age}} Yrs</span>
+                                                <span ng-if="view.age == null ||  view.age ==''">Not Specified</span></p>
 
                                         </div>
 
