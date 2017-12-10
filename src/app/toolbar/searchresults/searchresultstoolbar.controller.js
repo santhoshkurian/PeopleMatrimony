@@ -7,10 +7,10 @@
         .controller('SearchResultsToolbarController', SearchResultsToolbarController);
 
     /** @ngInject */
-    function SearchResultsToolbarController($scope,$location)
+    function SearchResultsToolbarController($scope,$location,storageService)
     {
 
-        console.log("SearchResultsToolbarController")
+        console.log("SearchResultsToolbarController");
 
         $scope.isActive = function (viewLocation) {
             return viewLocation === $location.path();

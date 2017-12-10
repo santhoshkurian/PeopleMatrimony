@@ -10,6 +10,8 @@
         var vm = this;
         console.log("SearchResultsController");
         console.log(storageService.get('regular_search'));
+        $scope.image_url = storageService.get("image_url");
+
 
         $scope.mstatusDiv = true;
         $scope.motherTongueDiv = true;
