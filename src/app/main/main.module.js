@@ -83,7 +83,9 @@
                         controller: 'SearchByIdController as vm'
                     },
                 'navigation@search': {
-                    templateUrl: 'app/navigation/search/searchNavigationAdvanced.html'
+                    templateUrl: 'app/navigation/search/searchNavigationById.html',
+                    controller: 'SearchByIdController as vm'
+
                 }
                 },
                 resolve  : {
