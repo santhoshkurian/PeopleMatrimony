@@ -7,6 +7,7 @@
             <!-- BEGIN PAGE BASE CONTENT -->
 
             <div class="row">
+                <div style="color: red;text-align: center">{{message}}</div>
 
                 <div class="col-md-12 ">
 
@@ -46,12 +47,12 @@
                                                 <tr>
                                                     <td class="first-row"><i class="icon-user-follow"></i></td>
                                                     <td class="second-row">|</td>
-                                                    <td class="third-row">{{view.age}} yrs,{{view.height}} cms</td>
+                                                    <td class="third-row"><span ng-if="view.age != null && view.age != ''">{{view.age}} yrs,</span><span ng-if="view.height != null && view.height != ''"> {{view.height}} cms</span></td>
                                                 </tr>
                                                 <tr>
                                                     <td class="first-row"><i class="icon-book-open"></i></td>
                                                     <td class="second-row">|</td>
-                                                    <td class="third-row">{{view.mothertongue}}</td>
+                                                    <td class="third-row"><span ng-if="view.mothertongue != null && view.mothertongue != ''">{{view.mothertongue}}</span></td>
                                                 </tr>
                                                 <tr>
                                                     <td class="first-row"><i class="icon-users"></i></td>
@@ -88,11 +89,11 @@
                                     <div class="col-md-2 hidden-xs hidden-sm"></div>
                                 </div>
 
-                                <div class="row">
+                                <div class="row" ng-if="showAction">
                                     <div class="col-md-12 vp-sub-action">
                                         <span>Connect her with ?</span>
-                                        <button class="btn red">YES</button>
-                                        <button class="btn ">SKIP</button>
+                                        <button class="btn red" ng-click="sendInterest()">YES</button>
+                                        <button class="btn " ng-click="skipAction()">SKIP</button>
                                     </div>
                                 </div>
 
@@ -100,10 +101,10 @@
                             </div>
                             <div class=" row vp-main-action">
                                 <div style="text-transform: uppercase;text-align: center;">
-                                    <div class="col-md-4 vp-main-link"
+                                    <a class="col-md-4 vp-main-link" ng-click="shortlist()"
                                             ><i
                                             class="fa fa-star-o"></i> Shortlist
-                                    </div>
+                                    </a>
                                     <div class="col-md-4 vp-main-link"
                                             >
                                         <i class="fa fa-phone"></i> Call now
