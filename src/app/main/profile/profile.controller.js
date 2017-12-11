@@ -13,7 +13,7 @@
         $scope.setLocation= {country:null,state:null,city:null,nationality:null,nationality_name:null};
         $scope.setPartnerLocation= {country:null,state:null,city:null,nationality:null,nationality_name:null};
         $scope.setReligion= {religion:null,caste:null,star:null};
-        $scope.setPartnerReligion= {religion:null,caste:null,star:null};
+        $scope.setPartnerReligion= {religion:[],caste:[],star:[]};
         $scope.setProfession= {education:null,occupation:null,occupation_cat:null};
         $scope.setPartnerProfession= {education:[],occupation:[],occupation_cat:null};
         $scope.setFamily= {orgin:null,orgin_name:null};
@@ -562,14 +562,30 @@
             var reg_id = 0;
             var caste_id = 0;
             var star_id = 0;
-            if($scope.setPartnerReligion.religion != null){
-                reg_id = $scope.setPartnerReligion.religion.id_religion;
+            console.log($scope.setPartnerReligion.religion)
+            console.log($scope.setPartnerReligion.star)
+            console.log($scope.setPartnerReligion.caste)
+
+            if($scope.setPartnerReligion.religion.length > 0){
+                var reg_arr = [];
+                for (var i = 0; i < $scope.setPartnerReligion.religion.length; i++) {
+                    reg_arr.push($scope.setPartnerReligion.religion[i].id_religion);
+                }
+                reg_id = reg_arr.join('~');
             }
-            if($scope.setPartnerReligion.star != null){
-                star_id = $scope.setPartnerReligion.star.id_star;
+            if($scope.setPartnerReligion.star.length > 0){
+                var star_arr = [];
+                for (var i = 0; i < $scope.setPartnerReligion.star.length; i++) {
+                    star_arr.push($scope.setPartnerReligion.star[i].id_star);
+                }
+                star_id = star_arr.join('~');
             }
-            if($scope.setPartnerReligion.caste != null){
-                caste_id = $scope.setPartnerReligion.caste.id_caste;
+            if($scope.setPartnerReligion.caste.length > 0){
+                var caste_arr = [];
+                for (var i = 0; i < $scope.setPartnerReligion.caste.length; i++) {
+                    caste_arr.push($scope.setPartnerReligion.caste[i].id_star);
+                }
+                caste_id = caste_arr.join('~');
             }
 
 
@@ -742,6 +758,10 @@
             });
         }
         function saveFamilyDetails() {
+            var orginId = 0;
+            if($scope.setFamily.orgin != null){
+                orginId =  $scope.setFamily.orgin.id_country;
+            }
             $http({
                 method: 'PUT',
                 url: resourceUrl.url()+'user/edit/' + storageService.get('id') + '?' +
@@ -752,7 +772,7 @@
                 '&family_status=' +$scope.profile.login_user.family_status +
                 '&father_status=' +$scope.profile.login_user.father_status +
                 '&mother_status=' +$scope.profile.login_user.mother_status +
-                '&origin=20' +$scope.setFamily.orgin != null?$scope.setFamily.orgin.id_country:null +
+                '&origin=' +orginId +
                 '&sister=' +$scope.profile.login_user.sister +
                 '&sister_married=' +$scope.profile.login_user.sister_married +
                 '&type=' +$scope.profile.login_user.family_type +
