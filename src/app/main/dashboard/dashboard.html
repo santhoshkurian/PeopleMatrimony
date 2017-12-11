@@ -59,8 +59,11 @@
 
                                     </div>
                                     <div class="col-md-12 margin-top-20" ng-if="messages[messageIndex].field == 'ancestral_origin'">
-                                        <input type="text" class="form-control  input-rounded" placeholder="Add Ancestral Origin"
-                                               ng-model="profileComp.ancestral_origin">
+                                        <select class="form-control input-rounded " ng-model="profileComp.ancestral_origin"
+                                                ng-options="item.country_name for item in countryList track by item.id_country">
+                                        </select>
+
+
 
                                     </div>
 
@@ -100,7 +103,7 @@
                                         </div>
 
                                     <div class="col-md-12 margin-top-20" ng-if="messages[messageIndex].field == 'parent_mobile'">
-                                        <input type="text" class="form-control  input-rounded" placeholder="Add Parent Mobile Number"
+                                        <input type="number" class="form-control  input-rounded" placeholder="Add Parent Mobile Number"
                                                ng-model="profileComp.parent_mobile">
 
                                         </div>

@@ -18,6 +18,7 @@
         $scope.occupationCategoryList = populate.occupation_category;
 
         $scope.value = profileCompleteness.percentage.percentage;
+        $scope.countryList = populate.countries;
 
         $scope.image_url = storageService.get("image_url");
         $scope.name = storageService.get("name");
@@ -41,10 +42,16 @@
         }
 
         function addDetails(obj){
+            console.log(obj)
 
             if(obj == 'id_occupation') {
                 if($scope.setProfession.occupation_cat != null) {
                     $scope.profileComp.id_occupation = $scope.setProfession.occupation_cat.id_occupation_category;
+                }
+            }
+            if(obj.field == 'ancestral_origin') {
+                if($scope.profileComp.ancestral_origin != null) {
+                    $scope.profileComp.ancestral_origin = $scope.profileComp.ancestral_origin.id_country;
                 }
             }
             console.log($scope.profileComp);
