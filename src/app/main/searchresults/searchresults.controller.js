@@ -177,10 +177,10 @@
                 console.log(response)
                 if (response.data.code == '400') {
                     $scope.message = "Already send a Interest";
+
                 }
+
                 $timeout(function() { $scope.message = '';}, 2000);
-
-
             });
 
 

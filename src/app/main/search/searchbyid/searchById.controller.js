@@ -33,5 +33,53 @@
             });
         }
 
+        $scope.shortlist = function(id) {
+            $http({
+                method: 'GET',
+                url: resourceUrl.url()+'do/shortlist?' +
+                '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&view_id=' + id
+            }).then(function successCallback(response) {
+                console.log(response)
+                $scope.message = "Successfully Shortlisted";
+                $timeout(function() { $scope.message = '';}, 2000);
+
+
+            }, function errorCallback(response) {
+                console.log(response)
+                if (response.data.message == 'Already exists') {
+                    $scope.message = "Already Shortlisted";
+                }
+                $timeout(function() { $scope.message = '';}, 2000);
+
+
+            });
+
+
+        }
+
+        $scope.sendInterest = function(id) {
+            $http({
+                method: 'GET',
+                url: resourceUrl.url()+'connect/send?' +
+                '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&partner=' + id
+            }).then(function successCallback(response) {
+                console.log(response)
+                $scope.message = "send interest successfully";
+                $timeout(function() { $scope.message = '';}, 2000);
+
+
+            }, function errorCallback(response) {
+                console.log(response)
+                if (response.data.code == '400') {
+                    $scope.message = "Already send a Interest";
+                }
+                $timeout(function() { $scope.message = '';}, 2000);
+
+
+            });
+
+
+        }
+
     }
 })();
