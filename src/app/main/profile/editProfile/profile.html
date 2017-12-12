@@ -740,6 +740,9 @@
                                     <p class="details ">{{profile.login_user.gothra}}</p>
 
                                 </div>
+                                </div>
+                                <div class="form-group">
+
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Star / Rassi</label>
 
@@ -749,7 +752,8 @@
                                     <p ng-if="profile.login_user.star == null" class="details ">Not available</p>
 
                                 </div>
-                                <div class="col-md-4">
+
+                                                                                        <div class="col-md-4">
                                     <label class=" font-weight-head  "> Chevvai Dosham / Rassi</label>
 
                                     <p ng-if="profile.login_user.dosham != null" class="details ">
@@ -874,6 +878,8 @@
                                     <p class="details ">{{profile.login_user.occupation}}</p>
 
                                 </div>
+                            </div>
+                                <div class="form-group">
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Employed in</label>
 
@@ -934,6 +940,8 @@
                                     <p class="details ">{{profile.login_user.family_type}}</p>
 
                                 </div>
+                            </div>
+                                <div class="form-group">
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> No of Brother(s)</label>
 
@@ -955,6 +963,8 @@
                                     <p class="details ">{{profile.login_user.family_status}}</p>
 
                                 </div>
+                                </div>
+                                <div class="form-group">
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Father's Status </label>
 
@@ -1246,7 +1256,6 @@
                         <div class="portlet-body form  form-horizontal">
                             <span ng-show="partnerBasic">
                             <div class="form-group">
-                                <div class="col-md-12">
                                     <div class="col-md-4">
                                         <label class=" font-weight-head  "> Age </label>
 
@@ -1266,13 +1275,13 @@
                                             cms </p>
 
                                     </div>
-
-
                                     <div class="col-md-4">
                                         <label class=" font-weight-head  "> Physical Type </label>
 
                                         <p class="details ">{{profile.login_user.preferences.physical_status}} </p>
                                     </div>
+                                </div>
+                            <div class="form-group">
 
                                     <div class="col-md-4">
 
@@ -1281,7 +1290,6 @@
                                         <p class="details ">{{profile.login_user.preferences.mothertongue_txt}} </p>
 
                                     </div>
-
                                     <div class="col-md-4">
                                         <label class=" font-weight-head  "> Marital Status </label>
 
@@ -1292,6 +1300,8 @@
 
                                         <p class="details ">{{profile.login_user.preferences.eating_habits}}</p>
                                     </div>
+                            </div>
+                            <div class="form-group">
                                     <div class="col-md-4">
                                         <label class=" font-weight-head  "> Drinking Habits </label>
 
@@ -1302,7 +1312,6 @@
 
                                         <p class="details ">{{profile.login_user.preferences.smoking_habits}}</p>
                                     </div>
-                                </div>
                             </div>
                                 </span>
                             <span ng-hide="partnerBasic">
@@ -1891,21 +1900,22 @@
                                     <p class="details">{{profile.login_user.preferences.religion_txt}}</p>
 
                                 </div>
-
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Caste /Sub caste</label>
 
                                     <p class="details ">{{profile.login_user.preferences.caste_txt}}</p>
 
                                 </div>
-
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Gothram</label>
 
                                     <p class="details ">{{profile.login_user.preferences.gothra}}</p>
 
                                 </div>
-                                <div class="col-md-4">
+                                </div>
+                                                            <div class="form-group">
+
+                                                            <div class="col-md-4">
                                     <label class=" font-weight-head  "> Star / Rassi</label>
 
                                     <p class="details ">{{profile.login_user.preferences.star_txt}}</p>
@@ -2137,7 +2147,10 @@
                                     <p class="details ">{{profile.login_user.preferences.city_txt}}</p>
 
                                 </div>
-                                <div class="col-md-4">
+                                </div>
+                                                            <div class="form-group">
+
+                                                            <div class="col-md-4">
                                     <label class=" font-weight-head  "> Citizenship</label>
 
                                     <p class="details ">{{profile.login_user.preferences.nationality_txt}}</p>
