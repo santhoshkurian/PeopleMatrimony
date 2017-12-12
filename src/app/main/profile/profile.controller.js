@@ -63,6 +63,7 @@
 
         $scope.about = false;
         $scope.fabout = false;
+        $scope.basicDetails = false;
         $scope.basic = false;
         $scope.location = true;
         $scope.relogious = true;

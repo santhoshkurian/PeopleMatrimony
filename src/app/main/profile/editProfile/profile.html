@@ -57,21 +57,97 @@
                             <div class="caption ">
                                 <span class=" uppercase"><i class=" fa fa-file-text icon-color"></i> &nbsp;Basic details</span>
                             </div>
-                            <!--<div class="actions pull-right">-->
-                            <!--<div class="">-->
-                            <!--<button type="button" class=" btn btn-default input-rounded " ng-click="">-->
-                            <!--Cancel-->
-                            <!--</button>-->
-                            <!--&nbsp;-->
-                            <!--<button type="button" class=" btn btn-default red input-rounded "-->
-                            <!--style="color:#ffffea" ng-click="">-->
-                            <!--Save-->
-                            <!--</button>-->
+                            <div class="actions">
+                                <div class="btn-group">
+                                    <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea"
+                                            ng-click="editAction('basicDetails')">
+                                        EDIT
+                                    </button>
 
-                            <!--</div>-->
-                            <!--</div>-->
+                                </div>
+                            </div>
+
                         </div>
                         <div class="portlet-body form  form-horizontal">
+                            <span ng-hide="basicDetails">
+                            <div class="form-group">
+
+                                <div class="col-md-4">
+                                    <label class="font-weight-head"> Profile created for</label>
+                                    <p class="details">{{profile.login_user.profile_for}}</p>
+
+
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class="font-weight-head"> Age </label>
+                                    <p class="details">{{profile.login_user.age}}</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="font-weight-head"> Height</label>
+                                    <p class="details">{{profile.login_user.height}}</p>
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+
+
+
+                                <div class="col-md-4">
+                                    <label class="font-weight-head"> Weight</label>
+                                    <p class="details">{{profile.login_user.weight}}</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="font-weight-head"> Body Type</label>
+                                    <p class="details">{{profile.login_user.body_type}}</p>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class="font-weight-head"> Complexion</label>
+                                    <p class="details">{{profile.login_user.complexion}}</p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <div class="col-md-4">
+                                    <label class="font-weight-head"> Physical Type</label>
+                                    <p class="details">{{profile.login_user.physical_status}}</p>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class="font-weight-head"> Mother toungue</label>
+                                    <p class="details">{{profile.login_user.motherTongue}}</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="font-weight-head"> Marital Status</label>
+                                    <p class="details">{{profile.login_user.marital_status}}</p>
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+
+                                <div class="col-md-4">
+                                    <label class="font-weight-head"> Eating habits</label>
+                                    <p class="details">{{profile.login_user.eating_habit}}</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="font-weight-head"> Drinking habits</label>
+                                    <p class="details">{{profile.login_user.drinking_habit}}</p>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class="font-weight-head"> Smoking Habits </label>
+                                    <p class="details">{{profile.login_user.smoking_habit}}</p>
+                                </div>
+
+
+                            </div>
+
+                                </span>
+                            <span ng-show="basicDetails">
                             <div class="form-group">
 
                                 <div class="col-md-6">
@@ -110,7 +186,6 @@
                                 </div>
 
                             </div>
-
                             <div class="form-group">
 
                                 <div class="col-md-6">
@@ -415,6 +490,8 @@
 
                                 </div>
                             </div>
+                                                                </span>
+
                         </div>
                     </div>
                 </div>

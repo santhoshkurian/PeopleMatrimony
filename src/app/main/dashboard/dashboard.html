@@ -182,7 +182,7 @@
 
                                         <div class="row ">
                                             <div class="col-md-12">
-                                                        <span><a ui-sref="viewProfile" class="profile-name">{{item.name}}</a>&nbsp;<span
+                                                        <span><a ng-click="viewProfile(item.id_people)"  class="profile-name">{{item.name}}</a>&nbsp;<span
                                                                 class="profile-id"> ({{item.id_people}})</span></span>
                                             </div>
                                         </div>
@@ -198,7 +198,7 @@
                                             <div class="col-md-12">
                                                 <div style="margin-top:20px"><a
                                                         style="font-size:13px;color: red;margin-right: 20px"> Send
-                                                    Interest</a><a style="font-size:13px;color: red"> View Profile</a>
+                                                    Interest</a><a ng-click="viewProfile(item.id_people)"  style="font-size:13px;color: red"> View Profile</a>
                                                 </div>
 
                                                 <hr/>
@@ -248,7 +248,7 @@
 
                                         <div class="row ">
                                             <div class="col-md-12">
-                                                        <span><a  class="profile-name">{{item.name}}</a>&nbsp;<span
+                                                        <span><a  ng-click="viewProfile(item.id_people)" class="profile-name">{{item.name}}</a>&nbsp;<span
                                                                 class="profile-id"> ({{item.id_people}})</span></span>
                                             </div>
                                         </div>
@@ -315,7 +315,7 @@
 
                                         <div class="row ">
                                             <div class="col-md-12">
-                                                        <span><a ui-sref="viewProfile" class="profile-name">{{item.name}}</a>&nbsp;<span
+                                                        <span><a ng-click="viewProfile(item.id_people)"  class="profile-name">{{item.name}}</a>&nbsp;<span
                                                                 class="profile-id"> ({{item.id_people}})</span></span>
                                             </div>
                                         </div>
@@ -331,7 +331,7 @@
                                             <div class="col-md-12">
                                                 <div style="margin-top:20px"><a
                                                         style="font-size:13px;color: red;margin-right: 20px"> Send
-                                                    Interest</a><a style="font-size:13px;color: red"> View Profile</a>
+                                                    Interest</a><a ng-click="viewProfile(item.id_people)"  style="font-size:13px;color: red"> View Profile</a>
                                                 </div>
 
                                                 <hr/>
