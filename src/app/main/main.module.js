@@ -147,7 +147,7 @@
                     }
                 },
                 resolve  : {
-                    privacy:function($http,storageService){
+                    privacy:function($http,storageService,resourceUrl){
                         return $http({
                             method: 'GET',
                             url: resourceUrl.url()+'settings?' +

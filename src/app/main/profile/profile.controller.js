@@ -92,8 +92,6 @@
         $scope.editPartnerType = editPartnerType;
         $scope.editPartnerReligion = editPartnerReligion;
         $scope.editPartnerEdu = editPartnerEdu;
-
-
         $scope.aboutme = aboutme;
         $scope.savePartnerAbout = savePartnerAbout;
         $scope.aboutfamily = aboutfamily;
@@ -112,13 +110,6 @@
         if($scope.profile.login_user.id_religion != null){
             $scope.selectReliegion($scope.profile.login_user.id_religion);
         }
-
-
-
-
-
-
-
 
         function selectCountry(obj){
             if(obj != null) {
