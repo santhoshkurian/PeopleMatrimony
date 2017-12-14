@@ -13,6 +13,7 @@
         $scope.id = storageService.get("id");
         $scope.viewType = 'personal';
         $scope.showAction = true;
+        $scope.showMessage = false;
         $scope.selectType = selectType;
         $scope.skipAction = skipAction;
         function skipAction(){
@@ -36,16 +37,26 @@
             }).then(function successCallback(response) {
                 console.log(response)
                 $scope.message = "send interest successfully";
-                $timeout(function() { $scope.message = '';}, 2000);
+                $scope.showMessage=true;
+                $scope.showAction=false;
+
+                $timeout(function() { $scope.message = ''; $scope.showMessage=false;
+
+                }, 2000);
 
 
             }, function errorCallback(response) {
                 console.log(response)
                 if (response.data.code == '400') {
-                    $scope.message = "Already send a Interest";
-                }
-                $timeout(function() { $scope.message = '';}, 2000);
+                    $scope.showMessage=true;
 
+                    $scope.message = "Already send a Interest";
+                    $scope.showAction=false;
+
+                }
+                $timeout(function() { $scope.message = ''; $scope.showMessage=false;
+
+                }, 2000);
 
             });
 

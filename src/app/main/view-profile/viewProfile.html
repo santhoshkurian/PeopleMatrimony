@@ -89,11 +89,21 @@
                                     <div class="col-md-2 hidden-xs hidden-sm"></div>
                                 </div>
 
+                                <div ng-if="showMessage" style="color: red;text-align: center">
+                                    <div class="alert alert-success">
+                                        {{message}}
+                                    </div>
+                                </div>
+
                                 <div class="row" ng-if="showAction">
-                                    <div class="col-md-12 vp-sub-action">
+                                    <div class="vp-sub-action">
                                         <span>Connect her with ?</span>
+                                        <br/>
+                                        <br/>
+                                        <span>
                                         <button class="btn red" ng-click="sendInterest()">YES</button>
                                         <button class="btn " ng-click="skipAction()">SKIP</button>
+                                        </span>
                                     </div>
                                 </div>
 
@@ -101,17 +111,17 @@
                             </div>
                             <div class=" row vp-main-action">
                                 <div style="text-transform: uppercase;text-align: center;">
-                                    <a class="col-md-4 vp-main-link" ng-click="shortlist()"
+                                    <a class="col-md-4 col-sm-4 col-xs-4 vp-main-link" ng-click="shortlist()"
                                             ><i
-                                            class="fa fa-star-o"></i> Shortlist
+                                            class="fa fa-star-o"></i><span class="hidden-sm hidden-xs"> Shortlist</span>
                                     </a>
-                                    <div class="col-md-4 vp-main-link"
+                                    <div class="col-md-4 col-sm-4 col-xs-4 vp-main-link"
                                             >
-                                        <i class="fa fa-phone"></i> Call now
+                                        <i class="fa fa-phone"></i> <span class="hidden-sm hidden-xs"> Call now</span>
                                     </div>
-                                    <div class="col-md-4 vp-main-link"
+                                    <div class="col-md-4 col-sm-4 col-xs-4 vp-main-link"
                                             ><i
-                                            class="fa fa-commenting-o"></i> Chat now
+                                            class="fa fa-commenting-o"></i> <span class="hidden-sm hidden-xs">  Chat now</span>
                                     </div>
 
 
