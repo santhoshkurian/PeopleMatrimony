@@ -6,7 +6,7 @@
         .controller('SearchByIdController', SearchByIdController);
 
     /** @ngInject */
-    function SearchByIdController($scope,$http,resourceUrl,storageService,$stateParams) {
+    function SearchByIdController($scope,$http,$state,resourceUrl,storageService,$stateParams,$timeout) {
         var vm = this;
         console.log("SearchByIdController");
         $scope.viewId = '';
@@ -56,6 +56,12 @@
 
 
         }
+
+        $scope.viewProfile = viewProfile;
+        function viewProfile(id){
+            $state.go('viewProfile',{view_id:id});
+        }
+
 
         $scope.sendInterest = function(id) {
             $http({
