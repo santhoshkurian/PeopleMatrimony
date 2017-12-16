@@ -75,8 +75,50 @@
         $scope.empDiv = true;
         $scope.ocuDiv = true;
         $scope.selectFacet = selectFacet;
+        $scope.facetSearch = facetSearch;
         function selectFacet(obj){
             $scope[obj]=!$scope[obj];
+        }
+
+        function facetSearch(id,obj){
+            console.log(id,obj);
+            var query = [];
+
+            if('mstatus' == obj){
+                query.push("marital_status="+id)
+            }
+            if('motherTongue' == obj){
+                query.push("mothertongue="+id)
+            }
+            if('religion' == obj){
+                query.push("religion="+ id)
+            }
+            if('star' == obj){
+                query.push("star="+id)
+            }
+            if('education' == obj){
+                query.push("education="+ id)
+            }
+            if('occu_cat' == obj){
+                query.push("occu_cat="+ id)
+            }
+            if('occupation' == obj){
+                query.push("occupation="+ id)
+            }
+            if(query.length > 0 ){
+                query = "&"+query.join('&')
+            }
+            $http({
+                method: 'POST',
+                url: resourceUrl.url()+'matches?' +
+                '&token=' + storageService.get("token")+query
+            }).then(function successCallback(response) {
+                console.log(response)
+                $scope.matches = response.data.matches;
+            }, function errorCallback(response) {
+                console.log(response);
+            });
+
         }
 
 

@@ -32,17 +32,23 @@ color: red;
 }
 .refined-search-header{
     font-weight: 600;
+    line-height: 25px;
     text-transform: uppercase;
-    font-size: 12px;
+    font-family: source_sans;
+    font-size: 14px;
 }
 .refined-search-area{
     border-bottom: 1px solid #ddd!important;
 }
 .refined-search-sub-label{
-    font-size: 10px;
+    font-size: 14px!important;
+    line-height: 20px;
+    font-family: source_sans;
+    cursor: pointer;
+
 }
 .refined-search-sub-label-count{
-    font-size: 10px;
+    font-size: 14px;
     color: red;
 }
 .show-more-less{
