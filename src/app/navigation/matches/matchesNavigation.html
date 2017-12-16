@@ -294,7 +294,7 @@
                                                 <div class="col-md-12">
                                             <span  class="pull-left refined-search-sub-label">
                                                 <!--<input type="radio" value="{{mstatus.count}}" ng-model="match.mstatus" ng-click="search()" name="matrialstatus">-->
-                                               <span class="pull-left" ng-click="facetSearch(mstatus.count,'mstatus')"> {{mstatus.name}}</span>
+                                               <span  class="pull-left" class="pull-left" ng-click="facetSearch(mstatus.count,'mstatus')"> {{mstatus.name}}</span>
                                             </span>
                                                 </div>
                                             </div>
@@ -320,7 +320,7 @@
                                                 <div class="col-md-12">
                                             <span  class="pull-left refined-search-sub-label">
                                                <!--<input type="checkbox" value="{{obj.id_mothertongue}}" name="motherTongue" ng-click="search()"/> {{obj.mothertongue}}-->
-                                                <span class="pull-left" ng-click="facetSearch(obj.id_mothertongue,'motherTongue')"> {{obj.mothertongue}}</span>
+                                                <span ng-style="isTrue(obj.id_mothertongue,'motherTongue') && {'font-weight':'500','color':'grey','font-size':'15px'}" class="pull-left" ng-click="facetSearch(obj.id_mothertongue,'motherTongue')"> {{obj.mothertongue}}</span>
 
                                             </span>
                                                 </div>
@@ -354,7 +354,7 @@
                                                 <div class="col-md-12">
                                             <span  class="pull-left refined-search-sub-label">
                                                <!--<input type="checkbox" value="{{obj.id_religion}}" name="religion" ng-click="search()"/> {{obj.religion}}-->
-                         <span class="pull-left" ng-click="facetSearch(obj.id_religion,'religion')"> {{obj.religion}}</span>
+                         <span ng-style="isTrue(obj.id_religion,'religion') && {'font-weight':'500','color':'grey','font-size':'15px'}"  class="pull-left" ng-click="facetSearch(obj.id_religion,'religion')"> {{obj.religion}}</span>
 
                                             </span>
                                                 </div>
@@ -388,7 +388,7 @@
                                                 <div class="col-md-12">
                                             <span  class="pull-left refined-search-sub-label">
                                                <!--<input type="checkbox" value="{{obj.id_star}}" name="star" ng-click="search()" /> {{obj.star}}-->
-                        <span class="pull-left" ng-click="facetSearch(obj.id_star,'star')"> {{obj.star}}</span>
+                        <span ng-style="isTrue(obj.id_star,'star') && {'font-weight':'500','color':'grey','font-size':'15px'}" class="pull-left" ng-click="facetSearch(obj.id_star,'star')"> {{obj.star}}</span>
 
                                             </span>
                                                 </div>
@@ -422,7 +422,7 @@
                                                 <div class="col-md-12">
                                             <span  class="pull-left refined-search-sub-label">
                                                <!--<input type="checkbox" value="{{obj.id_education}}" name="education" ng-click="search()" /> {{obj.education}}-->
-                                                                    <span class="pull-left" ng-click="facetSearch(obj.id_education,'education')"> {{obj.education}}</span>
+                                                                    <span ng-style="isTrue(obj.id_education,'education') && {'font-weight':'500','color':'grey','font-size':'15px'}" class="pull-left" ng-click="facetSearch(obj.id_education,'education')"> {{obj.education}}</span>
 
                                             </span>
                                                 </div>
@@ -458,7 +458,7 @@
                                             <!--<span  class="pull-left refined-search-sub-label">-->
                                                <!--<input type="checkbox" value="{{obj.id_occupation_category}}" name="employed" ng-click="search()"/> {{obj.occupation_category}}-->
                                             <!--</span>-->
-                                                    <span class="pull-left refined-search-sub-label" ng-click="facetSearch(obj.id_occupation_category,'occu_cat')"> {{obj.occupation_category}}</span>
+                                                    <span ng-style="isTrue(obj.id_occupation_category,'occu_cat') && {'font-weight':'500','color':'grey','font-size':'15px'}" class="pull-left refined-search-sub-label" ng-click="facetSearch(obj.id_occupation_category,'occu_cat')"> {{obj.occupation_category}}</span>
 
                                                 </div>
                                             </div>
@@ -489,7 +489,7 @@
                                         <div class="col-md-12 margin-top-10 margin-bottom-10">
                                             <div ng-repeat="obj in populate.occupation | limitTo:ocucount" class="row">
                                             <div class="col-md-12 refined-search-sub-label ">
-                                                <span class="pull-left" ng-click="facetSearch(obj.id_occupation,'occupation')">{{obj.occupation}}</span>
+                                                <span ng-style="isTrue(obj.id_occupation,'occupation') && {'font-weight':'500','color':'grey','font-size':'15px'}"class="pull-left" ng-style="isTrue(obj.id_occupation,'occupation') && {'font-weight':'500','color':'grey','font-size':'15px'}" ng-click="facetSearch(obj.id_occupation,'occupation')">{{obj.occupation}}</span>
                                                <!--<input type="checkbox" value="{{obj.id_occupation}}" name="occupation" ng-click="search()"/> -->
 
                                                 </div>
