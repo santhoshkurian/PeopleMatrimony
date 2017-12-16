@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bfa2593e-d0c4-4650-be07-2f4b4b5632d0" name="Default" comment="image changes">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/message/awaitingReply/awaiting.html" afterPath="$PROJECT_DIR$/src/app/main/message/awaitingReply/awaiting.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/message/inbox/accepted/messageAccepted.html" afterPath="$PROJECT_DIR$/src/app/main/message/inbox/accepted/messageAccepted.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/message/inbox/declined/messageDeclined.html" afterPath="$PROJECT_DIR$/src/app/main/message/inbox/declined/messageDeclined.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/message/inbox/pending/messagePending.html" afterPath="$PROJECT_DIR$/src/app/main/message/inbox/pending/messagePending.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/message/sent/sent.html" afterPath="$PROJECT_DIR$/src/app/main/message/sent/sent.html" />
+    <list default="true" id="bfa2593e-d0c4-4650-be07-2f4b4b5632d0" name="Default" comment="changes">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="2945ea6f-7113-47fd-addd-6e4199c59dfa" name="New changelist" comment="" />
@@ -22,7 +17,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
+    <option name="PATCH_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -30,112 +25,113 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="messageAccepted.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/message/inbox/accepted/messageAccepted.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.285714">
-              <caret line="54" column="22" selection-start-line="48" selection-start-column="16" selection-end-line="54" selection-end-column="22" />
-              <folding>
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="messagePending.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/message/inbox/pending/messagePending.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.385965">
-              <caret line="53" column="22" selection-start-line="47" selection-start-column="16" selection-end-line="53" selection-end-column="22" />
-              <folding>
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="messageDeclined.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/message/inbox/declined/messageDeclined.controller.js">
+      <file leaf-file-name="viewProfile.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/main/view-profile/viewProfile.controller.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="23" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="23" />
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="messageDeclined.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/message/inbox/declined/messageDeclined.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.3157895">
-              <caret line="49" column="40" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
-              <folding>
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sent.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/message/sent/sent.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.4642856">
-              <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="54" selection-end-column="22" />
-              <folding>
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="awaiting.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/main/message/awaitingReply/awaiting.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25333333">
-              <caret line="49" column="40" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
-              <folding>
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="awaiting.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/message/awaitingReply/awaiting.controller.js">
+      <file leaf-file-name="registration.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/main/registration/registration.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="23" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="23" />
+              <caret line="1" column="41" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sent.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/message/sent/sent.controller.js">
+      <file leaf-file-name="login.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/main/login/login.controller.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="23" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="23" />
+              <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="messagePending.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/message/inbox/pending/messagePending.controller.js">
+      <file leaf-file-name="registrationStep2Toolbar.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/toolbar/login/registrationStep2Toolbar.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="22" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="22" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registrationToolbar.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/toolbar/login/registrationToolbar.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.428571">
+              <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loginContent.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/main/login/loginContent.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="126" column="36" selection-start-line="126" selection-start-column="36" selection-end-line="126" selection-end-column="54" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#label#0;n#div#5;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#11;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#1;n#div#0;n#div#11;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/main/login/login.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="messageAccepted.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/message/inbox/accepted/messageAccepted.controller.js">
+      <file leaf-file-name="regLayout.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/core/layouts/regLayout.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="21" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="21" />
+              <caret line="4" column="62" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
+              <folding>
+                <element signature="n#style#0;n#div#2;n#span#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registrationStep2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/main/registration2/registrationStep2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.route.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/index.route.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="207" column="28" selection-start-line="207" selection-start-column="20" selection-end-line="207" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -156,7 +152,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="pagination-changes" />
+        <entry key="$PROJECT_DIR$" value="background-images" />
       </map>
     </option>
   </component>
@@ -181,57 +177,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/app/main/search/advanced/advancedSearch.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/search/advanced/advanced.html" />
+        <option value="$PROJECT_DIR$/src/app/index.module.js" />
         <option value="$PROJECT_DIR$/src/app/main/managephotos/managephoto.css" />
-        <option value="$PROJECT_DIR$/src/app/navigation/profile/profileNavigation.html" />
-        <option value="$PROJECT_DIR$/src/app/main/managephotos/managephoto.html" />
-        <option value="$PROJECT_DIR$/src/app/navigation/message/inbox/inboxNavigation.html" />
-        <option value="$PROJECT_DIR$/src/app/navigation/message/sent/sentNavigation.html" />
-        <option value="$PROJECT_DIR$/src/app/navigation/dashboard-right/dashBoardRight.html" />
-        <option value="$PROJECT_DIR$/src/app/navigation/matches/matchesNavigation.html" />
-        <option value="$PROJECT_DIR$/src/app/navigation/searchresults/searchResultsNavigation.html" />
-        <option value="$PROJECT_DIR$/src/app/navigation/settings/settingNavigation.html" />
-        <option value="$PROJECT_DIR$/src/app/main/registration/registration.html" />
-        <option value="$PROJECT_DIR$/src/app/main/matches/matches.css" />
-        <option value="$PROJECT_DIR$/src/app/directive/image-scroll/image-directive.js" />
-        <option value="$PROJECT_DIR$/src/app/directive/image-scroll/image-scroll.html" />
-        <option value="$PROJECT_DIR$/src/app/directive/image-scroll/image-scroll.directive.js" />
-        <option value="$PROJECT_DIR$/gulp/inject.js" />
-        <option value="$PROJECT_DIR$/src/app/main/directive/image-scroll/image-scroll.directive.js" />
-        <option value="$PROJECT_DIR$/src/app/main/matches/matches.html" />
-        <option value="$PROJECT_DIR$/src/app/main/message/sent/sent.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/message/awaitingReply/awaiting.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/main.module.js" />
-        <option value="$PROJECT_DIR$/src/app/main/message/inbox/pending/messagePending.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/message/inbox/accepted/messageAccepted.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/message/inbox/declined/messageDeclined.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/message/message.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/registration/registration.controller.js" />
-        <option value="$PROJECT_DIR$/src/index.html" />
-        <option value="$PROJECT_DIR$/src/app/index.route.js" />
-        <option value="$PROJECT_DIR$/src/app/main/login/login.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/navigation/dashboard/dbNavigation.html" />
-        <option value="$PROJECT_DIR$/src/app/toolbar/login/loginToolbar.html" />
-        <option value="$PROJECT_DIR$/src/app/toolbar/dashboard/dbToolbar.html" />
-        <option value="$PROJECT_DIR$/src/app/main/login/loginContent.html" />
-        <option value="$PROJECT_DIR$/src/app/main/dashboard/dashboard.css" />
-        <option value="$PROJECT_DIR$/src/app/index.css" />
-        <option value="$PROJECT_DIR$/src/app/main/profile/editProfile/profile.html" />
-        <option value="$PROJECT_DIR$/src/app/main/profile/profile.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/dashboard/dashboard.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/toolbar/managephoto/managephotoToolbar.html" />
         <option value="$PROJECT_DIR$/src/app/main/managephotos/managephoto.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/matches/matches.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/matches/matches.html" />
+        <option value="$PROJECT_DIR$/src/app/main/dashboard/inbox/inbox.html" />
+        <option value="$PROJECT_DIR$/src/app/navigation/dashboard-right/dashBoardRight.js" />
+        <option value="$PROJECT_DIR$/src/app/toolbar/managephoto/managephotoToolbar.html" />
         <option value="$PROJECT_DIR$/src/app/toolbar/matches/matchestoolbar.html" />
-        <option value="$PROJECT_DIR$/src/app/toolbar/message/messagetoolbar.controller.js" />
         <option value="$PROJECT_DIR$/src/app/toolbar/message/messagetoolbar.html" />
         <option value="$PROJECT_DIR$/src/app/toolbar/settings/settingsToolbar.html" />
-        <option value="$PROJECT_DIR$/src/app/main/settings/accountsettings/accountSettings.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/navigation/settings/settingNav.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/message/inbox/accepted/messageAccepted.html" />
-        <option value="$PROJECT_DIR$/src/app/main/message/inbox/pending/messagePending.html" />
-        <option value="$PROJECT_DIR$/src/app/main/message/inbox/declined/messageDeclined.html" />
-        <option value="$PROJECT_DIR$/src/app/main/message/sent/sent.html" />
-        <option value="$PROJECT_DIR$/src/app/main/message/awaitingReply/awaiting.html" />
+        <option value="$PROJECT_DIR$/src/app/main/search/regular/regular.html" />
+        <option value="$PROJECT_DIR$/src/app/directive/image-scroll/image-scroll.directive.js" />
+        <option value="$PROJECT_DIR$/src/app/navigation/search/searchNavigationAdvanced.html" />
+        <option value="$PROJECT_DIR$/src/app/navigation/search/searchNavigation.html" />
+        <option value="$PROJECT_DIR$/src/app/main/search/regular/regularSearch.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/toolbar/search/searchtoolbar.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/navigation/search/searchNavigationById.html" />
+        <option value="$PROJECT_DIR$/src/app/navigation/searchresults/searchResultsNavigation.html" />
+        <option value="$PROJECT_DIR$/src/app/navigation/matches/matchesNavigation.html" />
+        <option value="$PROJECT_DIR$/src/app/main/matches/matches.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/toolbar/searchresults/searchresultstoolbar.html" />
+        <option value="$PROJECT_DIR$/src/app/toolbar/searchresults/searchresultstoolbar.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/navigation/dashboard/dbNavigation.html" />
+        <option value="$PROJECT_DIR$/src/app/toolbar/search/searchtoolbar.html" />
+        <option value="$PROJECT_DIR$/src/app/toolbar/dashboard/dbToolbar.html" />
+        <option value="$PROJECT_DIR$/src/app/main/search/searchbyid/searchById.html" />
+        <option value="$PROJECT_DIR$/src/app/main/dashboard/dashboard.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/navigation/dashboard-right/dashBoardRight.html" />
+        <option value="$PROJECT_DIR$/src/app/main/searchresults/searchresults.html" />
+        <option value="$PROJECT_DIR$/src/app/main/dashboard/dashboard.html" />
+        <option value="$PROJECT_DIR$/src/app/main/profile/profile.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/managephotos/managephoto.html" />
+        <option value="$PROJECT_DIR$/src/app/navigation/settings/settingNavigation.html" />
+        <option value="$PROJECT_DIR$/src/app/main/main.module.js" />
+        <option value="$PROJECT_DIR$/src/app/toolbar/profile/profileToolbar.html" />
+        <option value="$PROJECT_DIR$/src/app/main/profile/editProfile/profile.html" />
+        <option value="$PROJECT_DIR$/src/app/main/search/searchbyid/searchById.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/core/layouts/loginLayout.html" />
+        <option value="$PROJECT_DIR$/src/app/main/searchresults/searchresults.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/view-profile/viewProfile.html" />
+        <option value="$PROJECT_DIR$/src/app/main/view-profile/viewProfile.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/registration/registration.html" />
+        <option value="$PROJECT_DIR$/src/app/main/registration2/registrationStep2.html" />
+        <option value="$PROJECT_DIR$/src/app/toolbar/login/registrationToolbar.html" />
+        <option value="$PROJECT_DIR$/src/app/index.route.js" />
+        <option value="$PROJECT_DIR$/src/app/main/login/login.css" />
+        <option value="$PROJECT_DIR$/src/app/core/layouts/regLayout.html" />
+        <option value="$PROJECT_DIR$/src/app/main/login/login.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/login/loginContent.html" />
       </list>
     </option>
   </component>
@@ -283,10 +279,10 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files" />
       </pane>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -333,6 +329,64 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -381,81 +435,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="settings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="toolbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="navigation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="navigation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="settings" />
+              <option name="myItemId" value="login" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -499,98 +479,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="message" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="message" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="message" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="awaitingReply" />
+              <option name="myItemId" value="layouts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/peoplematrimony" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="FullScreen" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/node_modules/angularjs-dropdown-multiselect/gulp/build.js" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/santhosh/My_Projects/People_matrimony/PeopleMatrimony/src/app/main/searchresults/searchresults.controller.js" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/core/layouts" />
+      <recent name="$PROJECT_DIR$/src/assets/images" />
+      <recent name="$PROJECT_DIR$/src/app/navigation/search" />
+      <recent name="$PROJECT_DIR$/src/app/toolbar/search" />
       <recent name="$PROJECT_DIR$/dist/app" />
-      <recent name="$PROJECT_DIR$/src/app/main" />
-      <recent name="$PROJECT_DIR$/src/assets/defaultImages" />
-      <recent name="$PROJECT_DIR$/dist/app/main" />
-      <recent name="$PROJECT_DIR$/src/app/main/dashboard" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/main/dashboard" />
       <recent name="$PROJECT_DIR$/src/app/footer/test" />
     </key>
   </component>
@@ -910,365 +833,375 @@
       <workItem from="1510395999995" duration="2771000" />
       <workItem from="1510409878269" duration="585000" />
       <workItem from="1510461700859" duration="588000" />
-      <workItem from="1510495623090" duration="8116000" />
+      <workItem from="1510495623090" duration="9767000" />
+      <workItem from="1510677813586" duration="4179000" />
+      <workItem from="1510752656513" duration="13012000" />
+      <workItem from="1510846216563" duration="4250000" />
+      <workItem from="1511017644467" duration="4698000" />
+      <workItem from="1511445615573" duration="6039000" />
+      <workItem from="1511458623460" duration="670000" />
+      <workItem from="1511539322094" duration="4110000" />
+      <workItem from="1511616949240" duration="12110000" />
+      <workItem from="1511667356652" duration="581000" />
+      <workItem from="1511792429535" duration="14381000" />
+      <workItem from="1511975966192" duration="4911000" />
+      <workItem from="1512051726614" duration="12223000" />
+      <workItem from="1512128319747" duration="748000" />
+      <workItem from="1512227347628" duration="10643000" />
+      <workItem from="1512274526222" duration="4934000" />
+      <workItem from="1512279568394" duration="227000" />
+      <workItem from="1512304912500" duration="1152000" />
+      <workItem from="1512307439742" duration="12378000" />
+      <workItem from="1512395946468" duration="4846000" />
+      <workItem from="1512484178621" duration="11423000" />
+      <workItem from="1512570952788" duration="253000" />
+      <workItem from="1512571246582" duration="8309000" />
+      <workItem from="1512655510339" duration="6027000" />
+      <workItem from="1512794865282" duration="6335000" />
+      <workItem from="1512817156978" duration="6462000" />
+      <workItem from="1512909879570" duration="1189000" />
+      <workItem from="1512914405020" duration="7764000" />
+      <workItem from="1512923956113" duration="4212000" />
+      <workItem from="1513003977529" duration="7521000" />
+      <workItem from="1513089574867" duration="8626000" />
+      <workItem from="1513102336640" duration="53000" />
+      <workItem from="1513260677583" duration="3355000" />
+      <workItem from="1513264380826" duration="1425000" />
+      <workItem from="1513273165402" duration="663000" />
+      <workItem from="1513274146535" duration="298000" />
+      <workItem from="1513410677763" duration="3867000" />
+      <workItem from="1513428034728" duration="1289000" />
     </task>
-    <task id="LOCAL-00018" summary="profile edit about api added">
-      <created>1502036819730</created>
-      <option name="number" value="00018" />
+    <task id="LOCAL-00112" summary="changes">
+      <created>1512317571171</created>
+      <option name="number" value="00112" />
       <option name="project" value="LOCAL" />
-      <updated>1502036819730</updated>
+      <updated>1512317571172</updated>
     </task>
-    <task id="LOCAL-00019" summary="profile edit about api added">
-      <created>1502039449823</created>
-      <option name="number" value="00019" />
+    <task id="LOCAL-00113" summary="changes">
+      <created>1512318147152</created>
+      <option name="number" value="00113" />
       <option name="project" value="LOCAL" />
-      <updated>1502039449823</updated>
+      <updated>1512318147152</updated>
     </task>
-    <task id="LOCAL-00020" summary="profile edit about api added">
-      <created>1502642152159</created>
-      <option name="number" value="00020" />
+    <task id="LOCAL-00114" summary="changes">
+      <created>1512318847950</created>
+      <option name="number" value="00114" />
       <option name="project" value="LOCAL" />
-      <updated>1502642152159</updated>
+      <updated>1512318847950</updated>
     </task>
-    <task id="LOCAL-00021" summary="profile edit about api added">
-      <created>1503232702609</created>
-      <option name="number" value="00021" />
+    <task id="LOCAL-00115" summary="changes">
+      <created>1512321649094</created>
+      <option name="number" value="00115" />
       <option name="project" value="LOCAL" />
-      <updated>1503232702609</updated>
+      <updated>1512321649095</updated>
     </task>
-    <task id="LOCAL-00022" summary="profile edit about api added">
-      <created>1503237120873</created>
-      <option name="number" value="00022" />
+    <task id="LOCAL-00116" summary="changes">
+      <created>1512322730766</created>
+      <option name="number" value="00116" />
       <option name="project" value="LOCAL" />
-      <updated>1503237120873</updated>
+      <updated>1512322730766</updated>
     </task>
-    <task id="LOCAL-00023" summary="country state city api added">
-      <created>1503238237173</created>
-      <option name="number" value="00023" />
+    <task id="LOCAL-00117" summary="changes">
+      <created>1512323480976</created>
+      <option name="number" value="00117" />
       <option name="project" value="LOCAL" />
-      <updated>1503238237173</updated>
+      <updated>1512323480976</updated>
     </task>
-    <task id="LOCAL-00024" summary="AAbout family api added">
-      <created>1503239668184</created>
-      <option name="number" value="00024" />
+    <task id="LOCAL-00118" summary="changes">
+      <created>1512489294308</created>
+      <option name="number" value="00118" />
       <option name="project" value="LOCAL" />
-      <updated>1503239668184</updated>
+      <updated>1512489294309</updated>
     </task>
-    <task id="LOCAL-00025" summary="About family api added">
-      <created>1503240023005</created>
-      <option name="number" value="00025" />
+    <task id="LOCAL-00119" summary="changes">
+      <created>1512499072803</created>
+      <option name="number" value="00119" />
       <option name="project" value="LOCAL" />
-      <updated>1503240023005</updated>
+      <updated>1512499072803</updated>
     </task>
-    <task id="LOCAL-00026" summary="About family api added">
-      <created>1503240564036</created>
-      <option name="number" value="00026" />
+    <task id="LOCAL-00120" summary="changes">
+      <created>1512581476931</created>
+      <option name="number" value="00120" />
       <option name="project" value="LOCAL" />
-      <updated>1503240564036</updated>
+      <updated>1512581476933</updated>
     </task>
-    <task id="LOCAL-00027" summary="login api changes">
-      <created>1503241031687</created>
-      <option name="number" value="00027" />
+    <task id="LOCAL-00121" summary="changes">
+      <created>1512656103387</created>
+      <option name="number" value="00121" />
       <option name="project" value="LOCAL" />
-      <updated>1503241031687</updated>
+      <updated>1512656103388</updated>
     </task>
-    <task id="LOCAL-00028" summary="login api changes">
-      <created>1503241706286</created>
-      <option name="number" value="00028" />
+    <task id="LOCAL-00122" summary="changes">
+      <created>1512659302148</created>
+      <option name="number" value="00122" />
       <option name="project" value="LOCAL" />
-      <updated>1503241706286</updated>
+      <updated>1512659302148</updated>
     </task>
-    <task id="LOCAL-00029" summary="matches api added">
-      <created>1503761671909</created>
-      <option name="number" value="00029" />
+    <task id="LOCAL-00123" summary="changes">
+      <created>1512659519149</created>
+      <option name="number" value="00123" />
       <option name="project" value="LOCAL" />
-      <updated>1503761671909</updated>
+      <updated>1512659519149</updated>
     </task>
-    <task id="LOCAL-00030" summary="short list api added">
-      <created>1503763193865</created>
-      <option name="number" value="00030" />
+    <task id="LOCAL-00124" summary="changes">
+      <created>1512661894469</created>
+      <option name="number" value="00124" />
       <option name="project" value="LOCAL" />
-      <updated>1503763193865</updated>
+      <updated>1512661894469</updated>
     </task>
-    <task id="LOCAL-00031" summary="matches api added">
-      <created>1503765016525</created>
-      <option name="number" value="00031" />
+    <task id="LOCAL-00125" summary="changes">
+      <created>1512662199760</created>
+      <option name="number" value="00125" />
       <option name="project" value="LOCAL" />
-      <updated>1503765016525</updated>
+      <updated>1512662199760</updated>
     </task>
-    <task id="LOCAL-00032" summary="shortlist list api added">
-      <created>1503765908342</created>
-      <option name="number" value="00032" />
+    <task id="LOCAL-00126" summary="changes">
+      <created>1512662656758</created>
+      <option name="number" value="00126" />
       <option name="project" value="LOCAL" />
-      <updated>1503765908342</updated>
+      <updated>1512662656758</updated>
     </task>
-    <task id="LOCAL-00033" summary="age filter api added">
-      <created>1503846246504</created>
-      <option name="number" value="00033" />
+    <task id="LOCAL-00127" summary="changes">
+      <created>1512800931728</created>
+      <option name="number" value="00127" />
       <option name="project" value="LOCAL" />
-      <updated>1503846246504</updated>
+      <updated>1512800931735</updated>
     </task>
-    <task id="LOCAL-00034" summary="height filter api added">
-      <created>1503846979174</created>
-      <option name="number" value="00034" />
+    <task id="LOCAL-00128" summary="changes">
+      <created>1512801678528</created>
+      <option name="number" value="00128" />
       <option name="project" value="LOCAL" />
-      <updated>1503846979174</updated>
+      <updated>1512801678528</updated>
     </task>
-    <task id="LOCAL-00035" summary="changes">
-      <created>1504542707499</created>
-      <option name="number" value="00035" />
+    <task id="LOCAL-00129" summary="changes">
+      <created>1512818560673</created>
+      <option name="number" value="00129" />
       <option name="project" value="LOCAL" />
-      <updated>1504542707499</updated>
+      <updated>1512818560674</updated>
     </task>
-    <task id="LOCAL-00036" summary="image url added">
-      <created>1504583773788</created>
-      <option name="number" value="00036" />
+    <task id="LOCAL-00130" summary="changes">
+      <created>1512818659078</created>
+      <option name="number" value="00130" />
       <option name="project" value="LOCAL" />
-      <updated>1504583773788</updated>
+      <updated>1512818659078</updated>
     </task>
-    <task id="LOCAL-00037" summary="image upload changes">
-      <created>1504619778714</created>
-      <option name="number" value="00037" />
+    <task id="LOCAL-00131" summary="remove drop down color">
+      <created>1512818814593</created>
+      <option name="number" value="00131" />
       <option name="project" value="LOCAL" />
-      <updated>1504619778714</updated>
+      <updated>1512818814593</updated>
     </task>
-    <task id="LOCAL-00038" summary="image upload changes">
-      <created>1504619900277</created>
-      <option name="number" value="00038" />
+    <task id="LOCAL-00132" summary="changes">
+      <created>1512820027349</created>
+      <option name="number" value="00132" />
       <option name="project" value="LOCAL" />
-      <updated>1504619900277</updated>
+      <updated>1512820027349</updated>
     </task>
-    <task id="LOCAL-00039" summary="image upload changes">
-      <created>1504622660784</created>
-      <option name="number" value="00039" />
+    <task id="LOCAL-00133" summary="changes">
+      <created>1512829864729</created>
+      <option name="number" value="00133" />
       <option name="project" value="LOCAL" />
-      <updated>1504622660784</updated>
+      <updated>1512829864729</updated>
     </task>
-    <task id="LOCAL-00040" summary="image upload changes">
-      <created>1504622772002</created>
-      <option name="number" value="00040" />
+    <task id="LOCAL-00134" summary="changes">
+      <created>1512918699857</created>
+      <option name="number" value="00134" />
       <option name="project" value="LOCAL" />
-      <updated>1504622772002</updated>
+      <updated>1512918699858</updated>
     </task>
-    <task id="LOCAL-00041" summary="update primary images added">
-      <created>1504624372783</created>
-      <option name="number" value="00041" />
+    <task id="LOCAL-00135" summary="changes">
+      <created>1512921515922</created>
+      <option name="number" value="00135" />
       <option name="project" value="LOCAL" />
-      <updated>1504624372783</updated>
+      <updated>1512921515922</updated>
     </task>
-    <task id="LOCAL-00042" summary="style changes">
-      <created>1505570403177</created>
-      <option name="number" value="00042" />
+    <task id="LOCAL-00136" summary="changes">
+      <created>1512922259328</created>
+      <option name="number" value="00136" />
       <option name="project" value="LOCAL" />
-      <updated>1505570403177</updated>
+      <updated>1512922259328</updated>
     </task>
-    <task id="LOCAL-00043" summary="profile edit added">
-      <created>1505663778677</created>
-      <option name="number" value="00043" />
+    <task id="LOCAL-00137" summary="changes">
+      <created>1512922565920</created>
+      <option name="number" value="00137" />
       <option name="project" value="LOCAL" />
-      <updated>1505663778677</updated>
+      <updated>1512922565928</updated>
     </task>
-    <task id="LOCAL-00044" summary="registration added">
-      <created>1508599642934</created>
-      <option name="number" value="00044" />
+    <task id="LOCAL-00138" summary="changes">
+      <created>1512923308155</created>
+      <option name="number" value="00138" />
       <option name="project" value="LOCAL" />
-      <updated>1508599642934</updated>
+      <updated>1512923308162</updated>
     </task>
-    <task id="LOCAL-00045" summary="changess">
-      <created>1509550607421</created>
-      <option name="number" value="00045" />
+    <task id="LOCAL-00139" summary="changes">
+      <created>1512923912689</created>
+      <option name="number" value="00139" />
       <option name="project" value="LOCAL" />
-      <updated>1509550607421</updated>
+      <updated>1512923912689</updated>
     </task>
-    <task id="LOCAL-00046" summary="changess">
-      <created>1509551786074</created>
-      <option name="number" value="00046" />
+    <task id="LOCAL-00140" summary="changes">
+      <created>1512926964740</created>
+      <option name="number" value="00140" />
       <option name="project" value="LOCAL" />
-      <updated>1509551786074</updated>
+      <updated>1512926964741</updated>
     </task>
-    <task id="LOCAL-00047" summary="changess">
-      <created>1509555505116</created>
-      <option name="number" value="00047" />
+    <task id="LOCAL-00141" summary="changes">
+      <created>1512927859009</created>
+      <option name="number" value="00141" />
       <option name="project" value="LOCAL" />
-      <updated>1509555505116</updated>
+      <updated>1512927859010</updated>
     </task>
-    <task id="LOCAL-00048" summary="changess">
-      <created>1509775857853</created>
-      <option name="number" value="00048" />
+    <task id="LOCAL-00142" summary="changes">
+      <created>1512928348822</created>
+      <option name="number" value="00142" />
       <option name="project" value="LOCAL" />
-      <updated>1509775857853</updated>
+      <updated>1512928348822</updated>
     </task>
-    <task id="LOCAL-00049" summary="changess">
-      <created>1509776688696</created>
-      <option name="number" value="00049" />
+    <task id="LOCAL-00143" summary="changes">
+      <created>1512928530410</created>
+      <option name="number" value="00143" />
       <option name="project" value="LOCAL" />
-      <updated>1509776688696</updated>
+      <updated>1512928530411</updated>
     </task>
-    <task id="LOCAL-00050" summary="image -directive created">
-      <created>1509777165666</created>
-      <option name="number" value="00050" />
+    <task id="LOCAL-00144" summary="changes">
+      <created>1512928733885</created>
+      <option name="number" value="00144" />
       <option name="project" value="LOCAL" />
-      <updated>1509777165667</updated>
+      <updated>1512928733885</updated>
     </task>
-    <task id="LOCAL-00051" summary="image changes">
-      <created>1509777788352</created>
-      <option name="number" value="00051" />
+    <task id="LOCAL-00145" summary="changes">
+      <created>1513005723577</created>
+      <option name="number" value="00145" />
       <option name="project" value="LOCAL" />
-      <updated>1509777788352</updated>
+      <updated>1513005723578</updated>
     </task>
-    <task id="LOCAL-00052" summary="image changes">
-      <created>1509799957616</created>
-      <option name="number" value="00052" />
+    <task id="LOCAL-00146" summary="changes">
+      <created>1513006042084</created>
+      <option name="number" value="00146" />
       <option name="project" value="LOCAL" />
-      <updated>1509799957617</updated>
+      <updated>1513006042084</updated>
     </task>
-    <task id="LOCAL-00053" summary="changes">
-      <created>1509801741202</created>
-      <option name="number" value="00053" />
+    <task id="LOCAL-00147" summary="changes">
+      <created>1513009989540</created>
+      <option name="number" value="00147" />
       <option name="project" value="LOCAL" />
-      <updated>1509801741202</updated>
+      <updated>1513009989540</updated>
     </task>
-    <task id="LOCAL-00054" summary="message changes">
-      <created>1509802757195</created>
-      <option name="number" value="00054" />
+    <task id="LOCAL-00148" summary="changes">
+      <created>1513011104830</created>
+      <option name="number" value="00148" />
       <option name="project" value="LOCAL" />
-      <updated>1509802757195</updated>
+      <updated>1513011104830</updated>
     </task>
-    <task id="LOCAL-00055" summary="login changes">
-      <created>1509807347980</created>
-      <option name="number" value="00055" />
+    <task id="LOCAL-00149" summary="changes">
+      <created>1513011252047</created>
+      <option name="number" value="00149" />
       <option name="project" value="LOCAL" />
-      <updated>1509807347980</updated>
+      <updated>1513011252047</updated>
     </task>
-    <task id="LOCAL-00056" summary=" changes">
-      <created>1510078047618</created>
-      <option name="number" value="00056" />
+    <task id="LOCAL-00150" summary="changes">
+      <created>1513096922672</created>
+      <option name="number" value="00150" />
       <option name="project" value="LOCAL" />
-      <updated>1510078047619</updated>
+      <updated>1513096922673</updated>
     </task>
-    <task id="LOCAL-00057" summary=" changes">
-      <created>1510078462386</created>
-      <option name="number" value="00057" />
+    <task id="LOCAL-00151" summary="changes">
+      <created>1513097899717</created>
+      <option name="number" value="00151" />
       <option name="project" value="LOCAL" />
-      <updated>1510078462386</updated>
+      <updated>1513097899718</updated>
     </task>
-    <task id="LOCAL-00058" summary=" changes">
-      <created>1510247981779</created>
-      <option name="number" value="00058" />
+    <task id="LOCAL-00152" summary="changes">
+      <created>1513098373339</created>
+      <option name="number" value="00152" />
       <option name="project" value="LOCAL" />
-      <updated>1510247981779</updated>
+      <updated>1513098373339</updated>
     </task>
-    <task id="LOCAL-00059" summary="changes">
-      <created>1510248289263</created>
-      <option name="number" value="00059" />
+    <task id="LOCAL-00153" summary="changes">
+      <created>1513099943629</created>
+      <option name="number" value="00153" />
       <option name="project" value="LOCAL" />
-      <updated>1510248289263</updated>
+      <updated>1513099943629</updated>
     </task>
-    <task id="LOCAL-00060" summary=" changes">
-      <created>1510248810505</created>
-      <option name="number" value="00060" />
+    <task id="LOCAL-00154" summary="changes">
+      <created>1513263690225</created>
+      <option name="number" value="00154" />
       <option name="project" value="LOCAL" />
-      <updated>1510248810505</updated>
+      <updated>1513263690226</updated>
     </task>
-    <task id="LOCAL-00061" summary=" changes">
-      <created>1510252025511</created>
-      <option name="number" value="00061" />
+    <task id="LOCAL-00155" summary="changes">
+      <created>1513263721328</created>
+      <option name="number" value="00155" />
       <option name="project" value="LOCAL" />
-      <updated>1510252025512</updated>
+      <updated>1513263721328</updated>
     </task>
-    <task id="LOCAL-00062" summary="image changes">
-      <created>1510252781035</created>
-      <option name="number" value="00062" />
+    <task id="LOCAL-00156" summary="changes">
+      <created>1513265599096</created>
+      <option name="number" value="00156" />
       <option name="project" value="LOCAL" />
-      <updated>1510252781036</updated>
+      <updated>1513265599097</updated>
     </task>
-    <task id="LOCAL-00063" summary=" changes">
-      <created>1510496043689</created>
-      <option name="number" value="00063" />
+    <task id="LOCAL-00157" summary="changes">
+      <created>1513412376694</created>
+      <option name="number" value="00157" />
       <option name="project" value="LOCAL" />
-      <updated>1510496043690</updated>
+      <updated>1513412376694</updated>
     </task>
-    <task id="LOCAL-00064" summary="image changes">
-      <created>1510502976058</created>
-      <option name="number" value="00064" />
+    <task id="LOCAL-00158" summary="changes">
+      <created>1513412607188</created>
+      <option name="number" value="00158" />
       <option name="project" value="LOCAL" />
-      <updated>1510502976059</updated>
+      <updated>1513412607188</updated>
     </task>
-    <task id="LOCAL-00065" summary=" changes">
-      <created>1510506948190</created>
-      <option name="number" value="00065" />
+    <task id="LOCAL-00159" summary="changes">
+      <created>1513413089313</created>
+      <option name="number" value="00159" />
       <option name="project" value="LOCAL" />
-      <updated>1510506948190</updated>
+      <updated>1513413089313</updated>
     </task>
-    <task id="LOCAL-00066" summary="changes">
-      <created>1510507472238</created>
-      <option name="number" value="00066" />
+    <task id="LOCAL-00160" summary="changes">
+      <created>1513414387811</created>
+      <option name="number" value="00160" />
       <option name="project" value="LOCAL" />
-      <updated>1510507472238</updated>
+      <updated>1513414387811</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <option name="localTasksCounter" value="161" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212175000" />
+    <option name="totallyTimeSpent" value="414647000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="24" width="1315" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.50278884" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23832528" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18196458" sideWeight="0.49721116" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22061191" sideWeight="0.49721116" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23640662" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25531915" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980299" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5748792" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980299" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.50278884" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980299" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23832528" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17230274" sideWeight="0.49721116" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2639874" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -1287,8 +1220,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="logout api added" />
-    <MESSAGE value="view profile api added" />
     <MESSAGE value="profile edit about api added" />
     <MESSAGE value="country state city api added" />
     <MESSAGE value="AAbout family api added" />
@@ -1311,12 +1242,14 @@
     <MESSAGE value="login changes" />
     <MESSAGE value="image changes" />
     <MESSAGE value=" changes" />
+    <MESSAGE value="reg step2  added" />
+    <MESSAGE value="remove drop down color" />
     <MESSAGE value="changes" />
     <option name="LAST_COMMIT_MESSAGE" value="changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1325,594 +1258,381 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/gulp/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41745284">
+          <caret line="55" column="31" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gulp/build.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.1111112">
-          <caret line="66" column="45" selection-start-line="66" selection-start-column="45" selection-end-line="66" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gulp/conf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3840156">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/app/directive/image-scroll/image-scroll.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5966981">
+          <caret line="124" column="44" selection-start-line="124" selection-start-column="44" selection-end-line="124" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.14424951">
+        <state vertical-scroll-proportion="-0.5683962">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/index.module.js">
+    <entry file="file://$PROJECT_DIR$/src/app/main/managephotos/managephoto.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="92" column="19" selection-start-line="92" selection-start-column="19" selection-end-line="92" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/managephotos/managephoto.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58432305">
+          <caret line="53" column="65" selection-start-line="53" selection-start-column="65" selection-end-line="53" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/navigation/dashboard-right/dashBoardRight.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="9" selection-start-line="14" selection-start-column="7" selection-end-line="33" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/navigation/message/inbox/inboxNav.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/lib/css/all.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="34.068966">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/lib/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/message/message.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53695655">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/registration/registration.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="37" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/registration/registration.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="40" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/settings/privacySettings/privacySettings.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.821428">
-          <caret line="79" column="45" selection-start-line="74" selection-start-column="39" selection-end-line="79" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/phrase.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="165" column="16" selection-start-line="165" selection-start-column="16" selection-end-line="165" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/login/login.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7066116">
-          <caret line="70" column="8" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/core/layouts/dbLayout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/core/layouts/loginLayout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/toolbar/login/registrationToolbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/toolbar/login/loginToolbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/navigation/dashboard/dbNavigation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="104" selection-start-line="13" selection-start-column="82" selection-end-line="13" selection-end-column="104" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/matches/matches.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="194" column="24" selection-start-line="194" selection-start-column="24" selection-end-line="194" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/profile/contactdetails/contactDetails.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/matches/matches.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/dashboard/dashboard.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8677686">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/login/loginContent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41666666">
-          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#6;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#7;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#8;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#9;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/profile/profile.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.9814049">
-          <caret line="825" column="0" selection-start-line="825" selection-start-column="0" selection-end-line="825" selection-end-column="0" />
-          <folding>
-            <element signature="e#4133#4543#0" expanded="false" />
-            <element signature="e#4577#5024#0" expanded="false" />
-            <element signature="e#5067#5630#0" expanded="false" />
-            <element signature="e#5658#9861#0" expanded="false" />
-            <element signature="e#9899#9956#0" expanded="false" />
-            <element signature="e#9998#11494#0" expanded="false" />
-            <element signature="e#11530#13672#0" expanded="false" />
-            <element signature="e#13715#16147#0" expanded="false" />
-            <element signature="e#16186#17388#0" expanded="false" />
-            <element signature="e#17429#17854#0" expanded="false" />
-            <element signature="e#17896#17947#0" expanded="false" />
-            <element signature="e#17986#18037#0" expanded="false" />
-            <element signature="e#20943#21394#0" expanded="false" />
-            <element signature="e#21431#21929#0" expanded="false" />
-            <element signature="e#21961#22421#0" expanded="false" />
-            <element signature="e#22447#23890#0" expanded="false" />
-            <element signature="e#23928#25472#0" expanded="false" />
-            <element signature="e#25506#26916#0" expanded="false" />
-            <element signature="e#26958#28362#0" expanded="false" />
-            <element signature="e#28395#29831#0" expanded="false" />
-            <element signature="e#29872#31369#0" expanded="false" />
-            <element signature="e#31404#32816#0" expanded="false" />
-            <element signature="e#34529#35914#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/profile/editProfile/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.7142856">
-          <caret line="1844" column="119" selection-start-line="1844" selection-start-column="119" selection-end-line="1844" selection-end-column="119" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/toolbar/managephoto/managephotoToolbar.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0357144">
+          <caret line="42" column="62" selection-start-line="42" selection-start-column="62" selection-end-line="42" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/message/messagetoolbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.428571">
+          <caret line="44" column="62" selection-start-line="44" selection-start-column="62" selection-end-line="44" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/settings/settingsToolbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4033019">
+          <caret line="42" column="88" selection-start-line="42" selection-start-column="88" selection-end-line="42" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/search/regular/regular.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/search/regular/regularSearch.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/navigation/settings/settingNav.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.084070794">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/navigation/searchresults/searchResultsNavigation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8113208">
+          <caret line="471" column="0" selection-start-line="254" selection-start-column="27" selection-end-line="471" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/navigation/matches/matchesNavigation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9103774">
+          <caret line="497" column="0" selection-start-line="497" selection-start-column="0" selection-end-line="497" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/matches/matches.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.5">
-          <caret line="59" column="61" selection-start-line="59" selection-start-column="61" selection-end-line="59" selection-end-column="61" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+          <caret line="62" column="80" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="80" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/main/matches/matches.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="78" selection-start-line="8" selection-start-column="78" selection-end-line="8" selection-end-column="78" />
-          <folding />
+          <caret line="262" column="21" selection-start-line="262" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/dashboard/dashboard.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6859504">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.637931">
-          <caret line="1189" column="48" selection-start-line="1189" selection-start-column="48" selection-end-line="1189" selection-end-column="48" />
-          <folding>
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1510252803558" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/toolbar/matches/matchestoolbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="10.178572">
-          <caret line="48" column="86" selection-start-line="48" selection-start-column="86" selection-end-line="48" selection-end-column="86" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/toolbar/message/messagetoolbar.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/search/searchtoolbar.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="24" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="24" />
-          <folding />
+          <caret line="14" column="59" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="59" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/toolbar/message/messagetoolbar.html">
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/searchresults/searchresultstoolbar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.857142">
-          <caret line="61" column="61" selection-start-line="61" selection-start-column="61" selection-end-line="61" selection-end-column="61" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="92" selection-start-line="47" selection-start-column="92" selection-end-line="47" selection-end-column="92" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/main.module.js">
+    <entry file="file://$PROJECT_DIR$/src/app/navigation/dashboard/dbNavigation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="104" column="31" selection-start-line="104" selection-start-column="28" selection-end-line="104" selection-end-column="31" />
-          <folding />
+        <state vertical-scroll-proportion="0.5754717">
+          <caret line="229" column="50" selection-start-line="229" selection-start-column="50" selection-end-line="229" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/searchresults/searchresultstoolbar.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/toolbar/dashboard/dbToolbar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29555556">
-          <caret line="159" column="67" selection-start-line="159" selection-start-column="67" selection-end-line="159" selection-end-column="89" />
+        <state vertical-scroll-proportion="0.6037736">
+          <caret line="22" column="62" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/matches/matchestoolbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3726415">
+          <caret line="76" column="58" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/navigation/dashboard-right/dashBoardRight.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="58" column="81" selection-start-line="58" selection-start-column="76" selection-end-line="58" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/profile/profile.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="374" column="9" selection-start-line="374" selection-start-column="9" selection-end-line="374" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/navigation/settings/settingNavigation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.5">
+          <caret line="26" column="68" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/main.module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.48387095">
+          <caret line="149" column="69" selection-start-line="149" selection-start-column="69" selection-end-line="149" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/managephotos/managephoto.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="273" column="55" selection-start-line="270" selection-start-column="47" selection-end-line="273" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/navigation/search/searchNavigationById.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/navigation/search/searchNavigation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/profile/profileToolbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.20248668">
+          <caret line="20" column="61" selection-start-line="20" selection-start-column="61" selection-end-line="20" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/search/searchtoolbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.571429">
+          <caret line="76" column="59" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/profile/editProfile/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2151" column="0" selection-start-line="2151" selection-start-column="0" selection-end-line="2151" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/search/searchbyid/searchById.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="81" column="60" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/dashboard/dashboard.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="0" selection-start-line="38" selection-start-column="7" selection-end-line="42" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/search/searchbyid/searchById.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="54" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/dashboard/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="210" column="0" selection-start-line="210" selection-start-column="0" selection-end-line="210" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/core/layouts/loginLayout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/searchresults/searchresults.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="30" selection-start-line="60" selection-start-column="23" selection-end-line="62" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/searchresults/searchresults.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/view-profile/viewProfile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="97" column="66" selection-start-line="97" selection-start-column="56" selection-end-line="97" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/view-profile/viewProfile.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/managephotos/managephoto.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/app/main/registration2/registrationStep2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.416318">
-          <caret line="24" column="26" selection-start-line="11" selection-start-column="8" selection-end-line="32" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/toolbar/settings/settingsToolbar.html">
+    <entry file="file://$PROJECT_DIR$/src/app/index.route.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21111111">
-          <caret line="146" column="89" selection-start-line="146" selection-start-column="89" selection-end-line="146" selection-end-column="89" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="207" column="28" selection-start-line="207" selection-start-column="20" selection-end-line="207" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/login/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/login/login.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/login/loginContent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="126" column="36" selection-start-line="126" selection-start-column="36" selection-end-line="126" selection-end-column="54" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#label#0;n#div#5;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#11;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#1;n#div#0;n#div#11;n#form#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/registration/registration.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="41" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/core/layouts/regLayout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="62" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/login/registrationToolbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.428571">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/index.route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.645161">
-          <caret line="227" column="58" selection-start-line="227" selection-start-column="37" selection-end-line="227" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/settings/accountsettings/accountSettings.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.042505592">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/navigation/settings/settingNav.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.3912134">
-          <caret line="8" column="74" selection-start-line="8" selection-start-column="74" selection-end-line="8" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/message/inbox/accepted/messageAccepted.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/login/registrationStep2Toolbar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/message/inbox/accepted/messageAccepted.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.285714">
-          <caret line="54" column="22" selection-start-line="48" selection-start-column="16" selection-end-line="54" selection-end-column="22" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/message/inbox/pending/messagePending.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/message/inbox/declined/messageDeclined.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/message/inbox/pending/messagePending.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.385965">
-          <caret line="53" column="22" selection-start-line="47" selection-start-column="16" selection-end-line="53" selection-end-column="22" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/message/inbox/declined/messageDeclined.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.3157895">
-          <caret line="49" column="40" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/message/sent/sent.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/message/sent/sent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.4642856">
-          <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="54" selection-end-column="22" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/message/awaitingReply/awaiting.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/message/awaitingReply/awaiting.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25333333">
-          <caret line="49" column="40" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
