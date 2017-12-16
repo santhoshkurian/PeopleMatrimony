@@ -67,6 +67,8 @@
                 url: resourceUrl.url()+'populate?id_country='+$scope.step2.country
             }).then(function successCallback(response) {
                 $scope.stateList = response.data.states;
+                $scope.step2.state = 0;
+                $scope.step2.city = 0;
             }, function errorCallback(response) {
 
             });
