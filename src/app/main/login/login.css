@@ -116,5 +116,11 @@ padding-top:5px;}
     font-family: source_sans;
     color:#777777;
     font-size: 14px;
+}
+.reg-header{
+    font-family: source_sans;
+    color:#363636;
+    font-size: 18px;
+    font-weight: bold;
 
 }
