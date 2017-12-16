@@ -200,7 +200,11 @@
 
             return indexOf.call(this, needle) > -1;
         };
-
+        $scope.isTrue = function (id,obj) {
+            if(contains.call($scope.facetdetails[obj],id)){
+                return true;
+            }
+        }
         var vm = this;
         $scope.matches = [];
         $scope.message = null;
@@ -210,11 +214,7 @@
             console.log($scope.currentPage)
         }
 
-        $scope.isTrue = function (id,obj) {
-            if(contains.call($scope.facetdetails[obj],id)){
-return true;
-            }
-        }
+
 
         $scope.shortlist = shortlist;
         $scope.newMatches = newMatches;

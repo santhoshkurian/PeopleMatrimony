@@ -21,8 +21,136 @@
         $scope.empDiv = true;
         $scope.ocuDiv = true;
         $scope.selectFacet = selectFacet;
+        $scope.facetSearch = facetSearch;
         function selectFacet(obj){
             $scope[obj]=!$scope[obj];
+        }
+
+        $scope.facetdetails = {motherTongue:[],occupation:[],religion:[],star:[],education:[],occu_cat:[]
+
+        }
+
+        function facetSearch(id,obj){
+            console.log(id,obj);
+            var query = [];
+
+            if('mstatus' == obj){
+                query.push("marital_status="+id)
+            }
+            if('motherTongue' == obj){
+                if(!contains.call($scope.facetdetails.motherTongue,id)){
+                    $scope.facetdetails.motherTongue.push(id)
+                }else{
+                    const index = $scope.facetdetails.motherTongue.indexOf(id);
+                    $scope.facetdetails.motherTongue.splice(index, 1);
+                }
+            }
+            if($scope.facetdetails.motherTongue.length > 0){
+                query.push("mothertongue="+$scope.facetdetails.motherTongue.join('~'))
+            }
+            if('religion' == obj){
+                if(!contains.call($scope.facetdetails.religion,id)){
+                    $scope.facetdetails.religion.push(id)
+                }else{
+                    const index = $scope.facetdetails.religion.indexOf(id);
+                    $scope.facetdetails.religion.splice(index, 1);
+                }
+            }
+            if($scope.facetdetails.religion.length > 0){
+                query.push("religion="+$scope.facetdetails.religion.join('~'))
+            }
+            if('star' == obj){
+                if(!contains.call($scope.facetdetails.star,id)){
+                    $scope.facetdetails.star.push(id)
+                }else{
+                    const index = $scope.facetdetails.star.indexOf(id);
+                    $scope.facetdetails.star.splice(index, 1);
+                }
+            }
+            if($scope.facetdetails.star.length > 0){
+                query.push("star="+$scope.facetdetails.star.join('~'))
+            }
+            if('education' == obj){
+                if(!contains.call($scope.facetdetails.education,id)){
+                    $scope.facetdetails.education.push(id)
+                }else{
+                    const index = $scope.facetdetails.education.indexOf(id);
+                    $scope.facetdetails.education.splice(index, 1);
+                }
+            }
+            if($scope.facetdetails.education.length > 0){
+                query.push("education="+$scope.facetdetails.education.join('~'))
+            }
+            if('occu_cat' == obj){
+                if(!contains.call($scope.facetdetails.occu_cat,id)){
+                    $scope.facetdetails.occu_cat.push(id)
+                }else{
+                    const index = $scope.facetdetails.occu_cat.indexOf(id);
+                    $scope.facetdetails.occu_cat.splice(index, 1);
+                }
+            }
+            if($scope.facetdetails.occu_cat.length > 0){
+                query.push("occu_cat="+ $scope.facetdetails.occu_cat.join('~'))
+            }
+            if('occupation' == obj){
+                if(!contains.call($scope.facetdetails.occupation,id)){
+                    $scope.facetdetails.occupation.push(id)
+                }else{
+                    const index = $scope.facetdetails.occupation.indexOf(id);
+                    $scope.facetdetails.occupation.splice(index, 1);
+                }
+            }
+            if($scope.facetdetails.occupation.length > 0){
+                query.push("occupation="+ $scope.facetdetails.occupation.join('~'))
+            }
+
+
+            if(query.length > 0 ){
+                query = "&"+query.join('&')
+            }
+            console.log(query)
+            $http({
+                method: 'POST',
+                url: resourceUrl.url() + 'matches?' +
+                '&token=' + storageService.get("token") + '&type=search' +query
+            }).then(function successCallback(response) {
+                console.log(response)
+                $scope.matches = response.data.matches;
+            }, function errorCallback(response) {
+                console.log(response);
+            });
+
+        }
+        var contains = function(needle) {
+            // Per spec, the way to identify NaN is that it is not equal to itself
+            var findNaN = needle !== needle;
+            var indexOf;
+
+            if(!findNaN && typeof Array.prototype.indexOf === 'function') {
+                indexOf = Array.prototype.indexOf;
+            } else {
+                indexOf = function(needle) {
+                    var i = -1, index = -1;
+
+                    for(i = 0; i < this.length; i++) {
+                        var item = this[i];
+
+                        if((findNaN && item !== item) || item === needle) {
+                            index = i;
+                            break;
+                        }
+                    }
+
+                    return index;
+                };
+            }
+
+            return indexOf.call(this, needle) > -1;
+        };
+        $scope.isTrue = function (id,obj) {
+            if(contains.call($scope.facetdetails[obj],id)){
+                return true;
+            }
         }
 
         $scope.viewProfile = viewProfile;
