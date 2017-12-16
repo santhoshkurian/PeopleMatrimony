@@ -18,7 +18,7 @@
         }
         console.log("LoginController");
 
-        $scope.reg={
+        $scope.reg={code:91
 
         };
 
