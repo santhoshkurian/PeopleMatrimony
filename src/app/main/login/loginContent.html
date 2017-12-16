@@ -20,12 +20,12 @@
                 </div>
 
                 <div class="form-group ">
-                    <label class="col-md-3 control-label text-left">PROFILE FOR</label>
+                    <label class="col-md-3 control-label  reg-label">PROFILE FOR<span style="color: red">*</span></label>
 
                     <div class="col-md-8">
-                        <select class="form-control input-rounded" ng-model="reg.profile_for">
+                        <select class="form-control input-rounded" ng-model="reg.profile_for" ng-change="selectProfileFor()">
                             <option value="" ng-selected="true" selected="selected">Select</option>
-                            <option value="myself">My self</option>
+                            <option value="myself">Myself</option>
                             <option value="daughter">Daughter</option>
                             <option value="son">Son</option>
                             <option value="brother">Brother</option>
@@ -37,7 +37,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="col-md-3 control-label text-left ">NAME <span style="color: red">*</span></label>
+                    <label class="col-md-3 control-label reg-label ">NAME <span style="color: red">*</span></label>
 
                     <div class="col-md-8">
                         <input type="text" required class="form-control  input-rounded" placeholder="Name" ng-model="reg.name">
@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="col-md-3 control-label">GENDER</label>
+                    <label class="col-md-3 control-label reg-label">GENDER<span style="color: red">*</span></label>
 
                     <div class="col-md-8 margin-right-30">
                             <div class="col-md-4">
@@ -75,7 +75,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-3 control-label">DATE OF BIRTH<span style="color: red">*</span></label>
+                    <label class="col-md-3 control-label reg-label">DATE OF BIRTH<span style="color: red">*</span></label>
 
                    <!-- <div class="col-md-8">
                         <input type="date" required class="form-control input-rounded" ng-model="reg.dob" placeholder="Date of Birth">
@@ -90,7 +90,18 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-3 control-label ">RELIGION<span style="color: red">*</span></label>
+                    <label class="col-md-3 control-label reg-label ">MOTHER TONGUE<span style="color: red">*</span></label>
+
+
+                    <div class="col-md-8">
+                        <select class="form-control input-rounded "
+                                ng-model="reg.mothertongue" required>
+                            <option ng-repeat="obj in motherTongueList" value="{{obj.id_mothertongue}}">{{obj.mothertongue}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label reg-label">RELIGION<span style="color: red">*</span></label>
 
 
                     <div class="col-md-8">
@@ -102,14 +113,14 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="col-md-3 control-label">EMAIL<span style="color: red">*</span></label>
+                    <label class="col-md-3 control-label reg-label">EMAIL<span style="color: red">*</span></label>
 
                     <div class="col-md-8">
                         <input type="email" ng-model="reg.email" required class="form-control input-rounded" placeholder="Email Address">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-3 control-label">MOBILE NUMBER<span style="color: red">*</span></label>
+                    <label class="col-md-3 control-label reg-label">MOBILE NUMBER<span style="color: red">*</span></label>
 
                     <div class="col-md-3">
                         <select class="form-control input-rounded" required ng-model="reg.code">
@@ -127,7 +138,7 @@
                 </div>
 
                 <div class="form-group ">
-                    <label class="col-md-3 control-label">PASSWORD<span style="color: red">*</span></label>
+                    <label class="col-md-3 control-label reg-label">PASSWORD<span style="color: red">*</span></label>
 
                     <div class="col-md-8">
                         <input required type="password" class="form-control input-rounded" ng-model="reg.password" placeholder="Password"

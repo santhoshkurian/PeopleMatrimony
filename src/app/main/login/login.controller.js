@@ -6,9 +6,11 @@
         .controller('LoginController', LoginController);
 
     /** @ngInject */
-    function LoginController(resourceUrl,$uibModal,$state,$http,$scope,storageService,$log) {
+    function LoginController(resourceUrl,$uibModal,$state,$http,$scope,storageService,$log,populate) {
         //var vm = this;
-        $scope.religonList = [];
+        console.log(populate);
+        $scope.religonList = populate.religon;
+        $scope.motherTongueList = populate.mothertongue;
         $scope.message=null;
 
         $scope.login = {
@@ -19,6 +21,15 @@
         $scope.reg={
 
         };
+
+        $scope.selectProfileFor = function() {
+            if ($scope.reg.profile_for == 'daughter') {
+            $scope.reg.gender = 'female';
+        }
+            if ($scope.reg.profile_for == 'son') {
+            $scope.reg.gender = 'male';
+        }
+        }
 
 
         $scope.today = function() {
@@ -114,18 +125,7 @@
             return '';
         }
 
-        $http({
-            method: 'GET',
-            url: resourceUrl.url()+'populate'
-        }).then(function successCallback(response) {
 
-            $scope.religonList = response.data.religon;
-
-            //$scope.profile = response.data;
-        }, function errorCallback(response) {
-            //console.log(response)
-
-        });
 
         var vm = this;
         vm.open;
@@ -196,8 +196,9 @@
             $http({
                 method: 'POST',
                 url: resourceUrl.url()+'user?step=1&profile_for='+$scope.reg.profile_for+'&' +
-                'name='+$scope.reg.name+'&gender='+$scope.reg.gender+'&dob='+date1+'&religion='+parseInt($scope.reg.religion)+'&mothertongue=5&' +
-                'country_code='+$scope.reg+'&email='+$scope.reg.email+'&' +
+                'name='+$scope.reg.name+'&gender='+$scope.reg.gender+'&dob='+date1+'&religion='+parseInt($scope.reg.religion)+
+                '&mothertongue=' +$scope.reg.mothertongue+
+                '&country_code='+$scope.reg+'&email='+$scope.reg.email+'&' +
                 'mobile='+$scope.reg.mobile+'&password='+$scope.reg.password+'&source=111'
             }).then(function successCallback(response) {
                 //console.log(response.data.access_token);

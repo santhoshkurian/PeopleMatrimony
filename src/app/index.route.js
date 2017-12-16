@@ -203,12 +203,30 @@
                         templateUrl: 'app/footer/footer.html',
                         controller: 'FooterController as vm'
                     }
+                },
+                resolve: {
+                    populate: function ($http,resourceUrl) {
+                        return $http({
+                            method: 'GET',
+                            url: resourceUrl.url()+'populate'
+                        }).then(function successCallback(response) {
+                            console.log(response)
+                            return response.data;
+
+                        }, function errorCallback(response) {
+                            //console.log(response)
+                            return response;
+
+
+                        });
+                    }
+
                 }
             }).state('reg', {
                 url: '/reg/:reg_id',
                 views: {
                     'main@': {
-                        templateUrl: 'app/core/layouts/loginLayout.html'
+                        templateUrl: 'app/core/layouts/regLayout.html'
                         //controller : 'MainController as vm'
                     },
                     'toolbar@reg': {
@@ -247,7 +265,7 @@
                 url: '/step2',
                 views: {
                     'main@': {
-                        templateUrl: 'app/core/layouts/loginLayout.html'
+                        templateUrl: 'app/core/layouts/regLayout.html'
                         //controller : 'MainController as vm'
                     },
                     'toolbar@step2': {
