@@ -26,7 +26,7 @@
             $scope[obj]=!$scope[obj];
         }
 
-        $scope.facetdetails = {motherTongue:[],occupation:[],religion:[],star:[],education:[],occu_cat:[]
+        $scope.facetdetails = {mstatus:[],motherTongue:[],occupation:[],religion:[],star:[],education:[],occu_cat:[]
 
         }
 
@@ -35,7 +35,9 @@
             var query = [];
 
             if('mstatus' == obj){
-                query.push("marital_status="+id)
+                $scope.facetdetails.mstatus = [];
+                $scope.facetdetails.mstatus.push(id)
+                query.push("marital_status="+$scope.facetdetails.mstatus.join('~'))
             }
             if('motherTongue' == obj){
                 if(!contains.call($scope.facetdetails.motherTongue,id)){
@@ -108,7 +110,6 @@
             if(query.length > 0 ){
                 query = "&"+query.join('&')
             }
-            console.log(query)
             $http({
                 method: 'POST',
                 url: resourceUrl.url() + 'matches?' +
