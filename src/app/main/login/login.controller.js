@@ -13,12 +13,16 @@
         $scope.motherTongueList = populate.mothertongue;
         $scope.message=null;
 
+
+
+
+
         $scope.login = {
             username:null,password:null
         }
         console.log("LoginController");
 
-        $scope.reg={code:91
+        $scope.reg={code:91,mobile:''
 
         };
 
@@ -188,36 +192,77 @@
 
         vm.registerCandidate = function () {
             console.log($scope.reg);
+            $scope.showSelectProfile = false;
+            $scope.showName = false;
+            $scope.showGender = false;
+            $scope.showDOB = false;
+            $scope.showmt = false;
+            $scope.showemail = false;
+            $scope.showMobileNumber = false;
+            $scope.showPassword = false;
+
+
+
             var date1 = $scope.reg.dob;
             date1 = new Date(date1);
             date1 = date1.toString().replace('(India Standard Time)','(IST)');;
             console.log(date1);
+            if($scope.reg.profile_for == null || $scope.reg.profile_for ==''){
+                $scope.showSelectProfile = true;
+            }
+            if($scope.reg.name == null || $scope.reg.name ==''){
+                $scope.showName = true;
+            }
+            if($scope.reg.gender == null || $scope.reg.gender ==''){
+                $scope.showGender = true;
+            }
+            if($scope.reg.dob == null || $scope.reg.dob ==''){
+                $scope.showDOB = true;
+            }
+            if($scope.reg.mothertongue == null || $scope.reg.mothertongue ==''){
+                $scope.showmt = true;
+            }
+            if($scope.reg.religion == null || $scope.reg.religion ==''){
+                $scope.showreligion = true;
+            }
+            if($scope.reg.email == null || $scope.reg.email ==''){
+                $scope.showemail = true;
+            }
+            if($scope.reg.mobile == null || $scope.reg.mobile =='' || $scope.reg.mobile.toString().length != 10){
+                $scope.moberror = 'Invalid Mobile Number'
+                $scope.showMobileNumber = true;
+            }
+            if($scope.reg.password == null || $scope.reg.password ==''){
+                $scope.showPassword = true;
+            }
+            if(!$scope.showSelectProfile && !$scope.showName && !$scope.showGender
+                && !$scope.showDOB && !$scope.showPassword && !$scope.showreligion && !$scope.showemail && !$scope.showMobileNumber) {
 
-            $http({
-                method: 'POST',
-                url: resourceUrl.url()+'user?step=1&profile_for='+$scope.reg.profile_for+'&' +
-                'name='+$scope.reg.name+'&gender='+$scope.reg.gender+'&dob='+date1+'&religion='+parseInt($scope.reg.religion)+
-                '&mothertongue=' +$scope.reg.mothertongue+
-                '&country_code='+$scope.reg+'&email='+$scope.reg.email+'&' +
-                'mobile='+$scope.reg.mobile+'&password='+$scope.reg.password+'&source=111'
-            }).then(function successCallback(response) {
-                //console.log(response.data.access_token);
-                storageService.set("token",response.data.access_token)
-                storageService.set("id",response.data.id_people)
+                $http({
+                    method: 'POST',
+                    url: resourceUrl.url()+'user?step=1&profile_for='+$scope.reg.profile_for+'&' +
+                    'name='+$scope.reg.name+'&gender='+$scope.reg.gender+'&dob='+date1+'&religion='+parseInt($scope.reg.religion)+
+                    '&mothertongue=' +$scope.reg.mothertongue+
+                    '&country_code='+$scope.reg+'&email='+$scope.reg.email+'&' +
+                    'mobile='+$scope.reg.mobile+'&password='+$scope.reg.password+'&source=111'
+                }).then(function successCallback(response) {
+                    //console.log(response.data.access_token);
+                    storageService.set("token",response.data.access_token)
+                    storageService.set("id",response.data.id_people)
 
-                $state.go('reg',{
-                    reg_id: $scope.reg.religion
-                })
-
-
-            }, function errorCallback(response) {
-                console.log(response);
-                $scope.message = response.data.message;
+                    $state.go('reg',{
+                        reg_id: $scope.reg.religion
+                    })
 
 
-            });
-            //$state.go('reg')
+                }, function errorCallback(response) {
+                    console.log(response);
+                    $scope.message = response.data.message;
 
+
+                });
+                $state.go('reg')
+            }
         };
 
 
