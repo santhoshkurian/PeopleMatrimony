@@ -2,6 +2,8 @@
     <div class=" col-md-4 col-md-offset-4 ">
 
         <div class="form-group margin-top-40">
+            <div class="col-md-12">
+
             <label class=" uppercase font-weight"> Maritial Status</label>
             <select class="form-control input-rounded "
                     ng-model="step2.marital_status">
@@ -13,57 +15,81 @@
                 <option value="widower">widower</option>
 
             </select>
+            <span ng-if="showMS">
+                        <div class="user-error-msg-arrow" ></div>
+                        <div class="user-error-msg" >Please select a Maritial Status !</div>
+                    </span>
+                </div>
         </div>
-
-        <!--<div class="form-group ">-->
-            <!--<label class=" uppercase font-weight  "> Mother toungue</label>-->
-
-            <!--<select class="form-control input-rounded "-->
-                    <!--ng-model="step2.mothertongue">-->
-                <!--<option ng-repeat="obj in motherTongueList"  value="{{obj.id_mothertongue}}">-->
-                    <!--{{obj.mothertongue}}-->
-                <!--</option>-->
-            <!--</select>-->
-        <!--</div>-->
         <div class="form-group ">
-            <label class=" uppercase font-weight"> Cast</label>
+            <div class="col-md-12">
+
+            <label class=" uppercase font-weight"> Caste</label>
             <select placegolder="Select"class="form-control input-rounded " ng-model="step2.caste"
                        >
                 <option ng-repeat="obj in castList" value="{{obj.id_caste}}">{{obj.caste}}</option>
 
             </select>
+            <span ng-if="showCaste">
+                        <div class="user-error-msg-arrow" ></div>
+                        <div class="user-error-msg" >Please select an Caste !</div>
+                    </span>
+                </div>
         </div>
 
 
         <div class="form-group ">
+            <div class="col-md-12">
+
             <label class=" uppercase font-weight"> Country Living In</label>
             <select class="form-control input-rounded " ng-model="step2.country"
                     ng-click="selectCountry()">
                 <option ng-repeat="obj in countryList" value="{{obj.id_country}}">{{obj.country_name}}
                 </option>
             </select>
+             <span ng-if="showCountry">
+                        <div class="user-error-msg-arrow" ></div>
+                        <div class="user-error-msg" >Please select an Country !</div>
+                    </span>
+                </div>
         </div>
 
 
         <div class="form-group ">
+            <div class="col-md-12">
+
             <label class=" uppercase font-weight"> State Living In</label>
             <select class="form-control input-rounded " ng-model="step2.state"
                     ng-click="selectState()">
                 <option ng-repeat="obj in stateList" value="{{obj.id_state}}">{{obj.state_name}}</option>
             </select>
+            <span ng-if="showState">
+                        <div class="user-error-msg-arrow" ></div>
+                        <div class="user-error-msg" >Please select an State !</div>
+                    </span>
+                </div>
         </div>
 
 
         <div class="form-group ">
+            <div class="col-md-12">
+
             <label class=" uppercase font-weight"> City Living In</label>
             <select class="form-control input-rounded " ng-model="step2.city"
                     ng-click="selectCity(city)">
                 <option ng-repeat="obj in cityList" value="{{obj.id_city}}">{{obj.city_name}}</option>
             </select>
+            <span ng-if="showCity">
+                        <div class="user-error-msg-arrow" ></div>
+                        <div class="user-error-msg" >Please select a city</div>
+                    </span>
+                </div>
         </div>
 
 
         <div class="form-group ">
+            <div class="col-md-12">
+
             <label class=" uppercase font-weight"> Height</label>
             <select class="form-control input-rounded " ng-model="step2.height">
                 <option>Select</option>
@@ -124,27 +150,46 @@
 
 
             </select>
+            <span ng-if="showHeight">
+                        <div class="user-error-msg-arrow" ></div>
+                        <div class="user-error-msg" >Select Height !</div>
+                    </span>
+                </div>
         </div>
 
 
         <div class="form-group ">
+            <div class="col-md-12">
+
             <label class=" uppercase font-weight"> Highest Education</label>
             <select class="form-control input-rounded " ng-model="setProfession.education"
                     ng-options="item.education for item in educationList track by item.id_education">
             </select>
+            <span ng-if="showEducation">
+                        <div class="user-error-msg-arrow" ></div>
+                        <div class="user-error-msg" >Please select an Education !</div>
+                    </span>
+                </div>
         </div>
 
 
         <div class="form-group ">
+            <div class="col-md-12">
+
             <label class=" uppercase font-weight"> Occupation</label>
             <select class="form-control input-rounded " ng-model="setProfession.occupation"
                     ng-options="item.occupation for item in occupation track by item.id_occupation">
             </select>
+            <span ng-if="showOccupation">
+                        <div class="user-error-msg-arrow" ></div>
+                        <div class="user-error-msg" >Please select an Occupation !</div>
+                    </span>
+                </div>
         </div>
 
         <div class="form-group ">
 
-            <div class="col-md-offset-2 col-md-8">
+            <div class="col-md-offset-2 col-md-8 margin-top-40">
                 <button type="button" class=" center-block col-md-12 btn red input-rounded"
                         ng-click="vm.registerCandidateStep2()">
                     Complete Registration
