@@ -231,7 +231,7 @@
                 $scope.showemail = true;
             }
             if($scope.reg.mobile == null || $scope.reg.mobile =='' || $scope.reg.mobile.toString().length != 10){
-                $scope.moberror = 'Invalid Mobile Number'
+                $scope.moberror = 'Invalid Mobile Number / Enter 10 digit mobile number'
                 $scope.showMobileNumber = true;
             }
             if($scope.reg.password == null || $scope.reg.password ==''){
@@ -290,6 +290,7 @@
                 url: resourceUrl.url()+'user/login?'+
                 'username='+login.username+'&password='+login.password
             }).then(function successCallback(response) {
+                console.log(response);
                 $uibModalInstance.close(vm.selected.item);
                 storageService.set("token",response.data.access_token)
                 storageService.set("id",response.data.id_people);

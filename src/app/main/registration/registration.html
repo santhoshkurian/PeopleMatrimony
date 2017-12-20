@@ -4,7 +4,7 @@
         <div class="form-group margin-top-40">
             <div class="col-md-12">
 
-            <label class=" uppercase font-weight"> Maritial Status</label>
+            <label class=" uppercase font-weight"> Maritial Status<span style="color: red">*</span></label>
             <select class="form-control input-rounded "
                     ng-model="step2.marital_status">
                 <option>Select</option>
@@ -17,14 +17,14 @@
             </select>
             <span ng-if="showMS">
                         <div class="user-error-msg-arrow" ></div>
-                        <div class="user-error-msg" >Please select a Maritial Status !</div>
+                        <div class="user-error-msg" >Select marital status</div>
                     </span>
                 </div>
         </div>
         <div class="form-group ">
             <div class="col-md-12">
 
-            <label class=" uppercase font-weight"> Caste</label>
+            <label class=" uppercase font-weight"> Caste<span style="color: red">*</span></label>
             <select placegolder="Select"class="form-control input-rounded " ng-model="step2.caste"
                        >
                 <option ng-repeat="obj in castList" value="{{obj.id_caste}}">{{obj.caste}}</option>
@@ -32,7 +32,7 @@
             </select>
             <span ng-if="showCaste">
                         <div class="user-error-msg-arrow" ></div>
-                        <div class="user-error-msg" >Please select an Caste !</div>
+                        <div class="user-error-msg" >Select division</div>
                     </span>
                 </div>
         </div>
@@ -41,7 +41,7 @@
         <div class="form-group ">
             <div class="col-md-12">
 
-            <label class=" uppercase font-weight"> Country Living In</label>
+            <label class=" uppercase font-weight"> Country Living In<span style="color: red">*</span></label>
             <select class="form-control input-rounded " ng-model="step2.country"
                     ng-click="selectCountry()">
                 <option ng-repeat="obj in countryList" value="{{obj.id_country}}">{{obj.country_name}}
@@ -49,7 +49,7 @@
             </select>
              <span ng-if="showCountry">
                         <div class="user-error-msg-arrow" ></div>
-                        <div class="user-error-msg" >Please select an Country !</div>
+                        <div class="user-error-msg" >Select your country</div>
                     </span>
                 </div>
         </div>
@@ -58,14 +58,14 @@
         <div class="form-group ">
             <div class="col-md-12">
 
-            <label class=" uppercase font-weight"> State Living In</label>
+            <label class=" uppercase font-weight"> State Living In<span style="color: red">*</span></label>
             <select class="form-control input-rounded " ng-model="step2.state"
                     ng-click="selectState()">
                 <option ng-repeat="obj in stateList" value="{{obj.id_state}}">{{obj.state_name}}</option>
             </select>
             <span ng-if="showState">
                         <div class="user-error-msg-arrow" ></div>
-                        <div class="user-error-msg" >Please select an State !</div>
+                        <div class="user-error-msg" >Select your state</div>
                     </span>
                 </div>
         </div>
@@ -74,14 +74,14 @@
         <div class="form-group ">
             <div class="col-md-12">
 
-            <label class=" uppercase font-weight"> City Living In</label>
+            <label class=" uppercase font-weight"> City Living In<span style="color: red">*</span></label>
             <select class="form-control input-rounded " ng-model="step2.city"
                     ng-click="selectCity(city)">
                 <option ng-repeat="obj in cityList" value="{{obj.id_city}}">{{obj.city_name}}</option>
             </select>
             <span ng-if="showCity">
                         <div class="user-error-msg-arrow" ></div>
-                        <div class="user-error-msg" >Please select a city</div>
+                        <div class="user-error-msg" >Select your city</div>
                     </span>
                 </div>
         </div>
@@ -90,7 +90,7 @@
         <div class="form-group ">
             <div class="col-md-12">
 
-            <label class=" uppercase font-weight"> Height</label>
+            <label class=" uppercase font-weight"> Height<span style="color: red">*</span></label>
             <select class="form-control input-rounded " ng-model="step2.height">
                 <option>Select</option>
                 <option  value="137">137 cms</option>
@@ -152,7 +152,7 @@
             </select>
             <span ng-if="showHeight">
                         <div class="user-error-msg-arrow" ></div>
-                        <div class="user-error-msg" >Select Height !</div>
+                        <div class="user-error-msg" >Select your height </div>
                     </span>
                 </div>
         </div>
@@ -161,13 +161,13 @@
         <div class="form-group ">
             <div class="col-md-12">
 
-            <label class=" uppercase font-weight"> Highest Education</label>
+            <label class=" uppercase font-weight"> Highest Education<span style="color: red">*</span></label>
             <select class="form-control input-rounded " ng-model="setProfession.education"
                     ng-options="item.education for item in educationList track by item.id_education">
             </select>
             <span ng-if="showEducation">
                         <div class="user-error-msg-arrow" ></div>
-                        <div class="user-error-msg" >Please select an Education !</div>
+                        <div class="user-error-msg" >Select highest education !</div>
                     </span>
                 </div>
         </div>
@@ -176,13 +176,13 @@
         <div class="form-group ">
             <div class="col-md-12">
 
-            <label class=" uppercase font-weight"> Occupation</label>
+            <label class=" uppercase font-weight"> Occupation<span style="color: red">*</span></label>
             <select class="form-control input-rounded " ng-model="setProfession.occupation"
                     ng-options="item.occupation for item in occupation track by item.id_occupation">
             </select>
             <span ng-if="showOccupation">
                         <div class="user-error-msg-arrow" ></div>
-                        <div class="user-error-msg" >Please select an Occupation !</div>
+                        <div class="user-error-msg" >select occupation</div>
                     </span>
                 </div>
         </div>
