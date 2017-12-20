@@ -198,6 +198,7 @@
             $scope.showDOB = false;
             $scope.showmt = false;
             $scope.showemail = false;
+            $scope.showreligion = false;
             $scope.showMobileNumber = false;
             $scope.showPassword = false;
 
@@ -222,6 +223,7 @@
             if($scope.reg.mothertongue == null || $scope.reg.mothertongue ==''){
                 $scope.showmt = true;
             }
+            console.log($scope.reg.religion)
             if($scope.reg.religion == null || $scope.reg.religion ==''){
                 $scope.showreligion = true;
             }
