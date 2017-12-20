@@ -18,7 +18,7 @@
     text-transform: capitalize;
 }
 .feature-header {
-   background-color: #E4E8EB;
+   background-color: #edf3f7;
 }
 .price-detail{
     border-right: 1px solid #777777;
@@ -41,9 +41,49 @@
     border: 1px solid #777777 !important;
     height: 100px !important;
 }
-.greeen-icon{
-    color: #00AC8D;
+.select-payment-header{
+    background-color: #edf3f7;
+    margin-left: -20px;
+    margin-right: -20px;
+
 }
+.summary-payment-header{
+    background-color: #b4d7ef;
+    margin-left: -20px;
+    margin-right: -20px;
+
+}
+.summary-payment-footer{
+    background-color: #b4d7ef;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: -16px !important;
+
+}
+.summary-payment-margin-top{
+    margin-top: -10px !important;
+}
+
+.select-payment-header-text{
+    color: red !important;
+    padding-left: 50px !important;
+    /*margin-left: 10px !important;*/
+}
+.summary-payment-header-text{
+    color: black !important;
+    padding-left: 100px !important;
+    /*margin-left: 10px !important;*/
+}
+.summary-payment-header-text-bottom{
+    color: black !important;
+    padding-left: 50px !important;
+    /*margin-left: 10px !important;*/
+}
+.border-portlet{
+    border: 1px solid black !important;
+}
+
+
 
 @media (max-width: 991px) {
     .payment-box{

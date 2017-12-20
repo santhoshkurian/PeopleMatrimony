@@ -91,5 +91,5 @@
     filter: alpha(opacity=0);
 }
 .display-image-icon:hover{
-    display: block;!important;
+    display: block!important;
 }

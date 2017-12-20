@@ -3,7 +3,7 @@
     <div class="page-content1">
         <!-- BEGIN PAGE HEAD-->
         <div class="page-head">
-            <div class="row">
+            <div ng-if ="!paymentCompletion" class="row">
                 <div class="col-md-12 ">
                     <div class="portlet light " style="padding-top: 0px">
                         <div class=" row vp-main-action">
@@ -43,59 +43,75 @@
                                                                 <div class="row">
                                                                     <div class="col-md-12 col-sm-12 col-xs-12 margin-top-20 ">
                                                                         <div class="row">
-                                                                            <div class="col-md-4 col-sm-4 col-xs-4 col-md-border " style="height: 195px">
+                                                                            <div class="col-md-4 col-sm-4 col-xs-4 col-md-border "
+                                                                                 style="height: 195px">
                                                                                 <div class="row">
                                                                                     <div class="col-md-12 col-sm-12 col-xs-12 text-center margin-top-30">
-                                                                           <button type="button" class="btn dark btn-outline ">Classic</button>
-                                                                            </div>
+                                                                                        <button type="button"
+                                                                                                class="btn dark btn-outline ">
+                                                                                            Classic
+                                                                                        </button>
                                                                                     </div>
-                                                                                <div class="row" style="text-align: center">
+                                                                                </div>
+                                                                                <div class="row"
+                                                                                     style="text-align: center">
                                                                                     <div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">
                                                                                         <span class="old-price">Rs 3000</span>
-                                                                                        </div>
                                                                                     </div>
-                                                                                <div class="row" style="text-align: center">
+                                                                                </div>
+                                                                                <div class="row"
+                                                                                     style="text-align: center">
                                                                                     <div class="col-md-12 col-sm-12 col-xs-12  margin-top-10">
                                                                                         <span class="new-price">Rs 2000</span>
                                                                                     </div>
                                                                                 </div>
 
-                                                                                </div>
+                                                                            </div>
                                                                             <div class="col-md-8 col-sm-8 col-xs-8 ">
                                                                                 <div class="row">
                                                                                     <div class="col-md-12 col-sm-12 col-xs-12 pull-left  margin-top-30">
-                                                                                        <button type="button" class="btn dark btn-outline ">Classic Advantage</button>
+                                                                                        <button type="button"
+                                                                                                class="btn dark btn-outline ">
+                                                                                            Classic Advantage
+                                                                                        </button>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="row" style="text-align: left">
+                                                                                <div class="row"
+                                                                                     style="text-align: left">
                                                                                     <div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">
                                                                                         <span class="old-price">Rs 3000</span>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="row" style="text-align: left">
+                                                                                <div class="row"
+                                                                                     style="text-align: left">
                                                                                     <div class="col-md-12 col-sm-12 col-xs-12  margin-top-10">
                                                                                         <span class="new-price">Rs 2000</span>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
-                                                                    <div class="col-md-12 feature-header " style="height:45px">
+                                                                    <div class="col-md-12 feature-header "
+                                                                         style="height:45px">
                                                                         <div class="row">
-                                                                            <div class="col-md-4 col-sm-4 col-xs-4" ng-class="{'selected-payment': selectedOption == 'classic-classic'}"
-                                                                                 ng-mouseover="setSelectedOption('classic-classic')" style="height:45px">
+                                                                            <div class="col-md-4 col-sm-4 col-xs-4"
+                                                                                 ng-class="{'selected-payment': selectedOption == 'classic-classic'}"
+                                                                                 ng-mouseover="setSelectedOption('classic-classic')"
+                                                                                 style="height:45px">
                                                                                 <div class="row">
                                                                                     <div class="col-md-12 margin-top-10">
                                                                                 <span style="text-transform: uppercase;text-align: left;font-size: 10px;">
                                                                                     Make payment
                                                                                 </span>
                                                                                     </div>
-                                                                                    </div>
                                                                                 </div>
-                                                                            <div class="col-md-8 col-sm-8 col-xs-8" ng-class="{'selected-payment': selectedOption == 'classic-advantage'}"
-                                                                                 ng-mouseover="setSelectedOption('classic-advantage')" style="height:45px">
+                                                                            </div>
+                                                                            <div class="col-md-8 col-sm-8 col-xs-8"
+                                                                                 ng-class="{'selected-payment': selectedOption == 'classic-advantage'}"
+                                                                                 ng-mouseover="setSelectedOption('classic-advantage')"
+                                                                                 style="height:45px">
                                                                                 <div class="row">
                                                                                     <div class="col-md-12 margin-top-10">
                                                                                 <span style="text-transform: uppercase;text-align: left;font-size: 10px;">
@@ -105,7 +121,7 @@
                                                                                 </div>
 
                                                                             </div>
-                                                                            </div>
+                                                                        </div>
 
                                                                     </div>
                                                                 </div>
@@ -121,18 +137,24 @@
                                                                 <div class="row">
                                                                     <div class="col-md-12 col-sm-12 col-xs-12 margin-top-20 ">
                                                                         <div class="row">
-                                                                            <div class="col-md-4 col-sm-4 col-xs-4 col-md-border " style="height: 195px">
+                                                                            <div class="col-md-4 col-sm-4 col-xs-4 col-md-border "
+                                                                                 style="height: 195px">
                                                                                 <div class="row">
                                                                                     <div class="col-md-12 col-sm-12 col-xs-12 text-center margin-top-30">
-                                                                                        <button type="button" class="btn dark btn-outline ">Classic</button>
+                                                                                        <button type="button"
+                                                                                                class="btn dark btn-outline ">
+                                                                                            Classic
+                                                                                        </button>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="row" style="text-align: center">
+                                                                                <div class="row"
+                                                                                     style="text-align: center">
                                                                                     <div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">
                                                                                         <span class="old-price">Rs 6000</span>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="row" style="text-align: center">
+                                                                                <div class="row"
+                                                                                     style="text-align: center">
                                                                                     <div class="col-md-12 col-sm-12 col-xs-12  margin-top-10">
                                                                                         <span class="new-price">Rs 4000</span>
                                                                                     </div>
@@ -142,15 +164,20 @@
                                                                             <div class="col-md-8 col-sm-8 col-xs-8 ">
                                                                                 <div class="row">
                                                                                     <div class="col-md-12 col-sm-12 col-xs-12 pull-left  margin-top-30">
-                                                                                        <button type="button" class="btn dark btn-outline ">Classic Advantage</button>
+                                                                                        <button type="button"
+                                                                                                class="btn dark btn-outline ">
+                                                                                            Classic Advantage
+                                                                                        </button>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="row" style="text-align: left">
+                                                                                <div class="row"
+                                                                                     style="text-align: left">
                                                                                     <div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">
                                                                                         <span class="old-price">Rs 6500</span>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="row" style="text-align: left">
+                                                                                <div class="row"
+                                                                                     style="text-align: left">
                                                                                     <div class="col-md-12 col-sm-12 col-xs-12  margin-top-10">
                                                                                         <span class="new-price">Rs 5000</span>
                                                                                     </div>
@@ -160,10 +187,13 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
-                                                                    <div class="col-md-12 feature-header " style="height:45px">
+                                                                    <div class="col-md-12 feature-header "
+                                                                         style="height:45px">
                                                                         <div class="row">
-                                                                            <div class="col-md-4 col-sm-4 col-xs-4" ng-class="{'selected-payment': selectedOption == 'advantage-classic'}"
-                                                                                 ng-mouseover="setSelectedOption('advantage-classic')" style="height:45px">
+                                                                            <div class="col-md-4 col-sm-4 col-xs-4"
+                                                                                 ng-class="{'selected-payment': selectedOption == 'advantage-classic'}"
+                                                                                 ng-mouseover="setSelectedOption('advantage-classic')"
+                                                                                 style="height:45px">
                                                                                 <div class="row">
                                                                                     <div class="col-md-12 margin-top-10">
                                                                                 <span style="text-transform: uppercase;text-align: left;font-size: 10px;">
@@ -172,8 +202,10 @@
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="col-md-8 col-sm-8 col-xs-8" ng-class="{'selected-payment': selectedOption == 'advantage-advantage'}"
-                                                                                 ng-mouseover="setSelectedOption('advantage-advantage')" style="height:45px">
+                                                                            <div class="col-md-8 col-sm-8 col-xs-8"
+                                                                                 ng-class="{'selected-payment': selectedOption == 'advantage-advantage'}"
+                                                                                 ng-mouseover="setSelectedOption('advantage-advantage')"
+                                                                                 style="height:45px">
                                                                                 <div class="row">
                                                                                     <div class="col-md-12 margin-top-10">
                                                                                 <span style="text-transform: uppercase;text-align: left;font-size: 10px;">
@@ -205,10 +237,13 @@
                                                 <div class="col-md-1 margin-right-10"></div>
                                                 <div class="col-md-9">
                                                     <div class="row ">
-                                                        <div class="col-md-12 col-sm-12 col-xs-12 feature-box  " >
+                                                        <div class="col-md-12 col-sm-12 col-xs-12 feature-box  ">
                                                             <div class="row ">
                                                                 <div class="col-md-3 col-sm-3 col-xs-3 margin-top-15 ">
-                                                                    <span  class="greeen-icon socicon-btn socicon-btn-circle socicon-mail tooltips" data-original-title="Mail"></span>
+                                                                    <span style="color: #00AC8D"
+                                                                          class="message-icon socicon-btn socicon-btn-circle socicon-mail tooltips"
+                                                                          data-original-title="Mail"></span>
+
                                                                     <div class="row ">
                                                                         <div class="col-md-12 col-sm-12 col-xs-12 ">
                                                                             <span style="font-size: 10px">Send unlimited 30 personal messages</span>
@@ -217,7 +252,10 @@
 
                                                                 </div>
                                                                 <div class="col-md-3 col-sm-3 col-xs-3 margin-top-15 ">
-                                                                    <span   class="socicon-btn socicon-btn-circle socicon-mail tooltips greeen-icon" data-original-title="Mail"></span>
+                                                                    <span style="color: #00AC8D"
+                                                                          class="socicon-btn socicon-btn-circle socicon-mail tooltips message-icon"
+                                                                          data-original-title="Mail"></span>
+
                                                                     <div class="row ">
                                                                         <div class="col-md-12 col-sm-12 col-xs-12 ">
                                                                             <span style="font-size: 10px">Send unlimited 30 personal messages</span>
@@ -226,7 +264,10 @@
 
                                                                 </div>
                                                                 <div class="col-md-3 col-sm-3 col-xs-3 margin-top-15 ">
-                                                                    <span   class="socicon-btn socicon-btn-circle socicon-mail tooltips greeen-icon" data-original-title="Mail"></span>
+                                                                    <span style="color: #00AC8D"
+                                                                          class="socicon-btn socicon-btn-circle socicon-mail tooltips message-icon"
+                                                                          data-original-title="Mail"></span>
+
                                                                     <div class="row ">
                                                                         <div class="col-md-12 col-sm-12 col-xs-12 ">
                                                                             <span style="font-size: 10px">Send unlimited 30 personal messages</span>
@@ -235,7 +276,10 @@
 
                                                                 </div>
                                                                 <div class="col-md-3 col-sm-3 col-xs-3 margin-top-15 ">
-                                                                    <span   class="socicon-btn socicon-btn-circle socicon-mail tooltips greeen-icon" data-original-title="Mail"></span>
+                                                                    <span style="color: #00AC8D"
+                                                                          class="socicon-btn socicon-btn-circle socicon-mail tooltips message-icon"
+                                                                          data-original-title="Mail"></span>
+
                                                                     <div class="row ">
                                                                         <div class="col-md-12 col-sm-12 col-xs-12 ">
                                                                             <span style="font-size: 10px">Send unlimited 30 personal messages</span>
@@ -256,116 +300,506 @@
                                         </div>
 
                                     </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                        <div ng-if="viewType == 'flexible'">
+
+                            <div class="row ">
+                                <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-10">
+                                            <div class="row ">
+                                                <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                                    <div class="col-md-5 payment-box">
+                                                        <div class="row ">
+                                                            <div class="col-md-12 col-sm-12 col-xs-12 feature-header ">
+                                                                <div class="text-center margin-top-10 margin-bottom-10">
+                                                                    <span class=" feature-header-text">FLEX</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12 col-xs-12 margin-top-20 ">
+                                                                <div class="row">
+                                                                    <div class="col-md-4 col-sm-4 col-xs-4 col-md-border "
+                                                                         style="height: 195px">
+                                                                        <div class="row">
+                                                                            <div class="col-md-12 col-sm-12 col-xs-12 text-center margin-top-30">
+                                                                                <button type="button"
+                                                                                        class="btn dark btn-outline ">
+                                                                                    Classic
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row" style="text-align: center">
+                                                                            <div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">
+                                                                                <span class="old-price">Rs 1000</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row" style="text-align: center">
+                                                                            <div class="col-md-12 col-sm-12 col-xs-12  margin-top-10">
+                                                                                <span class="new-price">Rs 500</span>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-8 col-sm-8 col-xs-8 ">
+                                                                        <div class="row">
+                                                                            <div class="col-md-12 col-sm-12 col-xs-12 pull-left  margin-top-30">
+                                                                                <button type="button"
+                                                                                        class="btn dark btn-outline ">
+                                                                                    Classic Advantage
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row" style="text-align: left">
+                                                                            <div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">
+                                                                                <span class="old-price">Rs 2500</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row" style="text-align: left">
+                                                                            <div class="col-md-12 col-sm-12 col-xs-12  margin-top-10">
+                                                                                <span class="new-price">Rs 1500</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 feature-header " style="height:45px">
+                                                                <div class="row">
+                                                                    <div class="col-md-4 col-sm-4 col-xs-4"
+                                                                         ng-class="{'selected-payment': selectedOption == 'flexible-classic'}"
+                                                                         ng-mouseover="setSelectedOption('flexible-classic')"
+                                                                         style="height:45px">
+                                                                        <div class="row">
+                                                                            <div class="col-md-12 margin-top-10">
+                                                                                <span style="text-transform: uppercase;text-align: left;font-size: 10px;">
+                                                                                    Make payment
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-8 col-sm-8 col-xs-8"
+                                                                         ng-class="{'selected-payment': selectedOption == 'flexible-advantage'}"
+                                                                         ng-mouseover="setSelectedOption('flexible-advantage')"
+                                                                         style="height:45px">
+                                                                        <div class="row">
+                                                                            <div class="col-md-12 margin-top-10">
+                                                                                <span style="text-transform: uppercase;text-align: left;font-size: 10px;">
+                                                                                    Make payment
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
                                             </div>
                                         </div>
 
+                                        <div class="col-md-1"></div>
+                                    </div>
                                 </div>
-                                <div ng-if="viewType == 'flexible'">
 
-                                    <div class="row ">
-                                        <div class="col-md-12 col-sm-12 col-xs-12 ">
-                                            <div class="row">
-                                                <div class="col-md-1"></div>
-                                                <div class="col-md-10">
+                            </div>
+
+                            <div class="row margin-top-40 ">
+                                <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                    <div class="row">
+                                        <div class="col-md-1 margin-right-10"></div>
+                                        <div class="col-md-9">
+                                            <div class="row ">
+                                                <div class="col-md-12 col-sm-12 col-xs-12 feature-box  ">
                                                     <div class="row ">
-                                                        <div class="col-md-12 col-sm-12 col-xs-12 ">
-                                                            <div class="col-md-5 payment-box">
-                                                                <div class="row ">
-                                                                    <div class="col-md-12 col-sm-12 col-xs-12 feature-header ">
-                                                                        <div class="text-center margin-top-10 margin-bottom-10">
-                                                                            <span class=" feature-header-text">FLEX</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-12 col-sm-12 col-xs-12 margin-top-20 ">
-                                                                        <div class="row">
-                                                                            <div class="col-md-4 col-sm-4 col-xs-4 col-md-border " style="height: 195px">
-                                                                                <div class="row">
-                                                                                    <div class="col-md-12 col-sm-12 col-xs-12 text-center margin-top-30">
-                                                                                        <button type="button" class="btn dark btn-outline ">Classic</button>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="row" style="text-align: center">
-                                                                                    <div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">
-                                                                                        <span class="old-price">Rs 1000</span>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="row" style="text-align: center">
-                                                                                    <div class="col-md-12 col-sm-12 col-xs-12  margin-top-10">
-                                                                                        <span class="new-price">Rs 500</span>
-                                                                                    </div>
-                                                                                </div>
+                                                        <div class="col-md-3 col-sm-3 col-xs-3 margin-top-15 ">
+                                                            <span style="color: #00AC8D"
+                                                                  class="message-icon socicon-btn socicon-btn-circle socicon-mail tooltips"
+                                                                  data-original-title="Mail"></span>
 
-                                                                            </div>
-                                                                            <div class="col-md-8 col-sm-8 col-xs-8 ">
-                                                                                <div class="row">
-                                                                                    <div class="col-md-12 col-sm-12 col-xs-12 pull-left  margin-top-30">
-                                                                                        <button type="button" class="btn dark btn-outline ">Classic Advantage</button>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="row" style="text-align: left">
-                                                                                    <div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">
-                                                                                        <span class="old-price">Rs 2500</span>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="row" style="text-align: left">
-                                                                                    <div class="col-md-12 col-sm-12 col-xs-12  margin-top-10">
-                                                                                        <span class="new-price">Rs 1500</span>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-12 feature-header " style="height:45px">
-                                                                        <div class="row">
-                                                                            <div class="col-md-4 col-sm-4 col-xs-4" ng-class="{'selected-payment': selectedOption == 'flexible-classic'}"
-                                                                                 ng-mouseover="setSelectedOption('flexible-classic')" style="height:45px">
-                                                                                <div class="row">
-                                                                                    <div class="col-md-12 margin-top-10">
-                                                                                <span style="text-transform: uppercase;text-align: left;font-size: 10px;">
-                                                                                    Make payment
-                                                                                </span>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-md-8 col-sm-8 col-xs-8" ng-class="{'selected-payment': selectedOption == 'flexible-advantage'}"
-                                                                                 ng-mouseover="setSelectedOption('flexible-advantage')" style="height:45px">
-                                                                                <div class="row">
-                                                                                    <div class="col-md-12 margin-top-10">
-                                                                                <span style="text-transform: uppercase;text-align: left;font-size: 10px;">
-                                                                                    Make payment
-                                                                                </span>
-                                                                                    </div>
-                                                                                </div>
-
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </div>
+                                                            <div class="row ">
+                                                                <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                                                    <span style="font-size: 10px">Send unlimited 30 personal messages</span>
                                                                 </div>
                                                             </div>
 
                                                         </div>
-                                                    </div>
-                                                </div>
+                                                        <div class="col-md-3 col-sm-3 col-xs-3 margin-top-15 ">
+                                                            <span style="color: #00AC8D"
+                                                                  class="socicon-btn socicon-btn-circle socicon-mail tooltips message-icon"
+                                                                  data-original-title="Mail"></span>
 
-                                                <div class="col-md-1"></div>
+                                                            <div class="row ">
+                                                                <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                                                    <span style="font-size: 10px">Send unlimited 30 personal messages</span>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-md-3 col-sm-3 col-xs-3 margin-top-15 ">
+                                                            <span style="color: #00AC8D"
+                                                                  class="socicon-btn socicon-btn-circle socicon-mail tooltips message-icon"
+                                                                  data-original-title="Mail"></span>
+
+                                                            <div class="row ">
+                                                                <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                                                    <span style="font-size: 10px">Send unlimited 30 personal messages</span>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-md-3 col-sm-3 col-xs-3 margin-top-15 ">
+                                                            <span style="color: #00AC8D"
+                                                                  class="socicon-btn socicon-btn-circle socicon-mail tooltips message-icon"
+                                                                  data-original-title="Mail"></span>
+
+                                                            <div class="row ">
+                                                                <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                                                    <span style="font-size: 10px">Send unlimited 30 personal messages</span>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+
+                                                </div>
                                             </div>
                                         </div>
 
+                                        <div class="col-md-2"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+            <div ng-if ="paymentCompletion" class="row">
+                <div class="col-md-12 ">
+                    <div class="portlet light " style="padding-top: 0px;height: 500px;">
+                        <div class="row">
+                        <div class="col-md-12 margin-top-40 text-center">
+                            <img style="max-height: 200px;!important;" ng-src="assets/images/paymentfail.jpg" />
+                        </div>
+                            </div>
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <span style="color: red" class="text-center">Sorry Your payment transaction failed</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <span >Reason for failiure</span> &nbsp;<span style="color: red">Bank declined transaction</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 ">
+                                <p>
+                                <b> gdgdgsfs  gggdg sgfsgf fsfs fsgsg yiy yiiyiyyi yuyy ddd hgjjh hfasf
+                                    hhhhh hhhhh hhhhh hhchc giug ryrstrry yjyfsfg fsgdgfsfsf sfs </b>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <span ><b>Note :</b></span> &nbsp;<span >Bafsgsgnk decedsh gsdgedhg transaction</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+            <div class="row">
+
+                <div class="col-md-12 ">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="portlet light bordered border-portlet" style="padding-top: 0px">
+                                <div class="portlet-title select-payment-header">
+                                    <div class="caption  ">
+                                        <span class="caption-subject select-payment-header-text"> Select Payment Option</span>
+                                    </div>
+                                </div>
+                                <div class="portlet-body form">
+                                    <div class="row">
+                                        <div class="col-md-12 ">
+                                            <div class="col-md-10">
+                                            <div class="row">
+                                                <div class="col-md-12 ">
+                                                    <div class="col-md-12 ">
+                                                        <div class="row ">
+                                                            <ul class="nav nav-tabs">
+                                                                <li role="Credit" ng-class="{'active': selectedPayment == 'Credit'}" ng-click="setSelectedPayment('Credit')"><a href="#">Credit Card</a></li>
+                                                                <li role="Debit"><a href="#" ng-class="{'active': selectedPayment == 'Debit'}" ng-click="setSelectedPayment('Debit')">Debit Card</a></li>
+                                                                <li role="Net"><a href="#" ng-class="{'active': selectedPayment == 'Net'}" ng-click="setSelectedPayment('Net')">Net Baning&nbsp</a></li>
+                                                                <li role="Wallet"><a href="#" ng-class="{'active': selectedPayment == 'Wallet'}" ng-click="setSelectedPayment('Wallet')">Wallet</a></li>
+                                                            </ul>
+                                                            <div ng-if="selectedPayment == 'Credit'" class="row ">
+                                                                <div class="col-md-12 ">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12 ">
+                                                                            <div class="portlet-body form  form-horizontal">
+                                                                                <div class="form-group">
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                                            <div class="row">
+                                                                                            <div class="col-md-4">
+                                                                                                <label class="control-label " style="margin-left: 10px;">  Card Number</label>
+                                                                                            </div>
+                                                                                            <div class="col-md-6">
+                                                                                                <input type="text" class="form-control  input-rounded"
+                                                                                                       />
+                                                                                            </div>
+                                                                                            <div class="col-md-2">
+                                                                                                <img style="max-height: 30px;!important;" ng-src="assets/images/mastercard-logo-big.gif" />
+                                                                                            </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                                            <div class="row">
+                                                                                                <div class="col-md-4">
+                                                                                                    <label class="control-label " style="margin-left: 10px;">  Card Holder Name</label>
+                                                                                                </div>
+                                                                                                <div class="col-md-6">
+                                                                                                    <input type="text" class="form-control  input-rounded"
+                                                                                                            />
+                                                                                                </div>
+                                                                                                <div class="col-md-2">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                                            <div class="row">
+                                                                                                <div class="col-md-4">
+                                                                                                    <label class="control-label " style="margin-left: 10px;"> Credit Expiry Date</label>
+                                                                                                </div>
+                                                                                                <div class="col-md-8">
+                                                                                                    <div class="row">
+                                                                                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                                                            <div class="row">
+                                                                                                                <div class="col-md-6">
+                                                                                                                    <select class="form-control input-rounded "
+                                                                                                                            >
+                                                                                                                        <option value="jan">JAN</option>
+                                                                                                                        <option value="feb">FEB</option>
+                                                                                                                        <option value="mar">MAR</option>
+                                                                                                                        <option value="april">APRIL</option>
+                                                                                                                        <option value="may">MAY</option>
+                                                                                                                        <option value="june">JUNE</option>
+                                                                                                                        <option value="july">JULY</option>
+                                                                                                                        <option value="aug">AUG</option>
+                                                                                                                        <option value="sep">SEP</option>
+                                                                                                                        <option value="oct">OCT</option>
+                                                                                                                        <option value="nov">NOV</option>
+                                                                                                                        <option value="dec">DEC</option>
+                                                                                                                    </select>
+                                                                                                                </div>
+                                                                                                                <div class="col-md-6">
+
+                                                                                                                    <select class="form-control input-rounded "
+                                                                                                                            >
+                                                                                                                        <option value="myself">2018</option>
+                                                                                                                        <option value="daughter">2019</option>
+                                                                                                                        <option value="son">2020</option>
+                                                                                                                        <option value="brother">2021</option>
+                                                                                                                        <option value="sister">2022</option>
+                                                                                                                        <option value="relative">2023</option>
+                                                                                                                        <option value="friend">2024</option>
+                                                                                                                    </select>
+                                                                                                                </div>
+
+
+                                                                                                            </div>
+                                                                                                            </div>
+                                                                                                        </div>
+
+
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                                            <div class="row">
+                                                                                                <div class="col-md-4">
+                                                                                                    <label class="control-label " style="margin-left: 10px;"> CCV</label>
+                                                                                                </div>
+                                                                                                <div class="col-md-6">
+                                                                                                    <input type="text" class="form-control  input-rounded"
+                                                                                                            />
+                                                                                                </div>
+                                                                                                <div class="col-md-2">
+                                                                                                    <img style="max-height: 30px;!important;" ng-src="assets/images/ccv.jpg" />
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                                            <div class="row">
+                                                                                                <div class="col-md-4">
+                                                                                                </div>
+                                                                                                <div class="col-md-6">
+                                                                                                    <div class="btn-group">
+                                                                                                        <a class="btn btn-sm red input-rounded" ng-click="continuePayment()"> PROCEDD >
+                                                                                                        </a>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-md-2">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                </div>
+                                                                            </div>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                </div>
+                                                            </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                                </div>
+                                            <div class="col-md-2"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
                         </div>
+                        <!--<div class="col-md-1"></div>-->
+                        <div class="col-md-4">
 
-
+                            <div class="portlet light bordered border-portlet" style="padding-top: 0px">
+                                <div class="portlet-title summary-payment-header">
+                                    <div class="caption  ">
+                                        <span class="caption-subject uppercase summary-payment-header-text text-center "> Summary</span>
+                                    </div>
+                                </div>
+                                <div class="portlet-title select-payment-header summary-payment-margin-top">
+                                    <div class="caption  ">
+                                        <span class="caption-subject summary-payment-header-text-bottom text-center "> Membership Package </span>
+                                    </div>
+                                </div>
+                                <div class="portlet-body form">
+                                    <div class="row">
+                                        <div class="col-md-12 ">
+                                            <span class="profile-id"> YOU SELECTED :</span>
+                                        </div>
+                                        </div>
+                                    <div class="row">
+                                        <div class="col-md-12 margin-top-20 ">
+                                            <div class="row">
+                                                <div class="col-md-6 ">Classic (3 months) : </div>
+                                                <div class="col-md-6 ">RS 2000</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 margin-top-20 ">
+                                            <div class="row">
+                                                <div class="col-md-6 ">Dicount : </div>
+                                                <div class="col-md-6 ">RS 1000</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 margin-top-20 ">
+                                            <div class="row">
+                                                <div class="col-md-6 ">Service Tax(@15%) : </div>
+                                                <div class="col-md-6 ">RS 450</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr/>
+                                    <div class="row">
+                                        <div class="col-md-12 ">
+                                            <span class="profile-id"> YOU GET :</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 margin-top-20 ">
+                                                <span >Classic (3 months) : </span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 margin-top-20 ">
+                                            <span >ALL worth RS 5000: </span>
+                                        </div>
+                                    </div>
+                                    <hr/>
+                                    <div class="row">
+                                        <div class="col-md-12 margin-top-20 ">
+                                            <span style="color: #2ab4c0" >You Save : RS 1000 </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div class="portlet-title select-payment-header summary-payment-margin-top">
+                                    <div class="caption  ">
+                                        <span class="caption-subject summary-payment-header-text-bottom text-center "> Add-on Package </span>
+                                    </div>
+                                </div>
+                                <div class="portlet-title margin-top-10 select-payment-header summary-payment-margin-top">
+                                    <div class="caption  ">
+                                        <span class="caption-subject summary-payment-header-text-bottom text-center "> No Add-on Package </span>
+                                    </div>
+                                </div>
+                                <div class="portlet-title summary-payment-footer">
+                                    <div class="caption  ">
+                                        <span class="caption-subject uppercase summary-payment-header-text text-center "> Your Total : RS 1450</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
+</div>
+</div>
 </div>
