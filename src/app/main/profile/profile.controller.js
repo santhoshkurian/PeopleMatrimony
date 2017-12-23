@@ -107,8 +107,17 @@
         $scope.savePartnerProfession = savePartnerProfession;
         $scope.saveFamilyDetails = saveFamilyDetails;
         $scope.savePartnerBasic = savePartnerBasic;
+        $scope.cancel = cancel;
         if($scope.profile.login_user.id_religion != null){
             $scope.selectReliegion($scope.profile.login_user.id_religion);
+        }
+        function cancel(){
+            $state.transitionTo($state.current, $stateParams, {
+                reload: true,
+                inherit: false,
+                notify: true
+            });
+
         }
 
         function selectCountry(obj){

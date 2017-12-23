@@ -15,7 +15,7 @@
                                 <!--<i class="icon-settings font-red-sunglo"></i>-->
                                 <span class=" uppercase"><i class="fa fa-pencil icon-color"></i>&nbsp; Few words about my son</span>
                             </div>
-                            <div class="actions">
+                            <div class="actions" ng-hide="about">
                                 <div class="btn-group">
                                     <a class="btn btn-sm red input-rounded" ng-click="editAction('about')"> EDIT
 
@@ -43,6 +43,11 @@
                                         style="color:#ffffea">
                                     Save
                                 </button>
+                                <button type="button" ng-click="cancel()"
+                                        class=" btn btn-default "
+                                        >
+                                    Cancel
+                                </button>
 
                             </div>
                         </div>
@@ -57,7 +62,7 @@
                             <div class="caption ">
                                 <span class=" uppercase"><i class=" fa fa-file-text icon-color"></i> &nbsp;Basic details</span>
                             </div>
-                            <div class="actions">
+                            <div class="actions" ng-hide="basicDetails">
                                 <div class="btn-group">
                                     <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea"
                                             ng-click="editAction('basicDetails')">
@@ -475,10 +480,8 @@
                             </div>
                             <hr>
 
-                            <div class="form-group">
-                                <div class="col-md-6"></div>
 
-                                <div class="col-md-3 col-md-offset-3 " style="padding-left:5.2%">
+                                <div class="actions" style="text-align: right" >
                                     <!--<button type="button" class=" btn btn-default input-rounded " ng-click="">-->
                                         <!--Cancel-->
                                     <!--</button>-->
@@ -487,8 +490,13 @@
                                             style="color:#ffffea" >
                                         Save
                                     </button>
+                                    <button type="button" ng-click="cancel()"
+                                            class=" btn btn-default "
+                                            >
+                                        Cancel
+                                    </button>
 
-                                </div>
+
                             </div>
                                                                 </span>
 
@@ -504,7 +512,7 @@
                             <div class="caption ">
                                 <span class=" uppercase"><i class=" fa fa-map icon-color"></i> &nbsp;Location</span>
                             </div>
-                            <div class="actions">
+                            <div class="actions" ng-show="location">
                                 <div class="btn-group">
                                     <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea"
                                             ng-click="editLocation('location')">
@@ -575,6 +583,11 @@
                                             style="color:#ffffea" ng-click="">
                                         Save
                                     </button>
+                                    <button type="button" ng-click="cancel()"
+                                            class=" btn btn-default "
+                                            >
+                                        Cancel
+                                    </button>
 
                                 </div>
                             </div>
@@ -625,7 +638,7 @@
                             <div class="caption ">
                                 <span class=" uppercase"><i class=" fa fa-clone icon-color"></i> &nbsp;Religious Information</span>
                             </div>
-                            <div class="actions">
+                            <div class="actions" ng-show="relogious">
                                 <div class="btn-group">
                                     <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea"
                                             ng-click="editReligion('relogious')">
@@ -705,6 +718,11 @@
                                             style="color:#ffffea">
                                         Save
                                     </button>
+                                    <button type="button" ng-click="cancel()"
+                                            class=" btn btn-default "
+                                            >
+                                        Cancel
+                                    </button>
 
                                 </div>
 
@@ -776,7 +794,7 @@
                             <div class="caption ">
                                 <span class=" uppercase"><i class=" fa fa-mortar-board icon-color"></i> &nbsp;Professional Information</span>
                             </div>
-                            <div class="actions">
+                            <div class="actions" ng-show="education">
                                 <div class="btn-group">
                                     <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea"
                                             ng-click="editProfession('education')">
@@ -851,6 +869,11 @@
                                             style="color:#ffffea">
                                         Save
                                     </button>
+                                    <button type="button" ng-click="cancel()"
+                                            class=" btn btn-default "
+                                            >
+                                        Cancel
+                                    </button>
 
                                 </div>
 </span>
@@ -906,7 +929,7 @@
                                 <span class=" uppercase"><i
                                         class=" fa fa-users icon-color"></i> &nbsp;Family Details</span>
                             </div>
-                            <div class="actions">
+                            <div class="actions" ng-show="fdetails">
                                 <div class="btn-group">
                                     <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea"
                                             ng-click="editFamilyDetails('fdetails')">
@@ -1182,6 +1205,11 @@
                                             style="color:#ffffea">
                                         Save
                                     </button>
+                                    <button type="button" ng-click="cancel()"
+                                            class=" btn btn-default "
+                                            >
+                                        Cancel
+                                    </button>
 
                                 </div>
                             </span>
@@ -1196,7 +1224,7 @@
                             <div class="caption ">
                                 <span class=" uppercase"><i class=" fa fa-users icon-color"></i> &nbsp; About My Family</span>
                             </div>
-                            <div class="actions">
+                            <div class="actions" ng-hide="fabout">
                                 <div class="btn-group">
                                     <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea"
                                             ng-click="editAction('fabout')">
@@ -1225,6 +1253,11 @@
                                         class=" btn btn-default red input-rounded "
                                         style="color:#ffffea">
                                     Save
+                                </button>
+                                <button type="button" ng-click="cancel()"
+                                        class=" btn btn-default "
+                                        >
+                                    Cancel
                                 </button>
 
                             </div>
@@ -1851,21 +1884,19 @@
                                 </div>
                                 <hr>
 
-                            <div class="form-group">
-                                <div class="col-md-6"></div>
+                                                           <div class="actions" style="text-align: right">
 
-                                <div class="col-md-3 col-md-offset-3 " style="padding-left:5.2%">
-                                    <!--<button type="button" class=" btn btn-default input-rounded " ng-click="">-->
-                                        <!--Cancel-->
-                                    <!--</button>-->
-                                    &nbsp;
-                                    <button type="button" ng-click="savePartnerBasic()"
+                                                           <button type="button" ng-click="savePartnerBasic()"
                                             class=" btn btn-default red input-rounded "
                                             style="color:#ffffea" ng-click="">
                                         Save
                                     </button>
+                                    <button type="button" ng-click="cancel()"
+                                            class=" btn btn-default "
+                                            >
+                                        Cancel
+                                    </button>
 
-                                </div>
                             </div>
 
 </span>
@@ -1879,7 +1910,7 @@
                             <div class="caption ">
                                 <span class=" uppercase"><i class=" fa fa-clone icon-color"></i> &nbsp;Religious Preferences</span>
                             </div>
-                            <div class="actions">
+                            <div class="actions" ng-show="preligion">
                                 <div class="btn-group">
                                     <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea"
                                             ng-click="editPartnerReligion('preligion')">
@@ -1980,7 +2011,7 @@
                             <div class="form-group">
 
                                 <div class="col-md-6">
-                                    <label class=" uppercase font-weight "> Chevvai Dosham / Rassi</label>
+                                    <label class=" uppercase font-weight "> Chevvai Dosham</label>
 
                                     <select class="form-control input-rounded "
                                             ng-model="profile.login_user.preferences.dosham">
@@ -2004,6 +2035,11 @@
                                             style="color:#ffffea">
                                         Save
                                     </button>
+                                    <button type="button" ng-click="cancel()"
+                                            class=" btn btn-default "
+                                            >
+                                        Cancel
+                                    </button>
 
                                 </div>
 </span>
@@ -2017,7 +2053,7 @@
                             <div class="caption ">
                                 <span class=" uppercase"><i class=" fa fa-mortar-board icon-color"></i> &nbsp;Professional Information</span>
                             </div>
-                            <div class="actions">
+                            <div class="actions" ng-show="pedu">
                                 <div class="btn-group">
                                     <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea"
                                             ng-click="editPartnerEdu('pedu')">
@@ -2098,6 +2134,11 @@
                                             style="color:#ffffea">
                                         Save
                                     </button>
+                                    <button type="button" ng-click="cancel()"
+                                            class=" btn btn-default "
+                                            >
+                                        Cancel
+                                    </button>
 
                                 </div>
 </span>
@@ -2112,7 +2153,7 @@
                             <div class="caption ">
                                 <span class=" uppercase"><i class=" fa fa-map icon-color"></i> &nbsp;Location & Citizenship Preference</span>
                             </div>
-                            <div class="actions">
+                            <div class="actions" ng-show="pLocation">
                                 <div class="btn-group">
                                     <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea"
                                             ng-click="editPartnerLocation('pLocation')">
@@ -2206,11 +2247,9 @@
                             </div>
                                  <hr>
 
-                            <div class="form-group">
-                                <div class="col-md-6"></div>
+                                                      <div class="actions" style="text-align: right">
 
-                                <div class="col-md-3 col-md-offset-3 " style="padding-left:5.2%">
-                                    <!--<button type="button" class=" btn btn-default input-rounded " ng-click="">-->
+                                                      <!--<button type="button" class=" btn btn-default input-rounded " ng-click="">-->
                                         <!--Cancel-->
                                     <!--</button>-->
                                     &nbsp;
@@ -2219,9 +2258,13 @@
                                             style="color:#ffffea" >
                                         Save
                                     </button>
+                                    <button type="button" ng-click="cancel()"
+                                            class=" btn btn-default "
+                                            >
+                                        Cancel
+                                    </button>
 
                                 </div>
-                            </div>
 </span>
                         </div>
                     </div>
@@ -2233,7 +2276,7 @@
                             <div class="caption ">
                                 <span class=" uppercase"><i class=" fa fa-users icon-color"></i> &nbsp; What We Are Looking For</span>
                             </div>
-                            <div class="actions">
+                            <div class="actions" ng-show="ptype">
                                 <div class="btn-group">
                                     <button type="button" class=" btn btn-sm red input-rounded " style="color:#ffffea"
                                             ng-click="editPartnerType('ptype')">
@@ -2259,21 +2302,24 @@
                                            ng-model="profile.login_user.preferences.about_partner"></textarea>
                              <hr>
 
-                            <div class="form-group">
-                                <div class="col-md-6"></div>
 
-                                <div class="col-md-3 col-md-offset-3 " style="padding-left:5.2%">
+
+                                <div class="actions" style="text-align: right">
                                     <!--<button type="button" class=" btn btn-default input-rounded " ng-click="">-->
                                         <!--Cancel-->
                                     <!--</button>-->
                                     &nbsp;
                                     <button type="button" ng-click="savePartnerAbout()"
                                             class=" btn btn-default red input-rounded "
-                                            style="color:#ffffea" ng-click="">
+                                            style="color:#ffffea" >
                                         Save
                                     </button>
+                                    <button type="button" ng-click="cancel()"
+                                            class=" btn btn-default "
+                                            >
+                                        Cancel
+                                    </button>
 
-                                </div>
                             </div>
                             </span>
                         </div>
