@@ -7,7 +7,7 @@
         .controller('MessageToolbarController', MessageToolbarController);
 
     /** @ngInject */
-    function MessageToolbarController($scope,$location,storageService)
+    function MessageToolbarController($scope,resourceUrl,$state,$location,storageService,$http)
     {
 
         $scope.logout = logout;

@@ -795,6 +795,25 @@
             });
         }
 
+        $scope.logout = logout;
+        function logout(){
+            $http({
+                method: 'GET',
+                url: resourceUrl.url()+'user/logout?'+
+                'id_people='+storageService.get("id")+'&token='+storageService.get("token")
+            }).then(function successCallback(response) {
+                storageService.set("token",null);
+                storageService.set("id",null);
+                storageService.set("image_url",null);
+                storageService.set("name",null);
+                storageService.set("regular_search",null);
+                $state.go('login');
+
+            }, function errorCallback(response) {
+
+            });
+        }
+
 
     };
 

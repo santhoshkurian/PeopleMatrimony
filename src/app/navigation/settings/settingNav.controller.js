@@ -6,7 +6,7 @@
         .controller('SettingsNavController', SettingsNavController);
 
     /** @ngInject */
-    function SettingsNavController($scope, $location,storageService,$state) {
+    function SettingsNavController($scope, $location,storageService,$state,$http,resourceUrl) {
         $scope.logout = logout;
 
         $scope.image_url = storageService.get("image_url");
@@ -34,6 +34,7 @@
         $scope.isActive = function (viewLocation) {
             return viewLocation === $location.path();
         };
+
 
 
         console.log("SettingsNavController");
