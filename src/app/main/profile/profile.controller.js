@@ -127,6 +127,10 @@
                     url: resourceUrl.url()+'populate?id_country=' + obj.id_country
                 }).then(function successCallback(response) {
                     $scope.stateList = response.data.states;
+                    $scope.cityList =[]
+                    $scope.setLocation.state = '';
+                    $scope.setLocation.city = '';
+
                 }, function errorCallback(response) {
 
                 });
@@ -140,6 +144,7 @@
                 }).then(function successCallback(response) {
                     console.log(response)
                     $scope.cityList = response.data.cities;
+                    $scope.setLocation.city = '';
                 }, function errorCallback(response) {
 
                 });
