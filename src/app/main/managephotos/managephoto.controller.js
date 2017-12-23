@@ -241,6 +241,62 @@
 
 
         };
+        $scope.uploadFile2 = function () {
+            var file = document.getElementById("myFile2");
+            $scope.uploadmsg= 'Uploading ....';
+                var k = "https://devapi.peoplematrimony.com/image/upload";
+                var j = new FormData;
+                j.append("id", storageService.get("id")),
+                    j.append("token", storageService.get("token")),
+                    j.append("image", file.files[0]);
+
+
+                $http({
+                    method: "post",
+                    url: "https://devapi.peoplematrimony.com/image/upload",
+                    headers: {"Content-Type": void 0},
+                    transformRequest: angular.identity,
+                    data: j
+                }).then(function successCallback(response) {
+                    console.log(response)
+                    $scope.uploadmsg= 'Uploaded Successfully';
+                    $scope.recentUpload= 'http://devapi.peoplematrimony.com'+response.data.path+'/'+response.data.name;
+
+                    $http({
+                        method: 'GET',
+                        url: resourceUrl.url()+'user/image/' + storageService.get("id") + '?token=' + storageService.get("token")
+                    }).then(function successCallback(response) {
+                        console.log("check", response)
+                        $scope.uploadmsg= '';
+
+                        $scope.images = response.data.user.images;
+
+
+                    }, function errorCallback(response) {
+                        console.log(response)
+
+                    });
+
+
+                }, function errorCallback(response) {
+                    console.log(response);
+                });
+
+
+
+            //$http.post(k, j, {
+            //    headers: {"Content-Type": void 0},
+            //    transformRequest: angular.identity
+            //}).success(function (a) {
+            //    console.log(a)
+            //}).error(function (a, b) {
+            //    console.log(a,b)
+            //
+            //});
+
+
+
+        };
 
 
 
