@@ -1,11 +1,11 @@
 <div class="page-sidebar-wrapper">
-    <div class="page-sidebar navbar-collapse collapse" style="border-radius: 10px;margin-top:10px">
+    <div class="page-sidebar navbar-collapse collapse" style="width:250px;border-radius: 10px;margin-top:10px">
         <div style="background-color: white;">
             <div class="row">
                 <div class="col-md-12 " style="text-align:center;margin-top: 20px">
                     <img style="height: 130px;!important;" ng-src="{{image_url}}"/>
                 </div>
-                <div class="col-md-12  " style="text-align:center;margin-top: 20px">
+                <div class="col-md-12  " style="text-transform:capitalize;text-align:center;margin-top: 20px">
                     <span class="bold">{{name}}</span><br>
                     ({{id}})
                 </div>
@@ -25,8 +25,8 @@
                         </div>
                     </div>
                     <div class="row" style="margin-top: 20px">
-                        <div class="col-md-8">{{profile.login_user.mobile}}</div>
-                        <div class="col-md-4" style="font-size: 9px">
+                        <div class="col-md-7">{{profile.login_user.mobile}}</div>
+                        <div class="col-md-5 " style="font-size: 11px;">
                             <span ng-if="profile.login_user.validation_status != 'unvalidated'"><i class="fa fa-check " style="color: green"> </i> verified</span>
                             <span ng-if="profile.login_user.validation_status == 'unvalidated'"><i class="fa fa-remove " style="color: red"> </i> Not verified</span>
                         </div>
