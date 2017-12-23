@@ -18,7 +18,7 @@
 
                                 <div class="caption ">
                                     <span class="vp-main">{{view.name}}</span><br>
-                                    <!--<span class="vp-main-sub"> Profile created by parents</span>-->
+                                    <span class="vp-main-sub"> Profile created by {{view.profile_for}}</span>
                                 </div>
 
                                 <div class="actions" style="font-size: 20px">
@@ -28,14 +28,15 @@
                             </div>
                             <div class="portlet-body form">
                                 <div class="row ">
-                                    <div class=" col-xs-12 col-sm-6 col-md-4 " style="text-align: center;line-height: 180px">
-                                        <img style="height: 150px" ng-if="item.images.length > 0"
-                                             ng-src="{{view.images[0]}}"/>
-                                        <img style="height: 150px" ng-if="view.gender == 'male'"
+                                    <div class=" col-xs-12 col-sm-12 col-md-6 " style="text-align: center;line-height: 180px">
+                                        <img style="height: 150px" ng-if="view.images.length > 0"
+                                             ng-src="{{view.images[0].image}}"/>
+                                        <img style="height: 150px" ng-if="view.images.length == 0 && view.gender == 'male'"
                                              ng-src="/assets/defaultImages/male_card.jpg"/>
-                                        <img style="height: 150px" ng-if="view.gender == 'female'"
-                                             ng-src="/assets/defaultImages/female_card.jpg"/>                                    </div>
-                                    <div class="col-xs-7 col-sm-6 col-md-6">
+                                        <img style="height: 150px" ng-if="view.images.length == 0 && view.gender == 'female'"
+                                             ng-src="/assets/defaultImages/female_card.jpg"/>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-6">
                                         <div class="row " style="">
                                             <table class="profile-table">
                                                 <tbody style="padding: 20px!important;">
@@ -86,7 +87,6 @@
                                         </div>
 
                                     </div>
-                                    <div class="col-md-2 hidden-xs hidden-sm"></div>
                                 </div>
 
                                 <div ng-if="showMessage" style="color: red;text-align: center">
@@ -161,7 +161,8 @@
 
                                 </div>
                                 <div class="portlet-body form">
-                                    <p> {{view.about}}</p>
+                                    <p ng-if="view.aboutme != null && view.aboutme != '"> {{view.aboutme}}</p>
+                                    <p ng-if="view.aboutme == null || view.aboutme == ''"> Not Specified</p>
 
                                 </div>
                             </div>
@@ -188,62 +189,72 @@
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Height</label>
 
-                                            <p class="details ">{{view.height}} cms</p>
+                                            <p class="details " ng-if="view.height !=null &&  view.height != '' &&  view.height != 0">{{view.height}} cms</p>
+                                            <p class="details " ng-if="view.height ==null ||  view.height == '' ||  view.height == 0">{{view.height}} cms</p>
 
                                         </div>
 
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Weight</label>
 
-                                            <p class="details ">{{view.weigh}} kg</p>
+                                            <p class="details " ng-if="view.weight != null &&  view.weight != '' &&  view.weight != 0">{{view.weight}} kg</p>
+                                            <p class="details " ng-if="view.weight == null ||  view.weight == '' ||  view.weight == 0">Not Specified</p>
 
                                         </div>
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Body Type</label>
 
-                                            <p class="details ">{{view.body_type}}</p>
+                                            <p class="details " ng-if="view.body_type != null &&  view.body_type != ''">{{view.body_type}}</p>
+                                            <p class="details " ng-if="view.body_type == null ||  view.body_type == ''">Not Specified</p>
 
                                         </div>
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Complexion</label>
 
-                                            <p class="details ">Wheatish Brown</p>
+                                            <p class="details " ng-if="view.complexion != null &&  view.complexion != ''">{{view.complexion}}</p>
+                                            <p class="details " ng-if="view.complexion == null ||  view.complexion == ''">Not Specified</p>
 
                                         </div>
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Physical Type</label>
 
-                                            <p class="details ">{{view.complexion}}</p>
+                                            <p class="details " ng-if="view.physical_status != null &&  view.physical_status != ''">{{view.physical_status}}</p>
+                                            <p class="details " ng-if="view.physical_status == null ||  view.physical_status == ''">Not Specified</p>
 
                                         </div>
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Mother Tongue</label>
 
-                                            <p class="details ">{{view.mothertongue}}</p>
+                                            <p class="details " ng-if="view.mothertongue != null &&  view.mothertongue != ''">{{view.mothertongue}}</p>
+                                            <p class="details "  ng-if="view.mothertongue == null ||  view.mothertongue == ''">Not Specified</p>
 
                                         </div>
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Marital Status</label>
 
-                                            <p class="details ">{{view.marital_status}}</p>
+                                            <p class="details " ng-if="view.marital_status != null &&  view.marital_status != ''">{{view.marital_status}}</p>
+                                            <p class="details " ng-if="view.marital_status == null ||  view.marital_status == ''">Not Specified</p>
 
                                         </div>
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Eating Habits</label>
 
-                                            <p class="details ">{{view.eating_habit}}</p>
+                                            <p class="details " ng-if="view.eating_habit != null &&  view.eating_habit != ''">{{view.eating_habit}}</p>
+                                            <p class="details " ng-if="view.eating_habit == null ||  view.eating_habit == ''">Not Specified</p>
 
                                         </div>
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Drinking Habits</label>
 
-                                            <p class="details ">{{view.drinking_habit}}</p>
+                                            <p class="details " ng-if="view.drinking_habit != null &&  view.drinking_habit != ''">{{view.drinking_habit}}</p>
+                                            <p class="details " ng-if="view.drinking_habit == null ||  view.drinking_habit == ''">Not Specified</p>
 
                                         </div>
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Somking Habits</label>
 
-                                            <p class="details ">{{view.smoking_habit}}</p>
+                                            <p class="details " ng-if="view.smoking_habit != null &&  view.smoking_habit != ''">{{view.smoking_habit}}</p>
+                                            <p class="details " ng-if="view.smoking_habit == null ||  view.smoking_habit == ''">Not Specified</p>
 
                                         </div>
                                     </div>
@@ -264,34 +275,35 @@
                                         <div class="col-md-4" style="height:60px">
                                             <label class="font-weight-head "> Religion</label>
 
-                                            <p class="details">{{view.religion}}</p>
+                                            <p class="details" ng-if="view.religion != null &&  view.religion != ''">{{view.religion}}</p>
+                                            <p class="details" ng-if="view.religion == null ||  view.religion == ''">Not Specified</p>
 
                                         </div>
 
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Caste /Sub caste</label>
 
-                                            <p class="details ">{{view.caste}}</p>
+                                            <p class="details " ng-if="view.caste != null &&  view.caste != ''">{{view.caste}}</p>
+                                            <p class="details " ng-if="view.caste == null ||  view.caste == ''">Not Specified</p>
 
                                         </div>
 
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Gothram</label>
-
-                                            <p class="details ">{{view.gothram}}</p>
-
+                                            <p class="details " ng-if="view.gothram != null &&  view.gothram != ''">{{view.gothram}}</p>
+                                            <p class="details " ng-if="view.gothram == null ||  view.gothram == ''">Not Specified</p>
                                         </div>
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Star / Rassi</label>
+                                            <p class="details " ng-if="view.star != null &&  view.star != ''">{{view.star}}</p>
+                                            <p class="details " ng-if="view.star == null ||  view.star == ''">Not Specified</p>
 
-                                            <p class="details ">{{view.star}}</p>
 
                                         </div>
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Chevvai Dosham / Rassi</label>
-
-                                            <p class="details ">{{view.dosham}}</p>
-
+                                            <p class="details " ng-if="view.dosham != null &&  view.dosham != ''">{{view.dosham}}</p>
+                                            <p class="details " ng-if="view.dosham == null ||  view.dosham == ''">Not Specified</p>
                                         </div>
                                     </div>
                                 </div>
@@ -310,22 +322,21 @@
 
                                         <div class="col-md-4" style="height:60px">
                                             <label class="font-weight-head "> Education</label>
-
-                                            <p class="details">{{view.education_detail}}</p>
-
+                                            <p class="details " ng-if="view.education != null &&  view.education != ''">{{view.education}}</p>
+                                           <p class="details " ng-if="view.education == null ||  view.education == ''">Not Specified</p>
                                         </div>
 
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Occupation</label>
-
-                                            <p class="details ">{{view.occupation}}</p>
-
+                                            <p class="details " ng-if="view.occupation != null &&  view.occupation != ''">{{view.occupation}}</p>
+                                            <p class="details " ng-if="view.occupation == null ||  view.occupation == ''">Not Specified</p>
                                         </div>
 
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Annual Income</label>
+                                            <p class="details " ng-if="view.income != null &&  view.income != ''">{{view.income}}</p>
+                                            <p class="details " ng-if="view.income == null ||  view.income == ''">Not Specified</p>
 
-                                            <p class="details ">{{view.income}}</p>
 
                                         </div>
                                     </div>
@@ -346,53 +357,53 @@
 
                                         <div class="col-md-4" style="height:60px">
                                             <label class="font-weight-head "> Family Values</label>
+                                            <p class="details " ng-if="view.family_values != null &&  view.family_values != ''">{{view.family_values}}</p>
+                                            <p class="details " ng-if="view.family_values == null ||  view.family_values == ''">Not Specified</p>
 
-                                            <p class="details">{{view.family_values}}</p>
 
                                         </div>
 
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Ancestral Origin</label>
+                                            <p class="details " ng-if="view.ancestral_origin != null &&  view.ancestral_origin != ''">{{view.ancestral_origin}}</p>
+                                            <p class="details " ng-if="view.ancestral_origin == null ||  view.ancestral_origin == ''">Not Specified</p>
 
-                                            <p class="details ">{{view.ancestral_origin}}</p>
 
                                         </div>
 
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Family Type</label>
+                                            <p class="details " ng-if="view.family_type != null &&  view.family_type != ''">{{view.family_type}}</p>
+                                            <p class="details " ng-if="view.family_type == null ||  view.family_type == ''">Not Specified</p>
 
-                                            <p class="details ">{{view.family_type}}</p>
 
                                         </div>
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> No of Brother(s)</label>
+                                            <p class="details " ng-if="view.brother != null &&  view.brother != '' &&  view.brother != 0">{{view.brother}}</p>
+                                            <p class="details " ng-if="view.brother == null ||  view.brother == '' ||  view.brother == 0">Not Specified</p>
 
-                                            <p class="details ">{{view.brother}}</p>
 
                                         </div>
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Number of sister(s) </label>
-
-                                            <p class="details ">{{view.sister}}</p>
-
-                                        </div>
+                                            <p class="details " ng-if="view.sister != null &&  view.sister != '' &&  view.sister != 0">{{view.sister}}</p>
+                                            <p class="details " ng-if="view.sister == null ||  view.sister == '' ||  view.sister == 0">Not Specified</p>
+                                          </div>
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Family Status</label>
-
-                                            <p class="details ">{{view.family_status}}</p>
-
+                                            <p class="details " ng-if="view.family_status != null &&  view.family_status != ''">{{view.family_status}}</p>
+                                            <p class="details " ng-if="view.family_status == null ||  view.family_status == ''">Not Specified</p>
                                         </div>
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Father's Status </label>
-
-                                            <p class="details ">{{view.father_status}}</p>
-
+                                            <p class="details " ng-if="view.father_status != null &&  view.father_status != ''">{{view.father_status}}</p>
+                                            <p class="details " ng-if="view.father_status == null ||  view.father_status == ''">Not Specified</p>
                                         </div>
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Mother's Status </label>
-
-                                            <p class="details ">{{view.mother_status}}</p>
-
+                                            <p class="details " ng-if="view.mother_status != null &&  view.mother_status != ''">{{view.mother_status}}</p>
+                                            <p class="details " ng-if="view.mother_status == null ||  view.mother_status == ''">Not Specified</p>
                                         </div>
                                     </div>
                                 </div>
@@ -409,8 +420,8 @@
                                     <div class="form-group">
 
                                         <div class="col-md-12">
-                                            <p class="details">{{view.about_family}}
-                                            </p>
+                                            <p class="details " ng-if="view.about_family != null &&  view.about_family != ''">{{view.about_family}}</p>
+                                            <p class="details " ng-if="view.about_family == null ||  view.about_family == ''">Not Specified</p>
                                         </div>
                                     </div>
                                 </div>
@@ -466,27 +477,46 @@
                                             </tr>
                                             <tr>
                                                 <td> Physical Type </td>
-                                                <td> <span ng-if="(pref.physical_status != null">{{pref.physical_status}}</span> </td>
+                                                <td>
+                                                    <span ng-if="pref.physical_status != null && pref.physical_status != ''">{{pref.physical_status}}</span>
+                                                    <span ng-if="pref.physical_status == null || pref.physical_status == ''">Not Specified</span>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td> Mother Tongue </td>
-                                                <td> <span ng-if="(pref.mothertongue_txt != null">{{pref.mothertongue_txt}}</span> </td>
+                                                <td>
+                                                    <span ng-if="pref.mothertongue_txt != null && pref.mothertongue_txt != ''">{{pref.mothertongue_txt}}</span>
+                                                    <span ng-if="pref.mothertongue_txt == null || pref.mothertongue_txt == ''">Not Specified</span>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td> Marital Status </td>
-                                                <td> <span ng-if="(pref.marital_status != null">{{pref.marital_status}}</span> </td>
+                                                <td>
+                                                    <span ng-if="pref.marital_status != null && pref.marital_status != ''">{{pref.marital_status}}</span>
+                                                    <span ng-if="pref.marital_status == null || pref.marital_status == ''">Not Specified</span></td>
+
                                             </tr>
                                             <tr>
                                                 <td> Eating Habits </td>
-                                                <td> <span ng-if="(pref.eating_habits != null">{{pref.eating_habits}}</span> </td>
+                                                <td>
+                                                    <span ng-if="pref.eating_habits != null && pref.eating_habits != ''">{{pref.eating_habits}}</span>
+                                                    <span ng-if="pref.eating_habits == null || pref.eating_habits == ''">Not Specified</span></td>
+
+
                                             </tr>
                                             <tr>
                                                 <td> Drinking Habits </td>
-                                                <td><span ng-if="(pref.drinking_habits != null"> {{pref.drinking_habits}} </span></td>
+                                                <td>
+                                                    <span ng-if="pref.drinking_habits != null && pref.drinking_habits != ''">{{pref.drinking_habits}}</span>
+                                                    <span ng-if="pref.drinking_habits == null || pref.drinking_habits == ''">Not Specified</span></td>
+
                                             </tr>
                                             <tr>
                                                 <td> Smoking Habits </td>
-                                                <td> <span ng-if="(pref.smoking_habits != null">{{pref.smoking_habits}}</span> </td>
+                                                <td>
+                                                    <span ng-if="pref.smoking_habits != null && pref.smoking_habits != ''">{{pref.smoking_habits}}</span>
+                                                    <span ng-if="pref.smoking_habits == null || pref.smoking_habits == ''">Not Specified</span></td>
+
                                             </tr>
                                             </tbody>
                                         </table>
@@ -505,21 +535,33 @@
                                             <tbody>
                                             <tr>
                                                 <td> Religion </td>
-                                                <td> <span ng-if="(pref.religion_txt != null">{{pref.religion_txt}}</span> </td>
+                                                <td>
+                                                    <span ng-if="pref.religion_txt != null && pref.religion_txt != ''">{{pref.religion_txt}}</span>
+                                                    <span ng-if="pref.religion_txt == null || pref.religion_txt == ''">Not Specified</span></td>
+
                                             </tr>
                                             <tr>
                                                 <td> Caste </td>
-                                                <td> <span ng-if="(pref.caste != null">{{pref.caste}}</span> </td>
+                                                <td>
+                                                    <span ng-if="pref.caste_txt != null && pref.caste_txt != ''">{{pref.caste_txt}}</span>
+                                                    <span ng-if="pref.caste_txt == null || pref.caste_txt == ''">Not Specified</span></td>
+
                                             </tr>
 
 
                                             <tr>
                                                 <td> Gothram </td>
-                                                <td> <span ng-if="(pref.gothram != null">{{pref.gothram}}</span></td>
+                                                <td>
+                                                    <span ng-if="pref.gothram != null && pref.gothram != ''">{{pref.gothram}}</span>
+                                                    <span ng-if="pref.gothram == null || pref.gothram == ''">Not Specified</span></td>
+
                                             </tr>
                                             <tr>
                                                 <td> Star </td>
-                                                <td> <span ng-if="(pref.star != null">{{pref.star}}</span> </td>
+                                                <td>
+                                                    <span ng-if="pref.star_txt != null && pref.star_txt != ''">{{pref.star_txt}}</span>
+                                                    <span ng-if="pref.star_txt == null || pref.star_txt == ''">Not Specified</span></td>
+
                                             </tr>
 
                                             </tbody>
@@ -540,15 +582,24 @@
                                             <tbody>
                                             <tr>
                                                 <td> Education </td>
-                                                <td> <span ng-if="(pref.education != null">{{pref.education}}</span> </td>
+                                                <td>
+                                                    <span ng-if="pref.education_txt != null && pref.education_txt != ''">{{pref.education_txt}}</span>
+                                                    <span ng-if="pref.education_txt == null || pref.education_txt == ''">Not Specified</span></td>
+
                                             </tr>
                                             <tr>
                                                 <td> Occupation </td>
-                                                <td> <span ng-if="(pref.occupation != null">{{pref.occupation}}</span> </td>
+                                                <td>
+                                                    <span ng-if="pref.occupation_txt != null && pref.occupation_txt != ''">{{pref.occupation_txt}}</span>
+                                                    <span ng-if="pref.occupation_txt == null || pref.occupation_txt == ''">Not Specified</span></td>
+
                                             </tr>
                                             <tr>
                                                 <td> Annual Income </td>
-                                                <td> <span ng-if="(pref.income != null">{{pref.income}}</span>  </td>
+                                                <td>
+                                                    <span ng-if="pref.income != null && pref.income != ''">{{pref.income}}</span>
+                                                    <span ng-if="pref.income == null || pref.income == ''">Not Specified</span></td>
+
                                             </tr>
 
 
@@ -570,19 +621,31 @@
                                             <tbody>
                                             <tr>
                                                 <td> Country </td>
-                                                <td> <span ng-if="(pref.country_name != null">{{pref.country_name}}</span> </td>
+                                                <td>
+                                                    <span ng-if="pref.country_name != null && pref.country_name != ''">{{pref.country_name}}</span>
+                                                    <span ng-if="pref.country_name == null || pref.country_name == ''">Not Specified</span></td>
+
                                             </tr>
                                             <tr>
                                                 <td> Residing State </td>
-                                                <td> <span ng-if="(pref.state_name != null">{{pref.state_name}}</span> </td>
+                                                <td>
+                                                    <span ng-if="pref.state_name != null && pref.state_name != ''">{{pref.state_name}}</span>
+                                                    <span ng-if="pref.state_name == null || pref.state_name == ''">Not Specified</span></td>
+
                                             </tr>
                                             <tr>
                                                 <td> Residing City </td>
-                                                <td> <span ng-if="(pref.city_name != null">{{pref.city_name}} </span> </td>
+                                                <td>
+                                                    <span ng-if="pref.city_name != null && pref.city_name != ''">{{pref.city_name}}</span>
+                                                    <span ng-if="pref.city_name == null || pref.city_name == ''">Not Specified</span></td>
+
                                             </tr>
                                             <tr>
                                                 <td> Citizenship </td>
-                                                <td> <span ng-if="(pref.nationality_txt != null">{{pref.nationality_txt}}</span></td>
+                                                <td>
+                                                    <span ng-if="pref.nationality_txt != null && pref.nationality_txt != ''">{{pref.nationality_txt}}</span>
+                                                    <span ng-if="pref.nationality_txt == null || pref.nationality_txt == ''">Not Specified</span></td>
+
                                             </tr>
 
 
@@ -599,8 +662,12 @@
 
                                 </div>
                                 <div class="portlet-body form">
-<p>
+<p ng-if="pref.about_partner != null && pref.about_partner != ''">
    {{pref.about_partner}}
+
+</p>
+                                    <p ng-if="pref.about_partner == null || pref.about_partner == ''">
+   Not Specified
 
 </p>                                </div>
                             </div>
