@@ -475,6 +475,7 @@
                 url: resourceUrl.url()+'user/edit/' + storageService.get('id') + '?' +
                 'token=' + storageService.get("token")+'&block=basic&' +
                 '&weight=' + $scope.profile.login_user.weight +
+                '&profile_for=' + $scope.profile.login_user.profile_for +
                 '&body_type=' + $scope.profile.login_user.body_type +
                 '&height=' + $scope.profile.login_user.height +
                 '&mothertongue=' + selectMother +
@@ -808,7 +809,6 @@
                 storageService.set("name",null);
                 storageService.set("regular_search",null);
                 $state.go('login');
-
             }, function errorCallback(response) {
 
             });
