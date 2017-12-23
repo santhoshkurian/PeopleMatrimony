@@ -17,8 +17,8 @@
                             <div class="portlet-title">
 
                                 <div class="caption ">
-                                    <span class="vp-main">{{view.name}}</span><br>
-                                    <span class="vp-main-sub"> Profile created by {{view.profile_for}}</span>
+                                    <span class="vp-main">{{view.name}} ({{view.id_people}})</span><br>
+                                    <span class="vp-main-sub" ng-if="view.profile_for != null && view.profile_for != ''"> Profile created by {{view.profile_for}}</span>
                                 </div>
 
                                 <div class="actions" style="font-size: 20px">

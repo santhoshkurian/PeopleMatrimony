@@ -9,6 +9,7 @@
     function ViewProfileController($scope,$http,storageService,resourceUrl,viewProfile,$timeout) {
 
         console.log("check", viewProfile);
+        $scope.percentage = 0;
         $scope.viewProfile = true;
         $scope.image_url = storageService.get("image_url");
         $scope.name = storageService.get("name");
@@ -30,7 +31,7 @@
 
         $scope.view = viewProfile.user;
         $scope.pref = viewProfile.user.preferences;
-        console.log("view Profile", JSON.stringify(viewProfile));
+            console.log("view Profile", JSON.stringify(viewProfile));
         }else{
             $scope.viewProfile = false;
         }
