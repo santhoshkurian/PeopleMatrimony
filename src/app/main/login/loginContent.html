@@ -253,13 +253,17 @@
 
     </div>
     <div class="modal-footer login-modal-footer">
-        <div>
-            <button ng-disabled="loginForm.$invalid" type="button" class=" center-block col-md-5 btn red input-rounded" ng-click="vm.ok(login)">
+        <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-6" style="text-align:right">
+            <button ng-disabled="loginForm.$invalid" type="button" style="width: 100%" class="  btn red input-rounded" ng-click="vm.ok(login)">
                 Sign in
             </button>
-            <button type="button" class=" center-block col-md-5 btn btn-default input-rounded" ng-click="vm.cancel()">
+            </div>        <div class="col-md-6 col-sm-6 col-xs-6" style="text-align:left">
+
+        <button type="button" class="   btn btn-default input-rounded" style="width: 100%" ng-click="vm.cancel()">
                 Cancel
             </button>
+        </div>
         </div>
         <div>
             <label class="pull-left custon-text"> Don't have an account? &nbsp;<a href="" class="font-red-mint"
