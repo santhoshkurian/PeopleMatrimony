@@ -11,10 +11,12 @@
         $scope.isActive = function (viewLocation) {
             return viewLocation === $location.path();
         };
+        $scope.viewId = '';
+        $scope.viewById = viewById;
 
         function viewById(id){
+            if($scope.viewId != '')
             $state.go('viewProfile',{view_id:id});
-
         };
 
 

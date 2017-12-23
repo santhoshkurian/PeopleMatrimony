@@ -31,9 +31,9 @@
                        </li>
                        <li class="nav-item " style="text-align: center">
                            <div class="input-group" style="width: 75%;margin: 25px; ">
-                               <input type="text" class="form-control input-rounded-pratial-left" placeholder="Enter ID">
+                               <input type="text" class="form-control input-rounded-pratial-left" placeholder="Enter ID" ng-model="viewId">
                                                     <span class="input-group-btn">
-                                                        <button class="btn red input-rounded-pratial-right" type="button">Go</button>
+                                                        <button class="btn red input-rounded-pratial-right" ng-click="viewById(viewId)" type="button">Go</button>
                                                     </span>
                            </div>
 

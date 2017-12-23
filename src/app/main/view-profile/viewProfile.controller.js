@@ -8,6 +8,8 @@
     /** @ngInject */
     function ViewProfileController($scope,$http,storageService,resourceUrl,viewProfile,$timeout) {
 
+        console.log("check", viewProfile);
+        $scope.viewProfile = true;
         $scope.image_url = storageService.get("image_url");
         $scope.name = storageService.get("name");
         $scope.id = storageService.get("id");
@@ -16,16 +18,22 @@
         $scope.showMessage = false;
         $scope.selectType = selectType;
         $scope.skipAction = skipAction;
-        function skipAction(){
+        function skipAction() {
             $scope.showAction = false;
         }
-        function selectType(type){
+
+        function selectType(type) {
             $scope.viewType = type;
         }
+
+        if (viewProfile != 'error') {
+
         $scope.view = viewProfile.user;
         $scope.pref = viewProfile.user.preferences;
-        console.log("view Profile",JSON.stringify(viewProfile));
-
+        console.log("view Profile", JSON.stringify(viewProfile));
+        }else{
+            $scope.viewProfile = false;
+        }
         $scope.sendInterest = sendInterest;
         $scope.shortlist = shortlist;
 

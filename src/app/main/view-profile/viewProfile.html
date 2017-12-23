@@ -5,7 +5,7 @@
         <div class="page-head">
 
             <!-- BEGIN PAGE BASE CONTENT -->
-
+<span ng-if="viewProfile">
             <div class="row">
                 <div style="color: red;text-align: center">{{message}}</div>
 
@@ -618,5 +618,20 @@
 
             <!-- END PAGE BASE CONTENT -->
         </div>
+    </span>
+            <span ng-if="!viewProfile">
+                            <div class="row">
+                            <div class="col-md-12">
+                            <div class="col-md-12">
+
+                            <div class="portlet light border-rounded">
+                       <div class="alert alert-success">
+                           Invalid User Id
+                       </div>
+                           </div>
+                           </div>
+                           </div>
+                           </div>
+                </span>
         <!-- END CONTENT BODY -->
     </div>
