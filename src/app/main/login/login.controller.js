@@ -230,8 +230,12 @@
             if($scope.reg.email == null || $scope.reg.email ==''){
                 $scope.showemail = true;
             }
-            if($scope.reg.mobile == null || $scope.reg.mobile =='' || $scope.reg.mobile.toString().length != 10){
-                $scope.moberror = 'Invalid Mobile Number / Enter 10 digit mobile number'
+            if($scope.reg.mobile == null || $scope.reg.mobile =='' ){
+                $scope.moberror = 'Invalid Mobile Number'
+                if(($scope.reg.mobile == null || $scope.reg.mobile =='') && $scope.reg.mobile.toString().length != 10 ){
+                    $scope.moberror = 'Enter 10 digit mobile number';
+                }
+
                 $scope.showMobileNumber = true;
             }
             if($scope.reg.password == null || $scope.reg.password ==''){

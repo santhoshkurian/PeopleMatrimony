@@ -1,25 +1,24 @@
 <div class="col-md-12">
-    <div class="portlet light form-fit bordered col-md-offset-7 col-md-4 margin-top-30 reg-pannel">
+    <div class="portlet light form-fit bordered col-md-offset-6 col-md-5 margin-top-15 reg-pannel">
         <div class="portlet-title reg-pannel-title" style="height: 78px">
             <div class="caption">
                 <span class=" reg-header uppercase">Registration</span>
 
-                <div class="caption-helper reg-label" style="margin-top: 10px">Please take a moment to complete all of the information
-                    below.
+                <div class="caption-helper reg-label" style="margin-top: 10px">Fill the form to fulfill your life with perfect soul mate!
                 </div>
             </div>
 
         </div>
         <div class="portlet-body form" style="margin-left:20px;margin-right:20px">
             <!-- BEGIN FORM-->
-            <form name="regForm" class=" form-horizontal  form-body">
+            <form name="regForm" class=" form-horizontal  ">
                 <br>
 
                 <div class="row" style="color: red;text-align: center;">
                     {{message}}
                 </div>
 
-                <div class="form-group ">
+                <div class="form-group text-dis" >
                     <label class="col-md-3 control-label  reg-label">PROFILE FOR<span style="color: red">*</span></label>
 
                     <div class="col-md-8">
@@ -40,7 +39,7 @@
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group text-dis">
                     <label class="col-md-3 control-label reg-label ">NAME <span style="color: red">*</span></label>
 
                     <div class="col-md-8">
@@ -52,7 +51,7 @@
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group text-dis">
                     <label class="col-md-3 control-label reg-label">GENDER<span style="color: red">*</span></label>
 
                     <div class="col-md-8 margin-right-30">
@@ -86,28 +85,28 @@
                         <!--</div>-->
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group text-dis">
                     <label class="col-md-3 control-label reg-label">DATE OF BIRTH<span style="color: red">*</span></label>
 
                    <!-- <div class="col-md-8">
                         <input type="date" required class="form-control input-rounded" ng-model="reg.dob" placeholder="Date of Birth">
                     </div>-->
                     <div class="col-md-6">
-                        <p class="input-group">
+                        <p class="input-group" style="margin-bottom: 5px">
                             <input type="text" readonly='readonly' class="form-control" uib-datepicker-popup="{{format}}" uib-datepicker-popup ng-model="reg.dob" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
           <span class="input-group-btn">
             <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
           </span>
                         </p>
                         <span ng-if="showDOB">
-                        <div class="user-error-msg-arrow" style="bottom:32px!important;"></div>
-                        <div class="user-error-msg" style="bottom:23px!important;">Select date of birth of Bride / Groom</div>
+                        <div class="user-error-msg-arrow" style="bottom:13px!important;"></div>
+                        <div class="user-error-msg" style="bottom:5px!important;">Select date of birth</div>
                     </span>
 
                     </div>
 
                 </div>
-                <div class="form-group">
+                <div class="form-group text-dis">
                     <label class="col-md-3 control-label reg-label ">MOTHER TONGUE<span style="color: red">*</span></label>
 
 
@@ -118,11 +117,11 @@
                         </select>
                         <span ng-if="showmt">
                         <div class="user-error-msg-arrow" ></div>
-                        <div class="user-error-msg" >Select mother tongue of Bride / Groom</div>
+                        <div class="user-error-msg" >Select mother tongue</div>
                     </span>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group text-dis">
                     <label class="col-md-3 control-label reg-label">RELIGION<span style="color: red">*</span></label>
 
 
@@ -133,12 +132,12 @@
                         </select>
                          <span ng-if="showreligion">
                         <div class="user-error-msg-arrow" ></div>
-                        <div class="user-error-msg" >Select religion of Bride / Groom</div>
+                        <div class="user-error-msg" >Select religion </div>
                     </span>
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group text-dis">
                     <label class="col-md-3 control-label reg-label">EMAIL<span style="color: red">*</span></label>
 
                     <div class="col-md-8">
@@ -149,7 +148,7 @@
                     </span>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group text-dis">
                     <label class="col-md-3 control-label reg-label">MOBILE NUMBER<span style="color: red">*</span></label>
 
                     <div class="col-md-3">
@@ -171,7 +170,7 @@
                     </div>
                 </div>
 
-                <div class="form-group ">
+                <div class="form-group text-dis">
                     <label class="col-md-3 control-label reg-label">PASSWORD<span style="color: red">*</span></label>
 
                     <div class="col-md-8">
@@ -193,7 +192,7 @@
                 <!--</div>-->
 
                 <!--<span class="help-inline"> Inline help. </span>-->
-                <div class="form-group ">
+                <div class="form-group text-dis">
                     <label class="col-md-3 control-label"></label>
 
                     <div class="col-md-8">
@@ -203,7 +202,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="form-group ">
+                <div class="form-group text-dis">
                     <label class="col-md-3 control-label"></label>
 
                     <div class="col-md-8" style="text-align: center" style="color: grey">

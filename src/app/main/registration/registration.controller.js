@@ -48,7 +48,7 @@
 
 
         $scope.step2 = {
-            marital_status:'unmarried',
+            marital_status:'',
             mothertongue:null,
             caste:0,
             country:0,
@@ -134,6 +134,7 @@
                 $scope.edu_id = $scope.setProfession.education.id_education;
             }
             else{
+                $scope.showEducation = true;
                 $scope.showEducation = true;
 
             }
