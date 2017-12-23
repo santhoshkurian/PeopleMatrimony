@@ -17,7 +17,7 @@
         $scope.viewId = '';
         $scope.viewById = viewById;
         function viewById(id){
-            $state.go('search.searchbyId',{id:id})
+            $state.go('viewProfile',{view_id:id});
 
         };
 
