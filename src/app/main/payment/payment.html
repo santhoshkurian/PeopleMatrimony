@@ -3,20 +3,20 @@
     <div class="page-content1">
         <!-- BEGIN PAGE HEAD-->
         <div class="page-head">
-            <div ng-if ="!paymentCompletion" class="row">
-                <div class="col-md-12 ">
+            <div ng-if ="!paymentCompletion" class="row" >
+                <div class="col-md-12 " ng-if ="!proceedPayment">
                     <div class="portlet light " style="padding-top: 0px">
-                        <div class=" row vp-main-action">
+                        <div class=" row vp-main-action" >
                             <div class=" row">
                                 <div class="col-md-6 padding-0 ">
                                     <div class="col-md-4 vp-main-link2 "
                                          ng-class="{'active-link': viewType == 'classic'}"
                                          ng-click="selectType('classic')"
-                                            > Classic
+                                            > CLASSIC
                                     </div>
                                     <div class="col-md-8 vp-main-link2"
                                          ng-class="{'active-link': viewType == 'flexible'}"
-                                         ng-click="selectType('flexible')"> Flexxible plan
+                                         ng-click="selectType('flexible')"> FLEXIBLE PLAN
                                     </div>
 
                                 </div>
@@ -36,87 +36,72 @@
                                                                 <div class="row ">
                                                                     <div class="col-md-12 col-sm-12 col-xs-12 feature-header ">
                                                                         <div class="text-center margin-top-10 margin-bottom-10">
-                                                                            <span class=" feature-header-text">3 months</span>
+                                                                            <span class="uppercase feature-header-text">3 months</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
-                                                                    <div class="col-md-12 col-sm-12 col-xs-12 margin-top-20 ">
-                                                                        <div class="row">
-                                                                            <div class="col-md-4 col-sm-4 col-xs-4 col-md-border "
+
+                                                                            <div class="col-md-6 col-sm-6 col-xs-6 col-md-border "
                                                                                  style="height: 195px">
-                                                                                <div class="row">
+                                                                                <div class="row" style="text-align: center">
                                                                                     <div class="col-md-12 col-sm-12 col-xs-12 text-center margin-top-30">
                                                                                         <button type="button"
                                                                                                 class="btn dark btn-outline ">
                                                                                             Classic
                                                                                         </button>
                                                                                     </div>
-                                                                                </div>
-                                                                                <div class="row"
-                                                                                     style="text-align: center">
-                                                                                    <div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">
-                                                                                        <span class="old-price">Rs 3000</span>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="row"
-                                                                                     style="text-align: center">
+                                                                                    <!--<div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">-->
+                                                                                        <!--<span class="old-price">Rs {{payment.classic3Months.price}}</span>-->
+                                                                                    <!--</div>-->
                                                                                     <div class="col-md-12 col-sm-12 col-xs-12  margin-top-10">
-                                                                                        <span class="new-price">Rs 2000</span>
+                                                                                        <span class="new-price" style="font-size: 25px" >Rs {{payment.classic3Months.price}}</span>
                                                                                     </div>
                                                                                 </div>
 
+
                                                                             </div>
-                                                                            <div class="col-md-8 col-sm-8 col-xs-8 ">
-                                                                                <div class="row">
+                                                                            <div class="col-md-6 col-sm-6 col-xs-6 ">
+                                                                                <div class="row" style="text-align: center">
                                                                                     <div class="col-md-12 col-sm-12 col-xs-12 pull-left  margin-top-30">
                                                                                         <button type="button"
                                                                                                 class="btn dark btn-outline ">
                                                                                             Classic Advantage
                                                                                         </button>
                                                                                     </div>
-                                                                                </div>
-                                                                                <div class="row"
-                                                                                     style="text-align: left">
-                                                                                    <div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">
-                                                                                        <span class="old-price">Rs 3000</span>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="row"
-                                                                                     style="text-align: left">
+                                                                                    <!--<div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">-->
+                                                                                        <!--<span class="old-price">Rs {{payment.classicAdv.actual}}</span>-->
+                                                                                    <!--</div>-->
                                                                                     <div class="col-md-12 col-sm-12 col-xs-12  margin-top-10">
-                                                                                        <span class="new-price">Rs 2000</span>
+                                                                                        <span class="new-price" style="font-size: 25px">Rs {{payment.classicAdv3Months.price}}</span>
                                                                                     </div>
                                                                                 </div>
+
                                                                             </div>
-                                                                        </div>
-                                                                    </div>
+
                                                                 </div>
                                                                 <div class="row">
+                                                                    <br/>
                                                                     <div class="col-md-12 feature-header "
                                                                          style="height:45px">
                                                                         <div class="row">
-                                                                            <div class="col-md-4 col-sm-4 col-xs-4"
-                                                                                 ng-class="{'selected-payment': selectedOption == 'classic-classic'}"
-                                                                                 ng-mouseover="setSelectedOption('classic-classic')"
+                                                                            <div class="col-md-6 col-sm-6 col-xs-6"
+                                                                                 ng-class="{'selected-payment': selectedOption == 'classic-3months'}"
+                                                                                 ng-mouseover="setSelectedOption('classic-3months')"
                                                                                  style="height:45px">
                                                                                 <div class="row">
-                                                                                    <div class="col-md-12 margin-top-10">
-                                                                                <span style="text-transform: uppercase;text-align: left;font-size: 10px;">
+                                                                                    <div class="col-md-12 margin-top-10 uppercase make-payment"  ng-click="selectPackage(payment.classic3Months)">
                                                                                     Make payment
-                                                                                </span>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="col-md-8 col-sm-8 col-xs-8"
-                                                                                 ng-class="{'selected-payment': selectedOption == 'classic-advantage'}"
-                                                                                 ng-mouseover="setSelectedOption('classic-advantage')"
+                                                                            <div class="col-md-6 col-sm-6 col-xs-6"
+                                                                                 ng-class="{'selected-payment': selectedOption == 'classic-advantage-3months'}"
+                                                                                 ng-mouseover="setSelectedOption('classic-advantage-3months')"
                                                                                  style="height:45px">
                                                                                 <div class="row">
-                                                                                    <div class="col-md-12 margin-top-10">
-                                                                                <span style="text-transform: uppercase;text-align: left;font-size: 10px;">
+                                                                                    <div class="col-md-12 margin-top-10 uppercase make-payment" ng-click="selectPackage(payment.classicAdv3Months)">
                                                                                     Make payment
-                                                                                </span>
                                                                                     </div>
                                                                                 </div>
 
@@ -130,87 +115,72 @@
                                                                 <div class="row ">
                                                                     <div class="col-md-12 col-sm-12 col-xs-12 feature-header ">
                                                                         <div class="text-center margin-top-10 margin-bottom-10">
-                                                                            <span class=" feature-header-text">6 months</span>
+                                                                            <span class="uppercase feature-header-text">6 months</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
-                                                                    <div class="col-md-12 col-sm-12 col-xs-12 margin-top-20 ">
-                                                                        <div class="row">
-                                                                            <div class="col-md-4 col-sm-4 col-xs-4 col-md-border "
-                                                                                 style="height: 195px">
-                                                                                <div class="row">
-                                                                                    <div class="col-md-12 col-sm-12 col-xs-12 text-center margin-top-30">
-                                                                                        <button type="button"
-                                                                                                class="btn dark btn-outline ">
-                                                                                            Classic
-                                                                                        </button>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="row"
-                                                                                     style="text-align: center">
-                                                                                    <div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">
-                                                                                        <span class="old-price">Rs 6000</span>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="row"
-                                                                                     style="text-align: center">
-                                                                                    <div class="col-md-12 col-sm-12 col-xs-12  margin-top-10">
-                                                                                        <span class="new-price">Rs 4000</span>
-                                                                                    </div>
-                                                                                </div>
 
+                                                                    <div class="col-md-6 col-sm-6 col-xs-6 col-md-border "
+                                                                         style="height: 195px">
+                                                                        <div class="row" style="text-align: center">
+                                                                            <div class="col-md-12 col-sm-12 col-xs-12 text-center margin-top-30">
+                                                                                <button type="button"
+                                                                                        class="btn dark btn-outline ">
+                                                                                    Classic
+                                                                                </button>
                                                                             </div>
-                                                                            <div class="col-md-8 col-sm-8 col-xs-8 ">
-                                                                                <div class="row">
-                                                                                    <div class="col-md-12 col-sm-12 col-xs-12 pull-left  margin-top-30">
-                                                                                        <button type="button"
-                                                                                                class="btn dark btn-outline ">
-                                                                                            Classic Advantage
-                                                                                        </button>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="row"
-                                                                                     style="text-align: left">
-                                                                                    <div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">
-                                                                                        <span class="old-price">Rs 6500</span>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="row"
-                                                                                     style="text-align: left">
-                                                                                    <div class="col-md-12 col-sm-12 col-xs-12  margin-top-10">
-                                                                                        <span class="new-price">Rs 5000</span>
-                                                                                    </div>
-                                                                                </div>
+                                                                            <!--<div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">-->
+                                                                                <!--<span class="old-price">Rs {{payment.classic6Months.actual}}</span>-->
+                                                                            <!--</div>-->
+                                                                            <div class="col-md-12 col-sm-12 col-xs-12  margin-top-10">
+                                                                                <span class="new-price" style="font-size: 25px">Rs {{payment.classic6Months.price}}</span>
                                                                             </div>
                                                                         </div>
+
+
                                                                     </div>
+                                                                    <div class="col-md-6 col-sm-6 col-xs-6 ">
+                                                                        <div class="row" style="text-align: center">
+                                                                            <div class="col-md-12 col-sm-12 col-xs-12 pull-left  margin-top-30">
+                                                                                <button type="button"
+                                                                                        class="btn dark btn-outline ">
+                                                                                    Classic Advantage
+                                                                                </button>
+                                                                            </div>
+                                                                            <!--<div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">-->
+                                                                                <!--<span class="old-price">Rs {{payment.classicAdv6Months.actual}}</span>-->
+                                                                            <!--</div>-->
+                                                                            <div class="col-md-12 col-sm-12 col-xs-12  margin-top-10">
+                                                                                <span class="new-price" style="font-size: 25px">Rs {{payment.classicAdv6Months.price}}</span>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
                                                                 </div>
                                                                 <div class="row">
+                                                                    <br/>
                                                                     <div class="col-md-12 feature-header "
                                                                          style="height:45px">
                                                                         <div class="row">
-                                                                            <div class="col-md-4 col-sm-4 col-xs-4"
-                                                                                 ng-class="{'selected-payment': selectedOption == 'advantage-classic'}"
-                                                                                 ng-mouseover="setSelectedOption('advantage-classic')"
+                                                                            <div class="col-md-6 col-sm-6 col-xs-6"
+                                                                                 ng-class="{'selected-payment': selectedOption == 'classic-6months'}"
+                                                                                 ng-mouseover="setSelectedOption('classic-6months')"
                                                                                  style="height:45px">
                                                                                 <div class="row">
-                                                                                    <div class="col-md-12 margin-top-10">
-                                                                                <span style="text-transform: uppercase;text-align: left;font-size: 10px;">
-                                                                                    Make payment
-                                                                                </span>
+                                                                                    <div class="col-md-12 margin-top-10 uppercase make-payment"  ng-click="selectPackage(payment.classic6Months)">
+                                                                                        Make payment
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="col-md-8 col-sm-8 col-xs-8"
-                                                                                 ng-class="{'selected-payment': selectedOption == 'advantage-advantage'}"
-                                                                                 ng-mouseover="setSelectedOption('advantage-advantage')"
+                                                                            <div class="col-md-6 col-sm-6 col-xs-6"
+                                                                                 ng-class="{'selected-payment': selectedOption == 'classic-advantage-6months'}"
+                                                                                 ng-mouseover="setSelectedOption('classic-advantage-6months')"
                                                                                  style="height:45px">
                                                                                 <div class="row">
-                                                                                    <div class="col-md-12 margin-top-10">
-                                                                                <span style="text-transform: uppercase;text-align: left;font-size: 10px;">
-                                                                                    Make payment
-                                                                                </span>
+                                                                                    <div class="col-md-12 margin-top-10 uppercase make-payment"  ng-click="selectPackage(payment.classicAdv6Months)">
+                                                                                        Make payment
                                                                                     </div>
                                                                                 </div>
 
@@ -219,6 +189,7 @@
 
                                                                     </div>
                                                                 </div>
+
                                                             </div>
 
 
@@ -530,7 +501,8 @@
 
 
             </div>
-            <div class="row">
+
+            <div ng-if="proceedPayment" class="row">
 
                 <div class="col-md-12 ">
                     <div class="row">
@@ -551,10 +523,10 @@
                                                         <div class="row ">
                                                             <ul class="nav nav-tabs">
                                                                 <li role="Credit" ng-class="{'active': selectedPayment == 'Credit'}" ng-click="setSelectedPayment('Credit')"><a href="#">Credit Card</a></li>
-                                                                <li role="Debit"><a href="#" ng-class="{'active': selectedPayment == 'Debit'}" ng-click="setSelectedPayment('Debit')">Debit Card</a></li>
+                                                               <!-- <li role="Debit"><a href="#" ng-class="{'active': selectedPayment == 'Debit'}" ng-click="setSelectedPayment('Debit')">Debit Card</a></li>
                                                                 <li role="Net"><a href="#" ng-class="{'active': selectedPayment == 'Net'}" ng-click="setSelectedPayment('Net')">Net Baning&nbsp</a></li>
                                                                 <li role="Wallet"><a href="#" ng-class="{'active': selectedPayment == 'Wallet'}" ng-click="setSelectedPayment('Wallet')">Wallet</a></li>
-                                                            </ul>
+                                                -->            </ul>
                                                             <div ng-if="selectedPayment == 'Credit'" class="row ">
                                                                 <div class="col-md-12 ">
                                                                     <div class="row">
@@ -565,11 +537,12 @@
                                                                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                                                                             <div class="row">
                                                                                             <div class="col-md-4">
-                                                                                                <label class="control-label " style="margin-left: 10px;">  Card Number</label>
+                                                                                                <label class="control-label " style="margin-left: 10px;">Credit Card Number</label>
                                                                                             </div>
                                                                                             <div class="col-md-6">
-                                                                                                <input type="text" class="form-control  input-rounded"
-                                                                                                       />
+                                                                                                <input type="text" class="form-control  input-rounded" ng-model="makePayment.c_no"/>
+                                                                                                <span ng-if="check.valid_c_no" class="make-payment-validate"> This field is required</span>
+
                                                                                             </div>
                                                                                             <div class="col-md-2">
                                                                                                 <img style="max-height: 30px;!important;" ng-src="assets/images/mastercard-logo-big.gif" />
@@ -584,11 +557,12 @@
                                                                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                                                                             <div class="row">
                                                                                                 <div class="col-md-4">
-                                                                                                    <label class="control-label " style="margin-left: 10px;">  Card Holder Name</label>
+                                                                                                    <label class="control-label " style="margin-left: 10px;">Credit Holder Name</label>
                                                                                                 </div>
                                                                                                 <div class="col-md-6">
-                                                                                                    <input type="text" class="form-control  input-rounded"
-                                                                                                            />
+                                                                                                    <input type="text" class="form-control  input-rounded" ng-model="makePayment.c_name"/>
+                                                                                                    <span ng-if="check.valid_c_name" class="make-payment-validate"> This field is required</span>
+
                                                                                                 </div>
                                                                                                 <div class="col-md-2">
                                                                                                 </div>
@@ -602,41 +576,51 @@
                                                                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                                                                             <div class="row">
                                                                                                 <div class="col-md-4">
-                                                                                                    <label class="control-label " style="margin-left: 10px;"> Credit Expiry Date</label>
+                                                                                                    <label class="control-label " style="margin-left: 10px;">Card Expiry Date</label>
                                                                                                 </div>
                                                                                                 <div class="col-md-8">
                                                                                                     <div class="row">
                                                                                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                                                                                             <div class="row">
                                                                                                                 <div class="col-md-6">
-                                                                                                                    <select class="form-control input-rounded "
+                                                                                                                    <select class="form-control input-rounded" ng-model="makePayment.month"
                                                                                                                             >
-                                                                                                                        <option value="jan">JAN</option>
-                                                                                                                        <option value="feb">FEB</option>
-                                                                                                                        <option value="mar">MAR</option>
-                                                                                                                        <option value="april">APRIL</option>
-                                                                                                                        <option value="may">MAY</option>
-                                                                                                                        <option value="june">JUNE</option>
-                                                                                                                        <option value="july">JULY</option>
-                                                                                                                        <option value="aug">AUG</option>
-                                                                                                                        <option value="sep">SEP</option>
-                                                                                                                        <option value="oct">OCT</option>
-                                                                                                                        <option value="nov">NOV</option>
-                                                                                                                        <option value="dec">DEC</option>
+                                                                                                                        <option value="01">JAN</option>
+                                                                                                                        <option value="02">FEB</option>
+                                                                                                                        <option value="03">MAR</option>
+                                                                                                                        <option value="04">APRIL</option>
+                                                                                                                        <option value="05">MAY</option>
+                                                                                                                        <option value="06">JUNE</option>
+                                                                                                                        <option value="07">JULY</option>
+                                                                                                                        <option value="08">AUG</option>
+                                                                                                                        <option value="09">SEP</option>
+                                                                                                                        <option value="10">OCT</option>
+                                                                                                                        <option value="11">NOV</option>
+                                                                                                                        <option value="12">DEC</option>
                                                                                                                     </select>
+                                                                                                                    <span ng-if="check.valid_month" class="make-payment-validate"> This field is required</span>
+
                                                                                                                 </div>
                                                                                                                 <div class="col-md-6">
+                                                                                                                    <select class="form-control input-rounded "  ng-model="makePayment.year">
+                                                                                                                        <option value="2018">2018</option>
+                                                                                                                        <option value="2018">2018</option>
+                                                                                                                        <option value="2019">2019</option>
+                                                                                                                        <option value="2020">2020</option>
+                                                                                                                        <option value="2021">2021</option>
+                                                                                                                        <option value="2022">2022</option>
+                                                                                                                        <option value="2023">2023</option>
+                                                                                                                        <option value="2024">2024</option>
+                                                                                                                        <option value="2025">2025</option>
+                                                                                                                        <option value="2026">2026</option>
+                                                                                                                        <option value="2027">2027</option>
+                                                                                                                        <option value="2028">2028</option>
+                                                                                                                        <option value="2029">2029</option>
+                                                                                                                        <option value="2030">2030</option>
 
-                                                                                                                    <select class="form-control input-rounded "
-                                                                                                                            >
-                                                                                                                        <option value="myself">2018</option>
-                                                                                                                        <option value="daughter">2019</option>
-                                                                                                                        <option value="son">2020</option>
-                                                                                                                        <option value="brother">2021</option>
-                                                                                                                        <option value="sister">2022</option>
-                                                                                                                        <option value="relative">2023</option>
-                                                                                                                        <option value="friend">2024</option>
                                                                                                                     </select>
+                                                                                                                    <span ng-if="check.valid_year" class="make-payment-validate"> This field is required</span>
+
                                                                                                                 </div>
 
 
@@ -659,8 +643,9 @@
                                                                                                     <label class="control-label " style="margin-left: 10px;"> CCV</label>
                                                                                                 </div>
                                                                                                 <div class="col-md-6">
-                                                                                                    <input type="text" class="form-control  input-rounded"
+                                                                                                    <input type="text" class="form-control  input-rounded"  ng-model="makePayment.ccv"
                                                                                                             />
+                                                                                                    <span ng-if="check.valid_ccv" class="make-payment-validate"> This field is required</span>
                                                                                                 </div>
                                                                                                 <div class="col-md-2">
                                                                                                     <img style="max-height: 30px;!important;" ng-src="assets/images/ccv.jpg" />
@@ -732,27 +717,27 @@
                                     <div class="row">
                                         <div class="col-md-12 margin-top-20 ">
                                             <div class="row">
-                                                <div class="col-md-6 ">Classic (3 months) : </div>
-                                                <div class="col-md-6 ">RS 2000</div>
+                                                <div class="col-md-6 ">{{selectPayment.package_name}} ({{selectPayment.duration_months}} Months) : </div>
+                                                <div class="col-md-6 ">RS {{selectPayment.price}}</div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-12 margin-top-20 ">
-                                            <div class="row">
-                                                <div class="col-md-6 ">Dicount : </div>
-                                                <div class="col-md-6 ">RS 1000</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12 margin-top-20 ">
-                                            <div class="row">
-                                                <div class="col-md-6 ">Service Tax(@15%) : </div>
-                                                <div class="col-md-6 ">RS 450</div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <!--<div class="row">-->
+                                        <!--<div class="col-md-12 margin-top-20 ">-->
+                                            <!--<div class="row">-->
+                                                <!--<div class="col-md-6 ">Dicount : </div>-->
+                                                <!--<div class="col-md-6 ">RS 1000</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="row">-->
+                                        <!--<div class="col-md-12 margin-top-20 ">-->
+                                            <!--<div class="row">-->
+                                                <!--<div class="col-md-6 ">Service Tax(@15%) : </div>-->
+                                                <!--<div class="col-md-6 ">RS 450</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
                                     <hr/>
                                     <div class="row">
                                         <div class="col-md-12 ">
@@ -761,20 +746,20 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12 margin-top-20 ">
-                                                <span >Classic (3 months) : </span>
+                                                <span >{{selectPayment.package_name}} ({{selectPayment.duration_months}} Months) </span>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12 margin-top-20 ">
-                                            <span >ALL worth RS 5000: </span>
+                                            <span >ALL worth RS {{selectPayment.price}} </span>
                                         </div>
                                     </div>
                                     <hr/>
-                                    <div class="row">
-                                        <div class="col-md-12 margin-top-20 ">
-                                            <span style="color: #2ab4c0" >You Save : RS 1000 </span>
-                                        </div>
-                                    </div>
+                                    <!--<div class="row">-->
+                                        <!--<div class="col-md-12 margin-top-20 ">-->
+                                            <!--<span style="color: #2ab4c0" >You Save : RS 1000 </span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
                                 </div>
                                 <hr/>
                                 <div class="portlet-title select-payment-header summary-payment-margin-top">
@@ -789,7 +774,7 @@
                                 </div>
                                 <div class="portlet-title summary-payment-footer">
                                     <div class="caption  ">
-                                        <span class="caption-subject uppercase summary-payment-header-text text-center "> Your Total : RS 1450</span>
+                                        <span class="caption-subject uppercase summary-payment-header-text text-center "> Your Total : RS {{selectPayment.price}}</span>
                                     </div>
                                 </div>
                             </div>

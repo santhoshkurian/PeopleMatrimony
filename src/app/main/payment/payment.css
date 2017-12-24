@@ -8,13 +8,14 @@
 }
 .payment-box{
     border: 1px solid #777777;
-    height: 301px;
+    height: 310px;
     /*margin-right: 25px;*/
     margin-top: 25px;
 }
 .feature-header-text {
-    color: red;
+    color: #e15d5d;
     font-weight: 600;
+    font-size: 20px;
     text-transform: capitalize;
 }
 .feature-header {
@@ -25,7 +26,7 @@
 }
 .col-md-border {
 
-    border-right: 1px solid red !important;
+    border-right: 1px solid #e15d5d !important;
 }
 .old-price {
     text-decoration: line-through;
@@ -34,7 +35,7 @@
     font-weight: 600;
 }
 .selected-payment {
-    background-color: red;
+    background-color: #e15d5d;
 }
 
 .feature-box{
@@ -65,7 +66,7 @@
 }
 
 .select-payment-header-text{
-    color: red !important;
+    color: #e15d5d !important;
     padding-left: 50px !important;
     /*margin-left: 10px !important;*/
 }
@@ -99,5 +100,15 @@
         border: 1px solid #777777 !important;
         height: 150px !important;
     }
+}
+
+.make-payment{
+    text-align: center!important;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.make-payment-validate{
+    color: red;
 }
 

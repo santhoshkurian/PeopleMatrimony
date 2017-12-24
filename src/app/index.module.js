@@ -23,8 +23,6 @@
             },
 
             response: function(res) {
-                console.log("response success",res)
-
                 if(res.data.code === 401) {
                     storageService.set("token",null);
                     storageService.set("id",null);
@@ -47,7 +45,6 @@
             },
 
             responseError: function(res) {
-                console.log("response error")
                 return res;
             }
         }

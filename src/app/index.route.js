@@ -668,6 +668,39 @@
                         templateUrl: 'app/footer/footer.html',
                         controller: 'FooterController as vm'
                     }
+                },resolve: {
+                    paymentList: function ($http, storageService,resourceUrl,$stateParams) {
+                        return  $http({
+                            method: 'GET',
+                            url: resourceUrl.url()+'package?'+
+                            '&token='+storageService.get("token")
+                        }).then(function successCallback(response) {
+                            var payment = {};
+                            if(response.data.package.data.length > 0){
+                                response.data.package.data.filter(function (a) {
+                                    if(a.id_packages == 1){
+                                        payment.classic3Months = a;
+                                    }
+                                    if(a.id_packages == 3){
+                                        payment.classic6Months = a;
+                                    }
+                                    if(a.id_packages == 4){
+                                        payment.classicAdv3Months = a;
+                                    }
+                                    if(a.id_packages == 5){
+                                        payment.classicAdv6Months = a;
+                                    }
+                                    if(a.id_packages == 6){
+                                        payment.flexible = a;
+                                    }
+                                })
+                            }
+                            return payment;
+
+                        }, function errorCallback(response) {
+                            return 'error';
+                        });
+                    }
                 }
             });
 
