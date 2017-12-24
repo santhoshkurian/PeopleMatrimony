@@ -1193,7 +1193,7 @@
                         <div class="portlet-body form">
                             <p ng-hide="fabout">
                                 <span ng-if="profile.login_user.about_family != null && profile.login_user.about_family != ''">{{profile.login_user.about_family}}</span>
-                                <span ng-if="profile.login_user.about_family != null || profile.login_user.about_family != ''">Not Specified</span>
+                                <span ng-if="profile.login_user.about_family == null || profile.login_user.about_family == ''">Not Specified</span>
                             </p>
 
                             <div ng-show="fabout">
@@ -1917,11 +1917,15 @@
                                                                        <label class="font-weight ">
                                                                            Religion</label>
 
-                                                                       <select multiple="multiple" class="multi-select form-control input-rounded "
-                                                                               ng-model="setPartnerReligion.religion"
-                                                                               ng-click="selectReliegion(setPartnerReligion.religion)"
-                                                                               ng-options="item.religion for item in religonList track by item.id_religion">
-                                                                       </select>
+                                                                       <!--<select multiple="multiple" class="multi-select form-control input-rounded "-->
+                                                                               <!--ng-model="setPartnerReligion.religion"-->
+                                                                               <!--ng-click="selectReliegion(setPartnerReligion.religion)"-->
+                                                                               <!--ng-options="item.religion for item in religonList track by item.id_religion">-->
+                                                                       <!--</select>-->
+                                                                       <multiselect ch-limit="10" show-search="true"
+                                                                                    ng-model="setPartnerReligion.religion" options="religonList"
+                                                                                    id-prop="id_religion" display-prop="religion">
+                                                                       </multiselect>
 
 
                                                                    </div>
