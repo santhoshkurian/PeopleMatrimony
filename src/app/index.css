@@ -48,5 +48,10 @@ html, body. div{
     color: #333;
 }
 
+multiselect  .dropdown-menu{
+    overflow-y:auto!important;
+    height: 250px!important;
+}
+
 
 

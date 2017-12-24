@@ -187,9 +187,11 @@
 
 
         }
+        $scope.selection = null;
 
         $scope.search = search;
         function search(){
+            console.log($scope.multiValue.country);
             if($scope.multiValue.mothertongue.length  > 0){
                 $scope.multiValue.mothertongue.filter(function (a) {
                     $scope.regular.mothertongueList.push(a.id_mothertongue);
@@ -282,6 +284,7 @@
 
 
         }
+
 
 
 

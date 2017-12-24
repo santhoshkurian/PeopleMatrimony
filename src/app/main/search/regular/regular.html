@@ -358,19 +358,37 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Religion</label>
 
-                                    <select multiple="multiple" class="multi-select form-control input-rounded "
+ <!--                                   <select multiple="multiple" class="multi-select form-control input-rounded "
                                             ng-model="multiValue.religion"
                                             ng-options="item.religion for item in religonList track by item.id_religion">
-                                    </select>
+                                    </select>-->
+                                    <div style="font-size: 15px">
+                                    <span ng-repeat="m in multiValue.religion" >
+                                        {{m.religion}},
+                                    </span>
+                                        </div>
+                                    <multiselect ch-limit="10" show-search="true"
+                                                 ng-model="multiValue.religion" options="religonList"
+                                                 id-prop="id_religion" display-prop="religion">
+                                    </multiselect>
                                 </div>
 
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight  "> Mother tongue</label>
-
+<!--
                                     <select multiple="multiple" class="multi-select form-control input-rounded "
                                             ng-model="multiValue.mothertongue"
                                             ng-options="item.mothertongue for item in motherTongueList track by item.id_mothertongue">
-                                    </select>
+                                    </select>-->
+                                    <div style="font-size: 15px">
+                                    <span ng-repeat="m in multiValue.mothertongue" >
+                                        {{m.mothertongue}},
+                                    </span>
+                                    </div>
+                                    <multiselect ch-limit="10" show-search="true"
+                                                 ng-model="multiValue.mothertongue" options="motherTongueList"
+                                                 id-prop="id_mothertongue" display-prop="mothertongue">
+                                    </multiselect>
                                 </div>
 
                             </div>
@@ -379,19 +397,41 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Occupation</label>
 
-                                    <select multiple="multiple" class="multi-select form-control input-rounded "
+                                 <!--   <select multiple="multiple" class="multi-select form-control input-rounded "
                                             ng-model="multiValue.occupation"
                                             ng-options="item.occupation for item in occupation track by item.id_occupation">
-                                    </select>
+                                    </select>-->
+                                    <div style="font-size: 15px">
+                                    <span ng-repeat="m in multiValue.occupation" >
+                                        {{m.occupation}},
+                                    </span>
+                                    </div>
+
+                                    <multiselect ch-limit="10" show-search="true"
+                                                 ng-model="multiValue.occupation" options="occupation"
+                                                 id-prop="id_occupation" display-prop="occupation">
+                                    </multiselect>
                                 </div>
 
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight  "> Country</label>
 
-                                    <select multiple="multiple" class="multi-select form-control input-rounded "
-                                            ng-model="multiValue.country"
-                                            ng-options="item.country_name for item in countryList track by item.id_country">
-                                    </select>
+                                    <!--<select multiple="multiple" class="multi-select form-control input-rounded "-->
+                                            <!--ng-model="multiValue.country"-->
+                                            <!--ng-options="item.country_name for item in countryList track by item.id_country">-->
+                                    <!--</select>-->
+                                    <div style="font-size: 15px">
+                                    <span ng-repeat="m in multiValue.country" >
+                                        {{m.country_name}},
+                                    </span>
+                                    </div>
+
+                                    <multiselect style="height:30px" ng-click="changes()" ch-limit="10" show-search="true"
+                                                 ng-model="multiValue.country" options="countryList"
+                                                 id-prop="id_country" display-prop="country_name">
+                                    </multiselect>
+
+
                                 </div>
 
                             </div>
@@ -400,20 +440,40 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Education</label>
 
-                                    <select multiple="multiple" class="multi-select form-control input-rounded "
+                                   <!-- <select multiple="multiple" class="multi-select form-control input-rounded "
                                             ng-model="multiValue.education"
                                             ng-options="item.education for item in educationList track by item.id_education">
-                                    </select>
+                                    </select>-->
+                                    <div style="font-size: 15px">
+                                    <span ng-repeat="m in multiValue.education" >
+                                        {{m.education}},
+                                    </span>
+                                    </div>
+                                    <multiselect ch-limit="10" show-search="true"
+                                                 ng-model="multiValue.education" options="educationList"
+                                                 id-prop="id_education" display-prop="education">
+                                    </multiselect>
                                 </div>
 
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight  "> &nbsp;</label>
 
 
-                                    <select multiple="multiple" class="multi-select form-control input-rounded "
+                                   <!-- <select multiple="multiple" class="multi-select form-control input-rounded "
                                             ng-model="multiValue.education_category"
-                                            ng-options="item.education_category for item in educationCategoryList track by item.id_education_category">
-                                    </select>
+                                            ng-options="item.education_category for item in educationCategoryList
+                                             track by item.id_education_category">
+                                    </select>-->
+                                    <div style="font-size: 15px">
+                                    <span ng-repeat="m in multiValue.education_category" >
+                                        {{m.education_category}},
+                                    </span>
+                                    </div>
+
+                                    <multiselect ch-limit="10" show-search="true"
+                                                 ng-model="multiValue.education_category" options="educationCategoryList"
+                                                 id-prop="id_education_category" display-prop="education_category">
+                                    </multiselect>
                                 </div>
 
                             </div>

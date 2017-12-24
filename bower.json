@@ -5,6 +5,7 @@
     "angular": "1.5.5",
     "angular-ui-router": "0.3.0",
     "angular-bootstrap": "2.5.0",
-    "angularUtils-pagination": "angular-utils-pagination#^0.11.1"
+    "angularUtils-pagination": "angular-utils-pagination#^0.11.1",
+    "angular-bootstrap-multiselect": "https://github.com/bentorfs/angular-bootstrap-multiselect.git#^1.1.11"
   }
 }
