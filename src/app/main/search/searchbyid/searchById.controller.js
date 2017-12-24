@@ -25,8 +25,14 @@
                 'view_id='+id+'&token='+storageService.get("token")
             }).then(function successCallback(response) {
                 console.log(response)
-                $scope.item = response.data.user;
-                $scope.gender= response.data.user.gender;
+                if(!response.data.error) {
+                    $scope.item = response.data.user;
+                    $scope.gender = response.data.user.gender;
+                }else{
+                    $scope.message = 'Invalid ID';
+                    $timeout(function() { $scope.message = '';}, 2000);
+
+                }
             }, function errorCallback(response) {
                 console.log(response)
 
