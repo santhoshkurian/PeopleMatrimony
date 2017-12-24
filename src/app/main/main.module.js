@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('dashboard',['angularUtils.directives.dirPagination'])
+        .module('dashboard',['angularUtils.directives.dirPagination','btorfs.multiselect'])
         .config(config);
 
     /** @ngInject */

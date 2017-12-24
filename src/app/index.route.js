@@ -44,10 +44,15 @@
                 if ((storageService.get("token") == null && storageService.get("id") == null) ||
                     (storageService.get("token") == 'null' && storageService.get("id") == 'null')) {
                     $state.go("login");
+                }
+                else {
+                    console.log("to state",toState);
+                    if(toState.name == 'login'){
+                        $state.go('app');
+                    }else{
+                        $state.go(toState);
+                    }
 
-
-                } else {
-                    $state.go(toState);
                 }
 
             });
