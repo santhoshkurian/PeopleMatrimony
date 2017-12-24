@@ -21,6 +21,7 @@
         $scope.countryList = populate.countries;
 
         $scope.image_url = storageService.get("image_url");
+        $scope.package = storageService.get("package");
         $scope.name = storageService.get("name");
         $scope.id = storageService.get("id");
 

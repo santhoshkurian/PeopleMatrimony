@@ -187,6 +187,22 @@
 
 
                         });
+                    },packageDetails: function ($http,resourceUrl,storageService) {
+                        return $http({
+                            method: 'GET',
+                            url: resourceUrl.url()+'package?p_debug=1&' +
+                            'id_people='+storageService.get('id')
+                        }).then(function successCallback(response) {
+                            console.log("packageDetails",response)
+                            storageService.set('package',response.data.package.data.package_type)
+                            return response.data;
+
+                        }, function errorCallback(response) {
+                            //console.log(response)
+                            return response;
+
+
+                        });
                     }
 
                 }
