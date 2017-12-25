@@ -5,8 +5,12 @@
         .controller('PaymentController', PaymentController);
 
     /** @ngInject */
-    function PaymentController($http, $scope, storageService,paymentList,resourceUrl) {
-console.log(paymentList);
+    function PaymentController($http, $scope, storageService,paymentList,resourceUrl,$state) {
+
+        $scope.image_url = storageService.get("image_url");
+        $scope.package = storageService.get("package");
+        $scope.name = storageService.get("name");
+        $scope.id = storageService.get("id");
 
         $scope.payment = paymentList;
         $scope.message = '';
@@ -136,6 +140,24 @@ console.log(paymentList);
             console.log(obj2)
 
 
+        }
+
+        $scope.logout = logout;
+        function logout(){
+            $http({
+                method: 'GET',
+                url: resourceUrl.url()+'user/logout?'+
+                'id_people='+storageService.get("id")+'&token='+storageService.get("token")
+            }).then(function successCallback(response) {
+                storageService.set("token",null);
+                storageService.set("id",null);
+                storageService.set("image_url",null);
+                storageService.set("name",null);
+                $state.go('login');
+
+            }, function errorCallback(response) {
+
+            });
         }
     }
 }());
