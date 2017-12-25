@@ -295,18 +295,21 @@
                 'username='+login.username+'&password='+login.password
             }).then(function successCallback(response) {
                 console.log(response);
-                $uibModalInstance.close(vm.selected.item);
-                storageService.set("token",response.data.access_token)
-                storageService.set("id",response.data.id_people);
-                storageService.set("regular_search",null);
-                if(response.data.image == ''){
-                    storageService.set("image_url","assets/defaultImages/avatar.png");
+                if(!response.data.error) {
+                    $uibModalInstance.close(vm.selected.item);
+                    storageService.set("token", response.data.access_token)
+                    storageService.set("id", response.data.id_people);
+                    storageService.set("regular_search", null);
+                    if (response.data.image == '') {
+                        storageService.set("image_url", "assets/defaultImages/avatar.png");
+                    } else {
+                        storageService.set("image_url", response.data.image);
+                    }
+                    storageService.set("name", response.data.name);
+                    $state.go('app');
                 }else{
-                    storageService.set("image_url",response.data.image);
+                    $scope.message = response.data.message;
                 }
-                storageService.set("name",response.data.name);
-
-                $state.go('app');
 
             }, function errorCallback(response) {
                 $scope.message = response.data.message;

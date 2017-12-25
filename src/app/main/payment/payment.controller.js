@@ -9,8 +9,10 @@
 console.log(paymentList);
 
         $scope.payment = paymentList;
+        $scope.message = '';
         $scope.proceedPayment = false;
         $scope.selectPayment = null;
+        $scope.selectPackageDetails = 'classic3';
         $scope.makePayment = {c_no:null,c_name:null,month:null,year:null,ccv:null};
         $scope.check = {
             valid_c_no:false,
@@ -19,6 +21,8 @@ console.log(paymentList);
             valid_year:false,
             valid_ccv:false
         };
+
+        $scope.offer = {msg:null,verifiedMobile:null}
 
         //$scope.payment = {
         //    classic3Months:null,
@@ -116,6 +120,21 @@ console.log(paymentList);
             console.log(obj)
             $scope.selectPayment = obj;
             $scope.proceedPayment = true;
+
+        }
+
+        $scope.offer = {msg:$scope.payment.classic3Months.send_sms,
+            verifiedMobile:$scope.payment.classic3Months.access_verified_mobile_numbers}
+
+        $scope.PackageDetails = PackageDetails;
+        function PackageDetails(obj1,obj2){
+            $scope.offer.msg = obj1.send_sms;
+            $scope.offer.verifiedMobile = obj1.access_verified_mobile_numbers;
+
+            $scope.selectPackageDetails = obj2;
+            console.log(obj1)
+            console.log(obj2)
+
 
         }
     }
