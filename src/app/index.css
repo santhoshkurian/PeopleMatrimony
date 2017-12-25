@@ -53,5 +53,14 @@ multiselect  .dropdown-menu{
     height: 250px!important;
 }
 
+multiselect  .btn-group>button{
+   text-align: left!important;
+}
+
+multiselect  .btn-group>button .caret{
+    float:right!important;
+    margin-top:10px;
+}
+
 
 
