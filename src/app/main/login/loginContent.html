@@ -113,6 +113,7 @@
                     <div class="col-md-8">
                         <select class="form-control input-rounded "
                                 ng-model="reg.mothertongue" required>
+                            <option  value="">Select</option>
                             <option ng-repeat="obj in motherTongueList" value="{{obj.id_mothertongue}}">{{obj.mothertongue}}</option>
                         </select>
                         <span ng-if="showmt">
@@ -128,6 +129,7 @@
                     <div class="col-md-8">
                         <select class="form-control input-rounded "
                                 ng-model="reg.religion" required>
+                            <option  value="">Select</option>
                             <option ng-repeat="obj in religonList" value="{{obj.id_religion}}">{{obj.religion}}</option>
                         </select>
                          <span ng-if="showreligion">
