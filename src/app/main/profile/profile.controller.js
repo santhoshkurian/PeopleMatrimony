@@ -15,7 +15,7 @@
         $scope.setReligion= {religion:null,caste:null,star:null};
         $scope.setPartnerReligion= {religion:[],caste:[],star:[]};
         $scope.setProfession= {education:null,occupation:null,occupation_cat:null};
-        $scope.setPartnerProfession= {education:[],occupation:[],occupation_cat:null};
+        $scope.setPartnerProfession= {education:[],occupation:[],occupation_cat:[]};
         $scope.setFamily= {orgin:null,orgin_name:null};
         $scope.countryList = populate.countries;
         $scope.selectLanguage = {motherTongue:null};
@@ -389,40 +389,49 @@
         }
         function editPartnerReligion(obj) {
             $scope[obj] = !$scope[obj];
+            console.log($scope.profile)
             if($scope.profile.login_user.preferences.religion != null &&
                 $scope.profile.login_user.preferences.religion != 0){
-                console.log("check")
 
-                $scope.religonList.filter(function (a) {
-
-                    if (a.id_religion == $scope.profile.login_user.preferences.religion) {
-                        $scope.setPartnerReligion.religion = a;
-                    }
-                })
-                $http({
-                    method: 'GET',
-                    url: resourceUrl.url()+'populate?id_mothertongue=' + $scope.profile.login_user.id_mothertongue + '&id_religion=' + $scope.profile.login_user.preferences.religion
-                }).then(function successCallback(response) {
-                    console.log(response)
-                    $scope.castList = response.data.caste;
-                    $scope.castList.filter(function (a) {
-                        if (a.id_caste == $scope.profile.login_user.preferences.caste) {
-                            $scope.setPartnerReligion.caste = a;
+                var array = $scope.profile.login_user.preferences.religion.split('~');
+                for (var i = 0; i < array.length; i++) {
+                    console.log(array[i])
+                    $scope.religonList.filter(function (a) {
+                        if (a.id_religion == array[i]) {
+                            $scope.setPartnerReligion.religion.push(a);
                         }
                     })
-                }, function errorCallback(response) {
+                }
 
-                });
+                //$http({
+                //    method: 'GET',
+                //    url: resourceUrl.url()+'populate?id_mothertongue=' + $scope.profile.login_user.id_mothertongue + '&id_religion=' + $scope.profile.login_user.preferences.religion
+                //}).then(function successCallback(response) {
+                //    console.log(response)
+                //    $scope.castList = response.data.caste;
+                //    $scope.castList.filter(function (a) {
+                //        if (a.id_caste == $scope.profile.login_user.preferences.caste) {
+                //            $scope.setPartnerReligion.caste = a;
+                //        }
+                //    })
+                //}, function errorCallback(response) {
+                //
+                //});
 
 
             }
 
             if($scope.profile.login_user.preferences.star != null && $scope.profile.login_user.preferences.star != 0){
-                $scope.starsList.filter(function (a) {
-                    if (a.id_star == $scope.profile.login_user.preferences.star) {
-                        $scope.setPartnerReligion.star = a;
-                    }
-                })
+                var array = $scope.profile.login_user.preferences.star.split('~');
+                for (var i = 0; i < array.length; i++) {
+                    console.log(array[i])
+                    $scope.starsList.filter(function (a) {
+                        if (a.id_star == array[i]) {
+                            $scope.setPartnerReligion.star.push(a);
+                        }
+                    })
+                }
+
             }
         }
 

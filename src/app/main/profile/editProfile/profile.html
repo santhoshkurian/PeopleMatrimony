@@ -1916,6 +1916,10 @@
                                                                    <div class="col-md-6">
                                                                        <label class="font-weight ">
                                                                            Religion</label>
+                                                                       <br/>
+
+                                                                       <span ng-repeat="m in setPartnerReligion.religion">{{m.religion}}, </span>
+
 
                                                                        <!--<select multiple="multiple" class="multi-select form-control input-rounded "-->
                                                                                <!--ng-model="setPartnerReligion.religion"-->
@@ -1933,12 +1937,19 @@
                                                                    <div class="col-md-6">
                                                                        <label class="font-weight  "> Caste
                                                                            /Sub caste</label>
+                                                                       <br/>
 
+                                                                       <span ng-repeat="m in setPartnerReligion.caste">{{m.caste}}, </span>
 
-                                                                       <select multiple="multiple" class="multi-select form-control input-rounded "
-                                                                               ng-model="setPartnerReligion.caste"
-                                                                               ng-options="item.caste for item in castList track by item.id_caste">
-                                                                       </select>
+                                                                       <!--<select multiple="multiple" class="multi-select form-control input-rounded "-->
+                                                                               <!--ng-model="setPartnerReligion.caste"-->
+                                                                               <!--ng-options="item.caste for item in castList track by item.id_caste">-->
+                                                                       <!--</select>-->
+
+                                                                       <multiselect ch-limit="10" show-search="true"
+                                                                                    ng-model="setPartnerReligion.caste" options="castList"
+                                                                                    id-prop="id_caste" display-prop="caste">
+                                                                       </multiselect>
                                                                    </div>
 
                                                                </div>
@@ -1954,9 +1965,18 @@
 
                                 <div class="col-md-6">
                                     <label class="font-weight  "> Star / Rassi</label>
-                                    <select multiple="multiple" class="multi-select form-control input-rounded " ng-model="setPartnerReligion.star"
-                                            ng-options="item.star for item in starsList track by item.id_star">
-                                    </select>
+                                    <br/>
+
+                                    <span ng-repeat="m in setPartnerReligion.star">{{m.star}}, </span>
+
+                                    <!--<select multiple="multiple" class="multi-select form-control input-rounded "-->
+                                            <!--ng-model="setPartnerReligion.star"-->
+                                            <!--ng-options="item.star for item in starsList track by item.id_star">-->
+                                    <!--</select>-->
+                                    <multiselect ch-limit="10" show-search="true"
+                                                 ng-model="setPartnerReligion.star" options="starsList"
+                                                 id-prop="id_star" display-prop="star">
+                                    </multiselect>
                                 </div>
 
                             </div>
@@ -2044,18 +2064,32 @@
 
                                                                  <div class="col-md-6">
                                                                      <label class="font-weight "> Education</label>
+                                                                     <br/>
+                                                                     <span ng-repeat="m in setPartnerProfession.education">{{m.education}}, </span>
 
-                                                                     <select multiple="multiple" class="multi-select form-control input-rounded " ng-model="setPartnerProfession.education"
-                                                                             ng-options="item.education for item in educationList track by item.id_education">
-                                                                     </select>
+                                                                     <!--<select multiple="multiple" class="multi-select form-control input-rounded " -->
+                                                                             <!--ng-model="setPartnerProfession.education"-->
+                                                                             <!--ng-options="item.education for item in educationList track by item.id_education">-->
+                                                                     <!--</select>-->
+                                                                     <multiselect ch-limit="10" show-search="true"
+                                                                                  ng-model="setPartnerProfession.education" options="educationList"
+                                                                                  id-prop="id_education" display-prop="education">
+                                                                     </multiselect>
                                                                  </div>
 
                                                                  <div class="col-md-6">
                                                                      <label class="font-weight "> Occupation</label>
+                                                                     <br/>
+                                                                     <span ng-repeat="m in setPartnerProfession.occupation">{{m.occupation}}, </span>
 
-                                                                     <select multiple="multiple" class="multi-select form-control input-rounded " ng-model="setPartnerProfession.occupation"
+                                                                     <!--<select multiple="multiple" class="multi-select form-control input-rounded "
+                                                                             ng-model="setPartnerProfession.occupation"
                                                                              ng-options="item.occupation for item in occupation track by item.id_occupation">
-                                                                     </select>
+                                                                     </select>-->
+                                                                     <multiselect ch-limit="10" show-search="true"
+                                                                                  ng-model="setPartnerProfession.occupation" options="occupation"
+                                                                                  id-prop="id_occupation" display-prop="occupation">
+                                                                     </multiselect>
                                                                  </div>
 
                                                              </div>
