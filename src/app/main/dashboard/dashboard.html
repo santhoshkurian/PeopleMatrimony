@@ -163,9 +163,7 @@
                                     <div class="row">
                                         <div class="col-md-12 page-action-navigation">
 
-                                            <span class="paginate-message"> View all</span>
-                                            <i class="fa fa-angle-left "></i>
-                                            <i class="fa fa-angle-right "></i>
+                                            <span class="paginate-message"> View all (<span style="color:black"> {{recentUpdated.matches.length}} </span>)</span>
 
                                         </div>
                                     </div>
@@ -174,8 +172,12 @@
                             <div class="portlet-body form">
                                 <div class="row" ng-repeat="item in recentUpdated.matches">
                                     <div class=" col-xs-3 col-sm-3 col-md-2 ">
-                                        <img class="imgae-circle"
-                                             ng-src="../assets/images/prof1.jpg"/>
+                                        <img ng-if="item.images.length > 0" class="imgae-circle"
+                                             ng-src="{{item.images[0].image}}"/>
+                                        <img ng-if="item.gender == 'male' && item.images.length == 0" class="imgae-circle"
+                                             ng-src="/assets/defaultImages/male_card.jpg"/>
+                                        <img ng-if="item.gender == 'female' && item.images.length == 0" class="imgae-circle"
+                                             ng-src="/assets/defaultImages/female_card.jpg"/>
                                     </div>
                                     <div class="col-xs-1 col-sm-1 hidden-md hidden-lg"></div>
                                     <div class="col-xs-7 col-sm-7 col-md-6">
@@ -292,9 +294,7 @@
                                     <div class="row">
                                         <div class="col-md-12 page-action-navigation">
 
-                                            <span class="paginate-message"> View all</span>
-                                            <i class="fa fa-angle-left "></i>
-                                            <i class="fa fa-angle-right "></i>
+                                            <span class="paginate-message"> View all (<span style="color:black"> {{recentUpdated.matches.length}} </span>)</span>
 
                                         </div>
                                     </div>
@@ -304,10 +304,10 @@
                                 <div class="row" ng-repeat="item in viewed.matches">
                                     <div class=" col-xs-3 col-sm-3 col-md-2 ">
                                         <img ng-if="item.images.length > 0" class="imgae-circle"
-                                             ng-src="{{item.images[0]}}"/>
-                                        <img ng-if="item.gender == 'male'" class="imgae-circle"
+                                             ng-src="{{item.images[0].image}}"/>
+                                        <img ng-if="item.gender == 'male' && item.images.length == 0" class="imgae-circle"
                                              ng-src="/assets/defaultImages/male_card.jpg"/>
-                                        <img ng-if="item.gender == 'female'" class="imgae-circle"
+                                        <img ng-if="item.gender == 'female' && item.images.length == 0" class="imgae-circle"
                                              ng-src="/assets/defaultImages/female_card.jpg"/>
                                     </div>
                                     <div class="col-xs-1 col-sm-1 hidden-md hidden-lg"></div>
