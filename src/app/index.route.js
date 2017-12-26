@@ -642,10 +642,26 @@
                         controller: 'FooterController as vm'
                     }
                 },resolve: {
-                    dailyMatches: function ($http, resourceUrl, storageService) {
+                    //dailyMatches: function ($http, resourceUrl, storageService) {
+                    //    return $http({
+                    //        method: 'GET',
+                    //        url: resourceUrl.url() + 'daily/'+storageService.get("id")
+                    //    }).then(function successCallback(response) {
+                    //        console.log(response)
+                    //        return response.data;
+                    //
+                    //    }, function errorCallback(response) {
+                    //        //console.log(response)
+                    //        return response;
+                    //
+                    //
+                    //    });
+                    //}
+                    dailyMatches: function ($http,resourceUrl, storageService) {
                         return $http({
                             method: 'GET',
-                            url: resourceUrl.url() + 'daily/'+storageService.get("id")
+                            url: resourceUrl.url()+'matches/new?' +
+                            'id=' + storageService.get("id") + 'p_debug=1&token=' + storageService.get("token")
                         }).then(function successCallback(response) {
                             console.log(response)
                             return response.data;

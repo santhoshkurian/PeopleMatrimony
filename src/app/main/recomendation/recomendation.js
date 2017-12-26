@@ -14,8 +14,21 @@
         $scope.name = storageService.get("name");
         $scope.id = storageService.get("id");
 
-        console.log(dailyMatches);
+        console.log("dailyMatches",dailyMatches);
         $scope.dailyMatches = dailyMatches;
+        $scope.recomendationList = [];
+
+        if($scope.dailyMatches.matches.length > 0){
+            $scope.view = $scope.dailyMatches.matches[0];
+            $scope.dailyMatches.matches.filter(function(a){
+                $scope.recomendationList.push({
+                        name: a.name,
+                        percentage: "76 %",
+                        imageSrc: "../assets/images/profile2.jpg"
+                    })
+
+            });
+        }
 
         $scope.viewType = 'personal';
         $scope.selectType = selectType;
@@ -23,79 +36,80 @@
             $scope.viewType = type;
         }
 
-        $scope.recomendationList = [{
-            name: "Priya rajini",
-            percentage: "76 %",
-            imageSrc: "../assets/images/profile2.jpg"
-        }, {
-            name: "Vimala Raman",
-            percentage: "76 %",
-            imageSrc: "../assets/img/avatar9.jpg"
-        }, {
-            name: "Jisha Micheal",
-            percentage: "66 %",
-            imageSrc: "../assets/images/prof1.jpg"
-        }, {
-            name: "Akku mathew",
-            percentage: "56 %",
-            imageSrc: "../assets/images/profile2.jpg"
-        }, {
-            name: "Arathi krishnan",
-            percentage: "86 %",
-            imageSrc: "../assets/images/profile2.jpg"
-        }, {
-            name: "Priyanka chopra",
-            percentage: "66 %",
-            imageSrc: "../assets/images/profile2.jpg"
-        }, {
-            name: "Priya rajini",
-            percentage: "86 %",
-            imageSrc: "../assets/images/profile2.jpg"
-        }, {
-            name: "Vimala Raman",
-            percentage: "76 %",
-            imageSrc: "../assets/images/profile2.jpg"
-        }, {
-            name: "Jisha Micheal",
-            percentage: "66 %",
-            imageSrc: "../assets/images/profile2.jpg"
-        }, {
-            name: "Akku mathew",
-            percentage: "56 %",
-            imageSrc: "../assets/images/profile2.jpg"
-        }, {
-            name: "Arathi krishnan",
-            percentage: "86 %",
-            imageSrc: "../assets/images/profile2.jpg"
-        }, {
-            name: "Priyanka chopra",
-            percentage: "66 %",
-            imageSrc: "../assets/images/profile2.jpg"
-        }, {
-            name: "Priya rajini",
-            percentage: "86 %",
-            imageSrc: "../assets/images/profile2.jpg"
-        }, {
-            name: "Vimala Raman",
-            percentage: "76 %",
-            imageSrc: "../assets/images/profile2.jpg"
-        }, {
-            name: "Jisha Micheal",
-            percentage: "66 %",
-            imageSrc: "../assets/images/profile2.jpg"
-        }, {
-            name: "Akku mathew",
-            percentage: "56 %",
-            imageSrc: "../assets/images/profile2.jpg"
-        }, {
-            name: "Arathi krishnan",
-            percentage: "86 %",
-            imageSrc: "../assets/images/profile2.jpg"
-        }, {
-            name: "Priyanka chopra",
-            percentage: "66 %",
-            imageSrc: "../assets/images/profile2.jpg"
-        }];
+
+        //$scope.recomendationList = [{
+        //    name: "Priya rajini",
+        //    percentage: "76 %",
+        //    imageSrc: "../assets/images/profile2.jpg"
+        //}, {
+        //    name: "Vimala Raman",
+        //    percentage: "76 %",
+        //    imageSrc: "../assets/img/avatar9.jpg"
+        //}, {
+        //    name: "Jisha Micheal",
+        //    percentage: "66 %",
+        //    imageSrc: "../assets/images/prof1.jpg"
+        //}, {
+        //    name: "Akku mathew",
+        //    percentage: "56 %",
+        //    imageSrc: "../assets/images/profile2.jpg"
+        //}, {
+        //    name: "Arathi krishnan",
+        //    percentage: "86 %",
+        //    imageSrc: "../assets/images/profile2.jpg"
+        //}, {
+        //    name: "Priyanka chopra",
+        //    percentage: "66 %",
+        //    imageSrc: "../assets/images/profile2.jpg"
+        //}, {
+        //    name: "Priya rajini",
+        //    percentage: "86 %",
+        //    imageSrc: "../assets/images/profile2.jpg"
+        //}, {
+        //    name: "Vimala Raman",
+        //    percentage: "76 %",
+        //    imageSrc: "../assets/images/profile2.jpg"
+        //}, {
+        //    name: "Jisha Micheal",
+        //    percentage: "66 %",
+        //    imageSrc: "../assets/images/profile2.jpg"
+        //}, {
+        //    name: "Akku mathew",
+        //    percentage: "56 %",
+        //    imageSrc: "../assets/images/profile2.jpg"
+        //}, {
+        //    name: "Arathi krishnan",
+        //    percentage: "86 %",
+        //    imageSrc: "../assets/images/profile2.jpg"
+        //}, {
+        //    name: "Priyanka chopra",
+        //    percentage: "66 %",
+        //    imageSrc: "../assets/images/profile2.jpg"
+        //}, {
+        //    name: "Priya rajini",
+        //    percentage: "86 %",
+        //    imageSrc: "../assets/images/profile2.jpg"
+        //}, {
+        //    name: "Vimala Raman",
+        //    percentage: "76 %",
+        //    imageSrc: "../assets/images/profile2.jpg"
+        //}, {
+        //    name: "Jisha Micheal",
+        //    percentage: "66 %",
+        //    imageSrc: "../assets/images/profile2.jpg"
+        //}, {
+        //    name: "Akku mathew",
+        //    percentage: "56 %",
+        //    imageSrc: "../assets/images/profile2.jpg"
+        //}, {
+        //    name: "Arathi krishnan",
+        //    percentage: "86 %",
+        //    imageSrc: "../assets/images/profile2.jpg"
+        //}, {
+        //    name: "Priyanka chopra",
+        //    percentage: "66 %",
+        //    imageSrc: "../assets/images/profile2.jpg"
+        //}];
 
         $scope.logout = logout;
         function logout(){
