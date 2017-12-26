@@ -113,7 +113,7 @@
                     newMatches: function ($http,resourceUrl, storageService) {
                         return $http({
                             method: 'GET',
-                            url: resourceUrl.url()+'matches/new??' +
+                            url: resourceUrl.url()+'matches/new?' +
                             'id=' + storageService.get("id") + 'p_debug=1&token=' + storageService.get("token")
                         }).then(function successCallback(response) {
                             console.log(response)
@@ -640,6 +640,22 @@
                     'footer@recomendation': {
                         templateUrl: 'app/footer/footer.html',
                         controller: 'FooterController as vm'
+                    }
+                },resolve: {
+                    dailyMatches: function ($http, resourceUrl, storageService) {
+                        return $http({
+                            method: 'GET',
+                            url: resourceUrl.url() + 'daily/'+storageService.get("id")
+                        }).then(function successCallback(response) {
+                            console.log(response)
+                            return response.data;
+
+                        }, function errorCallback(response) {
+                            //console.log(response)
+                            return response;
+
+
+                        });
                     }
                 }
             }).state('managephoto', {

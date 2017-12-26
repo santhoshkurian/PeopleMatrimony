@@ -1,27 +1,5 @@
-<!--<div class="page-content-wrapper page-content-wrapper1">-->
-    <!--&lt;!&ndash; BEGIN CONTENT BODY &ndash;&gt;-->
-    <!--<div class="page-content1">-->
-        <!--&lt;!&ndash; BEGIN PAGE HEAD&ndash;&gt;-->
-        <!--<div class="page-head">-->
 
-            <!-- BEGIN PAGE BASE CONTENT -->
-            <!--<div class="row">-->
-
-                <!--<div class="col-md-12 ">-->
-                    <!--<div class="col-md-12 ">-->
-
-                    <!--<div class="portlet light border-rounded">-->
-                    <!--</div>-->
-                        <!--</div>-->
-
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="row">-->
-
-                <!--<div class="col-md-12 ">-->
-
-                    <!--<div class="col-md-12 ">-->
-
+<span ng-if="dailyMatches.length > 0">
                         <div class="portlet light border-rounded">
                             <div class="portlet-title">
 
@@ -641,18 +619,10 @@
 
 
                         </div>
+</span>
 
-                    <!--</div>-->
-                    <!-- END PAGE TITLE -->
-
-                <!--</div>-->
-                <!--&lt;!&ndash; END PAGE HEAD&ndash;&gt;-->
-                <!--&lt;!&ndash; BEGIN PAGE BREADCRUMB &ndash;&gt;-->
-
-
-                <!--&lt;!&ndash; END PAGE BASE CONTENT &ndash;&gt;-->
-            <!--</div>-->
-            <!-- END CONTENT BODY -->
-        <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
+<div  ng-if="dailyMatches.length == 0" class="portlet light  border-rounded ">
+    <div class="alert alert-success">
+        No results found
+    </div>
+</div>

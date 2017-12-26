@@ -6,13 +6,16 @@
         .controller('ReconmendationController', ReconmendationController);
 
     /** @ngInject */
-    function ReconmendationController($scope,storageService,$state) {
+    function ReconmendationController($scope,storageService,$state,dailyMatches) {
         var vm = this;
 
         $scope.image_url = storageService.get("image_url");
         $scope.package = storageService.get("package");
         $scope.name = storageService.get("name");
         $scope.id = storageService.get("id");
+
+        console.log(dailyMatches);
+        $scope.dailyMatches = dailyMatches;
 
         $scope.viewType = 'personal';
         $scope.selectType = selectType;

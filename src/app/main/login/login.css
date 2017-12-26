@@ -115,7 +115,9 @@ padding-top:5px;}
 .reg-label{
     font-family: source_sans;
     color:#777777;
-    font-size: 14px;
+    font-size: 15px;
+    text-align: left!important;
+    /*text-transform: uppercase;*/
 }
 .reg-header{
     font-family: source_sans;
