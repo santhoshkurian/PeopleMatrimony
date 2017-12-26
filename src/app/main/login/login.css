@@ -115,7 +115,7 @@ padding-top:5px;}
 .reg-label{
     font-family: source_sans;
     color:#777777;
-    font-size: 15px;
+    font-size: 17px;
     text-align: left!important;
     /*text-transform: uppercase;*/
 }
@@ -155,4 +155,7 @@ padding-top:5px;}
 }
 .text-dis{
     margin-bottom: 7px!important;
+}
+.text-box-width{
+    width: 280px!important;
 }

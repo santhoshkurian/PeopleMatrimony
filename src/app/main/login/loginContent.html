@@ -4,7 +4,7 @@
             <div class="caption">
                 <!--<span class=" reg-header uppercase">Registration</span>-->
 
-                <div class="caption-helper reg-label" style="font-size:17px;margin-top: 10px">Fill the form to fulfill your life with perfect soul mate!
+                <div class="caption-helper reg-label" style="font-size:23px;line-height:18px;margin-top: 10px">Fill the form to fulfill your life with perfect soul mate!
                 </div>
             </div>
 
@@ -21,7 +21,7 @@
                 <div class="form-group text-dis" >
                     <label class=" col-md-4 control-label  reg-label">Profile for<span style="color: red">*</span></label>
 
-                    <div class="col-md-5">
+                    <div class="col-md-6 text-box-width">
                         <select class="form-control input-rounded" ng-model="reg.profile_for" ng-change="selectProfileFor()">
                             <option value="" ng-selected="true" selected="selected">Select</option>
                             <option value="myself">Myself</option>
@@ -42,7 +42,7 @@
                 <div class="form-group text-dis">
                     <label class="col-md-4 control-label reg-label ">Name<span style="color: red">*</span></label>
 
-                    <div class="col-md-8">
+                    <div class="col-md-6 text-box-width">
                         <input type="text" required class="form-control  input-rounded" placeholder="Name" ng-model="reg.name">
                     <span ng-if="showName">
                         <div class="user-error-msg-arrow" ></div>
@@ -87,7 +87,7 @@
                    <!-- <div class="col-md-8">
                         <input type="date" required class="form-control input-rounded" ng-model="reg.dob" placeholder="Date of Birth">
                     </div>-->
-                    <div class="col-md-8">
+                    <div class="col-md-6 text-box-width">
                         <p class="input-group" style="margin-bottom: 5px">
                             <input type="text" readonly='readonly' class="form-control" uib-datepicker-popup="{{format}}" uib-datepicker-popup ng-model="reg.dob" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
           <span class="input-group-btn">
@@ -106,7 +106,7 @@
                     <label class="col-md-4 control-label reg-label ">Mother Tongue<span style="color: red">*</span></label>
 
 
-                    <div class="col-md-5">
+                    <div class="col-md-6 text-box-width">
                         <select class="form-control input-rounded "
                                 ng-model="reg.mothertongue" required>
                             <option  value="">Select</option>
@@ -122,7 +122,7 @@
                     <label class="col-md-4 control-label reg-label">Religion<span style="color: red">*</span></label>
 
 
-                    <div class="col-md-5">
+                    <div class="col-md-6 text-box-width">
                         <select class="form-control input-rounded "
                                 ng-model="reg.religion" required>
                             <option  value="">Select</option>
@@ -138,7 +138,7 @@
                 <div class="form-group text-dis">
                     <label class="col-md-4 control-label reg-label">E-mail<span style="color: red">*</span></label>
 
-                    <div class="col-md-8">
+                    <div class="col-md-6 text-box-width" >
                         <input type="email" ng-model="reg.email" required class="form-control reg-box input-rounded" placeholder="Email Address">
                     <span ng-if="showemail">
                         <div class="user-error-msg-arrow" ></div>
@@ -147,9 +147,9 @@
                     </div>
                 </div>
                 <div class="form-group text-dis">
-                    <label class="col-md-4 control-label reg-label">Mobile Number<span style="color: red">*</span></label>
+                    <label class="col-md-4 col-xs-12 control-label reg-label">Mobile Number<span style="color: red">*</span></label>
 
-                    <div class="col-md-3">
+                    <div class="col-md-2 col-xs-2" style="width: 100px">
                         <select class="form-control " required ng-model="reg.code">
                             <option ng-selected="true" selected="selected" value="91">+ 91</option>
                             <option value="04">+ 04</option>
@@ -159,7 +159,7 @@
                         </select>
                     </div>
 
-                    <div class="col-md-5">
+                    <div class="col-md-5 col-xs-5"  style="width: 180px">
                         <input type="number" required class="form-control input-rounded" ng-model="reg.mobile" placeholder="Mobile Number">
                      <span ng-if="showMobileNumber">
                         <div class="user-error-msg-arrow" ></div>
@@ -171,7 +171,7 @@
                 <div class="form-group text-dis">
                     <label class="col-md-4 control-label reg-label">Password<span style="color: red">*</span></label>
 
-                    <div class="col-md-8">
+                    <div class="col-md-6 text-box-width">
                         <input required type="password" class="form-control input-rounded" ng-model="reg.password" placeholder="Password"
                                style="margin-rightt: 5%">
                         <span ng-if="showPassword">
@@ -193,7 +193,7 @@
                 <div class="form-group text-dis">
                     <label class="col-md-4 control-label"></label>
 
-                    <div class="col-md-8">
+                    <div class="col-md-8 text-box-width">
                         <button  type="button" class=" center-block col-md-12 btn red input-rounded"
                                 ng-click="vm.registerCandidate()">
                             Register Free
@@ -203,7 +203,7 @@
                 <div class="form-group text-dis">
                     <label class="col-md-4 control-label"></label>
 
-                    <div class="col-md-8" style="text-align: center" style="color: grey">
+                    <div class="col-md-8 text-box-width" style="text-align: center;color: grey">
                         I agree the <a>Terms</a> and <a>Privacy</a>
                     </div>
                 </div>
