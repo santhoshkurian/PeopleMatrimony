@@ -54,7 +54,7 @@
                 <div class="form-group text-dis">
                     <label class="col-md-4 control-label reg-label">Gender<span style="color: red">*</span></label>
 
-                    <div class="col-md-8">
+                    <div class="col-md-6">
 
                                     <label class="checkbox-inline" class="custon-text" style="padding-left: 0px;">
                                         <input type="radio" icheckbox_flat-red class="icheck " ng-model="reg.gender"
@@ -96,7 +96,7 @@
                         </p>
                         <span ng-if="showDOB">
                         <div class="user-error-msg-arrow" style="bottom:13px!important;"></div>
-                        <div class="user-error-msg" style="bottom:5px!important;">Select date of birth</div>
+                        <div class="user-error-msg" style="bottom:5px!important;">{{dobMsg}}</div>
                     </span>
 
                     </div>
@@ -149,17 +149,17 @@
                 <div class="form-group text-dis">
                     <label class="col-md-4 col-xs-12 control-label reg-label">Mobile Number<span style="color: red">*</span></label>
 
-                    <div class="col-md-2 col-xs-2" style="width: 100px">
-                        <select class="form-control " required ng-model="reg.code">
-                            <option ng-selected="true" selected="selected" value="91">+ 91</option>
-                            <option value="04">+ 04</option>
-                            <option value="90">+ 90</option>
-                            <option value="54">+ 54</option>
-                            <option value="65">+ 65</option>
-                        </select>
-                    </div>
+                    <!--<div class="col-md-2 col-xs-2" style="width: 110px">-->
+                        <!--<select class="form-control " required ng-model="reg.code">-->
+                            <!--<option ng-selected="true" selected="selected" value="91">+ 91</option>-->
+                            <!--<option value="04">+ 04</option>-->
+                            <!--<option value="90">+ 90</option>-->
+                            <!--<option value="54">+ 54</option>-->
+                            <!--<option value="65">+ 65</option>-->
+                        <!--</select>-->
+                    <!--</div>-->
 
-                    <div class="col-md-5 col-xs-5"  style="width: 180px">
+                    <div class="col-md-6 text-box-width">
                         <input type="number" required class="form-control input-rounded" ng-model="reg.mobile" placeholder="Mobile Number">
                      <span ng-if="showMobileNumber">
                         <div class="user-error-msg-arrow" ></div>

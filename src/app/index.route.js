@@ -196,7 +196,9 @@
                             'id_people='+storageService.get('id')
                         }).then(function successCallback(response) {
                             console.log("packageDetails",response)
-                            storageService.set('package',response.data.package.data.package_type)
+                            if(response.data.package.data != null) {
+                                storageService.set('package', response.data.package.data.package_type);
+                            }
                             return response.data;
 
                         }, function errorCallback(response) {

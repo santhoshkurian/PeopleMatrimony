@@ -30,7 +30,9 @@
             if ($scope.reg.profile_for == 'daughter') {
             $scope.reg.gender = 'female';
         }
-            if ($scope.reg.profile_for == 'son') {
+            if ($scope.reg.profile_for == 'son' ||
+                $scope.reg.profile_for == 'relative' ||
+                $scope.reg.profile_for == 'friend' ) {
             $scope.reg.gender = 'male';
         }
         }
@@ -202,12 +204,19 @@
             $scope.showMobileNumber = false;
             $scope.showPassword = false;
 
+            $scope.dobMsg = '';
+            $scope.moberror = '';
+
 
 
             var date1 = $scope.reg.dob;
-            date1 = new Date(date1);
-            date1 = date1.toString().replace('(India Standard Time)','(IST)');;
-            console.log(date1);
+            if($scope.reg.dob != null && $scope.reg.dob != '') {
+                date1 = new Date(date1);
+                date1 = date1.toString().replace('(India Standard Time)', '(IST)');
+                date1 = new Date(date1);
+
+                console.log(date1);
+            }
             if($scope.reg.profile_for == null || $scope.reg.profile_for ==''){
                 $scope.showSelectProfile = true;
             }
@@ -217,8 +226,16 @@
             if($scope.reg.gender == null || $scope.reg.gender ==''){
                 $scope.showGender = true;
             }
-            if($scope.reg.dob == null || $scope.reg.dob ==''){
+            if(date1 == null || date1 ==''){
+                $scope.dobMsg = "Select date of birth";
                 $scope.showDOB = true;
+            }else{
+                console.log(date1.getFullYear());
+                console.log(new Date().getFullYear());
+                if(date1.getFullYear() >= new Date().getFullYear()){
+                    $scope.dobMsg = "Select the correct DOB";
+                    $scope.showDOB = true;
+                }
             }
             if($scope.reg.mothertongue == null || $scope.reg.mothertongue ==''){
                 $scope.showmt = true;
@@ -231,9 +248,9 @@
                 $scope.showemail = true;
             }
             if($scope.reg.mobile == null || $scope.reg.mobile =='' ){
-                $scope.moberror = 'Invalid Mobile Number'
+                $scope.moberror = 'Invalid Mobile No'
                 if(($scope.reg.mobile == null || $scope.reg.mobile =='') && $scope.reg.mobile.toString().length != 10 ){
-                    $scope.moberror = 'Enter 10 digit mobile number';
+                    $scope.moberror = 'Enter 10 digit Mobile No';
                 }
 
                 $scope.showMobileNumber = true;

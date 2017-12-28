@@ -10,6 +10,10 @@
         //var vm = this;
         console.log("RegistrationStep2Controller");
         console.log(storageService.get('id'));
+        if(storageService.get('token') == '' && storageService.get('id') == ''){
+            $state.go('login')
+
+        }
 
         $scope.memberId = storageService.get('id');
         $scope.userPin = null;
@@ -35,7 +39,13 @@
                 'token='+storageService.get('token')+
                     '&user_pin='+$scope.userPin
             }).then(function successCallback(response) {
-                console.log(response)
+                console.log(response);
+                storageService.set("token",'');
+                storageService.set("id",'');
+                storageService.set("image_url",'');
+                storageService.set("name",'');
+                storageService.set("package",'');
+                storageService.set("regular_search",'');
                 $state.go('login')
             }, function errorCallback(response) {
                 console.log(response)
