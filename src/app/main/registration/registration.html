@@ -4,16 +4,14 @@
         <div class="form-group margin-top-40">
             <div class="col-md-12">
 
-            <label class=" uppercase font-weight"> Maritial Status<span style="color: red">*</span></label>
+            <label class="  font-weight"> Maritial Status<span style="color: red">*</span></label>
             <select class="form-control input-rounded "
                     ng-model="step2.marital_status">
-                <option>Select</option>
+                <option value="">Select</option>
                 <option value="unmarried">Never Married</option>
-                <option value="married"> Married</option>
+                <option value="widow">Widowed</option>
                 <option value="divorced">Divorced</option>
-                <option value="widow">Widow</option>
-                <option value="widower">widower</option>
-
+                <option value="awaitingdivorce">Awaiting divorce</option>
             </select>
             <span ng-if="showMS">
                         <div class="user-error-msg-arrow" ></div>
@@ -24,9 +22,10 @@
         <div class="form-group ">
             <div class="col-md-12">
 
-            <label class=" uppercase font-weight"> Caste<span style="color: red">*</span></label>
-            <select placegolder="Select"class="form-control input-rounded " ng-model="step2.caste"
+            <label class="  font-weight"> Caste<span style="color: red">*</span></label>
+            <select class="form-control input-rounded " ng-model="step2.caste"
                        >
+                <option selected="selected" value="">Select</option>
                 <option ng-repeat="obj in castList" value="{{obj.id_caste}}">{{obj.caste}}</option>
 
             </select>
@@ -41,9 +40,10 @@
         <div class="form-group ">
             <div class="col-md-12">
 
-            <label class=" uppercase font-weight"> Country Living In<span style="color: red">*</span></label>
+            <label class="  font-weight"> Country Living In<span style="color: red">*</span></label>
             <select class="form-control input-rounded " ng-model="step2.country"
                     ng-click="selectCountry()">
+                <option selected="selected" value="">Select</option>
                 <option ng-repeat="obj in countryList" value="{{obj.id_country}}">{{obj.country_name}}
                 </option>
             </select>
@@ -58,9 +58,10 @@
         <div class="form-group ">
             <div class="col-md-12">
 
-            <label class=" uppercase font-weight"> State Living In<span style="color: red">*</span></label>
+            <label class="  font-weight"> State Living In<span style="color: red">*</span></label>
             <select class="form-control input-rounded " ng-model="step2.state"
                     ng-click="selectState()">
+                <option selected="selected" value="">Select</option>
                 <option ng-repeat="obj in stateList" value="{{obj.id_state}}">{{obj.state_name}}</option>
             </select>
             <span ng-if="showState">
@@ -74,9 +75,10 @@
         <div class="form-group ">
             <div class="col-md-12">
 
-            <label class=" uppercase font-weight"> City Living In<span style="color: red">*</span></label>
+            <label class="  font-weight"> City Living In<span style="color: red">*</span></label>
             <select class="form-control input-rounded " ng-model="step2.city"
                     ng-click="selectCity(city)">
+                <option selected="selected" value="">Select</option>
                 <option ng-repeat="obj in cityList" value="{{obj.id_city}}">{{obj.city_name}}</option>
             </select>
             <span ng-if="showCity">
@@ -90,9 +92,9 @@
         <div class="form-group ">
             <div class="col-md-12">
 
-            <label class=" uppercase font-weight"> Height<span style="color: red">*</span></label>
+            <label class="  font-weight"> Height<span style="color: red">*</span></label>
             <select class="form-control input-rounded " ng-model="step2.height">
-                <option>Select</option>
+                <option selected="selected" value="">Select</option>
                 <option  value="137">137 cms</option>
                 <option  value="138">138 cms</option>
                 <option  value="139">139 cms</option>
@@ -161,9 +163,10 @@
         <div class="form-group ">
             <div class="col-md-12">
 
-            <label class=" uppercase font-weight"> Highest Education<span style="color: red">*</span></label>
+            <label class="font-weight"> Highest Education<span style="color: red">*</span></label>
             <select class="form-control input-rounded " ng-model="setProfession.education"
                     ng-options="item.education for item in educationList track by item.id_education">
+                <option value="">Select</option>
             </select>
             <span ng-if="showEducation">
                         <div class="user-error-msg-arrow" ></div>
@@ -176,9 +179,10 @@
         <div class="form-group ">
             <div class="col-md-12">
 
-            <label class=" uppercase font-weight"> Occupation<span style="color: red">*</span></label>
+            <label class="font-weight"> Occupation<span style="color: red">*</span></label>
             <select class="form-control input-rounded " ng-model="setProfession.occupation"
                     ng-options="item.occupation for item in occupation track by item.id_occupation">
+                <option value="">Select</option>
             </select>
             <span ng-if="showOccupation">
                         <div class="user-error-msg-arrow" ></div>
