@@ -42,7 +42,7 @@
                 $(".page-loading").addClass("page-loading-hidden");
                 $("#body-filter").removeClass("page-grey-color");
                 if ((storageService.get("token") == null && storageService.get("id") == null) ||
-                    (storageService.get("token") == 'null' && storageService.get("id") == 'null')) {
+                    (storageService.get("token") == '' && storageService.get("id") == '')) {
                     $state.go("login");
                 }
                 else {
@@ -173,7 +173,8 @@
 
 
                         });
-                    },populate: function ($http,resourceUrl) {
+                    },
+                    populate: function ($http,resourceUrl) {
                         return $http({
                             method: 'GET',
                             url: resourceUrl.url()+'populate'
@@ -187,7 +188,8 @@
 
 
                         });
-                    },packageDetails: function ($http,resourceUrl,storageService) {
+                    },
+                    packageDetails: function ($http,resourceUrl,storageService) {
                         return $http({
                             method: 'GET',
                             url: resourceUrl.url()+'package?p_debug=1&' +

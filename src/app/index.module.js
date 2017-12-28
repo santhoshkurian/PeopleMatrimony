@@ -29,6 +29,8 @@
                     storageService.set("image_url",null);
                     storageService.set("name",null);
                     storageService.set("regular_search",null);
+                    $(".page-loading").addClass("page-loading-hidden");
+                    $("#body-filter").removeClass("page-grey-color");
                     $injector.get('$state').transitionTo('login');
                     return $q.reject(res);
                 }
@@ -38,6 +40,8 @@
                     storageService.set("image_url",null);
                     storageService.set("name",null);
                     storageService.set("regular_search",null);
+                    $(".page-loading").addClass("page-loading-hidden");
+                    $("#body-filter").removeClass("page-grey-color");
                     $injector.get('$state').transitionTo('login');
                     return $q.reject(res);
                 }
