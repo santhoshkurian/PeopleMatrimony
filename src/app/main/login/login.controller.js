@@ -12,6 +12,18 @@
         $scope.religonList = populate.religon;
         $scope.motherTongueList = populate.mothertongue;
         $scope.message=null;
+        $scope.password = "password";
+        $scope.ShowPass = ShowPass;
+        function ShowPass(val){
+            if(val == 'show'){
+                $scope.password = "text";
+            }
+            if(val == 'hide'){
+                $scope.password = "password";
+
+            }
+
+        }
 
 
 
@@ -206,6 +218,7 @@
 
             $scope.dobMsg = '';
             $scope.moberror = '';
+            $scope.nameMsg = '';
 
 
 
@@ -221,7 +234,13 @@
                 $scope.showSelectProfile = true;
             }
             if($scope.reg.name == null || $scope.reg.name ==''){
+                $scope.nameMsg = 'Enter your name';
                 $scope.showName = true;
+            }else{
+               if($scope.reg.name.length > 50){
+                   $scope.nameMsg = 'Enter valid Name';
+                   $scope.showName = true;
+               }
             }
             if($scope.reg.gender == null || $scope.reg.gender ==''){
                 $scope.showGender = true;
