@@ -96,7 +96,7 @@
                                 <div class="col-md-4">
                                     <label class="font-weight-head"> Height</label>
 
-                                    <p class="details" ng-if="profile.login_user.height != null && profile.login_user.height != '' && profile.login_user.height != 0">{{profile.login_user.height}}</p>
+                                    <p class="details" ng-if="profile.login_user.height != null && profile.login_user.height != '' && profile.login_user.height != 0">{{profile.login_user.height}} cms</p>
                                     <p class="details" ng-if="profile.login_user.height == null || profile.login_user.height == '' || profile.login_user.height == 0 ">Not Specified</p>
                                 </div>
 
@@ -107,7 +107,7 @@
 
                                 <div class="col-md-4">
                                     <label class="font-weight-head"> Weight</label>
-                                    <p class="details" ng-if="profile.login_user.weight != null && profile.login_user.weight != '' && profile.login_user.weight != 0">{{profile.login_user.weight}}</p>
+                                    <p class="details" ng-if="profile.login_user.weight != null && profile.login_user.weight != '' && profile.login_user.weight != 0">{{profile.login_user.weight}} Kg</p>
                                     <p class="details" ng-if="profile.login_user.weight == null || profile.login_user.weight == '' || profile.login_user.weight == 0 ">Not Specified</p>
                                 </div>
                                 <div class="col-md-4">
@@ -147,18 +147,18 @@
                             <div class="form-group form-group-edit">
 
                                 <div class="col-md-4">
-                                    <label class="font-weight-head"> Eating habits</label>
+                                    <label class="font-weight-head"> Eating Habits</label>
                                     <p class="details" ng-if="profile.login_user.eating_habit != null && profile.login_user.eating_habit != ''">{{profile.login_user.eating_habit}}</p>
                                     <p class="details" ng-if="profile.login_user.eating_habit == null || profile.login_user.eating_habit == ''">Not Specified</p>
                                 </div>
                                 <div class="col-md-4">
-                                    <label class="font-weight-head"> Drinking habits</label>
+                                    <label class="font-weight-head"> Drinking Habits</label>
                                     <p class="details" ng-if="profile.login_user.drinking_habit != null && profile.login_user.drinking_habit != ''">{{profile.login_user.drinking_habit}}</p>
                                     <p class="details" ng-if="profile.login_user.drinking_habit == null || profile.login_user.drinking_habit == ''">Not Specified</p>
                                 </div>
 
                                 <div class="col-md-4">
-                                    <label class="font-weight-head"> Smoking habits </label>
+                                    <label class="font-weight-head"> Smoking Habits </label>
                                     <p class="details" ng-if="profile.login_user.smoking_habit != null && profile.login_user.smoking_habit != ''">{{profile.login_user.smoking_habit}}</p>
                                     <p class="details" ng-if="profile.login_user.smoking_habit == null || profile.login_user.smoking_habit == ''">Not Specified</p>
                                 </div>
@@ -396,7 +396,7 @@
                             <div class="form-group">
 
                                 <div class="col-md-6">
-                                    <label class="font-weight "> Physical type</label>
+                                    <label class="font-weight "> Physical Type</label>
 
                                     <select class="form-control input-rounded "
                                             ng-model="profile.login_user.physical_status">
@@ -407,7 +407,7 @@
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class="font-weight  "> Mother tongue</label>
+                                    <label class="font-weight  "> Mother Tongue</label>
                                     <select class="form-control input-rounded " ng-model="selectLanguage.motherTongue"
 
                                             ng-options="item.mothertongue for item in motherTongueList track by item.id_mothertongue">
@@ -421,7 +421,7 @@
                             <div class="form-group">
 
                                 <div class="col-md-6">
-                                    <label class="font-weight "> Marital tatus</label>
+                                    <label class="font-weight "> Marital Status</label>
 
                                     <select class="form-control input-rounded "
                                             ng-model="profile.login_user.marital_status">

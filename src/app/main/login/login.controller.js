@@ -219,6 +219,7 @@
             $scope.dobMsg = '';
             $scope.moberror = '';
             $scope.nameMsg = '';
+            $scope.passwordError = '';
 
 
 
@@ -276,6 +277,12 @@
             }
             if($scope.reg.password == null || $scope.reg.password ==''){
                 $scope.showPassword = true;
+                $scope.passwordError = 'Enter Password';
+            }else{
+                if($scope.reg.password.length < 6 || $scope.reg.password.length > 20){
+                    $scope.showPassword = true;
+                    $scope.passwordError = 'Password character between 6-20';
+                }
             }
             if(!$scope.showSelectProfile && !$scope.showName && !$scope.showGender
                 && !$scope.showDOB && !$scope.showPassword && !$scope.showreligion && !$scope.showemail && !$scope.showMobileNumber) {

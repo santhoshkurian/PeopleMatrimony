@@ -61,7 +61,8 @@
     color: #838383 !important;
 }
 .details{ font-size: 14px;
-    color: #373737 !important;}
+    color: #373737 !important;
+text-transform: capitalize}
 
 .border-rounded-top{
     border-radius: 4px 4px 0px 0px !important;
@@ -142,7 +143,7 @@ padding-top:5px;}
 .user-error-msg {
     position: absolute;
     bottom: -3px;
-    width: 60%;
+    width: 75%;
     z-index: 11;
     text-transform: none;
     background-color: #dd4b39!important;
