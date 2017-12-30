@@ -438,15 +438,20 @@
 
 
         function aboutme() {
-            $http({
-                method: 'PUT',
-                url: resourceUrl.url()+'user/edit/' + storageService.get('id') + '?' +
-                'block=about&about=' + $scope.profile.login_user.aboutme + '&token=' + storageService.get("token")
-            }).then(function successCallback(response) {
-                $scope.about = !$scope.about;
+            $scope.showAboutMeError = false;
+            if($scope.profile.login_user.aboutme != null && $scope.profile.login_user.aboutme.length > 50) {
+                $http({
+                    method: 'PUT',
+                    url: resourceUrl.url() + 'user/edit/' + storageService.get('id') + '?' +
+                    'block=about&about=' + $scope.profile.login_user.aboutme + '&token=' + storageService.get("token")
+                }).then(function successCallback(response) {
+                    $scope.about = !$scope.about;
 
-            }, function errorCallback(response) {
-            });
+                }, function errorCallback(response) {
+                });
+            }else{
+                $scope.showAboutMeError = true;
+            }
         }
         function savePartnerAbout() {
 

@@ -368,7 +368,7 @@
                                     <span ng-repeat="m in multiValue.religion" >
                                         {{m.religion}}, </span>
                                         </div>
-                                    <multiselect ch-limit="10" show-search="true"
+                                    <multiselect ch-limit="10" show-search="false"
                                                  ng-model="multiValue.religion" options="religonList"
                                                  id-prop="id_religion" display-prop="religion">
                                     </multiselect>
@@ -385,7 +385,7 @@
                                     <span ng-repeat="m in multiValue.mothertongue" >
                                         {{m.mothertongue}}, </span>
                                     </div>
-                                    <multiselect ch-limit="10" show-search="true"
+                                    <multiselect ch-limit="10" show-search="false"
                                                  ng-model="multiValue.mothertongue" options="motherTongueList"
                                                  id-prop="id_mothertongue" display-prop="mothertongue">
                                     </multiselect>
@@ -406,7 +406,7 @@
                                         {{m.occupation}}, </span>
                                     </div>
 
-                                    <multiselect ch-limit="10" show-search="true"
+                                    <multiselect ch-limit="10" show-search="false"
                                                  ng-model="multiValue.occupation" options="occupation"
                                                  id-prop="id_occupation" display-prop="occupation">
                                     </multiselect>

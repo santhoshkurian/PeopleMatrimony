@@ -34,6 +34,8 @@
                             <div ng-show="about">
                                 <textarea class="form-control" rows="3"
                                           ng-model="profile.login_user.aboutme"></textarea>
+                                <span ng-if="showAboutMeError" style="color:red">Minimum 50 character required</span>
+
                             </div>
 
                             <div class="actions" style="text-align: right" ng-show="about">
@@ -156,7 +158,7 @@
                                 </div>
 
                                 <div class="col-md-4">
-                                    <label class="font-weight-head"> Smoking Habits </label>
+                                    <label class="font-weight-head"> Smoking habits </label>
                                     <p class="details" ng-if="profile.login_user.smoking_habit != null && profile.login_user.smoking_habit != ''">{{profile.login_user.smoking_habit}}</p>
                                     <p class="details" ng-if="profile.login_user.smoking_habit == null || profile.login_user.smoking_habit == ''">Not Specified</p>
                                 </div>
@@ -607,8 +609,8 @@
                                 </div>
                                 <div class="col-md-4">
                                     <label class=" font-weight-head  "> Citizenship</label>
-                                    <p class="details" ng-if="profile.login_user.nationality_name != null && profile.login_user.nationality_name != ''">{{profile.login_user.nationality_name}}</p>
-                                    <p class="details" ng-if="profile.login_user.nationality_name == null || profile.login_user.nationality_name == ''">Not Specified</p>
+                                    <p class="details" ng-if="profile.login_user.nationality_txt != null && profile.login_user.nationality_txt != ''">{{profile.login_user.nationality_txt}}</p>
+                                    <p class="details" ng-if="profile.login_user.nationality_txt == null || profile.login_user.nationality_txt == ''">Not Specified</p>
                                 </div>
 
                             </div>
@@ -1958,7 +1960,7 @@
                                                                                <!--ng-click="selectReliegion(setPartnerReligion.religion)"-->
                                                                                <!--ng-options="item.religion for item in religonList track by item.id_religion">-->
                                                                        <!--</select>-->
-                                                                       <multiselect ch-limit="10" show-search="true"
+                                                                       <multiselect ch-limit="10" show-search="false"
                                                                                     ng-model="setPartnerReligion.religion" options="religonList"
                                                                                     id-prop="id_religion" display-prop="religion">
                                                                        </multiselect>
@@ -1978,7 +1980,7 @@
                                                                                <!--ng-options="item.caste for item in castList track by item.id_caste">-->
                                                                        <!--</select>-->
 
-                                                                       <multiselect ch-limit="10" show-search="true"
+                                                                       <multiselect ch-limit="10" show-search="false"
                                                                                     ng-model="setPartnerReligion.caste" options="castList"
                                                                                     id-prop="id_caste" display-prop="caste">
                                                                        </multiselect>
@@ -2005,7 +2007,7 @@
                                             <!--ng-model="setPartnerReligion.star"-->
                                             <!--ng-options="item.star for item in starsList track by item.id_star">-->
                                     <!--</select>-->
-                                    <multiselect ch-limit="10" show-search="true"
+                                    <multiselect ch-limit="10" show-search="false"
                                                  ng-model="setPartnerReligion.star" options="starsList"
                                                  id-prop="id_star" display-prop="star">
                                     </multiselect>
@@ -2103,7 +2105,7 @@
                                                                              <!--ng-model="setPartnerProfession.education"-->
                                                                              <!--ng-options="item.education for item in educationList track by item.id_education">-->
                                                                      <!--</select>-->
-                                                                     <multiselect ch-limit="10" show-search="true"
+                                                                     <multiselect ch-limit="10" show-search="false"
                                                                                   ng-model="setPartnerProfession.education" options="educationList"
                                                                                   id-prop="id_education" display-prop="education">
                                                                      </multiselect>
@@ -2118,7 +2120,7 @@
                                                                              ng-model="setPartnerProfession.occupation"
                                                                              ng-options="item.occupation for item in occupation track by item.id_occupation">
                                                                      </select>-->
-                                                                     <multiselect ch-limit="10" show-search="true"
+                                                                     <multiselect ch-limit="10" show-search="false"
                                                                                   ng-model="setPartnerProfession.occupation" options="occupation"
                                                                                   id-prop="id_occupation" display-prop="occupation">
                                                                      </multiselect>
