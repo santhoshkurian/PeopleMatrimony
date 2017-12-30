@@ -31,7 +31,7 @@
         }
 
         function facetSearch(id,obj){
-            console.log(id,obj);
+            console.log("check",id);
             var query = [];
 
             if('mstatus' == obj){
@@ -105,6 +105,18 @@
             if($scope.facetdetails.occupation.length > 0){
                 query.push("occupation="+ $scope.facetdetails.occupation.join('~'))
             }
+            if($scope.age.start != null){
+                query.push("age_start="+$scope.age.start)
+            }
+            if($scope.age.end != null){
+                query.push("age_end="+$scope.age.end)
+            }
+            if($scope.height.start != null){
+                query.push("height_start="+$scope.height.start)
+            }
+            if($scope.height.end != null){
+                query.push("height_end="+$scope.height.end)
+            }
 
 
             if(query.length > 0 ){
@@ -150,6 +162,7 @@
         };
         $scope.isTrue = function (id,obj) {
             if(contains.call($scope.facetdetails[obj],id)){
+                //console.log($scope.facetdetails[obj]);
                 return true;
             }
         }

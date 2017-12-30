@@ -20,6 +20,10 @@
         $scope.countryList = populate.countries;
         $scope.selectLanguage = {motherTongue:null};
 
+        $scope.height_range=[121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138
+        ,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163
+        ,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192];
+
 
 
 
@@ -31,6 +35,7 @@
         $scope.educationList = populate.education;
         $scope.occupation = populate.occupation;
         $scope.profile= profile;
+
         if($scope.profile.login_user.id_mothertongue != null && $scope.profile.login_user.id_mothertongue != 0){
             $scope.motherTongueList.filter(function (a) {
                 if (a.id_mothertongue === $scope.profile.login_user.id_mothertongue) {

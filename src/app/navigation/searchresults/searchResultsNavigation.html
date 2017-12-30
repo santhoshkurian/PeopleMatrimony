@@ -125,7 +125,7 @@
                                                 <div class="col-md-12 margin-top-10">
                                                     <button type="button"
                                                             class="pull-left btn btn-sm btn-outline custom-button"><span
-                                                            class="btn-label-text" ng-click="search()">Submit</span></button>
+                                                            class="btn-label-text" ng-click="facetSearch()">Submit</span></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -269,7 +269,7 @@
                                                 <div class="col-md-12 margin-top-10">
                                                     <button type="button"
                                                             class="pull-left btn btn-sm btn-outline custom-button"><span
-                                                            class="btn-label-text" ng-click="search()">Submit</span></button>
+                                                            class="btn-label-text" ng-click="facetSearch()">Submit</span></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -294,7 +294,7 @@
                                                 <div class="col-md-12">
                                             <span  class="pull-left refined-search-sub-label">
                                                 <!--<input type="radio" value="{{mstatus.count}}" ng-model="match.mstatus" ng-click="search()" name="matrialstatus">-->
-                                               <span ng-style="isTrue(mstatus.count,'mstatus') && {'font-weight':'bold','color':'grey','font-size':'15px'}" class="pull-left" class="pull-left" ng-click="facetSearch(mstatus.count,'mstatus')"> {{mstatus.name}}</span>
+                                               <span ng-style="isTrue(mstatus,'mstatus') && {'font-weight':'bold','color':'grey','font-size':'15px'}" class="pull-left" class="pull-left" ng-click="facetSearch(mstatus,'mstatus')"> {{mstatus.name}}</span>
                                             </span>
                                                 </div>
                                             </div>
