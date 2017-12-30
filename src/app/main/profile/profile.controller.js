@@ -815,6 +815,22 @@
             });
         }
 
+        $scope.createCommaSeperate = function(obj){
+           return obj.split(',').join(", ")
+        }
+
+        $scope.SelectBrother = function(){
+           console.log($scope.profile.login_user.brother)
+            if($scope.profile.login_user.brother == 0) {
+                $scope.profile.login_user.bother_married = 0;
+            }
+        }
+        $scope.SelectSister = function(){
+            if($scope.profile.login_user.sister == 0) {
+                $scope.profile.login_user.sister_married = 0;
+            }
+        }
+
         $scope.logout = logout;
         function logout(){
             $http({

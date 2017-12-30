@@ -1247,7 +1247,7 @@
                                   <div class="form-group">
 
                                       <div class="col-md-6">
-                                          <label class=" uppercase font-weight ">Family Type</label>
+                                          <label class="  font-weight ">Family Type</label>
 
 
                                           <select class="form-control input-rounded "
@@ -1260,17 +1260,17 @@
                                           </select>
                                       </div>
                                       <div class="col-md-6">
-                                          <label class=" uppercase font-weight ">No of Brother(s)</label>
+                                          <label class="font-weight ">No of Brother(s)</label>
 
                                           <div class="col-md-12">
                                               <div class="col-md-6">
 
                                                   <select class="form-control input-rounded "
-                                                          ng-model="profile.login_user.brother">
-                                                      <option value="">Select</option>
+                                                          ng-model="profile.login_user.brother" ng-click="SelectBrother()">
+                                                      <option selected value="">Select</option>
 
-                                                      <option ng-selected="profile.login_user.brother == none"
-                                                              value="none">None
+                                                      <option ng-selected="profile.login_user.brother == 0"
+                                                              value="0">None
                                                       </option>
                                                       <option ng-selected="profile.login_user.brother == 1" value="1">
                                                           1
@@ -1296,8 +1296,8 @@
                                                           ng-model="profile.login_user.bother_married">
                                                       <option value="">Select</option>
 
-                                                      <option ng-selected="profile.login_user.brother_married == none"
-                                                              value="none">None
+                                                      <option ng-selected="profile.login_user.brother_married == 0"
+                                                              value="0">None
                                                       </option>
                                                       <option ng-selected="profile.login_user.brother_married == 1"
                                                               value="1">1
@@ -1328,11 +1328,11 @@
                                               <div class="col-md-6">
 
                                                   <select class="form-control input-rounded "
-                                                          ng-model="profile.login_user.sister">
+                                                          ng-model="profile.login_user.sister" ng-click="SelectSister()">
                                                       <option value="">Select</option>
 
-                                                      <option ng-selected="profile.login_user.sister == none"
-                                                              value="none">None
+                                                      <option ng-selected="profile.login_user.sister == 0"
+                                                              value="0">None
                                                       </option>
                                                       <option ng-selected="profile.login_user.sister == 1" value="1">1
                                                       </option>
@@ -1352,8 +1352,8 @@
                                                           ng-model="profile.login_user.sister_married">
                                                       <option value="">Select</option>
 
-                                                      <option ng-selected="profile.login_user.sister_married == none"
-                                                              value="none">None
+                                                      <option ng-selected="profile.login_user.sister_married == 0"
+                                                              value="0">None
                                                       </option>
                                                       <option ng-selected="profile.login_user.sister_married == 1"
                                                               value="1">1
@@ -2189,7 +2189,7 @@
 
                                     <p class="details"
                                        ng-if="profile.login_user.preferences.religion_txt != null && profile.login_user.preferences.religion_txt != ''">
-                                        {{profile.login_user.preferences.religion_txt}}</p>
+                                        {{createCommaSeperate(profile.login_user.preferences.religion_txt)}}</p>
 
                                     <p class="details"
                                        ng-if="profile.login_user.preferences.religion_txt == null || profile.login_user.preferences.religion_txt == ''">
@@ -2200,7 +2200,7 @@
 
                                     <p class="details"
                                        ng-if="profile.login_user.preferences.caste_txt != null && profile.login_user.preferences.caste_txt != ''">
-                                        {{profile.login_user.preferences.caste_txt}}</p>
+                                        {{createCommaSeperate(profile.login_user.preferences.caste_txt)}}</p>
 
                                     <p class="details"
                                        ng-if="profile.login_user.preferences.caste_txt == null || profile.login_user.preferences.caste_txt == ''">
@@ -2210,11 +2210,11 @@
                                     <label class=" font-weight-head  "> Gothram</label>
 
                                     <p class="details"
-                                       ng-if="profile.login_user.preferences.gothra != null && profile.login_user.preferences.gothra != ''">
+                                       ng-if="profile.login_user.preferences.gothra != null && profile.login_user.preferences.gothra != '' && profile.login_user.preferences.gothra != 'null'">
                                         {{profile.login_user.preferences.gothra}}</p>
 
                                     <p class="details"
-                                       ng-if="profile.login_user.preferences.gothra == null || profile.login_user.preferences.gothra == ''">
+                                       ng-if="profile.login_user.preferences.gothra == null || profile.login_user.preferences.gothra == '' || profile.login_user.preferences.gothra == 'null'">
                                         Not Specified</p>
                                 </div>
                             </div>
@@ -2388,7 +2388,7 @@
 
                                     <p class="details"
                                        ng-if="profile.login_user.preferences.education_txt != null && profile.login_user.preferences.education_txt != ''">
-                                        {{profile.login_user.preferences.education_txt}}</p>
+                                        {{createCommaSeperate(profile.login_user.preferences.education_txt)}}</p>
 
                                     <p class="details"
                                        ng-if="profile.login_user.preferences.education_txt == null || profile.login_user.preferences.education_txt == ''">
@@ -2399,7 +2399,7 @@
 
                                     <p class="details"
                                        ng-if="profile.login_user.preferences.occupation_txt != null && profile.login_user.preferences.occupation_txt != ''">
-                                        {{profile.login_user.preferences.occupation_txt}}</p>
+                                        {{createCommaSeperate(profile.login_user.preferences.occupation_txt)}}</p>
 
                                     <p class="details"
                                        ng-if="profile.login_user.preferences.occupation_txt == null || profile.login_user.preferences.occupation_txt == ''">
@@ -2407,7 +2407,7 @@
                                 </div>
 
                                 <div class="col-md-4">
-                                    <label class=" font-weight-head  "> Annaul Income</label>
+                                    <label class=" font-weight-head  "> Annual Income</label>
 
                                     <p class="details"
                                        ng-if="profile.login_user.preferences.income != null && profile.login_user.preferences.income != ''">
@@ -2469,7 +2469,8 @@
                                     <!--ng-model="profile.login_user.preferences.income">-->
                                     <select class="form-control input-rounded "
                                             ng-model="profile.login_user.preferences.income">
-                                        <option value="any">any</option>
+                                        <option selected="selected" value="">Select</option>
+                                        <option value="any">Any</option>
                                         <option value="Rs 8 Lakhs">Rs 8 Lakhs</option>
                                         <option value="Rs 9 Lakhs">Rs 9 Lakhs</option>
                                         <option value="Rs 10 Lakhs">Rs 10 Lakhs</option>
@@ -2541,7 +2542,7 @@
 
                                     <p class="details"
                                        ng-if="profile.login_user.preferences.country_txt != null && profile.login_user.preferences.country_txt != ''">
-                                        {{profile.login_user.preferences.country_txt}}</p>
+                                        {{createCommaSeperate(profile.login_user.preferences.country_txt)}}</p>
 
                                     <p class="details"
                                        ng-if="profile.login_user.preferences.country_txt == null || profile.login_user.preferences.country_txt == ''">
@@ -2553,7 +2554,7 @@
 
                                     <p class="details"
                                        ng-if="profile.login_user.preferences.state_txt != null && profile.login_user.preferences.state_txt != ''">
-                                        {{profile.login_user.preferences.state_txt}}</p>
+                                        {{createCommaSeperate(profile.login_user.preferences.state_txt)}}</p>
 
                                     <p class="details"
                                        ng-if="profile.login_user.preferences.state_txt == null || profile.login_user.preferences.state_txt == ''">
@@ -2565,7 +2566,7 @@
 
                                     <p class="details"
                                        ng-if="profile.login_user.preferences.city_txt != null && profile.login_user.preferences.city_txt != ''">
-                                        {{profile.login_user.preferences.city_txt}}</p>
+                                        {{createCommaSeperate(profile.login_user.preferences.city_txt)}}</p>
 
                                     <p class="details"
                                        ng-if="profile.login_user.preferences.city_txt == null || profile.login_user.preferences.city_txt == ''">
@@ -2580,7 +2581,7 @@
 
                                                                     <p class="details"
                                                                        ng-if="profile.login_user.preferences.nationality_txt != null && profile.login_user.preferences.nationality_txt != ''">
-                                                                        {{profile.login_user.preferences.nationality_txt}}</p>
+                                                                        {{createCommaSeperate(profile.login_user.preferences.nationality_txt)}}</p>
 
                                                                     <p class="details"
                                                                        ng-if="profile.login_user.preferences.nationality_txt == null || profile.login_user.preferences.nationality_txt == ''">
