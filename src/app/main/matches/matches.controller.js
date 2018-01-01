@@ -94,6 +94,19 @@
                 $scope.facetdetails.mstatus.push(id)
                 query.push("marital_status="+$scope.facetdetails.mstatus.join('~'))
             }
+
+            if($scope.age.start != null){
+                query.push("age_start="+$scope.age.start)
+            }
+            if($scope.age.end != null){
+                query.push("age_end="+$scope.age.end)
+            }
+            if($scope.height.start != null){
+                query.push("height_start="+$scope.height.start)
+            }
+            if($scope.height.end != null){
+                query.push("height_end="+$scope.height.end)
+            }
             if('motherTongue' == obj){
                 if(!contains.call($scope.facetdetails.motherTongue,id)){
                     $scope.facetdetails.motherTongue.push(id)
