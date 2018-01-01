@@ -32,7 +32,7 @@
 }
 
 .profile-table tbody tr td{
-    padding: 6px;
+    padding: 3px;
 }
 
 .profile-table tbody tr .first-row{
@@ -44,15 +44,17 @@ color: #363636;
 font-size: 16px}
 
 .vp-sub-action{
-    font-size: 27px;
+    padding: 10px;
+    background-color: #e4e4e4;
+    font-size: 18px;
     text-align: center;
     font-weight: 600;
     margin: 20px;
 }
 .vp-sub-action button{
-width: 100px;
-height: 50px;
-    font-size: 20px;
+width: 60px;
+height: 30px;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -83,5 +85,9 @@ height: 50px;
 .vp-main-action .active-link{
     color: #ca0f03;
     border-bottom: 4px solid #ca0f03;
+}
+
+.portlet-space{
+    margin-bottom: 12px!important;
 }
 

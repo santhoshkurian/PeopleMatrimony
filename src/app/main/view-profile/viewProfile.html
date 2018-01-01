@@ -29,11 +29,11 @@
                             <div class="portlet-body form">
                                 <div class="row ">
                                     <div class=" col-xs-12 col-sm-12 col-md-6 " style="text-align: center;line-height: 180px">
-                                        <img style="height: 150px" ng-if="view.images.length > 0"
+                                        <img style="height: 210px" ng-if="view.images.length > 0"
                                              ng-src="{{view.images[0].image}}"/>
-                                        <img style="height: 150px" ng-if="view.images.length == 0 && view.gender == 'male'"
+                                        <img style="height: 210px" ng-if="view.images.length == 0 && view.gender == 'male'"
                                              ng-src="/assets/defaultImages/male_card.jpg"/>
-                                        <img style="height: 150px" ng-if="view.images.length == 0 && view.gender == 'female'"
+                                        <img style="height: 210px" ng-if="view.images.length == 0 && view.gender == 'female'"
                                              ng-src="/assets/defaultImages/female_card.jpg"/>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-6">
@@ -99,7 +99,6 @@
                                     <div class="vp-sub-action">
                                         <span>Connect her with ?</span>
                                         <br/>
-                                        <br/>
                                         <span>
                                         <button class="btn red" ng-click="sendInterest()">YES</button>
                                         <button class="btn " ng-click="skipAction()">SKIP</button>
@@ -152,7 +151,7 @@
                         </div>
 
                         <div ng-if="viewType == 'personal'">
-                            <div class="portlet light border-rounded">
+                            <div class="portlet light border-rounded portlet-space">
                                 <div class="portlet-title">
                                     <div class="caption ">
                                         <!--<i class="icon-settings font-red-sunglo"></i>-->
@@ -167,7 +166,10 @@
                                 </div>
                             </div>
 
-                            <div class="portlet light border-rounded">
+                            <div ng-if= "basicRequest != ''" class="alert alert-success">
+                                {{basicRequest}}
+                            </div>
+                            <div class="portlet light border-rounded portlet-space">
                                 <div class="portlet-title">
                                     <div class="caption ">
                                         <span class=" uppercase"><i class=" fa fa-clone icon-color"></i> &nbsp;Basic Details</span>
@@ -246,22 +248,23 @@
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Drinking Habits</label>
 
-                                            <p class="details " ng-if="view.drinking_habit != null &&  view.drinking_habit != ''">{{view.drinking_habit}}</p>
-                                            <p class="details " ng-if="view.drinking_habit == null ||  view.drinking_habit == ''">Not Specified</p>
+                                            <!--<p class="details " ng-if="view.drinking_habit != null &&  view.drinking_habit != ''">{{view.drinking_habit}}</p>-->
+                                            <p class="details " ><a style="color: indianred;" ng-click="requests('drinking','basicRequest')">SEND REQUEST</a></p>
+                                            <!--<p class="details " ng-if="view.drinking_habit == null ||  view.drinking_habit == ''">Not Specified</p>-->
 
                                         </div>
                                         <div class="col-md-4" style="height:60px">
-                                            <label class=" font-weight-head  "> Somking Habits</label>
+                                            <label class=" font-weight-head  "> Smoking Habits</label>
 
-                                            <p class="details " ng-if="view.smoking_habit != null &&  view.smoking_habit != ''">{{view.smoking_habit}}</p>
-                                            <p class="details " ng-if="view.smoking_habit == null ||  view.smoking_habit == ''">Not Specified</p>
+                                            <!--<p class="details " ng-if="view.smoking_habit != null &&  view.smoking_habit != ''">{{view.smoking_habit}}</p>-->
+                                            <p class="details " ><a style="color: indianred;" ng-click="requests('smoking','basicRequest')">SEND REQUEST</a></p>
 
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="portlet light border-rounded">
+                            <div class="portlet light border-rounded portlet-space">
                                 <div class="portlet-title">
                                     <div class="caption ">
                                         <span class=" uppercase"><i class=" fa fa-clone icon-color"></i> &nbsp;Religious Information</span>
@@ -308,8 +311,10 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="portlet light border-rounded">
+                            <div ng-if= "professionRequest != ''" class="alert alert-success">
+                                {{professionRequest}}
+                            </div>
+                            <div class="portlet light border-rounded portlet-space">
                                 <div class="portlet-title">
                                     <div class="caption ">
                                         <span class=" uppercase"><i class=" fa fa-mortar-board icon-color"></i> &nbsp;Professional Information</span>
@@ -322,20 +327,26 @@
 
                                         <div class="col-md-4" style="height:60px">
                                             <label class="font-weight-head "> Education</label>
-                                            <p class="details " ng-if="view.education != null &&  view.education != ''">{{view.education}}</p>
-                                           <p class="details " ng-if="view.education == null ||  view.education == ''">Not Specified</p>
+                                            <!--<p class="details " ng-if="view.education != null &&  view.education != ''">{{view.education}}</p>-->
+                                           <!--<p class="details " ng-if="view.education == null ||  view.education == ''">Not Specified</p>-->
+                                            <p class="details " ><a style="color: indianred;" ng-click="requests('education','professionRequest')">SEND REQUEST</a></p>
+
                                         </div>
 
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Occupation</label>
-                                            <p class="details " ng-if="view.occupation != null &&  view.occupation != ''">{{view.occupation}}</p>
-                                            <p class="details " ng-if="view.occupation == null ||  view.occupation == ''">Not Specified</p>
+                                            <!--<p class="details " ng-if="view.occupation != null &&  view.occupation != ''">{{view.occupation}}</p>-->
+                                            <p class="details " ><a style="color: indianred;" ng-click="requests('occupation','professionRequest')">SEND REQUEST</a></p>
+
+                                            <!--<p class="details " ng-if="view.occupation == null ||  view.occupation == ''">Not Specified</p>-->
                                         </div>
 
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Annual Income</label>
-                                            <p class="details " ng-if="view.income != null &&  view.income != ''">{{view.income}}</p>
-                                            <p class="details " ng-if="view.income == null ||  view.income == ''">Not Specified</p>
+                                            <!--<p class="details " ng-if="view.income != null &&  view.income != ''">{{view.income}}</p>-->
+                                            <p class="details " ><a style="color: indianred;" ng-click="requests('income','professionRequest')">SEND REQUEST</a></p>
+
+                                            <!--<p class="details " ng-if="view.income == null ||  view.income == ''">Not Specified</p>-->
 
 
                                         </div>
@@ -344,7 +355,11 @@
 
                             </div>
 
-                            <div class="portlet light border-rounded">
+                            <div ng-if= "familyRequest != ''" class="alert alert-success">
+                                {{familyRequest}}
+                            </div>
+
+                            <div class="portlet light border-rounded portlet-space">
                                 <div class="portlet-title">
                                     <div class="caption ">
                                         <span class=" uppercase"><i class=" fa fa-users icon-color"></i> &nbsp;Family Details</span>
@@ -365,16 +380,18 @@
 
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Ancestral Origin</label>
-                                            <p class="details " ng-if="view.ancestral_origin != null &&  view.ancestral_origin != ''">{{view.ancestral_origin}}</p>
-                                            <p class="details " ng-if="view.ancestral_origin == null ||  view.ancestral_origin == ''">Not Specified</p>
+                                            <!--<p class="details " ng-if="view.ancestral_origin != null &&  view.ancestral_origin != ''">{{view.ancestral_origin}}</p>-->
+                                            <!--<p class="details " ng-if="view.ancestral_origin == null ||  view.ancestral_origin == ''">Not Specified</p>-->
+                                            <p class="details " ><a style="color: indianred;" ng-click="requests('origin','familyRequest')">SEND REQUEST</a></p>
 
 
                                         </div>
 
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Family Type</label>
-                                            <p class="details " ng-if="view.family_type != null &&  view.family_type != ''">{{view.family_type}}</p>
-                                            <p class="details " ng-if="view.family_type == null ||  view.family_type == ''">Not Specified</p>
+                                            <!--<p class="details " ng-if="view.family_type != null &&  view.family_type != ''">{{view.family_type}}</p>-->
+                                            <!--<p class="details " ng-if="view.family_type == null ||  view.family_type == ''">Not Specified</p>-->
+                                            <p class="details " ><a style="color: indianred;" ng-click="requests('family','familyRequest')">SEND REQUEST</a></p>
 
 
                                         </div>
@@ -393,7 +410,9 @@
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Family Status</label>
                                             <p class="details " ng-if="view.family_status != null &&  view.family_status != ''">{{view.family_status}}</p>
-                                            <p class="details " ng-if="view.family_status == null ||  view.family_status == ''">Not Specified</p>
+                                            <!--<p class="details " ng-if="view.family_status == null ||  view.family_status == ''">Not Specified</p>-->
+                                            <p class="details " ><a style="color: indianred;" ng-click="requests('family_status','familyRequest')">SEND REQUEST</a></p>
+
                                         </div>
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Father's Status </label>
@@ -408,7 +427,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="portlet light border-rounded">
+                            <div ng-if= "aboutFamilyRequest != ''" class="alert alert-success">
+                                {{aboutFamilyRequest}}
+                            </div>
+                            <div class="portlet light border-rounded portlet-space">
                                 <div class="portlet-title">
                                     <div class="caption ">
                                         <span class=" uppercase"><i class=" fa fa-users icon-color"></i> &nbsp; About My Family</span>
@@ -420,8 +442,10 @@
                                     <div class="form-group">
 
                                         <div class="col-md-12">
-                                            <p class="details " ng-if="view.about_family != null &&  view.about_family != ''">{{view.about_family}}</p>
-                                            <p class="details " ng-if="view.about_family == null ||  view.about_family == ''">Not Specified</p>
+                                            <!--<p class="details " ng-if="view.about_family != null &&  view.about_family != ''">{{view.about_family}}</p>-->
+                                            <!--<p class="details " ng-if="view.about_family == null ||  view.about_family == ''">Not Specified</p>-->
+                                            <p class="details " ><a style="color: indianred;" ng-click="requests('about_family','aboutFamilyRequest')">SEND REQUEST</a></p>
+
                                         </div>
                                     </div>
                                 </div>

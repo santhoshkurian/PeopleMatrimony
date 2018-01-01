@@ -91,6 +91,37 @@
 
 
         }
+        $scope.basicRequest = '';
+        $scope.professionRequest = '';
+        $scope.familyRequest = '';
+        $scope.aboutFamilyRequest = '';
+
+
+        $scope.requests = function(obj1,obj2){
+            console.log(obj1)
+
+            $http({
+                method: 'GET',
+                url: resourceUrl.url()+'add/field?' +
+                '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&partner=' + $scope.view.id_people+'&field='+obj1
+            }).then(function successCallback(response) {
+                console.log(response)
+                $scope[obj2] = 'Request send successfully';
+                $timeout(function() { $scope[obj2] = '';}, 2000);
+
+                //$scope.message = "Successfully Shortlisted";
+
+            }, function errorCallback(response) {
+                console.log(response)
+                if (response.data.message == 'Already exists') {
+                    //$scope.message = "Already Shortlisted";
+                }
+
+            });
+
+            //devapi.peoplematrimony.com/add/field?p_debug=1&partner=PM123456&id=PM607823&field=family;
+
+        }
 
 
 

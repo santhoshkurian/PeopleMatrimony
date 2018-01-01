@@ -258,7 +258,7 @@
                         return $http({
                             method: 'GET',
                             url: resourceUrl.url()+'inbox?' +
-                            '&token=' + storageService.get("token") + '&type=awaiting_reply'
+                            'token=' + storageService.get("token") + '&type=awaiting_reply'
                         }).then(function successCallback(response) {
                             return response.data;
                         }, function errorCallback(response) {

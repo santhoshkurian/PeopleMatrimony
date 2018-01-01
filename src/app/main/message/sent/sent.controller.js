@@ -15,7 +15,7 @@
             $http({
                 method: 'GET',
                 url: resourceUrl.url()+'inbox/delete?' +
-                '&token=' + storageService.get("token") + '&type=sent'+'&com_id='+comId
+                'token=' + storageService.get("token") + '&type=sent'+'&com_id='+comId
             }).then(function successCallback(response) {
                 $http({
                     method: 'GET',
