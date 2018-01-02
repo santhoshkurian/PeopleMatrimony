@@ -17,7 +17,11 @@
                             <div class="portlet-title">
 
                                 <div class="caption ">
-                                    <span class="vp-main">{{view.name}} ({{view.id_people}})</span><br>
+                                    <span class="vp-main"><span style="text-transform: capitalize">{{view.name}}</span> ({{view.id_people}})</span>
+                                    <span ng-if="view.isOnline = 'online'" ><i class="fa fa-circle " style="color:#56bb55 ;padding-top:5px;"></i>&nbsp;<label>Online</label>
+                                </span>
+                                    <span ng-if="view.isOnline != 'online'" ><i class="fa fa-circle " style="color:red ;padding-top:5px;"></i>&nbsp;<label>Offline</label>
+                                </span><br>
                                     <span class="vp-main-sub" ng-if="view.profile_for != null && view.profile_for != ''"> Profile created by {{view.profile_for}}</span>
                                 </div>
 
