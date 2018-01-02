@@ -6,10 +6,12 @@
         .controller('RegularSearchController', RegularSearchController);
 
     /** @ngInject */
-    function RegularSearchController($scope,$state,$http,$stateParams,populate,resourceUrl,storageService,searchList) {
+    function RegularSearchController(profile,$scope,$state,$http,$stateParams,populate,resourceUrl,storageService,searchList) {
         var vm = this;
         console.log("RegularSearchController");
         console.log(populate);
+        console.log('profile',profile);
+        $scope.profile = profile;
 
         console.log(searchList);
         $scope.searchList = searchList;
