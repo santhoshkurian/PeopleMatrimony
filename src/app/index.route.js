@@ -43,7 +43,11 @@
                 $("#body-filter").removeClass("page-grey-color");
                 if ((storageService.get("token") == null && storageService.get("id") == null) ||
                     (storageService.get("token") == '' && storageService.get("id") == '')) {
-                    $state.go("login");
+                    if(toState.name == 'terms'){
+                        $state.go("terms");
+                    }else {
+                        $state.go("login");
+                    }
                 }
                 else {
                     console.log("to state",toState);
@@ -199,6 +203,44 @@
                             if(response.data.package.data != null) {
                                 storageService.set('package', response.data.package.data.package_type);
                             }
+                            return response.data;
+
+                        }, function errorCallback(response) {
+                            //console.log(response)
+                            return response;
+
+
+                        });
+                    }
+
+                }
+            })
+            .state('terms', {
+                url: '/terms',
+                views: {
+                    'main@': {
+                        templateUrl: 'app/core/layouts/termsAndConditionsLayout.html',
+                        controller: 'LoginController as vm'
+                    },
+                    'toolbar@terms': {
+                        templateUrl: 'app/toolbar/login/loginToolbar.html'
+                        //controller : 'LoginController as vm'
+                    },
+                    'content@terms': {
+                        templateUrl: 'app/main/login/termsContent.html',
+                    },
+                    'footer@terms': {
+                        templateUrl: 'app/footer/footer.html',
+                        controller: 'FooterController as vm'
+                    }
+                },
+                resolve: {
+                    populate: function ($http,resourceUrl) {
+                        return $http({
+                            method: 'GET',
+                            url: resourceUrl.url()+'populate'
+                        }).then(function successCallback(response) {
+                            console.log(response)
                             return response.data;
 
                         }, function errorCallback(response) {
