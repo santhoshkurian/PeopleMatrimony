@@ -224,7 +224,7 @@
 
 
             var date1 = $scope.reg.dob;
-            if($scope.reg.dob != null && $scope.reg.dob != '') {
+            if(date1 != null && date1 != '') {
                 date1 = new Date(date1);
                 date1 = date1.toString().replace('(India Standard Time)', '(IST)');
                 date1 = new Date(date1);

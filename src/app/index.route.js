@@ -223,7 +223,7 @@
                         controller: 'LoginController as vm'
                     },
                     'toolbar@terms': {
-                        templateUrl: 'app/toolbar/login/loginToolbar.html'
+                        templateUrl: 'app/toolbar/login/registrationStep2Toolbar.html'
                         //controller : 'LoginController as vm'
                     },
                     'content@terms': {
