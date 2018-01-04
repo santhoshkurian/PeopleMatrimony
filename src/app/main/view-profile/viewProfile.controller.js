@@ -6,9 +6,51 @@
         .controller('ViewProfileController', ViewProfileController);
 
     /** @ngInject */
-    function ViewProfileController($scope,$http,storageService,resourceUrl,viewProfile,$timeout) {
+    function ViewProfileController($scope,$http,storageService,$state,$stateParams,resourceUrl,viewProfile,$timeout) {
 
         console.log("check", viewProfile);
+        $scope.drinkingReq = false;
+        $scope.smokingReq = false;
+        $scope.educationReq = false;
+        $scope.occupationReq = false;
+        $scope.incomeReq = false;
+        $scope.originReq = false;
+        $scope.familyReq = false;
+        $scope.family_statusReq = false;
+        $scope.about_familyReq = false;
+        viewProfile.communication.sent.filter(function(a){
+            console.log(a);
+            if(a.field_name == 'drinking'){
+                $scope.drinkingReq = true;
+            }
+            if(a.field_name == 'smoking'){
+                $scope.smokingReq = true;
+            }
+            if(a.field_name == 'education'){
+                $scope.educationReq = true;
+            }
+            if(a.field_name == 'income'){
+                $scope.incomeReq = true;
+            }
+            if(a.field_name == 'occupation'){
+                $scope.occupationReq = true;
+            }
+            if(a.field_name == 'origin'){
+                $scope.originReq = true;
+            }
+            if(a.field_name == 'family'){
+                $scope.familyReq = true;
+            }
+            if(a.field_name == 'family_status'){
+                $scope.family_statusReq = true;
+            }
+            if(a.field_name == 'about_family'){
+                $scope.about_familyReq = true;
+            }
+        });
+        console.log($scope.drinkingReq);
+        console.log($scope.smokingReq);
+
         $scope.percentage = 0;
         $scope.viewProfile = true;
         $scope.image_url = storageService.get("image_url");
@@ -31,7 +73,6 @@
 
         $scope.view = viewProfile.user;
         $scope.pref = viewProfile.user.preferences;
-            console.log("view Profile", JSON.stringify(viewProfile));
         }else{
             $scope.viewProfile = false;
         }
@@ -107,7 +148,13 @@
             }).then(function successCallback(response) {
                 console.log(response)
                 $scope[obj2] = 'Request send successfully';
-                $timeout(function() { $scope[obj2] = '';}, 2000);
+                $timeout(function() { $scope[obj2] = '';
+                    $state.transitionTo($state.current, $stateParams, {
+                        reload: true,
+                        inherit: false,
+                        notify: true
+                    });
+                }, 2000);
 
                 //$scope.message = "Successfully Shortlisted";
 
