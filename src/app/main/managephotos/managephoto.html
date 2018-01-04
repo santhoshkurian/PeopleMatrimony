@@ -89,7 +89,7 @@
 
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-5 col-sm-12">
+                             <!--       <div class="col-md-5 col-sm-12">
                                         <div style="position: relative;padding: 60px;width:360px;background-color: gainsboro">
                                             <div class="photo-div"><span class="photo-span">
                                       <div class="upload-btn-wrapper">
@@ -103,16 +103,16 @@
 
                                 </span></div>
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <div class="col-md-1"></div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6" style="text-align: center">
                                         <div ng-if="uploadmsg != ''" class=" alert-dismissable">
-                                            <button type="button" class="close" data-dismiss="alert"
+                                            <button  type="button" class="close" data-dismiss="alert"
                                                     aria-hidden="true"></button>
                                             {{uploadmsg}}.
                                         </div>
 
-                                        <div class="fileUpload btn btn-sm red-mint">
+                                        <div class="fileUpload btn btn-sm red-mint" >
                                             <span><i class="fa fa-camera"></i> My Computer
                                             </span>
                                             <input type="file" id="myFile"
@@ -122,7 +122,7 @@
                                         <!--<div >{{fileName}}</div>-->
                                         <!--<button ng-click="uploadFile()">Try it</button>-->
                                         <div style="margin-top:20px">
-                                        <img style="height:300px" ng-src="{{recentUpload}}"></img>
+                                        <img ng-if="recentUpload != ''" style="height:300px" ng-src="{{recentUpload}}"/>
                                              </div>
 
 
@@ -147,7 +147,6 @@
                                     <b>General </b>
                                 </div>
 
-                                <!--<img ng-src="{{image.image}}" alt="{{image.description}}">-->
                             </div>
                         </div>
                         <!--<div class="col-sm-3" ng-click="group('family')">-->
@@ -203,6 +202,25 @@
                                            <!--ng-click="changeProfilePic(image)">-->
                                 </div>
                             </div>
+                            <div class="col-sm-3">
+
+
+                                <div style="position: relative;">
+                                    <div class="photo-div"><span class="photo-span">
+                                      <div class="upload-btn-wrapper">
+                                          <button class="btn"
+                                                  style="width: 140px;height: 140px "><i class="fa fa-plus"></i></button>
+                                          <input type="file" id="myFile1"
+                                                 onchange="angular.element(this).scope().uploadFile1(this.files)"
+                                                 class="upload">
+                                      </div>
+
+
+                                </span></div>
+                                </div>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>

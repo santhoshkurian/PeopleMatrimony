@@ -129,6 +129,7 @@
 
         $scope.images =[];
         $scope.general = $scope.images.length;
+        $scope.recentUpload = '';
 
         $scope.uploadFile = function () {
             var file = document.getElementById("myFile");
