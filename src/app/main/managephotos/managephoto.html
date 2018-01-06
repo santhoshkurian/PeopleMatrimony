@@ -60,12 +60,12 @@
                <div class="col-md-12 ">
                     <!-- BEGIN SAMPLE FORM PORTLET-->
                     <div class="portlet light "
-                         style="padding-top: 0px" ng-if="viewType != 'group'">
+                         style="padding-top: 0px" >
 
                         <div class=" row vp-main-action">
                             <div style="text-transform: uppercase;text-align: center;">
                                 <div class="col-md-6 vp-main-link2 "
-                                     ng-class="{'active-link': viewType == 'managephoto'}"
+                                     ng-class="{'active-link': viewType == 'managephoto' || viewType == 'group'}"
                                      ng-click="selectType('managephoto')"
                                         > MANAGE PHOTO
                                 </div>
@@ -79,15 +79,78 @@
                         </div>
 
                     </div>
-                    <div ng-if="viewType == 'managephoto'" >
+                    <div  >
 
-                        <div class="portlet light " style="background-color: gainsboro;margin-bottom:0px">
+                        <div ng-if="viewType == 'managephoto'" class="portlet light " style="background-color: gainsboro;margin-bottom:0px">
 
                             <div class="portlet-body form  form-horizontal">
                                 <div class="row" style="text-align: center;font-size: 21px;margin:20px">
                                     <span class="  bold "> You have added 11 photos. Add more to get better responses</span>
 
                                 </div>
+                                                          </div>
+                        </div>
+                        <div ng-if="viewType == 'group'" class="portlet light " style="margin-bottom:0px">
+
+                            <div class="portlet-body form  form-horizontal">
+
+                                <div class="row">
+                                    <div class="col-md-12" >
+
+                                        <div>
+                                            <div class="row">
+                                                <div class="col-md-12" style="height: 50px;width:100%;line-height:50px;
+                      font-size: 20px;font-weight: bold;color: #0086B3"><span
+                                                        ng-click="backtomain()"> {{groupName}}</span></div>
+
+                                            </div>
+
+
+                                            <div class="row">
+                                                <div class="col-sm-3" ng-repeat="image in images" style="margin-top: 15px">
+
+
+                                                    <div class="thumbnail">
+                                                        <img style="height: 150px" ng-src="{{image.image}}" alt="{{image.description}}">
+                                                    </div>
+                                                    <div  style="margin-top: -55px;margin-left: 15px;margin-bottom: 10px">
+                                                        <a  title='Set as Profile Picture' ng-click="changeProfilePic(image)"><i class="fa fa-check-circle" style="font-size: 20px"></i></a>
+                                                        <a title='Remove' ng-click="removeProfilePic(image)"><i class="fa fa-close" style="font-size: 20px;color: red"></i></a>
+                                                        <!--<input type="checkbox" ng-model="profilePic" ng-value="{{image.number}}"-->
+                                                        <!--ng-click="changeProfilePic(image)">-->
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3">
+
+
+                                                    <div style="position: relative;">
+                                                        <div class="photo-div" style="margin-top: 25px;margin-left: 30px;cursor: pointer;"><span class="photo-span">
+                                      <div class="upload-btn-wrapper">
+                                          <button class="btn"
+                                                  style="width: 140px;height: 140px;font-weight: bold;background-color: lightgrey"><i class="fa fa-plus"></i><br>Add Photo</button>
+                                          <input type="file" id="myFile1"
+                                                 onchange="angular.element(this).scope().uploadFile1(this.files)"
+                                                 class="upload">
+                                      </div>
+
+
+                                </span></div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portlet light " style="background-color: gainsboro;margin-bottom:0px">
+
+                            <div class="portlet-body form  form-horizontal">
+
                                 <div class="row">
                                     <div class="col-md-12" style="text-align: center;text-transform: uppercase;font-weight: bold;color: grey">
                                         Upload Photo From
@@ -135,7 +198,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="portlet light " style="padding: 30px">
+                        <div ng-if="viewType == 'managephoto'" class="portlet light " style="padding: 30px">
                             <div class="portlet-title">
                                 <div class="caption uppercase">
                                    <span style="color: #4cbcac;font-size: 16px;font-weight: bold"> Your Album</span>
@@ -186,53 +249,6 @@
 
                         <!--<input type="file" id="myFile">-->
 
-                    </div>
-                </div>
-                <div class="col-md-12" ng-if="viewType == 'group'">
-
-                    <div>
-                        <div class="row">
-                            <div class="col-md-12" style="height: 50px;width:100%;line-height:50px;
-                      font-size: 20px;font-weight: bold;color: #0086B3"><span
-                                    ng-click="backtomain()"> {{groupName}}</span></div>
-
-                        </div>
-
-
-                        <div class="row">
-                            <div class="col-sm-3" ng-repeat="image in images" style="margin-top: 15px">
-
-
-                                <div class="thumbnail">
-                                    <img style="height: 150px" ng-src="{{image.image}}" alt="{{image.description}}">
-                                </div>
-                                <div  style="margin-top: -55px;margin-left: 15px;margin-bottom: 10px">
-                                    <a  title='Set as Profile Picture' ng-click="changeProfilePic(image)"><i class="fa fa-check-circle" style="font-size: 20px"></i></a>
-                                    <a title='Remove' ng-click="removeProfilePic(image)"><i class="fa fa-close" style="font-size: 20px;color: red"></i></a>
-                                    <!--<input type="checkbox" ng-model="profilePic" ng-value="{{image.number}}"-->
-                                           <!--ng-click="changeProfilePic(image)">-->
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-
-
-                                <div style="position: relative;">
-                                    <div class="photo-div" style="margin-top: 25px;margin-left: 30px;cursor: pointer;"><span class="photo-span">
-                                      <div class="upload-btn-wrapper">
-                                          <button class="btn"
-                                                  style="width: 140px;height: 140px;font-weight: bold;background-color: lightgrey"><i class="fa fa-plus"></i><br>Add Photo</button>
-                                          <input type="file" id="myFile1"
-                                                 onchange="angular.element(this).scope().uploadFile1(this.files)"
-                                                 class="upload">
-                                      </div>
-
-
-                                </span></div>
-                                </div>
-                            </div>
-
-
-                        </div>
                     </div>
                 </div>
 
