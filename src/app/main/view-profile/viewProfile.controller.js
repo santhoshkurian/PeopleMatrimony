@@ -18,36 +18,7 @@
         $scope.familyReq = false;
         $scope.family_statusReq = false;
         $scope.about_familyReq = false;
-        viewProfile.communication.sent.filter(function(a){
-            console.log(a);
-            if(a.field_name == 'drinking'){
-                $scope.drinkingReq = true;
-            }
-            if(a.field_name == 'smoking'){
-                $scope.smokingReq = true;
-            }
-            if(a.field_name == 'education'){
-                $scope.educationReq = true;
-            }
-            if(a.field_name == 'income'){
-                $scope.incomeReq = true;
-            }
-            if(a.field_name == 'occupation'){
-                $scope.occupationReq = true;
-            }
-            if(a.field_name == 'origin'){
-                $scope.originReq = true;
-            }
-            if(a.field_name == 'family'){
-                $scope.familyReq = true;
-            }
-            if(a.field_name == 'family_status'){
-                $scope.family_statusReq = true;
-            }
-            if(a.field_name == 'about_family'){
-                $scope.about_familyReq = true;
-            }
-        });
+
         console.log($scope.drinkingReq);
         console.log($scope.smokingReq);
 
@@ -69,7 +40,37 @@
             $scope.viewType = type;
         }
 
-        if (viewProfile != 'error') {
+        if (!viewProfile.error) {
+            viewProfile.communication.sent.filter(function(a){
+                console.log(a);
+                if(a.field_name == 'drinking'){
+                    $scope.drinkingReq = true;
+                }
+                if(a.field_name == 'smoking'){
+                    $scope.smokingReq = true;
+                }
+                if(a.field_name == 'education'){
+                    $scope.educationReq = true;
+                }
+                if(a.field_name == 'income'){
+                    $scope.incomeReq = true;
+                }
+                if(a.field_name == 'occupation'){
+                    $scope.occupationReq = true;
+                }
+                if(a.field_name == 'origin'){
+                    $scope.originReq = true;
+                }
+                if(a.field_name == 'family'){
+                    $scope.familyReq = true;
+                }
+                if(a.field_name == 'family_status'){
+                    $scope.family_statusReq = true;
+                }
+                if(a.field_name == 'about_family'){
+                    $scope.about_familyReq = true;
+                }
+            });
 
         $scope.view = viewProfile.user;
         $scope.pref = viewProfile.user.preferences;
