@@ -23,8 +23,14 @@
                     <div class="form-group">
                         <label class="font-weight "> Category</label>
 
-                        <input type="text" class="form-control  input-rounded"
-                               ng-model="business.company">
+                        <select class="form-control  input-rounded"
+                                ng-model="business.email">
+                            <option value="">Select</option>
+                            <option value="Problems related to website">Problems related to website</option>
+                            <option value="Problems related to profiles">Problems related to profiles</option>
+                            <option value="Compliments And Suggestions">Compliments And Suggestions</option>
+                            <option value="others">Others</option>
+                        </select>
 
 
                     </div>
@@ -44,8 +50,13 @@
                     <div class="form-group">
                         <label class="font-weight ">Priorty</label>
 
-                            <input type="text" class="form-control  input-rounded"
+                            <select class="form-control  input-rounded"
                                    ng-model="business.email">
+                                <option value="">Select</option>
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                                </select>
 
                     </div>
                 </div>
