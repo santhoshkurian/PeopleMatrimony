@@ -31,13 +31,13 @@
                                 </div>
                             </div>
                             <div class="portlet-body form">
-                                <div class="row ">
+                                <div class="row " >
                                     <div class=" col-xs-12 col-sm-12 col-md-6 " style="text-align: center;line-height: 180px">
-                                        <img style="height: 210px" ng-if="view.images.length > 0"
+                                        <img style="height: auto;width:230px" ng-if="view.images.length > 0"
                                              ng-src="{{view.images[0].image}}"/>
-                                        <img style="height: 210px" ng-if="view.images.length == 0 && view.gender == 'male'"
+                                        <img style="height: auto;width:230px" ng-if="view.images.length == 0 && view.gender == 'male'"
                                              ng-src="/assets/defaultImages/male_card.jpg"/>
-                                        <img style="height: 210px" ng-if="view.images.length == 0 && view.gender == 'female'"
+                                        <img style="height: auto;width:230px" ng-if="view.images.length == 0 && view.gender == 'female'"
                                              ng-src="/assets/defaultImages/female_card.jpg"/>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-6">
