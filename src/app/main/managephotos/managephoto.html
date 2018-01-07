@@ -127,7 +127,7 @@
                                                         <div class="photo-div" style="margin-top: 25px;margin-left: 30px;cursor: pointer;"><span class="photo-span">
                                       <div class="upload-btn-wrapper">
                                           <button class="btn"
-                                                  style="width: 140px;height: 140px;font-weight: bold;background-color: lightgrey"><i class="fa fa-plus"></i><br>Add Photo</button>
+                                                  style="width: 140px;height: 140px;font-weight: bold;background-color: lightgrey;color:red"><i class="fa fa-plus"></i><br>Add Photo</button>
                                           <input type="file" id="myFile1"
                                                  onchange="angular.element(this).scope().uploadFile1(this.files)"
                                                  class="upload">
@@ -147,7 +147,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div  ng-if="viewType == 'group'" class="portlet light " style="background-color: gainsboro;margin-bottom:0px">
+                        <div  ng-if="viewType == 'group' || viewType == 'managephoto'" class="portlet light " style="background-color: gainsboro;margin-bottom:0px">
 
                             <div class="portlet-body form  form-horizontal">
 
