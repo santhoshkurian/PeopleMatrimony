@@ -600,7 +600,7 @@
                                         {{m.country_name}}, </span>
                                     </div>
 
-                                    <multiselect style="height:30px" ng-click="changes()" ch-limit="10" show-search="true"
+                                    <multiselect style="height:30px" ng-click="changes()" ch-limit="10" show-search="false"
                                                  ng-model="multiValue.country" options="countryList"
                                                  id-prop="id_country" display-prop="country_name">
                                     </multiselect>
@@ -622,7 +622,7 @@
                                     <span ng-repeat="m in multiValue.education" >
                                         {{m.education}}, </span>
                                     </div>
-                                    <multiselect ch-limit="10" show-search="true"
+                                    <multiselect ch-limit="10" show-search="false"
                                                  ng-model="multiValue.education" options="educationList"
                                                  id-prop="id_education" display-prop="education">
                                     </multiselect>
@@ -642,7 +642,7 @@
                                         {{m.education_category}}, </span>
                                     </div>
 
-                                    <multiselect ch-limit="10" show-search="true"
+                                    <multiselect ch-limit="10" show-search="false"
                                                  ng-model="multiValue.education_category" options="educationCategoryList"
                                                  id-prop="id_education_category" display-prop="education_category">
                                     </multiselect>
