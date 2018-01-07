@@ -362,6 +362,92 @@
                 resolve  : {
 
                 }
+            })
+            .state('businessEnquires', {
+                url      : '/businessEnquires',
+                views    : {
+                    'main@': {
+                    templateUrl: 'app/core/layouts/helpLayout.html',
+                    //controller: 'ViewProfileController as vm'
+                },
+                    'toolbar@businessEnquires': {
+                        templateUrl: 'app/toolbar/dashboard/dbToolbar.html',
+                        //controller: 'DashboardToolbarController as vm'
+                    },
+                    'content@businessEnquires'         : {
+                        templateUrl: 'app/main/help/busEnquires/busEnquires.html',
+                        controller: 'busEnqController as vm'
+                    },
+                    'footer@businessEnquires': {
+                        templateUrl: 'app/footer/footer.html',
+                        controller: 'FooterController as vm'
+                    }
+
+                }
+            })
+            .state('customerCare', {
+                url      : '/customerCare',
+                views    : {
+                    'main@': {
+                    templateUrl: 'app/core/layouts/helpLayout.html',
+                    //controller: 'ViewProfileController as vm'
+                },
+                    'toolbar@customerCare': {
+                        templateUrl: 'app/toolbar/dashboard/dbToolbar.html',
+                        //controller: 'DashboardToolbarController as vm'
+                    },
+                    'content@customerCare'         : {
+                        templateUrl: 'app/main/help/customerCare/customerCare.html',
+                        controller: 'customerCareController as vm'
+                    },
+                    'footer@customerCare': {
+                        templateUrl: 'app/footer/footer.html',
+                        controller: 'FooterController as vm'
+                    }
+
+                }
+            }).state('contactUs', {
+                url      : '/contactUs',
+                views    : {
+                    'main@': {
+                    templateUrl: 'app/core/layouts/helpLayout.html',
+                    //controller: 'ViewProfileController as vm'
+                },
+                    'toolbar@contactUs': {
+                        templateUrl: 'app/toolbar/dashboard/dbToolbar.html',
+                        //controller: 'DashboardToolbarController as vm'
+                    },
+                    'content@contactUs'         : {
+                        templateUrl: 'app/main/help/contactUs/contactUs.html',
+                        controller: 'contactUsController as vm'
+                    },
+                    'footer@contactUs': {
+                        templateUrl: 'app/footer/footer.html',
+                        controller: 'FooterController as vm'
+                    }
+
+                }
+            }).state('feedback', {
+                url      : '/feedback',
+                views    : {
+                    'main@': {
+                    templateUrl: 'app/core/layouts/helpLayout.html',
+                    //controller: 'ViewProfileController as vm'
+                },
+                    'toolbar@feedback': {
+                        templateUrl: 'app/toolbar/dashboard/dbToolbar.html',
+                        //controller: 'DashboardToolbarController as vm'
+                    },
+                    'content@feedback'         : {
+                        templateUrl: 'app/main/help/feedback/feedback.html',
+                        controller: 'feedbackController as vm'
+                    },
+                    'footer@feedback': {
+                        templateUrl: 'app/footer/footer.html',
+                        controller: 'FooterController as vm'
+                    }
+
+                }
             });
 
     }
