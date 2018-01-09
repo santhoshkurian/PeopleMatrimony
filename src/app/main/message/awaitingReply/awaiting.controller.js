@@ -9,6 +9,7 @@
     function AwaitingController($http,resourceUrl,storageService,$scope,awaitingReply) {
         var vm = this;
         $scope.awaiting = awaitingReply.list;
+        console.log("awaiting reply",$scope.awaiting);
         $scope.deleteAwaiting = deleteAwaiting;
 
                 function deleteAwaiting(comId) {
