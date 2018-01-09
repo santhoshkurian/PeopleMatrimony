@@ -6,9 +6,11 @@
         .controller('ManagePhotoController', ManagePhotoController);
 
     /** @ngInject */
-    function ManagePhotoController(resourceUrl,$scope,storageService,$http,$state) {
+    function ManagePhotoController(resourceUrl,$scope,storageService,$http,$state,loadImages) {
         console.log("ManagePhotoController");
+        console.log("ManagePhotoController",loadImages.user.images.length);
         $scope.viewType = 'managephoto';
+        $scope.imageLength = loadImages.user.images.length;
         $scope.logout = logout;
 
         $scope.image_url = storageService.get("image_url");

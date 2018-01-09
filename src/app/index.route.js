@@ -755,6 +755,21 @@
                         templateUrl: 'app/footer/footer.html',
                         controller: 'FooterController as vm'
                     }
+                },resolve: {
+                    loadImages: function ($http, resourceUrl, storageService) {
+                        return $http({
+                            method: 'GET',
+                            url: resourceUrl.url()+'user/image/'+storageService.get("id")+'?token=' + storageService.get("token")
+                        }).then(function successCallback(response) {
+                            return response.data;
+
+                        }, function errorCallback(response) {
+                            //console.log(response)
+                            return response;
+
+
+                        });
+                    }
                 }
             }).state('payment', {
                 url: '/payment',
