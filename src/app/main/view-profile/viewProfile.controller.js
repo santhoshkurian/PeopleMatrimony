@@ -4,7 +4,8 @@
     angular
         .module('dashboard')
         .controller('ViewProfileController', ViewProfileController)
-        .controller('modalController', modalController);
+        .controller('modalController', modalController)
+        .controller('enlargePhotoController', enlargePhotoController);
 
     /** @ngInject */
     function ViewProfileController($scope,$http,$uibModal,storageService,$state,$stateParams,resourceUrl,viewProfile,$timeout) {
@@ -32,9 +33,18 @@
         $scope.showAction = true;
         $scope.showMessage = false;
         $scope.selectType = selectType;
+        $scope.enlargePhoto = enlargePhoto;
         $scope.skipAction = skipAction;
+        $scope.partnerImageUrl = "";
+
         function skipAction() {
             $scope.showAction = false;
+        }
+
+        function enlargePhoto(obj1){
+            $scope.partnerImageUrl = obj1
+            $scope.enlargeOpen();
+
         }
 
         function selectType(type) {
@@ -203,6 +213,26 @@
             });
         }
 
+        $scope.enlargeOpen = function (size, parentSelector) {
+            var parentElem = parentSelector ?
+                angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+            var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'enlargePhoto.html',
+                controller: 'enlargePhotoController',
+                controllerAs: '$ctrl',
+                size: 'lg',
+                appendTo: parentElem,
+                resolve: {
+                    items: function () {
+                        return $scope.partnerImageUrl;
+                    }
+                }
+            });
+        }
+
 
 
 
@@ -212,6 +242,22 @@
     }
 
     function modalController($uibModalInstance, items){
+        var $ctrl = this;
+        $ctrl.items = items;
+        //$ctrl.selected = {
+        //    item: $ctrl.items[0]
+        //};
+
+        $ctrl.ok = function () {
+            $uibModalInstance.close($ctrl.selected.item);
+        };
+
+        $ctrl.cancel = function () {
+            $uibModalInstance.dismiss('cancel');
+        };
+    }
+
+    function enlargePhotoController($uibModalInstance, items){
         var $ctrl = this;
         $ctrl.items = items;
         //$ctrl.selected = {
