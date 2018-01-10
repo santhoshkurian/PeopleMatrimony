@@ -3,10 +3,11 @@
 
     angular
         .module('dashboard')
-        .controller('ViewProfileController', ViewProfileController);
+        .controller('ViewProfileController', ViewProfileController)
+        .controller('modalController', modalController);
 
     /** @ngInject */
-    function ViewProfileController($scope,$http,storageService,$state,$stateParams,resourceUrl,viewProfile,$timeout) {
+    function ViewProfileController($scope,$http,$uibModal,storageService,$state,$stateParams,resourceUrl,viewProfile,$timeout) {
 
         console.log("check", viewProfile);
         $scope.drinkingReq = false;
@@ -138,9 +139,12 @@
         $scope.familyRequest = '';
         $scope.aboutFamilyRequest = '';
 
+        $scope.details = {id:$scope.view.id_people};
 
         $scope.requests = function(obj1,obj2){
-            console.log(obj1)
+            $scope.details.field = obj1;
+
+
 
             $http({
                 method: 'GET',
@@ -148,7 +152,11 @@
                 '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&partner=' + $scope.view.id_people+'&field='+obj1
             }).then(function successCallback(response) {
                 console.log(response)
-                $scope[obj2] = 'Request send successfully';
+                $scope.open();
+                //$scope.details.field = obj1;
+                //$scope[obj2] = 'Request send successfully';
+                $scope.details.header = 'Request send successfully';
+
                 $timeout(function() { $scope[obj2] = '';
                     $state.transitionTo($state.current, $stateParams, {
                         reload: true,
@@ -173,9 +181,49 @@
 
 
 
+        $scope.animationsEnabled = true;
+
+        $scope.open = function (size, parentSelector) {
+            var parentElem = parentSelector ?
+                angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+            var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'myModalContent.html',
+                controller: 'modalController',
+                controllerAs: '$ctrl',
+                size: size,
+                appendTo: parentElem,
+                resolve: {
+                    items: function () {
+                        return $scope.details;
+                    }
+                }
+            });
+        }
 
 
 
 
+
+
+
+    }
+
+    function modalController($uibModalInstance, items){
+        var $ctrl = this;
+        $ctrl.items = items;
+        //$ctrl.selected = {
+        //    item: $ctrl.items[0]
+        //};
+
+        $ctrl.ok = function () {
+            $uibModalInstance.close($ctrl.selected.item);
+        };
+
+        $ctrl.cancel = function () {
+            $uibModalInstance.dismiss('cancel');
+        };
     }
 })();
