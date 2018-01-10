@@ -6,7 +6,7 @@
         .controller('MatchesController', MatchesController);
 
     /** @ngInject */
-    function MatchesController($scope, storageService,populate,$timeout,resourceUrl, $http, $location,$state) {
+    function MatchesController($scope,$uibModal, storageService,populate,$timeout,resourceUrl, $http, $location,$state) {
 
 
         $scope.isActive = function (viewLocation) {
@@ -15,6 +15,7 @@
 
         $scope.populate = populate;
         console.log($scope.populate);
+        $scope.enlargeImage = [];
         $scope.mtcount = 4;
         $scope.educount = 4;
         $scope.ocuCatcount = 4;
@@ -44,6 +45,28 @@
 
             }, function errorCallback(response) {
 
+            });
+        }
+
+
+
+        $scope.enlargeOpen = function (size, parentSelector) {
+            var parentElem = parentSelector ?
+                angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+            var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'enlargePhoto.html',
+                controller: 'enlargePhotoController',
+                controllerAs: '$ctrl',
+                size: 'lg',
+                appendTo: parentElem,
+                resolve: {
+                    items: function () {
+                        return $scope.partnerImageUrl;
+                    }
+                }
             });
         }
 

@@ -9,6 +9,7 @@
     function SentController($http,storageService,$scope,sent) {
         var vm = this;
         $scope.sent_all = sent.list;
+        console.log($scope.sent_all);
         $scope.deleteSent = deleteSent;
            function deleteSent(comId,resourceUrl){
             console.log(comId);

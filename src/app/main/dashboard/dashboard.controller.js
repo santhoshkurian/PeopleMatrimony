@@ -3,10 +3,12 @@
 
     angular
         .module('dashboard')
-        .controller('DashboardController', DashboardController);
+        .controller('DashboardController', DashboardController)
+        .controller('dashboardModalController', dashboardModalController)
+    ;
 
     /** @ngInject */
-    function DashboardController($scope,$timeout,$stateParams,populate,$location,$http,storageService,newMatches,discoverMatches,viewed,recentUpdated,resourceUrl,$state,profileCompleteness) {
+    function DashboardController($scope,$timeout,$uibModal,$stateParams,populate,$location,$http,storageService,newMatches,discoverMatches,viewed,recentUpdated,resourceUrl,$state,profileCompleteness) {
 
         console.log(profileCompleteness);
         console.log(newMatches);
@@ -74,15 +76,22 @@
 
         };
 
-
+        $scope.message = '';
         function sendInterest(id) {
             $http({
                 method: 'GET',
                 url: resourceUrl.url()+'connect/send?' +
                 '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&partner=' + id
             }).then(function successCallback(response) {
-                console.log(response)
-                $scope.message = "send interest successfully";
+                console.log(response);
+                if(response.data.message == 'success'){
+                    $scope.message = "Interest Send Successfully";
+                }else {
+                    $scope.message = response.data.message;
+                }
+
+                $scope.open();
+
                 $timeout(function() { $scope.message = '';}, 2000);
 
 
@@ -115,6 +124,29 @@
 
             }, function errorCallback(response) {
 
+            });
+        }
+
+
+        $scope.animationsEnabled = true;
+
+        $scope.open = function (size, parentSelector) {
+            var parentElem = parentSelector ?
+                angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+            var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'myModalContent.html',
+                controller: 'dashboardModalController',
+                controllerAs: '$ctrl',
+                size: size,
+                appendTo: parentElem,
+                resolve: {
+                    items: function () {
+                        return $scope.message;
+                    }
+                }
             });
         }
 
@@ -181,5 +213,21 @@
 
         console.log("NavigationController");
 
+    }
+
+    function dashboardModalController($uibModalInstance, items){
+        var $ctrl = this;
+        $ctrl.items = items;
+        //$ctrl.selected = {
+        //    item: $ctrl.items[0]
+        //};
+
+        $ctrl.ok = function () {
+            $uibModalInstance.close($ctrl.selected.item);
+        };
+
+        $ctrl.cancel = function () {
+            $uibModalInstance.dismiss('cancel');
+        };
     }
 })();

@@ -223,7 +223,7 @@
                 templateUrl: 'enlargePhoto.html',
                 controller: 'enlargePhotoController',
                 controllerAs: '$ctrl',
-                size: 'lg',
+                size: size,
                 appendTo: parentElem,
                 resolve: {
                     items: function () {
