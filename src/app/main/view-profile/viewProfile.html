@@ -29,7 +29,28 @@
                                 </div>
 
                                 <div class="actions" style="font-size: 20px">
-                                    <i class="fa fa-ellipsis-v"></i>
+                                    <div class="btn-group">
+                                        <a class="btn btn-sm  dropdown-toggle" href="javascript:;" data-toggle="dropdown">
+                                            <i class="fa fa-ellipsis-v"></i>
+                                        </a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <i class="fa fa-pencil"></i> Send Mail </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <i class="fa fa-pencil"></i> Send SMS </a>
+                                            </li>
+                                            <li>
+                                                <a ng-click="blockPartner()">
+                                                    <i class="fa fa-pencil"></i> Block </a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+
+                                    <!--<i class="fa fa-ellipsis-v"></i>-->
 
                                 </div>
                             </div>
@@ -960,8 +981,8 @@
 
         <script type="text/ng-template" id="myModalContent.html">
             <div class="modal-header">
-                <h3 class="modal-title" id="modal-title" style="color: #4cbcac;font-weight: bold">
-                    {{$ctrl.items.header}}</h3>
+                <h4 class="modal-title" id="modal-title" style="color: #4cbcac;">
+                    {{$ctrl.items.header}}</h4>
             </div>
             <!--<div class="modal-body" id="modal-body">-->
             <!--{{$ctrl.items.id}},{{$ctrl.items.field}}-->
@@ -974,8 +995,8 @@
 
         <script type="text/ng-template" id="enlargePhoto.html">
             <div class="modal-header">
-                <h3 class="modal-title" id="enlarge" style="color: #4cbcac;font-weight: bold">
-                    {{$ctrl.items.header}}</h3>
+                <h4 class="modal-title" id="enlarge" style="color: #4cbcac;font-weight: bold">
+                    {{$ctrl.items.header}}</h4>
             </div>
             <div class="modal-body" id="modal-body" style="text-align: center">
                 <img  style="height: auto;width:550px"

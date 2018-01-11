@@ -189,6 +189,36 @@
 
         }
 
+        $scope.blockPartner = blockPartner;
+
+        function blockPartner(){
+            console.log("block user");
+            $http({
+                method: 'GET',
+                url: resourceUrl.url()+'do/block?' +
+                '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&view_id=' + $scope.view.id_people
+            }).then(function successCallback(response) {
+                console.log(response);
+                $scope.open();
+                if(response.data.message == 'Already exists'){
+                    $scope.details.header = 'Already Blocked this user';
+
+                }else{
+                    $scope.details.header = 'User Blocked Successfully';
+
+                }
+                //
+                //$scope.message = "Successfully Shortlisted";
+
+            }, function errorCallback(response) {
+                console.log(response)
+                if (response.data.message == 'Already exists') {
+                    $scope.message = "Already Shortlisted";
+                }
+
+            });
+        }
+
 
 
         $scope.animationsEnabled = true;
