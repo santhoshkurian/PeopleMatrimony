@@ -22,10 +22,10 @@
                 url: resourceUrl.url()+'user/logout?'+
                 'id_people='+storageService.get("id")+'&token='+storageService.get("token")
             }).then(function successCallback(response) {
-                storageService.set("token",null);
-                storageService.set("id",null);
-                storageService.set("image_url",null);
-                storageService.set("name",null);
+                storageService.set("token",'');
+                storageService.set("id",'');
+                storageService.set("image_url",'');
+                storageService.set("name",'');
                 $state.go('login');
 
             }, function errorCallback(response) {

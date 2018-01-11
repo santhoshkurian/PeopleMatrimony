@@ -9,6 +9,7 @@
     function MessagePendingController(pending,$scope,resourceUrl,storageService) {
         var vm = this;
         $scope.pending = pending.list;
+        console.log($scope.pending);
 
         $scope.deletePending = deletePending;
 
