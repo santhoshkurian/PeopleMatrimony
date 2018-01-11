@@ -141,22 +141,32 @@
 							<!-- END NOTIFICATION DROPDOWN -->
 							<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
 							<li class="dropdown dropdown-user ">
-								<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+								<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"
+								   data-hover="true" data-close-others="true">
 									<!--<span class="username username-hide-on-mobile"> Doe </span>-->
 									<!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
-									<img alt="" class="img-circle" ng-src="{{image_url}}" /> </a>
+									<img alt="" class="img-circle" ng-src="{{image_url}}"/> </a>
 								<ul class="dropdown-menu dropdown-menu-default">
+									<li style="text-align: center;padding: 20px">
+										<span style="font-weight: bold;">{{name}}</span>({{id}})
+									</li>
+									<li class="divider" style="margin-top: 0px"></li>
 									<li>
 										<a ui-sref="profile">
-											<i class="icon-user"></i> My Profile </a>
+											<i class="icon-user"></i> Edit Profile </a>
 									</li>
-
+									<li>
+										<a ui-sref="profile">
+											<i class="icon-user"></i> Edit Partner Preference </a>
+									</li>
+									<li>
+										<a ui-sref="profile">
+											<i class="icon-user"></i>Add Photo </a>
+									</li>
 									<li>
 										<a ui-sref="settings">
 											<i class="icon-lock"></i> Settings </a>
 									</li>
-									<li class="divider"></li>
-
 									<li>
 										<a ng-click="logout()">
 											<i class="icon-key"></i> Log Out </a>

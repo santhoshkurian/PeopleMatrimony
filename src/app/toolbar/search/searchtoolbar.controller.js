@@ -29,7 +29,9 @@
             });
         }
         $scope.image_url = storageService.get("image_url");
-
+        $scope.package = storageService.get("package");
+        $scope.name = storageService.get("name");
+        $scope.id = storageService.get("id");
 
         $scope.isActive = function (viewLocation) {
             var ul = $location.path().split('/');

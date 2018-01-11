@@ -11,7 +11,9 @@
         console.log("SearchResultsController");
         console.log(storageService.get('regular_search'));
         $scope.image_url = storageService.get("image_url");
-
+        $scope.package = storageService.get("package");
+        $scope.name = storageService.get("name");
+        $scope.id = storageService.get("id");
 
         $scope.mstatusDiv = true;
         $scope.motherTongueDiv = true;
