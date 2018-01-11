@@ -368,15 +368,13 @@
                 views    : {
                     'main@': {
                     templateUrl: 'app/core/layouts/helpLayout.html',
-                    //controller: 'ViewProfileController as vm'
+                        controller: 'busEnqController as vm'
                 },
                     'toolbar@businessEnquires': {
-                        templateUrl: 'app/toolbar/dashboard/dbToolbar.html',
-                        //controller: 'DashboardToolbarController as vm'
+                        templateUrl: 'app/toolbar/dashboard/dbToolbar.html'
                     },
                     'content@businessEnquires'         : {
                         templateUrl: 'app/main/help/busEnquires/busEnquires.html',
-                        controller: 'busEnqController as vm'
                     },
                     'footer@businessEnquires': {
                         templateUrl: 'app/footer/footer.html',
@@ -390,15 +388,13 @@
                 views    : {
                     'main@': {
                     templateUrl: 'app/core/layouts/helpLayout.html',
-                    //controller: 'ViewProfileController as vm'
+                        controller: 'customerCareController as vm'
                 },
                     'toolbar@customerCare': {
-                        templateUrl: 'app/toolbar/dashboard/dbToolbar.html',
-                        //controller: 'DashboardToolbarController as vm'
+                        templateUrl: 'app/toolbar/dashboard/dbToolbar.html'
                     },
                     'content@customerCare'         : {
-                        templateUrl: 'app/main/help/customerCare/customerCare.html',
-                        controller: 'customerCareController as vm'
+                        templateUrl: 'app/main/help/customerCare/customerCare.html'
                     },
                     'footer@customerCare': {
                         templateUrl: 'app/footer/footer.html',
@@ -411,15 +407,14 @@
                 views    : {
                     'main@': {
                     templateUrl: 'app/core/layouts/helpLayout.html',
-                    //controller: 'ViewProfileController as vm'
+                        controller: 'contactUsController as vm'
                 },
                     'toolbar@contactUs': {
                         templateUrl: 'app/toolbar/dashboard/dbToolbar.html',
                         //controller: 'DashboardToolbarController as vm'
                     },
                     'content@contactUs'         : {
-                        templateUrl: 'app/main/help/contactUs/contactUs.html',
-                        controller: 'contactUsController as vm'
+                        templateUrl: 'app/main/help/contactUs/contactUs.html'
                     },
                     'footer@contactUs': {
                         templateUrl: 'app/footer/footer.html',
@@ -432,15 +427,13 @@
                 views    : {
                     'main@': {
                     templateUrl: 'app/core/layouts/helpLayout.html',
-                    //controller: 'ViewProfileController as vm'
+                        controller: 'feedbackController as vm'
                 },
                     'toolbar@feedback': {
-                        templateUrl: 'app/toolbar/dashboard/dbToolbar.html',
-                        //controller: 'DashboardToolbarController as vm'
+                        templateUrl: 'app/toolbar/dashboard/dbToolbar.html'
                     },
                     'content@feedback'         : {
-                        templateUrl: 'app/main/help/feedback/feedback.html',
-                        controller: 'feedbackController as vm'
+                        templateUrl: 'app/main/help/feedback/feedback.html'
                     },
                     'footer@feedback': {
                         templateUrl: 'app/footer/footer.html',

@@ -11,12 +11,12 @@
         console.log("ManagePhotoController",loadImages.user.images.length);
         $scope.viewType = 'managephoto';
         $scope.imageLength = loadImages.user.images.length;
-        $scope.logout = logout;
 
         $scope.image_url = storageService.get("image_url");
         $scope.name = storageService.get("name");
         $scope.id = storageService.get("id");
 
+        $scope.logout = logout;
         function logout(){
             $http({
                 method: 'GET',
