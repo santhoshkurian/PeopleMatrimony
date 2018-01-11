@@ -6,7 +6,7 @@
         .controller('MessagePendingController', MessagePendingController);
 
     /** @ngInject */
-    function MessagePendingController(pending,$scope,resourceUrl,storageService) {
+    function MessagePendingController(pending,$scope,$http,resourceUrl,storageService) {
         var vm = this;
         $scope.pending = pending.list;
         console.log($scope.pending);
