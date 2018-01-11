@@ -68,32 +68,65 @@
                                                     <td class="second-row">|</td>
                                                     <td class="third-row"><span
                                                             ng-if="view.mothertongue != null && view.mothertongue != ''">{{view.mothertongue}}</span>
+                                                        <span
+                                                            ng-if="view.mothertongue == null || view.mothertongue != ''">Not Specified</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td class="first-row"><i class="icon-users"></i></td>
                                                     <td class="second-row">|</td>
-                                                    <td class="third-row">{{view.caste}}</td>
+                                                    <td class="third-row">
+                                                        <span class="details " ng-if="view.caste != null &&  view.caste != ''">
+                                                            {{view.caste}}</span>
+
+                                                        <span class="details " ng-if="view.caste == null ||  view.caste == ''">Not
+                                                            Specified</span>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                     <td class="first-row"><i class="fa fa-star"></i></td>
                                                     <td class="second-row">|</td>
-                                                    <td class="third-row">{{view.star}}</td>
+                                                    <td class="third-row">
+                                                        <span class="details " ng-if="view.star != null &&  view.star != ''">
+                                                            {{view.star}}</span>
+
+                                                        <span class="details " ng-if="view.star == null ||  view.star == ''">Not
+                                                            Specified</span>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                     <td class="first-row"><i class="fa fa-graduation-cap"></i></td>
                                                     <td class="second-row">|</td>
-                                                    <td class="third-row">{{view.education_detail}}</td>
+                                                    <td class="third-row">
+                                                                             <span class="details " ng-if="view.education_detail != null &&  view.education_detail != ''">
+                                                            {{view.education_detail}}</span>
+
+                                                        <span class="details " ng-if="view.education_detail == null ||  view.education_detail == ''">Not
+                                                            Specified</span>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                     <td class="first-row"><i class="fa fa-briefcase"></i></td>
                                                     <td class="second-row">|</td>
-                                                    <td class="third-row">{{view.occupation}}</td>
+                                                    <td class="third-row">
+                                                                                                         <span class="details " ng-if="view.occupation != null &&  view.occupation != ''">
+                                                            {{view.occupation}}</span>
+
+                                                        <span class="details " ng-if="view.occupation == null ||  view.occupation == ''">Not
+                                                            Specified</span>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                     <td class="first-row"><i class="fa fa-map-marker"></i></td>
                                                     <td class="second-row">|</td>
-                                                    <td class="third-row">{{view.city_name}}</td>
+                                                    <td class="third-row">
+                                                        <span class="details " ng-if="view.city_name != null &&  view.city_name != ''">
+                                                            {{view.city_name}}</span>
+
+                                                        <span class="details " ng-if="view.city_name == null ||  view.city_name == ''">Not
+                                                            Specified</span>
+</td>
                                                 </tr>
                                                 </tbody>
                                             </table>
@@ -309,26 +342,29 @@
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Drinking Habits</label>
 
-                                            <!--<p class="details " ng-if="view.drinking_habit != null &&  view.drinking_habit != ''">{{view.drinking_habit}}</p>-->
-                                            <p class="details " ng-if="!drinkingReq"><a
-                                                    style="color: indianred;font-weight: bold"
-                                                    ng-click="requests('drinking','basicRequest')">Send Request</a></p>
+                                            <p class="details " ng-if="view.drinking_habit != null &&  view.drinking_habit != ''">{{view.drinking_habit}}</p>
 
-                                            <p class="details " ng-if="drinkingReq"><span style="color:grey">Request Sent</span>
-                                            </p>
-                                            <!--<p class="details " ng-if="view.drinking_habit == null ||  view.drinking_habit == ''">Not Specified</p>-->
+                                            <p class="details " ng-if="view.drinking_habit == null ||  view.drinking_habit == ''"><span class="details " ng-if="!drinkingReq"><a
+                                                    style="color: indianred;font-weight: bold"
+                                                    ng-click="requests('drinking','basicRequest')">Send Request</a></span>
+
+                                            <span class="details " ng-if="drinkingReq"><span style="color:grey">Request Sent</span>
+                                            </span></p>
 
                                         </div>
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Smoking Habits</label>
 
-                                            <!--<p class="details " ng-if="view.smoking_habit != null &&  view.smoking_habit != ''">{{view.smoking_habit}}</p>-->
-                                            <p class="details " ng-if="!smokingReq"><a
-                                                    style="color: indianred;font-weight: bold"
-                                                    ng-click="requests('smoking','basicRequest')">Send Request</a></p>
+                                            <p class="details " ng-if="view.smoking_habit != null &&  view.smoking_habit != ''">{{view.smoking_habit}}</p>
+                                            <p class="details " ng-if="view.smoking_habit == null ||  view.smoking_habit == ''">
+                                               <span class="details " ng-if="!smokingReq"><a
+                                                       style="color: indianred;font-weight: bold"
+                                                       ng-click="requests('smoking','basicRequest')">Send Request</a></span>
 
-                                            <p class="details " ng-if="smokingReq"><span
-                                                    style="color:grey">Request Sent</span></p>
+                                            <span class="details " ng-if="smokingReq"><span
+                                                    style="color:grey">Request Sent</span></span>
+                                            </p>
+
 
                                         </div>
                                     </div>
@@ -416,44 +452,48 @@
 
                                         <div class="col-md-4" style="height:60px">
                                             <label class="font-weight-head "> Education</label>
-                                            <!--<p class="details " ng-if="view.education != null &&  view.education != ''">{{view.education}}</p>-->
-                                            <!--<p class="details " ng-if="view.education == null ||  view.education == ''">Not Specified</p>-->
-                                            <p class="details " ng-if="!educationReq"><a
-                                                    style="color: indianred;font-weight: bold"
-                                                    ng-click="requests('education','professionRequest')">Send
-                                                Request</a></p>
+                                            <p class="details " ng-if="view.education != null &&  view.education != ''">{{view.education}}</p>
+                                            <p class="details " ng-if="view.education == null ||  view.education == ''">
+                                                <span class="details " ng-if="!educationReq"><a
+                                                        style="color: indianred;font-weight: bold"
+                                                        ng-click="requests('education','professionRequest')">Send
+                                                    Request</a></span>
 
-                                            <p class="details " ng-if="educationReq"><span style="color:grey">Request Sent</span>
-                                            </p>
+                                            <span class="details " ng-if="educationReq"><span style="color:grey">Request Sent</span>
+                                            </span>
+                                                </p>
+
 
                                         </div>
 
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Occupation</label>
-                                            <!--<p class="details " ng-if="view.occupation != null &&  view.occupation != ''">{{view.occupation}}</p>-->
-                                            <p class="details " ng-if="!occupationReq"><a
-                                                    style="color: indianred;font-weight: bold"
-                                                    ng-click="requests('occupation','professionRequest')">Send
-                                                Request</a></p>
+                                            <p class="details " ng-if="view.occupation != null &&  view.occupation != ''">{{view.occupation}}</p>
 
-                                            <p class="details " ng-if="occupationReq"><span style="color:grey">Request Sent</span>
-                                            </p>
 
-                                            <!--<p class="details " ng-if="view.occupation == null ||  view.occupation == ''">Not Specified</p>-->
+                                            <p class="details " ng-if="view.occupation == null ||  view.occupation == ''">
+                                                <span class="details " ng-if="!occupationReq"><a
+                                                        style="color: indianred;font-weight: bold"
+                                                        ng-click="requests('occupation','professionRequest')">Send
+                                                    Request</a></span>
+
+                                            <span class="details " ng-if="occupationReq"><span style="color:grey">Request Sent</span>
+                                            </span></p>
                                         </div>
 
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Annual Income</label>
-                                            <!--<p class="details " ng-if="view.income != null &&  view.income != ''">{{view.income}}</p>-->
-                                            <p class="details " ng-if="!incomeReq"><a
-                                                    style="color: indianred;font-weight: bold "
-                                                    ng-click="requests('income','professionRequest')">Send Request</a>
-                                            </p>
+                                            <p class="details " ng-if="view.income != null &&  view.income != ''">{{view.income}}</p>
 
-                                            <p class="details " ng-if="incomeReq"><span
-                                                    style="color:grey">Request Sent</span></p>
 
-                                            <!--<p class="details " ng-if="view.income == null ||  view.income == ''">Not Specified</p>-->
+                                            <p class="details " ng-if="view.income == null ||  view.income == ''">
+                                                <span class="details " ng-if="!incomeReq"><a
+                                                        style="color: indianred;font-weight: bold "
+                                                        ng-click="requests('income','professionRequest')">Send Request</a>
+                                            </span>
+
+                                            <span class="details " ng-if="incomeReq"><span
+                                                    style="color:grey">Request Sent</span></span></p>
 
 
                                         </div>
@@ -493,28 +533,31 @@
 
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Ancestral Origin</label>
-                                            <!--<p class="details " ng-if="view.ancestral_origin != null &&  view.ancestral_origin != ''">{{view.ancestral_origin}}</p>-->
-                                            <!--<p class="details " ng-if="view.ancestral_origin == null ||  view.ancestral_origin == ''">Not Specified</p>-->
-                                            <p class="details " ng-if="!originReq"><a
+                                            <p class="details " ng-if="view.ancestral_origin != null &&  view.ancestral_origin != ''">{{view.ancestral_origin}}</p>
+                                            <p class="details " ng-if="view.ancestral_origin == null ||  view.ancestral_origin == ''">
+                                            <span class="details " ng-if="!originReq"><a
                                                     style="color: indianred;font-weight: bold"
-                                                    ng-click="requests('origin','familyRequest')">Send Request</a></p>
+                                                    ng-click="requests('origin','familyRequest')">Send Request</a></span>
 
-                                            <p class="details " ng-if="originReq"><span
-                                                    style="color:grey">Request Sent</span></p>
+                                            <span class="details " ng-if="originReq"><span
+                                                    style="color:grey">Request Sent</span></span>
+                                            </p>
+
 
 
                                         </div>
 
                                         <div class="col-md-4" style="height:60px">
                                             <label class=" font-weight-head  "> Family Type</label>
-                                            <!--<p class="details " ng-if="view.family_type != null &&  view.family_type != ''">{{view.family_type}}</p>-->
-                                            <!--<p class="details " ng-if="view.family_type == null ||  view.family_type == ''">Not Specified</p>-->
-                                            <p class="details " ng-if="!familyReq"><a
-                                                    style="color: indianred;font-weight: bold"
-                                                    ng-click="requests('family','familyRequest')">Send Request</a></p>
+                                            <p class="details " ng-if="view.family_type != null &&  view.family_type != ''">{{view.family_type}}</p>
+                                            <p class="details " ng-if="view.family_type == null ||  view.family_type == ''">
+                                                <span class="details " ng-if="!familyReq"><a
+                                                        style="color: indianred;font-weight: bold"
+                                                        ng-click="requests('family','familyRequest')">Send Request</a></span>
 
-                                            <p class="details " ng-if="familyReq"><span
-                                                    style="color:grey">Request Sent</span></p>
+                                            <span class="details " ng-if="familyReq"><span
+                                                    style="color:grey">Request Sent</span></span></p>
+
 
 
                                         </div>
@@ -548,14 +591,15 @@
                                             <p class="details "
                                                ng-if="view.family_status != null &&  view.family_status != ''">
                                                 {{view.family_status}}</p>
-                                            <!--<p class="details " ng-if="view.family_status == null ||  view.family_status == ''">Not Specified</p>-->
-                                            <p class="details " ng-if="!family_statusReq"><a
-                                                    style="color: indianred;font-weight: bold"
-                                                    ng-click="requests('family_status','familyRequest')">Send
-                                                Request</a></p>
+                                            <p class="details " ng-if="view.family_status == null ||  view.family_status == ''">
+                                                <span class="details " ng-if="!family_statusReq"><a
+                                                        style="color: indianred;font-weight: bold"
+                                                        ng-click="requests('family_status','familyRequest')">Send
+                                                    Request</a></span>
 
-                                            <p class="details " ng-if="family_statusReq"><span style="color:grey">Request Sent</span>
-                                            </p>
+                                            <span class="details " ng-if="family_statusReq"><span style="color:grey">Request Sent</span>
+                                            </span></p>
+
 
                                         </div>
                                         <div class="col-md-4" style="height:60px">
@@ -598,15 +642,16 @@
                                     <div class="form-group">
 
                                         <div class="col-md-12">
-                                            <!--<p class="details " ng-if="view.about_family != null &&  view.about_family != ''">{{view.about_family}}</p>-->
-                                            <!--<p class="details " ng-if="view.about_family == null ||  view.about_family == ''">Not Specified</p>-->
-                                            <p class="details " ng-if="!about_familyReq"><a
-                                                    style="color: indianred;font-weight: bold"
-                                                    ng-click="requests('about_family','aboutFamilyRequest')">Send
-                                                Request</a></p>
+                                            <p class="details " ng-if="view.about_family != null &&  view.about_family != ''">{{view.about_family}}</p>
+                                            <p class="details " ng-if="view.about_family == null ||  view.about_family == ''">
+                                                <span class="details " ng-if="!about_familyReq"><a
+                                                        style="color: indianred;font-weight: bold"
+                                                        ng-click="requests('about_family','aboutFamilyRequest')">Send
+                                                    Request</a></span>
 
-                                            <p class="details " ng-if="about_familyReq"><span style="color:grey">Request Sent</span>
-                                            </p>
+                                            <span class="details " ng-if="about_familyReq"><span style="color:grey">Request Sent</span>
+                                            </span></p>
+
 
                                         </div>
                                     </div>
