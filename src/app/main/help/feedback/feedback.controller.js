@@ -14,6 +14,8 @@
         $scope.image_url = storageService.get("image_url");
         $scope.name = storageService.get("name");
         $scope.id = storageService.get("id");
+
+        $scope.business = {name:$scope.name,id:$scope.id}
         $scope.logout = logout;
         function logout(){
             $http({
