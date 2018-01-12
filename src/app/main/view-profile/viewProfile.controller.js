@@ -30,15 +30,22 @@
         $scope.name = storageService.get("name");
         $scope.id = storageService.get("id");
         $scope.viewType = 'personal';
-        $scope.showAction = true;
+        $scope.showInterestAction = true;
+        $scope.showBlockAction = false;
         $scope.showMessage = false;
         $scope.selectType = selectType;
         $scope.enlargePhoto = enlargePhoto;
-        $scope.skipAction = skipAction;
+        $scope.skipInterestAction = skipInterestAction;
+        $scope.skipBlockAction = skipBlockAction;
         $scope.partnerImageUrl = "";
 
-        function skipAction() {
-            $scope.showAction = false;
+        function skipInterestAction() {
+            $scope.showInterestAction = false;
+            $scope.showBlockAction = true;
+        }
+
+        function skipBlockAction() {
+            $scope.showBlockAction = false;
         }
 
         function enlargePhoto(obj1){
@@ -207,6 +214,8 @@
                     $scope.details.header = 'User Blocked Successfully';
 
                 }
+                $scope.showBlockAction = false;
+
                 //
                 //$scope.message = "Successfully Shortlisted";
 

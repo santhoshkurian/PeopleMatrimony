@@ -164,12 +164,22 @@
                                     </div>
                                 </div>
 
-                                <div class="row" ng-if="showAction">
+                                <div class="row" ng-if="showInterestAction">
                                     <div class="vp-sub-action">
                                         <span>Connect her with ?</span>
 
                                         <span>
                                         <button class="btn red" ng-click="sendInterest()">YES</button>
+                                        <button class="btn " ng-click="skipInterestAction()">SKIP</button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row" ng-if="showBlockAction">
+                                    <div class="vp-sub-action">
+                                        <span>Are you sure you want to block {{view.name}}?</span>
+
+                                        <span>
+                                        <button class="btn red" ng-click="blockPartner()">YES</button>
                                         <button class="btn " ng-click="skipAction()">SKIP</button>
                                         </span>
                                     </div>
