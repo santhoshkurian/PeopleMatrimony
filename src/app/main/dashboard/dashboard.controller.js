@@ -10,6 +10,8 @@
     /** @ngInject */
     function DashboardController($scope,$timeout,$uibModal,$stateParams,populate,$location,$http,storageService,newMatches,discoverMatches,viewed,recentUpdated,resourceUrl,$state,profileCompleteness) {
 
+        $scope.viewType = 'single';
+
         console.log(profileCompleteness);
         console.log(newMatches);
         console.log("viewed",viewed);
@@ -33,8 +35,19 @@
         $scope.discover = discoverMatches;
         $scope.sendInterest = sendInterest;
         $scope.addDetails = addDetails;
+        $scope.selectView = selectView;
+        $scope.backToView = backToView;
 
+        function selectView(obj1,obj2){
+            $scope.viewall_header = obj2;
+            $scope.viewType = 'view_all';
+            $scope.viewAll = obj1;
+            console.log(obj2)
+        }
+        function backToView(){
+            $scope.viewType = 'single';
 
+        }
 
         $scope.profileComp = {income:'',id_occupation:'',ancestral_origin:'',education_detail:'',father_status:'',mother_status:'',parent_mobile:'',smoking_habit:'',drinking_habit:''};
         $scope.setProfession= {occupation_cat:null};
