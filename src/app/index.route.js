@@ -215,6 +215,87 @@
 
                 }
             })
+            .state('blocked', {
+                url: '/blocked',
+                views: {
+                    'main@': {
+                        templateUrl: 'app/core/layouts/dbLayout.html',
+                        controller: 'BlockedController as vm'
+                    },
+                    'toolbar@blocked': {
+                        templateUrl: 'app/toolbar/dashboard/dbToolbar.html'
+                    },
+                    'navigation@blocked': {
+                        templateUrl: 'app/navigation/dashboard/dbNavigation.html'
+                    },
+                    'dbNavigationRight@blocked': {
+                        templateUrl: 'app/navigation/dashboard-right/dashBoardRight.html',
+                        controller: 'DashBoardRightController as vm'
+                    },
+                    'content@blocked': {
+                        templateUrl: 'app/main/dashboard/blocked/blocked.html',
+                        controller: 'BlockedController as vm'
+
+                    },
+                    'footer@blocked': {
+                        templateUrl: 'app/footer/footer.html',
+                        //controller: 'FooterController as vm'
+                    }
+                }, resolve: {
+                     discoverMatches: function ($http,resourceUrl, storageService) {
+                        return $http({
+                            method: 'GET',
+                            url: resourceUrl.url()+'v1/matches/discover?' +
+                            'id=' + storageService.get("id") + '&p_debug=1&token=' + storageService.get("token")
+                        }).then(function successCallback(response) {
+                            console.log(response)
+                            return response.data;
+
+                        }, function errorCallback(response) {
+                            //console.log(response)
+                            return response;
+
+
+                        });
+                    }
+                ,blocked: function ($http,resourceUrl,storageService) {
+                    return $http({
+                        method: 'GET',
+                        url: resourceUrl.url()+'list/blocked?' +
+                        '&token=' + storageService.get("token") + '&id=' + storageService.get("id")
+                    }).then(function successCallback(response) {
+                        console.log(response)
+                        return response.data;
+
+                    }, function errorCallback(response) {
+                        //console.log(response)
+                        return response;
+
+
+                    });
+                },
+                    packageDetails: function ($http,resourceUrl,storageService) {
+                        return $http({
+                            method: 'GET',
+                            url: resourceUrl.url()+'package?p_debug=1&' +
+                            'id_people='+storageService.get('id')
+                        }).then(function successCallback(response) {
+                            console.log("packageDetails",response)
+                            if(response.data.package.data != null) {
+                                storageService.set('package', response.data.package.data.package_type);
+                            }
+                            return response.data;
+
+                        }, function errorCallback(response) {
+                            //console.log(response)
+                            return response;
+
+
+                        });
+                    }
+
+                }
+            })
             .state('terms', {
                 url: '/terms',
                 views: {
