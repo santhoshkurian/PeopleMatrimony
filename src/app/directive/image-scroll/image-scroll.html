@@ -23,12 +23,12 @@
         />
 
 </div>
-<div style="width: 100%;">
+<div style="width: 100%;" ng-if="size > 1">
     <div style="height: 30px;margin-left: 20px;margin-right: 20px;background-color: beige">
     <a style="height: 30px;" ng-if="size > 1 && indexValue != 0" ng-click="imageBackward()" class=" btn   default pull-left">
         <i class="glyphicon glyphicon-circle-arrow-left"></i>
-
     </a>
+
     <a  style="height: 30px;" ng-if="size > 1 && indexValue != size-1" ng-click="imageForward()" class="btn default pull-right">
        <i class="glyphicon glyphicon-circle-arrow-right"></i>
     </a>

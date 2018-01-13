@@ -23,10 +23,10 @@
                     if($scope.size == 0) {
                         console.log("check",$scope.gender);
                         if($scope.gender == 'female'){
-                            $scope.display = "/assets/defaultImages/female_card.jpg";
+                            $scope.images.push({image:"/assets/defaultImages/female_card.jpg"});
                         }
                         if($scope.gender == 'male'){
-                            $scope.display = "/assets/defaultImages/male_card.jpg";
+                            $scope.images.push({image:"/assets/defaultImages/male_card.jpg"});
                         }
                         $scope.pos = 0;
                     }
