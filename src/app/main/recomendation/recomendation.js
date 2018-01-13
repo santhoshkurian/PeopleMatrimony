@@ -20,14 +20,7 @@
 
         if($scope.dailyMatches.matches.length > 0){
             $scope.view = $scope.dailyMatches.matches[0];
-            $scope.dailyMatches.matches.filter(function(a){
-                $scope.recomendationList.push({
-                        name: a.name,
-                        percentage: "76 %",
-                        imageSrc: "../assets/images/profile2.jpg"
-                    })
 
-            });
         }
 
         $scope.viewType = 'personal';
@@ -42,7 +35,21 @@
             $scope.view = obj;
         }
 
+        $scope.scrollRight = scrollRight;
+        function scrollRight() {
+            console.log("check");
+            var elmnt = document.getElementById("myDIV");
+            elmnt.scrollLeft += 150;
 
+        }
+
+        $scope.scrollLeft = scrollLeft;
+        function scrollLeft() {
+            console.log("check");
+            var elmnt = document.getElementById("myDIV");
+            elmnt.scrollLeft -= 150;
+
+        }
         //$scope.recomendationList = [{
         //    name: "Priya rajini",
         //    percentage: "76 %",
