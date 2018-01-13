@@ -102,7 +102,8 @@
 						<div class="row" >
 							<div class="col-md-12 notification-style uppercase">
 								<span ng-if="item.action == 'connect'">INTEREST RECEIVED</span>
-								<span ng-if="item.action != 'connect'">Add {{item.field_name}} Request</span>
+								<span ng-if="item.action == 'contact'">CONTACT VIEWED</span>
+								<span ng-if="item.action != 'connect' && item.action != 'contact'">Add {{item.field_name}} Request</span>
 							</div>
 
 							<div class="col-md-12 notification-details">{{item.content}}</div>
@@ -110,8 +111,8 @@
 							<div class="col-md-12 margin-top-10">
 								<button type="button" class=" uppercase btn red input-rounded" ng-click="">
 
-									<span ng-if="item.action == 'connect'">YES</span>
-									<span ng-if="item.action != 'connect'">Add {{item.field_name}}</span>
+									<span ng-if="item.action != 'connect' || item.action != 'contact'">YES</span>
+									<span ng-if="item.action != 'connect' && item.action != 'contact'">Add {{item.field_name}}</span>
 
 								</button>
 								&nbsp;
