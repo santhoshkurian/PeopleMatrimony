@@ -21,6 +21,10 @@
         $scope.family_statusReq = false;
         $scope.about_familyReq = false;
 
+        $scope.print = print;
+        function print(){
+            window.print();
+        }
         $scope.logout = logout;
         function logout(){
             $http({
