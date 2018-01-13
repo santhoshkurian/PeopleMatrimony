@@ -1,3 +1,38 @@
+<div class="portlet light border-rounded">
+    <div class="portlet-body">
+        <div class="m_wrap">
+            <div class="dx">
+                <div class="xc" ng-repeat="match in dailyMatches.matches" ng-click="showSelected(match)" style="cursor: pointer">
+                <img ng-if="match.images.length > 0" class="recomended-image"
+                     ng-src="{{match.images[0].image}}"/>
+                    <img ng-if="match.gender == 'male' && match.images.length == 0"
+                         class="recomended-image"
+                         ng-src="/assets/defaultImages/male_card.jpg"/>
+                    <img ng-if="match.gender == 'female' && match.images.length == 0"
+                         class="recomended-image"
+                         ng-src="/assets/defaultImages/female_card.jpg"/>
+                    <div class="bold">{{match.name}}</div>
+                    <div class="bold">86%</div>
+                </div>
+
+            </div>
+        </div>
+            </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <span ng-if="dailyMatches.matches.length > 0">
 <div class="portlet light border-rounded">
     <div class="portlet-body">
@@ -22,74 +57,74 @@
 
                                         </div>
                                     </div>
-                                    <!--<div class="col-md-4 col-sm-4 col-xs-4 ">-->
-                                        <!--<div class="recomended-item">-->
-                                            <!--<div class="row">-->
-                                                <!--<div class="col-md-12">-->
-                                                    <!--<img class="recomended-image"-->
-                                                         <!--ng-src="{{recomendationList[$index].imageSrc}}">-->
-                                                <!--</div>-->
-                                                <!--<div class="col-md-12">-->
-                                                    <!--<span>{{recomendationList[$index].name}}&nbsp;{{recomendationList[$index].percentage}}</span>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
+                                    <div class="col-md-4 col-sm-4 col-xs-4 ">
+                                        <div class="recomended-item">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <img class="recomended-image"
+                                                         ng-src="{{recomendationList[$index].imageSrc}}">
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <span>{{recomendationList[$index].name}}&nbsp;{{recomendationList[$index].percentage}}</span>
+                                                </div>
+                                            </div>
 
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                    <!--<div class="col-md-2 col-sm-2 col-xs-2 ">-->
-                                        <!--<div class="recomended-item">-->
-                                            <!--<div class="row">-->
-                                                <!--<div class="col-md-12">-->
-                                                    <!--<img class="recomended-image"-->
-                                                         <!--ng-src="{{recomendationList[$index+3].imageSrc}}">-->
-                                                <!--</div>-->
-                                                <!--<div class="col-md-12">-->
-                                                    <!--<span>{{recomendationList[$index+3].name}}&nbsp;{{recomendationList[$index+3].percentage}}</span>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
+                                        </div>
+                                    </div>
+                                    &lt;!&ndash;<div class="col-md-2 col-sm-2 col-xs-2 ">&ndash;&gt;
+                                        &lt;!&ndash;<div class="recomended-item">&ndash;&gt;
+                                            &lt;!&ndash;<div class="row">&ndash;&gt;
+                                                &lt;!&ndash;<div class="col-md-12">&ndash;&gt;
+                                                    &lt;!&ndash;<img class="recomended-image"&ndash;&gt;
+                                                         &lt;!&ndash;ng-src="{{recomendationList[$index+3].imageSrc}}">&ndash;&gt;
+                                                &lt;!&ndash;</div>&ndash;&gt;
+                                                &lt;!&ndash;<div class="col-md-12">&ndash;&gt;
+                                                    &lt;!&ndash;<span>{{recomendationList[$index+3].name}}&nbsp;{{recomendationList[$index+3].percentage}}</span>&ndash;&gt;
+                                                &lt;!&ndash;</div>&ndash;&gt;
+                                            &lt;!&ndash;</div>&ndash;&gt;
 
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                    <!--<div class="col-md-2 col-sm-2 col-xs-2 ">-->
-                                        <!--<div class="recomended-item">-->
-                                            <!--<div class="row">-->
-                                                <!--<div class="col-md-12">-->
-                                                    <!--<img class="recomended-image"-->
-                                                         <!--ng-src="{{recomendationList[$index+3].imageSrc}}">-->
-                                                <!--</div>-->
-                                                <!--<div class="col-md-12">-->
-                                                    <!--<span>{{recomendationList[$index+3].name}}&nbsp;{{recomendationList[$index+3].percentage}}</span>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
+                                        &lt;!&ndash;</div>&ndash;&gt;
+                                    &lt;!&ndash;</div>&ndash;&gt;
+                                    &lt;!&ndash;<div class="col-md-2 col-sm-2 col-xs-2 ">&ndash;&gt;
+                                        &lt;!&ndash;<div class="recomended-item">&ndash;&gt;
+                                            &lt;!&ndash;<div class="row">&ndash;&gt;
+                                                &lt;!&ndash;<div class="col-md-12">&ndash;&gt;
+                                                    &lt;!&ndash;<img class="recomended-image"&ndash;&gt;
+                                                         &lt;!&ndash;ng-src="{{recomendationList[$index+3].imageSrc}}">&ndash;&gt;
+                                                &lt;!&ndash;</div>&ndash;&gt;
+                                                &lt;!&ndash;<div class="col-md-12">&ndash;&gt;
+                                                    &lt;!&ndash;<span>{{recomendationList[$index+3].name}}&nbsp;{{recomendationList[$index+3].percentage}}</span>&ndash;&gt;
+                                                &lt;!&ndash;</div>&ndash;&gt;
+                                            &lt;!&ndash;</div>&ndash;&gt;
 
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                    <!--<div class="col-md-2 col-sm-2 col-xs-2 ">-->
-                                        <!--<div class="recomended-item">-->
-                                            <!--<div class="row">-->
-                                                <!--<div class="col-md-12">-->
-                                                    <!--<img class="recomended-image"-->
-                                                         <!--ng-src="{{recomendationList[$index+4].imageSrc}}">-->
-                                                <!--</div>-->
-                                                <!--<div class="col-md-12">-->
-                                                    <!--<span><b>{{recomendationList[$index+4].name}}&nbsp;{{recomendationList[$index+4].percentage}}</b></span>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
+                                        &lt;!&ndash;</div>&ndash;&gt;
+                                    &lt;!&ndash;</div>&ndash;&gt;
+                                    &lt;!&ndash;<div class="col-md-2 col-sm-2 col-xs-2 ">&ndash;&gt;
+                                        &lt;!&ndash;<div class="recomended-item">&ndash;&gt;
+                                            &lt;!&ndash;<div class="row">&ndash;&gt;
+                                                &lt;!&ndash;<div class="col-md-12">&ndash;&gt;
+                                                    &lt;!&ndash;<img class="recomended-image"&ndash;&gt;
+                                                         &lt;!&ndash;ng-src="{{recomendationList[$index+4].imageSrc}}">&ndash;&gt;
+                                                &lt;!&ndash;</div>&ndash;&gt;
+                                                &lt;!&ndash;<div class="col-md-12">&ndash;&gt;
+                                                    &lt;!&ndash;<span><b>{{recomendationList[$index+4].name}}&nbsp;{{recomendationList[$index+4].percentage}}</b></span>&ndash;&gt;
+                                                &lt;!&ndash;</div>&ndash;&gt;
+                                            &lt;!&ndash;</div>&ndash;&gt;
 
-                                        <!--</div>-->
-                                    <!--</div><div class="col-md-2 col-sm-2 col-xs-2 ">-->
-                                    <!--<div class="recomended-item">-->
-                                        <!--<div class="row">-->
-                                            <!--<div class="col-md-12">-->
-                                                <!--<img class="recomended-image"-->
-                                                     <!--ng-src="{{recomendationList[$index+5].imageSrc}}">-->
-                                            <!--</div>-->
-                                            <!--<div class="col-md-12">-->
-                                                <!--<span><b>{{recomendationList[$index+5].name}}&nbsp;{{recomendationList[$index++5].percentage}}</b></span>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
+                                        &lt;!&ndash;</div>&ndash;&gt;
+                                    &lt;!&ndash;</div><div class="col-md-2 col-sm-2 col-xs-2 ">&ndash;&gt;
+                                    &lt;!&ndash;<div class="recomended-item">&ndash;&gt;
+                                        &lt;!&ndash;<div class="row">&ndash;&gt;
+                                            &lt;!&ndash;<div class="col-md-12">&ndash;&gt;
+                                                &lt;!&ndash;<img class="recomended-image"&ndash;&gt;
+                                                     &lt;!&ndash;ng-src="{{recomendationList[$index+5].imageSrc}}">&ndash;&gt;
+                                            &lt;!&ndash;</div>&ndash;&gt;
+                                            &lt;!&ndash;<div class="col-md-12">&ndash;&gt;
+                                                &lt;!&ndash;<span><b>{{recomendationList[$index+5].name}}&nbsp;{{recomendationList[$index++5].percentage}}</b></span>&ndash;&gt;
+                                            &lt;!&ndash;</div>&ndash;&gt;
+                                        &lt;!&ndash;</div>&ndash;&gt;
 
-                                    <!--</div>-->
+                                    &lt;!&ndash;</div>&ndash;&gt;
                                 </div>
 
                                 </div>
@@ -103,3 +138,4 @@
     </div>
 </div>
 </span>
+-->

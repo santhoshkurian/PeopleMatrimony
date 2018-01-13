@@ -37,6 +37,12 @@
         }
 
 
+        $scope.showSelected = showSelected;
+        function showSelected(obj) {
+            $scope.view = obj;
+        }
+
+
         //$scope.recomendationList = [{
         //    name: "Priya rajini",
         //    percentage: "76 %",
