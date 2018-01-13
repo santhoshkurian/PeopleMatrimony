@@ -3,11 +3,41 @@
 
     angular
         .module('dashboard')
-        .controller('SearchResultsController', SearchResultsController);
+        .controller('SearchResultsController', SearchResultsController)
+        .controller('enlargeSearchPhotoController', enlargeSearchPhotoController);
 
     /** @ngInject */
-    function SearchResultsController($timeout,$state,populate,$scope,$http,$stateParams,resourceUrl,storageService) {
+    function SearchResultsController($timeout,$state,populate,$uibModal,$scope,$http,$stateParams,resourceUrl,storageService) {
         var vm = this;
+
+        $scope.viewAll = viewAll;
+        $scope.enlargeImage = [];
+        function viewAll(data){
+            console.log("ShowData",data);
+            $scope.enlargeImage = data;
+            $scope.enlargeOpen();
+        }
+
+        $scope.enlargeOpen = function (size, parentSelector) {
+            var parentElem = parentSelector ?
+                angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+            var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'enlargeSearchPhoto.html',
+                controller: 'enlargeSearchPhotoController',
+                controllerAs: '$ctrl',
+                size: size,
+                appendTo: parentElem,
+                resolve: {
+                    items: function () {
+                        return $scope.enlargeImage;
+                    }
+                }
+            });
+        }
+
         console.log("SearchResultsController");
         console.log(storageService.get('regular_search'));
         $scope.image_url = storageService.get("image_url");
@@ -460,4 +490,28 @@
 
 
     }
-})();
+
+
+
+function enlargeSearchPhotoController($uibModalInstance, items){
+    var $ctrl = this;
+    $ctrl.items = items;
+    $ctrl.selectedImg = $ctrl.items[0].image;
+    //$ctrl.selected = {
+    //    item: $ctrl.items[0]
+    //};
+
+    $ctrl.vieImg = function (obj) {
+        $ctrl.selectedImg = obj;
+
+    };
+    $ctrl.ok = function () {
+        $uibModalInstance.close($ctrl.selected.item);
+    };
+
+    $ctrl.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    };
+}
+})
+();

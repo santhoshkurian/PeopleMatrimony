@@ -8,7 +8,8 @@
                 restrict: 'E',
                 scope: {
                     images: '=',
-                    gender: '='
+                    gender: '=',
+                    reverse: "&"
                 },
                 templateUrl: '/app/directive/image-scroll/image-scroll.html',
                 controller: function ($scope) {
@@ -45,6 +46,10 @@
                             $scope.indexValue = $scope.indexValue -1;
                             //$scope.display = $scope.images[$scope.pos].image;
                         }
+                    };
+
+                    $scope.reverse1 = function () {
+                        $scope.reverse({data:$scope.images});
                     };
                 },
             };

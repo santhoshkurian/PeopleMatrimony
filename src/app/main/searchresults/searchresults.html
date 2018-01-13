@@ -105,7 +105,7 @@
                         <div class="portlet-body form">
                             <div class="row">
                                 <div class="col-md-3" style="text-align: center;">
-                                    <imageinfo images="item.images" gender="item.gender"></imageinfo>
+                                    <imageinfo images="item.images" gender="item.gender" reverse="viewAll(data)"></imageinfo>
 
                                 </div>
                                 <div class="col-md-9">
@@ -208,3 +208,26 @@
 
     </div>
 </div>
+
+<script type="text/ng-template" id="enlargeSearchPhoto.html">
+    <div class="modal-header">
+        <h4 class="modal-title" id="enlarge" style="color: #4cbcac;font-weight: bold">
+            {{$ctrl.items.header}}</h4>
+    </div>
+    <div class="modal-body" id="modal-body" style="text-align: center">
+        <div class="row">
+        <img  style="height: 250px;width:auto"
+              ng-src="{{$ctrl.selectedImg}}"/>
+        </div>
+        <div class="row" style="margin-top: 20px;" >
+        <div class="col-md-2" ng-repeat="img in $ctrl.items">
+            <img  style="height: 50px;width:auto"
+                  ng-src="{{img.image}}" ng-click="$ctrl.vieImg(img.image)"/>
+        </div>
+            </div>
+    </div>
+    <div class="modal-footer">
+        <!--<button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>-->
+        <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">OK</button>
+    </div>
+</script>

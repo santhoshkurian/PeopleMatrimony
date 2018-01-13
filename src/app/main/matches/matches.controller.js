@@ -3,11 +3,40 @@
 
     angular
         .module('dashboard')
-        .controller('MatchesController', MatchesController);
+        .controller('MatchesController', MatchesController)
+        .controller('enlargeMatchesPhotoController', enlargeMatchesPhotoController);
 
     /** @ngInject */
     function MatchesController($scope,$uibModal, storageService,populate,$timeout,resourceUrl, $http, $location,$state) {
 
+
+        $scope.viewAll = viewAll;
+        $scope.enlargeImage = [];
+        function viewAll(data){
+            console.log("ShowData",data);
+            $scope.enlargeImage = data;
+            $scope.enlargeOpen();
+        }
+
+        $scope.enlargeOpen = function (size, parentSelector) {
+            var parentElem = parentSelector ?
+                angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+            var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'enlargeMatchesPhoto.html',
+                controller: 'enlargeMatchesPhotoController',
+                controllerAs: '$ctrl',
+                size: size,
+                appendTo: parentElem,
+                resolve: {
+                    items: function () {
+                        return $scope.enlargeImage;
+                    }
+                }
+            });
+        }
 
         $scope.isActive = function (viewLocation) {
             return viewLocation === $location.path();
@@ -51,25 +80,6 @@
 
 
 
-        $scope.enlargeOpen = function (size, parentSelector) {
-            var parentElem = parentSelector ?
-                angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
-            var modalInstance = $uibModal.open({
-                animation: $scope.animationsEnabled,
-                ariaLabelledBy: 'modal-title',
-                ariaDescribedBy: 'modal-body',
-                templateUrl: 'enlargePhoto.html',
-                controller: 'enlargePhotoController',
-                controllerAs: '$ctrl',
-                size: 'lg',
-                appendTo: parentElem,
-                resolve: {
-                    items: function () {
-                        return $scope.partnerImageUrl;
-                    }
-                }
-            });
-        }
 
 
         $scope.mainlink = "newMatches";
@@ -588,6 +598,26 @@
 
 
 
+    }
+    function enlargeMatchesPhotoController($uibModalInstance, items){
+        var $ctrl = this;
+        $ctrl.items = items;
+        $ctrl.selectedImg = $ctrl.items[0].image;
+        //$ctrl.selected = {
+        //    item: $ctrl.items[0]
+        //};
+
+        $ctrl.vieImg = function (obj) {
+            $ctrl.selectedImg = obj;
+
+        };
+        $ctrl.ok = function () {
+            $uibModalInstance.close($ctrl.selected.item);
+        };
+
+        $ctrl.cancel = function () {
+            $uibModalInstance.dismiss('cancel');
+        };
     }
 
 
