@@ -1,3 +1,4 @@
+<!--
 <div style="width: 100%;margin-bottom: 10px;margin-top: 10px;line-height: 150px;">
 
                                         <span><img ng-src="{{display}}" width="150" height="auto"
@@ -11,4 +12,26 @@
                                             <a  style="margin-right: 40px;height: 40px" ng-if="size > 1" ng-click="imageForward()" class="btn btn-circle  default pull-right">
                                                 <i class="icon-arrow-right" style="line-height: 28px"></i>
                                             </a>
+</div>-->
+<div ng-repeat="display in images">
+    <img class="dir-img" ng-src="{{display.image}}" style="border: 1px solid #ddd; /* Gray border */
+    border-radius: 4px;
+    padding: 5px;
+    height:auto;
+    width: 180px"
+         ng-show="indexValue == $index"
+        />
+
 </div>
+<div style="width: 100%;">
+    <div style="height: 30px;margin-left: 20px;margin-right: 20px;background-color: beige">
+    <a style="height: 30px;" ng-if="size > 1 && indexValue != 0" ng-click="imageBackward()" class=" btn   default pull-left">
+        <i class="glyphicon glyphicon-circle-arrow-left"></i>
+
+    </a>
+    <a  style="height: 30px;" ng-if="size > 1 && indexValue != size-1" ng-click="imageForward()" class="btn default pull-right">
+       <i class="glyphicon glyphicon-circle-arrow-right"></i>
+    </a>
+        </span>
+</div>
+

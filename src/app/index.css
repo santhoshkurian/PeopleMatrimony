@@ -3,7 +3,7 @@
 
 }
 .modal{
-    margin-top: 10%;
+    margin-top: 5%;
 }
 html, body. div{
     margin: 0 !important;
@@ -13,6 +13,10 @@ html, body. div{
 .row {
     padding-right: 0px;
     margin-right: 0px;
+}
+
+.dir-img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 
 

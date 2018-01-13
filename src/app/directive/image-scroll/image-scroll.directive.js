@@ -12,6 +12,8 @@
                 },
                 templateUrl: '/app/directive/image-scroll/image-scroll.html',
                 controller: function ($scope) {
+                    $scope.indexValue = 0;
+                    $scope.previous = 0;
                     $scope.display ='';
                     $scope.size = $scope.images.length;
                     if($scope.size != 0) {
@@ -30,15 +32,18 @@
                     }
 
                     $scope.imageForward = function () {
-                        if($scope.pos < $scope.size-1) {
-                            $scope.pos = $scope.pos +1;
-                            $scope.display = $scope.images[$scope.pos].image;
+                        $scope.previous = $scope.indexValue;
+                        if($scope.indexValue < $scope.size-1) {
+                            $scope.indexValue = $scope.indexValue +1;
+                            //$scope.display = $scope.images[$scope.pos].image;
                         }
                     };
                     $scope.imageBackward = function () {
-                        if($scope.pos > 0) {
-                            $scope.pos = $scope.pos -1;
-                            $scope.display = $scope.images[$scope.pos].image;
+                        //$scope.indexValue = $scope.indexValue;
+
+                        if($scope.indexValue > 0) {
+                            $scope.indexValue = $scope.indexValue -1;
+                            //$scope.display = $scope.images[$scope.pos].image;
                         }
                     };
                 },

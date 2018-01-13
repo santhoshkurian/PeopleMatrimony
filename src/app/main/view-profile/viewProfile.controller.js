@@ -21,6 +21,26 @@
         $scope.family_statusReq = false;
         $scope.about_familyReq = false;
 
+        $scope.logout = logout;
+        function logout(){
+            $http({
+                method: 'GET',
+                url: resourceUrl.url()+'user/logout?'+
+                'id_people='+storageService.get("id")+'&token='+storageService.get("token")
+            }).then(function successCallback(response) {
+                storageService.set("token",'');
+                storageService.set("id",'');
+                storageService.set("image_url",'');
+                storageService.set("name",'');
+                storageService.set("package",'');
+                storageService.set("regular_search",'');
+                $state.go('login');
+
+            }, function errorCallback(response) {
+
+            });
+        }
+
         console.log($scope.drinkingReq);
         console.log($scope.smokingReq);
 
