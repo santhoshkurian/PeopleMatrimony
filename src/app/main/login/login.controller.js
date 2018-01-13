@@ -224,12 +224,18 @@
 
 
             var date1 = $scope.reg.dob;
-            if(date1 != null && date1 != '') {
-                date1 = new Date(date1);
-                date1 = date1.toString().replace('(India Standard Time)', '(IST)');
-                date1 = new Date(date1);
+            date1 = new Date(date1);
+            var dob = ''
 
-                console.log(date1);
+            if(date1 != null && date1 != '') {
+                //date1 = new Date(date1.getFullYear(),date1.getMonth(),date1.getDay());
+                var month = parseInt(date1.getMonth()) +1;
+                console.log(month+1)
+                dob = date1.getFullYear()+'-'+month+'-'+date1.getDate();
+                //date1 = date1.toString().replace('(India Standard Time)', '(IST)');
+                //date1 = new Date(date1);
+
+                console.log("ssssssssss",dob);
             }
             if($scope.reg.profile_for == null || $scope.reg.profile_for ==''){
                 $scope.showSelectProfile = true;
@@ -290,18 +296,22 @@
                 $http({
                     method: 'POST',
                     url: resourceUrl.url()+'user?step=1&profile_for='+$scope.reg.profile_for+'&' +
-                    'name='+$scope.reg.name+'&gender='+$scope.reg.gender+'&dob='+date1+'&religion='+parseInt($scope.reg.religion)+
+                    'name='+$scope.reg.name+'&gender='+$scope.reg.gender+'&dob='+dob+'&religion='+parseInt($scope.reg.religion)+
                     '&mothertongue=' +$scope.reg.mothertongue+
                     '&country_code='+$scope.reg+'&email='+$scope.reg.email+'&' +
                     'mobile='+$scope.reg.mobile+'&password='+$scope.reg.password+'&source=111'
                 }).then(function successCallback(response) {
                     //console.log(response.data.access_token);
-                    storageService.set("token",response.data.access_token)
-                    storageService.set("id",response.data.id_people)
+                    if(!response.data.error) {
+                        storageService.set("token", response.data.access_token)
+                        storageService.set("id", response.data.id_people)
 
-                    $state.go('reg',{
-                        reg_id: $scope.reg.religion
-                    })
+                        $state.go('reg', {
+                            reg_id: $scope.reg.religion
+                        })
+                    }else{
+                        $scope.message = response.data.message
+                    }
 
 
                 }, function errorCallback(response) {
@@ -310,7 +320,6 @@
 
 
                 });
-                $state.go('reg')
             }
         };
 
