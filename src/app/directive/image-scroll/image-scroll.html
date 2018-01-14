@@ -1,19 +1,5 @@
-<!--
-<div style="width: 100%;margin-bottom: 10px;margin-top: 10px;line-height: 150px;">
-
-                                        <span><img ng-src="{{display}}" width="150" height="auto"
-                                                   /></span>
-
-</div>
-<div style="width: 100%;">
-                                            <a style="margin-left: 40px;height: 40px" ng-if="size > 1" ng-click="imageBackward()" class=" btn btn-circle  default pull-left">
-                                                <i class="icon-arrow-left" style="line-height: 28px"></i>
-                                            </a>
-                                            <a  style="margin-right: 40px;height: 40px" ng-if="size > 1" ng-click="imageForward()" class="btn btn-circle  default pull-right">
-                                                <i class="icon-arrow-right" style="line-height: 28px"></i>
-                                            </a>
-</div>-->
-<div ng-repeat="display in images">
+<div class="row">
+<div class="col-md-12" ng-repeat="display in images">
     <img class="dir-img" ng-src="{{display.image}}" style="border: 1px solid #ddd; /* Gray border */
     border-radius: 4px;
     padding: 5px;
@@ -23,16 +9,18 @@
             />
 
 </div>
-<div style="width: 100%;" ng-if="size > 1">
-    <div style="height: 30px;margin-left: 20px;margin-right: 20px;background-color: beige">
+<div class="col-md-12" style="text-align: center;margin-top:20px" ng-if="size > 1">
+    <div style="height: 30px;;background-color: beige;">
     <a style="height: 30px;" ng-if="size > 1 && indexValue != 0" ng-click="imageBackward()" class=" btn   default pull-left">
         <i class="glyphicon glyphicon-circle-arrow-left"></i>
     </a>
+        <span style="line-height: 30px" class="bold">{{indexValue+1}}/{{size}}</span>
 
     <a  style="height: 30px;" ng-if="size > 1 && indexValue != size-1" ng-click="imageForward()" class="btn default pull-right">
        <i class="glyphicon glyphicon-circle-arrow-right"></i>
     </a>
         </span>
+</div>
 </div>
 </div>
 
