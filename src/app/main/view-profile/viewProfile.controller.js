@@ -8,9 +8,10 @@
         .controller('enlargePhotoController', enlargePhotoController);
 
     /** @ngInject */
-    function ViewProfileController($scope,$http,$uibModal,storageService,$state,$stateParams,resourceUrl,viewProfile,$timeout) {
+    function ViewProfileController(similarProfiles,$scope,$http,$uibModal,storageService,$state,$stateParams,resourceUrl,viewProfile,$timeout) {
 
         console.log("check", viewProfile);
+        console.log("check", similarProfiles);
         $scope.drinkingReq = false;
         $scope.smokingReq = false;
         $scope.educationReq = false;
@@ -20,6 +21,7 @@
         $scope.familyReq = false;
         $scope.family_statusReq = false;
         $scope.about_familyReq = false;
+        $scope.similarProfiles = similarProfiles;
 
         $scope.print = print;
         function print(){
