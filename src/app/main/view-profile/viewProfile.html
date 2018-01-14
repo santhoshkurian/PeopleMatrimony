@@ -58,7 +58,7 @@
                                 <div class="row ">
                                     <div class=" col-xs-12 col-sm-12 col-md-6 "
                                          style="text-align: center;line-height: 180px">
-                                        <img ng-click="enlargePhoto(view.images[0].image)" style="height: auto;width:230px;cursor: pointer" ng-if="view.images.length > 0"
+                                        <img ng-click="enlargePhoto(view.images)" style="height: auto;width:150px;cursor: pointer" ng-if="view.images.length > 0"
                                              ng-src="{{view.images[0].image}}"/>
                                         <img style="height: auto;width:230px"
                                              ng-if="view.images.length == 0 && view.gender == 'male'"
@@ -1015,11 +1015,36 @@
         <script type="text/ng-template" id="enlargePhoto.html">
             <div class="modal-header">
                 <h4 class="modal-title" id="enlarge" style="color: #4cbcac;font-weight: bold">
-                    {{$ctrl.items.header}}</h4>
+                    View Photos</h4>
             </div>
             <div class="modal-body" id="modal-body" style="text-align: center">
-                <img  style="height: auto;width:550px"
-                     ng-src="{{$ctrl.items}}"/>            </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <img class="modal-view-img"
+                             ng-src="{{$ctrl.viewImg}}"/>
+                    </div>
+                    <div class="col-md-4" >
+                        <div class="row" style="margin-top: 20px">
+                            <div class="col-md-12" style="text-align: left">
+                                <b>ID</b> :{{$ctrl.items.id}}
+
+                                <br/>
+                                <b>Name</b> :{{$ctrl.items.name}}
+
+                            </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 20px">
+                                <span ng-repeat="img in $ctrl.items.partnerImageUrl">
+
+                    <div class="col-md-1 col-xs-1 "  >
+                        <img  style="height: 40px;width: 40px;border-radius: 25% !important;"
+                              ng-src="{{img.image}}" ng-click="$ctrl.vieImg(img.image)"/>
+                    </div>
+                                    </span>
+                </div>
+            </div>
             <div class="modal-footer">
                 <!--<button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>-->
                 <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">OK</button>

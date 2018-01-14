@@ -69,10 +69,18 @@ multiselect  .btn-group>button .caret{
 .modal-img{
     height: 300px;width:auto
 }
+.modal-view-img{
+    height: 300px;
+    width:auto
+}
 
 @media (max-width: 768px) {
     .modal-img{
         height: 200px;width:auto
+    }
+    .modal-view-img{
+        height: 200px;
+        width:auto
     }
 }
 

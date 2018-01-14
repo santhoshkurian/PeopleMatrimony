@@ -72,11 +72,6 @@
             $scope.showBlockAction = false;
         }
 
-        function enlargePhoto(obj1){
-            $scope.partnerImageUrl = obj1
-            $scope.enlargeOpen();
-
-        }
 
         function selectType(type) {
             $scope.viewType = type;
@@ -116,8 +111,17 @@
 
         $scope.view = viewProfile.user;
         $scope.pref = viewProfile.user.preferences;
+            $scope.enlarge = {name:$scope.view.name,id:$scope.view.id_people}
+
         }else{
             $scope.viewProfile = false;
+        }
+
+
+        function enlargePhoto(obj1){
+            $scope.enlarge.partnerImageUrl = obj1
+            $scope.enlargeOpen();
+
         }
         $scope.sendInterest = sendInterest;
         $scope.shortlist = shortlist;
@@ -286,11 +290,11 @@
                 templateUrl: 'enlargePhoto.html',
                 controller: 'enlargePhotoController',
                 controllerAs: '$ctrl',
-                size: size,
+                size: 'lg',
                 appendTo: parentElem,
                 resolve: {
                     items: function () {
-                        return $scope.partnerImageUrl;
+                        return $scope.enlarge;
                     }
                 }
             });
@@ -323,10 +327,15 @@
     function enlargePhotoController($uibModalInstance, items){
         var $ctrl = this;
         $ctrl.items = items;
+
+        $ctrl.viewImg = items.partnerImageUrl[0].image;
         //$ctrl.selected = {
         //    item: $ctrl.items[0]
         //};
 
+        $ctrl.vieImg = function (obj) {
+            $ctrl.viewImg = obj;
+        };
         $ctrl.ok = function () {
             $uibModalInstance.close($ctrl.selected.item);
         };
