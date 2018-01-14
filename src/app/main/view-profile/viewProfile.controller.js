@@ -184,7 +184,7 @@
         $scope.familyRequest = '';
         $scope.aboutFamilyRequest = '';
 
-        $scope.details = {id:$scope.view.id_people};
+        $scope.details = {id:$scope.view.id_people,name:$scope.view.name,img:$scope.view.images};
 
         $scope.requests = function(obj1,obj2){
             $scope.details.field = obj1;
@@ -308,7 +308,7 @@
 
     }
 
-    function modalController($uibModalInstance, items){
+    function modalController($uibModalInstance, items,$state){
         var $ctrl = this;
         $ctrl.items = items;
         //$ctrl.selected = {
@@ -321,6 +321,10 @@
 
         $ctrl.cancel = function () {
             $uibModalInstance.dismiss('cancel');
+        };
+        $ctrl.upgrade = function () {
+            $uibModalInstance.dismiss('cancel');
+            $state.go('payment')
         };
     }
 
@@ -343,5 +347,6 @@
         $ctrl.cancel = function () {
             $uibModalInstance.dismiss('cancel');
         };
+
     }
 })();
