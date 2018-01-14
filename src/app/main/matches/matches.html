@@ -218,12 +218,12 @@
     </div>
     <div class="modal-body" id="modal-body" style="text-align: center">
         <div class="row">
-            <img  style="height: 250px;width:auto"
+            <img  class="modal-img"
                   ng-src="{{$ctrl.selectedImg}}"/>
         </div>
         <div class="row" style="margin-top: 20px;" >
-            <div class="col-md-2" ng-repeat="img in $ctrl.items">
-                <img  style="height: 50px;width:auto"
+            <div class="col-md-1 col-xs-1 " ng-repeat="img in $ctrl.items">
+                <img  style="height: 40px;width: 40px;border-radius: 25% !important;"
                       ng-src="{{img.image}}" ng-click="$ctrl.vieImg(img.image)"/>
             </div>
         </div>
