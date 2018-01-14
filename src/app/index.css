@@ -66,5 +66,14 @@ multiselect  .btn-group>button .caret{
     margin-top:10px;
 }
 
+.modal-img{
+    height: 300px;width:auto
+}
+
+@media (max-width: 768px) {
+    .modal-img{
+        height: 200px;width:auto
+    }
+}
 
 
