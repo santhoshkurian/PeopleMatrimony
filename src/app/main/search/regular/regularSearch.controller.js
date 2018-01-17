@@ -12,6 +12,7 @@
         console.log(populate);
         console.log('profile',profile);
         $scope.profile = profile;
+        $scope.labels = {"select": "Any"}
 
         console.log(searchList);
         $scope.searchList = searchList;
