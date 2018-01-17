@@ -995,27 +995,40 @@
 
                             <div class="form-group">
 
-                                <div class="col-md-6">
-                                    <label class="uppercase font-weight "> Annual Income</label>
-                                    <select class="form-control input-rounded "
-                                            ng-model="profile.login_user.income">
-                                        <option value="">Select</option>
-                                        <option value="any">any</option>
-                                        <option value="Rs 8 Lakhs">Rs 8 Lakhs</option>
-                                        <option value="Rs 9 Lakhs">Rs 9 Lakhs</option>
-                                        <option value="Rs 10 Lakhs">Rs 10 Lakhs</option>
-                                        <option value="Rs 11 Lakhs">Rs 11 Lakhs</option>
-                                        <option value="Rs 12 Lakhs">Rs 12 Lakhs</option>
-                                        <option value="Rs 13 Lakhs">Rs 13 Lakhs</option>
-                                        <option value="Rs 15 Lakhs">Rs 15 Lakhs</option>
-                                        <option value="Rs 17 Lakhs">Rs 17 Lakhs</option>
-                                        <option value="Rs 20 Lakhs">Rs 20 Lakhs</option>
-                                        <option value="Rs 25 Lakhs">Rs 25 Lakhs</option>
-                                        <option value="Rs 30 Lakhs">Rs 30 Lakhs</option>
-                                        <option value="Rs 50 Lakhs">Rs 50 Lakhs</option>
-                                        <option value="1 Crore">1 Crore</option>
+                                <div class="col-md-4">
 
+                                    <label class="uppercase font-weight "> Annual Income</label><br/>
+                                    <label class="checkbox-inline" class="custon-text" style="padding-left: 0px;">
+                                        <input type="radio" icheckbox_flat-red class="icheck " ng-model="reg.salaryType"
+                                               name="salaryType" value="annual">
+                                        Annual
+                                    </label>
+
+
+                                    <label class="checkbox-inline" class="custon-text">
+                                        <input type="radio"  icheckbox_flat-red class="icheck "  ng-model="reg.salaryType"
+                                               name="salaryType" value="monthly">
+                                        Monthly
+                                    </label>
+
+
+                                </div>
+                                <div class="col-md-4">
+
+                                    <label class="uppercase font-weight "> Salary In</label>
+                                    <select class="form-control input-rounded "
+                                            ng-model="profile.login_user.salaryIn">
+                                        <option value="">Select</option>
+                                        <option value="inr">INR - Rs</option>
+                                        <option value="dollor">Dollor</option>
                                     </select>
+
+
+                                </div>
+                                <div class="col-md-4">
+
+                                    <label class="uppercase font-weight "> Income</label>
+                                    <input type="text" class="form-control" placeholder="Income" value="" ng-model="profile.login_user.income">
 
 
                                 </div>
