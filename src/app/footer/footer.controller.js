@@ -12,6 +12,7 @@
 
         $scope.showLink = false;
        if(storageService.get('id') != null && storageService.get('token') != null){
+           console.log("footeeeer")
            $scope.showLink = true;
 
        }
