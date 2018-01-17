@@ -109,7 +109,7 @@
 							<div class="col-md-12 notification-details">{{item.content}}</div>
 
 							<div class="col-md-12 margin-top-10">
-								<button type="button" class=" uppercase btn red input-rounded" ng-click="">
+								<button type="button" class=" uppercase btn red input-rounded" ng-click="respondAction(item.com_id,'accepted')">
 
 									<span ng-if="item.action != 'connect' || item.action != 'contact'">YES</span>
 									<span ng-if="item.action != 'connect' && item.action != 'contact'">Add {{item.field_name}}</span>

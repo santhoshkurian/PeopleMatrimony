@@ -23,28 +23,30 @@
             },
 
             response: function(res) {
-                if(res.data.code === 401) {
-                    storageService.set("token",'');
-                    storageService.set("id",'');
-                    storageService.set("image_url",'');
-                    storageService.set("name",'');
-                    storageService.set("regular_search",'');
+                if(res.data.code === 401 && res.data.message == 'Token is not valid.') {
+                    //storageService.set("token",'');
+                    //storageService.set("id",'');
+                    //storageService.set("image_url",'');
+                    //storageService.set("name",'');
+                    //storageService.set("package",'');
+                    //storageService.set("regular_search",'');
+                    localStorage.clear();
                     $(".page-loading").addClass("page-loading-hidden");
                     $("#body-filter").removeClass("page-grey-color");
                     $injector.get('$state').transitionTo('login');
                     return $q.reject(res);
                 }
-                if(res.data.code === 400) {
-                    storageService.set("token",null);
-                    storageService.set("id",null);
-                    storageService.set("image_url",null);
-                    storageService.set("name",null);
-                    storageService.set("regular_search",null);
-                    $(".page-loading").addClass("page-loading-hidden");
-                    $("#body-filter").removeClass("page-grey-color");
-                    $injector.get('$state').transitionTo('login');
-                    return $q.reject(res);
-                }
+                //if(res.data.code === 400) {
+                //    storageService.set("token",null);
+                //    storageService.set("id",null);
+                //    storageService.set("image_url",null);
+                //    storageService.set("name",null);
+                //    storageService.set("regular_search",null);
+                //    $(".page-loading").addClass("page-loading-hidden");
+                //    $("#body-filter").removeClass("page-grey-color");
+                //    $injector.get('$state').transitionTo('login');
+                //    return $q.reject(res);
+                //}
                 return res;
             },
 

@@ -11,6 +11,9 @@
                 },
                 set: function (key, data) {
                     localStorage.setItem(key, data);
+                },
+                clear: function () {
+                    localStorage.clear();
                 }
             };
         }])
@@ -21,6 +24,7 @@
                 }
             }
         }])
+
 
         .run(function ($rootScope, $state, storageService) {
             $rootScope
@@ -41,8 +45,8 @@
             $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
                 $(".page-loading").addClass("page-loading-hidden");
                 $("#body-filter").removeClass("page-grey-color");
-                if ((storageService.get("token") == null && storageService.get("id") == null) ||
-                    (storageService.get("token") == '' && storageService.get("id") == '')) {
+                if
+                    (storageService.get("token") == '' && storageService.get("id") == '') {
                     if(toState.name == 'terms'){
                         $state.go("terms");
                     }else {
@@ -301,10 +305,10 @@
                 views: {
                     'main@': {
                         templateUrl: 'app/core/layouts/termsAndConditionsLayout.html',
-                        controller: 'LoginController as vm'
+                        controller: 'TermsController as vm'
                     },
                     'toolbar@terms': {
-                        templateUrl: 'app/toolbar/login/registrationStep2Toolbar.html'
+                        templateUrl: 'app/toolbar/login/termsToolbar.html'
                         //controller : 'LoginController as vm'
                     },
                     'content@terms': {
@@ -314,24 +318,6 @@
                         templateUrl: 'app/footer/footer.html',
                         controller: 'FooterController as vm'
                     }
-                },
-                resolve: {
-                    populate: function ($http,resourceUrl) {
-                        return $http({
-                            method: 'GET',
-                            url: resourceUrl.url()+'populate'
-                        }).then(function successCallback(response) {
-                            console.log(response)
-                            return response.data;
-
-                        }, function errorCallback(response) {
-                            //console.log(response)
-                            return response;
-
-
-                        });
-                    }
-
                 }
             }).state('login', {
                 url: '/login',

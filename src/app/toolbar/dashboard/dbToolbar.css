@@ -53,6 +53,7 @@
 
     }
 
+
 }
 
 @media screen and (max-width: 1120px) {
@@ -91,6 +92,10 @@
         text-align: center;
         padding: 11px 8px;
         text-decoration: none;
+    }
+
+    .a-drop-link {
+        height: 35px!important;
     }
     .page-header.navbar .page-top {
         background: #FFF;

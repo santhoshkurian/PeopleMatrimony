@@ -3,16 +3,22 @@
 
     angular
         .module('dashboard')
-        .controller('SettingsNavController', SettingsNavController);
+        .controller('TermsController', TermsController);
 
     /** @ngInject */
-    function SettingsNavController($scope, $location,storageService,$state,$http,resourceUrl) {
-        $scope.logout = logout;
-
+    function TermsController(storageService, $scope,resourceUrl,$http,$state) {
         $scope.image_url = storageService.get("image_url");
+        $scope.package = storageService.get("package");
         $scope.name = storageService.get("name");
         $scope.id = storageService.get("id");
 
+        $scope.showLink = false;
+        if(storageService.get('id') != null && storageService.get('token') != null){
+            $scope.showLink = true;
+
+        }
+
+        $scope.logout = logout;
         function logout(){
             $http({
                 method: 'GET',
@@ -21,20 +27,12 @@
             }).then(function successCallback(response) {
                 storageService.clear();
                 $state.go('login');
-
             }, function errorCallback(response) {
 
             });
         }
 
 
-        $scope.isActive = function (viewLocation) {
-            return viewLocation === $location.path();
-        };
+    };
 
-
-
-        console.log("SettingsNavController");
-
-    }
 })();

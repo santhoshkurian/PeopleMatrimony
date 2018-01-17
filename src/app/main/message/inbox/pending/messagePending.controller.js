@@ -12,6 +12,7 @@
         console.log($scope.pending);
 
         $scope.deletePending = deletePending;
+        $scope.respondAction = respondAction;
 
         function deletePending(comId) {
             $http({
@@ -30,6 +31,18 @@
                 }, function errorCallback(response) {
                     console.log(response)
                 });
+            }, function errorCallback(response) {
+                console.log(response)
+            });
+        }
+
+        function respondAction(comId,action) {
+            $http({
+                method: 'GET',
+                url: resourceUrl.url()+'response/'+action+'/'+comId +
+                '?&token=' + storageService.get("token")
+            }).then(function successCallback(response) {
+console.log(response);
             }, function errorCallback(response) {
                 console.log(response)
             });

@@ -9,6 +9,7 @@
     function MessageAcceptedController($scope,accept,storageService,resourceUrl) {
         var vm = this;
         $scope.accept = accept.list;
+        console.log($scope.accept);
         $scope.deleteAccept = deleteAccept;
 
         function deleteAccept(comId) {

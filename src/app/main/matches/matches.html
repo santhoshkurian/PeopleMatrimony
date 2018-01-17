@@ -1,6 +1,6 @@
 <div class="page-content-wrapper">
     <!-- BEGIN CONTENT BODY -->
-    <div class="page-content" >
+    <div class="page-content">
         <!-- BEGIN PAGE HEAD-->
         <div class="page-head" style="margin-left: 20px">
             <div class="row">
@@ -9,7 +9,7 @@
                     <dir-pagination-controls
                             max-size="5"
                             direction-links="true"
-                            boundary-links="true" >
+                            boundary-links="true">
                     </dir-pagination-controls>
                 </div>
 
@@ -32,7 +32,7 @@
                                     </a>
                                     <a class="btn btn-sm red dropdown-toggle" href="javascript:;"
                                        data-toggle="dropdown">
-                                        <i class="fa fa-map"></i>                                    </a>
+                                        <i class="fa fa-map"></i> </a>
                                     <ul class="dropdown-menu pull-right">
                                         <li>
                                             <a href="javascript:;">
@@ -55,20 +55,22 @@
                             </div>
                         </div>
                     </div>
-                        <div  ng-if="showResult" class="portlet light  border-rounded ">
-                            <div class="alert alert-success">
-                                No results found
-                            </div>
+                    <div ng-if="showResult" class="portlet light  border-rounded ">
+                        <div class="alert alert-success">
+                            No results found
                         </div>
+                    </div>
                     <div style="color: red;text-align: center">{{message}}</div>
                                         <span dir-paginate="item in matches|itemsPerPage:5">
 
                     <div class="portlet light bordered">
                         <div class="portlet-title" style="border-bottom: 0px">
                             <div class="caption ">
-                                <a ng-click="viewProfile(item.id_people)"><span class="caption-subject font-red-sunglo bold"> {{item.name}}</span> <span>({{item.id_people}})</span></a>
+                                <a ng-click="viewProfile(item.id_people)"><span
+                                        class="caption-subject font-red-sunglo bold"> {{item.name}}</span> <span>({{item.id_people}})</span></a>
                                 <br/>
-                                <span ng-if="item.profile_for != null && item.profile_for != ''" style="font-size: 11px"> Profile created by {{item.profile_for}}</span>
+                                <span ng-if="item.profile_for != null && item.profile_for != ''"
+                                      style="font-size: 11px"> Profile created by {{item.profile_for}}</span>
                             </div>
                             <div class="actions">
                                 <div class="btn-group">
@@ -99,11 +101,21 @@
                         <div class="portlet-body form">
                             <div class="row">
                                 <div class="col-md-4" style="text-align: center;">
-                                    <imageinfo images="item.images" gender="item.gender" reverse="viewAll(data)"></imageinfo>
-
+                                    <span ng-if="item.settings.length == 0 || item.settings[0].photo_privacy == 'all' ">
+                                    <imageinfo images="item.images" gender="item.gender"
+                                               reverse="viewAll(data)"></imageinfo>
+                                    </span>
+                                    <span ng-if="item.settings.length > 0 && item.settings[0].photo_privacy == 'protected' && item.gender == 'male'">
+                                        <img class="dir-img" ng-src="/assets/defaultImages/male_photo_protected_card.jpg" style="border: 1px solid #ddd;
+                                        border-radius: 4px;padding: 5px;height:auto;width: 180px"/>
+                                    </span>
+                                    <span ng-if="item.settings.length > 0 && item.settings[0].photo_privacy == 'protected' && item.gender == 'female'">
+                                        <img class="dir-img" ng-src="/assets/defaultImages/female_photo_protected_card.jpg" style="border: 1px solid #ddd; /* Gray border */
+                                            border-radius: 4px;padding: 5px;height:auto;width: 180px"/>
+                                    </span>
                                 </div>
                                 <div class="col-md-8">
-                                    <div class="row" >
+                                    <div class="row">
                                         <div class="col-md-12" style="border-bottom: 1px solid #eef1f5;">
                                             <table width="100%" style="margin-bottom: 10px;" class="match-table">
                                                 <tr>
@@ -154,20 +166,26 @@
                             <div class=" row vp-main-action" ng-if="mainlink !='shortlisted'">
                                 <div style="text-transform: uppercase;text-align: center;">
                                     <div class="col-md-3 col-sm-3 col-xs-3"
-                                         style="height:60px;font-size:14px;padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro;cursor: pointer" ng-click="shortlist(item.id_people)"><i
+                                         style="height:60px;font-size:14px;padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro;cursor: pointer"
+                                         ng-click="shortlist(item.id_people)"><i
                                             class="fa fa-star-o"></i><span class="hidden-sm hidden-xs"> Shortlist</span>
                                     </div>
                                     <div class="col-md-3 col-sm-3 col-xs-3"
                                          style="height:60px;font-size:14px;padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro;cursor: pointer">
-                                        <i class="fa fa-phone"></i> <span class="hidden-sm hidden-xs"> Contact Details</span>
+                                        <i class="fa fa-phone"></i> <span
+                                            class="hidden-sm hidden-xs"> Contact Details</span>
                                     </div>
                                     <div class="col-md-3 col-sm-3 col-xs-3"
-                                         style="height:60px;font-size:14px;padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro;cursor: pointer"><i
-                                            class="fa fa-commenting-o"></i> <span class="hidden-sm hidden-xs">  Chat now</span>
+                                         style="height:60px;font-size:14px;padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro;cursor: pointer">
+                                        <i
+                                                class="fa fa-commenting-o"></i> <span class="hidden-sm hidden-xs">  Chat now</span>
                                     </div>
                                     <div class="col-md-3 col-sm-3 col-xs-3" ng-click="sendInterest(item.id_people)"
-                                         style="height:60px;font-size:14px;padding: 20px;border: 1px solid #eef1f5;background-color:#e7505a;cursor: pointer"><i
-                                            class="fa fa-heart" style="color: white!important;font-size: 18px"></i><span class="hidden-sm hidden-xs" style="color: white"> Send Interest</span>
+                                         style="height:60px;font-size:14px;padding: 20px;border: 1px solid #eef1f5;background-color:#e7505a;cursor: pointer">
+                                        <i
+                                                class="fa fa-heart"
+                                                style="color: white!important;font-size: 18px"></i><span
+                                            class="hidden-sm hidden-xs" style="color: white"> Send Interest</span>
                                     </div>
 
                                 </div>
@@ -185,7 +203,8 @@
                                     </div>
                                     <div class="col-md-4"
                                          style="padding: 20px;border: 1px solid #eef1f5;background-color: #e7505a"><i
-                                            class="fa fa-heart" style="color: white!important;font-size: 18px"></i> Send Interest
+                                            class="fa fa-heart" style="color: white!important;font-size: 18px"></i> Send
+                                        Interest
                                     </div>
 
                                 </div>
@@ -194,11 +213,12 @@
                         </div>
                     </div>
 </span>
+
                     <div class="col-md-12 text-right">
                         <dir-pagination-controls
                                 max-size="5"
                                 direction-links="true"
-                                boundary-links="true" >
+                                boundary-links="true">
                         </dir-pagination-controls>
                         <!--<pagination total-elements="50" num-pages="10" ng-model="currentPage" ng-change="pageChange()" current-page="currentPage" class="pagination-small"></pagination>-->
                     </div>
@@ -218,13 +238,13 @@
     </div>
     <div class="modal-body" id="modal-body" style="text-align: center">
         <div class="row">
-            <img  class="modal-img"
-                  ng-src="{{$ctrl.selectedImg}}"/>
+            <img class="modal-img"
+                 ng-src="{{$ctrl.selectedImg}}"/>
         </div>
-        <div class="row" style="margin-top: 20px;" >
+        <div class="row" style="margin-top: 20px;">
             <div class="col-md-1 col-xs-1 " ng-repeat="img in $ctrl.items">
-                <img  style="height: 40px;width: 40px;border-radius: 25% !important;"
-                      ng-src="{{img.image}}" ng-click="$ctrl.vieImg(img.image)"/>
+                <img style="height: 40px;width: 40px;border-radius: 25% !important;"
+                     ng-src="{{img.image}}" ng-click="$ctrl.vieImg(img.image)"/>
             </div>
         </div>
     </div>

@@ -18,7 +18,6 @@
         console.log("discoverMatches",discoverMatches);
         console.log("profileCompleteness",profileCompleteness);
         $scope.messages = profileCompleteness.percentage.data;
-        $scope.logout = logout;
         $scope.occupationCategoryList = populate.occupation_category;
 
         $scope.value = profileCompleteness.percentage.percentage;
@@ -120,21 +119,15 @@
 
 
         }
-
+        $scope.logout = logout;
         function logout(){
             $http({
                 method: 'GET',
                 url: resourceUrl.url()+'user/logout?'+
                 'id_people='+storageService.get("id")+'&token='+storageService.get("token")
             }).then(function successCallback(response) {
-                storageService.set("token",'');
-                storageService.set("id",'');
-                storageService.set("image_url",'');
-                storageService.set("name",'');
-                storageService.set("package",'');
-                storageService.set("regular_search",'');
-                $state.go('login');
-
+                storageService.clear();
+               $state.go('login');
             }, function errorCallback(response) {
 
             });
