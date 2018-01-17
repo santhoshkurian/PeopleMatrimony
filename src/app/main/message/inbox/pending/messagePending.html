@@ -8,43 +8,43 @@
 
 			<div class="row">
 
-				<div class="col-md-12 ">
-					<div class="portlet light  border-rounded ">
-						<div class="portlet-title " style="border-bottom: 0px">
-							<div class="caption green" style="font-size: 12px">
-								<span> <input class="filter-check-box" type="checkbox"/>Select All</span>&nbsp; | &nbsp;
-								<span> Delete</span>
-							</div>
-							<div class="actions">
-								<div class="btn-group">
-									<a class="btn btn-sm red dropdown-toggle" href="javascript:;" data-toggle="dropdown">
-										<i class="fa fa-filter"></i>
-									</a>
-									<!--<a class="btn btn-sm red dropdown-toggle" href="javascript:;" data-toggle="dropdown">
-										<i class="fa fa-map"></i> </a>-->
-									<ul class="dropdown-menu pull-right">
-										<li>
-											<a href="javascript:;">
-												<i class="fa fa-pencil"></i> Edit </a>
-										</li>
-										<li>
-											<a href="javascript:;">
-												<i class="fa fa-trash-o"></i> Delete </a>
-										</li>
-										<li>
-											<a href="javascript:;">
-												<i class="fa fa-ban"></i> Ban </a>
-										</li>
-										<li class="divider"></li>
-										<li>
-											<a href="javascript:;"> Make admin </a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				<!--<div class="col-md-12 ">-->
+					<!--<div class="portlet light  border-rounded ">-->
+						<!--<div class="portlet-title " style="border-bottom: 0px">-->
+							<!--<div class="caption green" style="font-size: 12px">-->
+								<!--<span> <input class="filter-check-box" type="checkbox"/>Select All</span>&nbsp; | &nbsp;-->
+								<!--<span> Delete</span>-->
+							<!--</div>-->
+							<!--<div class="actions">-->
+								<!--<div class="btn-group">-->
+									<!--<a class="btn btn-sm red dropdown-toggle" href="javascript:;" data-toggle="dropdown">-->
+										<!--<i class="fa fa-filter"></i>-->
+									<!--</a>-->
+									<!--&lt;!&ndash;<a class="btn btn-sm red dropdown-toggle" href="javascript:;" data-toggle="dropdown">-->
+										<!--<i class="fa fa-map"></i> </a>&ndash;&gt;-->
+									<!--<ul class="dropdown-menu pull-right">-->
+										<!--<li>-->
+											<!--<a href="javascript:;">-->
+												<!--<i class="fa fa-pencil"></i> Edit </a>-->
+										<!--</li>-->
+										<!--<li>-->
+											<!--<a href="javascript:;">-->
+												<!--<i class="fa fa-trash-o"></i> Delete </a>-->
+										<!--</li>-->
+										<!--<li>-->
+											<!--<a href="javascript:;">-->
+												<!--<i class="fa fa-ban"></i> Ban </a>-->
+										<!--</li>-->
+										<!--<li class="divider"></li>-->
+										<!--<li>-->
+											<!--<a href="javascript:;"> Make admin </a>-->
+										<!--</li>-->
+									<!--</ul>-->
+								<!--</div>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
 				<div class="col-md-12">
 					<div ng-if="pending.length == 0" class="portlet light  border-rounded ">
 						<div class="alert alert-success">
@@ -111,8 +111,8 @@
 							<div class="col-md-12 margin-top-10">
 								<button type="button" class=" uppercase btn red input-rounded" ng-click="respondAction(item.com_id,'accepted')">
 
-									<span ng-if="item.action != 'connect' || item.action != 'contact'">YES</span>
-									<span ng-if="item.action != 'connect' && item.action != 'contact'">Add {{item.field_name}}</span>
+									<span ng-if="item.action != 'field'">YES</span>
+									<span ng-if="item.action == 'field'">Add {{item.field_name}}</span>
 
 								</button>
 								&nbsp;
@@ -123,6 +123,7 @@
 							</div>
 
 						</div>
+<!--
 						<span ng-repeat="obj in item.communication.sent">
 							<hr/>
 						<div class="row" >
@@ -152,6 +153,7 @@
 
 						</div>
 </span>
+-->
 					</div>
 
 					<div class="row">
