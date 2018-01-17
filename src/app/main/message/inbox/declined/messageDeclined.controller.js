@@ -10,6 +10,7 @@
         var vm = this;
         $scope.declined = declined.list;
         console.log("MessageDeclinedController");
+        console.log($scope.declined);
         $scope.deleteDeclined = deleteDeclined;
 
         function deleteDeclined(comId) {
@@ -24,7 +25,7 @@
                     '&token=' + storageService.get("token") + '&type=declined'
                 }).then(function successCallback(response) {
                     console.log(response)
-                    $scope.awaiting = response.data.list;
+                    $scope.declined = response.data.list;
 
                 }, function errorCallback(response) {
                     console.log(response)

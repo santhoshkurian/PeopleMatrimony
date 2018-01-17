@@ -90,7 +90,7 @@
 							<div ng-if="item.user.isOnline = 'online'" class="col-md-4"><i class="fa fa-circle " style="color:#56bb55 ;padding-top:5px;"></i>&nbsp;<label>Online</label>
 							</div>
 							<div class="col-md-3 pull-right"><label class="style-cls">{{item.date}}</label><i
-									class="fa fa-trash  pull-right style-cls " ng-click="deleteDeclined(item.com_id)" style="padding-top:5px;"></i></div>
+									class="fa fa-trash  pull-right style-cls " ng-click="deletePending(item.com_id)" style="padding-top:5px;"></i></div>
 						</div>
 						<div class="row">
 							<div class="col-md-12 details-style">
@@ -100,23 +100,49 @@
 
 						</div>
 						<hr>
-						<div class="row">
-							<div class="col-md-12 notification-style uppercase">INTEREST SENT</div>
+						<div class="row" >
+							<div class="col-md-12 notification-style uppercase">
+								<span ng-if="item.action == 'connect'">INTEREST DECLINED</span>
+								<span ng-if="item.action == 'contact'">CONTACT VIEWED</span>
+								<span ng-if="item.action == 'field'">{{item.field_name}} Request Declined</span>
+							</div>
 
 							<div class="col-md-12 notification-details">{{item.content}}</div>
-						</div>
-						<div class="row margin-top-10">
-							<div class="col-md-12">
-								<button type="button" class=" uppercase btn red input-rounded" ng-click="">
-									Call Now
-								</button>
-								&nbsp;
-								<button disabled="item.user.interest == 'sent'" type="button" class=" uppercase btn btn-default input-rounded" ng-click="">
-									Send Interest
-								</button>
 
-							</div>
+
+
 						</div>
+						<!--
+                                                <span ng-repeat="obj in item.communication.sent">
+                                                    <hr/>
+                                                <div class="row" >
+                                                    <div class="col-md-12 notification-style uppercase">ADD {{obj.field_name}} REQUEST</div>
+
+                                                    <div class="col-md-12 notification-details">
+                                                        <span ng-if="obj.field_name == 'smoking'">She has request you to add smoking details? </span>
+                                                        <span ng-if="obj.field_name == 'drinking'">She has request you to add drinking details? </span>
+                                                        <span ng-if="obj.field_name == 'education'">She has request you to add education details? </span>
+                                                        <span ng-if="obj.field_name == 'income'">She has request you to add annual income? </span>
+                                                        <span ng-if="obj.field_name == 'occupation'">She has request you to add education details? </span>
+                                                        <span ng-if="obj.field_name == 'origin'">She has request you to add your Ancetral origin? </span>
+                                                        <span ng-if="obj.field_name == 'family'">She has request you to add family type? </span>
+                                                        <span ng-if="obj.field_name == 'family_status'">She has request you to add family status? </span>
+                                                        <span ng-if="obj.field_name == 'about_family'">She has request you to add about your family? </span></div>
+
+                                                    <div class="col-md-12 margin-top-10">
+                                                        <button type="button" class=" uppercase btn red input-rounded" ng-click="">
+                                                            ADD {{obj.field_name}}
+                                                        </button>
+                                                        &nbsp;
+                                                        <button disabled="item.user.interest == 'sent'" type="button" class=" uppercase btn btn-default input-rounded" ng-click="">
+                                                            NOT INTERESTED
+                                                        </button>
+
+                                                    </div>
+
+                                                </div>
+                        </span>
+                        -->
 					</div>
 
 					<div class="row">

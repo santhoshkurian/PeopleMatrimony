@@ -26,7 +26,7 @@
                     '&token=' + storageService.get("token") + '&type=pending'
                 }).then(function successCallback(response) {
                     console.log(response)
-                    $scope.awaiting = response.data.list;
+                    $scope.pending = response.data.list;
 
                 }, function errorCallback(response) {
                     console.log(response)
@@ -42,7 +42,18 @@
                 url: resourceUrl.url()+'response/'+action+'/'+comId +
                 '?&token=' + storageService.get("token")
             }).then(function successCallback(response) {
-console.log(response);
+                    console.log(response);
+                $http({
+                    method: 'GET',
+                    url: resourceUrl.url()+'inbox?' +
+                    '&token=' + storageService.get("token") + '&type=pending'
+                }).then(function successCallback(response) {
+                    console.log(response)
+                    $scope.pending = response.data.list;
+
+                }, function errorCallback(response) {
+                    console.log(response)
+                });
             }, function errorCallback(response) {
                 console.log(response)
             });

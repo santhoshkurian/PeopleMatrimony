@@ -21,10 +21,10 @@
                 $http({
                     method: 'GET',
                     url: resourceUrl.url()+'inbox?' +
-                    '&token=' + storageService.get("token") + '&type=declined'
+                    '&token=' + storageService.get("token") + '&type=accepted'
                 }).then(function successCallback(response) {
                     console.log(response)
-                    $scope.awaiting = response.data.list;
+                    $scope.accept = response.data.list;
 
                 }, function errorCallback(response) {
                     console.log(response)
