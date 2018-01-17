@@ -26,8 +26,10 @@
             }).then(function successCallback(response) {
                 console.log(response)
                 if(!response.data.error) {
-                    $scope.item = response.data.user;
-                    $scope.gender = response.data.user.gender;
+                    $state.go('viewProfile',{view_id:id});
+
+                    //$scope.item = response.data.user;
+                    //$scope.gender = response.data.user.gender;
                 }else{
                     $scope.message = 'Invalid ID';
                     $timeout(function() { $scope.message = '';}, 2000);
