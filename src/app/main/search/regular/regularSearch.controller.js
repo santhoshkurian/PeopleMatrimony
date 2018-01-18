@@ -129,7 +129,7 @@
                     })
                 }
             }
-            if($scope.regular.mothertongueList.length > 0){
+            if($scope.a.mothertongueList.length > 0){
                 var array = $scope.a.mothertongueList;
                 for (var i = 0; i < array.length; i++) {
                     $scope.motherTongueList.filter(function (a) {
@@ -193,7 +193,7 @@
         $scope.selection = null;
 
         $scope.search = search;
-        function search(){
+        function search(obj){
             console.log($scope.multiValue.country);
             if($scope.multiValue.mothertongue.length  > 0){
                 $scope.multiValue.mothertongue.filter(function (a) {
@@ -232,17 +232,19 @@
                 });
                 $scope.regular.country = $scope.regular.countryList.join('~');
             }
-            $http({
-                method: 'POST',
-                url: resourceUrl.url()+'matches/save?p1_debug=1&token='+storageService.get('token'),
-                data:$scope.regular
-            }).then(function successCallback(response) {
-                console.log(response);
+            if(obj == 'save') {
+                $http({
+                    method: 'POST',
+                    url: resourceUrl.url() + 'matches/save?p1_debug=1&token=' + storageService.get('token'),
+                    data: $scope.regular
+                }).then(function successCallback(response) {
+                    console.log(response);
 
 
-            }, function errorCallback(response) {
+                }, function errorCallback(response) {
 
-            });
+                });
+            }
 
             storageService.set('regular_search',JSON.stringify($scope.regular));
             $state.go("searchresult")
