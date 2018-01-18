@@ -29,8 +29,7 @@
 
                                     <label class=" uppercase font-weight "> Age</label>
 
-
-                                    <select class="form-control input-rounded " ng-model="regular.age_start">
+                                   <select class="form-control input-rounded " ng-model="regular.age_start">
                                         <option  value="">Select</option>
                                         <span ng-if="profile.login_user.gender == 'male'">
                                         <option  value="18">18</option>
@@ -88,11 +87,9 @@
                                         <option  value="69">69</option>
                                         <option  value="70">70</option>
                                     </select>
-
                                 </div>
                                 <div class="col-md-2">
                                     <label class=" uppercase font-weight "> &nbsp;</label>
-
                                     <select placeholder="select" class="form-control input-rounded " ng-model="regular.age_end">
                                         <option  value="">Select</option>
                                          <span ng-if="profile.login_user.gender == 'male'">
@@ -151,7 +148,6 @@
                                         <option  value="69">69</option>
                                         <option  value="70">70</option>
                                     </select>
-
                                 </div>
 
 
@@ -479,6 +475,20 @@
 
 
                                     </select>
+
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+
+                                <div class="col-md-4">
+
+                                    <div ng-if="regular.age_end != null && regular.age_start > regular.age_end" style="color: red">Sorry, Invalid age range.</div>
+                                </div>
+
+
+                                <div class="col-md-4 col-md-offset-2">
+                                    <div ng-if="regular.height_end != null && regular.height_start > regular.height_end" style="color: red">Sorry, Invalid height range.</div>
 
                                 </div>
 
