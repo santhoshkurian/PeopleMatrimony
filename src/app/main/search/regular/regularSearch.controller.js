@@ -195,6 +195,16 @@
 
         $scope.search = search;
         function search(obj){
+            var ageStatus = true;
+            var heightStatus = true;
+
+            if($scope.regular.age_end != null && $scope.regular.age_start > $scope.regular.age_end){
+                ageStatus = false;
+            }
+            if($scope.regular.height_end != null && $scope.regular.height_start > $scope.regular.height_end){
+                heightStatus = false;
+            }
+
             console.log($scope.multiValue.country);
             if($scope.multiValue.mothertongue.length  > 0){
                 $scope.multiValue.mothertongue.filter(function (a) {
@@ -246,9 +256,11 @@
 
                 });
             }
+            if(ageStatus && heightStatus) {
 
-            storageService.set('regular_search',JSON.stringify($scope.regular));
-            $state.go("searchresult")
+                storageService.set('regular_search', JSON.stringify($scope.regular));
+                $state.go("searchresult");
+            }
 
 
         }
