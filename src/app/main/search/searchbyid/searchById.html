@@ -10,41 +10,13 @@
             <div class="row">
                 <div class="col-md-12 ">
                     <!-- BEGIN SAMPLE FORM PORTLET-->
-                    <div class="alert alert-success" ng-if="message != ''">
-                        Sorry, this member's profile does not exist.                       </div>
                     <div class="portlet light bordered border-rounded">
                         <div class="portlet-title">
                             <div class="caption ">
                                 <!--<i class="icon-settings font-red-sunglo"></i>-->
                                 <span class="caption-subject bold uppercase"> Search By Id</span>
                             </div>
-                            <!--
-                                                        <div class="actions">
-                                                            <div class="btn-group">
-                                                                <a class="btn btn-sm green dropdown-toggle" href="javascript:;" data-toggle="dropdown"> Actions
-                                                                    <i class="fa fa-angle-down"></i>
-                                                                </a>
-                                                                <ul class="dropdown-menu pull-right">
-                                                                    <li>
-                                                                        <a href="javascript:;">
-                                                                            <i class="fa fa-pencil"></i> Edit </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="javascript:;">
-                                                                            <i class="fa fa-trash-o"></i> Delete </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="javascript:;">
-                                                                            <i class="fa fa-ban"></i> Ban </a>
-                                                                    </li>
-                                                                    <li class="divider"> </li>
-                                                                    <li>
-                                                                        <a href="javascript:;"> Make admin </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                            -->
+
                         </div>
 
 
@@ -57,6 +29,9 @@
 
                                     <input type="text" class="form-control input-rounded"
                                            placeholder="Enter Id" ng-model="viewId"></div>
+                                <div  class="col-md-12" style="color: red" ng-if="message != ''">
+                                    Invalid Member ID
+                                </div>
                             </div>
                             <hr>
                             <div class="form-group">
@@ -68,6 +43,8 @@
                                 </div>
                             </div>
 
+
+
                         </div>
                     </div>
                 </div>
@@ -76,131 +53,6 @@
         </div>
     </div>
 
-                <div class="col-md-12 " ng-if="item != null">
-                    <!-- BEGIN SAMPLE FORM PORTLET-->
-                    <div class="portlet light bordered border-rounded">
-
-
-                        <div class="portlet light bordered">
-                            <div class="portlet-title" style="border-bottom: 0px">
-                                <div class="caption ">
-                                    <a ng-click="viewProfile(item.id_people)"><span class="caption-subject font-red-sunglo bold"> {{item.name}}</span> <span>({{item.id_people}})</span></a>
-                                    <br/>
-                                    <span ng-if="item.profile_for != null && item.profile_for != ''" style="font-size: 9px"> Profile created by {{item.profile_for}}</span>
-                                </div>
-                                <div class="actions">
-                                    <div class="btn-group">
-                                        <a class="btn btn-sm  dropdown-toggle" href="javascript:;" data-toggle="dropdown">
-                                            <i class="fa fa-ellipsis-v"></i>
-                                        </a>
-                                        <ul class="dropdown-menu pull-right">
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <i class="fa fa-pencil"></i> Edit </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <i class="fa fa-trash-o"></i> Delete </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <i class="fa fa-ban"></i> Ban </a>
-                                            </li>
-                                            <li class="divider"></li>
-                                            <li>
-                                                <a href="javascript:;"> Make admin </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="portlet-body form">
-                                <div class="row">
-                                    <div class="col-md-3" style="text-align: center;">
-                                        <imageinfo images="item.images" gender="item.gender"></imageinfo>
-
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="row" >
-                                            <div class="col-md-12" style="border-bottom: 1px solid #eef1f5;">
-                                                <table width="100%" style="margin-bottom: 10px;" class="match-table">
-                                                    <tr>
-                                                        <td width="30%" class="first-row">Age/Height</td>
-                                                        <td width="5%">:</td>
-                                                        <td width="45%">{{item.age}},{{item.height}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="first-row">Religion</td>
-                                                        <td>:</td>
-                                                        <td>{{item.religion}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="first-row">Mother Tongue</td>
-                                                        <td>:</td>
-                                                        <td>{{item.mothertongue}}</td>
-                                                    </tr>
-                                                    <!--<tr>-->
-                                                        <!--<td class="first-row">Community</td>-->
-                                                        <!--<td>:</td>-->
-                                                        <!--<td>Vaniyakullak Kshathriya</td>-->
-                                                    <!--</tr>-->
-                                                    <tr>
-                                                        <td class="first-row">Star</td>
-                                                        <td>:</td>
-                                                        <td>{{item.star}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="first-row">Education</td>
-                                                        <td>:</td>
-                                                        <td>{{item.education}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="first-row">Profession/Income</td>
-                                                        <td>:</td>
-                                                        <td>{{item.occupation}},{{item.income}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="first-row">Location</td>
-                                                        <td>:</td>
-                                                        <td>{{item.city_name}}</td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                            <div class="col-md-12"
-                                                 style="margin-bottom: 10px;margin-top: 10px;font-size: 12px">
-                                                {{item.about_family}}
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class=" row vp-main-action">
-                                    <div style="text-transform: uppercase;text-align: center;">
-                                        <div class="col-md-3 col-sm-3 col-xs-3"
-                                             style="height:60px;font-size:14px;padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro;cursor: pointer" ng-click="shortlist(item.id_people)"><i
-                                                class="fa fa-star-o"></i><span class="hidden-sm hidden-xs"> Shortlist</span>
-                                        </div>
-                                        <div class="col-md-3 col-sm-3 col-xs-3"
-                                             style="height:60px;font-size:14px;padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro;cursor: pointer">
-                                            <i class="fa fa-phone"></i> <span class="hidden-sm hidden-xs"> Call now</span>
-                                        </div>
-                                        <div class="col-md-3 col-sm-3 col-xs-3"
-                                             style="height:60px;font-size:14px;padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro;cursor: pointer"><i
-                                                class="fa fa-commenting-o"></i> <span class="hidden-sm hidden-xs">  Chat now</span>
-                                        </div>
-                                        <div class="col-md-3 col-sm-3 col-xs-3" ng-click="sendInterest(item.id_people)"
-                                             style="height:60px;font-size:14px;padding: 20px;border: 1px solid #eef1f5;background-color: #e7505a;cursor: pointer"><i
-                                                class="fa fa-heart" style="color: white!important;font-size: 18px"></i><span class="hidden-sm hidden-xs"> Send Interest</span>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
 
 
