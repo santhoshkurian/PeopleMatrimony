@@ -33,7 +33,7 @@
     height: 75px;
     padding: 30px 8px;
     text-decoration: none;
-    font-size: 10px;
+    font-size: 12px;
 
 }
 
@@ -41,6 +41,7 @@
 @media screen and (max-width: 1900px) {
     .tool-link > li {
         float: left;
+
     }
     .tool-link > li a {
         display: block;
@@ -49,7 +50,7 @@
         height: 75px;
         padding: 30px 8px;
         text-decoration: none;
-        font-size: 10px;
+        font-size: 11px;
 
     }
 
@@ -81,7 +82,7 @@
     .tool-link > li {
         float: left;
         display: inline;
-        font-size: 8px;
+        font-size: 10px;
 
 
 
