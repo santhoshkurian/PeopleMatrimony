@@ -6,10 +6,16 @@
         .controller('AwaitingController', AwaitingController);
 
     /** @ngInject */
-    function AwaitingController($http,resourceUrl,storageService,$scope,awaitingReply) {
+    function AwaitingController($http,$state,resourceUrl,storageService,$scope,awaitingReply) {
         var vm = this;
         $scope.awaiting = awaitingReply.list;
         console.log("awaiting reply",$scope.awaiting);
+
+        $scope.viewProfile = viewProfile;
+        function viewProfile(id){
+            $state.go('viewProfile',{view_id:id});
+        }
+
         $scope.deleteAwaiting = deleteAwaiting;
 
                 function deleteAwaiting(comId) {

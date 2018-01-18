@@ -6,11 +6,16 @@
         .controller('MessageDeclinedController', MessageDeclinedController);
 
     /** @ngInject */
-    function MessageDeclinedController(declined,$scope,storageService,resourceUrl) {
+    function MessageDeclinedController($state,declined,$scope,storageService,resourceUrl) {
         var vm = this;
         $scope.declined = declined.list;
         console.log("MessageDeclinedController");
         console.log($scope.declined);
+
+        $scope.viewProfile = viewProfile;
+        function viewProfile(id){
+            $state.go('viewProfile',{view_id:id});
+        }
         $scope.deleteDeclined = deleteDeclined;
 
         function deleteDeclined(comId) {

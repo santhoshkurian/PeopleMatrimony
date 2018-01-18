@@ -6,10 +6,14 @@
         .controller('SentController', SentController);
 
     /** @ngInject */
-    function SentController($http,storageService,$scope,sent) {
+    function SentController($http,$state,storageService,$scope,sent) {
         var vm = this;
         $scope.sent_all = sent.list;
         console.log($scope.sent_all);
+        $scope.viewProfile = viewProfile;
+        function viewProfile(id){
+            $state.go('viewProfile',{view_id:id});
+        }
         $scope.deleteSent = deleteSent;
            function deleteSent(comId,resourceUrl){
             console.log(comId);

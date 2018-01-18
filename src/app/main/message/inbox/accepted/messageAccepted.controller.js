@@ -6,10 +6,15 @@
         .controller('MessageAcceptedController', MessageAcceptedController);
 
     /** @ngInject */
-    function MessageAcceptedController($scope,accept,storageService,resourceUrl) {
+    function MessageAcceptedController($state,$scope,accept,storageService,resourceUrl) {
         var vm = this;
         $scope.accept = accept.list;
         console.log($scope.accept);
+
+        $scope.viewProfile = viewProfile;
+        function viewProfile(id){
+            $state.go('viewProfile',{view_id:id});
+        }
         $scope.deleteAccept = deleteAccept;
 
         function deleteAccept(comId) {

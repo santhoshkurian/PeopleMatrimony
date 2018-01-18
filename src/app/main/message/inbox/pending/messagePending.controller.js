@@ -6,10 +6,15 @@
         .controller('MessagePendingController', MessagePendingController);
 
     /** @ngInject */
-    function MessagePendingController(pending,$scope,$http,resourceUrl,storageService) {
+    function MessagePendingController(pending,$state,$scope,$http,resourceUrl,storageService) {
         var vm = this;
         $scope.pending = pending.list;
         console.log($scope.pending);
+
+        $scope.viewProfile = viewProfile;
+        function viewProfile(id){
+            $state.go('viewProfile',{view_id:id});
+        }
 
         $scope.deletePending = deletePending;
         $scope.respondAction = respondAction;
