@@ -7,6 +7,7 @@
 
     /** @ngInject */
     function RegularSearchController(profile,$scope,$state,$http,$stateParams,populate,resourceUrl,storageService,searchList) {
+
         var vm = this;
         console.log("RegularSearchController");
         console.log(populate);
