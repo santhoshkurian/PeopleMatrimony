@@ -6,10 +6,14 @@
         .controller('ManagePhotoController', ManagePhotoController);
 
     /** @ngInject */
-    function ManagePhotoController(resourceUrl,$scope,storageService,$http,$state,loadImages) {
+    function ManagePhotoController(resourceUrl,privacy,$scope,storageService,profile,$http,$state,loadImages) {
         console.log("ManagePhotoController");
         console.log("ManagePhotoController",loadImages.user.images.length);
         $scope.viewType = 'managephoto';
+        $scope.privacy = privacy;
+        $scope.profile = profile;
+
+
         $scope.imageLength = loadImages.user.images.length;
 
         $scope.image_url = storageService.get("image_url");
@@ -121,7 +125,21 @@
         }
 
 
+        $scope.editPhotoPrivacy = editPhotoPrivacy;
+        function editPhotoPrivacy(obj){
+            $http({
+                method: 'POST',
+                url: resourceUrl.url()+'settings/privacy?' +
+                'token=' +storageService.get('token')+
+                '&id=' +storageService.get('id')+
+                '&photo='+obj
+            }).then(function successCallback(response) {
+            }, function errorCallback(response) {
 
+
+            });
+
+        }
 
 
         $scope.images =[];

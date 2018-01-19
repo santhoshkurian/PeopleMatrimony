@@ -32,6 +32,7 @@
                 },
                 resolve  : {
 
+
                 }
             }).state('search.advanced', {
                 url      : '/advanced',

@@ -63,6 +63,7 @@
 
         }
 
+        $scope.editPhotoPrivacy = editPhotoPrivacy;
         function editPhotoPrivacy(obj){
             $http({
                 method: 'POST',

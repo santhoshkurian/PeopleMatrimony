@@ -269,92 +269,103 @@
                     </div>
                     <div class="portlet-body form">
                         <div class="row">
-
-                            <div class="col-md-12">
-                                <input type="radio">Visible to all
+                        <div class="col-md-12 margin-top-10 ">
+                                <label class="checkbox-inline" class="custon-text">
+                                    <input type="radio" icheckbox_flat-red class="icheck " ng-model="privacy.photo"
+                                            value="all">
+                                    Visible to all <i style="margin-left: 2px;" class="fa fa-question-circle"></i></label>
                             </div>
-                            <div class="col-md-12">
-                                <input type="radio">Visible only on invitation sent/accepted
-                            </div>
-                            <div class="col-md-12">
-                                <input type="radio">Password protected
-                            </div>
-                        </div>
-                        <div class="row">
 
-                        </div>
-
-                        <div class="row margin-top-20">
-                            <div class="col-md-9 col-md-offest-2">
-                                <div class="col-md-12" style="font-size: 18px;color:#4cbcac;margin-bottom: 25px">
-                                    This is how the photo will look to other members
-                                </div>
-                                <div class="col-md-6">
-                                    <div style="height: 200px;width:200px;font-size:40px;text-align: center;line-height: 200px;background-image: url('../assets/images/prof1.jpg');opacity: .2 ">
-                                        <i style="opacity: 1" class="fa fa-expeditedssl"></i>
-                                        <!--<img style="height: 200px;opacity: .2"-->
-                                        <!--ng-src="../assets/images/prof1.jpg"/>-->
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <div class="col-md-12" style="border-bottom: 1px solid #eef1f5;">
-                                            <table width="100%" style="margin-bottom: 10px;" class="match-table">
-                                                <tr>
-                                                    <td width="30%" class="first-row">Age/Height</td>
-                                                    <td width="5%">:</td>
-                                                    <td width="45%">25,5`7</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="first-row">Religion</td>
-                                                    <td>:</td>
-                                                    <td>Hindu</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="first-row">Mother Tongue</td>
-                                                    <td>:</td>
-                                                    <td>Tamil</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="first-row">Community</td>
-                                                    <td>:</td>
-                                                    <td>Vaniyakullak Kshathriya</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="first-row">Star</td>
-                                                    <td>:</td>
-                                                    <td>Swathi</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="first-row">Education</td>
-                                                    <td>:</td>
-                                                    <td>Btech</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="first-row">Profession/Income</td>
-                                                    <td>:</td>
-                                                    <td>Software engineer</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="first-row">Location</td>
-                                                    <td>:</td>
-                                                    <td>Bangalore</td>
-                                                </tr>
-                                            </table>
+                            <div class="col-md-12 margin-top-10 ">
+                                <label class="checkbox-inline" class="custon-text">
+                                    <input type="radio" icheckbox_flat-red class="icheck " ng-model="privacy.photo"
+                                            value="request">
+                                    Visible to ony invitation sent/accepted <i style="margin-left: 2px;" class="fa fa-question-circle"></i></label>
+                            </div>
+                            <div class="col-md-12 margin-top-10 ">
+                                <label class="checkbox-inline" class="custon-text">
+                                    <input type="radio" icheckbox_flat-red class="icheck " ng-model="privacy.photo"
+                                            value="protected">
+                                    Password Protected <i style="margin-left: 2px;" class="fa fa-question-circle"></i></label>
+                            </div>
+                            <div class="col-md-12 margin-top-10">
+                                <div class="row margin-top-20" >
+                                    <div class="col-md-9 col-md-offest-2">
+                                        <div class="col-md-12" style="font-size: 18px;color:#4cbcac;margin-bottom: 25px">
+                                            This is how the photo will look to other members
                                         </div>
+                                        <div class="col-md-6">
+                                            <div style="height: 200px;width:200px;font-size:40px;text-align: center;line-height: 200px;background-image: url('../assets/images/prof1.jpg');opacity: .2 "><i style="opacity: 1" class="fa fa-expeditedssl"></i>
+                                                <!--<img style="height: 200px;opacity: .2"-->
+                                                <!--ng-src="../assets/images/prof1.jpg"/>-->
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-12" style="border-bottom: 1px solid #eef1f5;">
+                                                    <table width="100%" style="margin-bottom: 10px;" class="match-table">
+                                                        <tr>
+                                                            <td width="30%" class="first-row">Age/Height</td>
+                                                            <td width="5%">:</td>
+                                                            <td width="45%">{{profile.login_user.age}},{{profile.login_user.height}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="first-row">Religion</td>
+                                                            <td>:</td>
+                                                            <td>{{profile.login_user.religion}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="first-row">Mother Tongue</td>
+                                                            <td>:</td>
+                                                            <td>{{profile.login_user.mothertongue}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="first-row">Community</td>
+                                                            <td>:</td>
+                                                            <td> {{profile.login_user.caste}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="first-row">Star</td>
+                                                            <td>:</td>
+                                                            <td>{{profile.login_user.star}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="first-row">Education</td>
+                                                            <td>:</td>
+                                                            <td>{{profile.login_user.education}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="first-row">Profession/Income</td>
+                                                            <td>:</td>
+                                                            <td>{{profile.login_user.occupation}}/{{profile.login_user.income}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="first-row">Location</td>
+                                                            <td>:</td>
+                                                            <td>{{profile.login_user.city_name}}</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
 
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                                </div>
 
-                        <div class="row  " style="border-radius: 10px;margin:20px">
-                            <button class="btn btn-sm red-mint" style="border-radius: 20px"><i class="fa fa-camera"></i>
-                                Save settings
+                        </div>
+                        <div class="row margin-top-20">
+                            <button type="button" ng-click="editPhotoPrivacy(privacy.photo)"
+                                    class=" btn btn-default red input-rounded "
+                                    style="color:#ffffea">
+                                Save Settings
                             </button>
-                        </div>
+</div>
 
-                    </div>
+
+
+
+                        </div>
 
                 </div>
 
