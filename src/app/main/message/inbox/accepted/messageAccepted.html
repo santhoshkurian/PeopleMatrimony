@@ -8,7 +8,7 @@
 
             <div class="row">
 
-                <div class="col-md-12 ">
+               <!-- <div class="col-md-12 ">
                     <div class="portlet light  border-rounded ">
                         <div class="portlet-title " style="border-bottom: 0px">
                             <div class="caption green" style="font-size: 12px">
@@ -21,8 +21,8 @@
                                        data-toggle="dropdown">
                                         <i class="fa fa-filter"></i>
                                     </a>
-                                    <!--<a class="btn btn-sm red dropdown-toggle" href="javascript:;" data-toggle="dropdown">
-                                        <i class="fa fa-map"></i> </a>-->
+                                    &lt;!&ndash;<a class="btn btn-sm red dropdown-toggle" href="javascript:;" data-toggle="dropdown">
+                                        <i class="fa fa-map"></i> </a>&ndash;&gt;
                                     <ul class="dropdown-menu pull-right">
                                         <li>
                                             <a href="javascript:;">
@@ -45,7 +45,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
                 <div class="col-md-12">
                     <div ng-if="accept.length == 0" class="portlet light  border-rounded ">
                         <div class="alert alert-success">
@@ -104,11 +104,16 @@
                         </div>
                         <hr>
                         <div class="row">
-                            <div class="col-md-12 notification-style uppercase">INTEREST SENT</div>
 
-                            <div class="col-md-12 notification-details">{{item.content}}</div>
+                                <div class="col-md-12 notification-style uppercase">
+                                    <span ng-if="item.action == 'connect'">INTEREST ACCEPTED</span>
+                                    <span ng-if="item.action == 'contact'">CONTACT VIEWED</span>
+                                    <span ng-if="item.action == 'field'">{{item.field_name}} Request Accepted</span>
+                                </div>
+
+                            <div class="col-md-12 notification-details">{{item.response}}</div>
                         </div>
-                        <div class="row margin-top-10">
+                        <!--<div class="row margin-top-10">
                             <div class="col-md-12">
                                 <button type="button" class=" uppercase btn red input-rounded" ng-click="">
                                     Call Now
@@ -120,7 +125,7 @@
                                 </button>
 
                             </div>
-                        </div>
+                        </div>-->
                     </div>
 
                     <div class="row">
