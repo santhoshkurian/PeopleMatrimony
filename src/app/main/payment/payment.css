@@ -1,16 +1,18 @@
 .vp-main-action .vp-main-link2 {
-    padding: 20px;
+    /*padding: 20px;*/
     border: 1px solid #eef1f5;
-    background-color: #ffffff;
+    background-color: #edf3f7!important;
     font-size: 14px !important;
+    cursor: pointer;
     font-weight: bold;
+    text-align: center;
     color: #777777;
 }
 .payment-box{
-    border: 1px solid #777777;
     height: 310px;
     /*margin-right: 25px;*/
     margin-top: 25px;
+
 }
 .feature-header-text {
     color: #e15d5d;
@@ -26,7 +28,47 @@
 }
 .col-md-border {
 
-    border-right: 1px solid #e15d5d !important;
+    border-right: 2px solid lightgrey !important;
+}
+.price-button{
+    width:150px!important;
+    color: #969696 !important;
+    border-color: #969696 !important;
+    border-width: 2px!important;
+    font-size: 15px!important;
+}
+
+.price-button-light{
+    width:150px!important;
+    color: #dbdbdb!important;
+    border-color: #dbdbdb !important;
+    border-width: 2px!important;
+    font-size: 15px!important;
+}
+
+.price-color{
+    width:150px!important;
+    color: #969696 !important;
+    font-size: 27px!important;
+}
+
+.price-color-light{
+    width:150px!important;
+    color: #dbdbdb!important;
+    border-color: #dbdbdb !important;
+    font-size: 25px!important;
+}
+
+.make-payment-color{
+    height:45px!important;
+    background-color: #ff1d13 !important;
+    color:white!important;
+}
+
+.make-payment-color-light{
+    height:45px!important;
+    background-color: #eee!important;
+    color:darkgrey!important;
 }
 .old-price {
     text-decoration: line-through;
@@ -39,8 +81,8 @@
 }
 
 .feature-box{
-    border: 1px solid #777777 !important;
-    height: 100px !important;
+    border: 3px solid lightgrey !important;
+    height: 120px !important;
 }
 .select-payment-header{
     background-color: #edf3f7;
