@@ -65,10 +65,10 @@
                                         border-radius: 4px;padding: 5px;height:220px;width: auto;max-width:240px"
                                              ng-show="indexValue == $index" ng-click='reverse1()'
                                                 />
-                                        <img style="height: auto;width:230px"
-                                             ng-if="view.images.length == 0 && view.gender == 'male'"
+                                        <img class="dir-img"  style="height: auto;width:230px"
+                                             ng-if="view.images.length == 0 && view.gender == 'male' "
                                              ng-src="/assets/defaultImages/male_card.jpg"/>
-                                        <img style="height: auto;width:230px"
+                                        <img class="dir-img"  style="height: auto;width:230px"
                                              ng-if="view.images.length == 0 && view.gender == 'female'"
                                              ng-src="/assets/defaultImages/female_card.jpg"/>
                                     </div>

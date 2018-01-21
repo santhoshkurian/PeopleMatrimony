@@ -101,18 +101,18 @@
                         <div class="portlet-body form">
                             <div class="row">
                                 <div class="col-md-4" style="text-align: center;">
-                                    <span ng-if="item.settings.length == 0 || item.settings[0].photo_privacy == 'all' ">
-                                    <imageinfo images="item.images" gender="item.gender"
+                                    <!--<span ng-if="item.settings.length > 0 &&  item.settings[0].photo_privacy == 'all'">-->
+                                    <imageinfo images="item.images" gender="item.gender" settings="item.settings"
                                                reverse="viewAll(data)"></imageinfo>
-                                    </span>
-                                    <span ng-if="item.settings.length > 0 && item.settings[0].photo_privacy == 'protected' && item.gender == 'male'">
-                                        <img class="dir-img" ng-src="/assets/defaultImages/male_photo_protected_card.jpg" style="border: 1px solid #ddd;
-                                        border-radius: 4px;padding: 5px;height:auto;width: 180px"/>
-                                    </span>
-                                    <span ng-if="item.settings.length > 0 && item.settings[0].photo_privacy == 'protected' && item.gender == 'female'">
-                                        <img class="dir-img" ng-src="/assets/defaultImages/female_photo_protected_card.jpg" style="border: 1px solid #ddd; /* Gray border */
-                                            border-radius: 4px;padding: 5px;height:auto;width: 180px"/>
-                                    </span>
+                                    <!--</span>-->
+                                    <!--<span ng-if="item.settings.length > 0 && item.settings[0].photo_privacy == 'protected' && item.gender == 'male'">-->
+                                        <!--<img class="dir-img" ng-src="/assets/defaultImages/male_photo_protected_card.jpg" style="border: 1px solid #ddd;-->
+                                        <!--border-radius: 4px;padding: 5px;height:auto;width: 180px"/>-->
+                                    <!--</span>-->
+                                    <!--<span ng-if="item.settings.length > 0 && item.settings[0].photo_privacy == 'protected' && item.gender == 'female'">-->
+                                        <!--<img class="dir-img" ng-src="/assets/defaultImages/female_photo_protected_card.jpg" style="border: 1px solid #ddd; /* Gray border */-->
+                                            <!--border-radius: 4px;padding: 5px;height:auto;width: 180px"/>-->
+                                    <!--</span>-->
                                 </div>
                                 <div class="col-md-8">
                                     <div class="row">
