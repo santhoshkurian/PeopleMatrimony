@@ -19,9 +19,9 @@
                         <div class="portlet-title " style="border-bottom: 0px">
                             <div class="caption green" style="font-size: 13px">
                                 <span class="caption-subject profile-sort   "> Profile shorts :</span>
-                                <span> <input class="filter-check-box" type="checkbox"/> Photo Available</span>
-                                <span> <input class="filter-check-box" type="checkbox"/> Horoscope Available</span>
-                                <span> <input class="filter-check-box" type="checkbox"/> Online Now</span>
+                                <span> <input class="filter-check-box" type="checkbox" ng-click="facetSearch()" ng-model="filterData.photo_available"/> Photo Available</span>
+                                <span> <input class="filter-check-box" type="checkbox" ng-click="facetSearch()" ng-model="filterData.horoscope_available"/> Horoscope Available</span>
+                                <span> <input class="filter-check-box" type="checkbox" ng-click="facetSearch()" ng-model="filterData.is_online"/> Online Now</span>
                                 <!--<span style="margin-left:20px"> More</span>-->
                             </div>
                             <div class="actions">

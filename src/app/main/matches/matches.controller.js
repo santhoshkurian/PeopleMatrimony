@@ -201,6 +201,15 @@
             if($scope.facetdetails.occupation.length > 0){
                 query.push("occupation="+ $scope.facetdetails.occupation.join('~'))
             }
+            if($scope.filterData.horoscope_available != null){
+                query.push("horoscope_available="+$scope.filterData.horoscope_available)
+            }
+            if($scope.filterData.photo_available != null){
+                query.push("photo_available="+$scope.filterData.photo_available)
+            }
+            if($scope.filterData.is_online != null){
+                query.push("is_online="+$scope.filterData.is_online)
+            }
 
 
             if(query.length > 0 ){
