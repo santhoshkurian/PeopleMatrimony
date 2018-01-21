@@ -19,9 +19,9 @@
                         <div class="portlet-title" style="border-bottom: 0px">
                             <div class="caption green" style="font-size: 13px">
                                 <span class="caption-subject profile-sort   "> Profile shorts :</span>
-                                <span> <input class="filter-check-box" type="checkbox"/> Photo Available</span>
-                                <span> <input class="filter-check-box" type="checkbox"/> Horoscope Available</span>
-                                <span> <input class="filter-check-box" type="checkbox"/> Online Now</span>
+                                <span> <input class="filter-check-box" type="checkbox" ng-click="facetSearch()" ng-model="filterData.photo_available"/> Photo Available</span>
+                                <span> <input class="filter-check-box" type="checkbox" ng-click="facetSearch()" ng-model="filterData.horoscope_available"/> Horoscope Available</span>
+                                <span> <input class="filter-check-box" type="checkbox" ng-click="facetSearch()" ng-model="filterData.is_online"/> Online Now</span>
                                 <!--<span style="margin-left:20px"> More</span>-->
                             </div>
 
@@ -129,7 +129,7 @@
                             <div class=" row vp-main-action" ng-if="mainlink !='shortlisted'">
                                 <div style="text-transform: uppercase;text-align: center;">
                                     <div class="col-md-3 col-sm-3 col-xs-3"
-                                         style="height:60px;font-size:14px;padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro;cursor: pointer" ng-click="shortlist(item.id_people)"><i
+                                         style="height:60px;font-size:14px;padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro;cursor: pointer" ng-click="shortlist(item)"><i
                                             class="fa fa-star-o"></i><span class="hidden-sm hidden-xs"> Shortlist</span>
                                     </div>
                                     <div class="col-md-3 col-sm-3 col-xs-3"
@@ -140,7 +140,7 @@
                                          style="height:60px;font-size:14px;padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro;cursor: pointer"><i
                                             class="fa fa-commenting-o"></i> <span class="hidden-sm hidden-xs">  Chat now</span>
                                     </div>
-                                    <div class="col-md-3 col-sm-3 col-xs-3" ng-click="sendInterest(item.id_people)"
+                                    <div class="col-md-3 col-sm-3 col-xs-3" ng-click="sendInterest(item)"
                                          style="height:60px;font-size:14px;padding: 20px;border: 1px solid #eef1f5;background-color:#e7505a;cursor: pointer"><i
                                             class="fa fa-heart" style="color: white!important;font-size: 18px"></i><span class="hidden-sm hidden-xs" style="color: white"> Send Interest</span>
                                     </div>
@@ -201,4 +201,48 @@
         <!--<button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>-->
         <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">OK</button>
     </div>
+</script>
+
+<script type="text/ng-template" id="searchResponseModal.html">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-title" style="color: #4cbcac;">
+            {{$ctrl.items.header}}</h4>
+    </div>
+
+    <div class="modal-body">
+        <div class="row" style="margin: 20px">
+            <div class="col-md-4">
+                <img ng-if="$ctrl.items.img.length > 0" style="height: 90px;width: 90px;border-radius: 55% !important;"
+                     ng-src="{{$ctrl.items.img[0].image}}" ng-click="$ctrl.vieImg(img.image)"/>
+                <img ng-if="$ctrl.items.img.length == 0" style="height: 90px;width: 90px;border-radius: 55% !important;"
+                     src="assets/defaultImages/avatar.png" ng-click="$ctrl.vieImg(img.image)"/>
+            </div>
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-12">
+                        <span class="bold">{{$ctrl.items.name}}</span> <span> ({{$ctrl.items.id}})</span>
+                    </div>
+                    <div class="col-md-12" style="margin-top: 25px">
+                        <button type="button" class=" uppercase btn red input-rounded" ng-click="$ctrl.upgrade()">
+                            Upgrade Now
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="row">
+                <div class="col-md-8" style="color: grey">
+                    To know more about packages call now 9999999999
+                </div>
+                <div class="col-md-4" >
+                    <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">OK</button>
+
+                </div>
+
+            </div>
+            <!--<button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>-->
+        </div>
 </script>

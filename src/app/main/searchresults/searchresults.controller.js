@@ -4,12 +4,14 @@
     angular
         .module('dashboard')
         .controller('SearchResultsController', SearchResultsController)
+        .controller('searchResponseController', searchResponseController)
         .controller('enlargeSearchPhotoController', enlargeSearchPhotoController);
 
     /** @ngInject */
     function SearchResultsController($timeout,$state,populate,$uibModal,$scope,$http,$stateParams,resourceUrl,storageService) {
         var vm = this;
         window.scroll(0, 1000);
+        $scope.filterData = {photo_available:false,horoscope_available:false,is_online:false}
         $scope.viewAll = viewAll;
         $scope.enlargeImage = [];
         function viewAll(data){
@@ -148,6 +150,15 @@
             }
             if($scope.height.end != null){
                 query.push("height_end="+$scope.height.end)
+            }
+            if($scope.filterData.horoscope_available != null){
+                query.push("horoscope_available="+$scope.filterData.horoscope_available)
+            }
+            if($scope.filterData.photo_available != null){
+                query.push("photo_available="+$scope.filterData.photo_available)
+            }
+            if($scope.filterData.is_online != null){
+                query.push("is_online="+$scope.filterData.is_online)
             }
 
 
@@ -312,22 +323,24 @@
             name: "Widower"
         }];
 
-        $scope.shortlist = function(id) {
+        $scope.shortlist = function(obj) {
+            $scope.details = {id:obj.id_people,name:obj.name,img:obj.images};
+
             $http({
                 method: 'GET',
                 url: resourceUrl.url()+'do/shortlist?' +
-                '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&view_id=' + id
+                '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&view_id=' + obj.id_people
             }).then(function successCallback(response) {
                 console.log(response)
-                $scope.message = "Successfully Shortlisted";
-                $timeout(function() { $scope.message = '';}, 2000);
+                $scope.details.header = 'Shortlisted Successfully';
+                $scope.open();
 
 
             }, function errorCallback(response) {
                 console.log(response)
                 if (response.data.message == 'Already exists') {
-                    $scope.message = "Already Shortlisted";
-                }
+                    $scope.details.header = 'Already Shortlisted';
+                    $scope.open();                }
                 $timeout(function() { $scope.message = '';}, 2000);
 
 
@@ -336,25 +349,29 @@
 
         }
 
-        $scope.sendInterest = function(id) {
+        $scope.sendInterest = function(obj) {
+
+            $scope.details = {id:obj.id_people,name:obj.name,img:obj.images};
+
             $http({
                 method: 'GET',
                 url: resourceUrl.url()+'connect/send?' +
-                '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&partner=' + id
+                '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&partner=' + obj.id_people
             }).then(function successCallback(response) {
-                console.log(response)
-                $scope.message = "send interest successfully";
-                $timeout(function() { $scope.message = '';}, 2000);
-
-
+                console.log(response);
+                if (response.data.code == '400') {
+                    $scope.details.header = response.data.message;
+                    $scope.open();
+                }else {
+                    $scope.details.header = 'Interest send successfully';
+                    $scope.open();
+                }
             }, function errorCallback(response) {
                 console.log(response)
                 if (response.data.code == '400') {
-                    $scope.message = "Already send a Interest";
-
+                    $scope.details.header = 'Already send an Interest';
+                    $scope.open();
                 }
-
-                $timeout(function() { $scope.message = '';}, 2000);
             });
 
 
@@ -367,6 +384,26 @@
                 $scope[obj1] = $scope[obj1]-4;
             }
 
+        }
+
+        $scope.open = function (size, parentSelector) {
+            var parentElem = parentSelector ?
+                angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+            var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'searchResponseModal.html',
+                controller: 'searchResponseController',
+                controllerAs: '$ctrl',
+                size: size,
+                appendTo: parentElem,
+                resolve: {
+                    items: function () {
+                        return $scope.details;
+                    }
+                }
+            });
         }
 
         $scope.match = {mstatus:null}
@@ -513,5 +550,26 @@ function enlargeSearchPhotoController($uibModalInstance, items){
         $uibModalInstance.dismiss('cancel');
     };
 }
+
+    function searchResponseController($uibModalInstance, items,$state){
+        var $ctrl = this;
+        $ctrl.items = items;
+        console.log("cheeeeeeeeeeeeeeeek",$ctrl.items);
+        //$ctrl.selected = {
+        //    item: $ctrl.items[0]
+        //};
+
+        $ctrl.ok = function () {
+            $uibModalInstance.close($ctrl.selected.item);
+        };
+
+        $ctrl.cancel = function () {
+            $uibModalInstance.dismiss('cancel');
+        };
+        $ctrl.upgrade = function () {
+            $uibModalInstance.dismiss('cancel');
+            $state.go('payment')
+        };
+    }
 })
 ();
