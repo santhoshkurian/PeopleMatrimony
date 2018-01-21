@@ -57,7 +57,7 @@
                             <div class="portlet-body form">
                                 <div class="row ">
                                     <div class=" col-xs-12 col-sm-12 col-md-6 "
-                                         style="text-align: center;line-height: 180px">
+                                         style="text-align: center;">
                                         <!--<img ng-click="enlargePhoto(view.images)" style="height: auto;width:150px;cursor: pointer" ng-if="view.images.length > 0"-->
                                              <!--ng-src="{{view.images[0].image}}"/>-->
 
@@ -71,6 +71,7 @@
                                         <img class="dir-img"  style="height: auto;width:230px"
                                              ng-if="view.images.length == 0 && view.gender == 'female'"
                                              ng-src="/assets/defaultImages/female_card.jpg"/>
+                                        <div ng-if="view.images.length == 0" ><a ng-click="requests('photo_request','basicRequest')">Photo Request</a></div>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-6">
                                         <div class="row " style="">
@@ -1012,8 +1013,10 @@
             <div class="modal-body">
                 <div class="row" style="margin: 20px">
                 <div class="col-md-4">
-                <img  style="height: 90px;width: 90px;border-radius: 55% !important;"
+                <img ng-if="$ctrl.items.img.length > 0" style="height: 90px;width: 90px;border-radius: 55% !important;"
                       ng-src="{{$ctrl.items.img[0].image}}" ng-click="$ctrl.vieImg(img.image)"/>
+                    <img ng-if="$ctrl.items.img.length == 0" style="height: 90px;width: 90px;border-radius: 55% !important;"
+                      src="assets/defaultImages/avatar.png" ng-click="$ctrl.vieImg(img.image)"/>
                 </div>
                     <div class="col-md-7">
                         <div class="row">

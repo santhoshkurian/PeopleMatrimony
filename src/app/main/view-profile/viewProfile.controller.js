@@ -313,6 +313,7 @@
     function modalController($uibModalInstance, items,$state){
         var $ctrl = this;
         $ctrl.items = items;
+        console.log("cheeeeeeeeeeeeeeeek",$ctrl.items);
         //$ctrl.selected = {
         //    item: $ctrl.items[0]
         //};
@@ -333,6 +334,7 @@
     function enlargePhotoController($uibModalInstance, items){
         var $ctrl = this;
         $ctrl.items = items;
+
 
         $ctrl.viewImg = items.partnerImageUrl[0].image;
         //$ctrl.selected = {
