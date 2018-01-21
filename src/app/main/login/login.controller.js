@@ -327,7 +327,72 @@
     };
 
     //}
-    angular.module('dashboard').controller('ModalInstanceCtrl', function ($scope,storageService,$http,resourceUrl,$uibModalInstance, items,$state,$log) {
+    angular.module('dashboard').controller('ModalInstanceCtrl', function ($uibModal,$scope,storageService,$http,resourceUrl,$uibModalInstance, items,$state,$log) {
+        var vm = this;
+
+        vm.items = items;
+        vm.selected = {
+            item: vm.items[0]
+        };
+
+
+
+
+        vm.ok = function (login) {
+            console.log(login);
+
+            $http({
+                method: 'GET',
+                url: resourceUrl.url()+'user/login?'+
+                'username='+login.username+'&password='+login.password
+            }).then(function successCallback(response) {
+                console.log(response);
+                if(!response.data.error) {
+                    $uibModalInstance.close(vm.selected.item);
+                    storageService.set("token", response.data.access_token)
+                    storageService.set("id", response.data.id_people);
+                    storageService.set("regular_search", '');
+                    if (response.data.image == '') {
+                        storageService.set("image_url", "assets/defaultImages/avatar.png");
+                    } else {
+                        storageService.set("image_url", response.data.image);
+                    }
+                    storageService.set("name", response.data.name);
+                    $state.go('app');
+                }else{
+                    $scope.message = response.data.message;
+                }
+
+            }, function errorCallback(response) {
+                $scope.message = response.data.message;
+            });
+        };
+
+        vm.cancel = function () {
+            $uibModalInstance.dismiss('cancel');
+        };
+
+
+        vm.forgotPassword = function () {
+            console.log("ddddddd");
+            $uibModalInstance.dismiss('cancel');
+            var modalInstance = $uibModal.open({
+                animation: vm.animationsEnabled,
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'forgotPassword.html',
+                controller: 'forgotPasswordCtrl',
+                controllerAs: 'vm',
+                resolve: {
+                    items: function () {
+                        return "check";
+                    }
+
+                }
+            });
+        };
+    });
+    angular.module('dashboard').controller('forgotPasswordCtrl', function ($scope,storageService,$http,resourceUrl,$uibModalInstance, items,$state,$log) {
         var vm = this;
 
         vm.items = items;
