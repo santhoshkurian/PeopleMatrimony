@@ -6,13 +6,18 @@
         .controller('DeactivateProfileController', DeactivateProfileController);
 
     /** @ngInject */
-    function DeactivateProfileController(resourceUrl,deactivate,$scope,$http,storageService) {
+    function DeactivateProfileController(resourceUrl,$state,deactivate,$stateParams,$scope,$http,storageService) {
         var vm = this;
         console.log(deactivate);
+        $scope.activate = true;
         $scope.deactivate = deactivate.duration;
+        if($scope.deactivate == 0){
+            $scope.activate = false;
+        }
         $scope.deactivateMsg = null;
         $scope.deactivateProfile = deactivateProfile;
         $scope.logout = logout;
+        $scope.activateProfile = activateProfile;
         function logout(){
             $http({
                 method: 'GET',
@@ -41,7 +46,34 @@
                 '&id=' +storageService.get('id')+
                 '&duration='+$scope.deactivate
             }).then(function successCallback(response) {
+                $state.transitionTo($state.current, $stateParams, {
+                    reload: true,
+                    inherit: false,
+                    notify: true
+                });
                 $scope.deactivateMsg = 'Deactivated Successfully';
+            }, function errorCallback(response) {
+
+
+            });
+        }
+        console.log("DeactivateProfileController");
+
+        function activateProfile(){
+            console.log($scope.deactivate);
+            $http({
+                method: 'POST',
+                url: resourceUrl.url()+'settings/profile?' +
+                'token=' +storageService.get('token')+
+                '&id=' +storageService.get('id')+
+                '&type=activate'
+            }).then(function successCallback(response) {
+                $scope.deactivateMsg = 'Activated Successfully';
+                $state.transitionTo($state.current, $stateParams, {
+                    reload: true,
+                    inherit: false,
+                    notify: true
+                });
             }, function errorCallback(response) {
 
 
