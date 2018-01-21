@@ -71,7 +71,9 @@
                                         <img class="dir-img"  style="height: auto;width:230px"
                                              ng-if="view.images.length == 0 && view.gender == 'female'"
                                              ng-src="/assets/defaultImages/female_card.jpg"/>
-                                        <div ng-if="view.images.length == 0" ><a ng-click="requests('photo_request','basicRequest')">Photo Request</a></div>
+                                        <div ng-if="view.images.length == 0" >
+                                            <a ng-if="!photo_reqReq" ng-click="requests('photo_request','basicRequest')">Photo Request</a><span style="color:gainsboro;" ng-if="photo_reqReq">Photo already Requested</span>
+                                        </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-6">
                                         <div class="row " style="">

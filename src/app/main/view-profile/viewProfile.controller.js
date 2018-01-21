@@ -21,6 +21,7 @@
         $scope.familyReq = false;
         $scope.family_statusReq = false;
         $scope.about_familyReq = false;
+        $scope.photo_reqReq = false;
         $scope.similarProfiles = similarProfiles;
 
         $scope.print = print;
@@ -108,6 +109,9 @@
                 }
                 if(a.field_name == 'about_family'){
                     $scope.about_familyReq = true;
+                }
+                if(a.field_name == 'photo_request'){
+                    $scope.photo_reqReq = true;
                 }
             });
 
