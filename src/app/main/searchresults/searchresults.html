@@ -181,7 +181,10 @@
 <script type="text/ng-template" id="enlargeSearchPhoto.html">
     <div class="modal-header">
         <h4 class="modal-title" id="enlarge" style="color: #4cbcac;font-weight: bold">
-            Profile Photos</h4>
+            Profile Photos
+
+            <button class=" pull-right btn btn-circle btn-icon-only default" type="button" ng-click="$ctrl.cancel()"><i class="fa fa-times"></i></button>
+        </h4>
     </div>
     <div class="modal-body" id="modal-body" style="text-align: center">
         <div class="row">
@@ -197,16 +200,16 @@
                 </span>
             </div>
     </div>
-    <div class="modal-footer">
-        <!--<button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>-->
-        <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">OK</button>
-    </div>
+
 </script>
 
 <script type="text/ng-template" id="searchResponseModal.html">
     <div class="modal-header">
         <h4 class="modal-title" id="modal-title" style="color: #4cbcac;">
-            {{$ctrl.items.header}}</h4>
+            {{$ctrl.items.header}}
+
+            <button class=" pull-right btn btn-circle btn-icon-only default" type="button" ng-click="$ctrl.cancel()"><i class="fa fa-times"></i></button>
+        </h4>
     </div>
 
     <div class="modal-body">
@@ -234,13 +237,10 @@
         </div>
         <div class="modal-footer">
             <div class="row">
-                <div class="col-md-8" style="color: grey">
+                <div class="col-md-12" style="color: grey">
                     To know more about packages call now 9999999999
                 </div>
-                <div class="col-md-4" >
-                    <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">OK</button>
 
-                </div>
 
             </div>
             <!--<button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>-->
