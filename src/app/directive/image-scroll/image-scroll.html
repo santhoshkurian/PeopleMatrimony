@@ -11,13 +11,13 @@
 </div>
 <div class="col-md-12" style="text-align: center;margin-top:20px" ng-if="size > 1">
     <div style="height: 35px;">
-    <a style="height: 35px;" ng-if="size > 1 && indexValue != 0" ng-click="imageBackward()" class=" btn    ">
-        <img src="/assets/icons/arrow-left.png" >                               </a>
+    <button style="height: 35px;" ng-disabled=" indexValue == 0" ng-click="imageBackward()" class=" btn    ">
+        <img src="/assets/icons/arrow-left.png" >                               </button>
     </a>&nbsp;&nbsp;
-        <span style="line-height: 35px" class="bold">{{indexValue+1}}/{{size}}</span>
+        <span style="line-height: 35px" class="bold">{{indexValue+1}} of {{size}}</span>
         &nbsp;&nbsp;
-    <a  style="height: 35px;" ng-if="size > 1 && indexValue != size-1" ng-click="imageForward()" class="btn ">
-        <img src="/assets/icons/arrow-right.png" >                               </a>
+    <button  style="height: 35px;" ng-disabled=" indexValue == size-1" ng-click="imageForward()" class="btn ">
+        <img src="/assets/icons/arrow-right.png" >                               </button>
     </a>
         </span>
 </div>

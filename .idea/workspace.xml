@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bfa2593e-d0c4-4650-be07-2f4b4b5632d0" name="Default" comment="changes">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/defaultImages/female_photo_protected_card.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/defaultImages/male_photo_protected_card.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/main/login/terms.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/toolbar/login/termsToolbar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/help/busEnquires/busEnquires.controller.js" afterPath="$PROJECT_DIR$/src/app/main/help/busEnquires/busEnquires.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/help/contactUs/contactUs.controller.js" afterPath="$PROJECT_DIR$/src/app/main/help/contactUs/contactUs.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/help/customerCare/customerCare.controller.js" afterPath="$PROJECT_DIR$/src/app/main/help/customerCare/customerCare.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/dashboard/dashboard.controller.js" afterPath="$PROJECT_DIR$/src/app/main/dashboard/dashboard.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/toolbar/dashboard/dbToolbar.css" afterPath="$PROJECT_DIR$/src/app/toolbar/dashboard/dbToolbar.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/help/feedback/feedback.controller.js" afterPath="$PROJECT_DIR$/src/app/main/help/feedback/feedback.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/footer/footer.controller.js" afterPath="$PROJECT_DIR$/src/app/footer/footer.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/footer/footer.html" afterPath="$PROJECT_DIR$/src/app/footer/footer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/index.module.js" afterPath="$PROJECT_DIR$/src/app/index.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/index.route.js" afterPath="$PROJECT_DIR$/src/app/index.route.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/managephotos/managephoto.controller.js" afterPath="$PROJECT_DIR$/src/app/main/managephotos/managephoto.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/matches/matches.controller.js" afterPath="$PROJECT_DIR$/src/app/main/matches/matches.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/matches/matches.html" afterPath="$PROJECT_DIR$/src/app/main/matches/matches.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/message/inbox/accepted/messageAccepted.controller.js" afterPath="$PROJECT_DIR$/src/app/main/message/inbox/accepted/messageAccepted.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/message/inbox/pending/messagePending.controller.js" afterPath="$PROJECT_DIR$/src/app/main/message/inbox/pending/messagePending.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/message/inbox/pending/messagePending.html" afterPath="$PROJECT_DIR$/src/app/main/message/inbox/pending/messagePending.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/navigation/settings/settingNav.controller.js" afterPath="$PROJECT_DIR$/src/app/navigation/settings/settingNav.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/directive/image-scroll/image-scroll.html" afterPath="$PROJECT_DIR$/src/app/directive/image-scroll/image-scroll.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="2945ea6f-7113-47fd-addd-6e4199c59dfa" name="New changelist" comment="" />
@@ -46,103 +26,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="terms.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/login/terms.controller.js">
+      <file leaf-file-name="viewProfile.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/main/view-profile/viewProfile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="76" selection-start-line="8" selection-start-column="76" selection-end-line="8" selection-end-column="76" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="busEnquires.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/help/busEnquires/busEnquires.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contactUs.controller.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/main/help/contactUs/contactUs.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5768374">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="customerCare.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/help/customerCare/customerCare.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="feedback.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/help/feedback/feedback.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="managephoto.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/managephotos/managephoto.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="matches.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/matches/matches.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.516129">
-              <caret line="61" column="17" selection-start-line="61" selection-start-column="12" selection-end-line="61" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="footer.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/footer/footer.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="8" selection-start-line="12" selection-start-column="7" selection-end-line="16" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/dashboard/dashboard.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.225806">
-              <caret line="133" column="9" selection-start-line="121" selection-start-column="8" selection-end-line="133" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="termsToolbar.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/toolbar/login/termsToolbar.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="33.25">
-              <caret line="56" column="55" selection-start-line="56" selection-start-column="55" selection-end-line="56" selection-end-column="55" />
+            <state vertical-scroll-proportion="-6.321429">
+              <caret line="74" column="305" selection-start-line="74" selection-start-column="299" selection-end-line="74" selection-end-column="305" />
               <folding>
-                <element signature="n#li#5;n#ul#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#span#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#span#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#span#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#span#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#script#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="image-scroll.directive.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/directive/image-scroll/image-scroll.directive.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="image-scroll.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/directive/image-scroll/image-scroll.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.42537314">
+              <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -163,7 +81,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="fixes-1" />
+        <entry key="$PROJECT_DIR$" value="fixes-5" />
       </map>
     </option>
   </component>
@@ -188,57 +106,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app/toolbar/message/messagetoolbar.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/help/contactUs/contactUs.html" />
+        <option value="$PROJECT_DIR$/src/app/main/profile/profile.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/profile/editProfile/profile.html" />
+        <option value="$PROJECT_DIR$/src/app/navigation/message/inbox/inboxNavigation.html" />
+        <option value="$PROJECT_DIR$/src/app/footer/footer.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/footer/footer.html" />
+        <option value="$PROJECT_DIR$/src/app/main/message/inbox/pending/messagePending.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/message/inbox/declined/messageDeclined.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/message/inbox/accepted/messageAccepted.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/message/awaitingReply/awaiting.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/message/sent/sent.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/toolbar/login/loginToolbar.html" />
+        <option value="$PROJECT_DIR$/src/app/index.css" />
+        <option value="$PROJECT_DIR$/src/index.html" />
+        <option value="$PROJECT_DIR$/src/app/toolbar/dashboard/dbToolbar.css" />
+        <option value="$PROJECT_DIR$/src/app/main/search/regular/regular.html" />
+        <option value="$PROJECT_DIR$/src/app/main/search/regular/regularSearch.controller.js" />
         <option value="$PROJECT_DIR$/src/app/main/main.module.js" />
+        <option value="$PROJECT_DIR$/src/app/index.route.js" />
+        <option value="$PROJECT_DIR$/src/app/main/settings/privacySettings/privacySettings.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/managephotos/managephoto.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/managephotos/managephoto.html" />
+        <option value="$PROJECT_DIR$/src/app/main/search/searchbyid/searchById.html" />
         <option value="$PROJECT_DIR$/src/app/toolbar/dashboard/dbToolbar.html" />
         <option value="$PROJECT_DIR$/src/app/toolbar/managephoto/managephotoToolbar.html" />
         <option value="$PROJECT_DIR$/src/app/toolbar/matches/matchestoolbar.html" />
         <option value="$PROJECT_DIR$/src/app/toolbar/message/messagetoolbar.html" />
         <option value="$PROJECT_DIR$/src/app/toolbar/profile/profileToolbar.html" />
+        <option value="$PROJECT_DIR$/src/app/toolbar/search/searchtoolbar.html" />
         <option value="$PROJECT_DIR$/src/app/toolbar/searchresults/searchresultstoolbar.html" />
         <option value="$PROJECT_DIR$/src/app/toolbar/settings/settingsToolbar.html" />
-        <option value="$PROJECT_DIR$/src/app/toolbar/search/searchtoolbar.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/toolbar/searchresults/searchresultstoolbar.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/dashboard/dashboard.html" />
-        <option value="$PROJECT_DIR$/src/app/navigation/dashboard/dbNavigation.html" />
-        <option value="$PROJECT_DIR$/src/app/main/dashboard/blocked/blocked.html" />
-        <option value="$PROJECT_DIR$/src/app/main/help/feedback/feedback.html" />
-        <option value="$PROJECT_DIR$/src/app/main/dashboard/blocked/blocked.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/toolbar/search/searchtoolbar.html" />
+        <option value="$PROJECT_DIR$/src/app/main/payment/payment.css" />
+        <option value="$PROJECT_DIR$/src/app/main/settings/deactivateProfile/deactivateProfile.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/settings/deactivateProfile/deactivateProfile.html" />
         <option value="$PROJECT_DIR$/src/app/directive/image-scroll/image-scroll.directive.js" />
-        <option value="$PROJECT_DIR$/src/app/main/searchresults/searchresults.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/login/login.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/recomendation/recomendation.js" />
-        <option value="$PROJECT_DIR$/src/app/main/recomendation/recomendation.css" />
-        <option value="$PROJECT_DIR$/src/app/main/recomendation/recomendationTop.html" />
-        <option value="$PROJECT_DIR$/src/app/main/recomendation/recomendation.html" />
-        <option value="$PROJECT_DIR$/src/app/navigation/dashboard-right/dashBoardRight.html" />
-        <option value="$PROJECT_DIR$/src/app/index.css" />
-        <option value="$PROJECT_DIR$/src/app/main/searchresults/searchresults.html" />
-        <option value="$PROJECT_DIR$/src/app/directive/image-scroll/image-scroll.html" />
-        <option value="$PROJECT_DIR$/src/app/main/view-profile/viewProfile.html" />
         <option value="$PROJECT_DIR$/src/app/main/view-profile/viewProfile.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/navigation/view-profile/viewProfileNav.html" />
-        <option value="$PROJECT_DIR$/src/app/main/message/inbox/pending/messagePending.html" />
-        <option value="$PROJECT_DIR$/src/app/main/message/inbox/pending/messagePending.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/message/inbox/accepted/messageAccepted.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/navigation/settings/settingNav.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/index.module.js" />
-        <option value="$PROJECT_DIR$/src/app/main/matches/matches.html" />
-        <option value="$PROJECT_DIR$/src/app/footer/footer.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/footer/footer.html" />
-        <option value="$PROJECT_DIR$/src/app/index.route.js" />
-        <option value="$PROJECT_DIR$/src/app/toolbar/dashboard/dbToolbar.css" />
-        <option value="$PROJECT_DIR$/src/app/toolbar/login/termsToolbar.html" />
-        <option value="$PROJECT_DIR$/src/app/main/dashboard/dashboard.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/help/busEnquires/busEnquires.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/help/contactUs/contactUs.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/help/customerCare/customerCare.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/help/feedback/feedback.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/managephotos/managephoto.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/login/login.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/searchresults/searchresults.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/payment/payment.html" />
         <option value="$PROJECT_DIR$/src/app/main/matches/matches.controller.js" />
-        <option value="$PROJECT_DIR$/src/app/main/login/terms.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/matches/matches.html" />
+        <option value="$PROJECT_DIR$/src/app/main/searchresults/searchresults.html" />
+        <option value="$PROJECT_DIR$/src/app/main/message/inbox/accepted/messageAccepted.html" />
+        <option value="$PROJECT_DIR$/src/app/main/message/inbox/declined/messageDeclined.html" />
+        <option value="$PROJECT_DIR$/src/app/main/message/inbox/pending/messagePending.html" />
+        <option value="$PROJECT_DIR$/src/app/main/message/awaitingReply/awaiting.html" />
+        <option value="$PROJECT_DIR$/src/app/main/message/sent/sent.html" />
+        <option value="$PROJECT_DIR$/src/app/index.module.js" />
+        <option value="$PROJECT_DIR$/src/app/main/login/loginContent.html" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/app/main/view-profile/viewProfile.html" />
+        <option value="$PROJECT_DIR$/src/app/directive/image-scroll/image-scroll.html" />
       </list>
     </option>
   </component>
@@ -341,6 +259,64 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="icons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -363,7 +339,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="toolbar" />
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -385,7 +361,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="toolbar" />
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -411,279 +387,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="toolbar" />
+              <option name="myItemId" value="directive" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="message" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="matches" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="managephotos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="help" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="feedback" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="help" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="customerCare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="help" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="contactUs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="help" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="busEnquires" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PeopleMatrimony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="footer" />
+              <option name="myItemId" value="image-scroll" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -705,11 +413,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/icons" />
+      <recent name="$PROJECT_DIR$/src/assets/img" />
       <recent name="$PROJECT_DIR$/src/app/main/login" />
       <recent name="$PROJECT_DIR$/src/app/toolbar/login" />
       <recent name="$PROJECT_DIR$/src/assets/defaultImages" />
-      <recent name="$PROJECT_DIR$/src/app/main/dashboard/blocked" />
-      <recent name="$PROJECT_DIR$/src/app/main/help/feedback" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/app/main/help/liveHelp" />
@@ -1110,217 +818,13 @@
       <workItem from="1515910463159" duration="9306000" />
       <workItem from="1515932121888" duration="7664000" />
       <workItem from="1516124629014" duration="1737000" />
-      <workItem from="1516198966028" duration="3929000" />
-    </task>
-    <task id="LOCAL-00248" summary="changes">
-      <created>1515335960921</created>
-      <option name="number" value="00248" />
-      <option name="project" value="LOCAL" />
-      <updated>1515335960921</updated>
-    </task>
-    <task id="LOCAL-00249" summary="changes">
-      <created>1515337723887</created>
-      <option name="number" value="00249" />
-      <option name="project" value="LOCAL" />
-      <updated>1515337723887</updated>
-    </task>
-    <task id="LOCAL-00250" summary="changes">
-      <created>1515337915689</created>
-      <option name="number" value="00250" />
-      <option name="project" value="LOCAL" />
-      <updated>1515337915689</updated>
-    </task>
-    <task id="LOCAL-00251" summary="changes">
-      <created>1515505948423</created>
-      <option name="number" value="00251" />
-      <option name="project" value="LOCAL" />
-      <updated>1515505948424</updated>
-    </task>
-    <task id="LOCAL-00252" summary="changes">
-      <created>1515507430141</created>
-      <option name="number" value="00252" />
-      <option name="project" value="LOCAL" />
-      <updated>1515507430142</updated>
-    </task>
-    <task id="LOCAL-00253" summary="changes">
-      <created>1515508297152</created>
-      <option name="number" value="00253" />
-      <option name="project" value="LOCAL" />
-      <updated>1515508297152</updated>
-    </task>
-    <task id="LOCAL-00254" summary="changes">
-      <created>1515510130800</created>
-      <option name="number" value="00254" />
-      <option name="project" value="LOCAL" />
-      <updated>1515510130801</updated>
-    </task>
-    <task id="LOCAL-00255" summary="changes">
-      <created>1515515762292</created>
-      <option name="number" value="00255" />
-      <option name="project" value="LOCAL" />
-      <updated>1515515762292</updated>
-    </task>
-    <task id="LOCAL-00256" summary="changes">
-      <created>1515594091171</created>
-      <option name="number" value="00256" />
-      <option name="project" value="LOCAL" />
-      <updated>1515594091171</updated>
-    </task>
-    <task id="LOCAL-00257" summary="changes">
-      <created>1515596343065</created>
-      <option name="number" value="00257" />
-      <option name="project" value="LOCAL" />
-      <updated>1515596343066</updated>
-    </task>
-    <task id="LOCAL-00258" summary="changes">
-      <created>1515607181963</created>
-      <option name="number" value="00258" />
-      <option name="project" value="LOCAL" />
-      <updated>1515607181963</updated>
-    </task>
-    <task id="LOCAL-00259" summary="changes">
-      <created>1515681892875</created>
-      <option name="number" value="00259" />
-      <option name="project" value="LOCAL" />
-      <updated>1515681892875</updated>
-    </task>
-    <task id="LOCAL-00260" summary="changes">
-      <created>1515684022492</created>
-      <option name="number" value="00260" />
-      <option name="project" value="LOCAL" />
-      <updated>1515684022492</updated>
-    </task>
-    <task id="LOCAL-00261" summary="changes">
-      <created>1515685617452</created>
-      <option name="number" value="00261" />
-      <option name="project" value="LOCAL" />
-      <updated>1515685617452</updated>
-    </task>
-    <task id="LOCAL-00262" summary="changes">
-      <created>1515688266507</created>
-      <option name="number" value="00262" />
-      <option name="project" value="LOCAL" />
-      <updated>1515688266507</updated>
-    </task>
-    <task id="LOCAL-00263" summary="changes">
-      <created>1515688485033</created>
-      <option name="number" value="00263" />
-      <option name="project" value="LOCAL" />
-      <updated>1515688485033</updated>
-    </task>
-    <task id="LOCAL-00264" summary="changes">
-      <created>1515688561579</created>
-      <option name="number" value="00264" />
-      <option name="project" value="LOCAL" />
-      <updated>1515688561579</updated>
-    </task>
-    <task id="LOCAL-00265" summary="changes">
-      <created>1515688792505</created>
-      <option name="number" value="00265" />
-      <option name="project" value="LOCAL" />
-      <updated>1515688792505</updated>
-    </task>
-    <task id="LOCAL-00266" summary="changes">
-      <created>1515688966285</created>
-      <option name="number" value="00266" />
-      <option name="project" value="LOCAL" />
-      <updated>1515688966285</updated>
-    </task>
-    <task id="LOCAL-00267" summary="changes">
-      <created>1515689412341</created>
-      <option name="number" value="00267" />
-      <option name="project" value="LOCAL" />
-      <updated>1515689412341</updated>
-    </task>
-    <task id="LOCAL-00268" summary="changes">
-      <created>1515690029833</created>
-      <option name="number" value="00268" />
-      <option name="project" value="LOCAL" />
-      <updated>1515690029833</updated>
-    </task>
-    <task id="LOCAL-00269" summary="changes">
-      <created>1515690570560</created>
-      <option name="number" value="00269" />
-      <option name="project" value="LOCAL" />
-      <updated>1515690570560</updated>
-    </task>
-    <task id="LOCAL-00270" summary="changes">
-      <created>1515775075850</created>
-      <option name="number" value="00270" />
-      <option name="project" value="LOCAL" />
-      <updated>1515775075864</updated>
-    </task>
-    <task id="LOCAL-00271" summary="changes">
-      <created>1515776440385</created>
-      <option name="number" value="00271" />
-      <option name="project" value="LOCAL" />
-      <updated>1515776440385</updated>
-    </task>
-    <task id="LOCAL-00272" summary="changes">
-      <created>1515780257487</created>
-      <option name="number" value="00272" />
-      <option name="project" value="LOCAL" />
-      <updated>1515780257487</updated>
-    </task>
-    <task id="LOCAL-00273" summary="changes">
-      <created>1515780791348</created>
-      <option name="number" value="00273" />
-      <option name="project" value="LOCAL" />
-      <updated>1515780791350</updated>
-    </task>
-    <task id="LOCAL-00274" summary="changes">
-      <created>1515780818832</created>
-      <option name="number" value="00274" />
-      <option name="project" value="LOCAL" />
-      <updated>1515780818833</updated>
-    </task>
-    <task id="LOCAL-00275" summary="changes">
-      <created>1515812481031</created>
-      <option name="number" value="00275" />
-      <option name="project" value="LOCAL" />
-      <updated>1515812481032</updated>
-    </task>
-    <task id="LOCAL-00276" summary="changes">
-      <created>1515813133107</created>
-      <option name="number" value="00276" />
-      <option name="project" value="LOCAL" />
-      <updated>1515813133107</updated>
-    </task>
-    <task id="LOCAL-00277" summary="changes">
-      <created>1515816045156</created>
-      <option name="number" value="00277" />
-      <option name="project" value="LOCAL" />
-      <updated>1515816045156</updated>
-    </task>
-    <task id="LOCAL-00278" summary="changes">
-      <created>1515816483729</created>
-      <option name="number" value="00278" />
-      <option name="project" value="LOCAL" />
-      <updated>1515816483729</updated>
-    </task>
-    <task id="LOCAL-00279" summary="changes">
-      <created>1515817848352</created>
-      <option name="number" value="00279" />
-      <option name="project" value="LOCAL" />
-      <updated>1515817848352</updated>
-    </task>
-    <task id="LOCAL-00280" summary="changes">
-      <created>1515822937447</created>
-      <option name="number" value="00280" />
-      <option name="project" value="LOCAL" />
-      <updated>1515822937447</updated>
-    </task>
-    <task id="LOCAL-00281" summary="changes">
-      <created>1515823733686</created>
-      <option name="number" value="00281" />
-      <option name="project" value="LOCAL" />
-      <updated>1515823733686</updated>
-    </task>
-    <task id="LOCAL-00282" summary="changes">
-      <created>1515834001435</created>
-      <option name="number" value="00282" />
-      <option name="project" value="LOCAL" />
-      <updated>1515834001436</updated>
+      <workItem from="1516198966028" duration="12596000" />
+      <workItem from="1516285606849" duration="12446000" />
+      <workItem from="1516379905152" duration="3776000" />
+      <workItem from="1516448093098" duration="16438000" />
+      <workItem from="1516528199111" duration="14444000" />
+      <workItem from="1516630687443" duration="2616000" />
+      <workItem from="1516639585275" duration="1676000" />
     </task>
     <task id="LOCAL-00283" summary="changes">
       <created>1515856619564</created>
@@ -1406,41 +910,251 @@
       <option name="project" value="LOCAL" />
       <updated>1515933567201</updated>
     </task>
-    <option name="localTasksCounter" value="297" />
+    <task id="LOCAL-00297" summary="changes">
+      <created>1516202940045</created>
+      <option name="number" value="00297" />
+      <option name="project" value="LOCAL" />
+      <updated>1516202940046</updated>
+    </task>
+    <task id="LOCAL-00298" summary="changes">
+      <created>1516203400697</created>
+      <option name="number" value="00298" />
+      <option name="project" value="LOCAL" />
+      <updated>1516203400697</updated>
+    </task>
+    <task id="LOCAL-00299" summary="changes">
+      <created>1516203807200</created>
+      <option name="number" value="00299" />
+      <option name="project" value="LOCAL" />
+      <updated>1516203807200</updated>
+    </task>
+    <task id="LOCAL-00300" summary="changes">
+      <created>1516204425953</created>
+      <option name="number" value="00300" />
+      <option name="project" value="LOCAL" />
+      <updated>1516204425953</updated>
+    </task>
+    <task id="LOCAL-00301" summary="changes">
+      <created>1516206007986</created>
+      <option name="number" value="00301" />
+      <option name="project" value="LOCAL" />
+      <updated>1516206007986</updated>
+    </task>
+    <task id="LOCAL-00302" summary="changes">
+      <created>1516209575606</created>
+      <option name="number" value="00302" />
+      <option name="project" value="LOCAL" />
+      <updated>1516209575606</updated>
+    </task>
+    <task id="LOCAL-00303" summary="changes">
+      <created>1516212053690</created>
+      <option name="number" value="00303" />
+      <option name="project" value="LOCAL" />
+      <updated>1516212053690</updated>
+    </task>
+    <task id="LOCAL-00304" summary="changes">
+      <created>1516212672222</created>
+      <option name="number" value="00304" />
+      <option name="project" value="LOCAL" />
+      <updated>1516212672222</updated>
+    </task>
+    <task id="LOCAL-00305" summary="changes">
+      <created>1516289666109</created>
+      <option name="number" value="00305" />
+      <option name="project" value="LOCAL" />
+      <updated>1516289666110</updated>
+    </task>
+    <task id="LOCAL-00306" summary="changes">
+      <created>1516290037505</created>
+      <option name="number" value="00306" />
+      <option name="project" value="LOCAL" />
+      <updated>1516290037506</updated>
+    </task>
+    <task id="LOCAL-00307" summary="changes">
+      <created>1516291151705</created>
+      <option name="number" value="00307" />
+      <option name="project" value="LOCAL" />
+      <updated>1516291151705</updated>
+    </task>
+    <task id="LOCAL-00308" summary="changes">
+      <created>1516291340871</created>
+      <option name="number" value="00308" />
+      <option name="project" value="LOCAL" />
+      <updated>1516291340871</updated>
+    </task>
+    <task id="LOCAL-00309" summary="changes">
+      <created>1516292795788</created>
+      <option name="number" value="00309" />
+      <option name="project" value="LOCAL" />
+      <updated>1516292795788</updated>
+    </task>
+    <task id="LOCAL-00310" summary="changes">
+      <created>1516294098285</created>
+      <option name="number" value="00310" />
+      <option name="project" value="LOCAL" />
+      <updated>1516294098285</updated>
+    </task>
+    <task id="LOCAL-00311" summary="changes">
+      <created>1516294486909</created>
+      <option name="number" value="00311" />
+      <option name="project" value="LOCAL" />
+      <updated>1516294486910</updated>
+    </task>
+    <task id="LOCAL-00312" summary="changes">
+      <created>1516294806526</created>
+      <option name="number" value="00312" />
+      <option name="project" value="LOCAL" />
+      <updated>1516294806526</updated>
+    </task>
+    <task id="LOCAL-00313" summary="changes">
+      <created>1516297859362</created>
+      <option name="number" value="00313" />
+      <option name="project" value="LOCAL" />
+      <updated>1516297859362</updated>
+    </task>
+    <task id="LOCAL-00314" summary="changes">
+      <created>1516298273395</created>
+      <option name="number" value="00314" />
+      <option name="project" value="LOCAL" />
+      <updated>1516298273395</updated>
+    </task>
+    <task id="LOCAL-00315" summary="changes">
+      <created>1516298932903</created>
+      <option name="number" value="00315" />
+      <option name="project" value="LOCAL" />
+      <updated>1516298932904</updated>
+    </task>
+    <task id="LOCAL-00316" summary="changes">
+      <created>1516299354836</created>
+      <option name="number" value="00316" />
+      <option name="project" value="LOCAL" />
+      <updated>1516299354836</updated>
+    </task>
+    <task id="LOCAL-00317" summary="changes">
+      <created>1516382969666</created>
+      <option name="number" value="00317" />
+      <option name="project" value="LOCAL" />
+      <updated>1516382969667</updated>
+    </task>
+    <task id="LOCAL-00318" summary="changes">
+      <created>1516384369486</created>
+      <option name="number" value="00318" />
+      <option name="project" value="LOCAL" />
+      <updated>1516384369487</updated>
+    </task>
+    <task id="LOCAL-00319" summary="changes">
+      <created>1516449718439</created>
+      <option name="number" value="00319" />
+      <option name="project" value="LOCAL" />
+      <updated>1516449718440</updated>
+    </task>
+    <task id="LOCAL-00320" summary="changes">
+      <created>1516465005747</created>
+      <option name="number" value="00320" />
+      <option name="project" value="LOCAL" />
+      <updated>1516465005747</updated>
+    </task>
+    <task id="LOCAL-00321" summary="changes">
+      <created>1516465514152</created>
+      <option name="number" value="00321" />
+      <option name="project" value="LOCAL" />
+      <updated>1516465514152</updated>
+    </task>
+    <task id="LOCAL-00322" summary="changes">
+      <created>1516530208082</created>
+      <option name="number" value="00322" />
+      <option name="project" value="LOCAL" />
+      <updated>1516530208083</updated>
+    </task>
+    <task id="LOCAL-00323" summary="changes">
+      <created>1516530295393</created>
+      <option name="number" value="00323" />
+      <option name="project" value="LOCAL" />
+      <updated>1516530295394</updated>
+    </task>
+    <task id="LOCAL-00324" summary="changes">
+      <created>1516534302712</created>
+      <option name="number" value="00324" />
+      <option name="project" value="LOCAL" />
+      <updated>1516534302712</updated>
+    </task>
+    <task id="LOCAL-00325" summary="changes">
+      <created>1516535353989</created>
+      <option name="number" value="00325" />
+      <option name="project" value="LOCAL" />
+      <updated>1516535353989</updated>
+    </task>
+    <task id="LOCAL-00326" summary="changes">
+      <created>1516535619309</created>
+      <option name="number" value="00326" />
+      <option name="project" value="LOCAL" />
+      <updated>1516535619309</updated>
+    </task>
+    <task id="LOCAL-00327" summary="changes">
+      <created>1516540461550</created>
+      <option name="number" value="00327" />
+      <option name="project" value="LOCAL" />
+      <updated>1516540461550</updated>
+    </task>
+    <task id="LOCAL-00328" summary="changes">
+      <created>1516545726525</created>
+      <option name="number" value="00328" />
+      <option name="project" value="LOCAL" />
+      <updated>1516545726525</updated>
+    </task>
+    <task id="LOCAL-00329" summary="changes">
+      <created>1516551950559</created>
+      <option name="number" value="00329" />
+      <option name="project" value="LOCAL" />
+      <updated>1516551950559</updated>
+    </task>
+    <task id="LOCAL-00330" summary="changes">
+      <created>1516631684029</created>
+      <option name="number" value="00330" />
+      <option name="project" value="LOCAL" />
+      <updated>1516631684029</updated>
+    </task>
+    <task id="LOCAL-00331" summary="changes">
+      <created>1516640861633</created>
+      <option name="number" value="00331" />
+      <option name="project" value="LOCAL" />
+      <updated>1516640861637</updated>
+    </task>
+    <option name="localTasksCounter" value="332" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="695804000" />
+    <option name="totallyTimeSpent" value="755867000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="24" width="1315" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.50278884" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23832528" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22866344" sideWeight="0.49721116" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25925925" sideWeight="0.49721116" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28289992" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21907014" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980299" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1532,240 +1246,20 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/main/dashboard/blocked/blocked.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="101" selection-start-line="33" selection-start-column="101" selection-end-line="33" selection-end-column="101" />
-        </state>
+    <entry file="file://$PROJECT_DIR$/src/assets/images/mastercard-logo-big.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/help/feedback/feedback.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="52" selection-start-line="45" selection-start-column="52" selection-end-line="45" selection-end-column="52" />
-        </state>
+    <entry file="file://$PROJECT_DIR$/src/assets/img/logo10.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/dashboard/blocked/blocked.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/login/loginToolbar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7808219">
-          <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/toolbar/search/searchtoolbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53170735">
-          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/search/regular/regular.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="475.2857">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/search/regular/regularSearch.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="193" column="21" selection-start-line="193" selection-start-column="15" selection-end-line="193" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/searchresults/searchresults.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38812786">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="38" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/login/loginContent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41707316">
-          <caret line="17" column="29" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/dashboard/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.464286">
-          <caret line="421" column="134" selection-start-line="416" selection-start-column="81" selection-end-line="421" selection-end-column="134" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/recomendation/recomendation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/recomendation/recomendation.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.451612">
-          <caret line="144" column="21" selection-start-line="144" selection-start-column="21" selection-end-line="144" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/recomendation/recomendationTop.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.392857">
-          <caret line="40" column="7" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/recomendation/recomendation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.571428">
-          <caret line="670" column="0" selection-start-line="670" selection-start-column="0" selection-end-line="670" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/toolbar/searchresults/searchresultstoolbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.99268293">
-          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/view-profile/viewProfile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1023" column="118" selection-start-line="1023" selection-start-column="111" selection-end-line="1023" selection-end-column="118" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/navigation/dashboard-right/dashBoardRight.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.678571">
-          <caret line="142" column="56" selection-start-line="142" selection-start-column="56" selection-end-line="142" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/navigation/view-profile/viewProfileNav.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16585366">
-          <caret line="21" column="117" selection-start-line="21" selection-start-column="117" selection-end-line="21" selection-end-column="117" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/view-profile/viewProfile.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7374429">
-          <caret line="23" column="30" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/message/inbox/pending/messagePending.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="44" column="22" selection-start-line="44" selection-start-column="22" selection-end-line="44" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/message/inbox/pending/messagePending.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32439023">
-          <caret line="111" column="129" selection-start-line="111" selection-start-column="129" selection-end-line="111" selection-end-column="129" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/message/inbox/accepted/messageAccepted.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.084474884">
-          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/settings/privacySettings/privacySettings.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="46.82143">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/directive/image-scroll/image-scroll.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="14" selection-start-line="2" selection-start-column="4" selection-end-line="8" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/directive/image-scroll/image-scroll.directive.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="90" selection-start-line="29" selection-start-column="55" selection-end-line="29" selection-end-column="90" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/searchresults/searchresults.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="109" column="38" selection-start-line="109" selection-start-column="38" selection-end-line="109" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/navigation/settings/settingNav.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/index.module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/index.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/profile/profile.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="78" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/matches/matches.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="10.178572">
-          <caret line="113" column="88" selection-start-line="113" selection-start-column="88" selection-end-line="113" selection-end-column="88" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#0;n#span#1;n#div#0;n#div#0;n#div#1;n#div#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/settings/accountsettings/accountSettings.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/footer/footer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6785714">
-          <caret line="43" column="74" selection-start-line="43" selection-start-column="74" selection-end-line="43" selection-end-column="74" />
-          <folding />
+        <state vertical-scroll-proportion="-4.75">
+          <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
         </state>
       </provider>
     </entry>
@@ -1773,159 +1267,355 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/main.module.js">
+    <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.483871">
-          <caret line="398" column="27" selection-start-line="398" selection-start-column="24" selection-end-line="398" selection-end-column="27" />
-          <folding />
+        <state vertical-scroll-proportion="-11.535714">
+          <caret line="53" column="55" selection-start-line="53" selection-start-column="55" selection-end-line="53" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/login/login.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/app/main/dashboard/dashboard.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="85" selection-start-line="8" selection-start-column="71" selection-end-line="8" selection-end-column="85" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/toolbar/dashboard/dbToolbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.107142">
-          <caret line="12" column="31" selection-start-line="0" selection-start-column="0" selection-end-line="222" selection-end-column="6" />
-          <folding>
-            <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="25.862068">
-          <caret line="4" column="3152" selection-start-line="4" selection-start-column="3152" selection-end-line="4" selection-end-column="3152" />
-          <folding />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="8" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="8" />
-          <folding />
+          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/recomendation/recomendation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/toolbar/dashboard/dbToolbar.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="96" column="16" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="16" />
-          <folding />
+          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/toolbar/dashboard/dbtoolbar.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/app/main/search/regular/regular.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6926503">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="485" column="110" selection-start-line="485" selection-start-column="48" selection-end-line="485" selection-end-column="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/search/regular/regularSearch.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="261" column="42" selection-start-line="261" selection-start-column="42" selection-end-line="261" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/index.route.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.6774194">
-          <caret line="307" column="52" selection-start-line="307" selection-start-column="52" selection-end-line="307" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/footer/footer.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="8" selection-start-line="12" selection-start-column="7" selection-end-line="16" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/toolbar/login/termsToolbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="33.25">
-          <caret line="56" column="55" selection-start-line="56" selection-start-column="55" selection-end-line="56" selection-end-column="55" />
-          <folding>
-            <element signature="n#li#5;n#ul#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/dashboard/dashboard.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.225806">
-          <caret line="133" column="9" selection-start-line="121" selection-start-column="8" selection-end-line="133" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/help/busEnquires/busEnquires.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/help/customerCare/customerCare.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/help/feedback/feedback.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
+          <caret line="881" column="21" selection-start-line="881" selection-start-column="21" selection-end-line="881" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/main/managephotos/managephoto.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
+          <caret line="141" column="9" selection-start-line="141" selection-start-column="9" selection-end-line="141" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/profile/editProfile/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1044" column="45" selection-start-line="1040" selection-start-column="36" selection-end-line="1044" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/managephotos/managephoto.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="287" column="43" selection-start-line="287" selection-start-column="43" selection-end-line="287" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/search/searchbyid/searchById.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3571428">
+          <caret line="32" column="80" selection-start-line="32" selection-start-column="80" selection-end-line="32" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/dashboard/dbToolbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.5">
+          <caret line="197" column="63" selection-start-line="197" selection-start-column="63" selection-end-line="197" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/managephoto/managephotoToolbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.8214285">
+          <caret line="82" column="63" selection-start-line="82" selection-start-column="63" selection-end-line="82" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/matches/matchestoolbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.571428">
+          <caret line="84" column="63" selection-start-line="84" selection-start-column="63" selection-end-line="84" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/message/messagetoolbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.7142856">
+          <caret line="84" column="63" selection-start-line="84" selection-start-column="63" selection-end-line="84" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/profile/profileToolbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.785714">
+          <caret line="82" column="63" selection-start-line="82" selection-start-column="63" selection-end-line="82" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/search/searchtoolbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.785714">
+          <caret line="84" column="63" selection-start-line="84" selection-start-column="63" selection-end-line="84" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/searchresults/searchresultstoolbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.071429">
+          <caret line="83" column="63" selection-start-line="83" selection-start-column="63" selection-end-line="83" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/settings/settingsToolbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.73953485">
+          <caret line="183" column="63" selection-start-line="183" selection-start-column="63" selection-end-line="183" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/payment/payment.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.935484">
+          <caret line="44" column="19" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/main.module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.038539555">
+          <caret line="190" column="0" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/profile/profile.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="737" column="19" selection-start-line="733" selection-start-column="16" selection-end-line="737" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/settings/deactivateProfile/deactivateProfile.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/settings/privacySettings/privacySettings.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="79" column="9" selection-start-line="65" selection-start-column="8" selection-end-line="79" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/settings/deactivateProfile/deactivateProfile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.464286">
+          <caret line="62" column="100" selection-start-line="62" selection-start-column="100" selection-end-line="62" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/settings/privacySettings/privacySettings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6107527">
+          <caret line="77" column="111" selection-start-line="77" selection-start-column="104" selection-end-line="77" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/login/login.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.07910751">
+          <caret line="394" column="153" selection-start-line="394" selection-start-column="153" selection-end-line="394" selection-end-column="153" />
+          <folding>
+            <element signature="e#13514#13685#0" expanded="false" />
+            <element signature="e#13809#14480#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/view-profile/viewProfile.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="205" column="24" selection-start-line="205" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/navigation/searchresults/searchResultsNavigation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="13.140187">
+          <caret line="296" column="207" selection-start-line="296" selection-start-column="201" selection-end-line="296" selection-end-column="207" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/payment/payment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="296" column="62" selection-start-line="296" selection-start-column="62" selection-end-line="296" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/searchresults/searchresults.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="161" column="13" selection-start-line="153" selection-start-column="12" selection-end-line="161" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/main/matches/matches.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.516129">
-          <caret line="61" column="17" selection-start-line="61" selection-start-column="12" selection-end-line="61" selection-end-column="17" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="211" column="13" selection-start-line="211" selection-start-column="13" selection-end-line="211" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/login/terms.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/app/main/matches/matches.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46187365">
+          <caret line="237" column="35" selection-start-line="237" selection-start-column="0" selection-end-line="238" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/searchresults/searchresults.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.25">
+          <caret line="239" column="37" selection-start-line="239" selection-start-column="37" selection-end-line="239" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/message/inbox/accepted/messageAccepted.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.892858">
+          <caret line="85" column="127" selection-start-line="85" selection-start-column="127" selection-end-line="85" selection-end-column="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/message/inbox/declined/messageDeclined.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.464286">
+          <caret line="87" column="127" selection-start-line="87" selection-start-column="127" selection-end-line="87" selection-end-column="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/message/inbox/pending/messagePending.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.571428">
+          <caret line="86" column="127" selection-start-line="86" selection-start-column="127" selection-end-line="86" selection-end-column="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/message/awaitingReply/awaiting.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.142858">
+          <caret line="86" column="127" selection-start-line="86" selection-start-column="127" selection-end-line="86" selection-end-column="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/message/sent/sent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49673203">
+          <caret line="86" column="127" selection-start-line="86" selection-start-column="127" selection-end-line="86" selection-end-column="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="76" selection-start-line="8" selection-start-column="76" selection-end-line="8" selection-end-column="76" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.061290324">
+          <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/login/loginContent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2451613">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/index.module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44970414">
+          <caret line="8" column="87" selection-start-line="8" selection-start-column="87" selection-end-line="8" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/directive/image-scroll/image-scroll.directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/help/contactUs/contactUs.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/app/main/view-profile/viewProfile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5768374">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="-6.321429">
+          <caret line="74" column="305" selection-start-line="74" selection-start-column="299" selection-end-line="74" selection-end-column="305" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#span#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#span#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#span#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#span#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#script#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/directive/image-scroll/image-scroll.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42537314">
+          <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
