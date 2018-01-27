@@ -78,7 +78,7 @@
         // State definitions
         $stateProvider
             .state('app', {
-                url: '/app',
+                url: '/main',
                 views: {
                     'main@': {
                         templateUrl: 'app/core/layouts/dbLayout.html',
