@@ -6,10 +6,13 @@
         .controller('RegistrationStep2Controller', RegistrationStep2Controller);
 
     /** @ngInject */
-    function RegistrationStep2Controller($timeout,resourceUrl,storageService,$scope,$http,$state) {
+    function RegistrationStep2Controller($timeout,resourceUrl,storageService,$scope,$http,$state,$stateParams) {
         //var vm = this;
         console.log("RegistrationStep2Controller");
         console.log(storageService.get('id'));
+
+        console.log("stateParams_id",$stateParams.id);
+        console.log("stateParams_token",$stateParams.token);
         if(storageService.get('token') == '' && storageService.get('id') == ''){
             $state.go('login')
 
@@ -35,21 +38,13 @@
                 $http({
                     method: 'POST',
                     url: resourceUrl.url() + 'user?step=3&' +
-                    'id_people=' + $scope.memberId + '&' +
-                    'token=' + storageService.get('token') +
+                    'id_people=' + $stateParams.id + '&' +
+                    'token=' + $stateParams.token +
                     '&user_pin=' + $scope.userPin
                 }).then(function successCallback(response) {
-                    console.log(response);
-                    storageService.set("token", '');
-                    storageService.set("id", '');
-                    storageService.set("image_url", '');
-                    storageService.set("name", '');
-                    storageService.set("package", '');
-                    storageService.set("regular_search", '');
+                    storageService.clear();
                     $state.go('login')
                 }, function errorCallback(response) {
-                    console.log(response)
-
                     $scope.message = "Invalid Pin";
                     $timeout(function () {
                         $scope.message = '';

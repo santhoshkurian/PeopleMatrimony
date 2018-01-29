@@ -7,12 +7,12 @@
      */
     angular
         .module('matrimony', ['ui.bootstrap','ui.router','toolbar','dashboard','footer'])
-        .factory('testInterceptor', testInterceptor)
+        .factory('httpInterceptor', httpInterceptor)
         .config(function($httpProvider) {
-            $httpProvider.interceptors.push('testInterceptor');
+            $httpProvider.interceptors.push('httpInterceptor');
         });
 
-    function testInterceptor($injector,$q,storageService) {
+    function httpInterceptor($injector,$q,storageService) {
         return {
             request: function(config) {
                 return config;
@@ -24,29 +24,12 @@
 
             response: function(res) {
                 if(res.data.code === 401 && res.data.message == 'Token is not valid.') {
-                    //storageService.set("token",'');
-                    //storageService.set("id",'');
-                    //storageService.set("image_url",'');
-                    //storageService.set("name",'');
-                    //storageService.set("package",'');
-                    //storageService.set("regular_search",'');
-                    localStorage.clear();
+                    storageService.clear();
                     $(".page-loading").addClass("page-loading-hidden");
                     $("#body-filter").removeClass("page-grey-color");
                     $injector.get('$state').transitionTo('login');
                     return $q.reject(res);
                 }
-                //if(res.data.code === 400) {
-                //    storageService.set("token",null);
-                //    storageService.set("id",null);
-                //    storageService.set("image_url",null);
-                //    storageService.set("name",null);
-                //    storageService.set("regular_search",null);
-                //    $(".page-loading").addClass("page-loading-hidden");
-                //    $("#body-filter").removeClass("page-grey-color");
-                //    $injector.get('$state').transitionTo('login');
-                //    return $q.reject(res);
-                //}
                 return res;
             },
 

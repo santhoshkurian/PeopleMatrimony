@@ -9,7 +9,9 @@
     function RegistrationController(resourceUrl,storageService,$scope,$http,$stateParams,$state,populate) {
         //var vm = this;
         console.log("RegistrationController");
-        console.log("stateParams",$stateParams.reg_id);
+        console.log("stateParams",$stateParams.rel_id);
+        console.log("stateParams_id",$stateParams.id);
+        console.log("stateParams_id",storageService.get("token"));
 
         var vm = this;
         $scope.edu_id = 0;
@@ -39,7 +41,7 @@
 
         $http({
             method: 'GET',
-            url: resourceUrl.url()+'populate?id_mothertongue=1&id_religion='+$stateParams.reg_id
+            url: resourceUrl.url()+'populate?id_mothertongue=1&id_religion='+$stateParams.rel_id
         }).then(function successCallback(response) {
             $scope.castList = response.data.caste;
         }, function errorCallback(response) {
@@ -150,7 +152,7 @@
                 && !$scope.showHeight && !$scope.showEducation && !$scope.showOccupation) {
                 $http({
                     method: 'POST',
-                    url: resourceUrl.url() + 'user?id_people=' + storageService.get('id') +
+                    url: resourceUrl.url() + 'user?id_people=' + $stateParams.id +
                     '&marital_status=' + $scope.step2.marital_status + '&' +
                     'caste=' + $scope.step2.caste + '&' +
                     'country=' + $scope.step2.country + '&' +
@@ -160,15 +162,11 @@
                     'education=' + $scope.edu_id +
                     '&occupation=' + $scope.pro_id +
                     '&step=2&' +
-                    'token=' + storageService.get('token')
+                    'token=' + storageService.get("token")
                 }).then(function successCallback(response) {
-                    //console.log(response.data.access_token);
-                    //storageService.set("token", response.data.access_token)
-                    //storageService.set("id", response.data.id_people)
-
-                    $state.go('step2')
-
-
+                    $state.go('step2',{
+                        id:$stateParams.id
+                    })
                 }, function errorCallback(response) {
                     console.log(response);
                     $scope.message = response.data.message;

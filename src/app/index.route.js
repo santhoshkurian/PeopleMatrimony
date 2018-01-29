@@ -3,29 +3,6 @@
 
     angular
         .module('matrimony')
-        .factory('storageService', ['$rootScope', function ($rootScope) {
-
-            return {
-                get: function (key) {
-                    return localStorage.getItem(key);
-                },
-                set: function (key, data) {
-                    localStorage.setItem(key, data);
-                },
-                clear: function () {
-                    localStorage.clear();
-                }
-            };
-        }])
-        .factory('resourceUrl', [function () {
-            return {
-                url: function () {
-                    return "http://devapi.peoplematrimony.com/";
-                }
-            }
-        }])
-
-
         .run(function ($rootScope, $state, storageService) {
             $rootScope
                 .$on('$stateChangeStart',
@@ -45,8 +22,9 @@
             $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
                 $(".page-loading").addClass("page-loading-hidden");
                 $("#body-filter").removeClass("page-grey-color");
+                console.log("idddddddd check",storageService.get("id"))
                 if
-                    (storageService.get("token") == '' && storageService.get("id") == '') {
+                    (storageService.get("token") == '' || storageService.get("id") == '' || storageService.get("token") == null || storageService.get("id") == null) {
                     if(toState.name == 'terms'){
                         $state.go("terms");
                     }else {
@@ -357,7 +335,7 @@
 
                 }
             }).state('reg', {
-                url: '/reg/:reg_id',
+                url: '/reg/:rel_id/:id',
                 views: {
                     'main@': {
                         templateUrl: 'app/core/layouts/regLayout.html'
@@ -396,7 +374,7 @@
                 }
             })
             .state('step2', {
-                url: '/step2',
+                url: '/step2/:id',
                 views: {
                     'main@': {
                         templateUrl: 'app/core/layouts/regLayout.html'
@@ -936,9 +914,5 @@
 
     }
 
-    function initRun() {
-        console.log("run");
-
-    }
 
 })();

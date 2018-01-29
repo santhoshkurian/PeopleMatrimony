@@ -304,10 +304,9 @@
                     //console.log(response.data.access_token);
                     if(!response.data.error) {
                         storageService.set("token", response.data.access_token)
-                        storageService.set("id", response.data.id_people)
 
                         $state.go('reg', {
-                            reg_id: $scope.reg.religion
+                            rel_id: $scope.reg.religion,id:response.data.id_people
                         })
                     }else{
                         $scope.message = response.data.message
