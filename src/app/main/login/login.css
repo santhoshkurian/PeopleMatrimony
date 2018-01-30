@@ -143,7 +143,7 @@ padding-top:5px;}
 .user-error-msg {
     position: absolute;
     bottom: -3px;
-    width: 75%;
+    width: 100%;
     z-index: 11;
     text-transform: none;
     background-color: #dd4b39!important;
@@ -158,5 +158,5 @@ padding-top:5px;}
     margin-bottom: 7px!important;
 }
 .text-box-width{
-    width: 280px!important;
+    /*width: 280px!important;*/
 }

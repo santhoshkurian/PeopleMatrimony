@@ -220,23 +220,25 @@
             $scope.moberror = '';
             $scope.nameMsg = '';
             $scope.passwordError = '';
+            $scope.selectDob = {day:'',month:'',year:''};
+
 
 
 
             var date1 = $scope.reg.dob;
             date1 = new Date(date1);
-            var dob = ''
+            var dob = '';
 
-            if(date1 != null && date1 != '') {
-                //date1 = new Date(date1.getFullYear(),date1.getMonth(),date1.getDay());
-                var month = parseInt(date1.getMonth()) +1;
-                console.log(month+1)
-                dob = date1.getFullYear()+'-'+month+'-'+date1.getDate();
-                //date1 = date1.toString().replace('(India Standard Time)', '(IST)');
-                //date1 = new Date(date1);
-
-                console.log("ssssssssss",dob);
-            }
+            //if(date1 != null && date1 != '') {
+            //    //date1 = new Date(date1.getFullYear(),date1.getMonth(),date1.getDay());
+            //    var month = parseInt(date1.getMonth()) +1;
+            //    console.log(month+1)
+            //    dob = date1.getFullYear()+'-'+month+'-'+date1.getDate();
+            //    //date1 = date1.toString().replace('(India Standard Time)', '(IST)');
+            //    //date1 = new Date(date1);
+            //
+            //    console.log("ssssssssss",dob);
+            //}
             if($scope.reg.profile_for == null || $scope.reg.profile_for ==''){
                 $scope.showSelectProfile = true;
             }
@@ -252,16 +254,17 @@
             if($scope.reg.gender == null || $scope.reg.gender ==''){
                 $scope.showGender = true;
             }
-            if(date1 == null || date1 ==''){
+            if($scope.selectDob.day == '' || $scope.selectDob.month == '' || $scope.selectDob.year == ''){
                 $scope.dobMsg = "Select date of birth";
                 $scope.showDOB = true;
             }else{
-                console.log(date1.getFullYear());
-                console.log(new Date().getFullYear());
-                if(date1.getFullYear() >= new Date().getFullYear()){
-                    $scope.dobMsg = "Select the correct DOB";
-                    $scope.showDOB = true;
-                }
+                dob = $scope.selectDob.year+'-'+$scope.selectDob.month+'-'+$scope.selectDob.day;
+                //console.log(date1.getFullYear());
+                //console.log(new Date().getFullYear());
+                //if(date1.getFullYear() >= new Date().getFullYear()){
+                //    $scope.dobMsg = "Select the correct DOB";
+                //    $scope.showDOB = true;
+                //}
             }
             if($scope.reg.mothertongue == null || $scope.reg.mothertongue ==''){
                 $scope.showmt = true;
