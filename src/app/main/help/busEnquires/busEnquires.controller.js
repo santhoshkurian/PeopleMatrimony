@@ -7,7 +7,7 @@
         .controller('busEnqController', busEnqController);
 
     /** @ngInject */
-    function busEnqController($http,$scope,storageService)
+    function busEnqController($http,$scope,storageService,resourceUrl)
     {
 
         console.log("busEnqController");

@@ -18,7 +18,7 @@
 
         }
 
-        $scope.memberId = storageService.get('id');
+        $scope.memberId = $stateParams.id;
         $scope.userPin = null;
         $scope.message = null;
 

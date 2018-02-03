@@ -7,7 +7,7 @@
         .controller('contactUsController', contactUsController);
 
     /** @ngInject */
-    function contactUsController(storageService,$scope,$http)
+    function contactUsController(storageService,$scope,$http,resourceUrl)
     {
 
 

@@ -10,10 +10,10 @@
             <div class="row">
                 <div class="col-md-5">
                     <div class="form-group">
-                        <label class="font-weight "> Your Name</label>
+                        <label class="font-weight "> Your Name <span style="color: red">*</span></label>
 
                         <input type="text" class="form-control  input-rounded"
-                               ng-model="business.name">
+                               ng-model="business.name" readonly="readonly">
 
 
                     </div>
@@ -24,7 +24,7 @@
                         <label class="font-weight "> Category</label>
 
                         <select class="form-control  input-rounded"
-                                ng-model="business.email">
+                                ng-model="business.category">
                             <option value="">Select</option>
                             <option value="Problems related to website">Problems related to website</option>
                             <option value="Problems related to profiles">Problems related to profiles</option>
@@ -40,18 +40,18 @@
             <div class="row">
                 <div class="col-md-5">
                     <div class="form-group">
-                        <label class="font-weight ">Matrimony Id</label>
+                        <label class="font-weight ">Matrimony Id <span style="color: red">*</span></label>
 
                         <input type="text" class="form-control  input-rounded"
-                               ng-model="business.id">
+                               ng-model="business.id" readonly="readonly">
 
 
                     </div>
                     <div class="form-group">
-                        <label class="font-weight ">Priorty</label>
+                        <label class="font-weight ">Priority</label>
 
                             <select class="form-control  input-rounded"
-                                   ng-model="business.email">
+                                    ng-model="business.priority">
                                 <option value="">Select</option>
                                 <option value="low">Low</option>
                                 <option value="medium">Medium</option>
@@ -63,19 +63,20 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-5">
                     <div class="form-group">
-                        <label class="font-weight ">Suggestions And Feedback</label>
+                        <label class="font-weight ">Suggestions And Feedback <span style="color: red">*</span></label>
 
              <textarea class="form-control" rows="5"
-                       ng-model="business.details"></textarea>
+                       ng-model="business.message"></textarea>
+                        <div ng-if="!messageVal" style="color: red">Feedback is Mandatory</div>
 
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <button type="button"
+                    <button
                             class=" btn btn-default red input-rounded pull-right"
-                            style="color:#ffffea">
+                            style="color:#ffffea" ng-click="submit()">
                         Submit
                     </button>
                 </div>

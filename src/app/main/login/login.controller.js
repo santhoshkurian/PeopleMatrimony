@@ -203,6 +203,7 @@
 
         }
 
+        $scope.selectDob = {day:'',month:'',year:''};
 
         vm.registerCandidate = function () {
             console.log($scope.reg);
@@ -220,7 +221,6 @@
             $scope.moberror = '';
             $scope.nameMsg = '';
             $scope.passwordError = '';
-            $scope.selectDob = {day:'',month:'',year:''};
 
 
 
@@ -304,9 +304,14 @@
                     '&country_code='+$scope.reg+'&email='+$scope.reg.email+'&' +
                     'mobile='+$scope.reg.mobile+'&password='+$scope.reg.password+'&source=111'
                 }).then(function successCallback(response) {
-                    //console.log(response.data.access_token);
+                    console.log(response.data);
                     if(!response.data.error) {
                         storageService.set("token", response.data.access_token)
+                        storageService.set("id", response.data.id_people);
+                        storageService.set("valid", false);
+
+
+
 
                         $state.go('reg', {
                             rel_id: $scope.reg.religion,id:response.data.id_people
@@ -360,6 +365,7 @@
                         storageService.set("image_url", response.data.image);
                     }
                     storageService.set("name", response.data.name);
+                    storageService.set("valid", true);
                     $state.go('app');
                 }else{
                     $scope.message = response.data.message;

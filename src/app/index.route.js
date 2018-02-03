@@ -33,13 +33,19 @@
                 }
                 else {
                     console.log("to state",toState);
-                    if(toState.name == 'login'){
-                        $state.go('app');
-                    }else{
-                        $state.go(toState);
+                        if (toState.name == 'login') {
+                            if(storageService.get("valid") == 'true') {
+                                $state.go('app');
+                            }else{
+                                localStorage.clear();
+                                $state.go("login");
+                            }
+                        } else {
+                            $state.go(toState);
+                        }
                     }
 
-                }
+
 
             });
 

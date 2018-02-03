@@ -7,7 +7,7 @@
         .controller('customerCareController', customerCareController);
 
     /** @ngInject */
-    function customerCareController($http,$scope,storageService)
+    function customerCareController($http,$scope,storageService,resourceUrl)
     {
 
         console.log("customerCareController");
