@@ -15,7 +15,9 @@
                         <label class="font-weight "> Your Name</label>
 
                         <input type="text" class="form-control  input-rounded"
-                               ng-model="business.name">
+                               ng-model="business.name" readonly="readonly">
+                        <div ng-if="!nameVal" style="color: red">Please enter your phone Number</div>
+
 
 
                     </div>
@@ -23,10 +25,12 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-5">
                     <div class="form-group">
-                        <label class="font-weight "> Organisation/Company</label>
+                        <label class="font-weight "> Organisation/Company <span style="color: red">*</span></label>
 
                         <input type="text" class="form-control  input-rounded"
                                ng-model="business.company">
+                        <div ng-if="!companyVal" style="color: red">Please enter your phone Number</div>
+
 
 
                     </div>
@@ -38,7 +42,7 @@
                         <label class="font-weight ">Nature of Business</label>
 
                         <input type="text" class="form-control  input-rounded"
-                               ng-model="business.nature">
+                               ng-model="business.business_type">
 
 
                     </div>
@@ -46,10 +50,12 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-5">
                     <div class="form-group">
-                        <label class="font-weight ">Contact Phone</label>
+                        <label class="font-weight ">Contact Phone <span style="color: red">*</span></label>
 
-                        <input type="text" class="form-control  input-rounded"
+                        <input type="number" class="form-control  input-rounded"
                                ng-model="business.phone">
+                        <div ng-if="!phoneVal" style="color: red">Please enter your phone Number</div>
+
 
 
                     </div>
@@ -58,10 +64,12 @@
             <div class="row">
                 <div class="col-md-5">
                     <div class="form-group">
-                        <label class="font-weight ">Email</label>
+                        <label class="font-weight ">Email <span style="color: red">*</span></label>
 
-                        <input type="text" class="form-control  input-rounded"
+                        <input type="email" class="form-control  input-rounded"
                                ng-model="business.email">
+                        <div ng-if="!emailVal" style="color: red">Please enter your email</div>
+
 
 
                     </div>
@@ -69,7 +77,7 @@
                         <label class="font-weight ">Contact Address</label>
 
              <textarea class="form-control" rows="3"
-                       ng-model="business.contactAddress"></textarea>
+                       ng-model="business.address"></textarea>
 
 
                     </div>
@@ -77,17 +85,18 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-5">
                     <div class="form-group">
-                        <label class="font-weight ">Details/Queries about Patnership</label>
+                        <label class="font-weight ">Details/Queries about Patnership <span style="color: red">*</span></label>
 
              <textarea class="form-control" rows="7"
-                       ng-model="business.details"></textarea>
+                       ng-model="business.description"></textarea>
+                        <div ng-if="!descriptionVal" style="color: red">Please enter your details</div>
 
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <button type="button"
+                    <button ng-click="submit()"
                             class=" btn btn-default red input-rounded pull-right"
                             style="color:#ffffea">
                         Send
