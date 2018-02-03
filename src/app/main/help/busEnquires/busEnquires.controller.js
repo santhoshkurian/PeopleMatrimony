@@ -4,10 +4,11 @@
 
     angular
         .module('dashboard')
-        .controller('busEnqController', busEnqController);
+        .controller('busEnqController', busEnqController)
+        .controller('EnquiryController', EnquiryController);
 
     /** @ngInject */
-    function busEnqController($http,$scope,storageService,resourceUrl)
+    function busEnqController($http,$scope,storageService,resourceUrl,$uibModal,$state,$stateParams)
     {
 
         console.log("busEnqController");
@@ -88,6 +89,15 @@
                     "&business_type=" + $scope.business.business_type + "&phone=" + $scope.business.phone,
                 }).then(function successCallback(response) {
                     console.log("success", response);
+                    if(!response.data.error){
+                        $scope.open();
+
+                        $state.transitionTo($state.current, $stateParams, {
+                            reload: true,
+                            inherit: false,
+                            notify: true
+                        });
+                    }
 
                 }, function errorCallback(response) {
                     console.log("error", response);
@@ -96,7 +106,48 @@
             }
         }
 
+        $scope.open = function (size, parentSelector) {
+            var parentElem = parentSelector ?
+                angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+            var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'enquiryModal.html',
+                controller: 'EnquiryController',
+                controllerAs: '$ctrl',
+                size: size,
+                appendTo: parentElem,
+                resolve: {
+                    items: function () {
+                        return $scope.details;
+                    }
+                }
+            });
+        }
 
 
+
+    }
+
+    function EnquiryController($uibModalInstance, items,$state){
+        var $ctrl = this;
+        $ctrl.items = items;
+        console.log("cheeeeeeeeeeeeeeeek",$ctrl.items);
+        //$ctrl.selected = {
+        //    item: $ctrl.items[0]
+        //};
+
+        $ctrl.ok = function () {
+            $uibModalInstance.close($ctrl.selected.item);
+        };
+
+        $ctrl.cancel = function () {
+            $uibModalInstance.dismiss('cancel');
+        };
+        $ctrl.upgrade = function () {
+            $uibModalInstance.dismiss('cancel');
+            $state.go('payment')
+        };
     }
 })();

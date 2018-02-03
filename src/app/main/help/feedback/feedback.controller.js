@@ -4,10 +4,11 @@
 
     angular
         .module('dashboard')
-        .controller('feedbackController', feedbackController);
+        .controller('feedbackController', feedbackController)
+        .controller('feedbackModalController', feedbackModalController);
 
     /** @ngInject */
-    function feedbackController($http,$scope,storageService,resourceUrl)
+    function feedbackController($http,$scope,storageService,resourceUrl,$state,$stateParams,$uibModal)
     {
         window.scroll(0, 1000);
         $scope.messageVal = true;
@@ -46,6 +47,15 @@
                     "&category=" + $scope.business.category,
                 }).then(function successCallback(response) {
                     console.log("success", response);
+                    if(!response.data.error){
+                        $scope.open();
+
+                        $state.transitionTo($state.current, $stateParams, {
+                            reload: true,
+                            inherit: false,
+                            notify: true
+                        });
+                    }
 
                 }, function errorCallback(response) {
                     console.log("error", response);
@@ -55,7 +65,48 @@
 
         };
 
+        $scope.open = function (size, parentSelector) {
+            var parentElem = parentSelector ?
+                angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+            var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'feedBackModal.html',
+                controller: 'feedbackModalController',
+                controllerAs: '$ctrl',
+                size: size,
+                appendTo: parentElem,
+                resolve: {
+                    items: function () {
+                        return $scope.details;
+                    }
+                }
+            });
+        }
+
 
 
     }
+    function feedbackModalController($uibModalInstance, items,$state){
+        var $ctrl = this;
+        $ctrl.items = items;
+        console.log("cheeeeeeeeeeeeeeeek",$ctrl.items);
+        //$ctrl.selected = {
+        //    item: $ctrl.items[0]
+        //};
+
+        $ctrl.ok = function () {
+            $uibModalInstance.close($ctrl.selected.item);
+        };
+
+        $ctrl.cancel = function () {
+            $uibModalInstance.dismiss('cancel');
+        };
+        $ctrl.upgrade = function () {
+            $uibModalInstance.dismiss('cancel');
+            $state.go('payment')
+        };
+    }
+
 })();
