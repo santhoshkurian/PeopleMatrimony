@@ -407,20 +407,27 @@
     </div>
 
     <div class="modal-body" >
-
+<span ng-if="vm.restPassword">
         <div class="form-group">
             Enter your Matri ID/ Register Mobile No/ Registered Email ID and we'll send you a link and PIN to reset your password.
         </div>
         <div class="form-group">
             <input class="form-control spinner input-rounded" type="text"
-                   placeholder="Email / Mobile Number / Member ID" ng-model="login.username" required/>
+                   placeholder="Email / Mobile Number / Member ID" ng-model="vm.username" required/>
+            <div ng-if="vm.message != ''" style="color: red">Invalid Username</div>
+        </div>
+    </span>
+        <div class="row" ng-if="!vm.restPassword">
+            <div class="col-md-12">
+               Your new password is sent to your email. Please check your mail.
+            </div>
         </div>
     </div>
 
 
     </div>
     <div class="modal-footer login-modal-footer">
-        <div class="row">
+        <div class="row" ng-if="vm.restPassword">
         <div class="col-md-6 col-sm-6 col-xs-6" style="text-align:right">
             <button ng-disabled="loginForm.$invalid" type="button" style="width: 100%" class="  btn red input-rounded" ng-click="vm.ok(login)">
                 Reset Password
@@ -432,11 +439,15 @@
             </button>
         </div>
         </div>
+        <div class="row" ng-if="!vm.restPassword">
+            <div class="col-md-12">
+            <button type="button" class="   btn btn-default input-rounded pull-right"  ng-click="vm.cancel()">
+                Cancel
+            </button>
+            </div>
+            </div>
 
 
-
-        <!--<button class="btn btn-primary" type="button" ng-click="vm.ok()">Save</button>-->
-        <!--<button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>-->
-    </div>
+        </div>
         </form>
 </script>

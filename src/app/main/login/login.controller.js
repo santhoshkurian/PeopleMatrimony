@@ -402,6 +402,9 @@
     });
     angular.module('dashboard').controller('forgotPasswordCtrl', function ($scope,storageService,$http,resourceUrl,$uibModalInstance, items,$state,$log) {
         var vm = this;
+        vm.restPassword = true;
+        vm.username = '';
+        vm.message = '';
 
         vm.items = items;
         vm.selected = {
@@ -412,28 +415,20 @@
 
 
         vm.ok = function (login) {
-            console.log(login);
+            vm.message = '';
+
 
             $http({
                 method: 'GET',
-                url: resourceUrl.url()+'user/login?'+
-                'username='+login.username+'&password='+login.password
+                url: resourceUrl.url()+'reset?'+
+                'username='+vm.username,
             }).then(function successCallback(response) {
                 console.log(response);
                 if(!response.data.error) {
-                    $uibModalInstance.close(vm.selected.item);
-                    storageService.set("token", response.data.access_token)
-                    storageService.set("id", response.data.id_people);
-                    storageService.set("regular_search", '');
-                    if (response.data.image == '') {
-                        storageService.set("image_url", "assets/defaultImages/avatar.png");
-                    } else {
-                        storageService.set("image_url", response.data.image);
-                    }
-                    storageService.set("name", response.data.name);
-                    $state.go('app');
+                    vm.restPassword = false;
+
                 }else{
-                    $scope.message = response.data.message;
+                    vm.message = response.data.message;
                 }
 
             }, function errorCallback(response) {
