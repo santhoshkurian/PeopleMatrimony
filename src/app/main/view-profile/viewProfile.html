@@ -198,10 +198,10 @@
                             </div>
                             <div class=" row vp-main-action">
                                 <div style="text-transform: uppercase;text-align: center;">
-                                    <a class="col-md-4 col-sm-4 col-xs-4 vp-main-link" ng-click="shortlist()"
+                                    <button disabled="shortListed" class="col-md-4 col-sm-4 col-xs-4 vp-main-link" ng-click="shortlist()"
                                             ><i
-                                            class="fa fa-star-o"></i><span class="hidden-sm hidden-xs"> Shortlist</span>
-                                    </a>
+                                            class="fa fa-star-o"></i><span class="hidden-sm hidden-xs"> <span ng-if="!shortListed">Shortlist</span><span ng-if="shortListed" style="color:grey"><i>Shortlisted</i></span></span>
+                                    </button>
 
 
                                     <div class="col-md-4 col-sm-4 col-xs-4 vp-main-link"

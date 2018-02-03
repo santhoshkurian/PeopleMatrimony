@@ -116,6 +116,7 @@
             });
 
         $scope.view = viewProfile.user;
+        $scope.shortListed = viewProfile.shortlisted;
         $scope.pref = viewProfile.user.preferences;
             $scope.enlarge = {name:$scope.view.name,id:$scope.view.id_people}
 
