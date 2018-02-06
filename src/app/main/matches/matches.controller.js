@@ -277,7 +277,6 @@
         $scope.shortlisted = shortlisted;
         $scope.sendInterest = sendInterest;
         $scope.mutalmatches = mutalmatches;
-        $scope.mutalmatches = more;
         $scope.myInterval = 3000;
 
         $scope.viewProfile = viewProfile;
@@ -386,9 +385,19 @@
 
 
             $scope.matches = [];
-            if($scope.matches.length == 0){
-                $scope.showResult = true;
-            }
+            $http({
+                method: 'GET',
+                url: resourceUrl.url()+'list/viewed?' +
+                '&token=' + storageService.get("token") + '&id=' + storageService.get("id")
+            }).then(function successCallback(response) {
+                console.log(response)
+                $scope.matches = response.data.matches;
+                if($scope.matches.length == 0){
+                    $scope.showResult = true;
+                }
+            }, function errorCallback(response) {
+                console.log(response);
+            });
 
 
         }

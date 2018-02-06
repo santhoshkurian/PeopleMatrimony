@@ -17,7 +17,7 @@
                                     <div class="col-md-12">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <span class="profile-completeness-heading"> Profile Completeness</span>
+                                                <span class="profile-completeness-heading"> Complete your Profile</span>
                                             </div>
                                             <div class="col-md-6">
                                                 <uib-progressbar class="profile-progress-bar" animate="true"
@@ -64,6 +64,7 @@
                                         <select class="form-control input-rounded "
                                                 ng-model="profileComp.ancestral_origin"
                                                 ng-options="item.country_name for item in countryList track by item.id_country">
+                                            <option value="">Select</option>
                                         </select>
 
 
@@ -86,7 +87,7 @@
                                          ng-if="messages[messageIndex].field == 'smoking_habit'">
                                         <select class="form-control input-rounded "
                                                 ng-model="profileComp.smoking_habit">
-                                            <option>Select</option>
+                                            <option value="">Select</option>
                                             <option value="yes">Yes</option>
                                             <option value="no">No</option>
                                         </select>
@@ -97,6 +98,8 @@
                                         <select class="form-control input-rounded "
                                                 ng-model="setProfession.occupation_cat"
                                                 ng-options="item.occupation_category for item in occupationCategoryList track by item.id_occupation_category">
+                                            <option value="">Select</option>
+
                                         </select>
                                     </div>
 
@@ -104,7 +107,7 @@
                                          ng-if="messages[messageIndex].field == 'drinking_habit'">
                                         <select class="form-control input-rounded "
                                                 ng-model="profileComp.drinking_habit">
-                                            <option>Select</option>
+                                            <option value="">Select</option>
                                             <option value="yes">Yes</option>
                                             <option value="no">No</option>
                                         </select>
@@ -137,7 +140,7 @@
 
                                         <select class="form-control input-rounded "
                                                 ng-model="profileComp.mother_status">
-                                            <option value="">Select</option>
+                                            <option value="" selected="selected">Select</option>
                                             <option value="homemaker">Homemaker</option>
                                             <option value="employed">Employed</option>
                                             <option value="business">Business Woman</option>
@@ -150,7 +153,7 @@
                                     <div class="col-md-12 margin-top-20"
                                          ng-if="!(messages[messageIndex].message == 'Add a photo now & get more responses.') ">
                                         <div class="text-center">
-                                            <button class="btn red btn-lg alert-button"
+                                            <button class="btn red alert-button"
                                                     ng-click="addDetails(messages[messageIndex])">
                                                 Add Details
                                             </button>
