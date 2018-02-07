@@ -19,6 +19,8 @@
         $scope.setFamily= {orgin:null,orgin_name:null};
         $scope.countryList = populate.countries;
         $scope.selectLanguage = {motherTongue:null};
+        $scope.sisDis = false;
+        $scope.broDis = false;
 
 
 
@@ -580,7 +582,6 @@
 
             });
         }
-
         function savePartnerReliegion() {
             var reg_id = 0;
             var caste_id = 0;
@@ -669,7 +670,6 @@
 
             });
         }
-
         function savePartnerLocation() {
             var country_id = 0;
             var state_id = 0;
@@ -741,7 +741,6 @@
 
             });
         }
-
         function savePartnerProfession() {
             var edu_id = 0;
             var occu_id = 0;
@@ -811,7 +810,6 @@
 
             });
         }
-
         $scope.createCommaSeperate = function(obj){
            return obj.split(',').join(", ")
         }
@@ -819,12 +817,19 @@
         $scope.SelectBrother = function(){
            console.log($scope.profile.login_user.brother)
             if($scope.profile.login_user.brother == 0) {
-                $scope.profile.login_user.bother_married = 0;
+                $scope.profile.login_user.brother_married = 0;
+                $scope.broDis = true;
+            }else{
+                $scope.broDis = false;
             }
         }
         $scope.SelectSister = function(){
             if($scope.profile.login_user.sister == 0) {
                 $scope.profile.login_user.sister_married = 0;
+                $scope.sisDis = true
+            }else{
+                $scope.sisDis = false
+
             }
         }
 

@@ -1306,7 +1306,7 @@
                                               <div class="col-md-6">
                                                   <label class="font-weight ">No of Brother(s) Married</label>
 
-                                                  <select class="form-control input-rounded "
+                                                  <select ng-disabled="broDis" class="form-control input-rounded "
                                                           ng-model="profile.login_user.bother_married">
                                                       <option value="">Select</option>
 
@@ -1341,7 +1341,7 @@
                                               <div class="col-md-6">
                                                   <label class="  font-weight ">No of Sister(s)</label>
 
-                                                  <select class="form-control input-rounded "
+                                                  <select  class="form-control input-rounded "
                                                           ng-model="profile.login_user.sister" ng-click="SelectSister()">
                                                       <option value="">Select</option>
 
@@ -1363,8 +1363,8 @@
                                               <div class="col-md-6">
                                                   <label class="  font-weight ">No of Sister(s) Married</label>
 
-                                                  <select class="form-control input-rounded "
-                                                          ng-model="profile.login_user.sister_married">
+                                                  <select ng-disabled="sisDis" class="form-control input-rounded "
+                                                          ng-model ="profile.login_user.sister_married">
                                                       <option selected value="">Select</option>
 
                                                       <option ng-selected="profile.login_user.sister_married == 0"
