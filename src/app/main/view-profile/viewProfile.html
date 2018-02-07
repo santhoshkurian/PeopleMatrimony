@@ -713,8 +713,8 @@
                                     <div class="row">
                                         <div class="col-md-4"></div>
                                         <div class="col-md-4 page">
-                                            <div class="c100 p50 p12" style="border-radius: 60%!important;">
-                                                <span>50%</span>
+                                            <div class="c100 p{{preference.match_percent}} p12" style="border-radius: 60%!important;">
+                                                <span>{{preference.match_percent}}%</span>
 
                                                 <div class="slice">
                                                     <div class="bar"></div>
@@ -745,12 +745,21 @@
                                                         ng-if="(pref.age_start != null && pref.age_start !='') && (pref.age_end != null && pref.age_end !='') "> - </span>{{pref.age_end}}
                                                     <span ng-if="(pref.age_start != null && pref.age_start !='') || (pref.age_end != null && pref.age_end !='') "> Yrs </span>
                                                 </td>
-                                            </tr>
+                                                <td style="text-align: right;">
+                                                    <span ng-if="preference.basic.age == 'yes'"><i class="fa fa-check" style="color: green"></i></span>
+                                                    <span ng-if="preference.basic.age == 'no'"><i class="fa fa-remove" style="color:red;"></i></span>
+
+                                                </td>                                            </tr>
                                             <tr>
                                                 <td> Height</td>
                                                 <td> {{pref.height_start}}<span
                                                         ng-if="(pref.height_start != null && pref.height_start !='') && (pref.height_end != null && pref.height_end !='') ">-</span>{{pref.height_end}}
                                                     <span ng-if="(pref.height_start != null && pref.height_start !='') || (pref.height_end != null && pref.height_end !='') ">cms</span>
+                                                </td>
+                                                <td style="text-align: right;">
+                                                    <span ng-if="preference.basic.height == 'yes'"><i class="fa fa-check" style="color: green"></i></span>
+                                                    <span ng-if="preference.basic.height == 'no'"><i class="fa fa-remove" style="color:red;"></i></span>
+
                                                 </td>
                                             </tr>
                                             <tr>
@@ -759,6 +768,11 @@
                                                     <span ng-if="pref.physical_status != null && pref.physical_status != ''">{{pref.physical_status}}</span>
                                                     <span ng-if="pref.physical_status == null || pref.physical_status == ''">Not Specified</span>
                                                 </td>
+                                                <td style="text-align: right;">
+                                                    <span ng-if="preference.basic.physical_status == 'yes'"><i class="fa fa-check" style="color: green"></i></span>
+                                                    <span ng-if="preference.basic.physical_status == 'no'"><i class="fa fa-remove" style="color:red;"></i></span>
+
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td> Mother Tongue</td>
@@ -766,12 +780,22 @@
                                                     <span ng-if="pref.mothertongue_txt != null && pref.mothertongue_txt != ''">{{pref.mothertongue_txt}}</span>
                                                     <span ng-if="pref.mothertongue_txt == null || pref.mothertongue_txt == ''">Not Specified</span>
                                                 </td>
+                                                <td style="text-align: right;">
+                                                    <span ng-if="preference.religious.mothertongue == 'yes'"><i class="fa fa-check" style="color: green"></i></span>
+                                                    <span ng-if="preference.religious.mothertongue == 'no'"><i class="fa fa-remove" style="color:red;"></i></span>
+
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td> Marital Status</td>
                                                 <td>
                                                     <span ng-if="pref.marital_status != null && pref.marital_status != ''">{{pref.marital_status}}</span>
                                                     <span ng-if="pref.marital_status == null || pref.marital_status == ''">Not Specified</span>
+                                                </td>
+                                                <td style="text-align: right;">
+                                                    <span ng-if="preference.basic.marital_status == 'yes'"><i class="fa fa-check" style="color: green"></i></span>
+                                                    <span ng-if="preference.basic.marital_status == 'no'"><i class="fa fa-remove" style="color:red;"></i></span>
+
                                                 </td>
 
                                             </tr>
@@ -781,14 +805,20 @@
                                                     <span ng-if="pref.eating_habits != null && pref.eating_habits != ''">{{pref.eating_habits}}</span>
                                                     <span ng-if="pref.eating_habits == null || pref.eating_habits == ''">Not Specified</span>
                                                 </td>
-
-
+                                                <td style="text-align: right;">
+                                                    <span ng-if="preference.basic.eating_habits == 'yes'"><i class="fa fa-check" style="color: green"></i></span>
+                                                    <span ng-if="preference.basic.eating_habits == 'no'"><i class="fa fa-remove" style="color:red;"></i></span>
+                                               </td>
                                             </tr>
                                             <tr>
                                                 <td> Drinking Habits</td>
                                                 <td>
                                                     <span ng-if="pref.drinking_habits != null && pref.drinking_habits != ''">{{pref.drinking_habits}}</span>
                                                     <span ng-if="pref.drinking_habits == null || pref.drinking_habits == ''">Not Specified</span>
+                                                </td>
+                                                <td style="text-align: right;">
+                                                    <span ng-if="preference.basic.drinking_habits == 'yes'"><i class="fa fa-check" style="color: green"></i></span>
+                                                    <span ng-if="preference.basic.drinking_habits == 'no'"><i class="fa fa-remove" style="color:red;"></i></span>
                                                 </td>
 
                                             </tr>
@@ -797,6 +827,10 @@
                                                 <td>
                                                     <span ng-if="pref.smoking_habits != null && pref.smoking_habits != ''">{{pref.smoking_habits}}</span>
                                                     <span ng-if="pref.smoking_habits == null || pref.smoking_habits == ''">Not Specified</span>
+                                                </td>
+                                                <td style="text-align: right;">
+                                                    <span ng-if="preference.basic.smoking_habits == 'yes'"><i class="fa fa-check" style="color: green"></i></span>
+                                                    <span ng-if="preference.basic.smoking_habits == 'no'"><i class="fa fa-remove" style="color:red;"></i></span>
                                                 </td>
 
                                             </tr>
@@ -821,6 +855,11 @@
                                                     <span ng-if="pref.religion_txt != null && pref.religion_txt != ''">{{pref.religion_txt}}</span>
                                                     <span ng-if="pref.religion_txt == null || pref.religion_txt == ''">Not Specified</span>
                                                 </td>
+                                                <td style="text-align: right;">
+                                                    <span ng-if="preference.religious.religion == 'yes'"><i class="fa fa-check" style="color: green"></i></span>
+                                                    <span ng-if="preference.religious.religion == 'no'"><i class="fa fa-remove" style="color:red;"></i></span>
+                                                </td>
+
 
                                             </tr>
                                             <tr>
@@ -829,26 +868,31 @@
                                                     <span ng-if="pref.caste_txt != null && pref.caste_txt != ''">{{pref.caste_txt}}</span>
                                                     <span ng-if="pref.caste_txt == null || pref.caste_txt == ''">Not Specified</span>
                                                 </td>
-
-                                            </tr>
-
-
-                                            <tr>
-                                                <td> Gothram</td>
-                                                <td>
-                                                    <span ng-if="pref.gothram != null && pref.gothram != ''">{{pref.gothram}}</span>
-                                                    <span ng-if="pref.gothram == null || pref.gothram == ''">Not Specified</span>
+                                                <td style="text-align: right;">
+                                                    <span ng-if="preference.religious.caste == 'yes'"><i class="fa fa-check" style="color: green"></i></span>
+                                                    <span ng-if="preference.religious.caste == 'no'"><i class="fa fa-remove" style="color:red;"></i></span>
                                                 </td>
 
-                                            </tr>
-                                            <tr>
-                                                <td> Star</td>
-                                                <td>
-                                                    <span ng-if="pref.star_txt != null && pref.star_txt != ''">{{pref.star_txt}}</span>
-                                                    <span ng-if="pref.star_txt == null || pref.star_txt == ''">Not Specified</span>
-                                                </td>
 
                                             </tr>
+
+
+                                            <!--<tr>-->
+                                                <!--<td> Gothram</td>-->
+                                                <!--<td>-->
+                                                    <!--<span ng-if="pref.gothram != null && pref.gothram != ''">{{pref.gothram}}</span>-->
+                                                    <!--<span ng-if="pref.gothram == null || pref.gothram == ''">Not Specified</span>-->
+                                                <!--</td>-->
+
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<td> Star</td>-->
+                                                <!--<td>-->
+                                                    <!--<span ng-if="pref.star_txt != null && pref.star_txt != ''">{{pref.star_txt}}</span>-->
+                                                    <!--<span ng-if="pref.star_txt == null || pref.star_txt == ''">Not Specified</span>-->
+                                                <!--</td>-->
+
+                                            <!--</tr>-->
 
                                             </tbody>
                                         </table>
@@ -872,6 +916,10 @@
                                                     <span ng-if="pref.education_txt != null && pref.education_txt != ''">{{pref.education_txt}}</span>
                                                     <span ng-if="pref.education_txt == null || pref.education_txt == ''">Not Specified</span>
                                                 </td>
+                                                <td style="text-align: right;">
+                                                    <span ng-if="preference.profession.education == 'yes'"><i class="fa fa-check" style="color: green"></i></span>
+                                                    <span ng-if="preference.profession.education == 'no'"><i class="fa fa-remove" style="color:red;"></i></span>
+                                                </td>
 
                                             </tr>
                                             <tr>
@@ -880,6 +928,10 @@
                                                     <span ng-if="pref.occupation_txt != null && pref.occupation_txt != ''">{{pref.occupation_txt}}</span>
                                                     <span ng-if="pref.occupation_txt == null || pref.occupation_txt == ''">Not Specified</span>
                                                 </td>
+                                                <td style="text-align: right;">
+                                                    <span ng-if="preference.profession.occupation == 'yes'"><i class="fa fa-check" style="color: green"></i></span>
+                                                    <span ng-if="preference.profession.occupation == 'no'"><i class="fa fa-remove" style="color:red;"></i></span>
+                                                </td>
 
                                             </tr>
                                             <tr>
@@ -887,6 +939,10 @@
                                                 <td>
                                                     <span ng-if="pref.income != null && pref.income != ''">{{pref.income}}</span>
                                                     <span ng-if="pref.income == null || pref.income == ''">Not Specified</span>
+                                                </td>
+                                                <td style="text-align: right;">
+                                                    <span ng-if="preference.profession.income == 'yes'"><i class="fa fa-check" style="color: green"></i></span>
+                                                    <span ng-if="preference.profession.income == 'no'"><i class="fa fa-remove" style="color:red;"></i></span>
                                                 </td>
 
                                             </tr>
@@ -914,6 +970,10 @@
                                                     <span ng-if="pref.country_name != null && pref.country_name != ''">{{pref.country_name}}</span>
                                                     <span ng-if="pref.country_name == null || pref.country_name == ''">Not Specified</span>
                                                 </td>
+                                                <td style="text-align: right;">
+                                                    <span ng-if="preference.location.country == 'yes'"><i class="fa fa-check" style="color: green"></i></span>
+                                                    <span ng-if="preference.location.country == 'no'"><i class="fa fa-remove" style="color:red;"></i></span>
+                                                </td>
 
                                             </tr>
                                             <tr>
@@ -921,6 +981,10 @@
                                                 <td>
                                                     <span ng-if="pref.state_name != null && pref.state_name != ''">{{pref.state_name}}</span>
                                                     <span ng-if="pref.state_name == null || pref.state_name == ''">Not Specified</span>
+                                                </td>
+                                                <td style="text-align: right;">
+                                                    <span ng-if="preference.location.state == 'yes'"><i class="fa fa-check" style="color: green"></i></span>
+                                                    <span ng-if="preference.location.state == 'no'"><i class="fa fa-remove" style="color:red;"></i></span>
                                                 </td>
 
                                             </tr>
@@ -930,6 +994,11 @@
                                                     <span ng-if="pref.city_name != null && pref.city_name != ''">{{pref.city_name}}</span>
                                                     <span ng-if="pref.city_name == null || pref.city_name == ''">Not Specified</span>
                                                 </td>
+                                                <td style="text-align: right;">
+                                                    <span ng-if="preference.location.city == 'yes'"><i class="fa fa-check" style="color: green"></i></span>
+                                                    <span ng-if="preference.location.city == 'no'"><i class="fa fa-remove" style="color:red;"></i></span>
+                                                </td>
+
 
                                             </tr>
                                             <tr>
@@ -938,6 +1007,11 @@
                                                     <span ng-if="pref.nationality_txt != null && pref.nationality_txt != ''">{{pref.nationality_txt}}</span>
                                                     <span ng-if="pref.nationality_txt == null || pref.nationality_txt == ''">Not Specified</span>
                                                 </td>
+                                                <td style="text-align: right;">
+                                                    <span ng-if="preference.location.citizenship == 'yes'"><i class="fa fa-check" style="color: green"></i></span>
+                                                    <span ng-if="preference.location.citizenship == 'no'"><i class="fa fa-remove" style="color:red;"></i></span>
+                                                </td>
+
 
                                             </tr>
 
