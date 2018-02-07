@@ -1182,16 +1182,19 @@
                                     <div class="col-md-4">
                                         <label class=" font-weight-head  "> No of Brother(s)</label>
 
-                                        <p class="details ">
+                                        <p class="details" ng-if="profile.login_user.brother != 0">
                                             {{profile.login_user.brother}}/{{profile.login_user.brother_married}}
                                             Married</p>
+                                        <p class="details" ng-if="profile.login_user.brother == 0">
+                                            None</p>
 
                                     </div>
                                     <div class="col-md-4">
                                         <label class=" font-weight-head  "> Number of sister(s) </label>
 
-                                        <p class="details ">{{profile.login_user.sister}}
+                                        <p class="details " ng-if="profile.login_user.sister != 0">{{profile.login_user.sister}}
                                             /{{profile.login_user.sister_married}} married</p>
+                                        <p class="details " ng-if="profile.login_user.sister == 0">None</p>
 
                                     </div>
                                     <div class="col-md-4">
@@ -1211,22 +1214,22 @@
                                         <label class=" font-weight-head  "> Father's Status </label>
 
                                         <p class="details"
-                                           ng-if="profile.login_user.father_status != null && profile.login_user.father_status != ''">
+                                           ng-if="profile.login_user.father_status != null && profile.login_user.father_status != '' && profile.login_user.father_status != 'null'">
                                             {{profile.login_user.father_status}}</p>
 
                                         <p class="details"
-                                           ng-if="profile.login_user.father_status == null || profile.login_user.father_status == ''">
+                                           ng-if="profile.login_user.father_status == null || profile.login_user.father_status == '' || profile.login_user.father_status == 'null'">
                                             Not Specified</p>
                                     </div>
                                     <div class="col-md-4">
                                         <label class=" font-weight-head  "> Mother's Status </label>
 
                                         <p class="details"
-                                           ng-if="profile.login_user.mother_status != null && profile.login_user.mother_status != ''">
+                                           ng-if="profile.login_user.mother_status != null && profile.login_user.mother_status != ''&& profile.login_user.mother_status != 'null'">
                                             {{profile.login_user.mother_status}}</p>
 
                                         <p class="details"
-                                           ng-if="profile.login_user.mother_status == null || profile.login_user.mother_status == ''">
+                                           ng-if="profile.login_user.mother_status == null || profile.login_user.mother_status == '' || profile.login_user.mother_status == 'null'">
                                             Not Specified</p>
                                     </div>
                                 </div>
@@ -1395,7 +1398,7 @@
 
                                           <select class="form-control input-rounded "
                                                   ng-model="profile.login_user.family_status">
-                                              <option selected value="">Select</option>
+                                              <option  value="null">Select</option>
                                               <option value="middle">Middle</option>
                                               <option value="upper">Upper</option>
                                               <option value="rich">Rich</option>
@@ -1411,7 +1414,7 @@
 
                                           <select class="form-control input-rounded "
                                                   ng-model="profile.login_user.father_status">
-                                              <option selected value="">Select</option>
+                                              <option  value="null">Select</option>
                                               <option value="employed">Employed</option>
                                               <option value="business">Business Man</option>
                                               <option value="professional">Professional</option>
@@ -1426,7 +1429,7 @@
 
                                           <select class="form-control input-rounded "
                                                   ng-model="profile.login_user.mother_status">
-                                              <option selected value="">Select</option>
+                                              <option  value="null">Select</option>
                                               <option value="homemaker">Homemaker</option>
                                               <option value="employed">Employed</option>
                                               <option value="business">Business Woman</option>
