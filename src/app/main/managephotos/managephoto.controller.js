@@ -8,10 +8,13 @@
     /** @ngInject */
     function ManagePhotoController(resourceUrl,privacy,$scope,storageService,profile,$http,$state,loadImages) {
         console.log("ManagePhotoController");
-        console.log("ManagePhotoController",loadImages.user.images.length);
+        console.log("ManagePhotoController", loadImages.user.images.length);
         $scope.viewType = 'managephoto';
         $scope.privacy = privacy;
         $scope.profile = profile;
+        $scope.changePhoto = changePhoto;
+
+
 
 
         $scope.imageLength = loadImages.user.images.length;
@@ -19,6 +22,7 @@
         $scope.image_url = storageService.get("image_url");
         $scope.name = storageService.get("name");
         $scope.id = storageService.get("id");
+        changePhoto();
 
         $scope.logout = logout;
         function logout(){
@@ -43,6 +47,34 @@
         $scope.backtomain = backtomain;
         $scope.changeProfilePic = changeProfilePic;
         $scope.removeProfilePic = removeProfilePic;
+
+        function changePhoto(){
+
+            if (profile.user.gender == 'female'){
+                if ($scope.privacy.photo == 'protected') {
+                    $scope.image = '/assets/defaultImages/female_photo_protected_card.jpg';
+                }
+                if ($scope.privacy.photo != 'protected') {
+                    if($scope.imageLength == 0) {
+                        $scope.image = '/assets/defaultImages/female_card.jpg';
+                    }else{
+                        $scope.image = loadImages.user.images[0].image;
+                    }
+                }
+            }
+            if (profile.user.gender == 'male'){
+                if ($scope.privacy.photo == 'protected') {
+                    $scope.image = '/assets/defaultImages/male_photo_protected_card.jpg';
+                }
+                if ($scope.privacy.photo != 'protected') {
+                    if($scope.imageLength == 0) {
+                        $scope.image = '/assets/defaultImages/male_card.jpg';
+                    }else{
+                        $scope.image = loadImages.user.images[0].image;
+                    }
+                }
+            }
+        }
 
 
 

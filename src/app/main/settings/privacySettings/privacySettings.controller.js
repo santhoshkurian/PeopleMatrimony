@@ -11,7 +11,7 @@
         console.log(privacy)
         $scope.privacy = privacy;
         $scope.profile = profile;
-        console.log(profile);
+        console.log("profile",profile);
 
         $scope.logout = logout;
         function logout(){
@@ -40,12 +40,45 @@
         $scope.donotDisturb = false;
         $scope.profilePrivacy = false;
 
+        changePhoto();
+
         $scope.editPhonePrivacy = editPhonePrivacy;
         $scope.editPhotoPrivacy = editPhotoPrivacy;
         $scope.editVisitorSettings = editVisitorSettings;
         $scope.editShortlistSettings = editShortlistSettings;
         $scope.editDonotDisturb = editDonotDisturb;
         $scope.editProfilePrivacy = editProfilePrivacy;
+        $scope.changePhoto = changePhoto;
+
+
+
+        function changePhoto(){
+
+            if ($scope.profile.user.gender == 'female'){
+                if ($scope.privacy.photo == 'protected') {
+                    $scope.image = '/assets/defaultImages/female_photo_protected_card.jpg';
+                }
+                if ($scope.privacy.photo != 'protected') {
+                    if($scope.profile.user.images.length == 0) {
+                        $scope.image = '/assets/defaultImages/female_card.jpg';
+                    }else{
+                        $scope.image = $scope.profile.user.images[0].image;
+                    }
+                }
+            }
+            if ($scope.profile.user.gender == 'male'){
+                if ($scope.privacy.photo == 'protected') {
+                    $scope.image = '/assets/defaultImages/male_photo_protected_card.jpg';
+                }
+                if ($scope.privacy.photo != 'protected') {
+                    if($scope.profile.user.images.length == 0) {
+                        $scope.image = '/assets/defaultImages/male_card.jpg';
+                    }else{
+                        $scope.image = $scope.profile.user.images[0].image;
+                    }
+                }
+            }
+        }
 
         function editPhonePrivacy(obj){
             console.log(obj)
@@ -72,6 +105,7 @@
                 '&id=' +storageService.get('id')+
                 '&photo='+obj
             }).then(function successCallback(response) {
+                changePhoto();
             }, function errorCallback(response) {
 
 
