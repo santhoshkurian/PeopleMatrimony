@@ -9,6 +9,7 @@
 
     /** @ngInject */
     function ViewProfileController(similarProfiles,$scope,$http,$uibModal,storageService,$state,$stateParams,resourceUrl,viewProfile,$timeout) {
+        window.scroll(0, 1000);
 
         console.log("check", viewProfile);
         console.log("check", similarProfiles);
@@ -178,7 +179,18 @@
                 '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&view_id=' + $scope.view.id_people
             }).then(function successCallback(response) {
                 console.log(response)
-                $scope.message = "Successfully Shortlisted";
+                $scope.open();
+                if(response.data.code == '200'){
+                    $scope.details.header = 'Shortlisted Successfully';
+
+                }
+                $timeout(function() {
+                    $state.transitionTo($state.current, $stateParams, {
+                        reload: true,
+                        inherit: false,
+                        notify: true
+                    });
+                }, 2000);
 
             }, function errorCallback(response) {
                 console.log(response)

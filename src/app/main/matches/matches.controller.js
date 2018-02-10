@@ -9,6 +9,7 @@
     /** @ngInject */
     function MatchesController($scope,$uibModal, storageService,populate,$timeout,resourceUrl, $http, $location,$state) {
 
+        window.scroll(0, 1000);
 
         $scope.viewAll = viewAll;
         $scope.enlargeImage = [];

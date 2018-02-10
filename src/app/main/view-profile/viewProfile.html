@@ -195,8 +195,9 @@
                             <div class=" row vp-main-action">
                                 <div style="text-transform: uppercase;text-align: center;">
                                     <button ng-disabled="data.shortlisted" class="col-md-4 col-sm-4 col-xs-4 vp-main-link" ng-click="shortlist()"
-                                            ><i
-                                            class="fa fa-star-o"></i><span ng-if="!data.shortlisted" class="hidden-sm hidden-xs"> SHORTLIST</span><span ng-if="data.shortlisted" class="hidden-sm hidden-xs"> SHORTLISTED</span>
+                                            ><i ng-if="!data.shortlisted"
+                                            class="fa fa-star-o"></i><i ng-if="data.shortlisted"
+                                            class="fa fa-check"></i><span ng-if="!data.shortlisted" class="hidden-sm hidden-xs"> SHORTLIST</span><span ng-if="data.shortlisted" class="hidden-sm hidden-xs"> SHORTLISTED</span>
                                     </button>
 
 
