@@ -258,9 +258,7 @@
                                 </div>
                             </div>
 
-                            <div ng-if="basicRequest != ''" class="alert alert-success">
-                                {{basicRequest}}
-                            </div>
+
                             <div class="portlet light border-rounded portlet-space">
                                 <div class="portlet-title">
                                     <div class="caption ">
@@ -473,9 +471,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-if="professionRequest != ''" class="alert alert-success">
-                                {{professionRequest}}
-                            </div>
+
                             <div class="portlet light border-rounded portlet-space">
                                 <div class="portlet-title">
                                     <div class="caption ">
@@ -537,10 +533,6 @@
                                     </div>
                                 </div>
 
-                            </div>
-
-                            <div ng-if="familyRequest != ''" class="alert alert-success">
-                                {{familyRequest}}
                             </div>
 
                             <div class="portlet light border-rounded portlet-space">
@@ -664,9 +656,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-if="aboutFamilyRequest != ''" class="alert alert-success">
-                                {{aboutFamilyRequest}}
-                            </div>
+
                             <div class="portlet light border-rounded portlet-space">
                                 <div class="portlet-title">
                                     <div class="caption ">
@@ -725,7 +715,7 @@
                                             <div style="margin-top: 15px;font-weight: 600;color:grey"><span ng-if="view.gender == 'female'">HER</span><span ng-if="view.gender == 'male'">HIS</span> PREFERENCES</div>
                                         </div>
                                         <div class="col-md-2 page" style="text-align: center">
-                                            <div class="c100 p{{preference.match_percent}} p12" style="border-color:red;border-radius: 60%!important;">
+                                            <div class="c100 p{{preference.match_percent}}" style="border-color:red!important;border-radius: 60%!important;">
                                                 <span >{{preference.match_percent}}%</span>
 
                                                 <div class="slice">
