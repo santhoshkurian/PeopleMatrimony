@@ -703,9 +703,9 @@
                         <div ng-if="viewType == 'partner'">
                             <div class="portlet light border-rounded">
                                 <div class="portlet-title">
-                                    <div class=" ">
+                                    <div style="text-align: center;line-height: 35px;font-size: 20px;font-weight: 600;color: #51c6d8">
                                         <!--<i class="icon-settings font-red-sunglo"></i>-->
-                                        <span class=" uppercase" style="float: center!important;"> Her Partner preference</span>
+                                        <span class=" uppercase" style="float: center!important;"> <span ng-if="view.gender == 'female'">HER</span><span ng-if="view.gender == 'male'">HIS</span> Partner preference</span>
                                     </div>
 
                                 </div>
@@ -713,9 +713,11 @@
                                     <div class="row">
                                         <div class="col-md-5">
 
-                                            <img class="imgae-circle" style="margin-top: 20px;margin-left: 20px"
+                                            <img ng-if="view.gender == 'female'" class="imgae-circle" style="margin-top: 20px;margin-left: 20px"
                                                  ng-src="/assets/defaultImages/female_card.jpg"/>
-                                            <div>HER PREFERENCE</div>
+                                            <img ng-if="view.gender == 'male'" class="imgae-circle" style="margin-top: 20px;margin-left: 20px"
+                                                 ng-src="/assets/defaultImages/male_card.jpg"/>
+                                            <div style="margin-top: 15px;font-weight: 600;color:grey"><span ng-if="view.gender == 'female'">HER</span><span ng-if="view.gender == 'male'">HIS</span> PREFERENCES</div>
                                         </div>
                                         <div class="col-md-2 page" style="text-align: center">
                                             <div class="c100 p{{preference.match_percent}} p12" style="border-radius: 60%!important;">
@@ -730,13 +732,15 @@
                                         <div class="col-md-5">
                                             <div class="row">
                                                 <div class="col-md-12">
+                                                    <img ng-if="login_user.gender == 'female'" class="imgae-circle pull-right" style="margin-top: 20px;margin-right: 20px"
+                                                         ng-src="/assets/defaultImages/female_card.jpg"/>
+                                                    <img ng-if="login_user.gender == 'male'" class="imgae-circle pull-right" style="margin-top: 20px;margin-right: 20px"
+                                                         ng-src="/assets/defaultImages/male_card.jpg"/>
 
-                                                <img class="imgae-circle pull-right" style="margin-top: 20px;margin-right: 20px"
-                                                 ng-src="/assets/defaultImages/female_card.jpg"/>
                                           </div>
                                                 <div class="col-md-12">
 
-                                                <div style="margin-right: 15px"class="pull-right">YOUR MATCH</div>
+                                                <div style="margin-right: 15px;margin-top: 15px;font-weight: 600;color:grey" class="pull-right" >YOUR MATCH</div>
 </div>
 </div>
 
@@ -787,7 +791,7 @@
                                                     <span ng-if="pref.physical_status == null || pref.physical_status == ''">Not Specified</span>
                                                 </td>
                                                 <td style="text-align: right;">
-                                                    <span ng-if="preference.basic.physical_status == 'yes'"><i class="fa fa-check" style="color: green"></i></span>
+                                                    <span ng-if="preference.basic.physical_status == 'yes'"><img src="/assets/icons/check.png" ></span>
                                                     <span ng-if="preference.basic.physical_status == 'no'"><img src="/assets/icons/remove.png" ></span>
 
                                                 </td>

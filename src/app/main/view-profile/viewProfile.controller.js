@@ -116,6 +116,7 @@
             });
 
         $scope.view = viewProfile.user;
+        $scope.login_user = viewProfile.login_user;
         $scope.preference = viewProfile.preference_matches;
         $scope.shortListed = viewProfile.shortlisted;
         $scope.pref = viewProfile.user.preferences;
