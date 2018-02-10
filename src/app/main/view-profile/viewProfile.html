@@ -36,15 +36,17 @@
                                         <ul class="dropdown-menu pull-right">
                                             <li>
                                                 <a href="javascript:;">
-                                                    <i class="fa fa-pencil"></i> Send Mail </a>
+                                                    <i class="fa fa-send"></i> Send Mail </a>
                                             </li>
                                             <li>
                                                 <a href="javascript:;">
-                                                    <i class="fa fa-pencil"></i> Send SMS </a>
+                                                    <i class="fa fa-send-o"></i> Send SMS </a>
                                             </li>
                                             <li>
-                                                <a ng-click="blockPartner()">
-                                                    <i class="fa fa-pencil"></i> Block </a>
+                                                <a ng-if="data.blocked == 'no'" ng-click="blockPartner()">
+                                                    <i class="fa fa-ban"></i> Block </a>
+                                                <a ng-if="data.blocked == 'yes'" ng-click="unblockPartner()">
+                                                    <i class="fa fa-bell-o"></i> UnBlock </a>
                                             </li>
 
                                         </ul>
@@ -167,13 +169,7 @@
                                     </div>
                                 </div>
 
-                                <div ng-if="showMessage" style="color: red;text-align: center">
-                                    <div class="alert alert-success">
-                                        {{message}}
-                                    </div>
-                                </div>
-
-                                <div class="row" ng-if="showInterestAction">
+                                <div class="row" ng-if="showInterestAction && data.interest == ''">
                                     <div class="vp-sub-action">
                                         <span>Connect her with ?</span>
 
@@ -183,7 +179,7 @@
                                         </span>
                                     </div>
                                 </div>
-                                <div class="row" ng-if="showBlockAction">
+                                <div class="row" ng-if="showBlockAction || (data.interest == 'sent' && data.blocked == 'no')">
                                     <div class="vp-sub-action">
                                         <span>Are you sure you want to block {{view.name}}?</span>
 
@@ -198,9 +194,9 @@
                             </div>
                             <div class=" row vp-main-action">
                                 <div style="text-transform: uppercase;text-align: center;">
-                                    <button  class="col-md-4 col-sm-4 col-xs-4 vp-main-link" ng-click="shortlist()"
+                                    <button ng-disabled="data.shortlisted" class="col-md-4 col-sm-4 col-xs-4 vp-main-link" ng-click="shortlist()"
                                             ><i
-                                            class="fa fa-star-o"></i><span class="hidden-sm hidden-xs"> <span ng-if="!shortListed">Shortlist</span><span ng-if="shortListed" style="color:grey">Shortlisted</span></span>
+                                            class="fa fa-star-o"></i><span ng-if="!data.shortlisted" class="hidden-sm hidden-xs"> SHORTLIST</span><span ng-if="data.shortlisted" class="hidden-sm hidden-xs"> SHORTLISTED</span>
                                     </button>
 
 
@@ -728,8 +724,8 @@
                                             <div style="margin-top: 15px;font-weight: 600;color:grey"><span ng-if="view.gender == 'female'">HER</span><span ng-if="view.gender == 'male'">HIS</span> PREFERENCES</div>
                                         </div>
                                         <div class="col-md-2 page" style="text-align: center">
-                                            <div class="c100 p{{preference.match_percent}} p12" style="border-radius: 60%!important;">
-                                                <span>{{preference.match_percent}}%</span>
+                                            <div class="c100 p{{preference.match_percent}} p12" style="border-color:red;border-radius: 60%!important;">
+                                                <span >{{preference.match_percent}}%</span>
 
                                                 <div class="slice">
                                                     <div class="bar"></div>

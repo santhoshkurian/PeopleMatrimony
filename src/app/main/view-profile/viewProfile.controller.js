@@ -115,6 +115,7 @@
                 }
             });
 
+        $scope.data = viewProfile;
         $scope.view = viewProfile.user;
         $scope.login_user = viewProfile.login_user;
         $scope.preference = viewProfile.preference_matches;
@@ -142,27 +143,28 @@
                 '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&partner=' + $scope.view.id_people
             }).then(function successCallback(response) {
                 console.log(response)
-                $scope.message = "send interest successfully";
-                $scope.showMessage=true;
-                $scope.showAction=false;
+                $scope.open();
+                if(response.data.code == '400'){
+                    $scope.details.header = 'Already send an interest';
 
-                $timeout(function() { $scope.message = ''; $scope.showMessage=false;
-
-                }, 2000);
-
-
-            }, function errorCallback(response) {
-                console.log(response)
-                if (response.data.code == '400') {
+                }else{
+                    $scope.details.header = 'Interest Sent Successfully';
                     $scope.showMessage=true;
-
-                    $scope.message = "Already send a Interest";
                     $scope.showAction=false;
 
                 }
-                $timeout(function() { $scope.message = ''; $scope.showMessage=false;
-
+                $timeout(function() {
+                    $state.transitionTo($state.current, $stateParams, {
+                        reload: true,
+                        inherit: false,
+                        notify: true
+                    });
                 }, 2000);
+
+            }, function errorCallback(response) {
+                console.log(response)
+
+
 
             });
 
@@ -251,7 +253,13 @@
                     $scope.details.header = 'User Blocked Successfully';
 
                 }
-                $scope.showBlockAction = false;
+                $timeout(function() {
+                    $state.transitionTo($state.current, $stateParams, {
+                        reload: true,
+                        inherit: false,
+                        notify: true
+                    });
+                }, 2000);
 
                 //
                 //$scope.message = "Successfully Shortlisted";
