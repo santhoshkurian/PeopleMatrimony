@@ -232,7 +232,7 @@
                         return $http({
                             method: 'GET',
                             url: resourceUrl.url()+'inbox?' +
-                            '&token=' + storageService.get("token") + '&type=sent'
+                            '&token=' + storageService.get("token") + '&type=all_sent'
                         }).then(function successCallback(response) {
                             return response.data;
                         }, function errorCallback(response) {
