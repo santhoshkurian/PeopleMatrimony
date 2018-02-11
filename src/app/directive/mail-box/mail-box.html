@@ -1,0 +1,14 @@
+<div class="row" ng-if="showLink" style="text-align: right;color: red">
+    <a style="text-align: right;color: red" ng-click="showCon()">{{mail.length}}+ Conversations</a>
+    </div>
+
+<span ng-repeat="obj in mail | limitTo: len">
+                        <div class="row" >
+                            <div class="col-md-12 notification-style uppercase">REQUEST SENT</div>
+
+                            <div class="col-md-12 notification-details">{{obj.content}}</div>
+
+                        </div>
+                                                        <hr>
+
+</span>

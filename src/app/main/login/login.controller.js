@@ -8,6 +8,8 @@
     /** @ngInject */
     function LoginController(resourceUrl,$uibModal,$state,$http,$scope,storageService,$log,populate) {
         //var vm = this;
+        window.scroll(0, 1000);
+
         console.log(populate);
         $scope.religonList = populate.religon;
         $scope.motherTongueList = populate.mothertongue;
