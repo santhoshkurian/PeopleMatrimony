@@ -105,14 +105,17 @@
                         <hr>
                         <div class="row">
 
-                                <div class="col-md-12 notification-style uppercase">
-                                    <span ng-if="item.action == 'connect'">INTEREST ACCEPTED</span>
-                                    <span ng-if="item.action == 'contact'">CONTACT VIEWED</span>
-                                    <span ng-if="item.action == 'field'">{{item.field_name}} Request Accepted</span>
-                                </div>
+                                <!--<div class="col-md-12 notification-style uppercase">-->
+                                    <!--<span ng-if="item.action == 'connect'">INTEREST ACCEPTED</span>-->
+                                    <!--<span ng-if="item.action == 'contact'">CONTACT VIEWED</span>-->
+                                    <!--<span ng-if="item.action == 'field'">{{item.field_name}} Request Accepted</span>-->
+                                <!--</div>-->
 
-                            <div class="col-md-12 notification-details">{{item.response}}</div>
+                            <div class="col-md-12 notification-details"><i class="fa fa-send" style="color: green"></i> {{item.content}}</div>
+                            <div class="col-md-12 notification-details"><i class="fa fa-reply" style="color: red"></i> {{item.response}}</div>
                         <div class="col-md-12 margin-top-10">
+                            <hr/>
+
                             <mailbox mail="item.communication.sent" res="type"></mailbox>
                         </div>
                         </div>
