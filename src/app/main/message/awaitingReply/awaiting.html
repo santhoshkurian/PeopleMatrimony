@@ -117,10 +117,7 @@
                             <div class="col-md-12 notification-details">{{item.content}}</div>
 
                         </div>
-                        <hr>
-                        <mailbox mail="item.communication.sent"></mailbox>
-
-                        <!--<span ng-repeat="obj in item.communication.sent">-->
+                                                <!--<span ng-repeat="obj in item.communication.sent">-->
                         <!--<div class="row" >-->
                             <!--<div class="col-md-12 notification-style uppercase">REQUEST SENT</div>-->
 
@@ -142,6 +139,9 @@
 
                             </div>
                         </div>
+                        <hr/>
+                        <mailbox mail="item.communication.sent" res="type"></mailbox>
+
                     </div>
 
                     <div class="row">

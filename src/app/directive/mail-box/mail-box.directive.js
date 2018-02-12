@@ -7,11 +7,13 @@
             return {
                 restrict: 'E',
                 scope: {
-                    mail: '='
+                    mail: '=',
+                    res: '='
                 },
                 templateUrl: '/app/directive/mail-box/mail-box.html',
                 controller: function ($scope) {
                     console.log("mail",$scope.mail);
+                    console.log("type",$scope.res);
                     $scope.len = 0;
                     $scope.showLink = false;
                     if($scope.mail.length> 0){

@@ -1,12 +1,24 @@
 <div class="row" ng-if="showLink" style="text-align: right;color: red">
     <a style="text-align: right;color: red" ng-click="showCon()">{{mail.length}}+ Conversations</a>
-    </div>
+</div>
 
-<span ng-repeat="obj in mail | limitTo: len">
-                        <div class="row" >
+<span ng-if="res == 'sent'" ng-repeat="obj in mail | limitTo: len">
+                        <div class="row">
                             <div class="col-md-12 notification-style uppercase">REQUEST SENT</div>
 
-                            <div class="col-md-12 notification-details">{{obj.content}}</div>
+                            <div class="col-md-12 notification-details"><i class="fa fa-send" style="color: green"></i> {{obj.content}}</div>
+                            <div class="col-md-12 notification-details"><i class="fa fa-reply" style="color: red"></i> {{obj.response}}</div>
+
+                        </div>
+                                                        <hr>
+
+</span>
+
+<span ng-if="res == 'accept'" ng-repeat="obj in mail | limitTo: len">
+                        <div class="row">
+                            <div class="col-md-12 notification-style uppercase">REQUEST SENT</div>
+
+                            <div class="col-md-12 notification-details">{{obj.response}}</div>
 
                         </div>
                                                         <hr>

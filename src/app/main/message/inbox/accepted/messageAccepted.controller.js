@@ -9,6 +9,7 @@
     function MessageAcceptedController($state,$scope,accept,storageService,resourceUrl) {
         var vm = this;
         $scope.accept = accept.list;
+        $scope.type = "accept";
         console.log($scope.accept);
 
         $scope.viewProfile = viewProfile;

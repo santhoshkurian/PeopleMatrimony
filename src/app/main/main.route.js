@@ -347,22 +347,6 @@
                     }
 
                 }
-            }).state('sent', {
-                url      : '/sent',
-                views    : {
-                    'content@sent'         : {
-                        templateUrl: 'app/main/message/sent/sent.html',
-                        controller: 'MessageDeclinedController as vm'
-                    }
-                    ,
-                    'navigation@sent': {
-                        templateUrl: 'app/navigation/message/sent/sentNavigation.html',
-                        controller: 'SentNavController as vm'
-                    }
-                },
-                resolve  : {
-
-                }
             })
             .state('businessEnquires', {
                 url      : '/businessEnquires',

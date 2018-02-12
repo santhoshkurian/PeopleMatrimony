@@ -9,6 +9,8 @@
     function MessagePendingController(pending,$state,$scope,$http,resourceUrl,storageService) {
         var vm = this;
         $scope.pending = pending.list;
+        $scope.type = "sent";
+
         console.log($scope.pending);
 
         $scope.viewProfile = viewProfile;

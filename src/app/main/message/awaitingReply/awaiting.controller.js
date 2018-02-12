@@ -8,6 +8,8 @@
     /** @ngInject */
     function AwaitingController($http,$state,resourceUrl,storageService,$scope,awaitingReply) {
         var vm = this;
+        $scope.type = "sent";
+
         $scope.awaiting = awaitingReply.list;
         console.log("awaiting reply",$scope.awaiting);
 

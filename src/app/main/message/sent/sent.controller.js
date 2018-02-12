@@ -8,6 +8,8 @@
     /** @ngInject */
     function SentController($http,$state,storageService,$scope,sent) {
         var vm = this;
+        $scope.type = "sent";
+
         $scope.sent_all = sent.list;
         console.log($scope.sent_all);
         $scope.viewProfile = viewProfile;
