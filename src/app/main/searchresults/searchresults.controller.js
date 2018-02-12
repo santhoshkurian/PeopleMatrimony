@@ -20,6 +20,39 @@
             $scope.enlargeOpen();
         }
 
+        $scope.requests = function(obj1){
+            console.log(obj1)
+
+
+
+            $http({
+                method: 'GET',
+                url: resourceUrl.url()+'add/field?' +
+                '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&partner=' + obj1+'&field=photo_request'
+            }).then(function successCallback(response) {
+                console.log(response)
+
+                $timeout(function() {$state.transitionTo($state.current, $stateParams, {
+                        reload: true,
+                        inherit: false,
+                        notify: true
+                    });
+                }, 2000);
+
+                //$scope.message = "Successfully Shortlisted";
+
+            }, function errorCallback(response) {
+                console.log(response)
+                if (response.data.message == 'Already exists') {
+                    //$scope.message = "Already Shortlisted";
+                }
+
+            });
+
+            //devapi.peoplematrimony.com/add/field?p_debug=1&partner=PM123456&id=PM607823&field=family;
+
+        }
+
         $scope.enlargeOpen = function (size, parentSelector) {
             var parentElem = parentSelector ?
                 angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
