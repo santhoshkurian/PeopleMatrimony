@@ -286,6 +286,45 @@
         }
 
 
+        $scope.unblockPartner = unblockPartner;
+
+        function unblockPartner(){
+            console.log("unblockPartner user");
+            $http({
+                method: 'GET',
+                url: resourceUrl.url()+'do/unblock?' +
+                '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&view_id=' + $scope.view.id_people
+            }).then(function successCallback(response) {
+                console.log(response);
+                $scope.open();
+                if(response.data.message == 'Already exists'){
+                    $scope.details.header = 'Already Blocked this user';
+
+                }else{
+                    $scope.details.header = 'User unBlocked Successfully';
+
+                }
+                $timeout(function() {
+                    $state.transitionTo($state.current, $stateParams, {
+                        reload: true,
+                        inherit: false,
+                        notify: true
+                    });
+                }, 2000);
+
+                //
+                //$scope.message = "Successfully Shortlisted";
+
+            }, function errorCallback(response) {
+                console.log(response)
+                if (response.data.message == 'Already exists') {
+                    $scope.message = "Already Shortlisted";
+                }
+
+            });
+        }
+
+
 
         $scope.animationsEnabled = true;
 

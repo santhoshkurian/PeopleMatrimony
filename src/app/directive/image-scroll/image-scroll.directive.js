@@ -31,17 +31,17 @@
                         $scope.display = $scope.images[0].image;
                         $scope.pos = 0;
                     }
-                    if($scope.reqstatus == 'yes'){
-                        if($scope.reqdetails[0].status == 'accepted'){
-                            $scope.showPhotos = true;
-                        }
-                        if($scope.reqdetails[0].status == 'pending'){
-                            $scope.showPhotosreq = true;
-                        }
-                    }
+                    //if($scope.reqstatus == 'yes'){
+                    //    if($scope.reqdetails[0].status == 'accepted'){
+                    //        $scope.showPhotos = true;
+                    //    }
+                    //    if($scope.reqdetails[0].status == 'pending'){
+                    //        $scope.showPhotosreq = true;
+                    //    }
+                    //}
 
                     if($scope.settings != null && $scope.settings.length > 0) {
-                        if ($scope.settings[0].photo_privacy == 'protected' && !$scope.showPhotos) {
+                        if ($scope.settings[0].photo_privacy == 'protected') {
                             $scope.images = [];
                             if ($scope.gender == 'female') {
                                 $scope.images.push({image: "/assets/defaultImages/female_photo_protected_card.jpg"});
@@ -92,11 +92,11 @@
                     $scope.reverse1 = function () {
                         $scope.reverse({data:$scope.images});
                     };
-
-                    $scope.request = function () {
-                        console.log("reeeeee")
-                        $scope.reverse2({data:$scope.id});
-                    };
+                    //
+                    //$scope.request = function () {
+                    //    console.log("reeeeee")
+                    //    $scope.reverse2({data:$scope.id});
+                    //};
                 },
             };
 
