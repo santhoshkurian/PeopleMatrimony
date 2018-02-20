@@ -103,8 +103,19 @@
 						<div class="row" >
 							<div class="col-md-12 notification-style uppercase">
 								<span ng-if="item.action == 'connect'">INTEREST DECLINED</span>
-								<span ng-if="item.action == 'contact'">CONTACT VIEWED</span>
-								<span ng-if="item.action == 'field'">{{item.field_name}} Request Declined</span>
+								<span ng-if="item.action == 'field'">
+									<span ng-if="item.field_name == 'photo_request'">Photo Request Declined </span>
+									<span ng-if="item.field_name == 'smoking'">Add Smoking Request Declined </span>
+									<span ng-if="item.field_name == 'drinking'">Add Smoking Request Declined </span>
+									<span ng-if="item.field_name == 'income'">Add Income Request Declined </span>
+									<span ng-if="item.field_name == 'education'">Add Education Request Declined </span>
+									<span ng-if="item.field_name == 'family'">Add Family Request Declined </span>
+									<span ng-if="item.field_name == 'family_status'">Add Family Status Request Declined </span>
+									<span ng-if="item.field_name == 'origin'">Add Origin Request Declined </span>
+									<span ng-if="item.field_name == 'about_family'">Add About Family Request Declined </span>
+
+
+								</span>
 							</div>
 
 							<div class="col-md-12 notification-details">{{item.response}}</div>

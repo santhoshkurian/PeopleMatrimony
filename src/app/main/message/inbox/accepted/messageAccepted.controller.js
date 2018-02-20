@@ -6,7 +6,7 @@
         .controller('MessageAcceptedController', MessageAcceptedController);
 
     /** @ngInject */
-    function MessageAcceptedController($state,$scope,accept,storageService,resourceUrl) {
+    function MessageAcceptedController($state,$scope,$http,$stateParams,accept,storageService,resourceUrl) {
         var vm = this;
         $scope.accept = accept.list;
         $scope.type = "accept";
@@ -39,5 +39,43 @@
                 console.log(response)
             });
         }
+
+        $scope.sendInterest = sendInterest;
+
+        function sendInterest(id) {
+            $http({
+                method: 'GET',
+                url: resourceUrl.url()+'connect/send?' +
+                '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&partner=' + id
+            }).then(function successCallback(response) {
+                console.log(response)
+                $scope.open();
+                if(response.data.code == '400'){
+                    $scope.details.header = 'Already send an interest';
+
+                }else{
+                    $scope.details.header = 'Interest Sent Successfully';
+                    $scope.showMessage=true;
+                    $scope.showAction=false;
+
+                }
+                $timeout(function() {
+                    $state.transitionTo($state.current, $stateParams, {
+                        reload: true,
+                        inherit: false,
+                        notify: true
+                    });
+                }, 2000);
+
+            }, function errorCallback(response) {
+                console.log(response)
+
+
+
+            });
+
+
+        }
+
     }
 })();

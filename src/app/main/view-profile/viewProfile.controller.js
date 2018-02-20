@@ -134,8 +134,8 @@
             $scope.enlargeOpen();
 
         }
-        $scope.sendInterest = sendInterest;
         $scope.shortlist = shortlist;
+        $scope.sendInterest = sendInterest;
 
         function sendInterest() {
             $http({

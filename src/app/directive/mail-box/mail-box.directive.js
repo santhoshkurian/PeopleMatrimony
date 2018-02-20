@@ -14,13 +14,18 @@
                 controller: function ($scope) {
                     console.log("mail",$scope.mail);
                     console.log("type",$scope.res);
-                    $scope.len = 0;
+                    $scope.reclen = 0;
+                    $scope.sentlen = 0;
+                    $scope.commulen = $scope.mail.received.length + $scope.mail.sent.length;
+                    console.log("commulen",$scope.commulen);
+
                     $scope.showLink = false;
-                    if($scope.mail.length> 0){
+                    if($scope.commulen> 0){
                         $scope.showLink = true;
                     }
                     $scope.showCon = function(){
-                        $scope.len = $scope.mail.length
+                        $scope.reclen = $scope.mail.received.length
+                        $scope.sentlen = $scope.mail.sent.length
                         $scope.showLink = false;
 
                     }

@@ -113,6 +113,13 @@
         $scope.savePartnerProfession = savePartnerProfession;
         $scope.saveFamilyDetails = saveFamilyDetails;
         $scope.savePartnerBasic = savePartnerBasic;
+
+        $scope.selectRegliousPreference = selectRegliousPreference;
+
+        function selectRegliousPreference(){
+            console.log("change")
+        }
+
         $scope.cancel = cancel;
         if($scope.profile.login_user.id_religion != null){
             $scope.selectReliegion($scope.profile.login_user.id_religion);

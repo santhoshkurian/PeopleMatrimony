@@ -103,7 +103,22 @@
 							<div class="col-md-12 notification-style uppercase">
 								<span ng-if="item.action == 'connect'">INTEREST RECEIVED</span>
 								<span ng-if="item.action == 'contact'">CONTACT VIEWED</span>
-								<span ng-if="item.action == 'field'">Add {{item.field_name}} Request</span>
+								<span ng-if="item.action == 'field'">
+									<span ng-if="item.action == 'field'">
+									<span ng-if="item.field_name == 'photo_request'">Add Photo Requested </span>
+									<span ng-if="item.field_name == 'smoking'">Add Smoking Requested  </span>
+									<span ng-if="item.field_name == 'drinking'">Add Smoking Requested  </span>
+									<span ng-if="item.field_name == 'income'">Add Income Requested  </span>
+									<span ng-if="item.field_name == 'education'">Add Education Requested  </span>
+									<span ng-if="item.field_name == 'family'">Add Family Requested  </span>
+									<span ng-if="item.field_name == 'family_status'">Add Family Status Requested  </span>
+									<span ng-if="item.field_name == 'origin'">Add Origin Requested  </span>
+									<span ng-if="item.field_name == 'about_family'">Add About Family Requested </span>
+
+
+								</span>
+
+									</span>
 							</div>
 
 							<div class="col-md-12 notification-details">{{item.content}}</div>
@@ -112,7 +127,17 @@
 								<button type="button" class=" uppercase btn red input-rounded" ng-click="respondAction(item.com_id,'accepted')">
 
 									<span ng-if="item.action != 'field'">YES</span>
-									<span ng-if="item.action == 'field'">Add {{item.field_name}}</span>
+									<span ng-if="item.action == 'field'"><span ng-if="item.field_name == 'photo_request'">Add Photo Requested </span>
+									<span ng-if="item.field_name == 'smoking'">Add Smoking   </span>
+									<span ng-if="item.field_name == 'drinking'">Add Smoking   </span>
+									<span ng-if="item.field_name == 'income'">Add Income   </span>
+									<span ng-if="item.field_name == 'education'">Add Education   </span>
+									<span ng-if="item.field_name == 'family'">Add Family   </span>
+									<span ng-if="item.field_name == 'family_status'">Add Family Status   </span>
+									<span ng-if="item.field_name == 'origin'">Add Origin   </span>
+									<span ng-if="item.field_name == 'about_family'">Add About Family  </span>
+
+									</span>
 
 								</button>
 								&nbsp;
@@ -122,7 +147,7 @@
 
 							</div>
 							<div class="col-md-12 margin-top-10">
-							<mailbox mail="item.communication.sent" res="type"></mailbox>
+							<mailbox mail="item.communication" res="type"></mailbox>
 								</div>
 
 
