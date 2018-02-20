@@ -3,10 +3,11 @@
 
     angular
         .module('dashboard')
-        .controller('MessageAcceptedController', MessageAcceptedController);
+        .controller('MessageAcceptedController', MessageAcceptedController)
+        .controller('acceptModalController', acceptModalController);
 
     /** @ngInject */
-    function MessageAcceptedController($state,$scope,$http,$stateParams,accept,storageService,resourceUrl) {
+    function MessageAcceptedController($state,$scope,$http,$uibModal,$timeout,$stateParams,accept,storageService,resourceUrl) {
         var vm = this;
         $scope.accept = accept.list;
         $scope.type = "accept";
@@ -17,6 +18,8 @@
             $state.go('viewProfile',{view_id:id});
         }
         $scope.deleteAccept = deleteAccept;
+        $scope.details = {};
+
 
         function deleteAccept(comId) {
             $http({
@@ -42,11 +45,13 @@
 
         $scope.sendInterest = sendInterest;
 
-        function sendInterest(id) {
+        function sendInterest(obj) {
+            $scope.details = {id:obj.id_people,name:obj.name,img:obj.images};
+
             $http({
                 method: 'GET',
                 url: resourceUrl.url()+'connect/send?' +
-                '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&partner=' + id
+                '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&partner=' + obj.id_people
             }).then(function successCallback(response) {
                 console.log(response)
                 $scope.open();
@@ -77,5 +82,47 @@
 
         }
 
+
+        $scope.open = function (size, parentSelector) {
+            var parentElem = parentSelector ?
+                angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+            var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'acceptModalContent.html',
+                controller: 'acceptModalController',
+                controllerAs: '$ctrl',
+                size: size,
+                appendTo: parentElem,
+                resolve: {
+                    items: function () {
+                        return $scope.details;
+                    }
+                }
+            });
+        }
+
     }
+
+function acceptModalController(items,$uibModalInstance){
+    var $ctrl = this;
+    $ctrl.items = items;
+    console.log("cheeeeeeeeeeeeeeeek",$ctrl.items);
+    //$ctrl.selected = {
+    //    item: $ctrl.items[0]
+    //};
+
+    $ctrl.ok = function () {
+        $uibModalInstance.close($ctrl.selected.item);
+    };
+
+    $ctrl.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    };
+    $ctrl.upgrade = function () {
+        $uibModalInstance.dismiss('cancel');
+        $state.go('payment')
+    };
+}
 })();

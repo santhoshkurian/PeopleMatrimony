@@ -109,6 +109,7 @@
 									<span ng-if="item.field_name == 'smoking'">Add Smoking Requested  </span>
 									<span ng-if="item.field_name == 'drinking'">Add Smoking Requested  </span>
 									<span ng-if="item.field_name == 'income'">Add Income Requested  </span>
+									<span ng-if="item.field_name == 'occupation'">Add Occupation Requested  </span>
 									<span ng-if="item.field_name == 'education'">Add Education Requested  </span>
 									<span ng-if="item.field_name == 'family'">Add Family Requested  </span>
 									<span ng-if="item.field_name == 'family_status'">Add Family Status Requested  </span>
@@ -132,6 +133,7 @@
 									<span ng-if="item.field_name == 'drinking'">Add Smoking   </span>
 									<span ng-if="item.field_name == 'income'">Add Income   </span>
 									<span ng-if="item.field_name == 'education'">Add Education   </span>
+									<span ng-if="item.field_name == 'occupation'">Add Occupation   </span>
 									<span ng-if="item.field_name == 'family'">Add Family   </span>
 									<span ng-if="item.field_name == 'family_status'">Add Family Status   </span>
 									<span ng-if="item.field_name == 'origin'">Add Origin   </span>
@@ -209,3 +211,49 @@
 
 		</div>
 	</div>
+	</div>
+<script type="text/ng-template" id="pendingModalContent.html">
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-title" style="color: #4cbcac;">
+			{{$ctrl.items.header}}
+			<button class=" pull-right btn btn-circle btn-icon-only default" type="button" ng-click="$ctrl.cancel()"><i class="fa fa-times"></i></button>
+		</h4>
+	</div>
+
+	<div class="modal-body">
+		<div class="row" style="margin: 20px">
+			<div class="col-md-4">
+				<img ng-if="$ctrl.items.img.length > 0" style="height: 90px;width: 90px;border-radius: 55% !important;"
+					 ng-src="{{$ctrl.items.img[0].image}}" ng-click="$ctrl.vieImg(img.image)"/>
+				<img ng-if="$ctrl.items.img.length == 0" style="height: 90px;width: 90px;border-radius: 55% !important;"
+					 src="assets/defaultImages/avatar.png" ng-click="$ctrl.vieImg(img.image)"/>
+			</div>
+			<div class="col-md-7">
+				<div class="row">
+					<div class="col-md-12">
+						<span class="bold">{{$ctrl.items.name}}</span> <span> ({{$ctrl.items.id}})</span>
+					</div>
+					<div class="col-md-12" style="margin-top: 25px">
+						<button type="button" class=" uppercase btn red input-rounded" ng-click="$ctrl.upgrade()">
+							Upgrade Now
+						</button>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		<div class="modal-footer">
+			<div class="row">
+				<div class="col-md-12" style="color: grey">
+					To know more about packages call now 9999999999
+				</div>
+				<!--<div class="col-md-4" >-->
+				<!--&lt;!&ndash;<button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">OK</button>&ndash;&gt;-->
+
+				<!--</div>-->
+
+			</div>
+			<!--<button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>-->
+		</div>
+</script>
