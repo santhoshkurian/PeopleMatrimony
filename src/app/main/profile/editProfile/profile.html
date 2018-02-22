@@ -544,7 +544,7 @@
                                         <option value="never married">Never Married</option>
                                         <option value="widow">Widowed</option>
                                         <option value="divorced">Divorced</option>
-                                        <option value="awaitingdivorce">Awaiting divorce</option>
+                                        <option value="awaiting divorce">Awaiting divorce</option>
 
                                     </select>
                                 </div>
@@ -2088,7 +2088,7 @@
 
                                             <select class="form-control input-rounded "
                                                     ng-model="profile.login_user.preferences.mothertongue">
-                                                <option value="">Select</option>
+                                                <option value="">Any</option>
                                                 <option ng-repeat="obj in motherTongueList"
                                                         ng-selected="obj.mothertongue == profile.login_user.preferences.mothertongue"
                                                         value="{{obj.id_mothertongue}}">
@@ -2104,11 +2104,11 @@
 
                                             <select class="form-control input-rounded "
                                                     ng-model="profile.login_user.preferences.marital_status">
-                                                <option selected value="unmarried">Never Married</option>
-                                                <option value="married"> Married</option>
+                                                <option value="">Any</option>
+                                                <option value="never married">Never Married</option>
+                                                <option value="widow">Widowed</option>
                                                 <option value="divorced">Divorced</option>
-                                                <option value="widow">Widow</option>
-                                                <option value="widower">widower</option>
+                                                <option value="awaiting divorce">Awaiting divorce</option>
 
                                             </select>
                                         </div>
@@ -2277,6 +2277,7 @@
                                                                                     options="religonList"
                                                                                     id-prop="id_religion"
                                                                                     display-prop="religion"
+                                                                                    placeholder="{{placeReligion}}"
                                                                                >
                                                                        </multiselect>
 
@@ -2299,7 +2300,9 @@
                                                                                     ng-model="setPartnerReligion.caste"
                                                                                     options="castList"
                                                                                     id-prop="id_caste"
-                                                                                    display-prop="caste">
+                                                                                    display-prop="caste"
+                                                                                    placeholder="{{placeCaste}}"
+                                                                               >
                                                                        </multiselect>
                                                                    </div>
 
@@ -2326,7 +2329,7 @@
                                     <!--</select>-->
                                     <multiselect ch-limit="10" show-search="false"
                                                  ng-model="setPartnerReligion.star" options="starsList"
-                                                 id-prop="id_star" display-prop="star">
+                                                 id-prop="id_star" display-prop="star" placeholder="{{placeStar}}">
                                     </multiselect>
                                 </div>
 
@@ -2609,6 +2612,8 @@
                                                                                    ng-model="setPartnerLocation.country"
                                                                                    ng-click="selectCountry(setPartnerLocation.country)"
                                                                                    ng-options="item.country_name for item in countryList track by item.id_country">
+                                                                               <option value="">Any</option>
+
                                                                            </select>
                                                                        </div>
 
@@ -2619,6 +2624,8 @@
                                                                                    ng-model="setPartnerLocation.state"
                                                                                    ng-click="selectState(setPartnerLocation.state)"
                                                                                    ng-options="item.state_name for item in stateList track by item.id_state">
+                                                                               <option value="">Any</option>
+
                                                                            </select>
                                                                        </div>
 
@@ -2633,17 +2640,22 @@
                                             ng-click="selectCity(setPartnerLocation.city)"
                                             ng-options="item.city_name for item in cityList track by item.id_city"
                                             >
+                                        <option value="">Any</option>
+
                                     </select>
                                 </div>
 
                                 <div class="col-md-6">
                                     <label class="font-weight  "> Citizenship</label>
+                                            <label class="font-weight  "> Citizenship</label>
 
                                     <select class="form-control input-rounded "
                                             ng-model="setPartnerLocation.nationality"
 
                                             ng-options="item.country_name for item in countryList track by item.id_country"
                                             >
+                                        <option value="">Any</option>
+
                                     </select>
                                 </div>
 

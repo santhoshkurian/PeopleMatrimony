@@ -411,6 +411,9 @@ ids = ids.join(',');
 
             if($scope.profile.login_user.preferences.occupation != null && $scope.profile.login_user.preferences.occupation != 0) {
                 var array = $scope.profile.login_user.preferences.occupation.split('~');
+                if (array != '' && array.length > 0) {
+
+                $scope.placeOccupation = array.length + ' selected';
 
                 for (var i = 0; i < array.length; i++) {
                     $scope.occupation.filter(function (a) {
@@ -419,10 +422,20 @@ ids = ids.join(',');
                         }
                     })
                 }
+            }
 
 
             }
         }
+
+        $scope.placeReligion = 'Any';
+        $scope.placeCaste = 'Any';
+        $scope.placeStar = 'Any';
+        $scope.placeOccupation = 'Any';
+
+
+
+
         function editPartnerReligion(obj) {
             $scope[obj] = !$scope[obj];
             console.log($scope.profile)
@@ -430,63 +443,61 @@ ids = ids.join(',');
                 $scope.profile.login_user.preferences.religion != 0){
 
                 var array = $scope.profile.login_user.preferences.religion.split('~');
-                for (var i = 0; i < array.length; i++) {
-                    console.log(array[i])
-                    $scope.religonList.filter(function (a) {
-                        if (a.id_religion == array[i]) {
-                            $scope.setPartnerReligion.religion.push(a);
-                        }
-                    })
-                }
-
-                $http({
-                    method: 'GET',
-                    url: resourceUrl.url()+'populate?id_religions=' +array.join(',')
-                }).then(function successCallback(response) {
-                    $scope.castList = response.data.caste;
-                    console.log(response)
-                    var array1 = $scope.profile.login_user.preferences.caste.split('~');
-                    for (var i = 0; i < array1.length; i++) {
-                        $scope.castList.filter(function (a) {
-                            if (a.id_caste == array[i]) {
-                                $scope.setPartnerReligion.caste.push(a);
+                if(array !='' && array.length > 0 ) {
+                    $scope.placeReligion = array.length + ' selected';
+                    for (var i = 0; i < array.length; i++) {
+                        console.log(array[i])
+                        $scope.religonList.filter(function (a) {
+                            if (a.id_religion == array[i]) {
+                                $scope.setPartnerReligion.religion.push(a);
                             }
                         })
                     }
+                    $http({
+                        method: 'GET',
+                        url: resourceUrl.url()+'populate?id_religions=' +array.join(',')
+                    }).then(function successCallback(response) {
+                        $scope.castList = response.data.caste;
+                        console.log(response)
+                        var array1 = $scope.profile.login_user.preferences.caste.split('~');
+                        if(array1 !='' && array1.length > 0 ) {
+                            $scope.placeCaste = array1.length + ' selected';
+
+                            for (var i = 0; i < array1.length; i++) {
+                                $scope.castList.filter(function (a) {
+                                    if (a.id_caste == array[i]) {
+                                        $scope.setPartnerReligion.caste.push(a);
+                                    }
+                                })
+                            }
+                        }
 
 
 
-                }, function errorCallback(response) {
+                    }, function errorCallback(response) {
+                        $scope.placeReligion = 'Any';
 
-                });
+                    });
+                }else{
 
-                //$http({
-                //    method: 'GET',
-                //    url: resourceUrl.url()+'populate?id_mothertongue=' + $scope.profile.login_user.id_mothertongue + '&id_religion=' + $scope.profile.login_user.preferences.religion
-                //}).then(function successCallback(response) {
-                //    console.log(response)
-                //    $scope.castList = response.data.caste;
-                //    $scope.castList.filter(function (a) {
-                //        if (a.id_caste == $scope.profile.login_user.preferences.caste) {
-                //            $scope.setPartnerReligion.caste = a;
-                //        }
-                //    })
-                //}, function errorCallback(response) {
-                //
-                //});
+                }
 
 
             }
 
             if($scope.profile.login_user.preferences.star != null && $scope.profile.login_user.preferences.star != 0){
                 var array = $scope.profile.login_user.preferences.star.split('~');
-                for (var i = 0; i < array.length; i++) {
-                    console.log(array[i])
-                    $scope.starsList.filter(function (a) {
-                        if (a.id_star == array[i]) {
-                            $scope.setPartnerReligion.star.push(a);
-                        }
-                    })
+                if(array !='' && array.length > 0 ) {
+                    $scope.placeStar = array.length + ' selected';
+
+                    for (var i = 0; i < array.length; i++) {
+                        console.log(array[i])
+                        $scope.starsList.filter(function (a) {
+                            if (a.id_star == array[i]) {
+                                $scope.setPartnerReligion.star.push(a);
+                            }
+                        })
+                    }
                 }
 
             }
