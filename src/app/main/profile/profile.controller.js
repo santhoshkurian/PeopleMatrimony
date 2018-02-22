@@ -114,10 +114,33 @@
         $scope.saveFamilyDetails = saveFamilyDetails;
         $scope.savePartnerBasic = savePartnerBasic;
 
-        $scope.selectRegliousPreference = selectRegliousPreference;
+        $scope.$watch('setPartnerReligion.religion', selectRegliousPreference);
+
+
 
         function selectRegliousPreference(){
-            console.log("change")
+
+            if($scope.setPartnerReligion.religion.length > 0){
+var ids = [];
+                $scope.setPartnerReligion.religion.filter(function (a) {
+                   ids.push(a.id_religion)
+
+                });
+
+                console.log(ids.join(','))
+ids = ids.join(',');
+                $http({
+                    method: 'GET',
+                    url: resourceUrl.url()+'populate?id_religions=' +ids
+                }).then(function successCallback(response) {
+                  $scope.castList = response.data.caste;
+                    console.log(response)
+
+                }, function errorCallback(response) {
+
+                });
+            }
+
         }
 
         $scope.cancel = cancel;
@@ -416,6 +439,27 @@
                     })
                 }
 
+                $http({
+                    method: 'GET',
+                    url: resourceUrl.url()+'populate?id_religions=' +array.join(',')
+                }).then(function successCallback(response) {
+                    $scope.castList = response.data.caste;
+                    console.log(response)
+                    var array1 = $scope.profile.login_user.preferences.caste.split('~');
+                    for (var i = 0; i < array1.length; i++) {
+                        $scope.castList.filter(function (a) {
+                            if (a.id_caste == array[i]) {
+                                $scope.setPartnerReligion.caste.push(a);
+                            }
+                        })
+                    }
+
+
+
+                }, function errorCallback(response) {
+
+                });
+
                 //$http({
                 //    method: 'GET',
                 //    url: resourceUrl.url()+'populate?id_mothertongue=' + $scope.profile.login_user.id_mothertongue + '&id_religion=' + $scope.profile.login_user.preferences.religion
@@ -616,7 +660,7 @@
             if($scope.setPartnerReligion.caste.length > 0){
                 var caste_arr = [];
                 for (var i = 0; i < $scope.setPartnerReligion.caste.length; i++) {
-                    caste_arr.push($scope.setPartnerReligion.caste[i].id_star);
+                    caste_arr.push($scope.setPartnerReligion.caste[i].id_caste);
                 }
                 caste_id = caste_arr.join('~');
             }
