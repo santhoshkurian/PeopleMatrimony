@@ -10,7 +10,7 @@
     function MessagePendingController(pending,$state,$scope,$http,$timeout,$stateParams,$uibModal,resourceUrl,storageService) {
         var vm = this;
         $scope.pending = pending.list;
-        $scope.type = "sent";
+        $scope.type = "accept";
 
         console.log($scope.pending);
 

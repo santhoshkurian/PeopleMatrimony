@@ -90,22 +90,20 @@
                             </div>
                             <div class="col-md-3 pull-right"><label class="style-cls">{{item.date}}</label><i
                                     class="fa fa-trash  pull-right style-cls " style="padding-top:5px;" ng-click="deleteSent(item.com_id)" ></i></div>
-                        </div>
-                        <div class="row">
                             <div class="col-md-12 details-style">
                                 {{item.user.age}} Yrs, {{item.user.height}}cms, {{item.user.mothertongue}}, {{item.user.religion}}, {{item.user.caste}},{{item.user.education}}, {{item.user.occupation}},
                                 {{item.user.city_name}}, {{item.user.state_name}}, {{item.user.country_name}}.
                             </div>
 
-                        </div>
                         <hr>
-                        <div class="row" ng-if="item.action == 'connect'">
+                            <br/>
+                        <div  ng-if="item.action == 'connect'">
                             <div class="col-md-12 notification-style uppercase">INTEREST SENT</div>
 
                             <div class="col-md-12 notification-details">{{item.content}}</div>
 
                         </div>
-                        <div class="row" ng-if="item.action == 'field'">
+                        <div  ng-if="item.action == 'field'">
                             <div class="col-md-12 notification-style uppercase">ADD {{item.field_name}} REQUEST SENT</div>
 
                             <div class="col-md-12 notification-details">{{item.content}}</div>
@@ -119,15 +117,14 @@
                             <button  type="button"  class=" uppercase btn btn-default input-rounded" ng-click="sendMail(item.user)">
                                 Send Mail
                             </button>
-                            &nbsp;
                             <button  ng-if="item.action == 'connect'" type="button"  class=" uppercase btn btn-default input-rounded" ng-click="sendMail(item.user)">
                                 Send Reminder
                             </button>
+                            <hr>
 
                         </div>
-                        <hr>
+</div>
                         <mailbox mail="item.communication" user="item.user" res="type" reverse="sendRespond(data)"></mailbox>
-
                     </div>
 
                     <div class="row">
