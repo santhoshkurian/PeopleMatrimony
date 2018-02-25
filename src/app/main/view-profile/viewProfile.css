@@ -51,6 +51,11 @@ font-size: 16px}
     font-weight: 600;
     margin: 20px;
 }
+.vp-commu{
+    padding: 15px;
+    background-color: #f4f5dc;
+    margin: 20px;
+}
 .vp-sub-action button{
 width: 60px;
 height: 30px;

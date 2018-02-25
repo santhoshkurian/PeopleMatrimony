@@ -9,6 +9,8 @@
     function MessageDeclinedController($state,declined,$scope,storageService,resourceUrl) {
         var vm = this;
         $scope.declined = declined.list;
+        $scope.type = "declined";
+
         console.log("MessageDeclinedController");
         console.log($scope.declined);
 

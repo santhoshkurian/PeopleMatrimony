@@ -14,10 +14,34 @@
         console.log($scope.accept);
 
         $scope.viewProfile = viewProfile;
+        $scope.sendRespond = sendRespond;
+
+        function sendRespond(obj){
+            console.log(obj);
+            if(obj.type == 'interest'){
+                sendInterest(obj.partner);
+            }
+            if(obj.type == 'mail') {
+                sendMail(obj.partner)
+            }
+            if(obj.type == 'callnow') {
+                sendMail(obj.partner)
+            }
+        }
+
+        $scope.sendMail = sendMail;
+
+        function sendMail(obj){
+            $scope.details = {id: obj.id_people, name: obj.name, img: obj.images, header: 'Feature Not Implemented'}
+            $scope.open();
+        };
+
+
         function viewProfile(id){
             $state.go('viewProfile',{view_id:id});
         }
         $scope.deleteAccept = deleteAccept;
+
         $scope.details = {};
 
 

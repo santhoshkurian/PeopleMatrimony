@@ -137,11 +137,11 @@
                                    Send Interest
                                 </button>
                                 &nbsp;
-                                <button  type="button" ng-click="respondAction(item.com_id,'declined')" class=" uppercase btn btn-default input-rounded" ng-click="">
+                                <button  type="button" ng-click="sendMail(item.user)" class=" uppercase btn btn-default input-rounded" >
                                     Send Mail
                                 </button>
                                 &nbsp;
-                                <button  type="button" ng-click="respondAction(item.com_id,'declined')" class=" uppercase btn btn-default input-rounded" ng-click="">
+                                <button  type="button" ng-click="sendMail(item.user)" class=" uppercase btn btn-default input-rounded" >
                                     Call now
                                 </button>
 
@@ -149,7 +149,7 @@
                         <div class="col-md-12 margin-top-10">
                             <hr/>
 
-                            <mailbox mail="item.communication" res="type"></mailbox>
+                            <mailbox mail="item.communication" user="item.user" res="type" reverse="sendRespond(data)"></mailbox>
                         </div>
                         </div>
 

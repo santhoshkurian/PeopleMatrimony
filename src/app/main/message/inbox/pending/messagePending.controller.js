@@ -7,7 +7,7 @@
         .controller('pendingModalController', pendingModalController);
 
     /** @ngInject */
-    function MessagePendingController(pending,$state,$scope,$http,$stateParams,$uibModal,resourceUrl,storageService) {
+    function MessagePendingController(pending,$state,$scope,$http,$timeout,$stateParams,$uibModal,resourceUrl,storageService) {
         var vm = this;
         $scope.pending = pending.list;
         $scope.type = "sent";
@@ -19,8 +19,29 @@
             $state.go('viewProfile',{view_id:id});
         }
 
+        $scope.sendRespond = sendRespond;
+
+        function sendRespond(obj){
+            console.log(obj);
+            if(obj.type == 'interest'){
+                sendInterest(obj.partner);
+            }
+            if(obj.type == 'mail') {
+                sendMail(obj.partner)
+            }
+            if(obj.type == 'callnow') {
+                sendMail(obj.partner)
+            }
+        }
+
+        $scope.sendMail = sendMail;
+
+        function sendMail(obj){
+            $scope.details = {id: obj.id_people, name: obj.name, img: obj.images, header: 'Feature Not Implemented'}
+            $scope.open();
+        };
+
         $scope.deletePending = deletePending;
-        $scope.respondAction = respondAction;
 
         function deletePending(comId) {
             $http({
@@ -43,10 +64,12 @@
                 console.log(response)
             });
         }
-        $scope.details = {id:storageService.get('id'),name:storageService.get('name'),img:storageService.get('image_url')};
 
+        $scope.respondAction = respondAction;
 
-        function respondAction(comId,action) {
+        function respondAction(comId,action,obj) {
+            $scope.details = {id:obj.id_people,name:obj.name,img:obj.images};
+
             $http({
                 method: 'GET',
                 url: resourceUrl.url()+'response/'+action+'/'+comId +
@@ -55,11 +78,21 @@
                     console.log(response);
                 $scope.open();
                 if(response.data.code == '400'){
-                    $scope.details.header = 'Details not added';
+                    if(action == 'declined'){
+                        $scope.details.header = 'Re invalid! . Please try again ';
+                    }else{
+                        $scope.details.header = 'Request Accepted Successfully';
+
+                    }
+
 
                 }else{
-                    $scope.details.header = 'Details Added Successfully';
-                    $scope.showMessage=true;
+                    if(action == 'declined'){
+                        $scope.details.header = 'Request rejected ';
+                    }else{
+                        $scope.details.header = 'Request Accepted Successfully';
+
+                    }                    $scope.showMessage=true;
                     $scope.showAction=false;
 
                 }
@@ -73,6 +106,45 @@
             }, function errorCallback(response) {
                 console.log(response)
             });
+        }
+
+        $scope.sendInterest = sendInterest;
+
+        function sendInterest(obj) {
+            $scope.details = {id:obj.id_people,name:obj.name,img:obj.images};
+
+            $http({
+                method: 'GET',
+                url: resourceUrl.url()+'connect/send?' +
+                '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&partner=' + obj.id_people
+            }).then(function successCallback(response) {
+                console.log(response)
+                $scope.open();
+                if(response.data.code == '400'){
+                    $scope.details.header = 'Already send an interest';
+
+                }else{
+                    $scope.details.header = 'Interest Sent Successfully';
+                    $scope.showMessage=true;
+                    $scope.showAction=false;
+
+                }
+                $timeout(function() {
+                    $state.transitionTo($state.current, $stateParams, {
+                        reload: true,
+                        inherit: false,
+                        notify: true
+                    });
+                }, 2000);
+
+            }, function errorCallback(response) {
+                console.log(response)
+
+
+
+            });
+
+
         }
 
 

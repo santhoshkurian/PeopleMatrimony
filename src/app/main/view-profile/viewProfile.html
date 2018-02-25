@@ -179,15 +179,61 @@
                                         </span>
                                     </div>
                                 </div>
-                                <div class="row" ng-if="showBlockAction || (data.interest == 'sent' && data.blocked == 'no')">
+                                <div class="row" ng-if="(showBlockAction && data.blocked == 'no') || data.interest == 'sent'">
                                     <div class="vp-sub-action">
                                         <span>Are you sure you want to block {{view.name}}?</span>
 
                                         <span>
                                         <button class="btn red" style="border-radius: 5px!important;" ng-click="blockPartner()">YES</button>
-                                        <button class="btn " style="border-radius: 5px!important;border-color: silver" ng-click="skipAction()">SKIP</button>
+                                        <button class="btn " style="border-radius: 5px!important;border-color: silver" ng-click="skipBlockAction()">SKIP</button>
                                         </span>
                                     </div>
+                                </div>
+                                <div class="row" ng-if="(converstionCount > 0 && (showConversationAction && !showBlockAction && !showInterestAction) || (data.blocked == 'yes' && data.interest == 'sent'))">
+                                <div class="vp-commu">
+                                        <div class="notification-style uppercase">
+                                <span ng-if="communication.action == 'connect'">Interest Sent
+                                    </span>
+								<span ng-if="communication.action == 'field'">
+									<span ng-if="communication.field_name == 'photo_request'">Photo Request Sent </span>
+									<span ng-if="communication.field_name == 'smoking'">Add Smoking Request Sent </span>
+									<span ng-if="communication.field_name == 'drinking'">Add Drinking Request Sent </span>
+									<span ng-if="communication.field_name == 'income'">Add Income Request Sent </span>
+									<span ng-if="communication.field_name == 'education'">Add Education Request Sent </span>
+									<span ng-if="communication.field_name == 'family'">Add Family Request Sent </span>
+									<span ng-if="communication.field_name == 'family_status'">Add Family Status Request Sent </span>
+									<span ng-if="communication.field_name == 'origin'">Add Origin Request Sent </span>
+									<span ng-if="communication.field_name == 'about_family'">Add About Family Request Sent </span>
+
+
+								</span>
+                                            <span ng-if="item.msg_status == 'recieved'"><img src="/assets/icons/receive.png" ></span>
+                                        </div>                                        <div style="margin-top: 10px" >{{communication.content}}</div>
+
+                                        <div style="margin-top: 10px" >
+                                            <button type="button" class=" uppercase btn red input-rounded" ng-click="respondAction(communication.id_activity,'accepted',view)">
+
+                                                <span ng-if="communication.action == 'connect'">YES</span>
+									<span ng-if="communication.action == 'field'"><span ng-if="communication.field_name == 'photo_request'">Add Photo Requested </span>
+									<span ng-if="communication.field_name == 'smoking'">Add Smoking   </span>
+									<span ng-if="communication.field_name == 'drinking'">Add Drinking   </span>
+									<span ng-if="communication.field_name == 'income'">Add Income   </span>
+									<span ng-if="communication.field_name == 'education'">Add Education   </span>
+									<span ng-if="communication.field_name == 'occupation'">Add Occupation   </span>
+									<span ng-if="communication.field_name == 'family'">Add Family   </span>
+									<span ng-if="communication.field_name == 'family_status'">Add Family Status   </span>
+									<span ng-if="communication.field_name == 'origin'">Add Origin   </span>
+									<span ng-if="communication.field_name == 'about_family'">Add About Family  </span>
+
+									</span>
+
+                                            </button>
+                                            &nbsp;
+                                            <button  type="button" ng-click="respondAction(communication.id_activity,'declined',view)" class=" uppercase btn btn-default input-rounded" ng-click="">
+                                                NOT INTERESTED
+                                            </button>                                        </div>
+                                    </div>
+                                <div ng-if="converstionCount > 1" style="text-align: right;"><a style="color:red" ui-sref="messages.sent">{{converstionCount}}+ More converstion</a></div>
                                 </div>
 
 

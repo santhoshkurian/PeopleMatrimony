@@ -60,6 +60,7 @@
         $scope.viewType = 'personal';
         $scope.showInterestAction = true;
         $scope.showBlockAction = false;
+        $scope.showConversationAction = false;
         $scope.showMessage = false;
         $scope.selectType = selectType;
         $scope.enlargePhoto = enlargePhoto;
@@ -69,17 +70,69 @@
 
         function skipInterestAction() {
             $scope.showInterestAction = false;
-            $scope.showBlockAction = true;
+            if($scope.data.blocked == 'yes'){
+                $scope.showConversationAction = true;
+            } else{
+                $scope.showBlockAction = true;
+            }
         }
 
         function skipBlockAction() {
             $scope.showBlockAction = false;
+            $scope.showConversationAction = true;
+
         }
+
+        $scope.respondAction = respondAction;
+
+        function respondAction(comId,action,obj) {
+            $scope.details = {id:obj.id_people,name:obj.name,img:obj.images};
+
+            $http({
+                method: 'GET',
+                url: resourceUrl.url()+'response/'+action+'/'+comId +
+                '?&token=' + storageService.get("token")
+            }).then(function successCallback(response) {
+                console.log(response);
+                $scope.open();
+                if(response.data.code == '400'){
+                    if(action == 'declined'){
+                        $scope.details.header = 'Re invalid! . Please try again ';
+                    }else{
+                        $scope.details.header = 'Request Accepted Successfully';
+
+                    }
+
+
+                }else{
+                    if(action == 'declined'){
+                        $scope.details.header = 'Request rejected ';
+                    }else{
+                        $scope.details.header = 'Request Accepted Successfully';
+
+                    }                    $scope.showMessage=true;
+                    $scope.showAction=false;
+
+                }
+                $timeout(function() {
+                    $state.transitionTo($state.current, $stateParams, {
+                        reload: true,
+                        inherit: false,
+                        notify: true
+                    });
+                }, 2000);
+            }, function errorCallback(response) {
+                console.log(response)
+            });
+        }
+
 
 
         function selectType(type) {
             $scope.viewType = type;
         }
+        $scope.communication = null;
+        $scope.converstionCount = 0;
 
         if (!viewProfile.error) {
             viewProfile.communication.sent.filter(function(a){
@@ -115,6 +168,10 @@
                     $scope.photo_reqReq = true;
                 }
             });
+            $scope.converstionCount = viewProfile.communication.sent.length + viewProfile.communication.received.length;
+            if(viewProfile.communication.sent.length > 0){
+                $scope.communication = viewProfile.communication.sent[0];
+            }
 
         $scope.data = viewProfile;
         $scope.view = viewProfile.user;

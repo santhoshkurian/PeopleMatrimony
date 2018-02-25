@@ -6,7 +6,7 @@
         .controller('SentController', SentController);
 
     /** @ngInject */
-    function SentController($http,$state,storageService,$scope,sent) {
+    function SentController($http,$state,storageService,$scope,$timeout,resourceUrl,$stateParams,sent,$uibModal) {
         var vm = this;
         $scope.type = "sent";
 
@@ -16,6 +16,28 @@
         function viewProfile(id){
             $state.go('viewProfile',{view_id:id});
         }
+
+        $scope.sendRespond = sendRespond;
+
+        function sendRespond(obj){
+            console.log(obj);
+            if(obj.type == 'interest'){
+                sendInterest(obj.partner);
+            }
+            if(obj.type == 'mail') {
+                sendMail(obj.partner)
+            }
+            if(obj.type == 'callnow') {
+                sendMail(obj.partner)
+            }
+        }
+
+        $scope.sendMail = sendMail;
+
+        function sendMail(obj){
+            $scope.details = {id: obj.id_people, name: obj.name, img: obj.images, header: 'Feature Not Implemented'}
+            $scope.open();
+        };
         $scope.deleteSent = deleteSent;
            function deleteSent(comId,resourceUrl){
             console.log(comId);
@@ -37,7 +59,65 @@
             });
         }
 
+        $scope.sendInterest = sendInterest;
 
+        function sendInterest(obj) {
+            $scope.details = {id:obj.id_people,name:obj.name,img:obj.images};
+
+            $http({
+                method: 'GET',
+                url: resourceUrl.url()+'connect/send?' +
+                '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&partner=' + obj.id_people
+            }).then(function successCallback(response) {
+                console.log(response)
+                $scope.open();
+                if(response.data.code == '400'){
+                    $scope.details.header = 'Already send an interest';
+
+                }else{
+                    $scope.details.header = 'Interest Sent Successfully';
+                    $scope.showMessage=true;
+                    $scope.showAction=false;
+
+                }
+                $timeout(function() {
+                    $state.transitionTo($state.current, $stateParams, {
+                        reload: true,
+                        inherit: false,
+                        notify: true
+                    });
+                }, 2000);
+
+            }, function errorCallback(response) {
+                console.log(response)
+
+
+
+            });
+
+
+        }
+
+
+        $scope.open = function (size, parentSelector) {
+            var parentElem = parentSelector ?
+                angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+            var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'acceptModalContent.html',
+                controller: 'acceptModalController',
+                controllerAs: '$ctrl',
+                size: size,
+                appendTo: parentElem,
+                resolve: {
+                    items: function () {
+                        return $scope.details;
+                    }
+                }
+            });
+        }
 
 
 
