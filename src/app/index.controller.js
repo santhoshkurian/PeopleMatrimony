@@ -9,11 +9,6 @@
     /** @ngInject */
     function IndexController()
     {
-        var vm = this;
 
-        // Data
-        //vm.themes = fuseTheming.themes;
-
-        //////////
     }
 })();

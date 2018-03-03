@@ -58,7 +58,7 @@
         $scope.name = storageService.get("name");
         $scope.id = storageService.get("id");
         $scope.viewType = 'personal';
-        $scope.showInterestAction = true;
+        $scope.showInterestAction = false;
         $scope.showBlockAction = false;
         $scope.showConversationAction = false;
         $scope.showMessage = false;
@@ -70,16 +70,19 @@
 
         function skipInterestAction() {
             $scope.showInterestAction = false;
-            if($scope.data.blocked == 'yes'){
-                $scope.showConversationAction = true;
-            } else{
+            if($scope.data.blocked == 'no' && !$scope.showInterestAction){
                 $scope.showBlockAction = true;
+            }
+            if($scope.converstionCount > 0 && !$scope.showInterestAction && !$scope.showBlockAction){
+                $scope.showConversationAction = true;
             }
         }
 
         function skipBlockAction() {
             $scope.showBlockAction = false;
-            $scope.showConversationAction = true;
+            if($scope.converstionCount > 0 && !$scope.showInterestAction && !$scope.showBlockAction){
+                $scope.showConversationAction = true;
+            }
 
         }
 
@@ -174,6 +177,16 @@
             }
 
         $scope.data = viewProfile;
+            console.log("data",$scope.data);
+            if($scope.data.interest == ''){
+                $scope.showInterestAction = true;
+            }
+            if($scope.data.blocked == 'no' && !$scope.showInterestAction){
+                $scope.showBlockAction = true;
+            }
+            if($scope.converstionCount > 0 && !$scope.showInterestAction && !$scope.showBlockAction){
+                $scope.showConversationAction = true;
+            }
         $scope.view = viewProfile.user;
         $scope.login_user = viewProfile.login_user;
         $scope.preference = viewProfile.preference_matches;
