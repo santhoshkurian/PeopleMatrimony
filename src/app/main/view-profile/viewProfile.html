@@ -9,7 +9,6 @@
             <div class="row">
                 <div style="color: red;text-align: center">{{message}}</div>
 
-                <div class="col-md-12 ">
 
                     <div class="col-md-12 ">
 
@@ -210,60 +209,49 @@
                                             <span ng-if="item.msg_status == 'recieved'"><img src="/assets/icons/receive.png" ></span>
                                         </div>                                        <div style="margin-top: 10px" >{{communication.content}}</div>
 
-                                        <div style="margin-top: 10px" >
+                                        <div style="margin-top: 10px" ng-if="communication_type == 'sent'">
                                             <button type="button" class=" uppercase btn red input-rounded" ng-click="respondAction(communication.id_activity,'accepted',view)">
-
-                                                <span ng-if="communication.action == 'connect'">YES</span>
-									<span ng-if="communication.action == 'field'"><span ng-if="communication.field_name == 'photo_request'">Add Photo Requested </span>
-									<span ng-if="communication.field_name == 'smoking'">Add Smoking   </span>
-									<span ng-if="communication.field_name == 'drinking'">Add Drinking   </span>
-									<span ng-if="communication.field_name == 'income'">Add Income   </span>
-									<span ng-if="communication.field_name == 'education'">Add Education   </span>
-									<span ng-if="communication.field_name == 'occupation'">Add Occupation   </span>
-									<span ng-if="communication.field_name == 'family'">Add Family   </span>
-									<span ng-if="communication.field_name == 'family_status'">Add Family Status   </span>
-									<span ng-if="communication.field_name == 'origin'">Add Origin   </span>
-									<span ng-if="communication.field_name == 'about_family'">Add About Family  </span>
-
-									</span>
-
+                                                Sent Interest
                                             </button>
-                                            &nbsp;
-                                            <button  type="button" ng-click="respondAction(communication.id_activity,'declined',view)" class=" uppercase btn btn-default input-rounded" ng-click="">
-                                                NOT INTERESTED
-                                            </button>                                        </div>
-                                    </div>
-                                <div ng-if="converstionCount > 1" style="text-align: right;"><a style="color:red" ui-sref="messages.sent">{{converstionCount}}+ More converstion</a></div>
+                                            <button type="button" class=" uppercase btn  input-rounded" ng-click="respondAction(communication.id_activity,'accepted',view)">
+                                                Sent Mail
+                                            </button>
+                                            </div>
+                                    <div ng-if="converstionCount > 1" style="text-align: right;"><a style="color:red" ui-sref="messages.sent">{{converstionCount}}+ More converstion</a></div>
                                 </div>
+                                                   </div>
+
 
 
                             </div>
-                            <div class=" row vp-main-action">
-                                <div style="text-transform: uppercase;text-align: center;">
-                                    <button ng-disabled="data.shortlisted" class="col-md-4 col-sm-4 col-xs-4 vp-main-link" ng-click="shortlist()"
-                                            ><i ng-if="!data.shortlisted"
+                        <div class=" row vp-main-action">
+                            <div style="text-transform: uppercase;text-align: center;">
+                                <button ng-disabled="data.shortlisted" class="col-md-4 col-sm-4 col-xs-4 vp-main-link" ng-click="shortlist()"
+                                        ><i ng-if="!data.shortlisted"
                                             class="fa fa-star-o"></i><i ng-if="data.shortlisted"
-                                            class="fa fa-check"></i><span ng-if="!data.shortlisted" class="hidden-sm hidden-xs"> SHORTLIST</span><span ng-if="data.shortlisted" class="hidden-sm hidden-xs"> SHORTLISTED</span>
-                                    </button>
+                                                                        class="fa fa-check"></i><span ng-if="!data.shortlisted" class="hidden-sm hidden-xs"> SHORTLIST</span><span ng-if="data.shortlisted" class="hidden-sm hidden-xs"> SHORTLISTED</span>
+                                </button>
 
 
-                                    <div class="col-md-4 col-sm-4 col-xs-4 vp-main-link"
-                                            >
-                                        <i class="fa fa-phone"></i> <span
-                                            class="hidden-sm hidden-xs"> Contact Details</span>
-                                    </div>
-                                    <div class="col-md-4 col-sm-4 col-xs-4 vp-main-link"
-                                            ><i
-                                            class="fa fa-commenting-o"></i> <span
-                                            class="hidden-sm hidden-xs">  Chat now</span>
-                                    </div>
-
-
+                                <div class="col-md-4 col-sm-4 col-xs-4 vp-main-link"
+                                        >
+                                    <i class="fa fa-phone"></i> <span
+                                        class="hidden-sm hidden-xs"> Contact Details</span>
                                 </div>
-                            </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 vp-main-link"
+                                        ><i
+                                        class="fa fa-commenting-o"></i> <span
+                                        class="hidden-sm hidden-xs">  Chat now</span>
+                                </div>
 
+
+                            </div>
+                        </div>
                         </div>
 
+
+                    </div>
+                <div class="col-md-12 ">
                         <div class="portlet light "
                              style="padding-top: 0px">
 
@@ -1113,9 +1101,8 @@
 
                         </div>
 
-                    </div>
-                    <!-- END PAGE TITLE -->
-
+</div>
+</div>
                 </div>
                 <!-- END PAGE HEAD-->
                 <!-- BEGIN PAGE BREADCRUMB -->

@@ -135,6 +135,7 @@
             $scope.viewType = type;
         }
         $scope.communication = null;
+        $scope.communication_type = null;
         $scope.converstionCount = 0;
 
         if (!viewProfile.error) {
@@ -174,6 +175,13 @@
             $scope.converstionCount = viewProfile.communication.sent.length + viewProfile.communication.received.length;
             if(viewProfile.communication.sent.length > 0){
                 $scope.communication = viewProfile.communication.sent[0];
+                $scope.communication_type = 'sent';
+            }else{
+                if(viewProfile.communication.received.length > 0) {
+                $scope.communication = viewProfile.communication.sent[0];
+                    $scope.communication_type = 'received';
+
+                }
             }
 
         $scope.data = viewProfile;
