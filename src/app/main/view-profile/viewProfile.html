@@ -239,34 +239,34 @@
                                     <div style="margin-top: 10px">{{communication.content}}</div>
 
                                     <div style="margin-top: 10px" ng-if="communication_type == 'sent'">
-                                        <button type="button" class=" uppercase btn red input-rounded"
-                                                ng-click="respondAction(communication.id_activity,'accepted',view)">
+                                        <button ng-if="communication.action != 'connect'" type="button" class=" uppercase btn red input-rounded"
+                                                ng-click="sendInterest()">
                                             Sent Interest
                                         </button>
                                         <button type="button" class=" uppercase btn  input-rounded"
-                                                ng-click="respondAction(communication.id_activity,'accepted',view)">
+                                                >
                                             Sent Mail
                                         </button>
                                     </div>
                                     <div style="margin-top: 10px" ng-if="communication_type == 'received'">
-                                        <button type="button" class=" uppercase btn red input-rounded" ng-click="respondAction(item.com_id,'accepted',item.user)">
+                                        <button type="button" class=" uppercase btn red input-rounded" ng-click="respondAction(communication.id_activity,'accepted',view)">
 
-                                            <span ng-if="item.action != 'connect'">YES</span>
-									<span ng-if="item.action == 'field'"><span ng-if="item.field_name == 'photo_request'">Add Photo Requested </span>
-									<span ng-if="item.field_name == 'smoking'">Add Smoking   </span>
-									<span ng-if="item.field_name == 'drinking'">Add Smoking   </span>
-									<span ng-if="item.field_name == 'income'">Add Income   </span>
-									<span ng-if="item.field_name == 'education'">Add Education   </span>
-									<span ng-if="item.field_name == 'occupation'">Add Occupation   </span>
-									<span ng-if="item.field_name == 'family'">Add Family   </span>
-									<span ng-if="item.field_name == 'family_status'">Add Family Status   </span>
-									<span ng-if="item.field_name == 'origin'">Add Origin   </span>
-									<span ng-if="item.field_name == 'about_family'">Add About Family  </span>
+                                            <span ng-if="communication.action == 'connect'">YES</span>
+									<span ng-if="communication.action == 'field'"><span ng-if="communication.field_name == 'photo_request'">Add Photo Requested </span>
+									<span ng-if="communication.field_name == 'smoking'">Add Smoking   </span>
+									<span ng-if="communication.field_name == 'drinking'">Add Smoking   </span>
+									<span ng-if="communication.field_name == 'income'">Add Income   </span>
+									<span ng-if="communication.field_name == 'education'">Add Education   </span>
+									<span ng-if="communication.field_name == 'occupation'">Add Occupation   </span>
+									<span ng-if="communication.field_name == 'family'">Add Family   </span>
+									<span ng-if="communication.field_name == 'family_status'">Add Family Status   </span>
+									<span ng-if="communication.field_name == 'origin'">Add Origin   </span>
+									<span ng-if="communication.field_name == 'about_family'">Add About Family  </span>
 
 									</span>
 
                                         </button>
-                                        <button  type="button" ng-click="respondAction(item.com_id,'declined',item.user)" class=" uppercase btn btn-default input-rounded" ng-click="">
+                                        <button  type="button" ng-click="respondAction(communication.id_activity,'declined',view)" class=" uppercase btn btn-default input-rounded" ng-click="">
                                             NOT INTERESTED
                                         </button>
                                     </div>
