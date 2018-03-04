@@ -88,8 +88,12 @@
                                                     <div class="col-md-12">
                                                         <div class="row" ng-repeat="occu in discover.occupation.matches | limitTo:2">
                                                             <div class=" col-xs-3 col-sm-3 col-md-4 ">
-                                                                <img class="imgae-circle spacer"
-                                                                     ng-src="../assets/images/prof1.jpg"/>
+                                                                <img ng-if="occu.images.length > 0" class="imgae-circle spacer"
+                                                                     ng-src="{{occu.images[0].image}}"/>
+                                                                <img ng-if="occu.gender == 'male' && occu.images.length == 0" class="imgae-circle spacer"
+                                                                     ng-src="/assets/defaultImages/male_card.jpg"/>
+                                                                <img ng-if="occu.gender == 'female' && occu.images.length == 0" class="imgae-circle spacer"
+                                                                     ng-src="/assets/defaultImages/female_card.jpg"/>
                                                             </div>
                                                             <div class="col-md-1 hidden-xs hidden-sm"></div>
                                                             <div class="col-xs-8 col-sm-8 col-md-7">

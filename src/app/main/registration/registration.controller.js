@@ -52,11 +52,11 @@
         $scope.step2 = {
             marital_status:'',
             mothertongue:null,
-            caste:0,
-            country:0,
-            state:0,
-            city:0,
-            height:0,
+            caste:'0',
+            country:'0',
+            state:'0',
+            city:'0',
+            height:'0',
             education:null,
             occupation:null,
             step:2
@@ -81,8 +81,8 @@
                 url: resourceUrl.url()+'populate?id_country='+$scope.step2.country
             }).then(function successCallback(response) {
                 $scope.stateList = response.data.states;
-                $scope.step2.state = 0;
-                $scope.step2.city = 0;
+                $scope.step2.state = "0";
+                $scope.step2.city = "0";
             }, function errorCallback(response) {
 
             });
@@ -119,16 +119,16 @@
             if($scope.step2.caste == ''){
                 $scope.showCaste = true;
             }
-            if($scope.step2.country == 0 || $scope.step2.country == ''){
+            if($scope.step2.country == "0" || $scope.step2.country == ''){
                 $scope.showCountry = true;
             }
-            if($scope.step2.state == 0 || $scope.step2.state == ''){
+            if($scope.step2.state == "0" || $scope.step2.state == ''){
                 $scope.showState = true;
             }
-            if($scope.step2.city == 0 || $scope.step2.city == ''){
+            if($scope.step2.city == "0" || $scope.step2.city == ''){
                 $scope.showCity = true;
             }
-            if($scope.step2.height == 0 || $scope.step2.height == ''){
+            if($scope.step2.height == "0" || $scope.step2.height == ''){
                 $scope.showHeight = true;
             }
             console.log($scope.step2);
@@ -164,12 +164,16 @@
                     '&step=2&' +
                     'token=' + storageService.get("token")
                 }).then(function successCallback(response) {
-                    $state.go('step2',{
-                        id:$stateParams.id
-                    })
+                    if(response.error){
+                        $scope.message = response.data.message;
+
+                    }else {
+                        $state.go('step2', {
+                            id: $stateParams.id
+                        })
+                    }
                 }, function errorCallback(response) {
                     console.log(response);
-                    $scope.message = response.data.message;
 
 
                 });

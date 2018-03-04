@@ -178,7 +178,7 @@
                 $scope.communication_type = 'sent';
             }else{
                 if(viewProfile.communication.received.length > 0) {
-                $scope.communication = viewProfile.communication.sent[0];
+                $scope.communication = viewProfile.communication.received[0];
                     $scope.communication_type = 'received';
 
                 }

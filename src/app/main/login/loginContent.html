@@ -278,7 +278,8 @@
                     <!--</div>-->
 
                     <div class="col-md-8 text-box-width">
-                        <input type="number" required class="form-control input-rounded" ng-model="reg.mobile" placeholder="Mobile Number">
+                        <input type="text" numbers-only maxlength="10"
+                               required class="form-control input-rounded" ng-model="reg.mobile" placeholder="Mobile Number">
                      <span ng-if="showMobileNumber">
                         <div class="user-error-msg-arrow" ></div>
                         <div class="user-error-msg" >{{moberror}}</div>
@@ -358,7 +359,7 @@
         <div class="form-group">
             <label class=" uppercase">Email / Mobile Number / Member Id</label>
             <input class="form-control spinner input-rounded" type="text"
-                   placeholder="Email / Mobile Number / Member ID" ng-model="login.username" required/>
+                   placeholder="USER NAME" ng-model="login.username" required/>
         </div>
         <div class="form-group">
             <label class=" uppercase"> Password</label>

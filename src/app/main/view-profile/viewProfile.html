@@ -215,8 +215,11 @@
                                 </div>
                             </div>
                             <div class="row" ng-if="showConversationAction">
+
                                 <div class="vp-commu">
                                     <div class="notification-style uppercase">
+                                        <span ng-if="communication_type == 'sent'">
+
                                 <span ng-if="communication.action == 'connect'">Interest Sent
                                     </span>
 								<span ng-if="communication.action == 'field'">
@@ -232,6 +235,25 @@
 
 
 								</span>
+                                            </span>
+                                        <span ng-if="communication_type == 'received'">
+
+                                <span ng-if="communication.action == 'connect'">Interest Received
+                                    </span>
+								<span ng-if="communication.action == 'field'">
+									<span ng-if="communication.field_name == 'photo_request'">Photo Request Received </span>
+									<span ng-if="communication.field_name == 'smoking'">Add Smoking Request Received </span>
+									<span ng-if="communication.field_name == 'drinking'">Add Drinking Request Received </span>
+									<span ng-if="communication.field_name == 'income'">Add Income Request Received </span>
+									<span ng-if="communication.field_name == 'education'">Add Education Request Received </span>
+									<span ng-if="communication.field_name == 'family'">Add Family Request Received </span>
+									<span ng-if="communication.field_name == 'family_status'">Add Family Status Request Received </span>
+									<span ng-if="communication.field_name == 'origin'">Add Origin Request Received </span>
+									<span ng-if="communication.field_name == 'about_family'">Add About Family Request Received </span>
+
+
+								</span>
+                                            </span>
                                         <span ng-if="item.msg_status == 'recieved'"><img
                                                 src="/assets/icons/receive.png"></span>
                                     </div>
@@ -239,7 +261,8 @@
                                     <div style="margin-top: 10px">{{communication.content}}</div>
 
                                     <div style="margin-top: 10px" ng-if="communication_type == 'sent'">
-                                        <button ng-if="communication.action != 'connect'" type="button" class=" uppercase btn red input-rounded"
+                                        <button ng-if="communication.action != 'connect'" type="button"
+                                                class=" uppercase btn red input-rounded"
                                                 ng-click="sendInterest()">
                                             Sent Interest
                                         </button>
@@ -249,10 +272,12 @@
                                         </button>
                                     </div>
                                     <div style="margin-top: 10px" ng-if="communication_type == 'received'">
-                                        <button type="button" class=" uppercase btn red input-rounded" ng-click="respondAction(communication.id_activity,'accepted',view)">
+                                        <button type="button" class=" uppercase btn red input-rounded"
+                                                ng-click="respondAction(communication.id_activity,'accepted',view)">
 
                                             <span ng-if="communication.action == 'connect'">YES</span>
-									<span ng-if="communication.action == 'field'"><span ng-if="communication.field_name == 'photo_request'">Add Photo Requested </span>
+									<span ng-if="communication.action == 'field'"><span
+                                            ng-if="communication.field_name == 'photo_request'">Add Photo</span>
 									<span ng-if="communication.field_name == 'smoking'">Add Smoking   </span>
 									<span ng-if="communication.field_name == 'drinking'">Add Smoking   </span>
 									<span ng-if="communication.field_name == 'income'">Add Income   </span>
@@ -266,7 +291,9 @@
 									</span>
 
                                         </button>
-                                        <button  type="button" ng-click="respondAction(communication.id_activity,'declined',view)" class=" uppercase btn btn-default input-rounded" ng-click="">
+                                        <button type="button"
+                                                ng-click="respondAction(communication.id_activity,'declined',view)"
+                                                class=" uppercase btn btn-default input-rounded" ng-click="">
                                             NOT INTERESTED
                                         </button>
                                     </div>
@@ -902,12 +929,12 @@
                                     <table class="table table-hover table-light">
                                         <tbody>
                                         <tr>
-                                            <td> Age</td>
-                                            <td> {{pref.age_start}}<span
+                                            <td style="width: 50%"> Age</td>
+                                            <td style="width: 30%"> {{pref.age_start}}<span
                                                     ng-if="(pref.age_start != null && pref.age_start !='') && (pref.age_end != null && pref.age_end !='') "> - </span>{{pref.age_end}}
                                                 <span ng-if="(pref.age_start != null && pref.age_start !='') || (pref.age_end != null && pref.age_end !='') "> Yrs </span>
                                             </td>
-                                            <td style="text-align: right;">
+                                            <td style="text-align: right;width:20% ">
                                                 <span ng-if="preference.basic.age == 'yes'"><img
                                                         src="/assets/icons/check.png"></span>
                                                 <span ng-if="preference.basic.age == 'no'"><img
@@ -1029,12 +1056,12 @@
                                     <table class="table table-hover table-light">
                                         <tbody>
                                         <tr>
-                                            <td> Religion</td>
-                                            <td>
+                                            <td style="width: 50%"> Religion</td>
+                                            <td style="width: 30%">
                                                 <span ng-if="pref.religion_txt != null && pref.religion_txt != ''">{{pref.religion_txt}}</span>
                                                 <span ng-if="pref.religion_txt == null || pref.religion_txt == ''">Not Specified</span>
                                             </td>
-                                            <td style="text-align: right;">
+                                            <td style="text-align: right;width:20%">
                                                 <span ng-if="preference.religious.religion == 'yes'"><img
                                                         src="/assets/icons/check.png"></span>
                                                 <span ng-if="preference.religious.religion == 'no'"><img
@@ -1094,12 +1121,12 @@
                                     <table class="table table-hover table-light">
                                         <tbody>
                                         <tr>
-                                            <td> Education</td>
-                                            <td>
+                                            <td style="width: 50%"> Education</td>
+                                            <td style="width: 30%">
                                                 <span ng-if="pref.education_txt != null && pref.education_txt != ''">{{pref.education_txt}}</span>
                                                 <span ng-if="pref.education_txt == null || pref.education_txt == ''">Not Specified</span>
                                             </td>
-                                            <td style="text-align: right;">
+                                            <td style="text-align: right;width:20%">
                                                 <span ng-if="preference.profession.education == 'yes'"><img
                                                         src="/assets/icons/check.png"></span>
                                                 <span ng-if="preference.profession.education == 'no'"><img
@@ -1154,12 +1181,12 @@
                                     <table class="table table-hover table-light">
                                         <tbody>
                                         <tr>
-                                            <td> Country</td>
-                                            <td>
+                                            <td style="width: 50%"> Country</td>
+                                            <td style="width: 30%">
                                                 <span ng-if="pref.country_name != null && pref.country_name != ''">{{pref.country_name}}</span>
                                                 <span ng-if="pref.country_name == null || pref.country_name == ''">Not Specified</span>
                                             </td>
-                                            <td style="text-align: right;">
+                                            <td style="text-align: right;width:20%">
                                                 <span ng-if="preference.location.country == 'yes'"><img
                                                         src="/assets/icons/check.png"></span>
                                                 <span ng-if="preference.location.country == 'no'"><img
