@@ -41,10 +41,10 @@
         };
 
         $scope.selectProfileFor = function() {
-            if ($scope.reg.profile_for == 'daughter') {
+            if ($scope.reg.profile_for == 'daughter' || $scope.reg.profile_for == 'sister') {
             $scope.reg.gender = 'female';
         }
-            if ($scope.reg.profile_for == 'son' ||
+            if ($scope.reg.profile_for == 'son' ||$scope.reg.profile_for == 'brother' || $scope.reg.profile_for == 'myself' ||
                 $scope.reg.profile_for == 'relative' ||
                 $scope.reg.profile_for == 'friend' ) {
             $scope.reg.gender = 'male';
