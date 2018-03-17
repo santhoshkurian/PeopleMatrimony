@@ -22,6 +22,10 @@
         $scope.image_url = storageService.get("image_url");
         $scope.name = storageService.get("name");
         $scope.id = storageService.get("id");
+        if($scope.imageLength > 0){
+            $scope.selectedMeal = {url:loadImages.user.images[0].image}
+        }
+
         changePhoto();
 
         $scope.logout = logout;

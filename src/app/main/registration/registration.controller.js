@@ -116,7 +116,7 @@
             if($scope.step2.marital_status == ''){
                 $scope.showMS = true;
             }
-            if($scope.step2.caste == ''){
+            if($scope.step2.caste == '0'){
                 $scope.showCaste = true;
             }
             if($scope.step2.country == "0" || $scope.step2.country == ''){

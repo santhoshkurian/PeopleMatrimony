@@ -213,7 +213,8 @@
 
                                     <div class="thumbnail" style="background-color: gainsboro">
 
-                                        <div style="height: 150px;width: 100%;line-height: 140px;text-align:center;background-color: gainsboro">
+                                        <div style="height: 150px;width: 100%;line-height: 140px;text-align:center;background-repeat: no-repeat;
+    background-size: 250px;" ng-style="{'background-image': 'url(' + selectedMeal.url + ')'}">
                                             <!--<b>General ({{imageLength}}) </b>-->
                                         </div>
 
@@ -357,11 +358,13 @@
 
                         </div>
                         <div class="row margin-top-20">
+                        <div class="col-md-12">
                             <button type="button" ng-click="editPhotoPrivacy(privacy.photo)"
                                     class=" btn btn-default red input-rounded "
                                     style="color:#ffffea">
                                 Save Settings
                             </button>
+</div>
 </div>
 
 
