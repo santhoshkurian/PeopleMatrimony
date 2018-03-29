@@ -37,6 +37,7 @@
         $scope.occupation = populate.occupation;
         $scope.profile= profile;
 
+        console.log("profile",$scope.profile);
         if($scope.profile.login_user.id_mothertongue != null && $scope.profile.login_user.id_mothertongue != 0){
             $scope.motherTongueList.filter(function (a) {
                 if (a.id_mothertongue === $scope.profile.login_user.id_mothertongue) {
