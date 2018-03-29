@@ -111,8 +111,8 @@
                                                 <div class="col-sm-3" ng-repeat="image in images" style="margin-top: 15px">
 
 
-                                                    <div class="thumbnail">
-                                                        <img style="height: 150px" ng-src="{{image.image}}" alt="{{image.description}}">
+                                                    <div class="thumbnail" >
+                                                        <img style="height: 150px" ng-src="{{image.image}}" alt="{{image.description}}" ng-click="enlargePhoto(image.image)">
                                                     </div>
                                                     <div  style="margin-top: -55px;margin-left: 15px;margin-bottom: 10px">
                                                         <a  title='Set as Profile Picture' ng-click="changeProfilePic(image)"><i class="fa fa-check-circle" style="font-size: 20px"></i></a>
@@ -385,3 +385,29 @@
 </div>
 
 </div>
+
+
+<script type="text/ng-template" id="enlargeAddPhotos.html">
+    <div class="modal-header">
+        <h4 class="modal-title" id="enlarge" style="color: #4cbcac;font-weight: bold">
+            View Photos
+            <button class=" pull-right btn btn-circle btn-icon-only default" type="button" ng-click="$ctrl.cancel()"><i
+                    class="fa fa-times"></i></button>
+        </h4>
+    </div>
+    <div class="modal-body" id="modal-body" style="text-align: center;">
+        <div class="row">
+            <div class="col-md-12" >
+                <img class="modal-view-img"
+                     ng-src="{{$ctrl.viewImg}}"/>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <!--<button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>-->
+        <!--<button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">OK</button>-->
+    </div>
+</script>
+

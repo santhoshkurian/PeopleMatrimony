@@ -3,10 +3,12 @@
 
     angular
         .module('dashboard')
-        .controller('ManagePhotoController', ManagePhotoController);
+        .controller('ManagePhotoController', ManagePhotoController)
+        .controller('enlargeAddPhotoController', enlargeAddPhotoController);
+    ;
 
     /** @ngInject */
-    function ManagePhotoController(resourceUrl,privacy,$scope,storageService,profile,$http,$state,loadImages) {
+    function ManagePhotoController(resourceUrl,privacy,$scope,$uibModal,storageService,profile,$http,$state,loadImages) {
         console.log("ManagePhotoController");
         console.log("ManagePhotoController", loadImages.user.images.length);
         $scope.viewType = 'managephoto';
@@ -49,8 +51,38 @@
         $scope.selectType = selectType;
         $scope.group = group;
         $scope.backtomain = backtomain;
+        $scope.enlargePhoto = enlargePhoto;
         $scope.changeProfilePic = changeProfilePic;
         $scope.removeProfilePic = removeProfilePic;
+        $scope.enlarge = {name:"sssss",id:"12333"};
+
+        function enlargePhoto(obj1){
+            console.log(obj1);
+            $scope.enlarge.partnerImageUrl = obj1
+            $scope.enlargeOpen();
+
+        }
+
+        $scope.enlargeOpen = function (size, parentSelector) {
+            var parentElem = parentSelector ?
+                angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+            var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'enlargeAddPhotos.html',
+                controller: 'enlargeAddPhotoController',
+                controllerAs: '$ctrl',
+                size: 'lg',
+                appendTo: parentElem,
+                resolve: {
+                    items: function () {
+                        return $scope.enlarge;
+                    }
+                }
+            });
+        }
+
 
         function changePhoto(){
 
@@ -361,6 +393,28 @@
         //    {"thumbnail":"../assets/images/prof1.jpg", "description":"Image 04 description"},
         //    {"thumbnail":"../assets/images/prof1.jpg", "description":"Image 05 description"}
         //];
+
+    }
+    function enlargeAddPhotoController($uibModalInstance, items){
+        var $ctrl = this;
+        $ctrl.items = items;
+
+
+        $ctrl.viewImg = items.partnerImageUrl;
+        //$ctrl.selected = {
+        //    item: $ctrl.items[0]
+        //};
+
+        $ctrl.vieImg = function (obj) {
+            $ctrl.viewImg = obj;
+        };
+        $ctrl.ok = function () {
+            $uibModalInstance.close($ctrl.selected.item);
+        };
+
+        $ctrl.cancel = function () {
+            $uibModalInstance.dismiss('cancel');
+        };
 
     }
 
