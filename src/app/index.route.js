@@ -341,7 +341,7 @@
 
                 }
             }).state('reg', {
-                url: '/reg/:rel_id/:id',
+                url: '/reg/:rel_id',
                 views: {
                     'main@': {
                         templateUrl: 'app/core/layouts/regLayout.html'
@@ -380,7 +380,7 @@
                 }
             })
             .state('step2', {
-                url: '/step2/:id',
+                url: '/step2',
                 views: {
                     'main@': {
                         templateUrl: 'app/core/layouts/regLayout.html'

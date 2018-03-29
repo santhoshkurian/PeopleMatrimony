@@ -11,14 +11,13 @@
         console.log("RegistrationStep2Controller");
         console.log(storageService.get('id'));
 
-        console.log("stateParams_id",$stateParams.id);
         console.log("stateParams_token",$stateParams.token);
         if(storageService.get('token') == '' && storageService.get('id') == ''){
             $state.go('login')
 
         }
 
-        $scope.memberId = $stateParams.id;
+        $scope.memberId = storageService.get('id');
         $scope.userPin = null;
         $scope.message = null;
 
@@ -38,7 +37,7 @@
                 $http({
                     method: 'POST',
                     url: resourceUrl.url() + 'user?step=3&' +
-                    'id_people=' + $stateParams.id + '&' +
+                    'id_people=' + storageService.get('id') + '&' +
                     'token=' + $stateParams.token +
                     '&user_pin=' + $scope.userPin
                 }).then(function successCallback(response) {

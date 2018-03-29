@@ -10,7 +10,6 @@
         //var vm = this;
         console.log("RegistrationController");
         console.log("stateParams",$stateParams.rel_id);
-        console.log("stateParams_id",$stateParams.id);
         console.log("stateParams_id",storageService.get("token"));
 
         var vm = this;
@@ -152,7 +151,7 @@
                 && !$scope.showHeight && !$scope.showEducation && !$scope.showOccupation) {
                 $http({
                     method: 'POST',
-                    url: resourceUrl.url() + 'user?id_people=' + $stateParams.id +
+                    url: resourceUrl.url() + 'user?id_people=' + storageService.get("id") +
                     '&marital_status=' + $scope.step2.marital_status + '&' +
                     'caste=' + $scope.step2.caste + '&' +
                     'country=' + $scope.step2.country + '&' +
@@ -168,9 +167,7 @@
                         $scope.message = response.data.message;
 
                     }else {
-                        $state.go('step2', {
-                            id: $stateParams.id
-                        })
+                        $state.go('step2')
                     }
                 }, function errorCallback(response) {
                     console.log(response);
