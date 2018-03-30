@@ -25,8 +25,12 @@
                 console.log("idddddddd check",storageService.get("id"))
                 if
                     (storageService.get("token") == '' || storageService.get("id") == '' || storageService.get("token") == null || storageService.get("id") == null) {
-                    if(toState.name == 'terms'){
-                        $state.go("terms");
+                    if(toState.name == 'terms'
+                        || toState.name == 'customerCare'
+                        || toState.name == 'contactUs'
+                        || toState.name == 'feedback'
+                        || toState.name == 'businessEnquires'){
+                        $state.go(toState.name);
                     }else {
                         $state.go("login");
                     }

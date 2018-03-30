@@ -248,7 +248,7 @@
                 $scope.nameMsg = 'Enter your name';
                 $scope.showName = true;
             }else{
-               if($scope.reg.name.length > 50){
+               if($scope.reg.name.length > 50 || /^[a-zA-Z0-9]*$/.test($scope.reg.name) == false){
                    $scope.nameMsg = 'Enter valid Name';
                    $scope.showName = true;
                }
@@ -278,12 +278,8 @@
             if($scope.reg.email == null || $scope.reg.email ==''){
                 $scope.showemail = true;
             }
-            if($scope.reg.mobile == null || $scope.reg.mobile =='' ){
-                $scope.moberror = 'Invalid Mobile No'
-                if(($scope.reg.mobile == null || $scope.reg.mobile =='') && $scope.reg.mobile.toString().length != 10 ){
-                    $scope.moberror = 'Enter 10 digit Mobile No';
-                }
-
+            if($scope.reg.mobile == null || $scope.reg.mobile =='' || $scope.reg.mobile.length != 10){
+                $scope.moberror = 'Enter 10 digit Mobile No';
                 $scope.showMobileNumber = true;
             }
             if($scope.reg.password == null || $scope.reg.password ==''){
@@ -303,7 +299,7 @@
                     url: resourceUrl.url()+'user?step=1&profile_for='+$scope.reg.profile_for+'&' +
                     'name='+$scope.reg.name+'&gender='+$scope.reg.gender+'&dob='+dob+'&religion='+parseInt($scope.reg.religion)+
                     '&mothertongue=' +$scope.reg.mothertongue+
-                    '&country_code='+$scope.reg+'&email='+$scope.reg.email+'&' +
+                    '&country_code='+$scope.reg.code+'&email='+$scope.reg.email+'&' +
                     'mobile='+$scope.reg.mobile+'&password='+$scope.reg.password+'&source=111'
                 }).then(function successCallback(response) {
                     console.log(response.data);

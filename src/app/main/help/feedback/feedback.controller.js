@@ -18,6 +18,12 @@
         $scope.id = storageService.get("id");
 
         $scope.business = {name:$scope.name,id:$scope.id,feedback:'',priority:'',category:'',message:''}
+        if($scope.id == null){
+            $scope.checked = false;
+        }else{
+            $scope.checked = true;
+
+        }
         $scope.logout = logout;
         function logout(){
             $http({

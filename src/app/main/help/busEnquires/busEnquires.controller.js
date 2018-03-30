@@ -15,6 +15,13 @@
         $scope.image_url = storageService.get("image_url");
         $scope.name = storageService.get("name");
         $scope.id = storageService.get("id");
+        console.log($scope.id);
+        if($scope.id == null){
+            $scope.checked = false;
+        }else{
+            $scope.checked = true;
+
+        }
 
 
 
