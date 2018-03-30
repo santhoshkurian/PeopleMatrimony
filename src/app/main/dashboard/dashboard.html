@@ -177,7 +177,7 @@
                                     <span class="caption-subject"> Recently Updated</span>
                                 </div>
 
-                                <div class="actions">
+                                <div class="actions" ng-if="recentUpdated.matches.length > 3">
                                     <div class="row">
                                         <div class="col-md-12 page-action-navigation">
 
@@ -247,7 +247,7 @@
                                 <div class="caption ">
                                     <span class="caption-subject  "> New Matches</span>
                                 </div>
-                                <div class="actions">
+                                <div class="actions" ng-if="newMatches.matches.length > 3">
                                     <div class="row">
                                         <div class="col-md-12 page-action-navigation">
 
@@ -319,7 +319,7 @@
                                 <div class="caption ">
                                     <span class="caption-subject  ">Who viewed my Profile</span>
                                 </div>
-                                <div class="actions">
+                                <div class="actions" ng-if="viewed.matches.length > 3">
                                     <div class="row">
                                         <div class="col-md-12 page-action-navigation">
 
