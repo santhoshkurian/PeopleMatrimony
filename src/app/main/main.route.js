@@ -348,6 +348,23 @@
 
                 }
             })
+            .state('messages.communication', {
+                url      : '/communication/:id',
+                views    : {
+                    'content@messages'         : {
+                        templateUrl: 'app/main/message/communication/communication.html',
+                        controller: 'CommunicationController as vm'
+                    }
+                    ,
+                    'navigation@messages': {
+                        templateUrl: 'app/navigation/message/inbox/inboxNavigation.html',
+                        controller: 'InboxNavController as vm'
+                    }
+                },
+                resolve  : {
+
+                }
+            })
             .state('businessEnquires', {
                 url      : '/businessEnquires',
                 views    : {

@@ -101,7 +101,7 @@
                                             <tr>
                                                 <td class="first-row"><i class="icon-user-follow"></i></td>
                                                 <td class="second-row">|</td>
-                                                <td class="third-row"><span
+                                                <td class="third-row details"><span
                                                         ng-if="view.age != null && view.age != ''">{{view.age}} yrs,</span><span
                                                         ng-if="view.height != null && view.height != ''"> {{view.height}} cms</span>
                                                 </td>
@@ -109,7 +109,7 @@
                                             <tr>
                                                 <td class="first-row"><i class="icon-book-open"></i></td>
                                                 <td class="second-row">|</td>
-                                                <td class="third-row"><span
+                                                <td class="third-row details"><span
                                                         ng-if="view.mothertongue != null && view.mothertongue != ''">{{view.mothertongue}}</span>
                                                         <span
                                                                 ng-if="view.mothertongue == null || view.mothertongue == ''">Not Specified</span>
@@ -372,8 +372,8 @@
                                 </div>
 
                             </div>
-                            <div class="portlet-body form">
-                                <p ng-if="view.aboutme != null && view.aboutme != ''"> {{view.aboutme}}</p>
+                            <div class="portlet-body form details">
+                                <p ng-if="view.aboutme != null && view.aboutme != ''" > {{view.aboutme}}</p>
 
                                 <p ng-if="view.aboutme == null || view.aboutme == ''"> Not Specified</p>
 
