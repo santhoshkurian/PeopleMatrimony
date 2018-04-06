@@ -76,7 +76,9 @@
                                     <label class=" uppercase  "> New Password</label>
 
                                     <input type="password" class="form-control input-rounded"
-                                           placeholder="New password" ng-model="password.newPassword"></div>
+                                           placeholder="New password" ng-model="password.newPassword">
+                                <div style="color: red" ng-if="confirmPassword">{{confirmPasswordMsg}}</div>
+                                </div>
                                 <div class="col-md-6">
                                     <label class=" uppercase  "> Confirm password</label>
 
