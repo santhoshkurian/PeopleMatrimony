@@ -67,6 +67,7 @@
         $scope.skipInterestAction = skipInterestAction;
         $scope.skipBlockAction = skipBlockAction;
         $scope.partnerImageUrl = "";
+        $scope.details ={};
 
         function skipInterestAction() {
             $scope.showInterestAction = false;
@@ -201,9 +202,13 @@
         $scope.shortListed = viewProfile.shortlisted;
         $scope.pref = viewProfile.user.preferences;
             $scope.enlarge = {name:$scope.view.name,id:$scope.view.id_people}
+            $scope.details = {id:$scope.view.id_people,name:$scope.view.name,img:$scope.view.images};
 
         }else{
+            console.log("cccccccccccccccccccccccccccccccc")
             $scope.viewProfile = false;
+            $scope.message = "Member not exist";
+
         }
 
 
@@ -285,7 +290,6 @@
         $scope.familyRequest = '';
         $scope.aboutFamilyRequest = '';
 
-        $scope.details = {id:$scope.view.id_people,name:$scope.view.name,img:$scope.view.images};
 
         $scope.requests = function(obj1,obj2){
             $scope.details.field = obj1;

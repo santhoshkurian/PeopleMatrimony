@@ -5,9 +5,12 @@
         <div class="page-head">
 
             <!-- BEGIN PAGE BASE CONTENT -->
+
+            <div class="alert alert-danger" ng-if="message != null">
+                {{message}}. </div>
+
 <span ng-if="viewProfile">
             <div class="row">
-                <div style="color: red;text-align: center">{{message}}</div>
 
 
                 <div class="col-md-12 ">

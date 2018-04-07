@@ -161,3 +161,20 @@ padding-top:5px;}
 .text-box-width{
     /*width: 280px!important;*/
 }
+
+
+.label-checkbox {
+    display: block;
+    padding-left: 15px;
+    text-indent: -15px;
+}
+.input-checkbox {
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin:0;
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
+    *overflow: hidden;
+}
