@@ -6,10 +6,9 @@
         .controller('CommunicationController', CommunicationController);
 
     /** @ngInject */
-    function CommunicationController($http,$state,storageService,$scope,$timeout,resourceUrl,$stateParams,sent,$uibModal) {
+    function CommunicationController($http,$state,storageService,$scope,$timeout,resourceUrl,$stateParams,viewProfile,$uibModal) {
 
-        $scope.moreCommunication = function(obj){
-            return obj.split(',').join(", ")
-        }
+       console.log(viewProfile);
+        $scope.view=viewProfile;
     }
 })();

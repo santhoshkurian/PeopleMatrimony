@@ -18,6 +18,12 @@
         }
 
         $scope.sendRespond = sendRespond;
+        $scope.moreConversation = moreConversation;
+
+        function moreConversation(id){
+            var url = $state.href('messages.communication', {id: id});
+            window.open(url,'_blank');
+        }
 
         function sendRespond(obj){
             console.log(obj);
