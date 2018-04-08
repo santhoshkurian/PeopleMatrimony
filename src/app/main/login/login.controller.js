@@ -362,8 +362,10 @@
                     storageService.set("regular_search", '');
                     if (response.data.image == '') {
                         storageService.set("image_url", "assets/defaultImages/avatar.png");
+                        storageService.set("image_attr", false);
                     } else {
                         storageService.set("image_url", response.data.image);
+                        storageService.set("image_attr", true);
                     }
                     storageService.set("name", response.data.name);
                     storageService.set("valid", true);

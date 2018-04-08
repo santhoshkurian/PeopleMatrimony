@@ -27,6 +27,7 @@
         $scope.package = storageService.get("package");
         $scope.name = storageService.get("name");
         $scope.id = storageService.get("id");
+        $scope.image_attr = storageService.get("image_attr");
 
         $scope.newMatches = newMatches;
         $scope.recentUpdated = recentUpdated;
