@@ -201,6 +201,7 @@
         $scope.preference = viewProfile.preference_matches;
         $scope.shortListed = viewProfile.shortlisted;
         $scope.pref = viewProfile.user.preferences;
+            console.log("preffffff",$scope.pref)
             $scope.enlarge = {name:$scope.view.name,id:$scope.view.id_people}
             $scope.details = {id:$scope.view.id_people,name:$scope.view.name,img:$scope.view.images};
 

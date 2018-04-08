@@ -6,8 +6,22 @@
 
             <!-- BEGIN PAGE BASE CONTENT -->
 
-            <div class="alert alert-danger" ng-if="message != null">
-                {{message}}. </div>
+            <span ng-if="!viewProfile">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-12">
+
+                                        <div class="portlet light border-rounded">
+                                            <div class="alert alert-danger">
+                                                Sorry, this member's profile does not exist.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                </span>
+
+
 
 <span ng-if="viewProfile">
             <div class="row">
@@ -46,9 +60,9 @@
                                             <a href="javascript:;">
                                                 <i class="fa fa-comment-o"></i> Send SMS </a>
                                         </li>
-                                        Forward<li>
+                                        <li>
                                             <a href="javascript:;">
-                                                <i class="fa fa-comment-o"></i> Send SMS </a>
+                                                <i class="fa fa-mail-forward"></i> Forward </a>
                                         </li>
                                         <li>
                                             <a ng-click="print()">
@@ -1288,20 +1302,7 @@
         <!-- END PAGE BASE CONTENT -->
     </div>
     </span>
-            <span ng-if="!viewProfile">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="col-md-12">
 
-                                        <div class="portlet light border-rounded">
-                                            <div class="alert alert-success">
-                                                Sorry, this member's profile does not exist.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                </span>
 
     <div class="row">
         <div class="col-md-12">

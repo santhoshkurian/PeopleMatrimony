@@ -96,4 +96,8 @@ height: 30px;
     margin-bottom: 12px!important;
 }
 
+.text-captililize{
+    text-transform: capitalize!important;
+}
+
 
