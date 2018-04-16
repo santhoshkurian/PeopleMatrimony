@@ -372,6 +372,8 @@
                     $state.go('app');
                 }else{
                     $scope.message = response.data.message;
+                    $scope.login.username='';
+                    $scope.login.password='';
                 }
 
             }, function errorCallback(response) {
