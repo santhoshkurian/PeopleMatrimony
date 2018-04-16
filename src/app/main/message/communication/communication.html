@@ -64,7 +64,8 @@
                             <!--<div class="col-md-12 notification-style uppercase">Received</div>-->
 
                             <!--<div class="col-md-12 notification-details"> {{obj.content}}</div>-->
-                            <div class="col-md-12 notification-details"> {{obj.response}}</div>
+                            <div class="col-md-12 notification-details" ng-if="obj.status == 'pending'"> {{obj.content}}</div>
+                            <div class="col-md-12 notification-details" ng-if="obj.status != 'pending'"> {{obj.response}}</div>
                             <div class="col-md-12 margin-top-10" ng-if="res == 'accept'">
                                 <button ng-if="obj.action != 'connect'" type="button" class=" uppercase btn red input-rounded" ng-click="sendInterest(obj.id_activity,'interest')">
                                     Send Interest
@@ -121,8 +122,9 @@
 								</span>
                                 <span ng-if="item.msg_status == 'recieved'"><img src="/assets/icons/receive.png" ></span>
                             </div>
-                            <div class="col-md-12 notification-details"> {{obj.response}}</div>
-                            <div class="col-md-12 margin-top-10">
+                            <div class="col-md-12 notification-details" ng-if="obj.status == 'pending'"> {{obj.content}}</div>
+                            <div class="col-md-12 notification-details" ng-if="obj.status != 'pending'"> {{obj.response}}</div>
+                            <div class="col-md-12 margin-top-10" ng-if="res == 'accept'">
                                 <button ng-if="obj.action != 'connect'" type="button" class=" uppercase btn red input-rounded" ng-click="sendInterest(obj.id_activity,'interest')">
                                     Send Interest
                                 </button>
@@ -141,11 +143,11 @@
                                     Send Interest
                                 </button>
 
-                                <button  type="button"  class=" uppercase btn btn-default input-rounded" ng-click="sendInterest(obj.id_activity,'mail')">
+                                <button  type="button"  class=" uppercase btn btn-default input-rounded" ng-click="sendRespond('mail')">
                                     Send Mail
                                 </button>
 
-                                <button  ng-if="item.action == 'connect'" type="button"  class=" uppercase btn btn-default input-rounded" ng-click="sendInterest(obj.id_activity,'reminder')">
+                                <button  ng-if="item.action == 'connect'" type="button"  class=" uppercase btn btn-default input-rounded" ng-click="sendRespond('reminder')">
                                     Send Reminder
                                 </button>
 
@@ -165,4 +167,51 @@
         </div>
     </div>
 </div>
+
+
+<script type="text/ng-template" id="acceptModalContent.html">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-title" style="color: #4cbcac;">
+            {{$ctrl.items.header}}
+            <button class=" pull-right btn btn-circle btn-icon-only default" type="button" ng-click="$ctrl.cancel()"><i class="fa fa-times"></i></button>
+        </h4>
+    </div>
+
+    <div class="modal-body">
+        <div class="row" style="margin: 20px">
+            <div class="col-md-4">
+                <img ng-if="$ctrl.items.img.length > 0" style="height: 90px;width: 90px;border-radius: 55% !important;"
+                     ng-src="{{$ctrl.items.img[0].image}}" ng-click="$ctrl.vieImg(img.image)"/>
+                <img ng-if="$ctrl.items.img.length == 0" style="height: 90px;width: 90px;border-radius: 55% !important;"
+                     src="assets/defaultImages/avatar.png" ng-click="$ctrl.vieImg(img.image)"/>
+            </div>
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-12">
+                        <span class="bold">{{$ctrl.items.name}}</span> <span> ({{$ctrl.items.id}})</span>
+                    </div>
+                    <div class="col-md-12" style="margin-top: 25px">
+                        <button type="button" class=" uppercase btn red input-rounded" ng-click="$ctrl.upgrade()">
+                            Upgrade Now
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="row">
+                <div class="col-md-12" style="color: grey">
+                    To know more about packages call now 9999999999
+                </div>
+                <!--<div class="col-md-4" >-->
+                <!--&lt;!&ndash;<button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">OK</button>&ndash;&gt;-->
+
+                <!--</div>-->
+
+            </div>
+            <!--<button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>-->
+        </div>
+</script>
 

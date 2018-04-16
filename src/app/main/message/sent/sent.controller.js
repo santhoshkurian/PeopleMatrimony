@@ -38,6 +38,14 @@
             }
         }
 
+        $scope.countConversation = function(obj){
+            console.log("conversation",obj);
+            //return obj.split(',').join(", ")
+            $scope.commulen = obj.communication.received.length + obj.communication.sent.length;
+
+            return $scope.commulen;
+        }
+
         $scope.sendMail = sendMail;
 
         function sendMail(obj){
