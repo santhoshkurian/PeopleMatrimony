@@ -10,13 +10,20 @@
         console.log(account)
 
         $scope.email = account.email;
+        $scope.copyemail= angular.copy($scope.email);
         $scope.passwordMsg = null;
         $scope.confirmPasswordMsg = '';
         $scope.confirmPassword = false;
 
         $scope.changeEmail = changeEmail;
+        $scope.resetPassword = resetPassword;
         $scope.SavePassword = SavePassword;
         $scope.password = {current:'',newPassword:'',confirmPassword:''};
+
+        function resetPassword(){
+            $scope.email = $scope.copyemail;
+
+        }
 
         function changeEmail(){
             $http({
