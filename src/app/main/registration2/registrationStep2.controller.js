@@ -41,8 +41,32 @@
                     'token=' + $stateParams.token +
                     '&user_pin=' + $scope.userPin
                 }).then(function successCallback(response) {
-                    storageService.clear();
-                    $state.go('login')
+                    //storageService.clear();
+                    if(!response.data.error){
+                        $scope.message = response.data.message;
+                    }else{
+                        $http({
+                            method: 'GET',
+                            url: resourceUrl.url()+'user/view?' +
+                            'view_id=' + storageService.get("id") + '&token=' + storageService.get("token")
+                        }).then(function successCallback(response) {
+                            console.log("responseeeeee",response)
+                            if(!response.data.error){
+                                storageService.set("image_url", "assets/defaultImages/avatar.png");
+                                storageService.set("image_attr", false);
+                                storageService.set("name", response.data.login_user.name);
+                                storageService.set("valid", true);
+                                $state.go('profile');
+                            }
+
+
+                        }, function errorCallback(response) {
+                            console.log(response)
+
+                        });
+                    }
+                    console.log(response);
+                    //$state.go('profile')
                 }, function errorCallback(response) {
                     $scope.message = "Invalid Pin";
                     $timeout(function () {
