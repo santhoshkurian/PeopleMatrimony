@@ -14,7 +14,7 @@
         $scope.religonList = populate.religon;
         $scope.motherTongueList = populate.mothertongue;
         $scope.message=null;
-        $scope.agree=false;
+        $scope.terms={agree:false};
         $scope.password = "password";
         $scope.ShowPass = ShowPass;
         function ShowPass(val){
@@ -298,7 +298,7 @@
             }
             if(!$scope.showSelectProfile && !$scope.showName && !$scope.showGender
                 && !$scope.showDOB && !$scope.showPassword && !$scope.showreligion && !$scope.showemail && !$scope.showMobileNumber) {
-if($scope.agree) {
+if($scope.terms.agree) {
 
     $http({
         method: 'POST',
