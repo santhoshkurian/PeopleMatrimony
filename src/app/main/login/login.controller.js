@@ -14,6 +14,7 @@
         $scope.religonList = populate.religon;
         $scope.motherTongueList = populate.mothertongue;
         $scope.message=null;
+        $scope.agree=false;
         $scope.password = "password";
         $scope.ShowPass = ShowPass;
         function ShowPass(val){
@@ -212,6 +213,7 @@
 
         vm.registerCandidate = function () {
             console.log($scope.reg);
+
             $scope.showSelectProfile = false;
             $scope.showName = false;
             $scope.showGender = false;
@@ -296,38 +298,40 @@
             }
             if(!$scope.showSelectProfile && !$scope.showName && !$scope.showGender
                 && !$scope.showDOB && !$scope.showPassword && !$scope.showreligion && !$scope.showemail && !$scope.showMobileNumber) {
+if($scope.agree) {
 
-                $http({
-                    method: 'POST',
-                    url: resourceUrl.url()+'user?step=1&profile_for='+$scope.reg.profile_for+'&' +
-                    'name='+$scope.reg.name+'&gender='+$scope.reg.gender+'&dob='+dob+'&religion='+parseInt($scope.reg.religion)+
-                    '&mothertongue=' +$scope.reg.mothertongue+
-                    '&country_code='+$scope.reg.code+'&email='+$scope.reg.email+'&' +
-                    'mobile='+$scope.reg.mobile+'&password='+$scope.reg.password+'&source=111'
-                }).then(function successCallback(response) {
-                    console.log(response.data);
-                    if(!response.data.error) {
-                        storageService.set("token", response.data.access_token)
-                        storageService.set("id", response.data.id_people);
-                        storageService.set("valid", false);
-
-
-
-
-                        $state.go('reg', {
-                            rel_id: $scope.reg.religion,id:response.data.id_people
-                        })
-                    }else{
-                        $scope.message = response.data.message
-                    }
+    $http({
+        method: 'POST',
+        url: resourceUrl.url() + 'user?step=1&profile_for=' + $scope.reg.profile_for + '&' +
+        'name=' + $scope.reg.name + '&gender=' + $scope.reg.gender + '&dob=' + dob + '&religion=' + parseInt($scope.reg.religion) +
+        '&mothertongue=' + $scope.reg.mothertongue +
+        '&country_code=' + $scope.reg.code + '&email=' + $scope.reg.email + '&' +
+        'mobile=' + $scope.reg.mobile + '&password=' + $scope.reg.password + '&source=111'
+    }).then(function successCallback(response) {
+        console.log(response.data);
+        if (!response.data.error) {
+            storageService.set("token", response.data.access_token)
+            storageService.set("id", response.data.id_people);
+            storageService.set("valid", false);
 
 
-                }, function errorCallback(response) {
-                    console.log(response);
-                    $scope.message = response.data.message;
+            $state.go('reg', {
+                rel_id: $scope.reg.religion, id: response.data.id_people
+            })
+        } else {
+            $scope.message = response.data.message
+        }
 
 
-                });
+    }, function errorCallback(response) {
+        console.log(response);
+        $scope.message = response.data.message;
+
+
+    });
+}else{
+    $scope.message = "Please agree the trems and conditions"
+}
             }
         };
 
