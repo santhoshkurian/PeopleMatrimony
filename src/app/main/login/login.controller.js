@@ -330,7 +330,7 @@ if($scope.agree) {
 
     });
 }else{
-    $scope.message = "Please agree the trems and conditions"
+    $scope.message = "Please agree the terms and conditions"
 }
             }
         };
