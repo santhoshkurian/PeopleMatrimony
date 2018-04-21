@@ -245,8 +245,8 @@
 
         $scope.viewProfile = viewProfile;
         function viewProfile(id){
-            $state.go('viewProfile',{view_id:id});
-        }
+            var url = $state.href('viewProfile', {view_id:id});
+            window.open(url,'_blank');        }
 
 
         $scope.showResult = false;
