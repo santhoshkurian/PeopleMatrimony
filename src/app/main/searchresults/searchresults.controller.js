@@ -28,7 +28,10 @@
             $http({
                 method: 'GET',
                 url: resourceUrl.url()+'add/field?' +
-                '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&partner=' + obj1+'&field=photo_request'
+                '&token=' + storageService.get("token") +
+                '&id=' + storageService.get('id') +
+                '&partner=' + obj1+
+                '&field=photo_request'
             }).then(function successCallback(response) {
                 console.log(response)
 
@@ -253,6 +256,7 @@
         if(storageService.get('regular_search') != null){
 
             $scope.regular = JSON.parse(storageService.get('regular_search'));
+            console.log("regular",$scope.regular)
             var query = [];
             if($scope.regular.age_start != null){
                 query.push("age_start="+$scope.regular.age_start)
@@ -298,6 +302,27 @@
             }
             if($scope.regular.maritalStatus != null){
                 query.push("marital_status="+$scope.regular.maritalStatus)
+            }
+            if($scope.regular.showProfile.withPhoto){
+                query.push("with_photo="+$scope.regular.showProfile.withPhoto)
+            }
+            if($scope.regular.showProfile.withHoroscope){
+                query.push("with_horoscope="+$scope.regular.showProfile.withHoroscope)
+            }
+            if($scope.regular.showProfile.onlineRightNow){
+                query.push("is_online="+$scope.regular.showProfile.onlineRightNow)
+            }
+            if($scope.regular.dontShowProfile.ignoredProfile){
+                query.push("ignored_me="+$scope.regular.dontShowProfile.ignoredProfile)
+            }
+            if($scope.regular.dontShowProfile.profileAlreadyContacted){
+                query.push("contacted_me="+$scope.regular.dontShowProfile.profileAlreadyContacted)
+            }
+            if($scope.regular.dontShowProfile.shortlisted){
+                query.push("shortlisted_me="+$scope.regular.dontShowProfile.shortlisted)
+            }
+            if($scope.regular.dontShowProfile.viewed){
+                query.push("viewed_me="+$scope.regular.dontShowProfile.viewed)
             }
             if(query.length > 0 ){
                 query = "&"+query.join('&')

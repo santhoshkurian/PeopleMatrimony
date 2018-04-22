@@ -330,7 +330,11 @@
                     <label class="col-md-4 control-label"></label>
 
                     <div class="col-md-8 text-box-width" >
-                      <input type="checkbox" class=form-control" ng-model="terms.agree" >&nbsp;&nbsp;&nbsp;  I agree the <a ui-sref="terms" target="_blank">Terms and Privacy</a>
+                        <label class="checkbox-inline" class="custon-text">
+                            <input type="checkbox" icheckbox_flat-red class="icheck " name="mstatus"  ng-model="terms.agree">
+
+                        I agree the <a ui-sref="terms" target="_blank">Terms and Privacy</a>
+                            </label>
                     </div>
                 </div>
             </form>
