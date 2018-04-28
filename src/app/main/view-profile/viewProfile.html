@@ -211,7 +211,7 @@
                                 </div>
                             </div>
 
-                            <div class="row" ng-if="showInterestAction">
+                            <div class="row" ng-if="showInterestAction && dataview.interest == ''">
                                 <div class="vp-sub-action">
                                     <span>Connect her with ?</span>
 
@@ -225,9 +225,10 @@
                                         </span>
                                 </div>
                             </div>
-                            <div class="row" ng-if="showBlockAction">
-                                <div class="vp-sub-action">
-                                    <span>Are you sure you want to block {{view.name}}?</span>
+                            <div class="row" ng-if="showBlockAction && dataview.interest != ''">
+                                <div class="vp-sub-action">{{dataview.blocked}}
+                                    <span ng-if="dataview.blocked == 'no'">Are you sure you want to block {{view.name}}?</span>
+                                    <span ng-if="dataview.blocked == 'yes'">Are you sure you want to unblock {{view.name}}?</span>
 
                                         <span>
                                         <button class="btn red" style="border-radius: 5px!important;"

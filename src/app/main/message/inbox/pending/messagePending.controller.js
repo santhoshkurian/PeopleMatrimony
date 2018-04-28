@@ -33,7 +33,7 @@
         $scope.moreConversation = moreConversation;
 
         function moreConversation(id){
-            var url = $state.href('messages.communication', {id: id});
+            var url = $state.href('messages.communication', {id: id,page:"pending"});
             window.open(url,'_blank');
         }
 

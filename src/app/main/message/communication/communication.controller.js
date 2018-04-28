@@ -9,10 +9,12 @@
     function CommunicationController($http,$state,storageService,$scope,$timeout,resourceUrl,$stateParams,viewProfile,$uibModal) {
 
        console.log(viewProfile);
+       console.log("page",$stateParams.page);
         $scope.view=viewProfile;
         $scope.sendMail = sendMail;
 
-        $scope.res='sent';
+        $scope.pageType = $stateParams.page;
+
         $scope.sendRespond=sendRespond;
 
         function sendRespond(obj){

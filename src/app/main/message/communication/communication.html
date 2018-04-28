@@ -3,177 +3,177 @@
     <div class="page-content">
         <!-- BEGIN PAGE HEAD-->
         <div class="page-head">
-
             <!-- BEGIN PAGE BASE CONTENT -->
             <div class="portlet light  border-rounded">
-
                 <div class="portlet-body form">
                     <div class="row">
-                    <div class="col-md-3">
-                        <div class="row">
-                            <div class="col-md-2"><input type="checkbox" class="filter-check-box" ></div>
-                            <div class="col-md-10">
-
-                                <img ng-if="view.user.gender == 'female'"style="height: 100%;width: 100%"
-                                     ng-src="../assets/defaultImages/female_card.jpg"/>
-                                <img ng-if="view.user.gender == 'male'"style="height: 100%;width: 100%"
-                                     ng-src="../assets/defaultImages/male_card.jpg"/>
+                        <div class="col-md-3">
+                            <div class="row">
+                                <div class="col-md-2"><input type="checkbox" class="filter-check-box"></div>
+                                <div class="col-md-10">
+                                    <img ng-if="view.user.gender == 'female'" style="height: 100%;width: 100%"
+                                         ng-src="../assets/defaultImages/female_card.jpg"/>
+                                    <img ng-if="view.user.gender == 'male'" style="height: 100%;width: 100%"
+                                         ng-src="../assets/defaultImages/male_card.jpg"/>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="row">
-
-                            <div class="col-md-5"><label class="message-name-text"><a ng-click="viewProfile(view.user.id_people)">{{view.user.name}}</a></label> &nbsp;<label
-                                    class="style-cls">({{view.user.id_people}})</label></div>
-                            <div ng-if="view.user.isOnline = 'online'" class="col-md-4"><i class="fa fa-circle " style="color:#56bb55 ;padding-top:5px;"></i>&nbsp;<label>Online</label>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-5"><label class="message-name-text"><a
+                                        ng-click="viewProfile(view.user.id_people)">{{view.user.name}}</a></label>
+                                    &nbsp;<label
+                                            class="style-cls">({{view.user.id_people}})</label>
+                                </div>
+                                <div ng-if="view.user.isOnline = 'online'" class="col-md-4"><i class="fa fa-circle "
+                                                                                               style="color:#56bb55 ;padding-top:5px;"></i>&nbsp;<label>Online</label>
+                                </div>
+                                <div class="col-md-3 pull-right"><label class="style-cls">{{view.date}}</label><i
+                                        class="fa fa-trash  pull-right style-cls " style="padding-top:5px;"
+                                        ng-click="deleteSent(view.com_id)"></i></div>
+                                <div class="col-md-12 details-style">
+                                    {{view.user.age}} Yrs, {{view.user.height}}cms, {{view.user.mothertongue}},
+                                    {{view.user.religion}}, {{view.user.caste}},{{view.user.education}},
+                                    {{view.user.occupation}},
+                                    {{view.user.city_name}}, {{view.user.state_name}}, {{view.user.country_name}}.
+                                </div>
+                                <br/>
                             </div>
-                            <div class="col-md-3 pull-right"><label class="style-cls">{{view.date}}</label><i
-                                    class="fa fa-trash  pull-right style-cls " style="padding-top:5px;" ng-click="deleteSent(view.com_id)" ></i></div>
-                            <div class="col-md-12 details-style">
-                                {{view.user.age}} Yrs, {{view.user.height}}cms, {{view.user.mothertongue}}, {{view.user.religion}}, {{view.user.caste}},{{view.user.education}}, {{view.user.occupation}},
-                                {{view.user.city_name}}, {{view.user.state_name}}, {{view.user.country_name}}.
-                            </div>
-
-                            <br/>
-
-                        </div>
-
-                        <hr>
-
-<span ng-repeat="obj in view.communication.received ">
+                            <hr>
+                     <span ng-repeat="obj in view.communication.received ">
                         <div class="row">
-                            <div class="col-md-12 notification-style uppercase" ng-if="res == 'accept'">
-                                <span ng-if="obj.action == 'connect'">Interest Received
-                                    </span>
-								<span ng-if="obj.action == 'field'">
-									<span ng-if="obj.field_name == 'photo_request'">Photo Request Received </span>
-									<span ng-if="obj.field_name == 'smoking'">Add Smoking Request Received </span>
-									<span ng-if="obj.field_name == 'drinking'">Add Drinking Request Received </span>
-									<span ng-if="obj.field_name == 'income'">Add Income Request Received </span>
-									<span ng-if="obj.field_name == 'education'">Add Education Request Received </span>
-									<span ng-if="obj.field_name == 'family'">Add Family Request Received </span>
-									<span ng-if="obj.field_name == 'family_status'">Add Family Status Request Received </span>
-									<span ng-if="obj.field_name == 'origin'">Add Origin Request Received </span>
-									<span ng-if="obj.field_name == 'about_family'">Add About Family Request Received </span>
-
-
-								</span>
-                                <span ng-if="item.msg_status == 'recieved'"><img src="/assets/icons/receive.png" ></span>
+                            <div class="col-md-12 notification-style uppercase" >
+                              <span ng-if="obj.action == 'connect'">Interest Received
+                              </span>
+                              <span ng-if="obj.action == 'field'">
+                              <span ng-if="obj.field_name == 'photo_request'">Photo Request Received </span>
+                              <span ng-if="obj.field_name == 'smoking'">Add Smoking Request Received </span>
+                              <span ng-if="obj.field_name == 'drinking'">Add Drinking Request Received </span>
+                              <span ng-if="obj.field_name == 'income'">Add Income Request Received </span>
+                              <span ng-if="obj.field_name == 'education'">Add Education Request Received </span>
+                              <span ng-if="obj.field_name == 'family'">Add Family Request Received </span>
+                              <span ng-if="obj.field_name == 'family_status'">Add Family Status Request Received </span>
+                              <span ng-if="obj.field_name == 'origin'">Add Origin Request Received </span>
+                              <span ng-if="obj.field_name == 'about_family'">Add About Family Request Received </span>
+                              </span>
+                                <span ng-if="item.msg_status == 'recieved'"><img src="/assets/icons/receive.png"></span>
                             </div>
                             <!--<div class="col-md-12 notification-style uppercase">Received</div>-->
-
                             <!--<div class="col-md-12 notification-details"> {{obj.content}}</div>-->
-                            <div class="col-md-12 notification-details" ng-if="obj.status == 'pending'"> {{obj.content}}</div>
-                            <div class="col-md-12 notification-details" ng-if="obj.status != 'pending'"> {{obj.response}}</div>
-                            <div class="col-md-12 margin-top-10" ng-if="res == 'accept'">
-                                <button ng-if="obj.action != 'connect'" type="button" class=" uppercase btn red input-rounded" ng-click="sendInterest(obj.id_activity,'interest')">
-                                    Send Interest
-                                </button>
-
-                                <button  type="button"  class=" uppercase btn btn-default input-rounded" ng-click="sendInterest(obj.id_activity,'mail')">
-                                    Send Mail
-                                </button>
-
-                                <button  type="button"  class=" uppercase btn btn-default input-rounded" ng-click="sendInterest(obj.id_activity,'callnow')">
-                                    Call now
-                                </button>
-
+                            <div class="col-md-12 notification-details" ng-if="obj.status == 'pending'">
+                                {{obj.content}}
                             </div>
-                            <div class="col-md-12 margin-top-10" ng-if="res == 'sent'">
-                                <button ng-if="obj.action != 'connect'" type="button" class=" uppercase btn red input-rounded" ng-click="sendInterest(obj.id_activity,'interest')">
-                                    Send Interest
-                                </button>
-
-                                <button  type="button"  class=" uppercase btn btn-default input-rounded" ng-click="sendInterest(obj.id_activity,'mail')">
-                                    Send Mail
-                                </button>
-
-                                <button  ng-if="item.action == 'connect'" type="button"  class=" uppercase btn btn-default input-rounded" ng-click="sendInterest(obj.id_activity,'reminder')">
-                                    Send Reminder
-                                </button>
-
+                            <div class="col-md-12 notification-details" ng-if="obj.status != 'pending'">
+                                {{obj.response}}
                             </div>
-
+                           <span ng-if="pageType == 'pending' && obj.status == 'pending'">
+                              <div class="col-md-12 margin-top-10" >
+                                  <button type="button" class=" uppercase btn btn-default input-rounded"
+                                          ng-click="sendInterest(obj.id_activity,'mail')">
+                                      ADD {{obj.field_name}}
+                                  </button>
+                                  <button type="button" class=" uppercase btn btn-default input-rounded"
+                                          ng-click="sendInterest(obj.id_activity,'callnow')">
+                                      Not Interested
+                                  </button>
+                              </div>
+                           </span>
+                            <!--<div class="col-md-12 margin-top-10" >-->
+                                <!--<button ng-if="obj.action != 'connect'" type="button"-->
+                                        <!--class=" uppercase btn red input-rounded"-->
+                                        <!--ng-click="sendInterest(obj.id_activity,'interest')">-->
+                                    <!--Send Interest-->
+                                <!--</button>-->
+                                <!--<button type="button" class=" uppercase btn btn-default input-rounded"-->
+                                        <!--ng-click="sendInterest(obj.id_activity,'mail')">-->
+                                    <!--Send Mail-->
+                                <!--</button>-->
+                                <!--<button ng-if="item.action == 'connect'" type="button"-->
+                                        <!--class=" uppercase btn btn-default input-rounded"-->
+                                        <!--ng-click="sendInterest(obj.id_activity,'reminder')">-->
+                                    <!--Send Reminder-->
+                                <!--</button>-->
+                            <!--</div>-->
                         </div>
-                                                        <hr>
-
-</span>
-
-<span  ng-repeat="obj in view.communication.sent ">
+                        <hr>
+                     </span>
+                     <span ng-repeat="obj in view.communication.sent ">
                         <div class="row">
-
                             <div class="col-md-12 notification-style uppercase">
-                                <span ng-if="obj.action == 'connect'">Interest Sent
-                                    </span>
-								<span ng-if="obj.action == 'field'">
-									<span ng-if="obj.field_name == 'photo_request'">Photo Requested </span>
-									<span ng-if="obj.field_name == 'smoking'">Smoking Habits Detail Requested </span>
-									<span ng-if="obj.field_name == 'drinking'">Drinking Habits Detail Requested </span>
-									<span ng-if="obj.field_name == 'income'">Income Detail Requested </span>
-									<span ng-if="obj.field_name == 'education'">Education Detail Requested </span>
-									<span ng-if="obj.field_name == 'occupation'">Education Detail Requested </span>
-									<span ng-if="obj.field_name == 'family'">Family Detail Requested </span>
-									<span ng-if="obj.field_name == 'family_status'">Family Status Detail Requested </span>
-									<span ng-if="obj.field_name == 'origin'">Origin Detail Requested </span>
-									<span ng-if="obj.field_name == 'about_family'">About Family Detail Requested</span>
-
-
-								</span>
-                                <span ng-if="item.msg_status == 'recieved'"><img src="/assets/icons/receive.png" ></span>
+                              <span ng-if="obj.action == 'connect'">Interest Sent
+                              </span>
+                              <span ng-if="obj.action == 'field'">
+                              <span ng-if="obj.field_name == 'photo_request'">Photo Requested </span>
+                              <span ng-if="obj.field_name == 'smoking'">Smoking Habits Detail Requested </span>
+                              <span ng-if="obj.field_name == 'drinking'">Drinking Habits Detail Requested </span>
+                              <span ng-if="obj.field_name == 'income'">Income Detail Requested </span>
+                              <span ng-if="obj.field_name == 'education'">Education Detail Requested </span>
+                              <span ng-if="obj.field_name == 'occupation'">Education Detail Requested </span>
+                              <span ng-if="obj.field_name == 'family'">Family Detail Requested </span>
+                              <span ng-if="obj.field_name == 'family_status'">Family Status Detail Requested </span>
+                              <span ng-if="obj.field_name == 'origin'">Origin Detail Requested </span>
+                              <span ng-if="obj.field_name == 'about_family'">About Family Detail Requested</span>
+                              </span>
+                                <span ng-if="item.msg_status == 'recieved'"><img src="/assets/icons/receive.png"></span>
                             </div>
-                            <div class="col-md-12 notification-details" ng-if="obj.status == 'pending'"> {{obj.content}}</div>
-                            <div class="col-md-12 notification-details" ng-if="obj.status != 'pending'"> {{obj.response}}</div>
-                            <div class="col-md-12 margin-top-10" ng-if="res == 'accept'">
-                                <button ng-if="obj.action != 'connect'" type="button" class=" uppercase btn red input-rounded" ng-click="sendInterest(obj.id_activity,'interest')">
+                            <div class="col-md-12 notification-details" ng-if="obj.status == 'pending'">
+                                {{obj.content}}
+                            </div>
+                            <div class="col-md-12 notification-details" ng-if="obj.status != 'pending'">
+                                {{obj.response}}
+                            </div>
+
+                            <div class="col-md-12 margin-top-10" ng-if="pageType == 'sent' || pageType == 'awaiting'">
+                                <button ng-if="obj.action != 'connect'" type="button"
+                                        class=" uppercase btn red input-rounded"
+                                        ng-click="sendInterest(obj.id_activity,'interest')">
                                     Send Interest
                                 </button>
-
-                                <button  type="button"  class=" uppercase btn btn-default input-rounded" ng-click="sendInterest(obj.id_activity,'mail')">
+                                <button type="button" class=" uppercase btn btn-default input-rounded"
+                                        ng-click="sendInterest(obj.id_activity,'mail')">
                                     Send Mail
                                 </button>
-
-                                <button  type="button"  class=" uppercase btn btn-default input-rounded" ng-click="sendInterest(obj.id_activity,'callnow')">
+                                <button type="button" class=" uppercase btn btn-default input-rounded"
+                                        ng-click="sendInterest(obj.id_activity,'callnow')">
                                     Call now
                                 </button>
-
                             </div>
                             <div class="col-md-12 margin-top-10" ng-if="res == 'sent'">
-                                <button ng-if="obj.action != 'connect'" type="button" class=" uppercase btn red input-rounded" ng-click="sendInterest(obj.id_activity,'interest')">
+                                <button ng-if="obj.action != 'connect'" type="button"
+                                        class=" uppercase btn red input-rounded"
+                                        ng-click="sendInterest(obj.id_activity,'interest')">
                                     Send Interest
                                 </button>
-
-                                <button  type="button"  class=" uppercase btn btn-default input-rounded" ng-click="sendRespond('mail')">
+                                <button type="button" class=" uppercase btn btn-default input-rounded"
+                                        ng-click="sendRespond('mail')">
                                     Send Mail
                                 </button>
-
-                                <button  ng-if="item.action == 'connect'" type="button"  class=" uppercase btn btn-default input-rounded" ng-click="sendRespond('reminder')">
+                                <button type="button" class=" uppercase btn btn-default input-rounded"
+                                        ng-click="sendInterest(obj.id_activity,'callnow')">
+                                    Call now
+                                </button>
+                                <button ng-if="item.action == 'connect'" type="button"
+                                        class=" uppercase btn btn-default input-rounded"
+                                        ng-click="sendRespond('reminder')">
                                     Send Reminder
                                 </button>
-
                             </div>
-
                         </div>
-                                                        <hr>
-
-</span>
-
-
-
-        </div>
-        </div>
-        </div>
-        </div>
+                        <hr>
+                     </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
-
 <script type="text/ng-template" id="acceptModalContent.html">
     <div class="modal-header">
         <h4 class="modal-title" id="modal-title" style="color: #4cbcac;">
             {{$ctrl.items.header}}
-            <button class=" pull-right btn btn-circle btn-icon-only default" type="button" ng-click="$ctrl.cancel()"><i class="fa fa-times"></i></button>
+            <button class=" pull-right btn btn-circle btn-icon-only default" type="button" ng-click="$ctrl.cancel()"><i
+                    class="fa fa-times"></i></button>
         </h4>
     </div>
 
@@ -214,4 +214,3 @@
             <!--<button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>-->
         </div>
 </script>
-

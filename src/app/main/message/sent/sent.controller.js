@@ -21,7 +21,7 @@
         $scope.moreConversation = moreConversation;
 
         function moreConversation(id){
-            var url = $state.href('messages.communication', {id: id});
+            var url = $state.href('messages.communication', {id: id,page:"sent"});
             window.open(url,'_blank');
         }
 

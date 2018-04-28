@@ -349,7 +349,7 @@
                 }
             })
             .state('messages.communication', {
-                url      : '/communication/:id',
+                url      : '/communication/:page/:id',
                 views    : {
                     'content@messages'         : {
                         templateUrl: 'app/main/message/communication/communication.html',

@@ -104,7 +104,19 @@
 
                         </div>
                         <div  ng-if="item.action == 'field'">
-                            <div class="col-md-12 notification-style uppercase">ADD {{item.field_name}} REQUEST SENT</div>
+                            <div class="col-md-12 notification-style uppercase">
+									<span ng-if="item.field_name == 'photo_request'">Photo Requested </span>
+									<span ng-if="item.field_name == 'smoking'">Smoking Habits Detail Requested </span>
+									<span ng-if="item.field_name == 'drinking'">Drinking Habits Detail Requested </span>
+									<span ng-if="item.field_name == 'income'">Income Detail Requested </span>
+									<span ng-if="item.field_name == 'education'">Education Detail Requested </span>
+									<span ng-if="item.field_name == 'occupation'">Education Detail Requested </span>
+									<span ng-if="item.field_name == 'family'">Family Detail Requested </span>
+									<span ng-if="item.field_name == 'family_status'">Family Status Detail Requested </span>
+									<span ng-if="item.field_name == 'origin'">Origin Detail Requested </span>
+									<span ng-if="obj.field_name == 'about_family'">About Family Detail Requested</span>
+
+</div>
 
                             <div class="col-md-12 notification-details">{{item.content}}</div>
 
@@ -116,6 +128,9 @@
 
                             <button  type="button"  class=" uppercase btn btn-default input-rounded" ng-click="sendMail(item.user)">
                                 Send Mail
+                            </button>
+                            <button  type="button"  class=" uppercase btn btn-default input-rounded" ng-click="sendInterest(obj.id_activity,'callnow')">
+                                Call now
                             </button>
                             <button  ng-if="item.action == 'connect'" type="button"  class=" uppercase btn btn-default input-rounded" ng-click="sendMail(item.user)">
                                 Send Reminder

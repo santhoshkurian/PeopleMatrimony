@@ -196,6 +196,7 @@
             if($scope.converstionCount > 0 && !$scope.showInterestAction && !$scope.showBlockAction){
                 $scope.showConversationAction = true;
             }
+        $scope.dataview = viewProfile;
         $scope.view = viewProfile.user;
         $scope.login_user = viewProfile.login_user;
         $scope.preference = viewProfile.preference_matches;
