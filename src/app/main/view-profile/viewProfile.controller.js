@@ -23,6 +23,8 @@
         $scope.family_statusReq = false;
         $scope.about_familyReq = false;
         $scope.photo_reqReq = false;
+        $scope.profileAvailableMsg = '';
+
         $scope.similarProfiles = similarProfiles;
 
         $scope.print = print;
@@ -207,9 +209,8 @@
             $scope.details = {id:$scope.view.id_people,name:$scope.view.name,img:$scope.view.images};
 
         }else{
-            console.log("cccccccccccccccccccccccccccccccc")
             $scope.viewProfile = false;
-            $scope.message = "Member not exist";
+            $scope.profileAvailableMsg = viewProfile.message;
 
         }
 
