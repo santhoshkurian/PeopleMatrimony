@@ -13,7 +13,7 @@
         $scope.pending = pending.list;
         $scope.type = "accept";
 
-        console.log($scope.pending);
+        console.log("pending",$scope.pending);
         console.log("profile",profile);
 
         $scope.viewProfile = viewProfile;
