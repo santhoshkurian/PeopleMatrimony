@@ -122,17 +122,17 @@
                                             <tr>
                                                 <td class="first-row"><i class="icon-user-follow"></i></td>
                                                 <td class="second-row">|</td>
-                                                <td class="third-row details"><span
-                                                        ng-if="view.age != null && view.age != ''">{{view.age}} yrs,</span><span
+                                                <td class="third-row "><span class="details "
+                                                        ng-if="view.age != null && view.age != ''">{{view.age}} yrs,</span><span class="details "
                                                         ng-if="view.height != null && view.height != ''"> {{view.height}} cms</span>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td class="first-row"><i class="icon-book-open"></i></td>
                                                 <td class="second-row">|</td>
-                                                <td class="third-row details"><span
+                                                <td class="third-row "><span class="details "
                                                         ng-if="view.mothertongue != null && view.mothertongue != ''">{{view.mothertongue}}</span>
-                                                        <span
+                                                        <span class="details "
                                                                 ng-if="view.mothertongue == null || view.mothertongue == ''">Not Specified</span>
                                                 </td>
                                             </tr>
@@ -225,14 +225,17 @@
                                         </span>
                                 </div>
                             </div>
-                            <div class="row" ng-if="showBlockAction && dataview.interest != ''">
-                                <div class="vp-sub-action">{{dataview.blocked}}
+                            <div class="row" ng-if="showBlockAction ">
+                                <div class="vp-sub-action">
                                     <span ng-if="dataview.blocked == 'no'">Are you sure you want to block {{view.name}}?</span>
                                     <span ng-if="dataview.blocked == 'yes'">Are you sure you want to unblock {{view.name}}?</span>
 
                                         <span>
                                         <button class="btn red" style="border-radius: 5px!important;"
-                                                ng-click="blockPartner()">YES
+                                                ng-click="blockPartner()" ng-if="dataview.blocked == 'no'">YES
+                                        </button>
+                                            <button class="btn red" style="border-radius: 5px!important;"
+                                                    ng-click="unblockPartner()"  ng-if="dataview.blocked == 'yes'">YES
                                         </button>
                                         <button class="btn " style="border-radius: 5px!important;border-color: silver"
                                                 ng-click="skipBlockAction()">SKIP
@@ -323,8 +326,8 @@
                                             NOT INTERESTED
                                         </button>
                                     </div>
-                                    <div ng-if="converstionCount > 1" style="text-align: right;"><a style="color:red"
-                                                                                                    ui-sref="messages.sent">{{converstionCount}}+
+                                    <div ng-if="converstionCount > 1" style="text-align: right;">
+                                        <a style="color:red" ng-click="moreConversation()"  >{{converstionCount}}+
                                         More converstion</a></div>
                                 </div>
                             </div>

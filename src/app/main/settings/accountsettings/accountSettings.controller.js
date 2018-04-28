@@ -77,7 +77,15 @@
                     '&current=' + $scope.password.current +
                     '&new=' + $scope.password.newPassword
                 }).then(function successCallback(response) {
-                    $scope.passwordMsg = response.data.message;
+                    console.log("r",response)
+                    if(response.data.code == 200) {
+                        $scope.passwordMsg = "Password changed successfully";
+                        $scope.password = {current: '', newPassword: '', confirmPassword: ''};
+                    }else{
+                        $scope.passwordMsg = "Invalid Password";
+                        $scope.password = {current: '', newPassword: '', confirmPassword: ''};
+                    }
+
                 }, function errorCallback(response) {
                     $scope.passwordMsg = response.data.message;
 

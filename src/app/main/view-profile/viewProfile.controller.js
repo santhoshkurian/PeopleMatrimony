@@ -190,7 +190,7 @@
             if($scope.data.interest == ''){
                 $scope.showInterestAction = true;
             }
-            if($scope.data.blocked == 'no' && !$scope.showInterestAction){
+            if(!$scope.showInterestAction){
                 $scope.showBlockAction = true;
             }
             if($scope.converstionCount > 0 && !$scope.showInterestAction && !$scope.showBlockAction){
@@ -221,6 +221,13 @@
         }
         $scope.shortlist = shortlist;
         $scope.sendInterest = sendInterest;
+
+        $scope.moreConversation = moreConversation;
+
+        function moreConversation(id){
+            var url = $state.href('messages.communication', {id: $scope.view.id_people,page:"sent"});
+            window.open(url,'_blank');
+        }
 
         function sendInterest() {
             $http({
