@@ -455,6 +455,44 @@
                     }
 
                 }
+            }).state('matches', {
+                url: '/matches/:type',
+                views: {
+                    'main@': {
+                        templateUrl: 'app/core/layouts/matchesLayout.html',
+                        controller: 'MatchesController as vm'
+                    },
+                    'toolbar@matches': {
+                        templateUrl: 'app/toolbar/matches/matchestoolbar.html'
+                    },
+                    'navigation@matches': {
+                        templateUrl: 'app/navigation/matches/matchesNavigation.html'
+                    },
+                    'content@matches': {
+                        templateUrl: 'app/main/matches/matches.html',
+                    },
+                    'footer@matches': {
+                        templateUrl: 'app/footer/footer.html',
+                        controller: 'FooterController as vm'
+                    }
+                },resolve:{
+                    populate: function ($http,resourceUrl) {
+                        return $http({
+                            method: 'GET',
+                            url: resourceUrl.url()+'populate'
+                        }).then(function successCallback(response) {
+                            console.log(response)
+                            return response.data;
+
+                        }, function errorCallback(response) {
+                            //console.log(response)
+                            return response;
+
+
+                        });
+                    }
+
+                }
             });
 
     }

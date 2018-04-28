@@ -39,10 +39,13 @@
         $scope.backToView = backToView;
 
         function selectView(obj1,obj2){
-            $scope.viewall_header = obj2;
-            $scope.viewType = 'view_all';
-            $scope.viewAll = obj1;
-            console.log(obj2)
+            //$scope.viewall_header = obj2;
+            //$scope.viewType = 'view_all';
+            //$scope.viewAll = obj1;
+            //console.log(obj2)
+
+            var url = $state.href('matches', {type:obj2});
+            window.open(url,'_blank');
         }
         function backToView(){
             $scope.viewType = 'single';

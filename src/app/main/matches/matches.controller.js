@@ -7,9 +7,13 @@
         .controller('enlargeMatchesPhotoController', enlargeMatchesPhotoController);
 
     /** @ngInject */
-    function MatchesController($scope,$uibModal, storageService,populate,$timeout,resourceUrl, $http, $location,$state) {
+    function MatchesController($scope,$uibModal,$stateParams,storageService,populate,$timeout,resourceUrl, $http, $location,$state) {
 
         $('html, body').animate({ scrollTop: 0 }, 'fast');
+        $scope.pageType = $stateParams.type;
+
+console.log("pppppppppppppp",$scope.pageType)
+
 
         $scope.viewAll = viewAll;
         $scope.enlargeImage = [];
@@ -77,7 +81,7 @@
 
 
 
-        $scope.mainlink = "newMatches";
+        //$scope.mainlink = "newMatches";
         $scope.showFirstmartialStatus = false;
         $scope.showFirstLanguage = false;
         $scope.showDivisions = false;
@@ -270,6 +274,21 @@
             console.log($scope.currentPage)
         }
 
+        if($scope.pageType == 'shortlist'){
+            shortlisted();
+        }
+        if($scope.pageType == 'viewed'){
+            viewed();
+        }
+        if($scope.pageType == 'newMatches'){
+            newMatches();
+        }
+        if($scope.pageType == 'notYetViewed'){
+            notYetViewed();
+        }
+        if($scope.pageType == 'mutalmatches'){
+            mutalmatches();
+        }
 
 
         $scope.shortlist = shortlist;
