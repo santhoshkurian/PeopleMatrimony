@@ -9,7 +9,7 @@
     /** @ngInject */
     function MatchesController($scope,$uibModal, storageService,populate,$timeout,resourceUrl, $http, $location,$state) {
 
-        window.scroll(0, 1000);
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
 
         $scope.viewAll = viewAll;
         $scope.enlargeImage = [];

@@ -9,7 +9,7 @@
 
     /** @ngInject */
     function ViewProfileController(similarProfiles,$scope,$http,$uibModal,storageService,$state,$stateParams,resourceUrl,viewProfile,$timeout) {
-        window.scroll(0, 1000);
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
 
         console.log("check", viewProfile);
         console.log("check", similarProfiles);

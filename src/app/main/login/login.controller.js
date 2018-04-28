@@ -8,13 +8,13 @@
     /** @ngInject */
     function LoginController(resourceUrl,$uibModal,$state,$http,$scope,storageService,$log,populate) {
         //var vm = this;
-        window.scroll(0, 1000);
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
 
         console.log(populate);
         $scope.religonList = populate.religon;
         $scope.motherTongueList = populate.mothertongue;
         $scope.message=null;
-        $scope.terms={agree:false};
+        $scope.terms={agree:true};
         $scope.password = "password";
         $scope.ShowPass = ShowPass;
         function ShowPass(val){

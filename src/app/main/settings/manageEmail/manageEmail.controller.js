@@ -8,6 +8,8 @@
     /** @ngInject */
     function ManageEmailController(resourceUrl,alert,$scope,$http,storageService) {
         var vm = this;
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
+
         console.log(alert);
         $scope.alert = alert;
         $scope.updateAlert = updateAlert;

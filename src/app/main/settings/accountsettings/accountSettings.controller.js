@@ -7,7 +7,7 @@
 
     /** @ngInject */
     function AccountSettingsController(resourceUrl,account,$scope,storageService,$state,$http,$stateParams) {
-        console.log(account)
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
 
         $scope.email = account.email;
         $scope.copyemail= angular.copy($scope.email);

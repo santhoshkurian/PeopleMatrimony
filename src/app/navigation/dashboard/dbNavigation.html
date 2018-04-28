@@ -23,8 +23,10 @@
                                                 </div>
                                                 <div class="row ">
                                                     <div class="col-md-12">
-                                                        <span class="menu-option"><a style="color: red" ui-sref="managephoto"><span ng-if="!image_attr">Add Photo</span>
-                                                            <span ng-if="image_attr">Add More Photo</span></a></span>
+                                                        <span class="menu-option"><a style="color: red" ui-sref="managephoto">
+                                                            <span ng-if="image_attr == 'false'">Add Photo</span>
+                                                            <span ng-if="image_attr == 'true'">Add More Photo</span></a>
+                                                        </span>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <span class="menu-option"><a style="color: red" ui-sref="profile">Edit Profile</a></span>

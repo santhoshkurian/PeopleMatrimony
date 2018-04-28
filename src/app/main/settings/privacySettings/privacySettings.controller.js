@@ -8,7 +8,9 @@
     /** @ngInject */
     function PrivacySettingsController(resourceUrl,$scope,privacy,profile,$http,storageService) {
         var vm = this;
-        console.log(privacy)
+        console.log(privacy);
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
+
         $scope.privacy = privacy;
         $scope.profile = profile;
         console.log("profile",profile);

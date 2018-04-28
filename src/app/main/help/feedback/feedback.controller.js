@@ -10,7 +10,7 @@
     /** @ngInject */
     function feedbackController($http,$scope,storageService,resourceUrl,$state,$stateParams,$uibModal)
     {
-        window.scroll(0, 1000);
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
         $scope.messageVal = true;
         console.log("feedbackController");
         $scope.image_url = storageService.get("image_url");

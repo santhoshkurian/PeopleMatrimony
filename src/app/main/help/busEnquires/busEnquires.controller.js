@@ -10,6 +10,8 @@
     /** @ngInject */
     function busEnqController($http,$scope,storageService,resourceUrl,$uibModal,$state,$stateParams)
     {
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
+
 
         console.log("busEnqController");
         $scope.image_url = storageService.get("image_url");

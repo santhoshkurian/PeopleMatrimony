@@ -7,10 +7,7 @@
 
     /** @ngInject */
     function RegistrationController(resourceUrl,storageService,$scope,$http,$stateParams,$state,populate) {
-        //var vm = this;
-        console.log("RegistrationController");
-        console.log("stateParams",$stateParams.rel_id);
-        console.log("stateParams_id",storageService.get("token"));
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
 
         var vm = this;
         $scope.edu_id = 0;

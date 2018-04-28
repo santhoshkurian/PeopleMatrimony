@@ -9,6 +9,7 @@
     /** @ngInject */
     function contactUsController(storageService,$scope,$http,resourceUrl)
     {
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
 
 
         console.log("contactUsController");

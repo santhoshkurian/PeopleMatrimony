@@ -21,6 +21,22 @@
             $state.go('viewProfile', {view_id: id});
         }
 
+        $scope.countConversation = function(obj){
+            console.log("conversation",obj);
+            //return obj.split(',').join(", ")
+            $scope.commulen = obj.communication.received.length + obj.communication.sent.length;
+
+            return $scope.commulen;
+        }
+
+
+        $scope.moreConversation = moreConversation;
+
+        function moreConversation(id){
+            var url = $state.href('messages.communication', {id: id});
+            window.open(url,'_blank');
+        }
+
         $scope.sendRespond = sendRespond;
 
         function sendRespond(obj) {

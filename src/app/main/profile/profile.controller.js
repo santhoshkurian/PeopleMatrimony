@@ -7,7 +7,7 @@
 
     /** @ngInject */
     function ProfileController($http, $scope,$state,resourceUrl,storageService,$stateParams,populate,profile,$window) {
-        window.scroll(0, 1000);
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
 
         $scope.image_url = storageService.get("image_url");
         $scope.name = storageService.get("name");

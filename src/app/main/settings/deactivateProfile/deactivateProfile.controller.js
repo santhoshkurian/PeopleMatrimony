@@ -8,6 +8,8 @@
     /** @ngInject */
     function DeactivateProfileController(resourceUrl,$state,deactivate,$stateParams,$scope,$http,storageService) {
         var vm = this;
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
+
         console.log(deactivate);
         $scope.activate = true;
         $scope.deactivate = deactivate.duration;

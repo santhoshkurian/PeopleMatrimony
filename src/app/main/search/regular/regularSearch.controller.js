@@ -7,6 +7,7 @@
 
     /** @ngInject */
     function RegularSearchController(profile,$scope,$state,$http,$stateParams,populate,resourceUrl,storageService,searchList) {
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
 
         var vm = this;
         console.log("RegularSearchController");

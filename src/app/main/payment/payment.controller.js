@@ -121,9 +121,68 @@
 
         $scope.selectPackage = selectPackage;
         function selectPackage(obj){
-            console.log(obj)
+            //console.log(obj)
             $scope.selectPayment = obj;
-            $scope.proceedPayment = true;
+            //$scope.proceedPayment = true;
+
+            $http({
+                method: 'POST',
+                url: resourceUrl.url() + 'membership?id_people=' + storageService.get('id') +
+                '&id_package=' + $scope.selectPayment.id_packages + '&' +
+                'payment_method=credit&' +
+                'c_no=' + $scope.makePayment.c_no + '&' +
+                'c_name=' + $scope.makePayment.c_name + '&' +
+                'c_expire=' + $scope.makePayment.month+'+'+$scope.makePayment.year+ '&' +
+                'ccn=' + $scope.makePayment.ccv + '&' +
+                'token=' + storageService.get('token')
+            }).then(function successCallback(response) {
+                console.log(response);
+
+                $http({
+                    method: 'POST',
+                    url: resourceUrl.url() + 'membership?id_people=' + storageService.get('id') +
+                    '&id_package=' + $scope.selectPayment.id_packages + '&' +
+                    'payment_method=credit&' +
+                    'c_no=' + $scope.makePayment.c_no + '&' +
+                    'c_name=' + $scope.makePayment.c_name + '&' +
+                    'c_expire=' + $scope.makePayment.month+'+'+$scope.makePayment.year+ '&' +
+                    'ccn=' + $scope.makePayment.ccv + '&' +
+                    'token=' + storageService.get('token')
+                }).then(function successCallback(response) {
+                    console.log(response);
+                    //if(response.data.code = 200){
+                    //    $scope.proceedPayment = false;
+                    //    $scope.message = response.data.message;
+                    //}
+                    document.getElementById("code").value = response.data.membership.payment.access_code;
+                    document.getElementById("enc").value = response.data.membership.payment.encRequest;
+
+                    document.getElementById("paymentForm").setAttribute("action",response.data.membership.payment.ccavenue_url);
+                    document.getElementById("paymentForm").submit();
+
+
+
+
+
+
+                }, function errorCallback(response) {
+                    console.log(response);
+                });
+
+
+                //if(response.data.code = 200){
+                //    $scope.proceedPayment = false;
+                //    $scope.message = response.data.message;
+                //}
+
+
+
+            }, function errorCallback(response) {
+                console.log(response);
+                //$scope.message = response.data.message;
+
+
+            });
 
         }
 

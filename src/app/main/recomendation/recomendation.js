@@ -8,6 +8,7 @@
     /** @ngInject */
     function ReconmendationController($scope,storageService,$state,dailyMatches) {
         var vm = this;
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
 
         $scope.image_url = storageService.get("image_url");
         $scope.package = storageService.get("package");

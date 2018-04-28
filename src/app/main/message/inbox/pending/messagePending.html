@@ -155,9 +155,15 @@
                                 </button>
                                 <hr/>
                             </div>
-                            <div class="col-md-12 margin-top-10">
-                                <mailbox mail="item.communication" user="item.user" res="type"
-                                         reverse="sendRespond(data)"></mailbox>
+                            <!--<div class="col-md-12 margin-top-10">-->
+                                <!--<mailbox mail="item.communication" user="item.user" res="type"-->
+                                         <!--reverse="sendRespond(data)"></mailbox>-->
+                            <!--</div>-->
+
+                            <div class="row pull-right">
+                                <div class="col-md-12 " ng-if="countConversation(item) > 0">
+                                    <a style="color: red" ng-click="moreConversation(item.user.id_people)" > {{countConversation(item)}}+ conversation </a>
+                                </div>
                             </div>
 
 
@@ -170,6 +176,10 @@
                     </div>
                 </div>
             </div>
+
+
+
+
 
 </span>
 

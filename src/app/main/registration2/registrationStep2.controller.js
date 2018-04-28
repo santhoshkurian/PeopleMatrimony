@@ -7,7 +7,7 @@
 
     /** @ngInject */
     function RegistrationStep2Controller($timeout,resourceUrl,storageService,$scope,$http,$state,$stateParams) {
-        //var vm = this;
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
         console.log("RegistrationStep2Controller");
         console.log(storageService.get('id'));
 

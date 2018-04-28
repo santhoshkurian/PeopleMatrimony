@@ -9,6 +9,8 @@
 
     /** @ngInject */
     function ManagePhotoController(resourceUrl,privacy,$scope,$uibModal,storageService,profile,$http,$state,loadImages) {
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
+
         console.log("ManagePhotoController");
         console.log("ManagePhotoController", loadImages.user.images.length);
         $scope.viewType = 'managephoto';
@@ -217,7 +219,7 @@
         $scope.uploadFile = function () {
             var file = document.getElementById("myFile");
             $scope.uploadmsg= 'Uploading ....';
-                var k = "https://devapi.peoplematrimony.com/image/upload";
+                var k = resourceUrl.url()+"image/upload";
                 var j = new FormData;
                 j.append("id", storageService.get("id")),
                     j.append("token", storageService.get("token")),
@@ -226,7 +228,7 @@
 
                 $http({
                     method: "post",
-                    url: "https://devapi.peoplematrimony.com/image/upload",
+                    url: resourceUrl.url()+"image/upload",
                     headers: {"Content-Type": void 0},
                     transformRequest: angular.identity,
                     data: j
@@ -274,7 +276,7 @@
         $scope.uploadFile1 = function () {
             var file = document.getElementById("myFile1");
             $scope.uploadmsg= 'Uploading ....';
-                var k = "https://devapi.peoplematrimony.com/image/upload";
+                var k = resourceUrl.url()+"image/upload";
                 var j = new FormData;
                 j.append("id", storageService.get("id")),
                     j.append("token", storageService.get("token")),
@@ -283,14 +285,14 @@
 
                 $http({
                     method: "post",
-                    url: "https://devapi.peoplematrimony.com/image/upload",
+                    url: resourceUrl.url()+"image/upload",
                     headers: {"Content-Type": void 0},
                     transformRequest: angular.identity,
                     data: j
                 }).then(function successCallback(response) {
                     console.log(response)
                     $scope.uploadmsg= 'Uploaded Successfully';
-                    $scope.recentUpload= 'http://devapi.peoplematrimony.com'+response.data.path+'/'+response.data.name;
+                    $scope.recentUpload= resourceUrl.url()+response.data.path+'/'+response.data.name;
 
                     $http({
                         method: 'GET',
@@ -330,7 +332,7 @@
         $scope.uploadFile2 = function () {
             var file = document.getElementById("myFile2");
             $scope.uploadmsg= 'Uploading ....';
-                var k = "https://devapi.peoplematrimony.com/image/upload";
+                var k = resourceUrl.url()+"image/upload";
                 var j = new FormData;
                 j.append("id", storageService.get("id")),
                     j.append("token", storageService.get("token")),
@@ -339,14 +341,14 @@
 
                 $http({
                     method: "post",
-                    url: "https://devapi.peoplematrimony.com/image/upload",
+                    url: resourceUrl.url()+"image/upload",
                     headers: {"Content-Type": void 0},
                     transformRequest: angular.identity,
                     data: j
                 }).then(function successCallback(response) {
                     console.log(response)
                     $scope.uploadmsg= 'Uploaded Successfully';
-                    $scope.recentUpload= 'http://devapi.peoplematrimony.com'+response.data.path+'/'+response.data.name;
+                    $scope.recentUpload= resourceUrl.url()+response.data.path+'/'+response.data.name;
 
                     $http({
                         method: 'GET',

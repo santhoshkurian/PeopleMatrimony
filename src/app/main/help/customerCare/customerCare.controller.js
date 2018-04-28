@@ -10,7 +10,7 @@
     function customerCareController($http,$scope,storageService,resourceUrl)
     {
 
-        console.log("customerCareController");
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
 
         $scope.image_url = storageService.get("image_url");
         $scope.name = storageService.get("name");

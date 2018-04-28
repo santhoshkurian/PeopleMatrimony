@@ -10,7 +10,7 @@
     /** @ngInject */
     function SearchResultsController($timeout,$state,populate,$uibModal,$scope,$http,$stateParams,resourceUrl,storageService) {
         var vm = this;
-        window.scroll(0, 1000);
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
         $scope.filterData = {photo_available:false,horoscope_available:false,is_online:false}
         $scope.viewAll = viewAll;
         $scope.enlargeImage = [];

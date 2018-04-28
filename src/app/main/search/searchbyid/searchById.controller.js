@@ -8,7 +8,7 @@
     /** @ngInject */
     function SearchByIdController($scope,$http,$state,resourceUrl,storageService,$stateParams,$timeout) {
         var vm = this;
-        console.log("SearchByIdController");
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
         $scope.viewId = '';
         $scope.gender = null;
         $scope.item=null;

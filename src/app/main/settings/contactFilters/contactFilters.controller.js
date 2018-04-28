@@ -8,6 +8,8 @@
     /** @ngInject */
     function ContactFiltersController(resourceUrl,contact,$scope,$http,storageService) {
         var vm = this;
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
+
         $scope.contact= contact;
         $scope.updateContact = updateContact;
 
