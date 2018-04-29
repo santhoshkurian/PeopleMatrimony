@@ -18,6 +18,24 @@
         function viewProfile(id){
             $state.go('viewProfile',{view_id:id});
         }
+
+        $scope.moreConversation = moreConversation;
+
+        function moreConversation(id){
+            var url = $state.href('messages.communication', {id: id,page:"pending"});
+            window.open(url,'_blank');
+        }
+
+
+
+        $scope.countConversation = function(obj){
+            console.log("conversation",obj);
+            //return obj.split(',').join(", ")
+            $scope.commulen = obj.communication.received.length + obj.communication.sent.length;
+
+            return $scope.commulen;
+        }
+
         $scope.deleteDeclined = deleteDeclined;
 
         function deleteDeclined(comId) {

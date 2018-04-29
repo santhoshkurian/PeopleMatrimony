@@ -104,15 +104,15 @@
 							<div class="col-md-12 notification-style uppercase">
 								<span ng-if="item.action == 'connect'">INTEREST DECLINED</span>
 								<span ng-if="item.action == 'field'">
-									<span ng-if="item.field_name == 'photo_request'">Photo Request Declined </span>
-									<span ng-if="item.field_name == 'smoking'">Add Smoking Request Declined </span>
-									<span ng-if="item.field_name == 'drinking'">Add Smoking Request Declined </span>
-									<span ng-if="item.field_name == 'income'">Add Income Request Declined </span>
-									<span ng-if="item.field_name == 'education'">Add Education Request Declined </span>
-									<span ng-if="item.field_name == 'family'">Add Family Request Declined </span>
-									<span ng-if="item.field_name == 'family_status'">Add Family Status Request Declined </span>
-									<span ng-if="item.field_name == 'origin'">Add Origin Request Declined </span>
-									<span ng-if="item.field_name == 'about_family'">Add About Family Request Declined </span>
+									<span ng-if="item.field_name == 'photo_request'">Photo Details Declined </span>
+									<span ng-if="item.field_name == 'smoking'">Add Smoking Details Declined </span>
+									<span ng-if="item.field_name == 'drinking'">Add Smoking Details Declined </span>
+									<span ng-if="item.field_name == 'income'">Add Income Details Declined </span>
+									<span ng-if="item.field_name == 'education'">Add Education Details Declined </span>
+									<span ng-if="item.field_name == 'family'">Add Family Details Declined </span>
+									<span ng-if="item.field_name == 'family_status'">Add Family Status Details Declined </span>
+									<span ng-if="item.field_name == 'origin'">Add Origin Details Declined </span>
+									<span ng-if="item.field_name == 'about_family'">Add About Family Details Declined </span>
 
 
 								</span>
@@ -121,7 +121,14 @@
 								<hr/>
 							</div>
 							<div class="col-md-12 margin-top-10">
-								<mailbox mail="item.communication" res="type"></mailbox>
+								<!--<mailbox mail="item.communication" res="type"></mailbox>-->
+
+								<div class="row pull-right">
+									<div class="col-md-12 " ng-if="countConversation(item) > 0">
+										<a style="color: red" ng-click="moreConversation(item.user.id_people)" > {{countConversation(item)}}+ conversation </a>
+									</div>
+								</div>
+
 							</div>
 
 
