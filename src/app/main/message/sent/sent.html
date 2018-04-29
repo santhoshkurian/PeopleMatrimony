@@ -90,13 +90,16 @@
                             </div>
                             <div class="col-md-3 pull-right"><label class="style-cls">{{item.date}}</label><i
                                     class="fa fa-trash  pull-right style-cls " style="padding-top:5px;" ng-click="deleteSent(item.com_id)" ></i></div>
-                            <div class="col-md-12 details-style">
+
+                            <div class="col-md-12 details-style"><span ng-if="item.user.deactivated == 'no'">
                                 {{item.user.age}} Yrs, {{item.user.height}}cms, {{item.user.mothertongue}}, {{item.user.religion}}, {{item.user.caste}},{{item.user.education}}, {{item.user.occupation}},
                                 {{item.user.city_name}}, {{item.user.state_name}}, {{item.user.country_name}}.
+                            </span>
                             </div>
 
                         <hr>
                             <br/>
+                            <span ng-if="item.user.deactivated == 'no'">
                         <div  ng-if="item.action == 'connect'">
                             <div class="col-md-12 notification-style uppercase">INTEREST SENT</div>
 
@@ -135,14 +138,20 @@
                             <button  ng-if="item.action == 'connect'" type="button"  class=" uppercase btn btn-default input-rounded" ng-click="sendMail(item.user)">
                                 Send Reminder
                             </button>
-                            <hr>
 
                         </div>
-</div>
-                        <div class="row pull-right">
+
+                            <hr>
+                                </span>
+
+                        </div>
+                        <div class="row pull-right" ng-if="item.user.deactivated == 'no'">
                             <div class="col-md-12 " ng-if="countConversation(item) > 0">
                            <a style="color: red" ng-click="moreConversation(item.user.id_people)" > {{countConversation(item)}}+ conversation </a>
                             </div>
+                        </div>
+                        <div class="row " style="color: red" ng-if="item.user.deactivated == 'yes'">
+                            <div class="col-md-12 ">This profile is temporarily deactivated</div>
                         </div>
                         <!--<mailbox mail="item.communication" user="item.user" res="type" reverse="sendRespond(data)"></mailbox>-->
                     </div>
