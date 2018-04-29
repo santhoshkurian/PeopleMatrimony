@@ -59,6 +59,16 @@
         $scope.sisDis = false;
         $scope.broDis = false;
 
+        $scope.displayAboutme = 75;
+        $scope.displayAboutFamily = 75;
+        $scope.displayAboutlookingFor = 75;
+        $scope.showFullDetails = showFullDetails;
+
+        function showFullDetails(obj1,obj2){
+            $scope[obj1] = obj2.length;
+
+        }
+
 
 
 

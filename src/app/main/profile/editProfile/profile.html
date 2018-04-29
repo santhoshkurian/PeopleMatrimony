@@ -26,7 +26,7 @@
                         </div>
                         <div class="portlet-body form">
                             <p ng-hide="about">
-                                <span ng-if="profile.login_user.aboutme != null && profile.login_user.aboutme != ''"> {{profile.login_user.aboutme}}</span>
+                                <span ng-if="profile.login_user.aboutme != null && profile.login_user.aboutme != ''"> {{profile.login_user.aboutme | limitTo : displayAboutme}} <span ng-if="profile.login_user.aboutme.length > displayAboutme"><a ng-click="showFullDetails('displayAboutme',profile.login_user.aboutme)">...more</a></span></span>
                                 <span ng-if="profile.login_user.aboutme == null || profile.login_user.aboutme == ''">Not Specified</span>
 
                             </p>
@@ -1479,7 +1479,7 @@
                         </div>
                         <div class="portlet-body form">
                             <p ng-hide="fabout " class="details">
-                                <span ng-if="profile.login_user.about_family != null && profile.login_user.about_family != ''">{{profile.login_user.about_family}}</span>
+                                <span ng-if="profile.login_user.about_family != null && profile.login_user.about_family != ''">{{profile.login_user.about_family | limitTo : displayAboutFamily}} <span ng-if="profile.login_user.about_family.length > displayAboutFamily"><a ng-click="showFullDetails('displayAboutFamily',profile.login_user.about_family)">...more</a></span></span>
                                 <span ng-if="profile.login_user.about_family == null || profile.login_user.about_family == ''">Not Specified</span>
                             </p>
 
@@ -2704,7 +2704,7 @@
                                 <div class="col-md-12">
                                     <p class="details"
                                        ng-if="profile.login_user.preferences.about_partner != null && profile.login_user.preferences.about_partner != ''">
-                                        {{profile.login_user.preferences.about_partner}}</p>
+                                        {{profile.login_user.preferences.about_partner| limitTo : displayAboutlookingFor}} <span ng-if="profile.login_user.preferences.about_partner.length > displayAboutlookingFor"><a ng-click="showFullDetails('displayAboutlookingFor',profile.login_user.preferences.about_partner)">...more</a></span></p>
 
                                     <p class="details"
                                        ng-if="profile.login_user.preferences.about_partner == null || profile.login_user.preferences.about_partner == ''">
