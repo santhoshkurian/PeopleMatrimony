@@ -131,6 +131,77 @@
                 console.log(response)
             });
         }
+        $scope.calculateHeight = calculateHeight;
+
+        function calculateHeight(obj) {
+            var h;
+
+            if (obj == 137) h = "4ft 6in- 137 cm";
+
+            if (obj == 139) h = "4ft 7in- 139 cm";
+
+            if (obj == 142) h = "4ft 8in- 142 cm";
+
+            if (obj == 144) h = "4ft 9in- 144 cm";
+
+            if (obj == 147) h = "4ft 10in- 147 cm";
+
+            if (obj == 149) h = "4ft 11in- 149 cm";
+
+            if (obj == 152) h = "5ft- 152 cm";
+
+            if (obj == 154) h = "5ft 1in- 154 cm";
+
+            if (obj == 157) h = "5ft 2in- 157 cm";
+
+            if (obj == 160) h = "5ft 3in- 160 cm";
+
+            if (obj == 160) h = "5ft 3in- 160 cm";
+
+            if (obj == 162) h = "5ft 4in- 162 cm";
+
+            if (obj == 165) h = "5ft 5in- 165 cm";
+
+            if (obj == 167) h = "5ft 6in- 167 cm";
+
+            if (obj == 170) h = "5ft 7in- 170 cm";
+
+            if (obj == 172) h = "5ft 8in- 172 cm";
+
+            if (obj == 175) h = "5ft 9in- 175 cm";
+
+            if (obj == 177) h = "5ft 10in- 177 cm";
+
+            if (obj == 180) h = "5ft 11in- 180 cm";
+
+            if (obj == 182) h = "6ft- 182 cm";
+
+            if (obj == 185) h = "6ft 1in- 185 cm";
+
+            if (obj == 187) h = "6ft 2in- 187 cm";
+
+            if (obj == 190) h = "6ft 3in- 190 cm";
+
+            if (obj == 193) h = "6ft 4in- 193 cm";
+
+            if (obj == 193) h = "6ft 4in- 193 cm";
+
+            if (obj == 195) h = "6ft 5in- 195 cm";
+
+            if (obj == 198) h = "6ft 6in- 198 cm";
+
+            if (obj == 200) h = "6ft 7in- 200 cm";
+
+            if (obj == 203) h = "6ft 8in- 203 cm";
+
+            if (obj == 205) h = "6ft 9in- 205 cm";
+
+            if (obj == 208) h = "6ft 10in- 208 cm";
+
+            if (obj == 210) h = "6ft 11in- 210 cm";
+
+            return h;
+        }
 
 
 

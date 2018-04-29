@@ -109,7 +109,7 @@
 
                                     <p class="details"
                                        ng-if="profile.login_user.height != null && profile.login_user.height != '' && profile.login_user.height != 0">
-                                        {{profile.login_user.height}} cms</p>
+                                        {{calculateHeight(profile.login_user.height)}} </p>
 
                                     <p class="details"
                                        ng-if="profile.login_user.height == null || profile.login_user.height == '' || profile.login_user.height == 0 ">
@@ -1478,7 +1478,7 @@
                             </div>
                         </div>
                         <div class="portlet-body form">
-                            <p ng-hide="fabout">
+                            <p ng-hide="fabout " class="details">
                                 <span ng-if="profile.login_user.about_family != null && profile.login_user.about_family != ''">{{profile.login_user.about_family}}</span>
                                 <span ng-if="profile.login_user.about_family == null || profile.login_user.about_family == ''">Not Specified</span>
                             </p>

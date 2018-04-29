@@ -430,11 +430,11 @@
 
                                         <p class="details "
                                            ng-if="view.height !=null &&  view.height != '' &&  view.height != 0">
-                                            {{view.height}} cms</p>
+                                            {{calculateHeight(view.height)}}</p>
 
                                         <p class="details "
                                            ng-if="view.height ==null ||  view.height == '' ||  view.height == 0">
-                                            {{view.height}} cms</p>
+                                            Not Specified</p>
 
                                     </div>
 
