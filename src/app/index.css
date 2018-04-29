@@ -47,7 +47,7 @@ html, body. div{
     margin-left: -1px;
 }
 .pagination .active>a, .pagination .active>a:hover {
-    background: red!important;
+    background: #e7505a!important;
     border-color: grey;
     color: #333;
 }

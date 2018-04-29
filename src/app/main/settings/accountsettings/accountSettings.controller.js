@@ -13,6 +13,7 @@
         $scope.copyemail= angular.copy($scope.email);
         $scope.passwordMsg = null;
         $scope.confirmPasswordMsg = '';
+        $scope.emailMsg = '';
         $scope.confirmPassword = false;
 
         $scope.changeEmail = changeEmail;
@@ -35,11 +36,15 @@
                 'email='+$scope.email
 
             }).then(function successCallback(response) {
-                $state.transitionTo($state.current, $stateParams, {
-                    reload: true,
-                    inherit: false,
-                    notify: true
-                });
+                console.log(response);
+                if(response.data.code == 200){
+                    $scope.emailMsg = "Email changed successfully";
+                }
+                //$state.transitionTo($state.current, $stateParams, {
+                //    reload: true,
+                //    inherit: false,
+                //    notify: true
+                //});
             }, function errorCallback(response) {
                 console.log("error",response)
 
