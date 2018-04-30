@@ -1543,11 +1543,11 @@
                                     <label class=" font-weight-head  "> Height </label>
 
                                     <p class="details ">
-                                        {{profile.login_user.preferences.height_start}}
+                                        {{calculateHeight(profile.login_user.preferences.height_start)}}
                                             <span ng-if="profile.login_user.preferences.height_end != null &&
                                             profile.login_user.preferences.height_end != ''">
-                                            -{{profile.login_user.preferences.height_end}}</span>
-                                        cms </p>
+                                            to {{calculateHeight(profile.login_user.preferences.height_end)}}</span>
+                                         </p>
 
                                 </div>
                                 <div class="col-md-4">
@@ -1580,7 +1580,7 @@
 
                                     <p class="details"
                                        ng-if="profile.login_user.preferences.marital_status != null && profile.login_user.preferences.marital_status != ''">
-                                        {{profile.login_user.preferences.marital_status}}</p>
+                                        {{commaSeperatedValue(profile.login_user.preferences.marital_status)}}</p>
 
                                     <p class="details"
                                        ng-if="profile.login_user.preferences.marital_status == null || profile.login_user.preferences.marital_status == ''">
@@ -1591,7 +1591,7 @@
 
                                     <p class="details"
                                        ng-if="profile.login_user.preferences.eating_habits != null && profile.login_user.preferences.eating_habits != ''">
-                                        {{profile.login_user.preferences.eating_habits}}</p>
+                                        {{commaSeperatedValue(profile.login_user.preferences.eating_habits)}}</p>
 
                                     <p class="details"
                                        ng-if="profile.login_user.preferences.eating_habits == null || profile.login_user.preferences.eating_habits == ''">
@@ -1604,7 +1604,7 @@
 
                                     <p class="details"
                                        ng-if="profile.login_user.preferences.drinking_habits != null && profile.login_user.preferences.drinking_habits != ''">
-                                        {{profile.login_user.preferences.drinking_habits}}</p>
+                                        {{commaSeperatedValue(profile.login_user.preferences.drinking_habits)}}</p>
 
                                     <p class="details"
                                        ng-if="profile.login_user.preferences.drinking_habits == null || profile.login_user.preferences.drinking_habits == ''">
@@ -1615,7 +1615,7 @@
 
                                     <p class="details"
                                        ng-if="profile.login_user.preferences.smoking_habits != null && profile.login_user.preferences.smoking_habits != ''">
-                                        {{profile.login_user.preferences.smoking_habits}}</p>
+                                        {{commaSeperatedValue(profile.login_user.preferences.smoking_habits)}}</p>
 
                                     <p class="details"
                                        ng-if="profile.login_user.preferences.smoking_habits == null || profile.login_user.preferences.smoking_habits == ''">
@@ -1671,6 +1671,45 @@
                                                         <option ng-selected="profile.login_user.preferences.age_start == 29"
                                                                 value="29">29
                                                         </option>
+                                                        <option ng-selected="profile.login_user.preferences.age_start == 30"
+                                                                value="30">30
+                                                        </option>
+                                                        <option ng-selected="profile.login_user.preferences.age_start == 31"
+                                                                value="31">31
+                                                        </option>
+                                                        <option ng-selected="profile.login_user.preferences.age_start == 32"
+                                                                value="32">32
+                                                        </option>
+                                                        <option ng-selected="profile.login_user.preferences.age_start == 33"
+                                                                value="33">33
+                                                        </option>
+                                                        <option ng-selected="profile.login_user.preferences.age_start == 34"
+                                                                value="34">34
+                                                        </option>
+                                                        <option ng-selected="profile.login_user.preferences.age_start == 35"
+                                                                value="35">35
+                                                        </option>
+                                                        <option ng-selected="profile.login_user.preferences.age_start == 36"
+                                                                value="36">36
+                                                        </option>
+                                                        <option ng-selected="profile.login_user.preferences.age_start == 37"
+                                                                value="37">37
+                                                        </option>
+                                                        <option ng-selected="profile.login_user.preferences.age_start == 38"
+                                                                value="38">38
+                                                        </option>
+                                                        <option ng-selected="profile.login_user.preferences.age_start == 39"
+                                                                value="39">39
+                                                        </option>
+                                                        <option ng-selected="profile.login_user.preferences.age_start == 40"
+                                                                value="40">40
+                                                        </option>
+                                                        <option ng-selected="profile.login_user.preferences.age_start == 41"
+                                                                value="41">41
+                                                        </option>
+                                                        <option ng-selected="profile.login_user.preferences.age_start == 42"
+                                                                value="42">42
+                                                        </option>
                                                     </select>
                                                 </div>
                                                 <div class="col-md-6">
@@ -1714,6 +1753,45 @@
                                                         <option ng-selected="profile.login_user.preferences.age_end == 29"
                                                                 value="29">29
                                                         </option>
+                                                        <option ng-selected="profile.login_user.preferences.age_end == 30"
+                                                                value="30">30
+                                                        </option>
+                                                        <option ng-selected="profile.login_user.preferences.age_end == 31"
+                                                                value="31">31
+                                                        </option>
+                                                        <option ng-selected="profile.login_user.preferences.age_end == 32"
+                                                                value="32">32
+                                                        </option>
+                                                        <option ng-selected="profile.login_user.preferences.age_end == 33"
+                                                                value="33">33
+                                                        </option>
+                                                        <option ng-selected="profile.login_user.preferences.age_end == 34"
+                                                                value="34">34
+                                                        </option>
+                                                        <option ng-selected="profile.login_user.preferences.age_end == 35"
+                                                                value="35">35
+                                                        </option>
+                                                        <option ng-selected="profile.login_user.preferences.age_end == 36"
+                                                                value="36">36
+                                                        </option>
+                                                        <option ng-selected="profile.login_user.preferences.age_end == 37"
+                                                                value="37">37
+                                                        </option>
+                                                        <option ng-selected="profile.login_user.preferences.age_end == 38"
+                                                                value="38">38
+                                                        </option>
+                                                        <option ng-selected="profile.login_user.preferences.age_end == 39"
+                                                                value="39">39
+                                                        </option>
+                                                        <option ng-selected="profile.login_user.preferences.age_end == 40"
+                                                                value="40">40
+                                                        </option>
+                                                        <option ng-selected="profile.login_user.preferences.age_end == 41"
+                                                                value="41">41
+                                                        </option>
+                                                        <option ng-selected="profile.login_user.preferences.age_end == 42"
+                                                                value="42">42
+                                                        </option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -1727,170 +1805,37 @@
                                                 <div class="col-md-6">
                                                     <select class="form-control input-rounded "
                                                             ng-model="profile.login_user.preferences.height_start">
-                                                        <option selected value="">Select</option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 137"
-                                                                value="137">137 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 138"
-                                                                value="138">138 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 139"
-                                                                value="139">139 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 140"
-                                                                value="140">140 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 141"
-                                                                value="141">141 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 142"
-                                                                value="142">142 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 143"
-                                                                value="143">143 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 144"
-                                                                value="144">144 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 145"
-                                                                value="145">145 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 146"
-                                                                value="146">146 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 147"
-                                                                value="147">147 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 148"
-                                                                value="148">148 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 149"
-                                                                value="149">149 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 150"
-                                                                value="150">150 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 151"
-                                                                value="151">151 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 152"
-                                                                value="152">152 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 153"
-                                                                value="153">153 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 154"
-                                                                value="154">154 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 155"
-                                                                value="155">155 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 156"
-                                                                value="156">156 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 157"
-                                                                value="157">157 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 158"
-                                                                value="158">158 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 159"
-                                                                value="159">159 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 160"
-                                                                value="160">160 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 161"
-                                                                value="161">161 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 162"
-                                                                value="162">162 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 163"
-                                                                value="163">163 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 164"
-                                                                value="164">164 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 165"
-                                                                value="165">165 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 166"
-                                                                value="166">166 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 167"
-                                                                value="167">167 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 168"
-                                                                value="168">168 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 169"
-                                                                value="169">169 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 170"
-                                                                value="170">170 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 171"
-                                                                value="171">171 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 172"
-                                                                value="172">172 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 173"
-                                                                value="173">173 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 174"
-                                                                value="174">174 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 175"
-                                                                value="175">175 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 176"
-                                                                value="176">176 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 177"
-                                                                value="177">177 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 178"
-                                                                value="178">178 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 179"
-                                                                value="179">179 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 180"
-                                                                value="180">180 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 181"
-                                                                value="181">181 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 182"
-                                                                value="182">182 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 183"
-                                                                value="183">183 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 184"
-                                                                value="184">184 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 185"
-                                                                value="185">185 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 186"
-                                                                value="186">186 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 187"
-                                                                value="187">187 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 188"
-                                                                value="188">188 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 189"
-                                                                value="189">189 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_start == 190"
-                                                                value="190">190 cms
-                                                        </option>
-
+                                                        <option value="0">Select</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 137" value="137">4ft 6in- 137 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 139" value="139">4ft 7in- 139 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 142" value="142">4ft 8in- 142 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 144" value="144">4ft 9in- 144 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 147" value="147">4ft 10in- 147 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 149" value="149">4ft 11in- 149 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 152" value="152">5ft- 152 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 154" value="154">5ft 1in- 154 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 157" value="157">5ft 2in- 157 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 160" value="160">5ft 3in- 160 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 162" value="162">5ft 4in- 162 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 165" value="165">5ft 5in- 165 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 167" value="167">5ft 6in- 167 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 170" value="170">5ft 7in- 170 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 172" value="172">5ft 8in- 172 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 175" value="175">5ft 9in- 175 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 177" value="177">5ft 10in- 177 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 180" value="180">5ft 11in- 180 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 182" value="182">6ft- 182 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 185" value="185">6ft 1in- 185 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 187" value="187">6ft 2in- 187 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 190" value="190">6ft 3in- 190 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 193" value="193">6ft 4in- 193 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 195" value="195">6ft 5in- 195 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 198" value="198">6ft 6in- 198 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 200" value="200">6ft 7in- 200 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 203" value="203">6ft 8in- 203 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 205" value="205">6ft 9in- 205 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 208" value="208">6ft 10in- 208 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_start == 210" value="210">6ft 11in- 210 cm</option>
 
                                                     </select>
 
@@ -1899,170 +1844,37 @@
 
                                                     <select class="form-control input-rounded "
                                                             ng-model="profile.login_user.preferences.height_end">
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 137"
-                                                                value="137">137 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 138"
-                                                                value="138">138 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 139"
-                                                                value="139">139 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 140"
-                                                                value="140">140 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 141"
-                                                                value="141">141 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 142"
-                                                                value="142">142 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 143"
-                                                                value="143">143 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 144"
-                                                                value="144">144 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 145"
-                                                                value="145">145 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 146"
-                                                                value="146">146 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 147"
-                                                                value="147">147 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 148"
-                                                                value="148">148 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 149"
-                                                                value="149">149 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 150"
-                                                                value="150">150 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 151"
-                                                                value="151">151 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 152"
-                                                                value="152">152 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 153"
-                                                                value="153">153 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 154"
-                                                                value="154">154 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 155"
-                                                                value="155">155 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 156"
-                                                                value="156">156 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 157"
-                                                                value="157">157 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 158"
-                                                                value="158">158 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 159"
-                                                                value="159">159 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 160"
-                                                                value="160">160 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 161"
-                                                                value="161">161 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 162"
-                                                                value="162">162 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 163"
-                                                                value="163">163 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 164"
-                                                                value="164">164 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 165"
-                                                                value="165">165 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 166"
-                                                                value="166">166 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 167"
-                                                                value="167">167 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 168"
-                                                                value="168">168 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 169"
-                                                                value="169">169 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 170"
-                                                                value="170">170 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 171"
-                                                                value="171">171 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 172"
-                                                                value="172">172 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 173"
-                                                                value="173">173 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 174"
-                                                                value="174">174 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 175"
-                                                                value="175">175 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 176"
-                                                                value="176">176 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 177"
-                                                                value="177">177 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 178"
-                                                                value="178">178 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 179"
-                                                                value="179">179 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 180"
-                                                                value="180">180 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 181"
-                                                                value="181">181 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 182"
-                                                                value="182">182 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 183"
-                                                                value="183">183 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 184"
-                                                                value="184">184 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 185"
-                                                                value="185">185 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 186"
-                                                                value="186">186 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 187"
-                                                                value="187">187 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 188"
-                                                                value="188">188 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 189"
-                                                                value="189">189 cms
-                                                        </option>
-                                                        <option ng-selected="profile.login_user.preferences.height_end == 190"
-                                                                value="190">190 cms
-                                                        </option>
-
-
+                                                        <option value="0">Select</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 137" value="137">4ft 6in- 137 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 139" value="139">4ft 7in- 139 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 142" value="142">4ft 8in- 142 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 144" value="144">4ft 9in- 144 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 147" value="147">4ft 10in- 147 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 149" value="149">4ft 11in- 149 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 152" value="152">5ft- 152 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 154" value="154">5ft 1in- 154 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 157" value="157">5ft 2in- 157 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 160" value="160">5ft 3in- 160 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 162" value="162">5ft 4in- 162 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 165" value="165">5ft 5in- 165 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 167" value="167">5ft 6in- 167 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 170" value="170">5ft 7in- 170 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 172" value="172">5ft 8in- 172 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 175" value="175">5ft 9in- 175 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 177" value="177">5ft 10in- 177 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 180" value="180">5ft 11in- 180 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 182" value="182">6ft- 182 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 185" value="185">6ft 1in- 185 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 187" value="187">6ft 2in- 187 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 190" value="190">6ft 3in- 190 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 193" value="193">6ft 4in- 193 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 195" value="195">6ft 5in- 195 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 198" value="198">6ft 6in- 198 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 200" value="200">6ft 7in- 200 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 203" value="203">6ft 8in- 203 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 205" value="205">6ft 9in- 205 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 208" value="208">6ft 10in- 208 cm</option>
+                                                        <option  ng-selected="profile.login_user.preferences.height_end == 210" value="210">6ft 11in- 210 cm</option>
                                                     </select>
 
                                                 </div>

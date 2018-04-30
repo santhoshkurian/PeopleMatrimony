@@ -159,6 +159,7 @@
         $scope.savePartnerBasic = savePartnerBasic;
 
         $scope.calculateHeight = calculateHeight;
+        $scope.commaSeperatedValue = commaSeperatedValue;
 
 
         $scope.$watch('setPartnerReligion.religion', selectRegliousPreference);
@@ -232,6 +233,10 @@
             if (obj == 210) h = "6ft 11in- 210 cm";
 
             return h;
+        }
+
+        function commaSeperatedValue(obj){
+            return obj.split('~').join(', ');
         }
 
 
