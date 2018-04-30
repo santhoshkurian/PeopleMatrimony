@@ -28,6 +28,14 @@
             nationality: null,
             nationality_name: null
         };
+        $scope.setPartnerBasic = {
+            eating_habits: [],
+            drinking_habits: [],
+            smoking_habits:[],
+            marital_status:[],
+            mother_tongue_list:[],
+            physical_status:[]
+        };
         $scope.setReligion = {
             religion: null,
             caste: null,
@@ -74,6 +82,11 @@
 
         $scope.motherTongueList = populate.mothertongue;
         $scope.religonList = populate.religon;
+        $scope.eatingHabitsList = ["Vegetarian","Nonvegetarian","Eggeterian"];
+        $scope.smokingHabitsList = ["Yes","No","Occationally"];
+        $scope.drinkingHabitsList = ["Yes","No","Occationally"];
+        $scope.martialStatusList = ["Never Married","Widowed","Divorced","Awaiting divorce"];
+        $scope.physicalStatusList = ["Normal","Challenged","Any"];
         $scope.starsList = populate.stars;
         $scope.occupationCategoryList = populate.occupation_category;
         $scope.educationCategoryList = populate.education_category;
@@ -236,7 +249,9 @@
         }
 
         function commaSeperatedValue(obj){
-            return obj.split('~').join(', ');
+            if(obj != null) {
+                return obj.split('~').join(', ');
+            }
         }
 
 
@@ -517,7 +532,30 @@
 
 
         function editPartnerBasic(obj) {
+            if($scope.profile.login_user.preferences.marital_status !='')
+            $scope.setPartnerBasic.eating_habits = $scope.profile.login_user.preferences.eating_habits.split("~");
+            $scope.setPartnerBasic.drinking_habits = $scope.profile.login_user.preferences.drinking_habits.split("~");
+            $scope.setPartnerBasic.smoking_habits = $scope.profile.login_user.preferences.smoking_habits.split("~");
+            $scope.setPartnerBasic.marital_status = $scope.profile.login_user.preferences.marital_status.split(",");
+            $scope.setPartnerBasic.mother_tongue_list = [];
+
+            if ($scope.profile.login_user.preferences.mothertongue != null && $scope.profile.login_user.preferences.mothertongue != "null") {
+
+                var array = $scope.profile.login_user.preferences.mothertongue.split('~');
+                for (var i = 0; i < array.length; i++) {
+                    $scope.motherTongueList.filter(function(a) {
+                        if (a.id_mothertongue == array[i]) {
+                            $scope.setPartnerBasic.mother_tongue_list.push(a);
+                        }
+                    })
+                }
+
+            }
+
+
             $scope[obj] = !$scope[obj];
+
+
         }
 
         function editPartnerType(obj) {
@@ -712,7 +750,19 @@
         }
 
         function savePartnerBasic() {
+            var mt_id = null;
 
+
+            console.log($scope.setPartnerBasic.physical_status.join("~"));
+
+            if ($scope.setPartnerBasic.mother_tongue_list.length > 0) {
+                var mt_arr = [];
+                for (var i = 0; i < $scope.setPartnerBasic.mother_tongue_list.length; i++) {
+                    mt_arr.push($scope.setPartnerBasic.mother_tongue_list[i].id_mothertongue);
+                }
+                mt_id = mt_arr.join('~');
+            }
+            console.log(mt_id)
 
             $http({
                 method: 'PUT',
@@ -720,14 +770,14 @@
                 'token=' + storageService.get("token") + '&block=basic' +
                 '&age_end=' + $scope.profile.login_user.preferences.age_end +
                 '&age_start=' + $scope.profile.login_user.preferences.age_start +
-                '&drinking_habits=' + $scope.profile.login_user.preferences.drinking_habits +
-                '&eating_habits=' + $scope.profile.login_user.preferences.eating_habits +
-                '&smoking_habits=' + $scope.profile.login_user.preferences.smoking_habits +
+                '&drinking_habits=' + $scope.setPartnerBasic.drinking_habits.join("~") +
+                '&eating_habits=' + $scope.setPartnerBasic.eating_habits.join("~") +
+                '&smoking_habits=' + $scope.setPartnerBasic.smoking_habits.join("~") +
                 '&height_end=' + $scope.profile.login_user.preferences.height_end +
                 '&height_start=' + $scope.profile.login_user.preferences.height_start +
-                '&marital_status=' + $scope.profile.login_user.preferences.marital_status +
-                '&mothertongue=' + parseInt($scope.profile.login_user.preferences.mothertongue) +
-                '&physical_status=' + $scope.profile.login_user.preferences.physical_status
+                '&marital_status=' + $scope.setPartnerBasic.marital_status.join() +
+                '&mothertongue=' + mt_id +
+                '&physical_status=' + $scope.setPartnerBasic.physical_status.join("~")
             }).then(function successCallback(response) {
                 console.log("success", response)
                 $state.transitionTo($state.current, $stateParams, {

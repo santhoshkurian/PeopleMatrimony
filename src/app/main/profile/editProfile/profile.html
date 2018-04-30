@@ -1891,6 +1891,11 @@
                                                 <option value="challenged">Challenged</option>
                                                 <option value="any">Any</option>
                                             </select>
+
+                                            <!--<multiselect ch-limit="4" show-search="false"-->
+                                                         <!--ng-model="setPartnerBasic.physical_status"-->
+                                                         <!--options="physicalStatusList">-->
+                                            <!--</multiselect>-->
                                         </div>
                                         <div class="col-md-6">
 
@@ -1898,7 +1903,7 @@
                                                 Mother
                                                 Tongue </label>
 
-                                            <select class="form-control input-rounded "
+                                            <!--<select class="form-control input-rounded "
                                                     ng-model="profile.login_user.preferences.mothertongue">
                                                 <option value="">Any</option>
                                                 <option ng-repeat="obj in motherTongueList"
@@ -1906,7 +1911,15 @@
                                                         value="{{obj.id_mothertongue}}">
                                                     {{obj.mothertongue}}
                                                 </option>
-                                            </select>
+                                            </select>-->
+
+                                            <multiselect ch-limit="4" show-search="false"
+                                                         ng-model="setPartnerBasic.mother_tongue_list"
+                                                         options="motherTongueList"
+                                                         id-prop="id_mothertongue"
+                                                         display-prop="mothertongue"
+                                                    >
+                                            </multiselect>
 
                                         </div>
                                         <div class="col-md-6">
@@ -1914,7 +1927,7 @@
                                                 Marital
                                                 Status </label>
 
-                                            <select class="form-control input-rounded "
+                                    <!--        <select class="form-control input-rounded "
                                                     ng-model="profile.login_user.preferences.marital_status">
                                                 <option value="">Any</option>
                                                 <option value="never married">Never Married</option>
@@ -1922,42 +1935,63 @@
                                                 <option value="divorced">Divorced</option>
                                                 <option value="awaiting divorce">Awaiting divorce</option>
 
-                                            </select>
+                                            </select>-->
+
+                                            <multiselect ch-limit="4" show-search="false"
+                                                         ng-model="setPartnerBasic.marital_status"
+                                                         options="martialStatusList">
+                                            </multiselect>
                                         </div>
                                         <div class="col-md-6">
                                             <label class=" font-weight  ">
                                                 Eating
                                                 Habits </label>
 
-                                            <select class="form-control input-rounded "
-                                                    ng-model="profile.login_user.preferences.eating_habits">
-                                                <option selected value="vegetarian">Vegiterian</option>
-                                                <option value="nonvegetarian">Non Vegiterian</option>
-                                                <option value="eggeterian">Eggeterian</option>
-                                            </select>
+                                            <!--<select class="form-control input-rounded "-->
+                                                    <!--ng-model="profile.login_user.preferences.eating_habits">-->
+                                                <!--<option selected value="vegetarian">Vegiterian</option>-->
+                                                <!--<option value="nonvegetarian">Non Vegiterian</option>-->
+                                                <!--<option value="eggeterian">Eggeterian</option>-->
+                                            <!--</select>-->
+
+                                            <multiselect ch-limit="3" show-search="false"
+                                                         ng-model="setPartnerBasic.eating_habits"
+                                                         options="eatingHabitsList">
+                                            </multiselect>
                                         </div>
                                         <div class="col-md-6">
                                             <label class=" font-weight  ">
                                                 Drinking
                                                 Habits </label>
 
-                                            <select class="form-control input-rounded "
+ <!--                                           <select class="form-control input-rounded "
                                                     ng-model="profile.login_user.preferences.drinking_habits">
                                                 <option selected value="yes">Yes</option>
                                                 <option value="no">No</option>
 
                                             </select>
+-->
+                                            <multiselect ch-limit="3" show-search="false"
+                                                         ng-model="setPartnerBasic.drinking_habits"
+                                                         options="drinkingHabitsList">
+                                            </multiselect>
+
                                         </div>
                                         <div class="col-md-6">
                                             <label class=" font-weight  ">
                                                 Smoking
                                                 Habits</label>
 
-                                            <select class="form-control input-rounded "
+                                            <!--<select class="form-control input-rounded "
                                                     ng-model="profile.login_user.preferences.smoking_habits">
                                                 <option selected value="yes">Yes</option>
                                                 <option value="no">No</option>
-                                            </select>
+                                            </select>-->
+
+                                            <multiselect ch-limit="3" show-search="false"
+                                                         ng-model="setPartnerBasic.smoking_habits"
+                                                         options="smokingHabitsList" >
+                                            </multiselect>
                                         </div>
                                     </div>
                                 </div>
