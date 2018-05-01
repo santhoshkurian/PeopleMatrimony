@@ -212,7 +212,7 @@
 
                             <div class="row" ng-if="showInterestAction && dataview.interest == ''">
                                 <div class="vp-sub-action">
-                                    <span>Connect her with ?</span>
+                                    <span>Connect <span ng-if="view.gender == 'female'">her</span><span ng-if="view.gender == 'male'">him</span> with ?</span>
 
                                         <span>
                                         <button class="btn red" style="border-radius: 5px!important;"

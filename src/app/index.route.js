@@ -421,7 +421,7 @@
 
                 }
             }).state('profile', {
-                url: '/profile',
+                url: '/profile/:type',
                 views: {
                     'main@': {
                         templateUrl: 'app/core/layouts/profileLayout.html',

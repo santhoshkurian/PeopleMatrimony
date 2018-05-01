@@ -6,10 +6,19 @@
         .controller('ProfileController', ProfileController);
 
     /** @ngInject */
-    function ProfileController($http, $scope, $state, resourceUrl, storageService, $stateParams, populate, profile, $window) {
-        $('html, body').animate({
-            scrollTop: 0
-        }, 'fast');
+    function ProfileController($http, $scope,$location, $state, resourceUrl, storageService, $stateParams, populate, profile, $window) {
+
+
+        $scope.focustype = $stateParams.type;
+        if($scope.focustype == 'partner'){
+            $location.hash('partnerPreferences');
+
+        }else{
+            $('html, body').animate({
+                scrollTop: 0
+            }, 'fast');
+        }
+
 
         $scope.image_url = storageService.get("image_url");
         $scope.name = storageService.get("name");

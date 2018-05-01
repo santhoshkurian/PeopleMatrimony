@@ -37,6 +37,12 @@
         $scope.addDetails = addDetails;
         $scope.selectView = selectView;
         $scope.backToView = backToView;
+        $scope.redirectURL = redirectURL;
+
+        function redirectURL(obj){
+            $state.go('profile', {type:obj});
+            
+        }
 
         function selectView(obj1,obj2){
             //$scope.viewall_header = obj2;

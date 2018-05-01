@@ -27,28 +27,33 @@
         }
 
         function changeEmail(){
-            $http({
-                method: 'POST',
-                url: resourceUrl.url()+'user/contact?' +
-                'token=' +storageService.get('token')+
-                '&id_people=' +storageService.get('id')+
-                '&type=email&' +
-                'email='+$scope.email
 
-            }).then(function successCallback(response) {
-                console.log(response);
-                if(response.data.code == 200){
-                    $scope.emailMsg = "Email changed successfully";
-                }
-                //$state.transitionTo($state.current, $stateParams, {
-                //    reload: true,
-                //    inherit: false,
-                //    notify: true
-                //});
-            }, function errorCallback(response) {
-                console.log("error",response)
+            if($scope.email == ''){
+                $scope.emailMsg = "Please enter valid email id";
+            }else {
+                $http({
+                    method: 'POST',
+                    url: resourceUrl.url() + 'user/contact?' +
+                    'token=' + storageService.get('token') +
+                    '&id_people=' + storageService.get('id') +
+                    '&type=email&' +
+                    'email=' + $scope.email
 
-            });
+                }).then(function successCallback(response) {
+                    console.log(response);
+                    if (response.data.code == 200) {
+                        $scope.emailMsg = "Email changed successfully";
+                    }
+                    //$state.transitionTo($state.current, $stateParams, {
+                    //    reload: true,
+                    //    inherit: false,
+                    //    notify: true
+                    //});
+                }, function errorCallback(response) {
+                    console.log("error", response)
+
+                });
+            }
         }
 
         function SavePassword() {
