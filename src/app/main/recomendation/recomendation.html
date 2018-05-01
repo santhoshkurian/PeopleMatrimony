@@ -1,5 +1,6 @@
 
 <span ng-if="dailyMatches.matches.length > 0">
+    <span ng-if="viewData">
                        <div class="portlet light border-rounded">
                            <div class="portlet-title">
 
@@ -661,6 +662,12 @@
 
 
                         </div>
+        </span>
+        <span ng-if="!viewData && msg != ''">
+                <div class="alert alert-success">
+                {{msg}}
+                    </div>
+</span>
 </span>
 
 <div  ng-if="dailyMatches.matches.length == 0" class="portlet light  border-rounded ">

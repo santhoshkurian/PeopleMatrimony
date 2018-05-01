@@ -6,7 +6,7 @@
         .controller('ReconmendationController', ReconmendationController);
 
     /** @ngInject */
-    function ReconmendationController($scope,storageService,$state,dailyMatches) {
+    function ReconmendationController($scope,$http,resourceUrl,storageService,$state,dailyMatches) {
         var vm = this;
         $('html, body').animate({ scrollTop: 0 }, 'fast');
 
@@ -18,9 +18,12 @@
         console.log("dailyMatches",dailyMatches);
         $scope.dailyMatches = dailyMatches;
         $scope.recomendationList = [];
+        $scope.msg = '';
+        $scope.viewData = false;
 
         if($scope.dailyMatches.matches.length > 0){
-            $scope.view = $scope.dailyMatches.matches[0];
+            viewProfile($scope.dailyMatches.matches[0].id);
+
 
         }
 
@@ -31,9 +34,35 @@
         }
 
 
+        $scope.viewProfile = viewProfile;
+        $scope.msg = '';
+        function viewProfile(obj) {
+            $http({
+                method: 'GET',
+                url: resourceUrl.url()+'user/view?'+
+                'view_id='+obj+'&token='+storageService.get("token")
+            }).then(function successCallback(response) {
+                console.log(response);
+                if(response.data.error){
+                    $scope.viewData = false;
+                    $scope.msg = response.data.message;
+                }else{
+                    $scope.viewData = true;
+
+                    $scope.view = response.data.user;
+                }
+
+                return response.data;
+            }, function errorCallback(response) {
+                return 'error';
+            });        }
+
+
         $scope.showSelected = showSelected;
         function showSelected(obj) {
-            $scope.view = obj;
+            console.log(obj);
+            viewProfile(obj.id);
+            //$scope.view = obj;
         }
 
         $scope.scrollRight = scrollRight;
@@ -51,79 +80,6 @@
             elmnt.scrollLeft -= 150;
 
         }
-        //$scope.recomendationList = [{
-        //    name: "Priya rajini",
-        //    percentage: "76 %",
-        //    imageSrc: "../assets/images/profile2.jpg"
-        //}, {
-        //    name: "Vimala Raman",
-        //    percentage: "76 %",
-        //    imageSrc: "../assets/img/avatar9.jpg"
-        //}, {
-        //    name: "Jisha Micheal",
-        //    percentage: "66 %",
-        //    imageSrc: "../assets/images/prof1.jpg"
-        //}, {
-        //    name: "Akku mathew",
-        //    percentage: "56 %",
-        //    imageSrc: "../assets/images/profile2.jpg"
-        //}, {
-        //    name: "Arathi krishnan",
-        //    percentage: "86 %",
-        //    imageSrc: "../assets/images/profile2.jpg"
-        //}, {
-        //    name: "Priyanka chopra",
-        //    percentage: "66 %",
-        //    imageSrc: "../assets/images/profile2.jpg"
-        //}, {
-        //    name: "Priya rajini",
-        //    percentage: "86 %",
-        //    imageSrc: "../assets/images/profile2.jpg"
-        //}, {
-        //    name: "Vimala Raman",
-        //    percentage: "76 %",
-        //    imageSrc: "../assets/images/profile2.jpg"
-        //}, {
-        //    name: "Jisha Micheal",
-        //    percentage: "66 %",
-        //    imageSrc: "../assets/images/profile2.jpg"
-        //}, {
-        //    name: "Akku mathew",
-        //    percentage: "56 %",
-        //    imageSrc: "../assets/images/profile2.jpg"
-        //}, {
-        //    name: "Arathi krishnan",
-        //    percentage: "86 %",
-        //    imageSrc: "../assets/images/profile2.jpg"
-        //}, {
-        //    name: "Priyanka chopra",
-        //    percentage: "66 %",
-        //    imageSrc: "../assets/images/profile2.jpg"
-        //}, {
-        //    name: "Priya rajini",
-        //    percentage: "86 %",
-        //    imageSrc: "../assets/images/profile2.jpg"
-        //}, {
-        //    name: "Vimala Raman",
-        //    percentage: "76 %",
-        //    imageSrc: "../assets/images/profile2.jpg"
-        //}, {
-        //    name: "Jisha Micheal",
-        //    percentage: "66 %",
-        //    imageSrc: "../assets/images/profile2.jpg"
-        //}, {
-        //    name: "Akku mathew",
-        //    percentage: "56 %",
-        //    imageSrc: "../assets/images/profile2.jpg"
-        //}, {
-        //    name: "Arathi krishnan",
-        //    percentage: "86 %",
-        //    imageSrc: "../assets/images/profile2.jpg"
-        //}, {
-        //    name: "Priyanka chopra",
-        //    percentage: "66 %",
-        //    imageSrc: "../assets/images/profile2.jpg"
-        //}];
 
         $scope.logout = logout;
         function logout(){
