@@ -493,6 +493,68 @@
                     }
 
                 }
+            }).state('payment.success', {
+                url: '/success',
+                views: {
+                    'payment@': {
+                        templateUrl: 'app/core/layouts/paymentLayout.html',
+                        controller: 'SuccessController as vm'
+                    },
+                    'toolbar@payment': {
+                        templateUrl: 'app/toolbar/dashboard/dbToolbar.html'
+                    },
+                    'content@payment': {
+                        templateUrl: 'app/main/payment/success/success.html'
+                    },
+                    'footer@payment': {
+                        templateUrl: 'app/footer/footer.html',
+                        controller: 'FooterController as vm'
+                    }
+                },resolve: {
+
+                }
+            })
+            .state('payment.cancel', {
+                url: '/cancel',
+                views: {
+                    'payment@': {
+                        templateUrl: 'app/core/layouts/paymentLayout.html',
+                        controller: 'CancelController as vm'
+                    },
+                    'toolbar@payment': {
+                        templateUrl: 'app/toolbar/dashboard/dbToolbar.html'
+                    },
+                    'content@payment': {
+                        templateUrl: 'app/main/payment/cancel/cancel.html'
+                    },
+                    'footer@payment': {
+                        templateUrl: 'app/footer/footer.html',
+                        controller: 'FooterController as vm'
+                    }
+                },resolve: {
+
+                }
+            })
+            .state('payment.error', {
+                url: '/error',
+                views: {
+                    'payment@': {
+                        templateUrl: 'app/core/layouts/paymentLayout.html',
+                        controller: 'ErrorController as vm'
+                    },
+                    'toolbar@payment': {
+                        templateUrl: 'app/toolbar/dashboard/dbToolbar.html'
+                    },
+                    'content@payment': {
+                        templateUrl: 'app/main/payment/error/error.html'
+                    },
+                    'footer@payment': {
+                        templateUrl: 'app/footer/footer.html',
+                        controller: 'FooterController as vm'
+                    }
+                },resolve: {
+
+                }
             });
 
     }

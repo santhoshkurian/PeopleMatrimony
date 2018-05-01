@@ -121,11 +121,13 @@
 
         $scope.selectPackage = selectPackage;
         function selectPackage(obj){
-            //console.log(obj)
-            $scope.selectPayment = obj;
+            console.log("check")
+            //$scope.selectPayment = obj;
+            $state.go('payment.success');
+
             //$scope.proceedPayment = true;
 
-            $http({
+            /*$http({
                 method: 'POST',
                 url: resourceUrl.url() + 'membership?id_people=' + storageService.get('id') +
                 '&id_package=' + $scope.selectPayment.id_packages + '&' +
@@ -150,39 +152,22 @@
                     'token=' + storageService.get('token')
                 }).then(function successCallback(response) {
                     console.log(response);
-                    //if(response.data.code = 200){
-                    //    $scope.proceedPayment = false;
-                    //    $scope.message = response.data.message;
-                    //}
                     document.getElementById("code").value = response.data.membership.payment.access_code;
                     document.getElementById("enc").value = response.data.membership.payment.encRequest;
 
                     document.getElementById("paymentForm").setAttribute("action",response.data.membership.payment.ccavenue_url);
                     document.getElementById("paymentForm").submit();
 
-
-
-
-
-
                 }, function errorCallback(response) {
                     console.log(response);
                 });
 
-
-                //if(response.data.code = 200){
-                //    $scope.proceedPayment = false;
-                //    $scope.message = response.data.message;
-                //}
-
-
-
             }, function errorCallback(response) {
                 console.log(response);
-                //$scope.message = response.data.message;
 
 
-            });
+            });*/
+
 
         }
 
