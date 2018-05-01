@@ -3,8 +3,9 @@
 <div class="portlet light border-rounded">
     <div class="portlet-body">
         <div class="row">
-            <div class="col-md-2 col-xs-2" ng-click="scrollLeft()" style="text-align: center;line-height: 120px;font-size: 25px">
-                <i class="icon-arrow-left"></i>
+            <div class="col-md-2 col-xs-2" ng-click="scrollLeft()" style="text-align: center;line-height: 120px;font-size: 25px;cursor: pointer">
+                <!--<i class="icon-arrow-left"></i>-->
+                <img src="/assets/icons/backward.png" >
             </div>
             <div class="col-md-8 col-xs-8">
 
@@ -12,24 +13,24 @@
                     <div class="dx"  id="myDIV">
                         <div class="xc" ng-repeat="match in dailyMatches.matches" ng-click="showSelected(match)"
                              style="cursor: pointer">
-                            <img ng-if="match.images.length > 0" class="recomended-image"
-                                 ng-src="{{match.images[0].image}}"/>
-                            <img ng-if="match.gender == 'male' && match.images.length == 0"
+                            <img ng-if="match.image != ''" class="recomended-image"
+                                 ng-src="{{match.image}}"/>
+                            <img ng-if=" match.image == ''"
                                  class="recomended-image"
-                                 ng-src="/assets/defaultImages/male_card.jpg"/>
-                            <img ng-if="match.gender == 'female' && match.images.length == 0"
-                                 class="recomended-image"
-                                 ng-src="/assets/defaultImages/female_card.jpg"/>
+                                 ng-src="/assets/defaultImages/avatar.png"/>
+
 
                             <div class="bold">{{match.name}}</div>
-                            <div class="bold">86%</div>
+                            <!--<div class="bold">86%</div>-->
                         </div>
 
                     </div>
                 </div>
             </div>
-            <div class="col-md-2 col-xs-2" ng-click="scrollRight()" style="text-align: center;line-height: 120px;font-size: 25px">
-                <i class="icon-arrow-right"></i>
+            <div class="col-md-2 col-xs-2" ng-click="scrollRight()" style="text-align: center;line-height: 120px;font-size: 25px;cursor: pointer">
+                <!--<i class="icon-arrow-right"></i>-->
+                <img src="/assets/icons/forward.png" >
+
 
             </div>
 
