@@ -36,6 +36,8 @@
 
         $scope.viewProfile = viewProfile;
         $scope.msg = '';
+        $scope.viewData = false;
+
         function viewProfile(obj) {
             $http({
                 method: 'GET',

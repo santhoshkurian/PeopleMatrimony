@@ -68,11 +68,23 @@
                             </div>
                            <span ng-if="pageType == 'pending' && obj.status == 'pending'">
                               <div class="col-md-12 margin-top-10" >
-                                  <button type="button" class=" uppercase btn btn-default input-rounded"
+                                  <button ng-if="obj.action == 'connect' && obj.status == 'pending'" type="button" class=" uppercase btn red input-rounded"
                                           ng-click="sendInterest(obj.id_activity,'mail')">
-                                      ADD {{obj.field_name}}
+                                      Yes
                                   </button>
-                                  <button type="button" class=" uppercase btn btn-default input-rounded"
+                                  <button ng-if="obj.action == 'field' && obj.status == 'pending'" type="button" class=" uppercase btn red input-rounded"
+                                          ng-click="sendInterest(obj.id_activity,'mail')">
+                                      ADD <span ng-if="obj.field_name == 'photo_request'">Photo</span>
+                                      <span ng-if="obj.field_name == 'smoking'">Smoking</span>
+                                      <span ng-if="obj.field_name == 'drinking'">Drinking  </span>
+                                      <span ng-if="obj.field_name == 'income'">Income </span>
+                                      <span ng-if="obj.field_name == 'education'">Education</span>
+                                      <span ng-if="obj.field_name == 'family'">Family</span>
+                                      <span ng-if="obj.field_name == 'family_status'">Family Status</span>
+                                      <span ng-if="obj.field_name == 'origin'">Origin</span>
+                                      <span ng-if="obj.field_name == 'about_family'">About Family</span>
+                                  </button>
+                                  <button ng-if="obj.status == 'pending'" type="button" class=" uppercase btn btn-default input-rounded"
                                           ng-click="sendInterest(obj.id_activity,'callnow')">
                                       Not Interested
                                   </button>
