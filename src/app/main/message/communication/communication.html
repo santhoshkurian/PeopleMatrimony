@@ -73,7 +73,7 @@
                                       Yes
                                   </button>
                                   <button ng-if="obj.action == 'field' && obj.status == 'pending'" type="button" class=" uppercase btn red input-rounded"
-                                          ng-click="sendInterest(obj.id_activity,'mail')">
+                                          ng-click="respondAction(obj)">
                                       ADD <span ng-if="obj.field_name == 'photo_request'">Photo</span>
                                       <span ng-if="obj.field_name == 'smoking'">Smoking</span>
                                       <span ng-if="obj.field_name == 'drinking'">Drinking  </span>
@@ -85,7 +85,7 @@
                                       <span ng-if="obj.field_name == 'about_family'">About Family</span>
                                   </button>
                                   <button ng-if="obj.status == 'pending'" type="button" class=" uppercase btn btn-default input-rounded"
-                                          ng-click="sendInterest(obj.id_activity,'callnow')">
+                                          ng-click="requestDeclined(obj)">
                                       Not Interested
                                   </button>
                               </div>

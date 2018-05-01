@@ -178,6 +178,35 @@
 
         }
 
+        $scope.requestDeclined = requestDeclined;
+        function requestDeclined(obj){
+            $scope.details = {id: obj.id_people, name: obj.name, img: obj.images};
+            $http({
+                method: 'GET',
+                url: resourceUrl.url()+'response/declined/'+obj.com_id +
+                '?&token=' + storageService.get("token")
+            }).then(function successCallback(response) {
+                console.log(response);
+                $scope.open();
+                if(response.data.code == '400'){
+
+                    $scope.details.header = 'Request Rejected Successfully';
+
+                }
+
+                $timeout(function() {
+                    $state.transitionTo($state.current, $stateParams, {
+                        reload: true,
+                        inherit: false,
+                        notify: true
+                    });
+                }, 2000);
+            }, function errorCallback(response) {
+                console.log(response)
+            });
+
+        }
+
         $scope.acceptRequest = acceptRequest;
         function acceptRequest(obj){
 
@@ -187,12 +216,13 @@
                 '?&token=' + storageService.get("token")
             }).then(function successCallback(response) {
                     console.log(response);
-                $scope.open();
                 if(response.data.code == '400'){
 
                         $scope.details.header = 'Request Accepted Successfully';
 
                 }
+                $scope.open();
+
 
 
                 $timeout(function() {
