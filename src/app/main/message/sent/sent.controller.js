@@ -8,6 +8,8 @@
     /** @ngInject */
     function SentController($http,$state,storageService,$scope,$timeout,resourceUrl,$stateParams,sent,$uibModal) {
         var vm = this;
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
+
         $scope.type = "sent";
 
         $scope.sent_all = sent.list;

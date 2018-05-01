@@ -6,6 +6,7 @@
 
     /** @ngInject */
     function PaymentController($http, $scope, storageService,paymentList,resourceUrl,$state) {
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
 
         $scope.image_url = storageService.get("image_url");
         $scope.package = storageService.get("package");
@@ -122,12 +123,11 @@
         $scope.selectPackage = selectPackage;
         function selectPackage(obj){
             console.log("check")
-            //$scope.selectPayment = obj;
-            $state.go('payment.success');
+            $scope.selectPayment = obj;
 
             //$scope.proceedPayment = true;
 
-            /*$http({
+            $http({
                 method: 'POST',
                 url: resourceUrl.url() + 'membership?id_people=' + storageService.get('id') +
                 '&id_package=' + $scope.selectPayment.id_packages + '&' +
@@ -166,7 +166,7 @@
                 console.log(response);
 
 
-            });*/
+            });
 
 
         }

@@ -23,6 +23,12 @@ console.log("pppppppppppppp",$scope.pageType)
             $scope.enlargeOpen();
         }
 
+        $scope.redirectURL = redirectURL;
+        function redirectURL(obj){
+            $state.go('profile', {type:obj});
+
+        }
+
         $scope.enlargeOpen = function (size, parentSelector) {
             var parentElem = parentSelector ?
                 angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;

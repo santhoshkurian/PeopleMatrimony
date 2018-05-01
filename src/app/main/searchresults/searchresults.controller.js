@@ -20,6 +20,12 @@
             $scope.enlargeOpen();
         }
 
+        $scope.redirectURL = redirectURL;
+        function redirectURL(obj){
+            $state.go('profile', {type:obj});
+
+        }
+
         $scope.requests = function(obj1){
             console.log(obj1)
 

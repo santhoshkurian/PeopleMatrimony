@@ -8,6 +8,8 @@
     /** @ngInject */
     function MessageDeclinedController($state,declined,$scope,storageService,resourceUrl) {
         var vm = this;
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
+
         $scope.declined = declined.list;
         $scope.type = "declined";
 

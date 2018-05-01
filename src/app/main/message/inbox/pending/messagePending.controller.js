@@ -10,6 +10,8 @@
     /** @ngInject */
     function MessagePendingController(pending, $state, $scope, profile,$http, $timeout, $stateParams, $uibModal, resourceUrl, storageService) {
         var vm = this;
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
+
         $scope.pending = pending.list;
         $scope.type = "accept";
 

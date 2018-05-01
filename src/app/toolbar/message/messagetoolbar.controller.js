@@ -33,6 +33,12 @@
             });
         }
 
+        $scope.redirectURL = redirectURL;
+        function redirectURL(obj){
+            $state.go('profile', {type:obj});
+
+        }
+
         $scope.isActive = function (viewLocation) {
             return viewLocation === $location.path();
         };

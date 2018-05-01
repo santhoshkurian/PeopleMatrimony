@@ -9,6 +9,8 @@
     /** @ngInject */
     function MessageAcceptedController($state,$scope,$http,$uibModal,$timeout,$stateParams,accept,storageService,resourceUrl) {
         var vm = this;
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
+
         $scope.accept = accept.list;
         $scope.type = "accept";
         console.log($scope.accept);

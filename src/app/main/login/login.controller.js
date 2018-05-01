@@ -333,6 +333,8 @@ if($scope.terms.agree) {
     angular.module('dashboard').controller('ModalInstanceCtrl', function ($uibModal,$scope,storageService,$http,resourceUrl,$uibModalInstance, items,$state,$log) {
         var vm = this;
 
+        $scope.terms={remember:true};
+
         vm.items = items;
         vm.selected = {
             item: vm.items[0]

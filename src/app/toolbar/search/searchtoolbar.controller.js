@@ -33,6 +33,12 @@
         $scope.name = storageService.get("name");
         $scope.id = storageService.get("id");
 
+        $scope.redirectURL = redirectURL;
+        function redirectURL(obj){
+            $state.go('profile', {type:obj});
+
+        }
+
         $scope.isActive = function (viewLocation) {
             var ul = $location.path().split('/');
             if(ul.length > 3){

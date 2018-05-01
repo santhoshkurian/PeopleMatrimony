@@ -18,6 +18,12 @@
         $scope.profile = profile;
         $scope.changePhoto = changePhoto;
 
+        $scope.redirectURL = redirectURL;
+        function redirectURL(obj){
+            $state.go('profile', {type:obj});
+
+        }
+
 
 
 

@@ -8,6 +8,8 @@
     /** @ngInject */
     function AwaitingController($http,$state,resourceUrl,$stateParams,$uibModal,storageService,$scope,awaitingReply) {
         var vm = this;
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
+
         $scope.type = "sent";
 
         $scope.awaiting = awaitingReply.list;

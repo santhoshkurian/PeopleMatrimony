@@ -7,6 +7,7 @@
 
     /** @ngInject */
     function CommunicationController($http,$state,storageService,$scope,$timeout,resourceUrl,$stateParams,viewProfile,$uibModal) {
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
 
        console.log(viewProfile);
        console.log("page",$stateParams.page);

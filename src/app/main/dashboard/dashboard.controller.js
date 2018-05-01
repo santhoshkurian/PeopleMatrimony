@@ -38,7 +38,6 @@
         $scope.selectView = selectView;
         $scope.backToView = backToView;
         $scope.redirectURL = redirectURL;
-
         function redirectURL(obj){
             $state.go('profile', {type:obj});
             
