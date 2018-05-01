@@ -236,16 +236,7 @@
             date1 = new Date(date1);
             var dob = '';
 
-            //if(date1 != null && date1 != '') {
-            //    //date1 = new Date(date1.getFullYear(),date1.getMonth(),date1.getDay());
-            //    var month = parseInt(date1.getMonth()) +1;
-            //    console.log(month+1)
-            //    dob = date1.getFullYear()+'-'+month+'-'+date1.getDate();
-            //    //date1 = date1.toString().replace('(India Standard Time)', '(IST)');
-            //    //date1 = new Date(date1);
-            //
-            //    console.log("ssssssssss",dob);
-            //}
+
             if($scope.reg.profile_for == null || $scope.reg.profile_for ==''){
                 $scope.showSelectProfile = true;
             }
@@ -253,7 +244,7 @@
                 $scope.nameMsg = 'Enter your name';
                 $scope.showName = true;
             }else{
-               if($scope.reg.name.length > 50 || /^[a-zA-Z0-9]*$/.test($scope.reg.name) == false){
+               if($scope.reg.name.length > 50 || /^[a-zA-Z/^\s+$/]*$/.test($scope.reg.name) == false){
                    $scope.nameMsg = 'Enter valid Name';
                    $scope.showName = true;
                }
