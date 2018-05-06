@@ -14,6 +14,7 @@
 
         console.log("check", viewProfile);
         console.log("check", similarProfiles);
+        $scope.profile = viewProfile.login_user;
         $scope.drinkingReq = false;
         $scope.smokingReq = false;
         $scope.educationReq = false;
@@ -81,6 +82,134 @@
         //    }
         //
         //}
+
+        $scope.respondSuccessAction = respondSuccessAction;
+
+        function respondSuccessAction(obj) {
+            $scope.details = {id:viewProfile.user.id_people,name:viewProfile.user.name,img:viewProfile.user.images};
+            //$scope.addDetails = {partner:obj,user:profile};
+
+            //$scope.addDetailsModal();
+            console.log(obj);
+
+            if(obj.action == 'field'){
+                if(obj.field_name == 'family'){
+                    if($scope.profile.family_type == '' || $scope.profile.family_type == null){
+                        $state.go('profile');
+                    }else{
+                        $scope.acceptRequest(obj);
+                    }
+
+                }
+                if(obj.field_name == 'smoking'){
+                    if($scope.profile.smoking_habit == '' || $scope.profile.smoking_habit == null){
+                        $state.go('profile');
+                    }else{
+                        $scope.acceptRequest(obj);
+                    }
+
+                }
+                if(obj.field_name == 'drinking'){
+                    if($scope.profile.drinking_habit == '' || $scope.profile.drinking_habit == null){
+                        $state.go('profile');
+                    }else{
+                        $scope.acceptRequest(obj);
+                    }
+
+                }
+                if(obj.field_name == 'income'){
+                    if($scope.profile.income == '' ||$scope.profile.income == 0 || $scope.profile.income == null){
+                        $state.go('profile');
+                    }else{
+                        $scope.acceptRequest(obj);
+                    }
+
+                }
+                if(obj.field_name == 'occupation'){
+                    if($scope.profile.id_occupation == '' ||$scope.profile.id_occupation == 0 || $scope.profile.id_occupation == null){
+                        $state.go('profile');
+                    }else{
+                        $scope.acceptRequest(obj);
+                    }
+
+                }
+                if(obj.field_name == 'family'){
+                    if($scope.profile.family_type == '' || $scope.profile.family_type == null){
+                        $state.go('profile');
+                    }else{
+                        $scope.acceptRequest(obj);
+                    }
+
+                }
+                if(obj.field_name == 'family_status'){
+                    if($scope.profile.family_status == '' || $scope.profile.family_status == null){
+                        $state.go('profile');
+                    }else{
+                        $scope.acceptRequest(obj);
+                    }
+
+                }
+                if(obj.field_name == 'origin'){
+                    if($scope.profile.ancestral_origin == '' ||$scope.profile.ancestral_origin == 0 || $scope.profile.ancestral_origin == null){
+                        $state.go('profile');
+                    }else{
+                        $scope.acceptRequest(obj);
+                    }
+
+                }
+                if(obj.field_name == 'about_family'){
+                    if($scope.profile.about_family == '' || $scope.profile.about_family == null){
+                        $state.go('profile');
+                    }else{
+                        $scope.acceptRequest(obj);
+                    }
+
+                }
+                if(obj.field_name == 'photo_request'){
+                    if($scope.profile.images.length == 0){
+                        $state.go('managephoto');
+                    }else{
+                        $scope.acceptRequest(obj);
+                    }
+
+                }
+
+            }
+
+        }
+
+
+        $scope.acceptRequest = acceptRequest;
+        function acceptRequest(obj){
+            console.log(obj);
+            $http({
+                method: 'GET',
+                url: resourceUrl.url()+'response/accepted/'+obj.id +
+                '?&token=' + storageService.get("token")
+            }).then(function successCallback(response) {
+                console.log(response);
+                if(!response.data.error){
+
+                    $scope.details.header = 'Request Accepted Successfully';
+
+                }
+                $scope.open();
+
+
+
+                $timeout(function() {
+                    $state.transitionTo($state.current, $stateParams, {
+                        reload: true,
+                        inherit: false,
+                        notify: true
+                    });
+                }, 2000);
+            }, function errorCallback(response) {
+                console.log(response)
+            });
+        }
+
+
 
         $scope.respondAction = respondAction;
 
@@ -256,7 +385,7 @@
                 && viewProfile.communication_latest[0] != '') {
 
                 $scope.showConversationAction = true;
-                $scope.communication_type = 'received';
+                $scope.communication_type = 'sent';
                 $scope.communication = {
                     id: viewProfile.communication_latest[0],
                     action: viewProfile.communication_latest[1],
@@ -268,7 +397,6 @@
                 }
                 console.log("check",$scope.communication);
             }else{
-                console.log("show conversation trueeeeeeeeeeeeee")
                 $scope.showConversationAction = false;
             }
 

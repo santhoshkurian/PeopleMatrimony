@@ -213,35 +213,42 @@
                                  <span ng-if="communication.action == 'connect'">Interest Sent
                                  </span>
                     <span ng-if="communication.action == 'field'">
-                                 <span ng-if="communication.field_name == 'photo_request'">Photo Request Sent </span>
-                    <span ng-if="communication.field_name == 'smoking'">Add Smoking Request Sent </span>
-                    <span ng-if="communication.field_name == 'drinking'">Add Drinking Request Sent </span>
-                    <span ng-if="communication.field_name == 'income'">Add Income Request Sent </span>
-                    <span ng-if="communication.field_name == 'education'">Add Education Request Sent </span>
-                    <span ng-if="communication.field_name == 'family'">Add Family Request Sent </span>
-                    <span ng-if="communication.field_name == 'family_status'">Add Family Status Request Sent </span>
-                    <span ng-if="communication.field_name == 'origin'">Add Origin Request Sent </span>
-                    <span ng-if="communication.field_name == 'about_family'">Add About Family Request Sent </span>
+                                 <span ng-if="communication.field_name == 'photo_request'">Photo Details   </span>
+                    <span ng-if="communication.field_name == 'smoking'">Add Smoking Details  </span>
+                    <span ng-if="communication.field_name == 'drinking'">Add Drinking Details </span>
+                    <span ng-if="communication.field_name == 'income'">Add Income Details  </span>
+                    <span ng-if="communication.field_name == 'education'">Add Education Details  </span>
+                    <span ng-if="communication.field_name == 'occupation'">Add Occupation Details  </span>
+                    <span ng-if="communication.field_name == 'family'">Add Family Details  </span>
+                    <span ng-if="communication.field_name == 'family_status'">Add Family Status Details  </span>
+                    <span ng-if="communication.field_name == 'origin'">Add Origin Details  </span>
+                    <span ng-if="communication.field_name == 'about_family'">Add About Family Details  </span>
+                         <span ng-if="communication.status == 'pending'">Requested </span>
+                        <span ng-if="communication.status != 'pending'">{{communication.status}}</span>
                     </span>
                     </span>
                     <span ng-if="communication_type == 'received'">
-                                 <span ng-if="communication.action == 'connect'">Interest Received
+                                 <span ng-if="communication.action == 'connect'">Interest
                                  </span>
                     <span ng-if="communication.action == 'field'">
-                                 <span ng-if="communication.field_name == 'photo_request'">Photo Details Requested </span>
-                    <span ng-if="communication.field_name == 'smoking'">Smoking Details Requested </span>
-                    <span ng-if="communication.field_name == 'drinking'">Drinking Details Requested </span>
-                    <span ng-if="communication.field_name == 'income'">Income Details Requested </span>
-                    <span ng-if="communication.field_name == 'education'">Education Details Requested </span>
-                    <span ng-if="communication.field_name == 'family'">Family Details Requested </span>
-                    <span ng-if="communication.field_name == 'family_status'">Family Status Details Requested </span>
-                    <span ng-if="communication.field_name == 'origin'">Origin Details Requested </span>
-                    <span ng-if="communication.field_name == 'about_family'">About Family Details Requested </span>
+                                 <span ng-if="communication.field_name == 'photo_request'">Photo Details  </span>
+                    <span ng-if="communication.field_name == 'smoking'">Smoking Details  </span>
+                    <span ng-if="communication.field_name == 'drinking'">Drinking Details  </span>
+                    <span ng-if="communication.field_name == 'income'">Income Details  </span>
+                    <span ng-if="communication.field_name == 'occupation'">Occupation Details  </span>
+                    <span ng-if="communication.field_name == 'education'">Education Details  </span>
+                    <span ng-if="communication.field_name == 'family'">Family Details  </span>
+                    <span ng-if="communication.field_name == 'family_status'">Family Status Details  </span>
+                    <span ng-if="communication.field_name == 'origin'">Origin Details  </span>
+                    <span ng-if="communication.field_name == 'about_family'">About Family Details  </span>
                     </span>
+                        <span ng-if="communication.status == 'pending'">Received </span>
+                        <span ng-if="communication.status != 'pending'">{{communication.status}}</span>
                     </span>
                                     </div>
                                     <div style="text-align: right">{{communication.date}}</div>
-                                    <div style="margin-top: 10px">{{communication.content}}</div>
+                                    <div style="margin-top: 10px" ng-if="communication.status == 'pending'">{{communication.content}}</div>
+                                    <div style="margin-top: 10px" ng-if="communication.status != 'pending'">{{communication.response}}</div>
                                     <div style="margin-top: 10px" ng-if="communication_type == 'sent'">
                                         <button ng-if="communication.action != 'connect'" type="button"
                                                 class=" uppercase btn red input-rounded" ng-click="sendInterest()">
@@ -251,14 +258,14 @@
                                             Sent Mail
                                         </button>
                                     </div>
-                                    <div style="margin-top: 10px" ng-if="showConversationAction">
+                                    <div style="margin-top: 10px" ng-if="communication_type == 'received' && showConversationAction && communication.status == 'pending'">
                                         <button type="button" class=" uppercase btn red input-rounded"
-                                                ng-click="respondAction(communication.id_activity,'accepted',view)">
+                                                ng-click="respondSuccessAction(communication)">
                                             <span ng-if="communication.action == 'connect'">YES</span>
                         <span ng-if="communication.action == 'field'"><span
                                 ng-if="communication.field_name == 'photo_request'">Add Photo</span>
                         <span ng-if="communication.field_name == 'smoking'">Add Smoking   </span>
-                        <span ng-if="communication.field_name == 'drinking'">Add Smoking   </span>
+                        <span ng-if="communication.field_name == 'drinking'">Add Drinking   </span>
                         <span ng-if="communication.field_name == 'income'">Add Income   </span>
                         <span ng-if="communication.field_name == 'education'">Add Education   </span>
                         <span ng-if="communication.field_name == 'occupation'">Add Occupation   </span>
