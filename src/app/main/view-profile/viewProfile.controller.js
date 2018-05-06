@@ -8,8 +8,8 @@
         .controller('enlargePhotoController', enlargePhotoController);
 
     /** @ngInject */
-    function ViewProfileController(similarProfiles,$scope,$http,$uibModal,storageService,$state,$stateParams,resourceUrl,viewProfile,$timeout) {
-        $('html, body').animate({ scrollTop: 0 }, 'fast');
+    function ViewProfileController(similarProfiles, $scope, $http, $uibModal, storageService, $state, $stateParams, resourceUrl, viewProfile, $timeout) {
+        $('html, body').animate({scrollTop: 0}, 'fast');
 
         console.log("check", viewProfile);
         console.log("check", similarProfiles);
@@ -28,31 +28,23 @@
         $scope.similarProfiles = similarProfiles;
 
         $scope.print = print;
-        function print(){
+        function print() {
             window.print();
         }
+
         $scope.logout = logout;
-        function logout(){
+        function logout() {
             $http({
                 method: 'GET',
-                url: resourceUrl.url()+'user/logout?'+
-                'id_people='+storageService.get("id")+'&token='+storageService.get("token")
+                url: resourceUrl.url() + 'user/logout?' +
+                'id_people=' + storageService.get("id") + '&token=' + storageService.get("token")
             }).then(function successCallback(response) {
-                storageService.set("token",'');
-                storageService.set("id",'');
-                storageService.set("image_url",'');
-                storageService.set("name",'');
-                storageService.set("package",'');
-                storageService.set("regular_search",'');
+                storageService.clear();
                 $state.go('login');
-
             }, function errorCallback(response) {
 
             });
         }
-
-        console.log($scope.drinkingReq);
-        console.log($scope.smokingReq);
 
         $scope.percentage = 0;
         $scope.viewProfile = true;
@@ -67,60 +59,61 @@
         $scope.selectType = selectType;
         $scope.enlargePhoto = enlargePhoto;
         $scope.skipInterestAction = skipInterestAction;
-        $scope.skipBlockAction = skipBlockAction;
         $scope.partnerImageUrl = "";
-        $scope.details ={};
+        $scope.details = {};
+
 
         function skipInterestAction() {
             $scope.showInterestAction = false;
-            if($scope.data.blocked == 'no' && !$scope.showInterestAction){
+            if ($scope.data.blocked == 'no' && !$scope.showInterestAction) {
                 $scope.showBlockAction = true;
             }
-            if($scope.converstionCount > 0 && !$scope.showInterestAction && !$scope.showBlockAction){
+            if ($scope.converstionCount > 0 && !$scope.showInterestAction && !$scope.showBlockAction) {
                 $scope.showConversationAction = true;
             }
         }
 
-        function skipBlockAction() {
-            $scope.showBlockAction = false;
-            if($scope.converstionCount > 0 && !$scope.showInterestAction && !$scope.showBlockAction){
-                $scope.showConversationAction = true;
-            }
-
-        }
+        //function skipBlockAction() {
+        //    $scope.showBlockAction = false;
+        //    if ($scope.converstionCount > 0 && !$scope.showInterestAction && !$scope.showBlockAction) {
+        //        $scope.showConversationAction = true;
+        //    }
+        //
+        //}
 
         $scope.respondAction = respondAction;
 
-        function respondAction(comId,action,obj) {
-            $scope.details = {id:obj.id_people,name:obj.name,img:obj.images};
+        function respondAction(comId, action, obj) {
+            $scope.details = {id: obj.id_people, name: obj.name, img: obj.images};
 
             $http({
                 method: 'GET',
-                url: resourceUrl.url()+'response/'+action+'/'+comId +
+                url: resourceUrl.url() + 'response/' + action + '/' + comId +
                 '?&token=' + storageService.get("token")
             }).then(function successCallback(response) {
                 console.log(response);
                 $scope.open();
-                if(response.data.code == '400'){
-                    if(action == 'declined'){
+                if (response.data.code == '400') {
+                    if (action == 'declined') {
                         $scope.details.header = 'Re invalid! . Please try again ';
-                    }else{
+                    } else {
                         $scope.details.header = 'Request Accepted Successfully';
 
                     }
 
 
-                }else{
-                    if(action == 'declined'){
+                } else {
+                    if (action == 'declined') {
                         $scope.details.header = 'Request rejected ';
-                    }else{
+                    } else {
                         $scope.details.header = 'Request Accepted Successfully';
 
-                    }                    $scope.showMessage=true;
-                    $scope.showAction=false;
+                    }
+                    $scope.showMessage = true;
+                    $scope.showAction = false;
 
                 }
-                $timeout(function() {
+                $timeout(function () {
                     $state.transitionTo($state.current, $stateParams, {
                         reload: true,
                         inherit: false,
@@ -131,6 +124,7 @@
                 console.log(response)
             });
         }
+
         $scope.calculateHeight = calculateHeight;
 
         function calculateHeight(obj) {
@@ -204,121 +198,147 @@
         }
 
 
-
         function selectType(type) {
             $scope.viewType = type;
         }
+
         $scope.communication = null;
         $scope.communication_type = null;
         $scope.converstionCount = 0;
 
         if (!viewProfile.error) {
-            viewProfile.communication.sent.filter(function(a){
+            viewProfile.communication.sent.filter(function (a) {
                 console.log(a);
-                if(a.field_name == 'drinking'){
+                if (a.field_name == 'drinking') {
                     $scope.drinkingReq = true;
                 }
-                if(a.field_name == 'smoking'){
+                if (a.field_name == 'smoking') {
                     $scope.smokingReq = true;
                 }
-                if(a.field_name == 'education'){
+                if (a.field_name == 'education') {
                     $scope.educationReq = true;
                 }
-                if(a.field_name == 'income'){
+                if (a.field_name == 'income') {
                     $scope.incomeReq = true;
                 }
-                if(a.field_name == 'occupation'){
+                if (a.field_name == 'occupation') {
                     $scope.occupationReq = true;
                 }
-                if(a.field_name == 'origin'){
+                if (a.field_name == 'origin') {
                     $scope.originReq = true;
                 }
-                if(a.field_name == 'family'){
+                if (a.field_name == 'family') {
                     $scope.familyReq = true;
                 }
-                if(a.field_name == 'family_status'){
+                if (a.field_name == 'family_status') {
                     $scope.family_statusReq = true;
                 }
-                if(a.field_name == 'about_family'){
+                if (a.field_name == 'about_family') {
                     $scope.about_familyReq = true;
                 }
-                if(a.field_name == 'photo_request'){
+                if (a.field_name == 'photo_request') {
                     $scope.photo_reqReq = true;
                 }
             });
             $scope.converstionCount = viewProfile.communication.sent.length + viewProfile.communication.received.length;
-            if(viewProfile.communication.sent.length > 0){
-                $scope.communication = viewProfile.communication.sent[0];
-                $scope.communication_type = 'sent';
+
+            if (viewProfile.blocked == 'yes') {
+            $scope.showBlockAction = true;
             }else{
-                if(viewProfile.communication.received.length > 0) {
-                $scope.communication = viewProfile.communication.received[0];
-                    $scope.communication_type = 'received';
+                $scope.showBlockAction = false;
 
-                }
             }
 
-        $scope.data = viewProfile;
-            console.log("data",$scope.data);
-            if($scope.data.interest == ''){
-                $scope.showInterestAction = true;
-            }
-            if(!$scope.showInterestAction){
-                $scope.showBlockAction = true;
-            }
-            if($scope.converstionCount > 0 && !$scope.showInterestAction && !$scope.showBlockAction){
+
+            if (!$scope.showBlockAction && viewProfile.communication_latest[0] != null
+                && viewProfile.communication_latest[0] != 0
+                && viewProfile.communication_latest[0] != '') {
+
                 $scope.showConversationAction = true;
+                $scope.communication_type = 'received';
+                $scope.communication = {
+                    id: viewProfile.communication_latest[0],
+                    action: viewProfile.communication_latest[1],
+                    date: viewProfile.communication_latest[2],
+                    status: viewProfile.communication_latest[3],
+                    field_name: viewProfile.communication_latest[4],
+                    content: viewProfile.communication_latest[5],
+                    response: viewProfile.communication_latest[6]
+                }
+                console.log("check",$scope.communication);
+            }else{
+                console.log("show conversation trueeeeeeeeeeeeee")
+                $scope.showConversationAction = false;
             }
-        $scope.dataview = viewProfile;
-        $scope.view = viewProfile.user;
-        $scope.login_user = viewProfile.login_user;
-        $scope.preference = viewProfile.preference_matches;
-        $scope.shortListed = viewProfile.shortlisted;
-        $scope.pref = viewProfile.user.preferences;
-            console.log("preffffff",$scope.pref)
-            $scope.enlarge = {name:$scope.view.name,id:$scope.view.id_people}
-            $scope.details = {id:$scope.view.id_people,name:$scope.view.name,img:$scope.view.images};
 
-        }else{
+            if(!$scope.showConversationAction && !$scope.showBlockAction){
+                $scope.showInterestAction = true;
+
+            }
+
+
+
+
+            $scope.data = viewProfile;
+            console.log("data", $scope.data);
+            //if ($scope.data.interest == '') {
+            //    $scope.showInterestAction = true;
+            //}
+            //if (!$scope.showInterestAction) {
+            //    $scope.showBlockAction = true;
+            //}
+
+            $scope.dataview = viewProfile;
+            $scope.view = viewProfile.user;
+            $scope.login_user = viewProfile.login_user;
+            $scope.preference = viewProfile.preference_matches;
+            $scope.shortListed = viewProfile.shortlisted;
+            $scope.pref = viewProfile.user.preferences;
+            console.log("preffffff", $scope.pref)
+            $scope.enlarge = {name: $scope.view.name, id: $scope.view.id_people}
+            $scope.details = {id: $scope.view.id_people, name: $scope.view.name, img: $scope.view.images};
+
+        } else {
             $scope.viewProfile = false;
             $scope.profileAvailableMsg = viewProfile.message;
 
         }
 
 
-        function enlargePhoto(obj1){
+        function enlargePhoto(obj1) {
             $scope.enlarge.partnerImageUrl = obj1
             $scope.enlargeOpen();
 
         }
+
         $scope.shortlist = shortlist;
         $scope.sendInterest = sendInterest;
 
         $scope.moreConversation = moreConversation;
 
-        function moreConversation(id){
-            var url = $state.href('messages.communication', {id: $scope.view.id_people,page:"sent"});
-            window.open(url,'_blank');
+        function moreConversation(id) {
+            var url = $state.href('messages.communication', {id: $scope.view.id_people, page: "sent"});
+            window.open(url, '_blank');
         }
 
         function sendInterest() {
             $http({
                 method: 'GET',
-                url: resourceUrl.url()+'connect/send?' +
+                url: resourceUrl.url() + 'connect/send?' +
                 '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&partner=' + $scope.view.id_people
             }).then(function successCallback(response) {
                 console.log(response)
                 $scope.open();
-                if(response.data.code == '400'){
+                if (response.data.code == '400') {
                     $scope.details.header = 'Already send an interest';
 
-                }else{
+                } else {
                     $scope.details.header = 'Interest Sent Successfully';
-                    $scope.showMessage=true;
-                    $scope.showAction=false;
+                    $scope.showMessage = true;
+                    $scope.showAction = false;
 
                 }
-                $timeout(function() {
+                $timeout(function () {
                     $state.transitionTo($state.current, $stateParams, {
                         reload: true,
                         inherit: false,
@@ -330,7 +350,6 @@
                 console.log(response)
 
 
-
             });
 
 
@@ -339,16 +358,16 @@
         function shortlist() {
             $http({
                 method: 'GET',
-                url: resourceUrl.url()+'do/shortlist?' +
+                url: resourceUrl.url() + 'do/shortlist?' +
                 '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&view_id=' + $scope.view.id_people
             }).then(function successCallback(response) {
                 console.log(response)
                 $scope.open();
-                if(response.data.code == '200'){
+                if (response.data.code == '200') {
                     $scope.details.header = 'Shortlisted Successfully';
 
                 }
-                $timeout(function() {
+                $timeout(function () {
                     $state.transitionTo($state.current, $stateParams, {
                         reload: true,
                         inherit: false,
@@ -366,21 +385,21 @@
 
 
         }
+
         $scope.basicRequest = '';
         $scope.professionRequest = '';
         $scope.familyRequest = '';
         $scope.aboutFamilyRequest = '';
 
 
-        $scope.requests = function(obj1,obj2){
+        $scope.requests = function (obj1, obj2) {
             $scope.details.field = obj1;
-
 
 
             $http({
                 method: 'GET',
-                url: resourceUrl.url()+'add/field?' +
-                '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&partner=' + $scope.view.id_people+'&field='+obj1
+                url: resourceUrl.url() + 'add/field?' +
+                '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&partner=' + $scope.view.id_people + '&field=' + obj1
             }).then(function successCallback(response) {
                 console.log(response)
                 $scope.open();
@@ -388,7 +407,8 @@
                 //$scope[obj2] = 'Request send successfully';
                 $scope.details.header = 'Request send successfully';
 
-                $timeout(function() { $scope[obj2] = '';
+                $timeout(function () {
+                    $scope[obj2] = '';
                     $state.transitionTo($state.current, $stateParams, {
                         reload: true,
                         inherit: false,
@@ -412,23 +432,23 @@
 
         $scope.blockPartner = blockPartner;
 
-        function blockPartner(){
+        function blockPartner() {
             console.log("block user");
             $http({
                 method: 'GET',
-                url: resourceUrl.url()+'do/block?' +
+                url: resourceUrl.url() + 'do/block?' +
                 '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&view_id=' + $scope.view.id_people
             }).then(function successCallback(response) {
                 console.log(response);
                 $scope.open();
-                if(response.data.message == 'Already exists'){
+                if (response.data.message == 'Already exists') {
                     $scope.details.header = 'Already Blocked this user';
 
-                }else{
+                } else {
                     $scope.details.header = 'User Blocked Successfully';
 
                 }
-                $timeout(function() {
+                $timeout(function () {
                     $state.transitionTo($state.current, $stateParams, {
                         reload: true,
                         inherit: false,
@@ -451,23 +471,23 @@
 
         $scope.unblockPartner = unblockPartner;
 
-        function unblockPartner(){
+        function unblockPartner() {
             console.log("unblockPartner user");
             $http({
                 method: 'GET',
-                url: resourceUrl.url()+'do/unblock?' +
+                url: resourceUrl.url() + 'do/unblock?' +
                 '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&view_id=' + $scope.view.id_people
             }).then(function successCallback(response) {
                 console.log(response);
                 $scope.open();
-                if(response.data.message == 'Already exists'){
+                if (response.data.message == 'Already exists') {
                     $scope.details.header = 'Already Blocked this user';
 
-                }else{
+                } else {
                     $scope.details.header = 'User unBlocked Successfully';
 
                 }
-                $timeout(function() {
+                $timeout(function () {
                     $state.transitionTo($state.current, $stateParams, {
                         reload: true,
                         inherit: false,
@@ -486,7 +506,6 @@
 
             });
         }
-
 
 
         $scope.animationsEnabled = true;
@@ -532,17 +551,12 @@
         }
 
 
-
-
-
-
-
     }
 
-    function modalController($uibModalInstance, items,$state){
+    function modalController($uibModalInstance, items, $state) {
         var $ctrl = this;
         $ctrl.items = items;
-        console.log("cheeeeeeeeeeeeeeeek",$ctrl.items);
+        console.log("cheeeeeeeeeeeeeeeek", $ctrl.items);
         //$ctrl.selected = {
         //    item: $ctrl.items[0]
         //};
@@ -560,7 +574,7 @@
         };
     }
 
-    function enlargePhotoController($uibModalInstance, items){
+    function enlargePhotoController($uibModalInstance, items) {
         var $ctrl = this;
         $ctrl.items = items;
 
