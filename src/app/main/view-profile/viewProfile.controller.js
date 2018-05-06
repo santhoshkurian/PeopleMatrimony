@@ -5,7 +5,8 @@
         .module('dashboard')
         .controller('ViewProfileController', ViewProfileController)
         .controller('modalController', modalController)
-        .controller('enlargePhotoController', enlargePhotoController);
+        .controller('enlargePhotoController', enlargePhotoController)
+        .controller('profileBlockedController', profileBlockedController);
 
     /** @ngInject */
     function ViewProfileController(similarProfiles, $scope, $http, $uibModal, storageService, $state, $stateParams, resourceUrl, viewProfile, $timeout) {
@@ -394,40 +395,41 @@
 
         $scope.requests = function (obj1, obj2) {
             $scope.details.field = obj1;
+            if($scope.data.blocked == 'yes'){
+                $scope.blockedOpen();
+            }else {
 
 
-            $http({
-                method: 'GET',
-                url: resourceUrl.url() + 'add/field?' +
-                '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&partner=' + $scope.view.id_people + '&field=' + obj1
-            }).then(function successCallback(response) {
-                console.log(response)
-                $scope.open();
-                //$scope.details.field = obj1;
-                //$scope[obj2] = 'Request send successfully';
-                $scope.details.header = 'Request send successfully';
+                $http({
+                    method: 'GET',
+                    url: resourceUrl.url() + 'add/field?' +
+                    '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&partner=' + $scope.view.id_people + '&field=' + obj1
+                }).then(function successCallback(response) {
+                    console.log(response)
+                    $scope.open();
+                    //$scope.details.field = obj1;
+                    //$scope[obj2] = 'Request send successfully';
+                    $scope.details.header = 'Request send successfully';
 
-                $timeout(function () {
-                    $scope[obj2] = '';
-                    $state.transitionTo($state.current, $stateParams, {
-                        reload: true,
-                        inherit: false,
-                        notify: true
-                    });
-                }, 2000);
+                    $timeout(function () {
+                        $scope[obj2] = '';
+                        $state.transitionTo($state.current, $stateParams, {
+                            reload: true,
+                            inherit: false,
+                            notify: true
+                        });
+                    }, 2000);
 
-                //$scope.message = "Successfully Shortlisted";
+                    //$scope.message = "Successfully Shortlisted";
 
-            }, function errorCallback(response) {
-                console.log(response)
-                if (response.data.message == 'Already exists') {
-                    //$scope.message = "Already Shortlisted";
-                }
+                }, function errorCallback(response) {
+                    console.log(response)
+                    if (response.data.message == 'Already exists') {
+                        //$scope.message = "Already Shortlisted";
+                    }
 
-            });
-
-            //devapi.peoplematrimony.com/add/field?p_debug=1&partner=PM123456&id=PM607823&field=family;
-
+                });
+            }
         }
 
         $scope.blockPartner = blockPartner;
@@ -550,6 +552,27 @@
             });
         }
 
+        $scope.blockedOpen = function (size, parentSelector) {
+            var parentElem = parentSelector ?
+                angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+            var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'unBlockProfile.html',
+                controller: 'profileBlockedController',
+                controllerAs: '$ctrl',
+                size: 'lg',
+                appendTo: parentElem,
+                resolve: {
+                    items: function () {
+                        return $scope.details;
+                    }
+                }
+            });
+        }
+
+
 
     }
 
@@ -586,6 +609,48 @@
 
         $ctrl.vieImg = function (obj) {
             $ctrl.viewImg = obj;
+        };
+        $ctrl.ok = function () {
+            $uibModalInstance.close($ctrl.selected.item);
+        };
+
+        $ctrl.cancel = function () {
+            $uibModalInstance.dismiss('cancel');
+        };
+
+    }
+
+    function profileBlockedController($scope,$uibModalInstance,$http, $timeout,$state,items,storageService,resourceUrl, $stateParams) {
+        var $ctrl = this;
+        $ctrl.items = items;
+        console.log($ctrl.items.id)
+        $scope.header = "Profile Blocked";
+
+
+        $ctrl.unBlock = function (obj) {
+
+
+            $http({
+                method: 'GET',
+                url: resourceUrl.url() + 'do/unblock?' +
+                '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&view_id=' + $ctrl.items.id
+            }).then(function successCallback(response) {
+                console.log(response);
+
+                $scope.header = 'User unBlocked Successfully';
+
+
+                $timeout(function () {
+                    $state.transitionTo($state.current, $stateParams, {
+                        reload: true,
+                        inherit: false,
+                        notify: true
+                    });
+                    $uibModalInstance.dismiss('cancel');
+                }, 2000);
+            }, function errorCallback(response) {
+                console.log(response);
+            });
         };
         $ctrl.ok = function () {
             $uibModalInstance.close($ctrl.selected.item);

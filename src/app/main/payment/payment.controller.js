@@ -14,6 +14,7 @@
         $scope.id = storageService.get("id");
 
         $scope.payment = paymentList;
+        console.log("payment",$scope.payment);
         $scope.message = '';
         $scope.proceedPayment = false;
         $scope.selectPayment = null;
