@@ -498,19 +498,32 @@
                 views: {
                     'payment@': {
                         templateUrl: 'app/core/layouts/paymentLayout.html',
-                        controller: 'SuccessController as vm'
+                        controller: 'PaymentController as vm'
                     },
                     'toolbar@payment': {
                         templateUrl: 'app/toolbar/dashboard/dbToolbar.html'
                     },
                     'content@payment': {
-                        templateUrl: 'app/main/payment/success/success.html'
+                        templateUrl: 'app/main/payment/success/success.html',
+                        controller: 'SuccessController as vm'
                     },
                     'footer@payment': {
                         templateUrl: 'app/footer/footer.html',
                         controller: 'FooterController as vm'
                     }
                 },resolve: {
+                    viewProfile: function ($http, storageService,resourceUrl,$stateParams) {
+                        return  $http({
+                            method: 'GET',
+                            url: resourceUrl.url()+'user/view?'+
+                            'view_id='+storageService.get('id')+'&token='+storageService.get("token")
+                        }).then(function successCallback(response) {
+                            console.log(response);
+                            return response.data;
+                        }, function errorCallback(response) {
+                            return 'error';
+                        });
+                    }
 
                 }
             })

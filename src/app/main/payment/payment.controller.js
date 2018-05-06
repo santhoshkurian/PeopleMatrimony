@@ -124,6 +124,8 @@
         function selectPackage(obj){
             console.log("check")
             $scope.selectPayment = obj;
+            storageService.set("update_package_id",$scope.selectPayment.id_packages);
+
 
             //$scope.proceedPayment = true;
 
@@ -152,8 +154,10 @@
                     'token=' + storageService.get('token')
                 }).then(function successCallback(response) {
                     console.log(response);
+                    storageService.set("order_id",response.data.membership.payment.order_id);
                     document.getElementById("code").value = response.data.membership.payment.access_code;
                     document.getElementById("enc").value = response.data.membership.payment.encRequest;
+
 
                     document.getElementById("paymentForm").setAttribute("action",response.data.membership.payment.ccavenue_url);
                     document.getElementById("paymentForm").submit();

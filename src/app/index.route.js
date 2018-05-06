@@ -851,13 +851,14 @@
                 views: {
                     'main@': {
                         templateUrl: 'app/core/layouts/paymentLayout.html',
-                        controller: 'PaymentController as vm'
                     },
                     'toolbar@payment': {
-                        templateUrl: 'app/toolbar/dashboard/dbToolbar.html'
+                        templateUrl: 'app/toolbar/dashboard/dbToolbar.html',
+                        controller: 'PaymentController as vm'
                     },
                     'content@payment': {
                         templateUrl: 'app/main/payment/payment.html',
+                        controller: 'PaymentController as vm'
                     },
                     'footer@payment': {
                         templateUrl: 'app/footer/footer.html',
