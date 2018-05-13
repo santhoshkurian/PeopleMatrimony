@@ -87,7 +87,10 @@ console.log("pppppppppppppp",$scope.pageType)
 
 
 
-        //$scope.mainlink = "newMatches";
+        $scope.mainlink = $stateParams.type;
+
+
+
         $scope.showFirstmartialStatus = false;
         $scope.showFirstLanguage = false;
         $scope.showDivisions = false;
@@ -117,6 +120,7 @@ console.log("pppppppppppppp",$scope.pageType)
         $scope.ocuDiv = true;
         $scope.selectFacet = selectFacet;
         $scope.facetSearch = facetSearch;
+        $scope.initalfacetSearch = initalFacetSearch;
         $scope.filterData = {photo_available:false,horoscope_available:false,is_online:false};
         function selectFacet(obj){
             $scope[obj]=!$scope[obj];
@@ -223,6 +227,30 @@ console.log("pppppppppppppp",$scope.pageType)
                 query.push("is_online="+$scope.filterData.is_online)
             }
 
+            query.push($scope.pageType+"=true");
+            query.push("type=search");
+
+            if(query.length > 0 ){
+                query = "&"+query.join('&')
+            }
+            console.log(query)
+            $http({
+                method: 'POST',
+                url: resourceUrl.url()+'matches?' +
+                '&token=' + storageService.get("token")+query
+            }).then(function successCallback(response) {
+                console.log(response)
+                $scope.matches = response.data.matches;
+            }, function errorCallback(response) {
+                console.log(response);
+            });
+
+        }
+        function initalFacetSearch(obj){
+            var query = [];
+
+            query.push(obj+"=true");
+            query.push("type=search");
 
             if(query.length > 0 ){
                 query = "&"+query.join('&')
@@ -280,20 +308,20 @@ console.log("pppppppppppppp",$scope.pageType)
             console.log($scope.currentPage)
         }
 
-        if($scope.pageType == 'shortlist'){
-            shortlisted();
-        }
-        if($scope.pageType == 'viewed'){
-            viewed();
-        }
         if($scope.pageType == 'newMatches'){
-            newMatches();
+            initalFacetSearch('new_matches');
         }
-        if($scope.pageType == 'notYetViewed'){
-            notYetViewed();
+        if($scope.pageType == 'shortlisted'){
+            initalFacetSearch('shortlisted');
         }
-        if($scope.pageType == 'mutalmatches'){
-            mutalmatches();
+        if($scope.pageType == 'viewed_my_profile'){
+            initalFacetSearch('viewed_my_profile');
+        }
+        if($scope.pageType == 'yet_to_be_viewed'){
+            initalFacetSearch('yet_to_be_viewed');
+        }
+        if($scope.pageType == 'viewed_my_profile'){
+            initalFacetSearch('viewed_my_profile');
         }
 
 
@@ -535,16 +563,16 @@ console.log("pppppppppppppp",$scope.pageType)
             "category": "general"}]
 
 
-        $http({
-            method: 'GET',
-            url: resourceUrl.url()+'matches/new?' +
-            '&token=' + storageService.get("token")
-        }).then(function successCallback(response) {
-            console.log(response)
-            $scope.matches = response.data.matches;
-        }, function errorCallback(response) {
-            console.log(response);
-        });
+        //$http({
+        //    method: 'GET',
+        //    url: resourceUrl.url()+'matches/new?' +
+        //    '&token=' + storageService.get("token")
+        //}).then(function successCallback(response) {
+        //    console.log(response)
+        //    $scope.matches = response.data.matches;
+        //}, function errorCallback(response) {
+        //    console.log(response);
+        //});
 
         $scope.match = {mstatus:null}
 
