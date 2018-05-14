@@ -193,6 +193,8 @@
                 if(response.data.code == '400'){
 
                     $scope.details.header = 'Request Rejected Successfully';
+                    $scope.details.showContent = false;
+
 
                 }
 

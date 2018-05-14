@@ -533,14 +533,14 @@ console.log("pppppppppppppp",$scope.pageType)
                 '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&partner=' + id
             }).then(function successCallback(response) {
                 console.log(response)
-                $scope.message = "send interest successfully";
+                $scope.message = "sent interest successfully";
                 $timeout(function() { $scope.message = '';}, 2000);
 
 
             }, function errorCallback(response) {
                 console.log(response)
                 if (response.data.code == '400') {
-                    $scope.message = "Already send a Interest";
+                    $scope.message = "Already sent an Interest";
                 }
                 $timeout(function() { $scope.message = '';}, 2000);
 

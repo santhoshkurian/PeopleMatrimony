@@ -224,17 +224,21 @@
                 console.log(response);
                 $scope.open();
                 if (response.data.code == '400') {
-                    if (action == 'declined') {
+                    $scope.details.header = 'Re invalid! . Please try again ';
+                    $scope.details.showContent = false;
+                   /* if (action == 'declined') {
                         $scope.details.header = 'Re invalid! . Please try again ';
+                        $scope.details.showContent = false;
                     } else {
                         $scope.details.header = 'Request Accepted Successfully';
 
                     }
-
+*/
 
                 } else {
                     if (action == 'declined') {
-                        $scope.details.header = 'Request rejected ';
+                        $scope.details.header = 'Declined Successfully';
+                        $scope.details.showContent = false;
                     } else {
                         $scope.details.header = 'Request Accepted Successfully';
 
@@ -425,7 +429,7 @@
             $scope.pref = viewProfile.user.preferences;
             console.log("preffffff", $scope.pref)
             $scope.enlarge = {name: $scope.view.name, id: $scope.view.id_people}
-            $scope.details = {id: $scope.view.id_people, name: $scope.view.name, img: $scope.view.images};
+            $scope.details = {id: $scope.view.id_people,showContent:true, name: $scope.view.name, img: $scope.view.images};
 
         } else {
             $scope.viewProfile = false;
@@ -537,7 +541,7 @@
                     $scope.open();
                     //$scope.details.field = obj1;
                     //$scope[obj2] = 'Request send successfully';
-                    $scope.details.header = 'Request send successfully';
+                    $scope.details.header = 'Request sent successfully';
 
                     $timeout(function () {
                         $scope[obj2] = '';
@@ -573,9 +577,11 @@
                 $scope.open();
                 if (response.data.message == 'Already exists') {
                     $scope.details.header = 'Already Blocked this user';
+                    $scope.details.showContent = false;
 
                 } else {
-                    $scope.details.header = 'User Blocked Successfully';
+                    $scope.details.header = 'Blocked Successfully';
+                    $scope.details.showContent = false;
 
                 }
                 $timeout(function () {
@@ -610,11 +616,12 @@
             }).then(function successCallback(response) {
                 console.log(response);
                 $scope.open();
+                $scope.details.showContent = false;
                 if (response.data.message == 'Already exists') {
                     $scope.details.header = 'Already Blocked this user';
 
                 } else {
-                    $scope.details.header = 'User unBlocked Successfully';
+                    $scope.details.header = 'Unblocked Successfully';
 
                 }
                 $timeout(function () {
