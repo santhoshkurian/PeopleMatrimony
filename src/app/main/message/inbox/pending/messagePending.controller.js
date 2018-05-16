@@ -20,6 +20,7 @@
 
         $scope.viewProfile = viewProfile;
         function viewProfile(id) {
+            console.log(id)
             $state.go('viewProfile', {view_id: id});
         }
 
@@ -97,7 +98,7 @@
             if(obj.action == 'field'){
                 if(obj.field_name == 'family'){
                     if(profile.user.family_type == '' || profile.user.family_type == null){
-                        $state.go('profile');
+                        $state.go('profile',{type:"add_family"});
                     }else{
                         $scope.acceptRequest(obj);
                     }
@@ -105,7 +106,7 @@
                 }
                 if(obj.field_name == 'smoking'){
                     if(profile.user.smoking_habit == '' || profile.user.smoking_habit == null){
-                        $state.go('profile');
+                        $state.go('profile',{type:"add_smoking"});
                     }else{
                         $scope.acceptRequest(obj);
                     }
@@ -113,7 +114,7 @@
                 }
                 if(obj.field_name == 'drinking'){
                     if(profile.user.drinking_habit == '' || profile.user.drinking_habit == null){
-                        $state.go('profile');
+                        $state.go('profile',{type:"add_drinking"});
                     }else{
                         $scope.acceptRequest(obj);
                     }
@@ -121,7 +122,7 @@
                 }
                 if(obj.field_name == 'income'){
                     if(profile.user.income == '' || profile.user.income == null){
-                        $state.go('profile');
+                        $state.go('profile',{type:"add_income"});
                     }else{
                         $scope.acceptRequest(obj);
                     }
@@ -129,7 +130,7 @@
                 }
                 if(obj.field_name == 'occupation'){
                     if(profile.user.occupation == '' || profile.user.occupation == null){
-                        $state.go('profile');
+                        $state.go('profile',{type:"add_occupation"});
                     }else{
                         $scope.acceptRequest(obj);
                     }
@@ -137,7 +138,7 @@
                 }
                 if(obj.field_name == 'family'){
                     if(profile.user.family_type == '' || profile.user.family_type == null){
-                        $state.go('profile');
+                        $state.go('profile',{type:"add_family"});
                     }else{
                         $scope.acceptRequest(obj);
                     }
@@ -145,7 +146,7 @@
                 }
                 if(obj.field_name == 'family_status'){
                     if(profile.user.family_status == '' || profile.user.family_status == null){
-                        $state.go('profile');
+                        $state.go('profile',{type:"add_family_status"});
                     }else{
                         $scope.acceptRequest(obj);
                     }
@@ -153,7 +154,7 @@
                 }
                 if(obj.field_name == 'origin'){
                     if(profile.user.ancestral_origin == '' || profile.user.ancestral_origin == null){
-                        $state.go('profile');
+                        $state.go('profile',{type:"add_origin"});
                     }else{
                         $scope.acceptRequest(obj);
                     }
@@ -161,7 +162,7 @@
                 }
                 if(obj.field_name == 'about_family'){
                     if(profile.user.about_family == '' || profile.user.about_family == null){
-                        $state.go('profile');
+                        $state.go('profile',{type:"add_about_family"});
                     }else{
                         $scope.acceptRequest(obj);
                     }

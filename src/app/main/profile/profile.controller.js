@@ -8,16 +8,12 @@
     /** @ngInject */
     function ProfileController($http, $scope,$location, $state, resourceUrl, storageService, $stateParams, populate, profile, $window) {
 
+        $('html, body').animate({
+            scrollTop: 0
+        }, 'fast');
 
         $scope.focustype = $stateParams.type;
-        if($scope.focustype == 'partner'){
-            $location.hash('partnerPreferences');
 
-        }else{
-            $('html, body').animate({
-                scrollTop: 0
-            }, 'fast');
-        }
 
 
         $scope.image_url = storageService.get("image_url");
@@ -182,6 +178,30 @@
 
         $scope.calculateHeight = calculateHeight;
         $scope.commaSeperatedValue = commaSeperatedValue;
+        if($scope.focustype == 'partner'){
+            $location.hash('partnerPreferences');
+
+        }
+
+        if($scope.focustype == 'add_drinking' ||
+            $scope.focustype == 'add_smoking'){
+            $location.hash('basicdetails');
+            $scope.basicDetails = true;
+        }
+        if($scope.focustype == 'add_income' || $scope.focustype == 'add_occupation'){
+                    $location.hash('prof_info');
+                    $scope.education = true;
+        }
+        if($scope.focustype == 'add_about_family'){
+                    $location.hash('prof_info');
+                    $scope.education = true;
+        }
+        if($scope.focustype == 'add_family' ||
+            $scope.focustype == 'add_family_status' ||
+            $scope.focustype == 'add_origin'){
+                    $location.hash('family_details');
+                    $scope.fdetails = true;
+        }
 
 
         $scope.$watch('setPartnerReligion.religion', selectRegliousPreference);
