@@ -14,6 +14,8 @@
 
         $scope.focustype = $stateParams.type;
 
+        console.log("profile",profile)
+
 
 
         $scope.image_url = storageService.get("image_url");

@@ -10,7 +10,7 @@
     function ProfileToolbarController($scope,$location)
     {
 
-        console.log("ProfileToolbarController")
+        console.log("ProfileToolbarController",$location.path())
 
         $scope.isActive = function (viewLocation) {
             return viewLocation === $location.path();

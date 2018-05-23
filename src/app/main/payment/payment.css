@@ -40,8 +40,8 @@
 
 .price-button-light{
     width:150px!important;
-    color: #dbdbdb!important;
-    border-color: #dbdbdb !important;
+    color: #9f9f9f !important;
+    border-color: #b0b0b0 !important;
     border-width: 2px!important;
     font-size: 15px!important;
 }
@@ -54,7 +54,7 @@
 
 .price-color-light{
     width:150px!important;
-    color: #dbdbdb!important;
+    color: #a7a7a7 !important;
     border-color: #dbdbdb !important;
     font-size: 25px!important;
 }
