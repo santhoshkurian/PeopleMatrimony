@@ -16,7 +16,7 @@
                 views    : {
                     'content@profile'         : {
                         templateUrl: 'app/main/profile/contactdetails/contactDetails.html',
-                        controller : 'DeclineController as vm'
+                        controller : 'ContactDetailsController as vm'
                     }
                 },
                 resolve  : {

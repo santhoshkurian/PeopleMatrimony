@@ -356,6 +356,7 @@ if($scope.terms.agree) {
                     $uibModalInstance.close(vm.selected.item);
                     storageService.set("token", response.data.access_token)
                     storageService.set("id", response.data.id_people);
+
                     storageService.set("regular_search", '');
                     if (response.data.image == '') {
                         storageService.set("image_url", "assets/defaultImages/avatar.png");
@@ -366,6 +367,13 @@ if($scope.terms.agree) {
                     }
                     storageService.set("name", response.data.name);
                     storageService.set("valid", true);
+                    if(response.data.package != null && response.data.package.size > 0){
+                        storageService.set("package_name", response.data.package.package_name);
+                        storageService.set("account_type", "Paid");
+                    }else{
+                        storageService.set("package_name", "Free");
+                        storageService.set("account_type", "Free");
+                    }
                     $state.go('app');
                 }else{
                     $scope.message = response.data.message;
