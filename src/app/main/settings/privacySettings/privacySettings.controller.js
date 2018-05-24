@@ -15,6 +15,9 @@
         $scope.profile = profile;
         console.log("profile",profile);
 
+        $scope.package = storageService.get("package_name");
+        $scope.account_type = storageService.get("account_type");
+
         $scope.logout = logout;
         function logout(){
             $http({

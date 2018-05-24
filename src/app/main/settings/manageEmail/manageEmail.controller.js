@@ -11,6 +11,8 @@
         $('html, body').animate({ scrollTop: 0 }, 'fast');
 
         console.log(alert);
+        $scope.package = storageService.get("package_name");
+        $scope.account_type = storageService.get("account_type");
         $scope.alert = alert;
         $scope.updateAlert = updateAlert;
         $scope.logout = logout;

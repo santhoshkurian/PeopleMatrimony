@@ -13,6 +13,8 @@
         console.log("RegularSearchController");
         console.log(populate);
         console.log('profile',profile);
+        $scope.package = storageService.get("package_name");
+        $scope.account_type = storageService.get("account_type");
         $scope.profile = profile;
         $scope.labels = {"select": "Any"}
 

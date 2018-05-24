@@ -13,6 +13,9 @@
         console.log(deactivate);
         $scope.activate = true;
         $scope.deactivate = deactivate.duration;
+        $scope.package = storageService.get("package_name");
+        $scope.account_type = storageService.get("account_type");
+
         if($scope.deactivate == 0){
             $scope.activate = false;
         }

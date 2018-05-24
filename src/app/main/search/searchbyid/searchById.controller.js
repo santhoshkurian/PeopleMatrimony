@@ -9,6 +9,9 @@
     function SearchByIdController($scope,$http,$state,resourceUrl,storageService,$stateParams,$timeout) {
         var vm = this;
         $('html, body').animate({ scrollTop: 0 }, 'fast');
+
+        $scope.package = storageService.get("package_name");
+        $scope.account_type = storageService.get("account_type");
         $scope.viewId = '';
         $scope.gender = null;
         $scope.item=null;

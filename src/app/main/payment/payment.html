@@ -46,7 +46,7 @@
                                                                             </button>
                                                                         </div>
                                                                         <div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">
-                                                                        <span class="old-price" ng-class="{'price-color': selectPackageDetails == 'classic3','price-color-light': selectPackageDetails != 'classic3'}" style="font-size: 18px!important;">Rs 2500</span>
+                                                                        <span class="old-price" ng-class="{'price-color': selectPackageDetails == 'classic3','price-color-light': selectPackageDetails != 'classic3'}" style="font-size: 18px!important;">Rs {{payment.classic3Months.old_price}}</span>
                                                                         </div>
                                                                         <div class="col-md-12 col-sm-12 col-xs-12  margin-top-10">
                                                                             <span class="new-price"
@@ -68,7 +68,7 @@
                                                                             </button>
                                                                         </div>
                                                                         <div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">
-                                                                        <span class="old-price" ng-class="{'price-color': selectPackageDetails == 'classic3Adv','price-color-light': selectPackageDetails != 'classic3Adv'}" style="font-size: 18px!important;">Rs 6000</span>
+                                                                        <span class="old-price" ng-class="{'price-color': selectPackageDetails == 'classic3Adv','price-color-light': selectPackageDetails != 'classic3Adv'}" style="font-size: 18px!important;">Rs {{payment.classicAdv3Months.old_price}}</span>
                                                                         </div>
                                                                         <div class="col-md-12 col-sm-12 col-xs-12  margin-top-10">
                                                                             <span class="new-price"
@@ -122,7 +122,7 @@
                                                                             </button>
                                                                         </div>
                                                                         <div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">
-                                                                            <span class="old-price" ng-class="{'price-color': selectPackageDetails == 'classic6','price-color-light': selectPackageDetails != 'classic6'}" style="font-size: 18px!important">Rs 5500</span>
+                                                                            <span class="old-price" ng-class="{'price-color': selectPackageDetails == 'classic6','price-color-light': selectPackageDetails != 'classic6'}" style="font-size: 18px!important">Rs {{payment.classic6Months.old_price}}</span>
                                                                         </div>
                                                                         <div class="col-md-12 col-sm-12 col-xs-12  margin-top-10">
                                                                             <span class="new-price"
@@ -144,7 +144,7 @@
                                                                             </button>
                                                                         </div>
                                                                         <div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">
-                                                                        <span class="old-price" ng-class="{'price-color': selectPackageDetails == 'classic6Adv','price-color-light': selectPackageDetails != 'classic6Adv'}" style="font-size: 18px!important">Rs 7500</span>
+                                                                        <span class="old-price" ng-class="{'price-color': selectPackageDetails == 'classic6Adv','price-color-light': selectPackageDetails != 'classic6Adv'}" style="font-size: 18px!important">Rs {{payment.classicAdv6Months.old_price}}</span>
                                                                         </div>
                                                                         <div class="col-md-12 col-sm-12 col-xs-12  margin-top-10">
                                                                             <span class="new-price"
@@ -274,9 +274,9 @@
                                                                         Flexiable
                                                                     </button>
                                                                 </div>
-                                                                <!--<div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">-->
-                                                                <!--<span class="old-price">Rs {{payment.classicAdv6Months.actual}}</span>-->
-                                                                <!--</div>-->
+                                                                <div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">
+                                                                    <span class="old-price" ng-class="{'price-color': selectPackageDetails == 'classic6Adv','price-color-light': selectPackageDetails != 'classic6Adv'}" style="font-size: 18px!important">Rs {{payment.flexible.old_price}}</span>
+                                                                </div>
                                                                 <div class="col-md-12 col-sm-12 col-xs-12  margin-top-10">
                                                                             <span class="new-price"
                                                                                   ng-class="{'price-color': selectPackageDetails == 'flexible1','price-color-light': selectPackageDetails != 'flexible1'}">Rs {{payment.flexible.price}}</span>

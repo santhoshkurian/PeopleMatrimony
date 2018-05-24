@@ -11,6 +11,9 @@
     function SearchResultsController($timeout,$state,populate,$uibModal,$scope,$http,$stateParams,resourceUrl,storageService) {
         var vm = this;
         $('html, body').animate({ scrollTop: 0 }, 'fast');
+
+        $scope.package = storageService.get("package_name");
+        $scope.account_type = storageService.get("account_type");
         $scope.filterData = {photo_available:false,horoscope_available:false,is_online:false}
         $scope.viewAll = viewAll;
         $scope.enlargeImage = [];

@@ -9,6 +9,9 @@
     function AccountSettingsController(resourceUrl,account,$scope,storageService,$state,$http,$stateParams) {
         $('html, body').animate({ scrollTop: 0 }, 'fast');
 
+        $scope.package = storageService.get("package_name");
+        $scope.account_type = storageService.get("account_type");
+
         $scope.email = account.email;
         $scope.copyemail= angular.copy($scope.email);
         $scope.passwordMsg = null;

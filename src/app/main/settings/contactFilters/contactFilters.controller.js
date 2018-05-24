@@ -13,6 +13,9 @@
         $scope.contact= contact;
         $scope.updateContact = updateContact;
 
+        $scope.package = storageService.get("package_name");
+        $scope.account_type = storageService.get("account_type");
+
         $scope.logout = logout;
         function logout(){
             $http({
