@@ -393,13 +393,13 @@
                 $scope.showConversationAction = true;
                 $scope.communication_type = 'sent';
                 $scope.communication = {
-                    id: viewProfile.communication_latest[0],
-                    action: viewProfile.communication_latest[1],
-                    date: viewProfile.communication_latest[2],
-                    status: viewProfile.communication_latest[3],
-                    field_name: viewProfile.communication_latest[4],
-                    content: viewProfile.communication_latest[5],
-                    response: viewProfile.communication_latest[6]
+                    id: viewProfile.communication_latest[0].id_people,
+                    action: viewProfile.communication_latest[0].action,
+                    date: viewProfile.communication_latest[0].date,
+                    status: viewProfile.communication_latest[0].status,
+                    field_name: viewProfile.communication_latest[0].field_name,
+                    content: viewProfile.communication_latest[0].content,
+                    response: viewProfile.communication_latest[0].response
                 }
                 console.log("check",$scope.communication);
             }else{
