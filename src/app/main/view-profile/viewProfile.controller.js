@@ -6,7 +6,8 @@
         .controller('ViewProfileController', ViewProfileController)
         .controller('modalController', modalController)
         .controller('enlargePhotoController', enlargePhotoController)
-        .controller('profileBlockedController', profileBlockedController);
+        .controller('profileBlockedController', profileBlockedController)
+        .controller('viewContactDetailsController', viewContactDetailsController);
 
     /** @ngInject */
     function ViewProfileController(similarProfiles, $scope, $http, $uibModal, storageService, $state, $stateParams, resourceUrl, viewProfile, $timeout) {
@@ -62,6 +63,7 @@
         $scope.showMessage = false;
         $scope.selectType = selectType;
         $scope.enlargePhoto = enlargePhoto;
+        $scope.viewContactDetails = viewContactDetails;
         $scope.skipInterestAction = skipInterestAction;
         $scope.partnerImageUrl = "";
         $scope.details = {};
@@ -446,6 +448,12 @@
 
         }
 
+
+        function viewContactDetails() {
+            $scope.viewConDetails();
+
+        }
+
         $scope.shortlist = shortlist;
         $scope.sendInterest = sendInterest;
 
@@ -689,6 +697,25 @@
             });
         }
 
+        $scope.viewConDetails = function (size, parentSelector) {
+            var parentElem = parentSelector ?
+                angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+            var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'viewContactDetails.html',
+                controller: 'viewContactDetailsController',
+                controllerAs: '$ctrl',
+                appendTo: parentElem,
+                resolve: {
+                    items: function () {
+                        return $scope.enlarge;
+                    }
+                }
+            });
+        }
+
         $scope.blockedOpen = function (size, parentSelector) {
             var parentElem = parentSelector ?
                 angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
@@ -758,6 +785,48 @@
     }
 
     function profileBlockedController($scope,$uibModalInstance,$http, $timeout,$state,items,storageService,resourceUrl, $stateParams) {
+        var $ctrl = this;
+        $ctrl.items = items;
+        console.log($ctrl.items.id)
+        $scope.header = "Profile Blocked";
+
+
+        $ctrl.unBlock = function (obj) {
+
+
+            $http({
+                method: 'GET',
+                url: resourceUrl.url() + 'do/unblock?' +
+                '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&view_id=' + $ctrl.items.id
+            }).then(function successCallback(response) {
+                console.log(response);
+
+                $scope.header = 'User unBlocked Successfully';
+
+
+                $timeout(function () {
+                    $state.transitionTo($state.current, $stateParams, {
+                        reload: true,
+                        inherit: false,
+                        notify: true
+                    });
+                    $uibModalInstance.dismiss('cancel');
+                }, 2000);
+            }, function errorCallback(response) {
+                console.log(response);
+            });
+        };
+        $ctrl.ok = function () {
+            $uibModalInstance.close($ctrl.selected.item);
+        };
+
+        $ctrl.cancel = function () {
+            $uibModalInstance.dismiss('cancel');
+        };
+
+    }
+
+    function viewContactDetailsController($scope,$uibModalInstance,$http, $timeout,$state,items,storageService,resourceUrl, $stateParams) {
         var $ctrl = this;
         $ctrl.items = items;
         console.log($ctrl.items.id)
