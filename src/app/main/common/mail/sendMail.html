@@ -1,0 +1,56 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-title" style="color: #4cbcac;">
+        <b>Send Mail</b>
+        <button class=" pull-right btn btn-circle btn-icon-only default" type="button" ng-click="$ctrl.cancel()"><i
+                class="fa fa-times"></i></button>
+    </h4>
+</div>
+
+<div class="modal-body">
+    <div class="row" style="margin: 20px">
+
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="font-weight ">From</label>
+                        <input type="text" class="form-control  input-rounded"
+                               ng-model="mail.from">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="font-weight ">To</label>
+                        <input type="text" class="form-control  input-rounded"
+                               ng-model="mail.to">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    Message
+                </div>
+                <div class="col-md-12">
+                     <textarea class="form-control" rows="6"
+                               ng-model="mail.message"></textarea>
+                </div>
+
+                <div class="col-md-12" style="margin-top: 20px">
+                    <button type="button" ng-click="aboutfamily()"
+                            class=" btn btn-default red input-rounded pull-right "
+                            style="color:#ffffea">
+                        Send
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <div class="row">
+        <div class="col-md-12" style="color: grey">
+            To know more about packages call now 9999999999
+        </div>
+    </div>
+</div>

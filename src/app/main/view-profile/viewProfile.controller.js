@@ -65,6 +65,7 @@
         $scope.selectType = selectType;
         $scope.enlargePhoto = enlargePhoto;
         $scope.viewContactDetails = viewContactDetails;
+        $scope.sendMail = sendMail;
         $scope.skipInterestAction = skipInterestAction;
         $scope.partnerImageUrl = "";
         $scope.details = {};
@@ -473,6 +474,12 @@
 
         }
 
+        function sendMail() {
+
+            $scope.sendMailToUser();
+
+        }
+
         $scope.shortlist = shortlist;
         $scope.sendInterest = sendInterest;
 
@@ -725,6 +732,25 @@
                 ariaDescribedBy: 'modal-body',
                 templateUrl: '/app/main/common/contactDetails/contactDetails.html',
                 controller: 'viewContactController',
+                controllerAs: '$ctrl',
+                appendTo: parentElem,
+                resolve: {
+                    items: function () {
+                        return $scope.viewContact;
+                    }
+                }
+            });
+        }
+
+        $scope.sendMailToUser = function (size, parentSelector) {
+            var parentElem = parentSelector ?
+                angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+            var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: '/app/main/common/mail/sendMail.html',
+                controller: 'sendMailController',
                 controllerAs: '$ctrl',
                 appendTo: parentElem,
                 resolve: {
