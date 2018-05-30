@@ -6,19 +6,21 @@
         .controller('ContactDetailsController', ContactDetailsController);
 
     /** @ngInject */
-    function ContactDetailsController(resourceUrl,storageService,$scope,$http,$stateParams,$state,populate) {
+    function ContactDetailsController(resourceUrl,contactDetails,storageService,$scope,$http,$stateParams,$state,populate) {
         $('html, body').animate({ scrollTop: 0 }, 'fast');
-        console.log("ContactDetailsController")
+        console.log("ContactDetailsController");
+        console.log(contactDetails.contact);
+        $scope.cd = contactDetails.contact;
 
 
         $scope.contact = {
-            mobile:null,
-            email:null,
-            parent_mobile:null,
-            whom_to_contact:null,
-            contact_person:null,
-            available_time:null,
-            comments:null
+            mobile:$scope.cd.mobile,
+            email:$scope.cd.email,
+            parent_mobile:$scope.cd.parent_mobile,
+            whom_to_contact:$scope.cd.whom_to_contact,
+            contact_person:$scope.cd.contact_person,
+            available_time:$scope.cd.available_time,
+            comments:$scope.cd.comments
         };
 
         $scope.saveContactDetails = saveContactDetails;

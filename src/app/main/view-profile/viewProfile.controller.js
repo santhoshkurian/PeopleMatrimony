@@ -6,14 +6,15 @@
         .controller('ViewProfileController', ViewProfileController)
         .controller('modalController', modalController)
         .controller('enlargePhotoController', enlargePhotoController)
-        .controller('profileBlockedController', profileBlockedController)
-        .controller('viewContactDetailsController', viewContactDetailsController);
+        .controller('profileBlockedController', profileBlockedController);
 
     /** @ngInject */
-    function ViewProfileController(similarProfiles, $scope, $http, $uibModal, storageService, $state, $stateParams, resourceUrl, viewProfile, $timeout) {
+    function ViewProfileController(similarProfiles, $scope,contactDetails, $http, $uibModal, storageService, $state, $stateParams, resourceUrl, viewProfile, $timeout) {
         $('html, body').animate({scrollTop: 0}, 'fast');
 
         console.log("check", viewProfile);
+        console.log("contactDetails", contactDetails);
+        $scope.con = contactDetails.contact;
         console.log("check", similarProfiles);
         $scope.profile = viewProfile.login_user;
         $scope.drinkingReq = false;
@@ -448,8 +449,26 @@
 
         }
 
+        $scope.viewContact={
+            id:null,
+            name:null,
+            primary_number:null,
+            contact_Person:null,
+            time:null,
+            comments:null,
+            parents_contact_no:null,
+        };
 
         function viewContactDetails() {
+            $scope.viewContact={
+                id:$scope.view.id_people,
+                name:$scope.view.name,
+                primary_number:$scope.con.mobile,
+                contact_Person:$scope.con.whom_to_contact,
+                time:$scope.con.primary_number,
+                comments:$scope.con.comments,
+                parents_contact_no:$scope.con.parent_mobile,
+            };
             $scope.viewConDetails();
 
         }
@@ -704,13 +723,13 @@
                 animation: $scope.animationsEnabled,
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: 'viewContactDetails.html',
-                controller: 'viewContactDetailsController',
+                templateUrl: '/app/main/common/contactDetails/contactDetails.html',
+                controller: 'viewContactController',
                 controllerAs: '$ctrl',
                 appendTo: parentElem,
                 resolve: {
                     items: function () {
-                        return $scope.enlarge;
+                        return $scope.viewContact;
                     }
                 }
             });
@@ -826,45 +845,4 @@
 
     }
 
-    function viewContactDetailsController($scope,$uibModalInstance,$http, $timeout,$state,items,storageService,resourceUrl, $stateParams) {
-        var $ctrl = this;
-        $ctrl.items = items;
-        console.log($ctrl.items.id)
-        $scope.header = "Profile Blocked";
-
-
-        $ctrl.unBlock = function (obj) {
-
-
-            $http({
-                method: 'GET',
-                url: resourceUrl.url() + 'do/unblock?' +
-                '&token=' + storageService.get("token") + '&id=' + storageService.get('id') + '&view_id=' + $ctrl.items.id
-            }).then(function successCallback(response) {
-                console.log(response);
-
-                $scope.header = 'User unBlocked Successfully';
-
-
-                $timeout(function () {
-                    $state.transitionTo($state.current, $stateParams, {
-                        reload: true,
-                        inherit: false,
-                        notify: true
-                    });
-                    $uibModalInstance.dismiss('cancel');
-                }, 2000);
-            }, function errorCallback(response) {
-                console.log(response);
-            });
-        };
-        $ctrl.ok = function () {
-            $uibModalInstance.close($ctrl.selected.item);
-        };
-
-        $ctrl.cancel = function () {
-            $uibModalInstance.dismiss('cancel');
-        };
-
-    }
 })();

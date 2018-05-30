@@ -725,6 +725,20 @@
 
 
                         });
+                    },
+                    contactDetails: function ($http,resourceUrl,storageService,$stateParams) {
+                        return $http({
+                            method: 'GET',
+                            url: resourceUrl.url()+'user/view_contact?'+
+                            'id=' + $stateParams.view_id+'&token=' + storageService.get("token")
+                        }).then(function successCallback(response) {
+                            console.log(response)
+                            return response.data;
+
+                        }, function errorCallback(response) {
+                            //console.log(response)
+                            return response;
+                        });
                     }
                 }
             }).state('recomendation', {

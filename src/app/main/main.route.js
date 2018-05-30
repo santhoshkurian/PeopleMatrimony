@@ -21,6 +21,25 @@
                 },
                 resolve  : {
 
+                    contactDetails: function ($http,resourceUrl,storageService) {
+                        return $http({
+                            method: 'GET',
+                            url: resourceUrl.url()+'user/view_contact?'+
+                            'id=' + storageService.get("id") + '&token=' + storageService.get("token")
+                        }).then(function successCallback(response) {
+                            console.log(response)
+                            return response.data;
+
+                        }, function errorCallback(response) {
+                            //console.log(response)
+                            return response;
+
+
+                        });
+                    }
+
+
+
                 }
             }).state('profile.photos', {
                 url      : '/managephotos',
