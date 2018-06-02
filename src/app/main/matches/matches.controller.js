@@ -12,7 +12,8 @@
         $('html, body').animate({ scrollTop: 0 }, 'fast');
         $scope.pageType = $stateParams.type;
 
-console.log("pppppppppppppp",$scope.pageType)
+
+
 
 
         $scope.viewAll = viewAll;
@@ -70,6 +71,9 @@ console.log("pppppppppppppp",$scope.pageType)
         $scope.package = storageService.get("package_name");
         $scope.account_type = storageService.get("account_type");
 
+        $scope.details = {id: $scope.id,name: $scope.name, img: $scope.image_url};
+
+
         $scope.logout = logout;
         function logout(){
             $http({
@@ -122,6 +126,7 @@ console.log("pppppppppppppp",$scope.pageType)
         $scope.ocuDiv = true;
         $scope.selectFacet = selectFacet;
         $scope.facetSearch = facetSearch;
+        $scope.chatNowButton = chatNowButton;
         $scope.initalfacetSearch = initalFacetSearch;
         $scope.filterData = {photo_available:false,horoscope_available:false,is_online:false};
         function selectFacet(obj){
@@ -129,6 +134,10 @@ console.log("pppppppppppppp",$scope.pageType)
         }
         $scope.facetdetails = {mstatus:[],motherTongue:[],occupation:[],religion:[],star:[],education:[],occu_cat:[]
 
+        }
+
+        function chatNowButton(){
+            $scope.paymentPromo();
         }
 
         function facetSearch(id,obj){
@@ -434,6 +443,26 @@ console.log("pppppppppppppp",$scope.pageType)
             });
 
 
+        }
+
+        $scope.paymentPromo = function (size, parentSelector) {
+            var parentElem = parentSelector ?
+                angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+            var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: '/app/main/common/paymentPromo/paymentPromo.html',
+                controller: 'paymentPromoController',
+                controllerAs: '$ctrl',
+                size:size,
+                appendTo: parentElem,
+                resolve: {
+                    items: function () {
+                        return $scope.details;
+                    }
+                }
+            });
         }
 
         function mutalmatches() {
