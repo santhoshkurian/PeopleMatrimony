@@ -126,7 +126,6 @@
         $scope.ocuDiv = true;
         $scope.selectFacet = selectFacet;
         $scope.facetSearch = facetSearch;
-        $scope.chatNowButton = chatNowButton;
         $scope.initalfacetSearch = initalFacetSearch;
         $scope.filterData = {photo_available:false,horoscope_available:false,is_online:false};
         function selectFacet(obj){
@@ -136,6 +135,7 @@
 
         }
 
+        $scope.chatNowButton = chatNowButton;
         function chatNowButton(){
             $scope.paymentPromo();
         }

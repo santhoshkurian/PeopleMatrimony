@@ -92,6 +92,9 @@
         $scope.name = storageService.get("name");
         $scope.id = storageService.get("id");
 
+        $scope.details = {id: $scope.id,name: $scope.name, img: $scope.image_url};
+
+
         $scope.mstatusDiv = true;
         $scope.motherTongueDiv = true;
         $scope.religionDiv = true;
@@ -108,6 +111,32 @@
         $scope.facetdetails = {mstatus:[],motherTongue:[],occupation:[],religion:[],star:[],education:[],occu_cat:[]
 
         }
+
+        $scope.chatNowButton = chatNowButton;
+        function chatNowButton(){
+            $scope.paymentPromo();
+        }
+
+        $scope.paymentPromo = function (size, parentSelector) {
+            var parentElem = parentSelector ?
+                angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+            var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: '/app/main/common/paymentPromo/paymentPromo.html',
+                controller: 'paymentPromoController',
+                controllerAs: '$ctrl',
+                size:size,
+                appendTo: parentElem,
+                resolve: {
+                    items: function () {
+                        return $scope.details;
+                    }
+                }
+            });
+        }
+
 
         function facetSearch(id,obj){
             console.log("check",id);
