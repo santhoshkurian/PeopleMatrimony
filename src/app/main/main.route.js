@@ -25,7 +25,7 @@
                         return $http({
                             method: 'GET',
                             url: resourceUrl.url()+'user/view_contact?'+
-                            'id=' + storageService.get("id") + '&token=' + storageService.get("token")
+                            'view_id=' + storageService.get("id") + '&token=' + storageService.get("token")
                         }).then(function successCallback(response) {
                             console.log(response)
                             return response.data;

@@ -6,11 +6,12 @@
         .controller('ContactDetailsController', ContactDetailsController);
 
     /** @ngInject */
-    function ContactDetailsController(resourceUrl,contactDetails,storageService,$scope,$http,$stateParams,$state,populate) {
+    function ContactDetailsController(resourceUrl,$timeout,contactDetails,storageService,$scope,$http,$stateParams,$state,populate) {
         $('html, body').animate({ scrollTop: 0 }, 'fast');
         console.log("ContactDetailsController");
         console.log(contactDetails.contact);
         $scope.cd = contactDetails.contact;
+        $scope.message = false;
 
 
         $scope.contact = {
@@ -40,7 +41,13 @@
                 '&comments=' + $scope.contact.comments +
                 '&token=' + storageService.get("token")
             }).then(function successCallback(response) {
-                $scope.ptype = !$scope.ptype;
+                console.log(response.data.code);
+                if(response.data.code == 200){
+                    $scope.message = true;
+                    $timeout(function() {
+                        $state.transitionTo($state.current, $stateParams, $scope.message = false);
+                    }, 2000);
+                }
 
             }, function errorCallback(response) {});
         }

@@ -465,7 +465,7 @@
                         return $http({
                             method: 'GET',
                             url: resourceUrl.url()+'user/view?' +
-                            'view_id=' + storageService.get("id") + '&token=' + storageService.get("token")
+                            'p_debug=1&view_id=' + storageService.get("id") + '&token=' + storageService.get("token")
                         }).then(function successCallback(response) {
                             console.log(response)
                             return response.data;
@@ -730,7 +730,7 @@
                         return $http({
                             method: 'GET',
                             url: resourceUrl.url()+'user/view_contact?'+
-                            'id=' + $stateParams.view_id+'&token=' + storageService.get("token")
+                            'view_id=' + $stateParams.view_id+'&token=' + storageService.get("token")
                         }).then(function successCallback(response) {
                             console.log(response)
                             return response.data;
