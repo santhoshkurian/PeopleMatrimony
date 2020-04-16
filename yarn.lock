@@ -755,6 +755,10 @@ commander@2.9.x, commander@^2.2.0, commander@^2.9.0, commander@~2.9.0:
   dependencies:
     graceful-readlink ">= 1.0.0"
 
+commander@~2.12.1:
+  version "2.12.2"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.12.2.tgz#0f5946c427ed9ec0d91a46bb9def53e54650e555"
+
 commondir@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/commondir/-/commondir-0.0.1.tgz#89f00fdcd51b519c578733fec563e6a6da7f5be2"
@@ -1971,6 +1975,15 @@ gulp-minify-css@^1.2.4:
     readable-stream "^2.0.0"
     vinyl-bufferstream "^1.0.1"
     vinyl-sourcemaps-apply "^0.2.0"
+
+gulp-minify@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/gulp-minify/-/gulp-minify-2.1.0.tgz#30245e10d67db533c89a1ceb110b580829b03282"
+  dependencies:
+    gulp-util "^2.2.14"
+    minimatch "^3.0.2"
+    through2 "^0.4.0"
+    uglify-es "^3.0.3"
 
 gulp-ng-annotate@^2.0.0:
   version "2.0.0"
@@ -4269,6 +4282,10 @@ source-map@~0.3.0:
   dependencies:
     amdefine ">=0.0.4"
 
+source-map@~0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
+
 sparkles@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/sparkles/-/sparkles-1.0.0.tgz#1acbbfb592436d10bbe8f785b7cc6f82815012c3"
@@ -4544,7 +4561,7 @@ through2@2.0.3, through2@2.X, through2@^2.0.0, through2@^2.0.1, through2@^2.0.3,
     readable-stream "^2.1.5"
     xtend "~4.0.1"
 
-through2@^0.4.2, through2@~0.4.0, through2@~0.4.1:
+through2@^0.4.0, through2@^0.4.2, through2@~0.4.0, through2@~0.4.1:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/through2/-/through2-0.4.2.tgz#dbf5866031151ec8352bb6c4db64a2292a840b9b"
   dependencies:
@@ -4674,6 +4691,13 @@ typedarray@~0.0.5:
 ua-parser-js@0.7.12:
   version "0.7.12"
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.12.tgz#04c81a99bdd5dc52263ea29d24c6bf8d4818a4bb"
+
+uglify-es@^3.0.3:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/uglify-es/-/uglify-es-3.2.2.tgz#15c62b7775002c81b7987a1c49ecd3f126cace73"
+  dependencies:
+    commander "~2.12.1"
+    source-map "~0.6.1"
 
 uglify-js@3.0.x, uglify-js@^3.0.5:
   version "3.0.15"

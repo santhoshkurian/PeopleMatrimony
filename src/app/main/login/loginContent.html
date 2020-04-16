@@ -1,60 +1,81 @@
 <div class="col-md-12">
-    <div class="portlet light form-fit bordered col-md-offset-6 col-md-5 margin-top-30 reg-pannel">
-        <div class="portlet-title reg-pannel-title">
+    <div class="portlet light form-fit bordered col-md-offset-7 col-md-4 margin-top-10 reg-pannel">
+        <div class="portlet-title reg-pannel-title" style="height: 78px">
             <div class="caption">
-                <span class="caption-subject  font-black bold uppercase">Registration</span>
+                <!--<span class=" reg-header uppercase">Registration</span>-->
 
-                <div class="caption-helper font-black font-sm">Please take a moment to complete all of the information
-                    below.
+                <div class="caption-helper reg-label" style="font-size:18px;line-height:18px;margin-top: 10px">Fill the form to fulfill your life with perfect soul mate!
                 </div>
             </div>
 
         </div>
-        <div class="portlet-body form">
+        <div class="portlet-body form" style="margin-left:10px;margin-right:10px">
             <!-- BEGIN FORM-->
-            <form action="#" class="form-horizontal  ">
+            <form name="regForm" class=" form-horizontal  ">
                 <br>
 
-                <div class="form-group">
-                    <label class="col-md-3 control-label text-left">PROFILE FOR</label>
+                <div class="row " style="color: red;text-align: center;" ng-if="message != null && message != ''">
+                   <div class="col-md-12 alert alert-danger">
+                    {{message}}
+                   </div>
+                </div>
 
-                    <div class="col-md-8">
-                        <select class="form-control input-rounded" placeholder="Profile for">
-                            <option>Option 1</option>
-                            <option>Option 2</option>
-                            <option>Option 3</option>
-                            <option>Option 4</option>
-                            <option>Option 5</option>
+                <div class="form-group text-dis" >
+                    <label class=" col-md-4 control-label  reg-label">Profile for<span style="color: red">*</span></label>
+
+                    <div class="col-md-8 text-box-width">
+                        <select class="form-control input-rounded" ng-model="reg.profile_for" ng-change="selectProfileFor()">
+                            <option value="" ng-selected="true" selected="selected">Select</option>
+                            <option value="myself">Myself</option>
+                            <option value="daughter">Daughter</option>
+                            <option value="son">Son</option>
+                            <option value="brother">Brother</option>
+                            <option value="sister">Sister</option>
+                            <option value="relative">Relative</option>
+                            <option value="friend">Friend</option>
                         </select>
+                        <span ng-if="showSelectProfile">
+                        <div class="user-error-msg-arrow" ></div>
+                        <div class="user-error-msg" >Select Profile for</div>
+                    </span>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label class="col-md-3 control-label text-left ">NAME</label>
+                <div class="form-group text-dis">
+                    <label class="col-md-4 control-label reg-label ">Name<span style="color: red">*</span></label>
+
+                    <div class="col-md-8 text-box-width">
+                        <input type="text" required capitalize-first class="form-control  input-rounded" placeholder="Name" ng-model="reg.name">
+                    <span ng-if="showName">
+                        <div class="user-error-msg-arrow" ></div>
+                        <div class="user-error-msg" >{{nameMsg}}</div>
+                    </span>
+                    </div>
+                </div>
+
+                <div class="form-group text-dis">
+                    <label class="col-md-4 control-label reg-label">Gender<span style="color: red">*</span></label>
 
                     <div class="col-md-8">
-                        <input type="email" class="form-control input-rounded" placeholder="Name">
-                    </div>
-                </div>
 
-                <div class="form-group">
-                    <label class="col-md-3 control-label">GENDER</label>
+                                    <label class="checkbox-inline" class="custon-text" style="padding-left: 0px;">
+                                        <input type="radio" icheckbox_flat-red class="icheck " ng-model="reg.gender"
+                                               name="gender" value="male">
+                                        Male
+                                    </label>
 
-                    <div class="col-md-8 margin-right-30">
-                        <div class="radio-list">
-                            <div class="col-md-4">
 
-                                <label class="radio-inline">
-                                    <input type="radio" name="gender" id="male" value="MALE" ng-model="candidate.gender"
-                                           checked> Male </label>
-                            </div>
-                            <div class="col-md-4">
+                                <label class="checkbox-inline" class="custon-text">
+                                    <input type="radio"  icheckbox_flat-red class="icheck "  ng-model="reg.gender"
+                                           name="gender" value="female">
+                                    Female
+                                </label>
 
-                                <label class="radio-inline ">
-                                    <input type="radio" name="gender"  id="female" value="FEMALE"
-                                           ng-model="candidate.gender"> Female</label>
-                            </div>
-                        </div>
+
+                        <span ng-if="showGender">
+                        <div class="user-error-msg-arrow" ></div>
+                        <div class="user-error-msg" >Select Gender</div>
+                    </span>
 
                         <!--<div >-->
 
@@ -62,58 +83,227 @@
                         <!--</div>-->
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">DATE OF BIRTH</label>
+                <div class="form-group text-dis">
+                    <label class="col-md-4 control-label reg-label">Date of Birth<span style="color: red">*</span></label>
 
-                    <div class="col-md-8">
-                        <input type="date" class="form-control input-rounded" placeholder="Date of Birth">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label ">RELIGION</label>
+                   <!-- <div class="col-md-8">
+                        <input type="date" required class="form-control input-rounded" ng-model="reg.dob" placeholder="Date of Birth">
+                    </div>-->
+                    <div class="col-md-8 ">
+                    <div class="row">
+                    <div class="col-md-4 col-xs-4">
+                        <!--<p class="input-group" style="margin-bottom: 5px">-->
+                            <select class="form-control"  style="padding: 0px" ng-model="selectDob.day">
+                                <option value="">DD</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 col-xs-4">
 
-                    <div class="col-md-8">
-                        <select class="form-control input-rounded">
-                            <option>Option 1</option>
-                            <option>Option 2</option>
-                            <option>Option 3</option>
-                            <option>Option 4</option>
-                            <option>Option 5</option>
+                        <select class="form-control " style="padding: 0px" ng-model="selectDob.month">
+                            <option value="">MM</option>
+                            <option value="1">JAN</option>
+                            <option value="2">FEB</option>
+                            <option value="3">MAR</option>
+                            <option value="4">APR</option>
+                            <option value="5">MAY</option>
+                            <option value="6">JUN</option>
+                            <option value="7">JUL</option>
+                            <option value="8">AUG</option>
+                            <option value="9">SEP</option>
+                            <option value="10">OCT</option>
+                            <option value="11">NOV</option>
+                            <option value="12">DEC</option>
                         </select>
+
+                            </div>
+                        <div class="col-md-4 col-xs-4">
+
+                        <select class="form-control" style="padding: 0px" ng-model="selectDob.year">
+                            <option value="">YEAR</option>
+                            <option value="1970">1970</option>
+                            <option value="1971">1971</option>
+                            <option value="1972">1972</option>
+                            <option value="1973">1973</option>
+                            <option value="1974">1974</option>
+                            <option value="1975">1975</option>
+                            <option value="1976">1976</option>
+                            <option value="1977">1977</option>
+                            <option value="1978">1978</option>
+                            <option value="1979">1979</option>
+                            <option value="1980">1980</option>
+                            <option value="1981">1981</option>
+                            <option value="1982">1982</option>
+                            <option value="1983">1983</option>
+                            <option value="1984">1984</option>
+                            <option value="1985">1985</option>
+                            <option value="1986">1986</option>
+                            <option value="1987">1987</option>
+                            <option value="1988">1988</option>
+                            <option value="1989">1989</option>
+                            <option value="1990">1990</option>
+                            <option value="1991">1991</option>
+                            <option value="1992">1992</option>
+                            <option value="1993">1993</option>
+                            <option value="1994">1994</option>
+                            <option value="1995">1995</option>
+                            <option value="1996">1996</option>
+                            <option value="1997">1997</option>
+                            <option value="1998">1998</option>
+                            <option value="1999">1999</option>
+                            <option value="2000">2000</option>
+                            <option value="2001">2001</option>
+                            <option value="2002">2002</option>
+                            <option value="2003">2003</option>
+                            <option value="2004">2004</option>
+                            <option value="2005">2005</option>
+                            <option value="2006">2006</option>
+                            <option value="2007">2007</option>
+                            <option value="2008">2008</option>
+                            <option value="2009">2009</option>
+                            <option value="2010">2010</option>
+                            <option value="2011">2011</option>
+                            <option value="2012">2012</option>
+                            <option value="2013">2013</option>
+                            <option value="2014">2014</option>
+                            <option value="2015">2015</option>
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+
+                        </select>
+                             <span ng-if="showDOB">
+                            <div class="user-error-msg-arrow" style="bottom:13px!important;"></div>
+                            <div class="user-error-msg" style="bottom:5px!important;">{{dobMsg}}</div>
+                            </span>
+                            </div>
+                            <!--<input type="text" readonly='readonly' class="form-control" uib-datepicker-popup="{{format}}" uib-datepicker-popup ng-model="reg.dob" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />-->
+          <!--<span class="input-group-btn">-->
+            <!--<button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>-->
+          <!--</span>-->
+                        <!--</p>-->
+                        <!--<span ng-if="showDOB">-->
+                        <!--<div class="user-error-msg-arrow" style="bottom:13px!important;"></div>-->
+                        <!--<div class="user-error-msg" style="bottom:5px!important;">{{dobMsg}}</div>-->
+                    <!--</span>-->
+
+                    </div>
+                    </div>
+
+                </div>
+                <div class="form-group text-dis">
+                    <label class="col-md-4 control-label reg-label ">Mother Tongue<span style="color: red">*</span></label>
+
+
+                    <div class="col-md-8 text-box-width">
+                        <select class="form-control input-rounded "
+                                ng-model="reg.mothertongue" required>
+                            <option  value="">Select</option>
+                            <option ng-repeat="obj in motherTongueList" value="{{obj.id_mothertongue}}">{{obj.mothertongue}}</option>
+                        </select>
+                        <span ng-if="showmt">
+                        <div class="user-error-msg-arrow" ></div>
+                        <div class="user-error-msg" >Select mother tongue</div>
+                    </span>
+                    </div>
+                </div>
+                <div class="form-group text-dis">
+                    <label class="col-md-4 control-label reg-label">Religion<span style="color: red">*</span></label>
+
+
+                    <div class="col-md-8 text-box-width">
+                        <select class="form-control input-rounded "
+                                ng-model="reg.religion" required>
+                            <option  value="">Select</option>
+                            <option ng-repeat="obj in religonList" value="{{obj.id_religion}}">{{obj.religion}}</option>
+                        </select>
+                         <span ng-if="showreligion">
+                        <div class="user-error-msg-arrow" ></div>
+                        <div class="user-error-msg" >Select religion </div>
+                    </span>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label class="col-md-3 control-label">EMAIL</label>
+                <div class="form-group text-dis">
+                    <label class="col-md-4 control-label reg-label">E-mail<span style="color: red">*</span></label>
 
-                    <div class="col-md-8">
-                        <input type="email" class="form-control input-rounded" placeholder="Email Address">
+                    <div class="col-md-8 text-box-width" >
+                        <input type="email" ng-model="reg.email" required class="form-control reg-box input-rounded" placeholder="Email Address">
+                    <span ng-if="showemail">
+                        <div class="user-error-msg-arrow" ></div>
+                        <div class="user-error-msg" >Enter e-mail ID</div>
+                    </span>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">MOBILE NUMBER</label>
+                <div class="form-group text-dis">
+                    <label class="col-md-4 col-xs-12 control-label reg-label">Mobile Number<span style="color: red">*</span></label>
 
-                    <div class="col-md-3">
-                        <select class="form-control input-rounded">
-                            <option>+ 91</option>
-                            <option>+ 04</option>
-                            <option>+ 90</option>
-                            <option>+ 54</option>
-                            <option>+ 65</option>
+                    <div class="col-md-3 col-xs-2" style="min-width: 80px" >
+                        <select class="form-control " required ng-model="reg.code">
+                            <option ng-selected="true" selected="selected" value="91">+ 91</option>
+                            <option value="04">+ 04</option>
+                            <option value="90">+ 90</option>
+                            <option value="54">+ 54</option>
+                            <option value="65">+ 65</option>
                         </select>
                     </div>
 
                     <div class="col-md-5">
-                        <input type="number" class="form-control input-rounded" placeholder="Mobile Number">
+                        <input type="text" numbers-only maxlength="10"
+                               required class="form-control input-rounded" ng-model="reg.mobile" placeholder="Mobile Number">
+                     <span ng-if="showMobileNumber">
+                        <div class="user-error-msg-arrow" ></div>
+                        <div class="user-error-msg" >{{moberror}}</div>
+                    </span>
                     </div>
                 </div>
 
-                <div class="form-group ">
-                    <label class="col-md-3 control-label">PASSWORD</label>
+                <div class="form-group text-dis">
+                    <label class="col-md-4 control-label reg-label">Password<span style="color: red">*</span></label>
 
-                    <div class="col-md-8">
-                        <input type="password" class="form-control input-rounded" placeholder="Password"
+                    <div class="col-md-8 text-box-width">
+                        <span style="display: block">
+                        <input required type="{{password}}" class="form-control input-rounded" ng-model="reg.password" placeholder="Password"
                                style="margin-rightt: 5%">
+                            <span class="pull-right" style="margin-top: -25px;margin-right: 5px">
+                                <a ng-click="ShowPass('show')" ng-if="password == 'password'">Show</a>
+                        <a ng-click="ShowPass('hide')" ng-if="password == 'text'">Hide</a></span>
+                            </span>
+                        <span ng-if="showPassword">
+                        <div class="user-error-msg-arrow" ></div>
+                        <div class="user-error-msg" >{{passwordError}}</div>
+                    </span>
                     </div>
                 </div>
 
@@ -126,14 +316,25 @@
                 <!--</div>-->
 
                 <!--<span class="help-inline"> Inline help. </span>-->
-                <div class="form-group ">
-                    <label class="col-md-3 control-label"></label>
+                <div class="form-group text-dis">
+                    <label class="col-md-4 control-label"></label>
 
-                    <div class="col-md-8">
-                        <button type="button" class=" center-block col-md-12 btn red input-rounded"
+                    <div class="col-md-8 text-box-width">
+                        <button  type="button" class=" center-block col-md-12 btn red input-rounded"
                                 ng-click="vm.registerCandidate()">
-                            Registration
+                            Register Free
                         </button>
+                    </div>
+                </div>
+                <div class="form-group text-dis">
+                    <label class="col-md-4 control-label"></label>
+
+                    <div class="col-md-8 text-box-width" >
+                        <label class="checkbox-inline" class="custon-text">
+                            <input type="checkbox" icheckbox_flat-red class="icheck " name="mstatus"  ng-model="terms.agree">
+
+                        I agree the <a ui-sref="terms" target="_blank">Terms and Privacy</a>
+                            </label>
                     </div>
                 </div>
             </form>
@@ -150,41 +351,50 @@
 <!--</div>-->
 
 <script type="text/ng-template" id="myModalContent.html">
+    <form name="loginForm">
+
     <div class="modal-header login-pannel-title">
         <div class="caption">
             <span class="caption-subject  font-black bold uppercase">Sign In</span></div>
     </div>
     <!--<div class="pull-right"><i class="close green"></i></div>-->
+   <div class="col-md-12" style="text-align: center;color:red;padding:20px">{{message}}</div>
+
     <div class="modal-body" id="modal-body">
+
         <div class="form-group">
-            <label class=" uppercase">Email / Mobile Number / Member Id</label>
+            <label class=" uppercase">Username</label>
             <input class="form-control spinner input-rounded" type="text"
-                   placeholder="Email / Mobile NUmber / Member ID"/>
+                   placeholder="Email / Mobile Number / Member Id" ng-model="login.username" required/>
         </div>
         <div class="form-group">
             <label class=" uppercase"> Password</label>
-            <input class="form-control spinner input-rounded" type="password" placeholder="Password"/>
+            <input required class="form-control spinner input-rounded" type="password" ng-model="login.password" placeholder="Password"/>
         </div>
         <div class="form-group">
             <label class="checkbox-inline" class="custon-text">
-                <input type="checkbox" icheckbox_flat-red class="icheck "> Remember me</label>
-            <label class="pull-right"><a href="" class="font-red-mint"> Forgot your password?</a></a></label>
+                <input type="checkbox" icheckbox_flat-red class="icheck " ng-model="terms.remember"> Remember me</label>
+            <label class="pull-right"><a href="" class="font-red-mint" ng-click="vm.forgotPassword()"> Forgot your password?</a></a></label>
         </div>
     </div>
 
 
     </div>
     <div class="modal-footer login-modal-footer">
-        <div>
-            <button type="button" class=" center-block col-md-5 btn red input-rounded" ng-click="vm.ok()">
+        <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-6" style="text-align:right">
+            <button ng-disabled="loginForm.$invalid" type="button" style="width: 100%" class="  btn red input-rounded" ng-click="vm.ok(login)">
                 Sign in
             </button>
-            <button type="button" class=" center-block col-md-5 btn btn-default input-rounded" ng-click="vm.cancel()">
+            </div>        <div class="col-md-6 col-sm-6 col-xs-6" style="text-align:left">
+
+        <button type="button" class="   btn btn-default input-rounded" style="width: 100%" ng-click="vm.cancel()">
                 Cancel
             </button>
         </div>
+        </div>
         <div>
-            <label class="pull-left custon-text"> Dont have an account? &nbsp;<a href="" class="font-red-mint"
+            <label class="pull-left custon-text"> Don't have an account? &nbsp;<a href="" class="font-red-mint"
                                                                                  ng-click="vm.cancel()"> Sign up
                 here</a></label>
 
@@ -194,4 +404,57 @@
         <!--<button class="btn btn-primary" type="button" ng-click="vm.ok()">Save</button>-->
         <!--<button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>-->
     </div>
+        </form>
+</script><script type="text/ng-template" id="forgotPassword.html">
+    <form name="loginForm">
+
+    <div class="modal-header login-pannel-title">
+        <div class="caption">
+            <span class="caption-subject  font-black bold uppercase">Forgot your password?</span></div>
+    </div>
+
+    <div class="modal-body" >
+<span ng-if="vm.restPassword">
+        <div class="form-group">
+            Enter your Matri ID/ Register Mobile No/ Registered Email ID and we'll send you a link and PIN to reset your password.
+        </div>
+        <div class="form-group">
+            <input class="form-control spinner input-rounded" type="text"
+                   placeholder="Email / Mobile Number / Member ID" ng-model="vm.username" required/>
+            <div ng-if="vm.message != ''" style="color: red">Invalid Username</div>
+        </div>
+    </span>
+        <div class="row" ng-if="!vm.restPassword">
+            <div class="col-md-12">
+               Your new password is sent to your email. Please check your mail.
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    <div class="modal-footer login-modal-footer">
+        <div class="row" ng-if="vm.restPassword">
+        <div class="col-md-6 col-sm-6 col-xs-6" style="text-align:right">
+            <button ng-disabled="loginForm.$invalid" type="button" style="width: 100%" class="  btn red input-rounded" ng-click="vm.ok(login)">
+                Reset Password
+            </button>
+            </div>        <div class="col-md-6 col-sm-6 col-xs-6" style="text-align:left">
+
+        <button type="button" class="   btn btn-default input-rounded" style="width: 100%" ng-click="vm.cancel()">
+                Cancel
+            </button>
+        </div>
+        </div>
+        <div class="row" ng-if="!vm.restPassword">
+            <div class="col-md-12">
+            <button type="button" class="   btn btn-default input-rounded pull-right"  ng-click="vm.cancel()">
+                Cancel
+            </button>
+            </div>
+            </div>
+
+
+        </div>
+        </form>
 </script>

@@ -36,6 +36,7 @@
     overflow: visible;
     background-color: #333;
     font-weight: bold;
+    font-size: 12px;
 }
 .main-tool-link > li a {
     display: block;

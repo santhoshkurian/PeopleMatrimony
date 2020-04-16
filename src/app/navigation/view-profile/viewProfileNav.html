@@ -1,0 +1,81 @@
+<div class="page-sidebar-wrapper section-background">
+    <div class="page-sidebar navbar-collapse collapse side-bar-right">
+        <div class="row">
+            <div class="col-md-12" ng-if="similarProfiles.matches.length > 0">
+                <ul class="page-sidebar-menu menu-panel   " data-keep-expanded="false"
+                    data-auto-scroll="true" data-slide-speed="200">
+
+
+                    <li class="nav-item  active open">
+                        <ul class="sub-menu">
+                            <li class="nav-item  active open">
+                                <ul class="sub-menu">
+                                    <li class="nav-item nav-header-profile">
+                                        Similar Profiles ({{similarProfiles.matches.length}})
+                                    </li>
+                                    <hr/>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-12 margin-top-10 margin-bottom-10">
+                                                <div class="row ">
+
+                                                    <div class="col-md-12" ng-repeat="occu in similarProfiles.matches">
+                                                        <div class="row " >
+                                                            <div class=" col-xs-3 col-sm-3 col-md-4 ">
+                                                                <img ng-if="occu.images.length > 0" class="imgae-circle spacer"
+                                                                     ng-src="{{occu.images[0].image}}"/>
+                                                                <img ng-if="occu.gender == 'male' && occu.images.length == 0" class="imgae-circle spacer"
+                                                                     ng-src="/assets/defaultImages/male_card.jpg"/>
+                                                                <img ng-if="occu.gender == 'female' && occu.images.length == 0" class="imgae-circle spacer"
+                                                                     ng-src="/assets/defaultImages/female_card.jpg"/>
+                                                            </div>
+                                                            <div class="col-md-1 hidden-xs hidden-sm"></div>
+                                                            <div class="col-xs-8 col-sm-8 col-md-7">
+                                                                <div class="row ">
+                                                                    <div class="col-md-12">
+                                                        <span><span class="profile-name">{{occu.name}}</span>&nbsp;<span
+                                                                class="profile-id"> ({{occu.id_people}})</span></span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row ">
+                                                                    <div class="col-md-12">
+                                                                        <span class="profile-details">
+                                                                            {{occu.age}}, {{occu.height}}cms, {{occu.mothertongue}}, {{occu.religion}}, {{occu.city}} {{occu.state}}, {{occu.country}}
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row ">
+                                                                    <div class="col-md-12">
+                                                                        <span class="send-intrest">
+                                                                           <a style="color: red" ng-click="sendInterest(occu.id_people)"> Send interest</a>
+                                                                        </span>
+                                                                        <hr/>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+
+                            </li>
+
+                        </ul>
+                    </li>
+                </ul>
+                <!-- END SIDEBAR MENU -->
+            </div>
+        </div>
+    </div>
+    <!-- END SIDEBAR -->
+</div>

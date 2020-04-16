@@ -1,0 +1,101 @@
+<div class="col-md-8 col-md-offset-2">
+    <div class="portlet light border-rounded" syle="margin-top:150px">
+        <div>
+            <div style="text-align: center;font-size: 15px;padding:20px">
+                Please feel free to post your questions, comments and suggestions, We are eager to assist and serve you better.      </div>
+
+        </div>
+        <div class="portlet-body form  form-horizontal" style="margin: 20px">
+
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label class="font-weight "> Your Name <span style="color: red">*</span></label>
+
+                        <input type="text" class="form-control  input-rounded"
+                               ng-model="business.name" ng-readonly="checked">
+
+
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label class="font-weight "> Category</label>
+
+                        <select class="form-control  input-rounded"
+                                ng-model="business.category">
+                            <option value="">Select</option>
+                            <option value="Problems related to website">Problems related to website</option>
+                            <option value="Problems related to profiles">Problems related to profiles</option>
+                            <option value="Compliments And Suggestions">Compliments And Suggestions</option>
+                            <option value="others">Others</option>
+                        </select>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label class="font-weight ">Matrimony Id <span style="color: red">*</span></label>
+
+                        <input type="text" class="form-control  input-rounded"
+                               ng-model="business.id" ng-readonly="checked">
+
+
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight ">Priority</label>
+
+                            <select class="form-control  input-rounded"
+                                    ng-model="business.priority">
+                                <option value="">Select</option>
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                                </select>
+
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label class="font-weight ">Suggestions And Feedback <span style="color: red">*</span></label>
+
+             <textarea class="form-control" rows="5"
+                       ng-model="business.message"></textarea>
+                        <div ng-if="!messageVal" style="color: red">Please enter your feedback</div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button
+                            class=" btn btn-default red input-rounded pull-right"
+                            style="color:#ffffea" ng-click="submit()">
+                        Submit
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/ng-template" id="feedBackModal.html">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-title" style="color: #4cbcac;">
+            Thanks for your feedback
+            <button class=" pull-right btn btn-circle btn-icon-only default" type="button" ng-click="$ctrl.cancel()"><i class="fa fa-times"></i></button>
+        </h4>
+    </div>
+
+    <div class="modal-body">
+
+    </div>
+
+</script>

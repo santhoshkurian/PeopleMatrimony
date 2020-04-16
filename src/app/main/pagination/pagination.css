@@ -1,22 +1,26 @@
 .pagination-wrapper-active{
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border-radius: 50% !important;
     background: white;
     text-align: center;
     margin-left: 3px;
-
+    line-height: 30px;
+    font-weight: 600;
 }
 .pagination-wrapper-inactive{
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border-radius: 50% !important;
-    background: red;
+    background: #e7505a;
     text-align: center;
     margin-left: 3px;
+    line-height: 30px;
+    color: lightgrey;
+
 }
 .non-active-page{
-    color: black !important;
+    color: lightgrey !important;
     cursor: pointer;
 }
 .active-page{

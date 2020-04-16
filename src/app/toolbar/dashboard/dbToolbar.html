@@ -6,8 +6,8 @@
             <div class="col-md-1"></div>
             <div class="col-md-10">
                 <div class="page-logo1">
-                    <a href="index.html">
-                        <img src="/assets/img/logo.png" style="width:90%;margin-top:20px" alt="logo" class="logo-default"/> </a>
+                    <a>
+                        <img src="/assets/img/logo.png" style="width:90%;margin-top:8px" alt="logo" class="logo-default"/> </a>
 
                 </div>
                 <!-- END LOGO -->
@@ -20,12 +20,35 @@
                 <div class="page-actions" >
                     <ul class="tool-link">
                         <!--<li  ng-class="{ toolbarActive: isActive('/app')}"><a  ui-sref="app">MY HOME</a></li>-->
-                        <li ><a  ui-sref="profile">MY HOME</a></li>
-                        <li ><a ui-sref="matches">MATCHES</a></li>
-                        <li><a ui-sref="search">SEARCH</a></li>
-                        <li><a href="#about">DAILY MATCHES</a></li>
+                        <li ><a  ui-sref="app">MY HOME</a></li>
+                        <li ><a ui-sref="matches({type:'newMatches'})" target="_blank">MATCHES</a></li>
+                        <li><a ui-sref="search" target="_blank">SEARCH</a></li>
+                        <li><a ui-sref="recomendation" >DAILY MATCHES</a></li>
                         <li><a ui-sref="messages">MESSAGES</a></li>
-                        <li><a ui-sref="settings">HELP</a></li>
+                        <!--<li><a >HELP</a></li>-->
+                        <li class="dropdown dropdown-user ">
+                            <a href="javascript:;"  class="dropdown-toggle a-drop-link" data-toggle="dropdown"
+                               data-hover="dropdown" data-close-others="true">HELP</a>
+                            <ul class="dropdown-menu ">
+                                <li>
+                                    <a ui-sref="customerCare" style="height: 50px;line-height: 50px;width: 100%;text-align: left;font-size: 15px" >
+                                        Customer Care </a>
+                                </li>
+                                <li>
+                                    <a ui-sref="contactUs" style="height: 50px;line-height: 50px;width: 100%;text-align: left;font-size: 15px" >
+                                        Contact Us</a>
+                                </li>
+                                <li>
+                                    <a ui-sref="feedback" style="height: 50px;line-height: 50px;width: 100%;text-align: left;font-size: 15px" >
+                                        Feedback</a>
+                                </li>
+                                <li>
+                                    <a ui-sref="businessEnquires" style="height: 50px;line-height: 50px;width: 100%;text-align: left;font-size: 15px" >
+                                        Business Enquires</a>
+                                </li>
+                            </ul>
+                        </li>
+
                     </ul>
                 </div>
 
@@ -33,7 +56,7 @@
                 <!-- BEGIN PAGE TOP -->
                 <div class="page-top">
                     <div class="page-bar">
-                        <spans style="border-radius:10px;background-color: white;padding: 7px;font-size: 9px;margin-top:5px ">ACCOUNT TYPE:FREE | <span style="color: red">UPGRADE</span></spans>
+                        <spans style="border-radius:10px;background-color: white;padding: 7px;font-size: 10px;margin-top:5px ">Account Type: <!--{{package}}--> {{account_type}} | <span ><a ui-sref="payment" style="color: red">Upgrade</a></span></spans>
                     </div>
                     <!-- BEGIN HEADER SEARCH BOX -->
                     <!-- BEGIN TOP NAVIGATION MENU -->
@@ -42,13 +65,13 @@
                             <li class="separator hide"></li>
                             <!-- BEGIN NOTIFICATION DROPDOWN -->
                             <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-                           <!-- <li class="dropdown dropdown-extended dropdown-notification dropdown-dark"
+                            <!--<li class="dropdown dropdown-extended dropdown-notification dropdown-dark"
                                 >
                                 <a href="javascript:;" class="dropdown-toggle test1" data-toggle="dropdown" data-toggle="tooltip" data-placement="top" title="Hooray!"
                                    data-hover="dropdown" data-close-others="true">
                                     <i class="fa fa-bank "></i>
                                 </a>
-                            </li>-->
+                            </li>
                             <li class="dropdown dropdown-extended dropdown-notification dropdown-dark"
                                 id="header_notification_bar">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"
@@ -150,42 +173,38 @@
                                     </li>
                                 </ul>
                             </li>
+                            -->
                             <!-- END NOTIFICATION DROPDOWN -->
                                                         <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-                            <li class="dropdown dropdown-user dropdown-dark">
+                            <li class="dropdown dropdown-user ">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"
-                                   data-hover="dropdown" data-close-others="true">
+                                   data-hover="true" data-close-others="true">
                                     <!--<span class="username username-hide-on-mobile"> Doe </span>-->
                                     <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
-                                    <img alt="" class="img-circle" src="../assets/img/avatar9.jpg"/> </a>
+                                    <img alt="" class="img-circle" ng-src="{{image_url}}"/> </a>
                                 <ul class="dropdown-menu dropdown-menu-default">
+                                    <li style="text-align: center;padding: 20px">
+                                        <span style="font-weight: bold;">{{name}}</span> ({{id}})
+                                    </li>
+                                    <li class="divider" style="margin-top: 0px"></li>
                                     <li>
-                                        <a href="page_user_profile_1.html">
-                                            <i class="icon-user"></i> My Profile </a>
+                                        <a ng-click="redirectURL('profile')">
+                                            <i class="icon-user"></i> Edit Profile </a>
                                     </li>
                                     <li>
-                                        <a href="app_calendar.html">
-                                            <i class="icon-calendar"></i> My Calendar </a>
+                                        <a ng-click="redirectURL('partner')">
+                                            <i class="icon-user"></i> Edit Partner Preference </a>
                                     </li>
                                     <li>
-                                        <a href="app_inbox.html">
-                                            <i class="icon-envelope-open"></i> My Inbox
-                                            <span class="badge badge-danger"> 3 </span>
-                                        </a>
+                                        <a ui-sref="managephoto">
+                                            <i class="icon-user"></i>Add Photo </a>
                                     </li>
                                     <li>
-                                        <a href="app_todo_2.html">
-                                            <i class="icon-rocket"></i> My Tasks
-                                            <span class="badge badge-success"> 7 </span>
-                                        </a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <a href="page_user_lock_1.html">
-                                            <i class="icon-lock"></i> Lock Screen </a>
+                                        <a ui-sref="settings">
+                                            <i class="icon-lock"></i> Settings </a>
                                     </li>
                                     <li>
-                                        <a href="page_user_login_1.html">
+                                        <a ng-click="logout()">
                                             <i class="icon-key"></i> Log Out </a>
                                     </li>
                                 </ul>

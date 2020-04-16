@@ -1,0 +1,117 @@
+<div class="row" ng-if="showLink" style="text-align: right;color: red">
+    <a style="text-align: right;color: red" ng-click="showCon()">{{commulen}}+ Conversations</a>
+</div>
+
+<span ng-repeat="obj in mail.received | limitTo: reclen">
+                        <div class="row">
+                            <div class="col-md-12 notification-style uppercase" ng-if="res == 'accept'">
+                                <span ng-if="obj.action == 'connect'">Interest Received
+                                    </span>
+								<span ng-if="obj.action == 'field'">
+									<span ng-if="obj.field_name == 'photo_request'">Photo Request Received </span>
+									<span ng-if="obj.field_name == 'smoking'">Add Smoking Request Received </span>
+									<span ng-if="obj.field_name == 'drinking'">Add Drinking Request Received </span>
+									<span ng-if="obj.field_name == 'income'">Add Income Request Received </span>
+									<span ng-if="obj.field_name == 'education'">Add Education Request Received </span>
+									<span ng-if="obj.field_name == 'family'">Add Family Request Received </span>
+									<span ng-if="obj.field_name == 'family_status'">Add Family Status Request Received </span>
+									<span ng-if="obj.field_name == 'origin'">Add Origin Request Received </span>
+									<span ng-if="obj.field_name == 'about_family'">Add About Family Request Received </span>
+
+
+								</span>
+                                <span ng-if="item.msg_status == 'recieved'"><img src="/assets/icons/receive.png" ></span>
+                            </div>
+                            <!--<div class="col-md-12 notification-style uppercase">Received</div>-->
+
+                            <!--<div class="col-md-12 notification-details"> {{obj.content}}</div>-->
+                            <div class="col-md-12 notification-details"> {{obj.response}}</div>
+                            <div class="col-md-12 margin-top-10" ng-if="res == 'accept'">
+                                <button ng-if="obj.action != 'connect'" type="button" class=" uppercase btn red input-rounded" ng-click="sendInterest(obj.id_activity,'interest')">
+                                    Send Interest
+                                </button>
+                               
+                                <button  type="button"  class=" uppercase btn btn-default input-rounded" ng-click="sendInterest(obj.id_activity,'mail')">
+                                    Send Mail
+                                </button>
+                               
+                                <button  type="button"  class=" uppercase btn btn-default input-rounded" ng-click="sendInterest(obj.id_activity,'callnow')">
+                                    Call now
+                                </button>
+
+                            </div>
+                            <div class="col-md-12 margin-top-10" ng-if="res == 'sent'">
+                                <button ng-if="obj.action != 'connect'" type="button" class=" uppercase btn red input-rounded" ng-click="sendInterest(obj.id_activity,'interest')">
+                                    Send Interest
+                                </button>
+
+                                <button  type="button"  class=" uppercase btn btn-default input-rounded" ng-click="sendInterest(obj.id_activity,'mail')">
+                                    Send Mail
+                                </button>
+                               
+                                <button  ng-if="item.action == 'connect'" type="button"  class=" uppercase btn btn-default input-rounded" ng-click="sendInterest(obj.id_activity,'reminder')">
+                                    Send Reminder
+                                </button>
+
+                            </div>
+
+                        </div>
+                                                        <hr>
+
+</span>
+
+<span  ng-repeat="obj in mail.sent | limitTo: sentlen">
+                        <div class="row">
+
+                            <div class="col-md-12 notification-style uppercase" ng-if="res == 'accept'">
+                                <span ng-if="obj.action == 'connect'">Interest Sent
+                                    </span>
+								<span ng-if="obj.action == 'field'">
+									<span ng-if="obj.field_name == 'photo_request'">Photo Request Sent </span>
+									<span ng-if="obj.field_name == 'smoking'">Add Smoking Request Sent </span>
+									<span ng-if="obj.field_name == 'drinking'">Add Drinking Request Sent </span>
+									<span ng-if="obj.field_name == 'income'">Add Income Request Sent </span>
+									<span ng-if="obj.field_name == 'education'">Add Education Request Sent </span>
+									<span ng-if="obj.field_name == 'family'">Add Family Request Sent </span>
+									<span ng-if="obj.field_name == 'family_status'">Add Family Status Request Sent </span>
+									<span ng-if="obj.field_name == 'origin'">Add Origin Request Sent </span>
+									<span ng-if="obj.field_name == 'about_family'">Add About Family Request Sent </span>
+
+
+								</span>
+                                <span ng-if="item.msg_status == 'recieved'"><img src="/assets/icons/receive.png" ></span>
+                            </div>
+                            <div class="col-md-12 notification-details"> {{obj.response}}</div>
+                            <div class="col-md-12 margin-top-10" ng-if="res == 'accept'">
+                                <button ng-if="obj.action != 'connect'" type="button" class=" uppercase btn red input-rounded" ng-click="sendInterest(obj.id_activity,'interest')">
+                                    Send Interest
+                                </button>
+                               
+                                <button  type="button"  class=" uppercase btn btn-default input-rounded" ng-click="sendInterest(obj.id_activity,'mail')">
+                                    Send Mail
+                                </button>
+                               
+                                <button  type="button"  class=" uppercase btn btn-default input-rounded" ng-click="sendInterest(obj.id_activity,'callnow')">
+                                    Call now
+                                </button>
+
+                            </div>
+                            <div class="col-md-12 margin-top-10" ng-if="res == 'sent'">
+                                <button ng-if="obj.action != 'connect'" type="button" class=" uppercase btn red input-rounded" ng-click="sendInterest(obj.id_activity,'interest')">
+                                    Send Interest
+                                </button>
+
+                                <button  type="button"  class=" uppercase btn btn-default input-rounded" ng-click="sendInterest(obj.id_activity,'mail')">
+                                    Send Mail
+                                </button>
+                               
+                                <button  ng-if="item.action == 'connect'" type="button"  class=" uppercase btn btn-default input-rounded" ng-click="sendInterest(obj.id_activity,'reminder')">
+                                    Send Reminder
+                                </button>
+
+                            </div>
+
+                        </div>
+                                                        <hr>
+
+</span>

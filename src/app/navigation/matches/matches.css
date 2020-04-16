@@ -1,3 +1,58 @@
-.matches span{
+.matches span {
     color: red;
+}
+
+.refined-search-spacing {
+    margin-left: 20px !important;
+}
+
+.refined-search-placeholder-spacing {
+    margin-left: 16px !important;
+}
+
+.custom-form-control {
+    width: 150%;
+    height: 30px;
+    background-color: #fff;
+    border: 1px solid #c2cad8;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.btn-label-text {
+color: red;
+}
+.custom-button{
+    border-color:lightgray !important;
+    background-color: #fff !important;
+}
+.refined-search-header{
+    font-weight: 600;
+    line-height: 25px;
+    text-transform: uppercase;
+    font-family: source_sans;
+    font-size: 14px;
+}
+.refined-search-area{
+    border-bottom: 1px solid #ddd!important;
+}
+.refined-search-sub-label{
+    font-size: 14px!important;
+    line-height: 20px;
+    font-family: source_sans;
+    cursor: pointer;
+
+}
+.refined-search-sub-label-count{
+    font-size: 14px;
+    color: red;
+}
+.show-more-less{
+    font-size: 10px;
+    color: red;
+    cursor: pointer;
 }

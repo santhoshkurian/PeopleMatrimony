@@ -10,6 +10,7 @@
                 <div class="col-md-12 ">
                     <!-- BEGIN SAMPLE FORM PORTLET-->
                     <div class="portlet light bordered border-rounded">
+                        <div class="col-md-12" style="text-align: center;color: red">{{deactivateMsg}}</div>
                         <div class="portlet-title">
                             <div class="caption ">
                                 <span class=" caption-subject  font-black  uppercase" style="font-weight: 600;">Deactivate profile</span>
@@ -31,29 +32,37 @@
 
                                 <div class="col-md-12 ">
                                     <label class="checkbox-inline" class="custon-text">
-                                        <input type="radio" icheckbox_flat-red class="icheck ">
+                                        <input type="radio"  class="icheck " value="15" ng-model="deactivate"
+                                               >
                                         15 Days</label>
 
                                     <label class="checkbox-inline" class="custon-text">
-                                        <input type="radio" icheckbox_flat-red class="icheck ">
+                                        <input type="radio"  class="icheck " value="30" ng-model="deactivate"
+                                              >
                                         1 Month</label>
 
                                     <label class="checkbox-inline" class="custon-text">
-                                        <input type="radio" icheckbox_flat-red class="icheck ">
+                                        <input type="radio"  class="icheck " value="60" ng-model="deactivate"
+                                               >
                                         2 Months</label>
 
                                     <label class="checkbox-inline" class="custon-text">
-                                        <input type="radio" icheckbox_flat-red class="icheck ">
+                                        <input type="radio"  class="icheck " value="90" ng-model="deactivate"
+                                               >
                                         3 Months</label>
                                 </div>
 
                             </div>
                             <hr>
                             <div class="form-group ">
-                                <div class="col-md-offset-9 ">
-                                    <button type="button" class=" btn red input-rounded uppercase"
-                                            ng-click="">
-                                        Deactivate profile
+                                <div class="col-md-12 ">
+                                    <button ng-if="activate == '0'" type="button" class="pull-right btn red input-rounded uppercase"
+                                            ng-click="deactivateProfile()">
+                                        DEACTIVATE NOW
+                                    </button>
+                                    <button  ng-if="activate != '0'" type="button" class="pull-right btn green input-rounded uppercase"
+                                            ng-click="activateProfile()">
+                                        ACTIVE NOW
                                     </button>
                                 </div>
                             </div>

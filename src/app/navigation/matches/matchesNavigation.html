@@ -1,5 +1,5 @@
 <div class="page-sidebar-wrapper">
-    <div class="page-sidebar navbar-collapse collapse" style="border-radius: 10px">
+    <div class="page-sidebar navbar-collapse collapse" style="width:250px;background-color: #e4e8eb!important;">
         <ul class="page-sidebar-menu   " style="background-color: white" data-keep-expanded="false"
             data-auto-scroll="true" data-slide-speed="200">
 
@@ -7,16 +7,18 @@
             <li class="nav-item  active open">
                 <ul class="sub-menu settingnav">
                     <li style="background-color:#e8e6e8;height:37px;padding: 9px 14px 9px 30px;" class="nav-item ">
-                        <span ><b>Matches</b></span>
+                        <span><b>Matches</b></span>
                     </li>
                     <li ng-class="{ activateSettingNavBar: isActive('/settings')}">
                         <div style="margin: 20px" class="matches ">
-                            <div>New matches</div>
-                            <div>Profiles yet to be viewed <span> (118)</span></div>
-                            <div>Profiles viewed & not<span> (18)</span></div>
-                            <div>Contacted matches <span> (35)</span></div>
-                            <div>Mutal matches <span> (40)</span></div>
-                            <div>Shortlisted matches <span> (6)</span></div>
+                            <div><a ng-class="{ activetoolbar: mainlink == 'newMatches' }" ng-click="newMatches()" >New matches</a></div>
+                            <div><a ng-class="{ activetoolbar: mainlink =='notYetViewed' }" ng-click="notYetViewed()">Yet to be viewed</a></div>
+                            <div><a ng-class="{ activetoolbar: mainlink =='viewed' }"
+                                    ng-click="viewed()" >Viewed and not contacted</a></div>
+                            <div><a ng-class="{ activetoolbar: mainlink =='shortlisted' }"
+                                    ng-click="shortlisted()" >Shortlisted</a></div>
+                            <!--<div><a ng-class="{ activetoolbar: mainlink =='mutalmatches' }"-->
+                                    <!--ng-click="mutalmatches()" >Mutal matches</a></div>-->
                         </div>
 
                     </li>
@@ -36,17 +38,479 @@
                         id="inbox">
                         <span><b>Refine Search</b></span>
                     </li>
-                    <li class="nav-item " style="text-align: center">
+                    <li class="nav-item " >
 
 
-                        <div class="input-group" style="width: 75%;margin: 25px; ">
-                            <input type="text" class="form-control input-rounded-pratial-left" placeholder="Enter ID">
-                                                    <span class="input-group-btn">
-                                                        <button class="btn red input-rounded-pratial-right"
-                                                                type="button">Go
-                                                        </button>
-                                                    </span>
+                        <!--<div class="input-group" style="width: 75%;margin: 25px; ">-->
+                        <!--<input type="text" class="form-control input-rounded-pratial-left" placeholder="Enter ID">-->
+                        <!--<span class="input-group-btn">-->
+                        <!--<button class="btn red input-rounded-pratial-right"-->
+                        <!--type="button">Go-->
+                        <!--</button>-->
+                        <!--</span>-->
+                        <!--</div>-->
+                        <div style="margin: 20px">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <span class="pull-left refined-search-header">Age</span>
+                                        </div>
+                                    </div>
+                                    <div class="row refined-search-area">
+                                        <div class="col-md-4 margin-bottom-10">
+                                            <div class="row">
+                                                <div class="col-md-12 margin-top-10">
+                                                    <select class="custom-form-control" ng-model="age.start">
+                                                        <option value="18">18</option>
+                                                        <option value="19">19</option>
+                                                        <option value="20">20</option>
+                                                        <option value="21">21</option>
+                                                        <option value="22">22</option>
+                                                        <option value="23">23</option>
+                                                        <option value="24">24</option>
+                                                        <option value="25">25</option>
+                                                        <option value="26">26</option>
+                                                        <option value="27">27</option>
+                                                        <option value="28">28</option>
+                                                        <option value="29">29</option>
+                                                        <option value="30">30</option>
+                                                        <option value="31">31</option>
+                                                        <option value="32">32</option>
+                                                        <option value="33">33</option>
+                                                        <option value="34">34</option>
+                                                        <option value="35">35</option>
+                                                        <option value="36">36</option>
+                                                        <option value="37">37</option>
+                                                        <option value="38">38</option>
+                                                        <option value="39">39</option>
+                                                        <option value="40">40</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 margin-bottom-10">
+                                            <div class="row">
+                                                <div class="col-md-12 margin-top-10">
+                                                    <select class="custom-form-control" ng-model="age.end">
+                                                        <option value="18">18</option>
+                                                        <option value="19">19</option>
+                                                        <option value="20">20</option>
+                                                        <option value="21">21</option>
+                                                        <option value="22">22</option>
+                                                        <option value="23">23</option>
+                                                        <option value="24">24</option>
+                                                        <option value="25">25</option>
+                                                        <option value="26">26</option>
+                                                        <option value="27">27</option>
+                                                        <option value="28">28</option>
+                                                        <option value="29">29</option>
+                                                        <option value="30">30</option>
+                                                        <option value="31">31</option>
+                                                        <option value="32">32</option>
+                                                        <option value="33">33</option>
+                                                        <option value="34">34</option>
+                                                        <option value="35">35</option>
+                                                        <option value="36">36</option>
+                                                        <option value="37">37</option>
+                                                        <option value="38">38</option>
+                                                        <option value="39">39</option>
+                                                        <option value="40">40</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 margin-bottom-10">
+                                            <div class="row">
+                                                <div class="col-md-12 margin-top-10">
+                                                    <button type="button"
+                                                            class="pull-left btn btn-sm btn-outline custom-button"><span
+                                                            class="btn-label-text" ng-click="facetSearch()">Submit</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 margin-top-10">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <span class="pull-left refined-search-header">Height</span>
+                                        </div>
+                                    </div>
+                                    <div class="row refined-search-area">
+                                        <div class="col-md-4 margin-bottom-10">
+                                            <div class="row">
+                                                <div class="col-md-12 margin-top-10">
+                                                    <select class="custom-form-control" ng-model="height.start">
+
+                                                        <option value="140">140</option>
+                                                        <option value="141">141</option>
+                                                        <option value="142">142</option>
+                                                        <option value="143">143</option>
+                                                        <option value="144">144</option>
+                                                        <option value="145">145</option>
+                                                        <option value="146">146</option>
+                                                        <option value="147">147</option>
+                                                        <option value="148">148</option>
+                                                        <option value="149">149</option>
+                                                        <option value="150">150</option>
+                                                        <option value="151">151</option>
+                                                        <option value="152">152</option>
+                                                        <option value="153">153</option>
+                                                        <option value="154">154</option>
+                                                        <option value="155">155</option>
+                                                        <option value="156">156</option>
+                                                        <option value="157">157</option>
+                                                        <option value="158">158</option>
+                                                        <option value="159">159</option>
+                                                        <option value="160">160</option>
+                                                        <option value="161">161</option>
+                                                        <option value="162">162</option>
+                                                        <option value="163">163</option>
+                                                        <option value="164">164</option>
+                                                        <option value="165">165</option>
+                                                        <option value="166">166</option>
+                                                        <option value="167">167</option>
+                                                        <option value="168">168</option>
+                                                        <option value="169">169</option>
+                                                        <option value="170">170</option>
+                                                        <option value="171">171</option>
+                                                        <option value="172">172</option>
+                                                        <option value="173">173</option>
+                                                        <option value="174">174</option>
+                                                        <option value="175">175</option>
+                                                        <option value="176">176</option>
+                                                        <option value="177">177</option>
+                                                        <option value="178">178</option>
+                                                        <option value="179">179</option>
+                                                        <option value="180">180</option>
+                                                        <option value="181">181</option>
+                                                        <option value="182">182</option>
+                                                        <option value="183">183</option>
+                                                        <option value="184">184</option>
+                                                        <option value="185">185</option>
+                                                        <option value="186">186</option>
+                                                        <option value="187">187</option>
+                                                        <option value="188">188</option>
+                                                        <option value="189">189</option>
+                                                        <option value="190">190</option>
+                                                        <option value="191">191</option>
+                                                        <option value="192">192</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 margin-bottom-10">
+                                            <div class="row">
+                                                <div class="col-md-12 margin-top-10">
+                                                    <select class="custom-form-control"  ng-model="height.end">
+                                                        <option value="140">140</option>
+                                                        <option value="141">141</option>
+                                                        <option value="142">142</option>
+                                                        <option value="143">143</option>
+                                                        <option value="144">144</option>
+                                                        <option value="145">145</option>
+                                                        <option value="146">146</option>
+                                                        <option value="147">147</option>
+                                                        <option value="148">148</option>
+                                                        <option value="149">149</option>
+                                                        <option value="150">150</option>
+                                                        <option value="151">151</option>
+                                                        <option value="152">152</option>
+                                                        <option value="153">153</option>
+                                                        <option value="154">154</option>
+                                                        <option value="155">155</option>
+                                                        <option value="156">156</option>
+                                                        <option value="157">157</option>
+                                                        <option value="158">158</option>
+                                                        <option value="159">159</option>
+                                                        <option value="160">160</option>
+                                                        <option value="161">161</option>
+                                                        <option value="162">162</option>
+                                                        <option value="163">163</option>
+                                                        <option value="164">164</option>
+                                                        <option value="165">165</option>
+                                                        <option value="166">166</option>
+                                                        <option value="167">167</option>
+                                                        <option value="168">168</option>
+                                                        <option value="169">169</option>
+                                                        <option value="170">170</option>
+                                                        <option value="171">171</option>
+                                                        <option value="172">172</option>
+                                                        <option value="173">173</option>
+                                                        <option value="174">174</option>
+                                                        <option value="175">175</option>
+                                                        <option value="176">176</option>
+                                                        <option value="177">177</option>
+                                                        <option value="178">178</option>
+                                                        <option value="179">179</option>
+                                                        <option value="180">180</option>
+                                                        <option value="181">181</option>
+                                                        <option value="182">182</option>
+                                                        <option value="183">183</option>
+                                                        <option value="184">184</option>
+                                                        <option value="185">185</option>
+                                                        <option value="186">186</option>
+                                                        <option value="187">187</option>
+                                                        <option value="188">188</option>
+                                                        <option value="189">189</option>
+                                                        <option value="190">190</option>
+                                                        <option value="191">191</option>
+                                                        <option value="192">192</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 margin-bottom-10">
+                                            <div class="row">
+                                                <div class="col-md-12 margin-top-10">
+                                                    <button type="button"
+                                                            class="pull-left btn btn-sm btn-outline custom-button"><span
+                                                            class="btn-label-text" ng-click="facetSearch()">Submit</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <hr/>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 margin-top-10">
+                                    <div class="row" ng-click="selectFacet('mstatusDiv')" style="cursor: pointer">
+                                        <div class="col-md-12" >
+                                            <span class="pull-left refined-search-header">Martial status</span>
+                                            <span class="pull-right refined-search-header">
+                                                <a ng-if="mstatusDiv" ><i class="fa fa-angle-right"></i></a>
+                                                <a  ng-if="!mstatusDiv" ><i class="fa fa-angle-down"></i></a> </span>
+                                        </div>
+                                    </div>
+                                    <div class="row refined-search-area" ng-hide="mstatusDiv">
+                                        <div class="col-md-12 margin-top-10 margin-bottom-10">
+                                            <div ng-repeat="mstatus in martialStatus" class="row">
+                                                <div class="col-md-12">
+                                            <span  class="pull-left refined-search-sub-label">
+                                                <!--<input type="radio" value="{{mstatus.count}}" ng-model="match.mstatus" ng-click="search()" name="matrialstatus">-->
+                                               <span ng-style="isTrue(mstatus,'mstatus') && {'font-weight':'bold','color':'grey','font-size':'15px'}" class="pull-left" class="pull-left" ng-click="facetSearch(mstatus,'mstatus')"> {{mstatus.name}}</span>
+                                            </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 margin-top-10">
+                                    <div class="row" ng-click="selectFacet('motherTongueDiv')" style="cursor: pointer">
+                                        <div class="col-md-12" >
+                                            <span class="pull-left refined-search-header">MotherTongue</span>
+                                             <span class="pull-right refined-search-header">
+                                                <a ng-if="motherTongueDiv" ><i class="fa fa-angle-right"></i></a>
+                                                <a  ng-if="!motherTongueDiv" ><i class="fa fa-angle-down"></i></a> </span>
+
+                                        </div>
+                                    </div>
+                                    <div class="row refined-search-area" ng-hide="motherTongueDiv">
+                                        <div class="col-md-12 margin-top-10 margin-bottom-10">
+                                            <div ng-repeat="obj in populate.mothertongue | limitTo:mtcount" class="row">
+                                                <div class="col-md-12">
+                                            <span  class="pull-left refined-search-sub-label">
+                                               <!--<input type="checkbox" value="{{obj.id_mothertongue}}" name="motherTongue" ng-click="search()"/> {{obj.mothertongue}}-->
+                                                <span ng-style="isTrue(obj.id_mothertongue,'motherTongue') && {'font-weight':'bold','color':'grey','font-size':'15px'}" class="pull-left" ng-click="facetSearch(obj.id_mothertongue,'motherTongue')"> {{obj.mothertongue}}</span>
+
+                                            </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 margin-bottom-10" ng-hide="motherTongueDiv">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <span ng-if="populate.mothertongue.length > mtcount" class="show-more-less pull-left" ng-click="showMoreMStatus('mtcount','more')">More</span>
+                                                    <span ng-if="mtcount != 4" class="show-more-less pull-right" ng-click="showMoreMStatus('mtcount','less')">Less</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 margin-top-10">
+                                    <div class="row" ng-click="selectFacet('religionDiv')" style="cursor: pointer">
+                                        <div class="col-md-12">
+                                            <span class="pull-left refined-search-header">Religion</span>
+                                             <span class="pull-right refined-search-header">
+                                                <a ng-if="religionDiv" ><i class="fa fa-angle-right"></i></a>
+                                                <a  ng-if="!religionDiv" ><i class="fa fa-angle-down"></i></a> </span>
+
+                                        </div>
+                                    </div>
+                                    <div class="row refined-search-area" ng-hide="religionDiv">
+                                        <div class="col-md-12 margin-top-10 margin-bottom-10">
+                                            <div ng-repeat="obj in populate.religon | limitTo:relcount" class="row">
+                                                <div class="col-md-12">
+                                            <span  class="pull-left refined-search-sub-label">
+                                               <!--<input type="checkbox" value="{{obj.id_religion}}" name="religion" ng-click="search()"/> {{obj.religion}}-->
+                         <span ng-style="isTrue(obj.id_religion,'religion') && {'font-weight':'bold','color':'grey','font-size':'15px'}"  class="pull-left" ng-click="facetSearch(obj.id_religion,'religion')"> {{obj.religion}}</span>
+
+                                            </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 margin-bottom-10">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <span ng-if="populate.religon.length > relcount" class="show-more-less pull-left" ng-click="showMoreMStatus('relcount','more')">More</span>
+                                                    <span ng-if="relcount != 4" class="show-more-less pull-right" ng-click="showMoreMStatus('relcount','less')">Less</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 margin-top-10">
+                                    <div class="row" ng-click="selectFacet('starDiv')" style="cursor: pointer">
+                                        <div class="col-md-12">
+                                            <span class="pull-left refined-search-header">Star</span>
+                                            <span class="pull-right refined-search-header">
+                                                <a ng-if="starDiv"><i class="fa fa-angle-right"></i></a>
+                                                <a  ng-if="!starDiv" ><i class="fa fa-angle-down"></i></a> </span>
+
+                                        </div>
+                                    </div>
+                                    <div class="row refined-search-area" ng-hide="starDiv">
+                                        <div class="col-md-12 margin-top-10 margin-bottom-10">
+                                            <div ng-repeat="obj in populate.stars | limitTo:starcount" class="row">
+                                                <div class="col-md-12">
+                                            <span  class="pull-left refined-search-sub-label">
+                                               <!--<input type="checkbox" value="{{obj.id_star}}" name="star" ng-click="search()" /> {{obj.star}}-->
+                        <span ng-style="isTrue(obj.id_star,'star') && {'font-weight':'bold','color':'grey','font-size':'15px'}" class="pull-left" ng-click="facetSearch(obj.id_star,'star')"> {{obj.star}}</span>
+
+                                            </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 margin-bottom-10">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <span ng-if="populate.stars.length > starcount" class="show-more-less pull-left" ng-click="showMoreMStatus('starcount','more')">More</span>
+                                                    <span ng-if="starcount != 4" class="show-more-less pull-right" ng-click="showMoreMStatus('starcount','less')">Less</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 margin-top-10">
+                                    <div class="row" ng-click="selectFacet('eduDiv')" style="cursor: pointer">
+                                        <div class="col-md-12">
+                                            <span class="pull-left refined-search-header">Education</span>
+                                            <span class="pull-right refined-search-header">
+                                                <a ng-if="eduDiv" ><i class="fa fa-angle-right"></i></a>
+                                                <a  ng-if="!eduDiv" ><i class="fa fa-angle-down"></i></a> </span>
+
+                                        </div>
+                                    </div>
+                                    <div class="row refined-search-area" ng-hide="eduDiv">
+                                        <div class="col-md-12 margin-top-10 margin-bottom-10" >
+                                            <div ng-repeat="obj in populate.education | limitTo:educount" class="row">
+                                                <div class="col-md-12">
+                                            <span  class="pull-left refined-search-sub-label">
+                                               <!--<input type="checkbox" value="{{obj.id_education}}" name="education" ng-click="search()" /> {{obj.education}}-->
+                                                                    <span ng-style="isTrue(obj.id_education,'education') && {'font-weight':'bold','color':'grey','font-size':'15px'}" class="pull-left" ng-click="facetSearch(obj.id_education,'education')"> {{obj.education}}</span>
+
+                                            </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 margin-bottom-10">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <span ng-if="populate.education.length > educount" class="show-more-less pull-left" ng-click="showMoreMStatus('educount','more')">More</span>
+                                                    <span ng-if="educount != 4" class="show-more-less pull-right" ng-click="showMoreMStatus('educount','less')">Less</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12 margin-top-10">
+                                    <div class="row" ng-click="selectFacet('empDiv')" style="cursor: pointer">
+                                        <div class="col-md-12">
+                                            <span class="pull-left refined-search-header">Employed In</span>
+                                        <span class="pull-right refined-search-header">
+                                                <a ng-if="empDiv" ><i class="fa fa-angle-right"></i></a>
+                                                <a  ng-if="!empDiv" ><i class="fa fa-angle-down"></i></a> </span>
+
+                                        </div>
+                                    </div>
+                                    <div class="row refined-search-area" ng-hide="empDiv">
+                                        <div class="col-md-12 margin-top-10 margin-bottom-10">
+                                            <div ng-repeat="obj in populate.occupation_category | limitTo:ocuCatcount" class="row">
+                                                <div class="col-md-12">
+                                            <!--<span  class="pull-left refined-search-sub-label">-->
+                                               <!--<input type="checkbox" value="{{obj.id_occupation_category}}" name="employed" ng-click="search()"/> {{obj.occupation_category}}-->
+                                            <!--</span>-->
+                                                    <span ng-style="isTrue(obj.id_occupation_category,'occu_cat') && {'font-weight':'bold','color':'grey','font-size':'15px'}" class="pull-left refined-search-sub-label" ng-click="facetSearch(obj.id_occupation_category,'occu_cat')"> {{obj.occupation_category}}</span>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 margin-bottom-10">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <span ng-if="populate.occupation_category.length >= ocuCatcount" class="show-more-less pull-left" ng-click="showMoreMStatus('ocuCatcount','more')">More</span>
+                                                    <span ng-if="ocuCatcount != 4" class="show-more-less pull-right" ng-click="showMoreMStatus('ocuCatcount','less')">Less</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 margin-top-10">
+                                    <div class="row">
+                                        <div class="col-md-12" ng-click="selectFacet('ocuDiv')" style="cursor: pointer">
+                                            <span class="pull-left refined-search-header">Occupation</span>
+                                        <span class="pull-right refined-search-header">
+                                                <a ng-if="ocuDiv" ><i class="fa fa-angle-right"></i></a>
+                                                <a  ng-if="!ocuDiv" ><i class="fa fa-angle-down"></i></a> </span>
+
+                                        </div>
+                                    </div>
+                                    <div class="row refined-search-area" ng-hide="ocuDiv">
+                                        <div class="col-md-12 margin-top-10 margin-bottom-10">
+                                            <div ng-repeat="obj in populate.occupation | limitTo:ocucount" class="row">
+                                            <div class="col-md-12 refined-search-sub-label ">
+                                                <span ng-style="isTrue(obj.id_occupation,'occupation') && {'font-weight':'bold','color':'grey','font-size':'15px'}"class="pull-left" ng-click="facetSearch(obj.id_occupation,'occupation')">{{obj.occupation}}</span>
+                                               <!--<input type="checkbox" value="{{obj.id_occupation}}" name="occupation" ng-click="search()"/> -->
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 margin-bottom-10">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <span ng-if="populate.occupation.length > ocucount" class="show-more-less pull-left" ng-click="showMoreMStatus('ocucount','more')">More</span>
+                                                    <span ng-if="ocucount != 4" class="show-more-less pull-right" ng-click="showMoreMStatus('ocucount','less')">Less</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
                         </div>
+
 
                     </li>
                 </ul>

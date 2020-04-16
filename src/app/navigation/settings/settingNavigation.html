@@ -1,11 +1,11 @@
 <div class="page-sidebar-wrapper ">
-       <div class="page-sidebar navbar-collapse collapse border-rounded" style="border-radius: 10px">
+       <div class="page-sidebar navbar-collapse collapse border-rounded" style="background-color:#e4e8eb!important;;border-radius: 10px">
                 <ul class="page-sidebar-menu border-rounded   " style="background-color: white" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
 
 
                     <li class="nav-item  active open">
                         <ul class="sub-menu settingnav" >
-                            <li style="background-color:#f9fafc;height:37px;padding: 9px 14px 9px 30px;" class="nav-item " id="inbox">
+                            <li style="background-color:#f9fafc;height:37px;padding: 9px 14px 9px 30px;" class="nav-item " >
                                     <span class="title"><b>Settings</b></span>
                             </li>
                             <li  ng-class="{ activateSettingNavBar: isActive('/settings')}" class="nav-item " id="inbox">
@@ -15,27 +15,27 @@
                             </li>
                             <li ng-class="{ activateSettingNavBar: isActive('/settings/emailalerts')}" class="nav-item" id="pending">
                                 <a ui-sref="settings.emailalerts" class="nav-link ">
-                                    <span class="title">Manage Email Alerts</span>
+                                    <span >Manage Email Alerts</span>
                                 </a>
                             </li>
                             <li ng-class="{ activateSettingNavBar: isActive('/settings/contactFilters')}" class="nav-item " id="accept">
                                 <a ui-sref="settings.contactFilters" class="nav-link ">
-                                    <span class="title">Contact Filters</span>
+                                    <span >Contact Filters</span>
                                 </a>
                             </li>
-                            <li ng-class="{ activateSettingNavBar: isActive('/settings/privacySettings')}" class="nav-item" id="decline">
+                            <li ng-class="{ activateSettingNavBar: isActive('/settings/privacySettings')}" class="nav-item">
                                 <a ui-sref="settings.privacySettings" class="nav-link ">
-                                    <span class="title">Privacy Settings</span>
+                                    <span >Privacy Settings</span>
                                 </a>
                             </li>
-                            <li ng-class="{ activateSettingNavBar: isActive('/settings/membershipDetails')}" class="nav-item" id="decline">
-                                <a ui-sref="settings.membershipDetails" class="nav-link ">
-                                    <span class="title">Membership Details</span>
-                                </a>
-                            </li>
-                            <li ng-class="{ activateSettingNavBar: isActive('/settings/deactivateProfile')}" class="nav-item" id="decline">
+                            <!--<li ng-class="{ activateSettingNavBar: isActive('/settings/membershipDetails')}" class="nav-item" >-->
+                                <!--<a ui-sref="settings.membershipDetails" class="nav-link ">-->
+                                    <!--<span class="title">Membership Details</span>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <li ng-class="{ activateSettingNavBar: isActive('/settings/deactivateProfile')}" class="nav-item" >
                                 <a ui-sref="settings.deactivateProfile" class="nav-link ">
-                                    <span class="title">Deactivate Profiles</span>
+                                    <span>Deactivate Profiles</span>
                                 </a>
                             </li>
 

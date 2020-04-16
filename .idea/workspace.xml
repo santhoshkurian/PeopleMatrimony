@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bfa2593e-d0c4-4650-be07-2f4b4b5632d0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/footer/footer.css" afterPath="$PROJECT_DIR$/src/app/footer/footer.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/footer/footer.html" afterPath="$PROJECT_DIR$/src/app/footer/footer.html" />
+    <list default="true" id="bfa2593e-d0c4-4650-be07-2f4b4b5632d0" name="Default" comment="changes">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/directive/image-scroll/image-scroll.html" afterPath="$PROJECT_DIR$/src/app/directive/image-scroll/image-scroll.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
+    <list id="2945ea6f-7113-47fd-addd-6e4199c59dfa" name="New changelist" comment="" />
     <ignored path="PeopleMatrimony.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -17,21 +18,62 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
+    <option name="PATCH_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="PeopleMatrimony" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="viewProfile.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/main/view-profile/viewProfile.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.321429">
+              <caret line="74" column="305" selection-start-line="74" selection-start-column="299" selection-end-line="74" selection-end-column="305" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#span#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#span#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#span#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#span#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#script#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="image-scroll.directive.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/directive/image-scroll/image-scroll.directive.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="image-scroll.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/directive/image-scroll/image-scroll.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.42537314">
+              <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Html5" />
         <option value="CSS File" />
+        <option value="Html5" />
       </list>
     </option>
   </component>
@@ -39,7 +81,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master-copy" />
+        <entry key="$PROJECT_DIR$" value="fixes-5" />
       </map>
     </option>
   </component>
@@ -64,34 +106,83 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app/footer/footer.module.js" />
-        <option value="$PROJECT_DIR$/src/app/index.route.js" />
-        <option value="$PROJECT_DIR$/src/app/index.module.js" />
-        <option value="$PROJECT_DIR$/src/index.css" />
-        <option value="$PROJECT_DIR$/gulp/conf.js" />
-        <option value="$PROJECT_DIR$/.tmp/serve/index.html" />
-        <option value="$PROJECT_DIR$/gulp/copy.js" />
-        <option value="$PROJECT_DIR$/gulp/styles.js" />
-        <option value="$PROJECT_DIR$/src/app/index.css" />
-        <option value="$PROJECT_DIR$/src/app/core/layouts/dbLayout.html" />
-        <option value="$PROJECT_DIR$/src/index.html" />
+        <option value="$PROJECT_DIR$/src/app/main/profile/profile.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/profile/editProfile/profile.html" />
+        <option value="$PROJECT_DIR$/src/app/navigation/message/inbox/inboxNavigation.html" />
         <option value="$PROJECT_DIR$/src/app/footer/footer.controller.js" />
         <option value="$PROJECT_DIR$/src/app/footer/footer.html" />
-        <option value="$PROJECT_DIR$/src/app/footer/footer.css" />
+        <option value="$PROJECT_DIR$/src/app/main/message/inbox/pending/messagePending.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/message/inbox/declined/messageDeclined.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/message/inbox/accepted/messageAccepted.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/message/awaitingReply/awaiting.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/message/sent/sent.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/toolbar/login/loginToolbar.html" />
+        <option value="$PROJECT_DIR$/src/app/index.css" />
+        <option value="$PROJECT_DIR$/src/index.html" />
+        <option value="$PROJECT_DIR$/src/app/toolbar/dashboard/dbToolbar.css" />
+        <option value="$PROJECT_DIR$/src/app/main/search/regular/regular.html" />
+        <option value="$PROJECT_DIR$/src/app/main/search/regular/regularSearch.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/main.module.js" />
+        <option value="$PROJECT_DIR$/src/app/index.route.js" />
+        <option value="$PROJECT_DIR$/src/app/main/settings/privacySettings/privacySettings.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/managephotos/managephoto.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/managephotos/managephoto.html" />
+        <option value="$PROJECT_DIR$/src/app/main/search/searchbyid/searchById.html" />
+        <option value="$PROJECT_DIR$/src/app/toolbar/dashboard/dbToolbar.html" />
+        <option value="$PROJECT_DIR$/src/app/toolbar/managephoto/managephotoToolbar.html" />
+        <option value="$PROJECT_DIR$/src/app/toolbar/matches/matchestoolbar.html" />
+        <option value="$PROJECT_DIR$/src/app/toolbar/message/messagetoolbar.html" />
+        <option value="$PROJECT_DIR$/src/app/toolbar/profile/profileToolbar.html" />
+        <option value="$PROJECT_DIR$/src/app/toolbar/search/searchtoolbar.html" />
+        <option value="$PROJECT_DIR$/src/app/toolbar/searchresults/searchresultstoolbar.html" />
+        <option value="$PROJECT_DIR$/src/app/toolbar/settings/settingsToolbar.html" />
+        <option value="$PROJECT_DIR$/src/app/main/payment/payment.css" />
+        <option value="$PROJECT_DIR$/src/app/main/settings/deactivateProfile/deactivateProfile.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/settings/deactivateProfile/deactivateProfile.html" />
+        <option value="$PROJECT_DIR$/src/app/directive/image-scroll/image-scroll.directive.js" />
+        <option value="$PROJECT_DIR$/src/app/main/view-profile/viewProfile.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/login/login.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/searchresults/searchresults.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/payment/payment.html" />
+        <option value="$PROJECT_DIR$/src/app/main/matches/matches.controller.js" />
+        <option value="$PROJECT_DIR$/src/app/main/matches/matches.html" />
+        <option value="$PROJECT_DIR$/src/app/main/searchresults/searchresults.html" />
+        <option value="$PROJECT_DIR$/src/app/main/message/inbox/accepted/messageAccepted.html" />
+        <option value="$PROJECT_DIR$/src/app/main/message/inbox/declined/messageDeclined.html" />
+        <option value="$PROJECT_DIR$/src/app/main/message/inbox/pending/messagePending.html" />
+        <option value="$PROJECT_DIR$/src/app/main/message/awaitingReply/awaiting.html" />
+        <option value="$PROJECT_DIR$/src/app/main/message/sent/sent.html" />
+        <option value="$PROJECT_DIR$/src/app/index.module.js" />
+        <option value="$PROJECT_DIR$/src/app/main/login/loginContent.html" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/app/main/view-profile/viewProfile.html" />
+        <option value="$PROJECT_DIR$/src/app/directive/image-scroll/image-scroll.html" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+    <gulpfiles>
+      <GulpfileState>
+        <gulpfile-path>$PROJECT_DIR$/gulpfile.js</gulpfile-path>
+      </GulpfileState>
+    </gulpfiles>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="NamedScopeManager">
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
+    <option name="x" value="51" />
     <option name="y" value="24" />
-    <option name="width" value="1301" />
+    <option name="width" value="1315" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -117,8 +208,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Project Files" />
       </pane>
@@ -130,6 +221,180 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="icons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="login" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PeopleMatrimony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="directive" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="image-scroll" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -137,15 +402,26 @@
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/PeopleMatrimony" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/peoplematrimony" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="FullScreen" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/node_modules/angularjs-dropdown-multiselect/gulp/build.js" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/santhosh/My_Projects/People_matrimony/PeopleMatrimony/src/app/main/searchresults/searchresults.controller.js" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/icons" />
+      <recent name="$PROJECT_DIR$/src/assets/img" />
+      <recent name="$PROJECT_DIR$/src/app/main/login" />
+      <recent name="$PROJECT_DIR$/src/app/toolbar/login" />
+      <recent name="$PROJECT_DIR$/src/assets/defaultImages" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/main/help/liveHelp" />
+      <recent name="$PROJECT_DIR$/src/app/main/dashboard" />
       <recent name="$PROJECT_DIR$/src/app/footer/test" />
     </key>
   </component>
@@ -416,79 +692,496 @@
       <workItem from="1497542048895" duration="109000" />
       <workItem from="1497542197680" duration="163000" />
       <workItem from="1498158178560" duration="151000" />
+      <workItem from="1500783604118" duration="9873000" />
+      <workItem from="1500903803778" duration="4208000" />
+      <workItem from="1500999725444" duration="5448000" />
+      <workItem from="1501411739313" duration="2840000" />
+      <workItem from="1501511595379" duration="655000" />
+      <workItem from="1501518776148" duration="587000" />
+      <workItem from="1501601887960" duration="5535000" />
+      <workItem from="1501862436976" duration="15000" />
+      <workItem from="1501905202384" duration="1292000" />
+      <workItem from="1501925511159" duration="590000" />
+      <workItem from="1501940729537" duration="579000" />
+      <workItem from="1502004016237" duration="5706000" />
+      <workItem from="1502030786291" duration="8059000" />
+      <workItem from="1502594975102" duration="925000" />
+      <workItem from="1502641080545" duration="1765000" />
+      <workItem from="1503159925315" duration="2029000" />
+      <workItem from="1503203970889" duration="1179000" />
+      <workItem from="1503232594040" duration="61000" />
+      <workItem from="1503232682963" duration="8279000" />
+      <workItem from="1503740999645" duration="583000" />
+      <workItem from="1503756553099" duration="6375000" />
+      <workItem from="1503844368165" duration="3271000" />
+      <workItem from="1504364807454" duration="2967000" />
+      <workItem from="1504533091767" duration="8092000" />
+      <workItem from="1504582416398" duration="7729000" />
+      <workItem from="1504619316820" duration="5472000" />
+      <workItem from="1504966554526" duration="587000" />
+      <workItem from="1505569851980" duration="2155000" />
+      <workItem from="1505572142323" duration="670000" />
+      <workItem from="1505575582599" duration="1181000" />
+      <workItem from="1505659957681" duration="5676000" />
+      <workItem from="1507992567573" duration="2567000" />
+      <workItem from="1508076368602" duration="1216000" />
+      <workItem from="1508340369033" duration="1198000" />
+      <workItem from="1508392820144" duration="9047000" />
+      <workItem from="1508595659797" duration="4319000" />
+      <workItem from="1508655286927" duration="4349000" />
+      <workItem from="1508678236929" duration="1103000" />
+      <workItem from="1509633382971" duration="6693000" />
+      <workItem from="1509773059641" duration="9021000" />
+      <workItem from="1509798349968" duration="132000" />
+      <workItem from="1509798517029" duration="8529000" />
+      <workItem from="1510076620421" duration="2480000" />
+      <workItem from="1510154253364" duration="1740000" />
+      <workItem from="1510240553773" duration="10099000" />
+      <workItem from="1510374857817" duration="585000" />
+      <workItem from="1510395999995" duration="2771000" />
+      <workItem from="1510409878269" duration="585000" />
+      <workItem from="1510461700859" duration="588000" />
+      <workItem from="1510495623090" duration="9767000" />
+      <workItem from="1510677813586" duration="4179000" />
+      <workItem from="1510752656513" duration="13012000" />
+      <workItem from="1510846216563" duration="4250000" />
+      <workItem from="1511017644467" duration="4698000" />
+      <workItem from="1511445615573" duration="6039000" />
+      <workItem from="1511458623460" duration="670000" />
+      <workItem from="1511539322094" duration="4110000" />
+      <workItem from="1511616949240" duration="12110000" />
+      <workItem from="1511667356652" duration="581000" />
+      <workItem from="1511792429535" duration="14381000" />
+      <workItem from="1511975966192" duration="4911000" />
+      <workItem from="1512051726614" duration="12223000" />
+      <workItem from="1512128319747" duration="748000" />
+      <workItem from="1512227347628" duration="10643000" />
+      <workItem from="1512274526222" duration="4934000" />
+      <workItem from="1512279568394" duration="227000" />
+      <workItem from="1512304912500" duration="1152000" />
+      <workItem from="1512307439742" duration="12378000" />
+      <workItem from="1512395946468" duration="4846000" />
+      <workItem from="1512484178621" duration="11423000" />
+      <workItem from="1512570952788" duration="253000" />
+      <workItem from="1512571246582" duration="8309000" />
+      <workItem from="1512655510339" duration="6027000" />
+      <workItem from="1512794865282" duration="6335000" />
+      <workItem from="1512817156978" duration="6462000" />
+      <workItem from="1512909879570" duration="1189000" />
+      <workItem from="1512914405020" duration="7764000" />
+      <workItem from="1512923956113" duration="4212000" />
+      <workItem from="1513003977529" duration="7521000" />
+      <workItem from="1513089574867" duration="8626000" />
+      <workItem from="1513102336640" duration="53000" />
+      <workItem from="1513260677583" duration="3355000" />
+      <workItem from="1513264380826" duration="1425000" />
+      <workItem from="1513273165402" duration="663000" />
+      <workItem from="1513274146535" duration="298000" />
+      <workItem from="1513410677763" duration="3867000" />
+      <workItem from="1513428034728" duration="13159000" />
+      <workItem from="1513490815606" duration="2111000" />
+      <workItem from="1513615740114" duration="3131000" />
+      <workItem from="1513784254236" duration="5016000" />
+      <workItem from="1513790909772" duration="63000" />
+      <workItem from="1513823195374" duration="627000" />
+      <workItem from="1513869155415" duration="2125000" />
+      <workItem from="1513961416123" duration="29000" />
+      <workItem from="1513961817628" duration="1122000" />
+      <workItem from="1513999854485" duration="13947000" />
+      <workItem from="1514031900753" duration="17006000" />
+      <workItem from="1514096984899" duration="4072000" />
+      <workItem from="1514116801296" duration="17659000" />
+      <workItem from="1514204649845" duration="14964000" />
+      <workItem from="1514289266183" duration="30000" />
+      <workItem from="1514292418459" duration="567000" />
+      <workItem from="1514293581659" duration="7788000" />
+      <workItem from="1514472580768" duration="10294000" />
+      <workItem from="1514605386585" duration="5001000" />
+      <workItem from="1514619132466" duration="3739000" />
+      <workItem from="1514650311721" duration="7548000" />
+      <workItem from="1514779910868" duration="3593000" />
+      <workItem from="1514819785374" duration="3181000" />
+      <workItem from="1514910749543" duration="7504000" />
+      <workItem from="1514989401824" duration="8732000" />
+      <workItem from="1515077320182" duration="13019000" />
+      <workItem from="1515209813826" duration="3587000" />
+      <workItem from="1515227403360" duration="4486000" />
+      <workItem from="1515330089205" duration="7819000" />
+      <workItem from="1515502216114" duration="23000" />
+      <workItem from="1515502600671" duration="11673000" />
+      <workItem from="1515591574786" duration="12365000" />
+      <workItem from="1515678143142" duration="11255000" />
+      <workItem from="1515765819198" duration="9073000" />
+      <workItem from="1515811533174" duration="13023000" />
+      <workItem from="1515827311081" duration="5582000" />
+      <workItem from="1515850143288" duration="12594000" />
+      <workItem from="1515910463159" duration="9306000" />
+      <workItem from="1515932121888" duration="7664000" />
+      <workItem from="1516124629014" duration="1737000" />
+      <workItem from="1516198966028" duration="12596000" />
+      <workItem from="1516285606849" duration="12446000" />
+      <workItem from="1516379905152" duration="3776000" />
+      <workItem from="1516448093098" duration="16438000" />
+      <workItem from="1516528199111" duration="14444000" />
+      <workItem from="1516630687443" duration="2616000" />
+      <workItem from="1516639585275" duration="1676000" />
     </task>
-    <task id="LOCAL-00001" summary="gulp auto inject scc issue fixed">
-      <created>1496948721517</created>
-      <option name="number" value="00001" />
+    <task id="LOCAL-00283" summary="changes">
+      <created>1515856619564</created>
+      <option name="number" value="00283" />
       <option name="project" value="LOCAL" />
-      <updated>1496948721529</updated>
+      <updated>1515856619565</updated>
     </task>
-    <task id="LOCAL-00002" summary="toolbar style issue fixed">
-      <created>1497380101760</created>
-      <option name="number" value="00002" />
+    <task id="LOCAL-00284" summary="changes">
+      <created>1515860480275</created>
+      <option name="number" value="00284" />
       <option name="project" value="LOCAL" />
-      <updated>1497380101760</updated>
+      <updated>1515860480275</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00285" summary="changes">
+      <created>1515860603369</created>
+      <option name="number" value="00285" />
+      <option name="project" value="LOCAL" />
+      <updated>1515860603369</updated>
+    </task>
+    <task id="LOCAL-00286" summary="changes">
+      <created>1515862832875</created>
+      <option name="number" value="00286" />
+      <option name="project" value="LOCAL" />
+      <updated>1515862832875</updated>
+    </task>
+    <task id="LOCAL-00287" summary="changes">
+      <created>1515863039720</created>
+      <option name="number" value="00287" />
+      <option name="project" value="LOCAL" />
+      <updated>1515863039720</updated>
+    </task>
+    <task id="LOCAL-00288" summary="changes">
+      <created>1515864641768</created>
+      <option name="number" value="00288" />
+      <option name="project" value="LOCAL" />
+      <updated>1515864641769</updated>
+    </task>
+    <task id="LOCAL-00289" summary="changes">
+      <created>1515911879230</created>
+      <option name="number" value="00289" />
+      <option name="project" value="LOCAL" />
+      <updated>1515911879231</updated>
+    </task>
+    <task id="LOCAL-00290" summary="changes">
+      <created>1515911966625</created>
+      <option name="number" value="00290" />
+      <option name="project" value="LOCAL" />
+      <updated>1515911966625</updated>
+    </task>
+    <task id="LOCAL-00291" summary="changes">
+      <created>1515914085594</created>
+      <option name="number" value="00291" />
+      <option name="project" value="LOCAL" />
+      <updated>1515914085594</updated>
+    </task>
+    <task id="LOCAL-00292" summary="changes">
+      <created>1515914487790</created>
+      <option name="number" value="00292" />
+      <option name="project" value="LOCAL" />
+      <updated>1515914487790</updated>
+    </task>
+    <task id="LOCAL-00293" summary="changes">
+      <created>1515914706487</created>
+      <option name="number" value="00293" />
+      <option name="project" value="LOCAL" />
+      <updated>1515914706487</updated>
+    </task>
+    <task id="LOCAL-00294" summary="changes">
+      <created>1515915973979</created>
+      <option name="number" value="00294" />
+      <option name="project" value="LOCAL" />
+      <updated>1515915973979</updated>
+    </task>
+    <task id="LOCAL-00295" summary="changes">
+      <created>1515920469397</created>
+      <option name="number" value="00295" />
+      <option name="project" value="LOCAL" />
+      <updated>1515920469397</updated>
+    </task>
+    <task id="LOCAL-00296" summary="changes">
+      <created>1515933567200</created>
+      <option name="number" value="00296" />
+      <option name="project" value="LOCAL" />
+      <updated>1515933567201</updated>
+    </task>
+    <task id="LOCAL-00297" summary="changes">
+      <created>1516202940045</created>
+      <option name="number" value="00297" />
+      <option name="project" value="LOCAL" />
+      <updated>1516202940046</updated>
+    </task>
+    <task id="LOCAL-00298" summary="changes">
+      <created>1516203400697</created>
+      <option name="number" value="00298" />
+      <option name="project" value="LOCAL" />
+      <updated>1516203400697</updated>
+    </task>
+    <task id="LOCAL-00299" summary="changes">
+      <created>1516203807200</created>
+      <option name="number" value="00299" />
+      <option name="project" value="LOCAL" />
+      <updated>1516203807200</updated>
+    </task>
+    <task id="LOCAL-00300" summary="changes">
+      <created>1516204425953</created>
+      <option name="number" value="00300" />
+      <option name="project" value="LOCAL" />
+      <updated>1516204425953</updated>
+    </task>
+    <task id="LOCAL-00301" summary="changes">
+      <created>1516206007986</created>
+      <option name="number" value="00301" />
+      <option name="project" value="LOCAL" />
+      <updated>1516206007986</updated>
+    </task>
+    <task id="LOCAL-00302" summary="changes">
+      <created>1516209575606</created>
+      <option name="number" value="00302" />
+      <option name="project" value="LOCAL" />
+      <updated>1516209575606</updated>
+    </task>
+    <task id="LOCAL-00303" summary="changes">
+      <created>1516212053690</created>
+      <option name="number" value="00303" />
+      <option name="project" value="LOCAL" />
+      <updated>1516212053690</updated>
+    </task>
+    <task id="LOCAL-00304" summary="changes">
+      <created>1516212672222</created>
+      <option name="number" value="00304" />
+      <option name="project" value="LOCAL" />
+      <updated>1516212672222</updated>
+    </task>
+    <task id="LOCAL-00305" summary="changes">
+      <created>1516289666109</created>
+      <option name="number" value="00305" />
+      <option name="project" value="LOCAL" />
+      <updated>1516289666110</updated>
+    </task>
+    <task id="LOCAL-00306" summary="changes">
+      <created>1516290037505</created>
+      <option name="number" value="00306" />
+      <option name="project" value="LOCAL" />
+      <updated>1516290037506</updated>
+    </task>
+    <task id="LOCAL-00307" summary="changes">
+      <created>1516291151705</created>
+      <option name="number" value="00307" />
+      <option name="project" value="LOCAL" />
+      <updated>1516291151705</updated>
+    </task>
+    <task id="LOCAL-00308" summary="changes">
+      <created>1516291340871</created>
+      <option name="number" value="00308" />
+      <option name="project" value="LOCAL" />
+      <updated>1516291340871</updated>
+    </task>
+    <task id="LOCAL-00309" summary="changes">
+      <created>1516292795788</created>
+      <option name="number" value="00309" />
+      <option name="project" value="LOCAL" />
+      <updated>1516292795788</updated>
+    </task>
+    <task id="LOCAL-00310" summary="changes">
+      <created>1516294098285</created>
+      <option name="number" value="00310" />
+      <option name="project" value="LOCAL" />
+      <updated>1516294098285</updated>
+    </task>
+    <task id="LOCAL-00311" summary="changes">
+      <created>1516294486909</created>
+      <option name="number" value="00311" />
+      <option name="project" value="LOCAL" />
+      <updated>1516294486910</updated>
+    </task>
+    <task id="LOCAL-00312" summary="changes">
+      <created>1516294806526</created>
+      <option name="number" value="00312" />
+      <option name="project" value="LOCAL" />
+      <updated>1516294806526</updated>
+    </task>
+    <task id="LOCAL-00313" summary="changes">
+      <created>1516297859362</created>
+      <option name="number" value="00313" />
+      <option name="project" value="LOCAL" />
+      <updated>1516297859362</updated>
+    </task>
+    <task id="LOCAL-00314" summary="changes">
+      <created>1516298273395</created>
+      <option name="number" value="00314" />
+      <option name="project" value="LOCAL" />
+      <updated>1516298273395</updated>
+    </task>
+    <task id="LOCAL-00315" summary="changes">
+      <created>1516298932903</created>
+      <option name="number" value="00315" />
+      <option name="project" value="LOCAL" />
+      <updated>1516298932904</updated>
+    </task>
+    <task id="LOCAL-00316" summary="changes">
+      <created>1516299354836</created>
+      <option name="number" value="00316" />
+      <option name="project" value="LOCAL" />
+      <updated>1516299354836</updated>
+    </task>
+    <task id="LOCAL-00317" summary="changes">
+      <created>1516382969666</created>
+      <option name="number" value="00317" />
+      <option name="project" value="LOCAL" />
+      <updated>1516382969667</updated>
+    </task>
+    <task id="LOCAL-00318" summary="changes">
+      <created>1516384369486</created>
+      <option name="number" value="00318" />
+      <option name="project" value="LOCAL" />
+      <updated>1516384369487</updated>
+    </task>
+    <task id="LOCAL-00319" summary="changes">
+      <created>1516449718439</created>
+      <option name="number" value="00319" />
+      <option name="project" value="LOCAL" />
+      <updated>1516449718440</updated>
+    </task>
+    <task id="LOCAL-00320" summary="changes">
+      <created>1516465005747</created>
+      <option name="number" value="00320" />
+      <option name="project" value="LOCAL" />
+      <updated>1516465005747</updated>
+    </task>
+    <task id="LOCAL-00321" summary="changes">
+      <created>1516465514152</created>
+      <option name="number" value="00321" />
+      <option name="project" value="LOCAL" />
+      <updated>1516465514152</updated>
+    </task>
+    <task id="LOCAL-00322" summary="changes">
+      <created>1516530208082</created>
+      <option name="number" value="00322" />
+      <option name="project" value="LOCAL" />
+      <updated>1516530208083</updated>
+    </task>
+    <task id="LOCAL-00323" summary="changes">
+      <created>1516530295393</created>
+      <option name="number" value="00323" />
+      <option name="project" value="LOCAL" />
+      <updated>1516530295394</updated>
+    </task>
+    <task id="LOCAL-00324" summary="changes">
+      <created>1516534302712</created>
+      <option name="number" value="00324" />
+      <option name="project" value="LOCAL" />
+      <updated>1516534302712</updated>
+    </task>
+    <task id="LOCAL-00325" summary="changes">
+      <created>1516535353989</created>
+      <option name="number" value="00325" />
+      <option name="project" value="LOCAL" />
+      <updated>1516535353989</updated>
+    </task>
+    <task id="LOCAL-00326" summary="changes">
+      <created>1516535619309</created>
+      <option name="number" value="00326" />
+      <option name="project" value="LOCAL" />
+      <updated>1516535619309</updated>
+    </task>
+    <task id="LOCAL-00327" summary="changes">
+      <created>1516540461550</created>
+      <option name="number" value="00327" />
+      <option name="project" value="LOCAL" />
+      <updated>1516540461550</updated>
+    </task>
+    <task id="LOCAL-00328" summary="changes">
+      <created>1516545726525</created>
+      <option name="number" value="00328" />
+      <option name="project" value="LOCAL" />
+      <updated>1516545726525</updated>
+    </task>
+    <task id="LOCAL-00329" summary="changes">
+      <created>1516551950559</created>
+      <option name="number" value="00329" />
+      <option name="project" value="LOCAL" />
+      <updated>1516551950559</updated>
+    </task>
+    <task id="LOCAL-00330" summary="changes">
+      <created>1516631684029</created>
+      <option name="number" value="00330" />
+      <option name="project" value="LOCAL" />
+      <updated>1516631684029</updated>
+    </task>
+    <task id="LOCAL-00331" summary="changes">
+      <created>1516640861633</created>
+      <option name="number" value="00331" />
+      <option name="project" value="LOCAL" />
+      <updated>1516640861637</updated>
+    </task>
+    <option name="localTasksCounter" value="332" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23950000" />
+    <option name="totallyTimeSpent" value="755867000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1301" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="51" y="24" width="1315" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.50278884" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32850242" sideWeight="0.49721116" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23832528" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25925925" sideWeight="0.49721116" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24940239" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21907014" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980299" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.50278884" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32850242" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24940239" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980299" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23832528" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23671497" sideWeight="0.49721116" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23877068" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25764894" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -503,50 +1196,88 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="gulp auto inject scc issue fixed" />
-    <MESSAGE value="toolbar style issue fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="toolbar style issue fixed" />
+    <MESSAGE value="AAbout family api added" />
+    <MESSAGE value="About family api added" />
+    <MESSAGE value="login api changes" />
+    <MESSAGE value="short list api added" />
+    <MESSAGE value="matches api added" />
+    <MESSAGE value="shortlist list api added" />
+    <MESSAGE value="age filter api added" />
+    <MESSAGE value="height filter api added" />
+    <MESSAGE value="image url added" />
+    <MESSAGE value="image upload changes" />
+    <MESSAGE value="update primary images added" />
+    <MESSAGE value="style changes" />
+    <MESSAGE value="profile edit added" />
+    <MESSAGE value="registration added" />
+    <MESSAGE value="changess" />
+    <MESSAGE value="image -directive created" />
+    <MESSAGE value="message changes" />
+    <MESSAGE value="login changes" />
+    <MESSAGE value="image changes" />
+    <MESSAGE value=" changes" />
+    <MESSAGE value="reg step2  added" />
+    <MESSAGE value="remove drop down color" />
+    <MESSAGE value="edit profile changes" />
+    <MESSAGE value="multiselect added" />
+    <MESSAGE value="changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app/main/login/login.controller.js</url>
+          <line>238</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="7" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/footer/footer.html">
+    <entry file="file://$PROJECT_DIR$/src/assets/images/mastercard-logo-big.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/img/logo10.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/login/loginToolbar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="7" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="7" />
+        <state vertical-scroll-proportion="-4.75">
+          <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/core/layouts/dbLayout.html">
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/login/registrationStep2Toolbar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="-11.535714">
+          <caret line="53" column="55" selection-start-line="53" selection-start-column="55" selection-end-line="53" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/index.route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="27" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/toolbar/dashboard/dbToolbar.html">
+    <entry file="file://$PROJECT_DIR$/src/app/main/dashboard/dashboard.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -556,245 +1287,424 @@
     <entry file="file://$PROJECT_DIR$/src/app/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/footer/footer.css">
+    <entry file="file://$PROJECT_DIR$/src/app/main/recomendation/recomendation.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/footer/footer.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/dashboard/dbToolbar.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/footer/footer.html">
+    <entry file="file://$PROJECT_DIR$/src/app/main/search/regular/regular.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="7" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="7" />
+          <caret line="485" column="110" selection-start-line="485" selection-start-column="48" selection-end-line="485" selection-end-column="110" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/core/layouts/dbLayout.html">
+    <entry file="file://$PROJECT_DIR$/src/app/main/search/regular/regularSearch.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
+          <caret line="261" column="42" selection-start-line="261" selection-start-column="42" selection-end-line="261" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/index.route.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="27" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="27" />
-          <folding />
+          <caret line="881" column="21" selection-start-line="881" selection-start-column="21" selection-end-line="881" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/managephotos/managephoto.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="141" column="9" selection-start-line="141" selection-start-column="9" selection-end-line="141" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/profile/editProfile/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1044" column="45" selection-start-line="1040" selection-start-column="36" selection-end-line="1044" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/managephotos/managephoto.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="287" column="43" selection-start-line="287" selection-start-column="43" selection-end-line="287" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/search/searchbyid/searchById.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3571428">
+          <caret line="32" column="80" selection-start-line="32" selection-start-column="80" selection-end-line="32" selection-end-column="80" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/toolbar/dashboard/dbToolbar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-9.5">
+          <caret line="197" column="63" selection-start-line="197" selection-start-column="63" selection-end-line="197" selection-end-column="63" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/index.css">
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/managephoto/managephotoToolbar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        <state vertical-scroll-proportion="-3.8214285">
+          <caret line="82" column="63" selection-start-line="82" selection-start-column="63" selection-end-line="82" selection-end-column="63" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/footer/footer.css">
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/matches/matchestoolbar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+        <state vertical-scroll-proportion="-8.571428">
+          <caret line="84" column="63" selection-start-line="84" selection-start-column="63" selection-end-line="84" selection-end-column="63" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/footer/footer.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/message/messagetoolbar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+        <state vertical-scroll-proportion="-3.7142856">
+          <caret line="84" column="63" selection-start-line="84" selection-start-column="63" selection-end-line="84" selection-end-column="63" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/index.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/profile/profileToolbar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-7.785714">
+          <caret line="82" column="63" selection-start-line="82" selection-start-column="63" selection-end-line="82" selection-end-column="63" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/toolbar/toolbar.module.js">
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/search/searchtoolbar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="5" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="5" />
+        <state vertical-scroll-proportion="-7.785714">
+          <caret line="84" column="63" selection-start-line="84" selection-start-column="63" selection-end-line="84" selection-end-column="63" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/index.module.js">
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/searchresults/searchresultstoolbar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="61" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
+        <state vertical-scroll-proportion="-4.071429">
+          <caret line="83" column="63" selection-start-line="83" selection-start-column="63" selection-end-line="83" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/toolbar/settings/settingsToolbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.73953485">
+          <caret line="183" column="63" selection-start-line="183" selection-start-column="63" selection-end-line="183" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/payment/payment.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.935484">
+          <caret line="44" column="19" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/main/main.module.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.038539555">
+          <caret line="190" column="0" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/profile/profile.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="737" column="19" selection-start-line="733" selection-start-column="16" selection-end-line="737" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/settings/deactivateProfile/deactivateProfile.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/settings/privacySettings/privacySettings.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="79" column="9" selection-start-line="65" selection-start-column="8" selection-end-line="79" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/settings/deactivateProfile/deactivateProfile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.464286">
+          <caret line="62" column="100" selection-start-line="62" selection-start-column="100" selection-end-line="62" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/settings/privacySettings/privacySettings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6107527">
+          <caret line="77" column="111" selection-start-line="77" selection-start-column="104" selection-end-line="77" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/login/login.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.07910751">
+          <caret line="394" column="153" selection-start-line="394" selection-start-column="153" selection-end-line="394" selection-end-column="153" />
+          <folding>
+            <element signature="e#13514#13685#0" expanded="false" />
+            <element signature="e#13809#14480#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/view-profile/viewProfile.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="205" column="24" selection-start-line="205" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/navigation/searchresults/searchResultsNavigation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="13.140187">
+          <caret line="296" column="207" selection-start-line="296" selection-start-column="201" selection-end-line="296" selection-end-column="207" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/payment/payment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="296" column="62" selection-start-line="296" selection-start-column="62" selection-end-line="296" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/searchresults/searchresults.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="161" column="13" selection-start-line="153" selection-start-column="12" selection-end-line="161" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/matches/matches.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="211" column="13" selection-start-line="211" selection-start-column="13" selection-end-line="211" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/matches/matches.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46187365">
+          <caret line="237" column="35" selection-start-line="237" selection-start-column="0" selection-end-line="238" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/searchresults/searchresults.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.25">
+          <caret line="239" column="37" selection-start-line="239" selection-start-column="37" selection-end-line="239" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/message/inbox/accepted/messageAccepted.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.892858">
+          <caret line="85" column="127" selection-start-line="85" selection-start-column="127" selection-end-line="85" selection-end-column="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/message/inbox/declined/messageDeclined.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.464286">
+          <caret line="87" column="127" selection-start-line="87" selection-start-column="127" selection-end-line="87" selection-end-column="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/message/inbox/pending/messagePending.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.571428">
+          <caret line="86" column="127" selection-start-line="86" selection-start-column="127" selection-end-line="86" selection-end-column="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/message/awaitingReply/awaiting.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.142858">
+          <caret line="86" column="127" selection-start-line="86" selection-start-column="127" selection-end-line="86" selection-end-column="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/message/sent/sent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49673203">
+          <caret line="86" column="127" selection-start-line="86" selection-start-column="127" selection-end-line="86" selection-end-column="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/core/layouts/loginLayout.html">
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.061290324">
+          <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/login/loginContent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2451613">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/index.module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44970414">
+          <caret line="8" column="87" selection-start-line="8" selection-start-column="87" selection-end-line="8" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/directive/image-scroll/image-scroll.directive.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/core/layouts/profileLayout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/navigation/dashboard/dbNavigation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/dashboard/accept/accept.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45454547">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/img/photo2.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/img/photo1.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/img/icon-color.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/img/logo-light.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gulp/inject.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gulp/conf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16795866">
-          <caret line="17" column="12" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gulp/copy.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gulp/styles.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5939086">
-          <caret line="51" column="51" selection-start-line="51" selection-start-column="51" selection-end-line="51" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/footer/footer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="7" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/core/layouts/dbLayout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52910054">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.html">
+    <entry file="file://$PROJECT_DIR$/src/app/main/view-profile/viewProfile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.02116402">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="-6.321429">
+          <caret line="74" column="305" selection-start-line="74" selection-start-column="299" selection-end-line="74" selection-end-column="305" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#span#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#span#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#span#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#span#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#script#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/index.route.js">
+    <entry file="file://$PROJECT_DIR$/src/app/directive/image-scroll/image-scroll.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16243654">
-          <caret line="36" column="27" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="27" />
-          <folding />
+        <state vertical-scroll-proportion="0.42537314">
+          <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/toolbar/dashboard/dbToolbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15228426">
-          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/footer/footer.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8612521">
-          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/footer/footer.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2284264">
-          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>PeopleMatrimony</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

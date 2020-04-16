@@ -1,0 +1,133 @@
+<div class="col-md-8 col-md-offset-2">
+    <div class="portlet light border-rounded" syle="margin-top:150px">
+
+        <div>
+            <div style="text-align: center;font-size: 15px;padding:20px">
+                If you are interested in partnering with PeoplesMatrimony.com, the Leader in Online Matrimony and he
+                Most Visited Matrimony Portal by Indians world over, please fill he form below
+            </div>
+
+        </div>
+        <div class="portlet-body form  form-horizontal" style="margin: 20px">
+
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label class="font-weight "> Your Name</label>
+
+                        <input type="text" class="form-control  input-rounded"
+                               ng-model="business.name" ng-readonly="checked">
+                        <div ng-if="!nameVal" style="color: red">Please enter your phone Number</div>
+
+
+
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label class="font-weight "> Organisation/Company <span style="color: red">*</span></label>
+
+                        <input type="text" class="form-control  input-rounded"
+                               ng-model="business.company">
+                        <div ng-if="!companyVal" style="color: red">Please enter your phone Number</div>
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label class="font-weight ">Nature of Business</label>
+
+                        <input type="text" class="form-control  input-rounded"
+                               ng-model="business.business_type">
+
+
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label class="font-weight ">Contact Phone <span style="color: red">*</span></label>
+
+                        <input type="number" class="form-control  input-rounded"
+                               ng-model="business.phone">
+                        <div ng-if="!phoneVal" style="color: red">Please enter your phone Number</div>
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label class="font-weight ">Email <span style="color: red">*</span></label>
+
+                        <input type="email" class="form-control  input-rounded"
+                               ng-model="business.email">
+                        <div ng-if="!emailVal" style="color: red">Please enter your email</div>
+
+
+
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight ">Contact Address</label>
+
+             <textarea class="form-control" rows="3"
+                       ng-model="business.address"></textarea>
+
+
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label class="font-weight ">Details/Queries about Patnership <span style="color: red">*</span></label>
+
+             <textarea class="form-control" rows="7"
+                       ng-model="business.description"></textarea>
+                        <div ng-if="!descriptionVal" style="color: red">Please enter your details</div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button ng-click="submit()"
+                            class=" btn btn-default red input-rounded pull-right"
+                            style="color:#ffffea">
+                        Send
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/ng-template" id="enquiryModal.html">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-title" style="color: #4cbcac;">
+            Success
+            <button class=" pull-right btn btn-circle btn-icon-only default" type="button" ng-click="$ctrl.cancel()"><i class="fa fa-times"></i></button>
+        </h4>
+    </div>
+
+    <div class="modal-body">
+        Administrator will Contact you soon .....
+        </div>
+        <!--<div class="modal-footer">-->
+            <!--<div class="row">-->
+                <!--<div class="col-md-12" style="color: grey">-->
+                    <!--To know more about packages call now 9999999999-->
+                <!--</div>-->
+
+
+            <!--</div>-->
+            <!--&lt;!&ndash;<button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>&ndash;&gt;-->
+        <!--</div>-->
+</script>

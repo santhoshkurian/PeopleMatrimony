@@ -1,0 +1,311 @@
+<div class="page-content-wrapper">
+    <!-- BEGIN CONTENT BODY -->
+    <div class="page-content">
+        <!-- BEGIN PAGE HEAD-->
+        <div class="page-head">
+
+            <!-- BEGIN PAGE BASE CONTENT -->
+
+            <div class="row">
+
+                <!--<div class="col-md-12 ">-->
+                <!--<div class="portlet light  border-rounded ">-->
+                <!--<div class="portlet-title " style="border-bottom: 0px">-->
+                <!--<div class="caption green" style="font-size: 12px">-->
+                <!--<span> <input class="filter-check-box" type="checkbox"/>Select All</span>&nbsp; | &nbsp;-->
+                <!--<span> Delete</span>-->
+                <!--</div>-->
+                <!--<div class="actions">-->
+                <!--<div class="btn-group">-->
+                <!--<a class="btn btn-sm red dropdown-toggle" href="javascript:;" data-toggle="dropdown">-->
+                <!--<i class="fa fa-filter"></i>-->
+                <!--</a>-->
+                <!--&lt;!&ndash;<a class="btn btn-sm red dropdown-toggle" href="javascript:;" data-toggle="dropdown">-->
+                <!--<i class="fa fa-map"></i> </a>&ndash;&gt;-->
+                <!--<ul class="dropdown-menu pull-right">-->
+                <!--<li>-->
+                <!--<a href="javascript:;">-->
+                <!--<i class="fa fa-pencil"></i> Edit </a>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<a href="javascript:;">-->
+                <!--<i class="fa fa-trash-o"></i> Delete </a>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<a href="javascript:;">-->
+                <!--<i class="fa fa-ban"></i> Ban </a>-->
+                <!--</li>-->
+                <!--<li class="divider"></li>-->
+                <!--<li>-->
+                <!--<a href="javascript:;"> Make admin </a>-->
+                <!--</li>-->
+                <!--</ul>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <div class="col-md-12">
+                    <div ng-if="pending.length == 0" class="portlet light  border-rounded ">
+                        <div class="alert alert-success">
+                            No messages in this folder
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 text-right">
+                    <dir-pagination-controls
+                            max-size="5"
+                            direction-links="true"
+                            boundary-links="true">
+                    </dir-pagination-controls>
+                </div>
+
+
+            </div>
+			            <span dir-paginate="item in pending|itemsPerPage:5">
+
+			<div class="portlet light  border-rounded">
+
+                <div class="portlet-body form">
+
+                    <div class="col-md-3">
+                        <div class="row">
+                            <div class="col-md-2"><input type="checkbox" class="filter-check-box"></div>
+                            <div class="col-md-10">
+
+                                <img ng-if="item.user.gender == 'female'" style="height: 100%;width: 100%"
+                                     ng-src="../assets/defaultImages/female_card.jpg"/>
+                                <img ng-if="item.user.gender == 'male'" style="height: 100%;width: 100%"
+                                     ng-src="../assets/defaultImages/male_card.jpg"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="row">
+
+                            <div class="col-md-5"><label class="message-name-text"><a
+                                    ng-click="viewProfile(item.user.id_people)">{{item.user.name}}</a></label>
+                                &nbsp;<label
+                                        class="style-cls">({{item.user.id_people}})</label></div>
+                            <div ng-if="item.user.isOnline = 'online'" class="col-md-4"><i class="fa fa-circle "
+                                                                                           style="color:#56bb55 ;padding-top:5px;"></i>&nbsp;<label>Online</label>
+                            </div>
+                            <div class="col-md-3 pull-right"><label class="style-cls">{{item.date}}</label><i
+                                    class="fa fa-trash  pull-right style-cls " ng-click="deletePending(item.com_id)"
+                                    style="padding-top:5px;"></i></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 details-style">                                                                            <span ng-if="item.user.deactivated == 'no'">
+
+                                {{item.user.age}} Yrs, {{item.user.height}}cms, {{item.user.mothertongue}},
+                                {{item.user.religion}}, {{item.user.caste}},{{item.user.education}},
+                                {{item.user.occupation}},
+                                {{item.user.city_name}}, {{item.user.state_name}}, {{item.user.country_name}}.
+                           </span> </div>
+
+                        </div>
+                                                                            <span ng-if="item.user.deactivated == 'no'">
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-md-12 notification-style uppercase">
+                                <span ng-if="item.action == 'connect'">INTEREST RECEIVED</span>
+                                <span ng-if="item.action == 'contact'">CONTACT VIEWED</span>
+								<span ng-if="item.action == 'field'">
+									<span ng-if="item.action == 'field'">
+									<span ng-if="item.field_name == 'photo_request'">Add Photo Requested </span>
+									<span ng-if="item.field_name == 'smoking'">Add Smoking Requested</span>
+									<span ng-if="item.field_name == 'drinking'">Add Drinking Requested  </span>
+									<span ng-if="item.field_name == 'income'">Add Income Requested  </span>
+									<span ng-if="item.field_name == 'occupation'">Add Occupation Requested  </span>
+									<span ng-if="item.field_name == 'education'">Add Education Requested  </span>
+									<span ng-if="item.field_name == 'family'">Add Family Requested  </span>
+									<span ng-if="item.field_name == 'family_status'">Add Family Status Requested  </span>
+									<span ng-if="item.field_name == 'origin'">Add Origin Requested  </span>
+									<span ng-if="item.field_name == 'about_family'">Add About Family Requested </span>
+
+
+								</span>
+
+									</span>
+                            </div>
+
+                            <div class="col-md-12 notification-details">{{item.content}}</div>
+
+                            <div class="col-md-12 margin-top-10">
+                                <button type="button" class=" uppercase btn red input-rounded"
+                                        ng-click="respondAction(item,'accepted')">
+
+                                    <span ng-if="item.action == 'connect'">YES</span>
+									<span ng-if="item.action == 'field'"><span
+                                            ng-if="item.field_name == 'photo_request'">Add Photo</span>
+									<span ng-if="item.field_name == 'smoking'">Add Smoking   </span>
+									<span ng-if="item.field_name == 'drinking'">Add Drinking   </span>
+									<span ng-if="item.field_name == 'income'">Add Income   </span>
+									<span ng-if="item.field_name == 'education'">Add Education   </span>
+									<span ng-if="item.field_name == 'occupation'">Add Occupation   </span>
+									<span ng-if="item.field_name == 'family'">Add Family   </span>
+									<span ng-if="item.field_name == 'family_status'">Add Family Status   </span>
+									<span ng-if="item.field_name == 'origin'">Add Origin   </span>
+									<span ng-if="item.field_name == 'about_family'">Add About Family  </span>
+
+									</span>
+
+                                </button>
+                                <button type="button" ng-click="requestDeclined(item)"
+                                        class=" uppercase btn btn-default input-rounded" ng-click="">
+                                    NOT INTERESTED
+                                </button>
+                                <hr/>
+                            </div>
+                            </div>
+                                                                                </span>
+                            <!--<div class="col-md-12 margin-top-10">-->
+                                <!--<mailbox mail="item.communication" user="item.user" res="type"-->
+                                         <!--reverse="sendRespond(data)"></mailbox>-->
+                            <!--</div>-->
+
+                            <div class="row pull-right" ng-if="item.user.deactivated == 'no'">
+                                <div class="col-md-12 " ng-if="countConversation(item) > 0">
+                                    <a style="color: red" ng-click="moreConversation(item.user.id_people)" > {{countConversation(item)}}+ conversation </a>
+                                </div>
+                            </div>
+                            <div class="row " style="color: red" ng-if="item.user.deactivated == 'yes'">
+                                <div class="col-md-12 ">This profile is temporarily deactivated</div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+</span>
+
+            <div class="col-md-12 text-right">
+                <dir-pagination-controls
+                        max-size="5"
+                        direction-links="true"
+                        boundary-links="true">
+                </dir-pagination-controls>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<script type="text/ng-template" id="pendingModalContent.html">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-title" style="color: #4cbcac;">
+            {{$ctrl.items.header}}
+            <button class=" pull-right btn btn-circle btn-icon-only default" type="button" ng-click="$ctrl.cancel()"><i
+                    class="fa fa-times"></i></button>
+        </h4>
+    </div>
+
+    <div class="modal-body">
+        <div class="row" style="margin: 20px">
+            <div class="col-md-4">
+                <img ng-if="$ctrl.items.img.length > 0" style="height: 90px;width: 90px;border-radius: 55% !important;"
+                     ng-src="{{$ctrl.items.img[0].image}}" ng-click="$ctrl.vieImg(img.image)"/>
+                <img ng-if="$ctrl.items.img.length == 0" style="height: 90px;width: 90px;border-radius: 55% !important;"
+                     src="assets/defaultImages/avatar.png" ng-click="$ctrl.vieImg(img.image)"/>
+            </div>
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-12">
+                        <span class="bold">{{$ctrl.items.name}}</span> <span> ({{$ctrl.items.id}})</span>
+                    </div>
+                    <div class="col-md-12" style="margin-top: 25px">
+                        <button type="button" class=" uppercase btn red input-rounded" ng-click="$ctrl.upgrade()">
+                            Upgrade Now
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="row">
+                <div class="col-md-12" style="color: grey">
+                    To know more about packages call now 9999999999
+                </div>
+                <!--<div class="col-md-4" >-->
+                <!--&lt;!&ndash;<button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">OK</button>&ndash;&gt;-->
+
+                <!--</div>-->
+
+            </div>
+            <!--<button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>-->
+        </div>
+</script>
+
+
+<script type="text/ng-template" id="addDetails.html">
+    <div class="modal-header">
+        <h4 class="modal-title" style="color: #4cbcac;">
+            {{$ctrl.items.header}}
+            <button class=" pull-right btn btn-circle btn-icon-only default" type="button" ng-click="$ctrl.cancel()"><i
+                    class="fa fa-times"></i></button>
+        </h4>
+    </div>
+
+    <div class="modal-body">
+        <div class="row">
+            {{$ctrl.items.message}}
+        </div>
+        <div class="row" ng-if="showFamilyType">
+            <div class="col-md-12">
+                <select class="form-control input-rounded "
+                        ng-model="family_type">
+                    <option value="">Select</option>
+
+                    <option value="nuclear">Nuclear</option>
+                    <option value="joint">Joint</option>
+                    <option value="others">Others</option>
+                </select>
+            </div>
+        </div>
+        <div class="row" ng-if="showDrinking">
+            <div class="col-md-12">
+                <select class="form-control input-rounded "
+                        ng-model="profile.login_user.drinking_habit">
+                    <option value="">Select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                    <option value="drinksSocially">Drinks Socially</option>
+
+                </select>
+            </div>
+        </div>
+        <div class="row" ng-if="showSmoking">
+            <div class="col-md-12">
+                <select class="form-control input-rounded "
+                        ng-model="profile.login_user.smoking_habit">
+                    <option value="">Select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                    <option value="occasionally">Occasionally</option>
+                </select>
+            </div>
+            <div class="col-md-12 margin-top-10 ">
+                <button class="btn red alert-button pull-right"
+                        ng-click="addDetails()">
+                    Add
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+    </div>
+</script>

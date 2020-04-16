@@ -3,7 +3,7 @@
 
 }
 .modal{
-    margin-top: 10%;
+    margin-top: 5%;
 }
 html, body. div{
     margin: 0 !important;
@@ -14,4 +14,74 @@ html, body. div{
     padding-right: 0px;
     margin-right: 0px;
 }
+
+.dir-img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+
+.page-loading-hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
+.page-loading{
+    margin-left: -115px!important;
+}
+
+
+.page-grey-color{
+    filter: grayscale(80%)!important;
+}
+
+.pagination>li>a, .pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    line-height: 1.42857;
+    border-radius: 20px!important;
+    text-decoration: none;
+    color: grey;
+    font-weight: bold;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-left: -1px;
+}
+.pagination .active>a, .pagination .active>a:hover {
+    background: #e7505a!important;
+    border-color: grey;
+    color: #333;
+}
+
+multiselect  .dropdown-menu{
+    overflow-y:auto!important;
+    height: 250px!important;
+}
+
+multiselect  .btn-group>button{
+   text-align: left!important;
+}
+
+multiselect  .btn-group>button .caret{
+    float:right!important;
+    margin-top:10px;
+}
+
+.modal-img{
+    height: 300px;width:auto
+}
+.modal-view-img{
+    height: 300px;
+    width:auto
+}
+
+@media (max-width: 768px) {
+    .modal-img{
+        height: 200px;width:auto
+    }
+    .modal-view-img{
+        height: 200px;
+        width:auto
+    }
+}
+
 

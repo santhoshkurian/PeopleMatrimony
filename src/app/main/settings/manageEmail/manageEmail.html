@@ -14,19 +14,22 @@
                             <div class="caption ">
                                 <span class=" caption-subject  font-black  uppercase" style="font-weight: 600;">Manage email Alert</span>
 
-                                <div class="caption-helper font-black font-sm"></div>
+                                <div class="caption-helper font-black font-sm">Listed below are the alerts you will receive from us through email.If you wish to
+                                unsubscribe any of the alert. Please de-select the alert.</div>
                             </div>
 
                         </div>
                         <div class="portlet-body form form-horizontal">
-                            <p> Listed below are the alerts you will receive from us through email.If you wish to
+                            <!--<p> Listed below are the alerts you will receive from us through email.If you wish to
                                 unsubscribe any of the alert.Please de-select the alert.</p>
-                            <hr>
+                            <hr>-->
                             <div class="form-group portlet-title">
 
                                 <div class="col-md-1 margin-top-10">
 
-                                    <input type="checkbox" icheckbox_flat-red class="icheck ">
+                                    <input type="checkbox" icheckbox_flat-red class="icheck "
+                                           ng-true-value="'1'" ng-false-value="'0'" ng-model="alert.daily_matchwatch"
+                                            ng-click="updateAlert('daily_matchwatch')">
                                 </div>
                                 <div class="col-md-10">
 
@@ -42,7 +45,9 @@
 
                                 <div class="col-md-1 margin-top-10">
 
-                                    <input type="checkbox" icheckbox_flat-red class="icheck ">
+                                    <input type="checkbox" icheckbox_flat-red class="icheck "
+                                           ng-true-value="'1'" ng-false-value="'0'" ng-model="alert.weekly_photomatch"
+                                           ng-click="updateAlert('weekly_photomatch')">
                                 </div>
                                 <div class="col-md-10">
 
@@ -58,7 +63,9 @@
 
                                 <div class="col-md-1 margin-top-10">
 
-                                    <input type="checkbox" icheckbox_flat-red class="icheck ">
+                                    <input type="checkbox" icheckbox_flat-red class="icheck "
+                                           ng-true-value="'1'" ng-false-value="'0'"
+                                           ng-model="alert.weekly_horoscope" ng-click="updateAlert('weekly_horoscope')">
                                 </div>
                                 <div class="col-md-10">
 
@@ -74,7 +81,10 @@
 
                                 <div class="col-md-1 margin-top-10">
 
-                                    <input type="checkbox" icheckbox_flat-red class="icheck ">
+                                    <input type="checkbox" icheckbox_flat-red class="icheck "
+                                           ng-true-value="'1'" ng-false-value="'0'"
+                                           ng-model="alert.similar_profiles"
+                                           ng-click="updateAlert('similar_profiles')">
                                 </div>
                                 <div class="col-md-10">
 
@@ -91,7 +101,10 @@
 
                                 <div class="col-md-1 margin-top-10">
 
-                                    <input type="checkbox" icheckbox_flat-red class="icheck ">
+                                    <input type="checkbox" icheckbox_flat-red class="icheck "
+                                           ng-true-value="'1'" ng-false-value="'0'"
+                                           ng-model="alert.communication"
+                                           ng-click="updateAlert('communication')">
                                 </div>
                                 <div class="col-md-10">
 
@@ -108,7 +121,10 @@
 
                                 <div class="col-md-1 margin-top-10">
 
-                                    <input type="checkbox" icheckbox_flat-red class="icheck ">
+                                    <input type="checkbox" icheckbox_flat-red class="icheck "
+                                           ng-true-value="'1'" ng-false-value="'0'"
+                                           ng-model="alert.auto_login"
+                                           ng-click="updateAlert('auto_login')">
                                 </div>
                                 <div class="col-md-10">
 

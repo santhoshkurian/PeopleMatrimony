@@ -1,0 +1,498 @@
+<div class="page-content-wrapper">
+    <!-- BEGIN CONTENT BODY -->
+    <div class="page-content">
+        <!-- BEGIN PAGE HEAD-->
+        <div class="page-head" style="margin-right: 15px">
+
+            <!-- BEGIN PAGE BASE CONTENT -->
+
+            <div class="row">
+
+                <div class="col-md-12 ">
+                 <span ng-if="viewType == 'single'">
+                    <div class="col-md-12 ">
+                        <div class="portlet light bordered">
+                            <div class="portlet-body form">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <span class="profile-completeness-heading" style="font-weight: 600"> Complete your Profile</span>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <uib-progressbar class="profile-progress-bar" animate="true"
+                                                                 value="value"
+                                                                 type="success"><b>{{value}}%</b></uib-progressbar>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr/>
+                                    <div class="col-md-12 margin-top-10">
+                                        <div class="row">
+                                            <div class="col-md-1 col-sm-1 col-xs-1">
+                                        <span ng-class="isFirstMessage()?'notification-navigator-disabled':'notification-navigator'">
+                                             <i class="fa fa-angle-left " ng-click="loadPreviosMessage()"></i>
+                                        </span>
+
+                                            </div>
+                                            <div class="hidden-md hidden-lg col-sm-1 col-xs-1"></div>
+                                            <div class="col-md-10 col-sm-8 col-xs-8">
+                                                <span>
+                                                <b>{{messages[messageIndex].message}}</b>
+                                                </span>
+
+                                            </div>
+                                            <div class="hidden-md hidden-lg col-sm-1 col-xs-1"></div>
+                                            <div class="col-md-1 col-sm-1 col-xs-1">
+                                    <span ng-class="isLastMessage()?'notification-navigator-disabled':'notification-navigator'">
+                                             <i class="fa fa-angle-right " ng-click="loadNextMessage()"></i>
+                                        </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 margin-top-20"
+                                         ng-if="messages[messageIndex].message == 'Add a photo now & get more responses.'">
+                                        <div class="text-center">
+                                            <a class="btn red btn alert-button" ui-sref="managephoto">
+                                                Upload
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-12 margin-top-20"
+                                         ng-if="messages[messageIndex].field == 'ancestral_origin'">
+                                        <select class="form-control input-rounded "
+                                                ng-model="profileComp.ancestral_origin"
+                                                ng-options="item.country_name for item in countryList track by item.id_country">
+                                            <option value="">Select</option>
+                                        </select>
+
+
+                                    </div>
+
+                                    <div class="col-md-12 margin-top-20"
+                                         ng-if="messages[messageIndex].field == 'income'">
+                                        <input type="text" class="form-control  input-rounded" placeholder="Add Income"
+                                               ng-model="profileComp.income">
+
+                                    </div>
+                                    <div class="col-md-12 margin-top-20"
+                                         ng-if="messages[messageIndex].field == 'education_detail'">
+                                        <input type="text" class="form-control  input-rounded"
+                                               placeholder="Add Educaional Details"
+                                               ng-model="profileComp.education_detail">
+
+                                    </div>
+                                    <div class="col-md-12 margin-top-20"
+                                         ng-if="messages[messageIndex].field == 'smoking_habit'">
+                                        <select class="form-control input-rounded "
+                                                ng-model="profileComp.smoking_habit">
+                                            <option value="">Select</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-12 margin-top-20"
+                                         ng-if="messages[messageIndex].field == 'id_occupation'">
+                                        <select class="form-control input-rounded "
+                                                ng-model="setProfession.occupation_cat"
+                                                ng-options="item.occupation_category for item in occupationCategoryList track by item.id_occupation_category">
+                                            <option value="">Select</option>
+
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-12 margin-top-20"
+                                         ng-if="messages[messageIndex].field == 'drinking_habit'">
+                                        <select class="form-control input-rounded "
+                                                ng-model="profileComp.drinking_habit">
+                                            <option value="">Select</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+
+                                    </div>
+
+                                    <div class="col-md-12 margin-top-20"
+                                         ng-if="messages[messageIndex].field == 'parent_mobile'">
+                                        <input type="number" class="form-control  input-rounded"
+                                               placeholder="Add Parent Mobile Number"
+                                               ng-model="profileComp.parent_mobile">
+
+                                    </div>
+
+                                    <div class="col-md-12 margin-top-20"
+                                         ng-if="messages[messageIndex].field == 'father_status'">
+                                        <select class="form-control input-rounded "
+                                                ng-model="profileComp.father_status">
+                                            <option value="">Select</option>
+                                            <option value="employed">Employed</option>
+                                            <option value="business">Business Man</option>
+                                            <option value="professional">Professional</option>
+                                            <option value="retired">Retired</option>
+                                            <option value="notemployed">Not Employed</option>
+                                            <option value="passedaway">Passed Away</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 margin-top-20"
+                                         ng-if="messages[messageIndex].field == 'mother_status'">
+
+                                        <select class="form-control input-rounded "
+                                                ng-model="profileComp.mother_status">
+                                            <option value="" selected="selected">Select</option>
+                                            <option value="homemaker">Homemaker</option>
+                                            <option value="employed">Employed</option>
+                                            <option value="business">Business Woman</option>
+                                            <option value="professional">Professional</option>
+                                            <option value="retired">Retired</option>
+                                            <option value="passedaway">Passed Away</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-12 margin-top-20"
+                                         ng-if="!(messages[messageIndex].message == 'Add a photo now & get more responses.') ">
+                                        <div class="text-center">
+                                            <button class="btn red alert-button"
+                                                    ng-click="addDetails(messages[messageIndex])">
+                                                Add Details
+                                            </button>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 " ng-if="recentUpdated.matches.length > 0">
+                        <!-- BEGIN SAMPLE FORM PORTLET-->
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+
+                                <div class="caption ">
+                                    <span class="caption-subject" style="font-weight: 600"> Recently Updated</span>
+                                </div>
+
+                                <div class="actions" ng-if="recentUpdated.matches.length > 3">
+                                    <div class="row">
+                                        <div class="col-md-12 page-action-navigation">
+
+                                            <span class="paginate-message"><a style="color:red" ng-click="selectView(recentUpdated.matches,'Recently Updated')"> View all </a>(<span style="color:black"> {{recentUpdated.matches.length}} </span>)</span>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div class="row" ng-repeat="item in recentUpdated.matches | limitTo:3">
+                                    <div class=" col-xs-3 col-sm-3 col-md-2 ">
+                                        <img ng-if="item.images.length > 0" class="imgae-circle"
+                                             ng-src="{{item.images[0].image}}"/>
+                                        <img ng-if="item.gender == 'male' && item.images.length == 0"
+                                             class="imgae-circle"
+                                             ng-src="/assets/defaultImages/male_card.jpg"/>
+                                        <img ng-if="item.gender == 'female' && item.images.length == 0"
+                                             class="imgae-circle"
+                                             ng-src="/assets/defaultImages/female_card.jpg"/>
+                                    </div>
+                                    <div class="col-xs-1 col-sm-1 hidden-md hidden-lg"></div>
+                                    <div class="col-xs-7 col-sm-7 col-md-6">
+
+                                        <div class="row ">
+                                            <div class="col-md-12">
+                                                        <span><a ng-click="viewProfile(item.id_people)"
+                                                                 class="profile-name">{{item.name}}</a>&nbsp;<span
+                                                                class="profile-id"> ({{item.id_people}})</span></span>
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="col-md-12">
+                                                                        <span class="profile-details">
+                                                                            {{item.age}},<span
+                                                                                ng-if="item.height != null">{{item.height}}cms</span>,{{item.mothertongue}},{{item.caste}},{{item.star}} ,
+                                                                            {{item.state_name}}, {{item.country_name}}
+                                                                        </span>
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="col-md-12">
+                                                <div style="margin-top:20px"><a
+                                                        style="font-size:13px;color: red;margin-right: 20px"
+                                                        ng-click="sendInterest(item.id_people)"> Send
+                                                    Interest</a><a ng-click="viewProfile(item.id_people)"
+                                                                   style="font-size:13px;color: red"> View Profile</a>
+                                                </div>
+
+                                                <hr/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 hidden-xs hidden-sm"></div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-12 " ng-if="newMatches.matches.length > 0">
+                        <!-- BEGIN SAMPLE FORM PORTLET-->
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption ">
+                                    <span class="caption-subject" style="font-weight: 600"> New Matches</span>
+                                </div>
+                                <div class="actions" ng-if="newMatches.matches.length > 3">
+                                    <div class="row">
+                                        <div class="col-md-12 page-action-navigation">
+
+                                            <span class="paginate-message"><a style="color:red" ng-click="selectView(newMatches.matches,'newMatches')"> View all </a>(<span style="color:black"> {{newMatches.matches.length}} </span>)</span>
+                                            <!--<i class="fa fa-angle-left "></i>-->
+                                            <!--<i class="fa fa-angle-right "></i>-->
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div class="row" ng-repeat="item in newMatches.matches | limitTo:3">
+                                    <div class=" col-xs-3 col-sm-3 col-md-2 ">
+                                        <img ng-if="item.images.length > 0" class="imgae-circle"
+                                             ng-src="{{item.images[0].image}}"/>
+                                        <img ng-if="item.gender == 'male' && item.images.length == 0"
+                                             class="imgae-circle"
+                                             ng-src="/assets/defaultImages/male_card.jpg"/>
+                                        <img ng-if="item.gender == 'female' && item.images.length == 0"
+                                             class="imgae-circle"
+                                             ng-src="/assets/defaultImages/female_card.jpg"/>
+                                    </div>
+                                    <div class="col-xs-1 col-sm-1 hidden-md hidden-lg"></div>
+                                    <div class="col-xs-7 col-sm-7 col-md-6">
+
+                                        <div class="row ">
+                                            <div class="col-md-12">
+                                                        <span><a ng-click="viewProfile(item.id_people)"
+                                                                 class="profile-name">{{item.name}}</a>&nbsp;<span
+                                                                class="profile-id"> ({{item.id_people}})</span></span>
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="col-md-12">
+                                                                        <span class="profile-details">
+                                                                            {{item.age}},<span
+                                                                                ng-if="item.height != null">{{item.height}}cms</span>,{{item.mothertongue}},{{item.caste}},{{item.star}} ,
+                                                                            {{item.state_name}}, {{item.country_name}}
+                                                                        </span>
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="col-md-12">
+                                                <div style="margin-top:20px"><a
+                                                        style="font-size:13px;color: red;margin-right: 20px"
+                                                        ng-click="sendInterest(item.id_people)"> Send
+                                                    Interest</a><a ng-click="viewProfile(item.id_people)"
+                                                                   style="font-size:13px;color: red"> View Profile</a>
+                                                </div>
+
+                                                <hr/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 hidden-xs hidden-sm"></div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-12 " ng-if="viewed.matches.length > 0">
+                        <!-- BEGIN SAMPLE FORM PORTLET-->
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption ">
+                                    <span class="caption-subject" style="font-weight: 600">Who viewed my Profile</span>
+                                </div>
+                                <div class="actions" ng-if="viewed.matches.length > 3">
+                                    <div class="row">
+                                        <div class="col-md-12 page-action-navigation">
+
+                                            <span class="paginate-message"><a style="color:red" ng-click="selectView(viewed.matches,'viewed')"> View all </a>(<span style="color:black"> {{viewed.matches.length}} </span>)</span>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div class="row" ng-repeat="item in viewed.matches | limitTo:3">
+                                    <div class=" col-xs-3 col-sm-3 col-md-2 ">
+                                        <img ng-if="item.images.length > 0" class="imgae-circle"
+                                             ng-src="{{item.images[0].image}}"/>
+                                        <img ng-if="item.gender == 'male' && item.images.length == 0"
+                                             class="imgae-circle"
+                                             ng-src="/assets/defaultImages/male_card.jpg"/>
+                                        <img ng-if="item.gender == 'female' && item.images.length == 0"
+                                             class="imgae-circle"
+                                             ng-src="/assets/defaultImages/female_card.jpg"/>
+                                    </div>
+                                    <div class="col-xs-1 col-sm-1 hidden-md hidden-lg"></div>
+                                    <div class="col-xs-7 col-sm-7 col-md-6">
+
+                                        <div class="row ">
+                                            <div class="col-md-12">
+                                                        <span><a ng-click="viewProfile(item.id_people)"
+                                                                 class="profile-name">{{item.name}}</a>&nbsp;<span
+                                                                class="profile-id"> ({{item.id_people}})</span></span>
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="col-md-12">
+                                                                        <span class="profile-details">
+                                                                            {{item.age}},<span
+                                                                                ng-if="item.height != null">{{item.height}}cms</span>,{{item.mothertongue}},{{item.caste}},{{item.star}} ,
+                                                                            {{item.state_name}}, {{item.country_name}}
+                                                                        </span>
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="col-md-12">
+                                                <div style="margin-top:20px"><a
+                                                        style="font-size:13px;color: red;margin-right: 20px"
+                                                        ng-click="sendInterest(item.id_people)"> Send
+                                                    Interest</a><a ng-click="viewProfile(item.id_people)"
+                                                                   style="font-size:13px;color: red"> View Profile</a>
+                                                </div>
+
+                                                <hr/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 hidden-xs hidden-sm"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </span>
+<div class="row">
+
+    <div class="col-md-12 ">
+                <span ng-if="viewType == 'view_all'">
+                    <div class="col-md-12 ">
+                    <div class="portlet light bordered">
+                                                                     <div class="portlet-title">
+
+                                                                         <div class="caption ">
+                                                                             <span class="caption-subject"> {{viewall_header}}</span>
+                                                                         </div>
+
+                                                                         <div class="actions">
+                                                                             <div class="row">
+                                                                                 <div class="col-md-12 page-action-navigation">
+
+                                                                                     <span class="paginate-message"><a style="color:red" ng-click="backToView()"> Back </a></span>
+
+                                                                                 </div>
+                                                                             </div>
+
+                                                                         </div>
+                                                                     </div>
+                                                                     <div class="portlet-body form">
+                                                                         <div class="row" style="text-align: right">
+                                                                         <dir-pagination-controls
+                                                                                 max-size="5"
+                                                                                 direction-links="true"
+                                                                                 boundary-links="true" >
+                                                                         </dir-pagination-controls>
+                                                                             </div>
+                                                                         <div class="row"
+                                                                              dir-paginate="item in viewAll|itemsPerPage:5">
+                                                                             <div class=" col-xs-3 col-sm-3 col-md-2 ">
+                                                                                 <img ng-if="item.images.length > 0"
+                                                                                      class="imgae-circle"
+                                                                                      ng-src="{{item.images[0].image}}"/>
+                                                                                 <img ng-if="item.gender == 'male' && item.images.length == 0"
+                                                                                      class="imgae-circle"
+                                                                                      ng-src="/assets/defaultImages/male_card.jpg"/>
+                                                                                 <img ng-if="item.gender == 'female' && item.images.length == 0"
+                                                                                      class="imgae-circle"
+                                                                                      ng-src="/assets/defaultImages/female_card.jpg"/>
+                                                                             </div>
+                                                                             <div class="col-xs-1 col-sm-1 hidden-md hidden-lg"></div>
+                                                                             <div class="col-xs-7 col-sm-7 col-md-6">
+
+                                                                                 <div class="row ">
+                                                                                     <div class="col-md-12">
+                                                        <span><a ng-click="viewProfile(item.id_people)"
+                                                                 class="profile-name">{{item.name}}</a>&nbsp;<span
+                                                                class="profile-id"> ({{item.id_people}})</span></span>
+                                                                                     </div>
+                                                                                 </div>
+                                                                                 <div class="row ">
+                                                                                     <div class="col-md-12">
+                                                                        <span class="profile-details">
+                                                                            {{item.age}},<span
+                                                                                ng-if="item.height != null">{{item.height}}cms</span>,{{item.mothertongue}},{{item.caste}},{{item.star}} ,
+                                                                            {{item.state_name}}, {{item.country_name}}
+                                                                        </span>
+                                                                                     </div>
+                                                                                 </div>
+                                                                                 <div class="row ">
+                                                                                     <div class="col-md-12">
+                                                                                         <div style="margin-top:20px"><a
+                                                                                                 style="font-size:13px;color: red;margin-right: 20px"
+                                                                                                 ng-click="sendInterest(item.id_people)">
+                                                                                             Send
+                                                                                             Interest</a><a
+                                                                                                 ng-click="viewProfile(item.id_people)"
+                                                                                                 style="font-size:13px;color: red">
+                                                                                             View Profile</a>
+                                                                                         </div>
+
+                                                                                         <hr/>
+                                                                                     </div>
+                                                                                 </div>
+                                                                             </div>
+                                                                             <div class="col-md-2 hidden-xs hidden-sm"></div>
+                                                                         </div>
+
+
+                                                                     </div>
+                                                                 </div>
+                                                                 </div>
+                </span>
+
+                </div>
+                </div>
+                </div>
+                <!-- END PAGE TITLE -->
+
+            </div>
+            <!-- END PAGE HEAD-->
+            <!-- BEGIN PAGE BREADCRUMB -->
+
+
+            <!-- END PAGE BASE CONTENT -->
+        </div>
+        <!-- END CONTENT BODY -->
+    </div>
+
+
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title" style="color: #4cbcac;font-weight: bold">
+                {{$ctrl.items}}</h3>
+        </div>
+        <!--<div class="modal-body" id="modal-body">-->
+        <!--{{$ctrl.items.id}},{{$ctrl.items.field}}-->
+        <!--</div>-->
+        <div class="modal-footer">
+            <!--<button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>-->
+            <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">OK</button>
+        </div>
+    </script>

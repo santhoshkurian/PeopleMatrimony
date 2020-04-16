@@ -1,5 +1,5 @@
 <div class="page-sidebar-wrapper section-background">
-    <div class="page-sidebar navbar-collapse collapse" style="border-radius: 10px;margin-left:20px">
+    <div class="page-sidebar navbar-collapse collapse" style="background-color: #e4e8eb!important;">
         <div class="row">
             <div class="col-md-12">
                 <ul class="page-sidebar-menu menu-panel   " data-keep-expanded="false"
@@ -11,26 +11,29 @@
                             <li class="nav-item nav-header">
                                 <span class=""><span class="nav-header-text">Discover Matches</span></span>
                             </li>
+                            <li class="nav-item">
+
+                            </li>
                             <li class="nav-item  active open">
                                 <ul class="sub-menu">
-                                    <li class="nav-item nav-header">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                            <span class="" ng-click="openLocationPreference()"><span
-                                                    class="nav-header-section-text">Prefered Location
-                                        <i class="pull-right fa"
-                                           ng-class="{'fa-angle-down': openLocation, 'fa-angle-right': !openLocation}"></i>
-                                        </span>
-                                        </span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
+                                    <!--<li class="nav-item nav-header">-->
+                                        <!--<div class="row">-->
+                                            <!--<div class="col-md-12">-->
+                                            <!--<span class="" ng-click="openLocationPreference()"><span-->
+                                                    <!--class="nav-header-section-text">Prefered Location-->
+                                        <!--<i class="pull-right fa"-->
+                                           <!--ng-class="{'fa-angle-down': openLocation, 'fa-angle-right': !openLocation}"></i>-->
+                                        <!--</span>-->
+                                        <!--</span>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</li>-->
+                                   <!-- <li>
                                         <div class="row" ng-show="openLocation">
                                             <div class="col-md-12 margin-top-10 margin-bottom-10">
                                                 <div class="row ">
                                                     <div class="col-md-12">
-                                                        <div class="row ">
+                                                        <div class="row" ng-repeat="loc in discover.location">
                                                             <div class=" col-xs-3 col-sm-3 col-md-4 ">
                                                                 <img class="imgae-circle spacer"
                                                                      ng-src="../assets/images/prof1.jpg"/>
@@ -56,54 +59,17 @@
                                                                             Send intrest
                                                                         </span>
                                                                         <hr/>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row ">
-                                                            <div class=" col-xs-3 col-sm-3 col-md-4 ">
-                                                                <img class="imgae-circle spacer"
-                                                                     ng-src="../assets/images/prof1.jpg"/>
-                                                            </div>
-                                                            <div class="col-md-1 hidden-xs hidden-sm"></div>
-                                                            <div class="col-xs-8 col-sm-8 col-md-7">
-                                                                <div class="row ">
-                                                                    <div class="col-md-12">
-                                                        <span><span class="profile-name">Priya Renjini</span>&nbsp;<span
-                                                                class="profile-id"> (PD12345)</span></span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row ">
-                                                                    <div class="col-md-12">
-                                                                        <span class="profile-details">
-                                                                            25,5.3cms,Tamil,Hindu,Manal Tamilnadu, India
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row ">
-                                                                    <div class="col-md-12">
-                                                                        <span class="send-intrest">
-                                                                            Send intrest
-                                                                        </span>
-                                                                        <hr/>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row ">
-                                                                    <div class="col-md-12">
-                                                                        <span class="send-intrest">
-                                                                            View All <span class="profile-id">(500)</span>
-                                                                        </span>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--<div class="col-md-1"></div>-->
+                                                    &lt;!&ndash;<div class="col-md-1"></div>&ndash;&gt;
                                                 </div>
                                             </div>
                                         </div>
-                                    </li>
-                                    <li class="nav-item nav-header">
+                                    </li>-->
+                                    <li class="nav-item nav-header" ng-if="discover.occupation.matches.length > 0">
                                         <div class="row">
                                             <div class="col-md-12">
                                             <span class="" ng-click="openProfessionPreference()"><span
@@ -120,72 +86,40 @@
                                             <div class="col-md-12 margin-top-10 margin-bottom-10">
                                                 <div class="row ">
                                                     <div class="col-md-12">
-                                                        <div class="row ">
+                                                        <div class="row" ng-repeat="occu in discover.occupation.matches | limitTo:2">
                                                             <div class=" col-xs-3 col-sm-3 col-md-4 ">
-                                                                <img class="imgae-circle spacer"
-                                                                     ng-src="../assets/images/prof1.jpg"/>
+                                                                <img ng-if="occu.images.length > 0" class="imgae-circle spacer"
+                                                                     ng-src="{{occu.images[0].image}}"/>
+                                                                <img ng-if="occu.gender == 'male' && occu.images.length == 0" class="imgae-circle spacer"
+                                                                     ng-src="/assets/defaultImages/male_card.jpg"/>
+                                                                <img ng-if="occu.gender == 'female' && occu.images.length == 0" class="imgae-circle spacer"
+                                                                     ng-src="/assets/defaultImages/female_card.jpg"/>
                                                             </div>
                                                             <div class="col-md-1 hidden-xs hidden-sm"></div>
                                                             <div class="col-xs-8 col-sm-8 col-md-7">
                                                                 <div class="row ">
                                                                     <div class="col-md-12">
-                                                        <span><span class="profile-name">Priya Renjini</span>&nbsp;<span
-                                                                class="profile-id"> (PD12345)</span></span>
+                                                        <span><a ng-click="viewProfile(occu.id_people)"
+                                                                 class="profile-name">{{occu.name}}</a>&nbsp;<span
+                                                                class="profile-id"> ({{occu.id_people}})</span></span>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row ">
                                                                     <div class="col-md-12">
                                                                         <span class="profile-details">
-                                                                            25,5.3cms,Tamil,Hindu,Manal Tamilnadu, India
+                                                                            {{occu.age}}, {{occu.height}}cms, {{occu.mothertongue}}, {{occu.religion}}, {{occu.city}} {{occu.state}}, {{occu.country}}
                                                                         </span>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row ">
                                                                     <div class="col-md-12">
                                                                         <span class="send-intrest">
-                                                                            Send intrest
+                                                                           <a style="color: red" ng-click="sendInterest(occu.id_people)"> Send interest</a>
                                                                         </span>
                                                                         <hr/>
                                                                     </div>
                                                                 </div>
 
-                                                            </div>
-                                                        </div>
-                                                        <div class="row ">
-                                                            <div class=" col-xs-3 col-sm-3 col-md-4 ">
-                                                                <img class="imgae-circle spacer"
-                                                                     ng-src="../assets/images/prof1.jpg"/>
-                                                            </div>
-                                                            <div class="col-md-1 hidden-xs hidden-sm"></div>
-                                                            <div class="col-xs-8 col-sm-8 col-md-7">
-                                                                <div class="row ">
-                                                                    <div class="col-md-12">
-                                                        <span><span class="profile-name">Priya Renjini</span>&nbsp;<span
-                                                                class="profile-id"> (PD12345)</span></span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row ">
-                                                                    <div class="col-md-12">
-                                                                        <span class="profile-details">
-                                                                            25,5.3cms,Tamil,Hindu,Manal Tamilnadu, India
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row ">
-                                                                    <div class="col-md-12">
-                                                                        <span class="send-intrest">
-                                                                            Send intrest
-                                                                        </span>
-                                                                        <hr/>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row ">
-                                                                    <div class="col-md-12">
-                                                                        <span class="send-intrest">
-                                                                            View All <span class="profile-id">(500)</span>
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -194,7 +128,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="nav-item nav-header">
+                                    <li class="nav-item nav-header" ng-if="discover.education.matches.length > 0">
                                         <div class="row">
                                             <div class="col-md-12">
                                             <span class="" ng-click="openEducationPreference()"><span
@@ -211,80 +145,50 @@
                                             <div class="col-md-12 margin-top-10 margin-bottom-10">
                                                 <div class="row ">
                                                     <div class="col-md-12">
-                                                        <div class="row ">
+                                                        <div class="row " ng-repeat="occu in discover.education.matches | limitTo:2">
                                                             <div class=" col-xs-3 col-sm-3 col-md-4 ">
-                                                                <img class="imgae-circle spacer"
-                                                                     ng-src="../assets/images/prof1.jpg"/>
+                                                                <img ng-if="occu.images.length > 0" class="imgae-circle spacer"
+                                                                     ng-src="{{occu.images[0].image}}"/>
+                                                                <img ng-if="occu.gender == 'male' && occu.images.length == 0" class="imgae-circle spacer"
+                                                                     ng-src="/assets/defaultImages/male_card.jpg"/>
+                                                                <img ng-if="occu.gender == 'female' && occu.images.length == 0" class="imgae-circle spacer"
+                                                                     ng-src="/assets/defaultImages/female_card.jpg"/>
                                                             </div>
                                                             <div class="col-md-1 hidden-xs hidden-sm"></div>
                                                             <div class="col-xs-8 col-sm-8 col-md-7">
                                                                 <div class="row ">
                                                                     <div class="col-md-12">
-                                                        <span><span class="profile-name">Priya Renjini</span>&nbsp;<span
-                                                                class="profile-id"> (PD12345)</span></span>
+                                                        <span><a ng-click="viewProfile(occu.id_people)"
+                                                                 class="profile-name">{{occu.name}}</a>&nbsp;<span
+                                                                class="profile-id"> ({{occu.id_people}})</span></span>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row ">
                                                                     <div class="col-md-12">
                                                                         <span class="profile-details">
-                                                                            25,5.3cms,Tamil,Hindu,Manal Tamilnadu, India
+                                                                            {{occu.age}}, {{occu.height}}cms, {{occu.mothertongue}}, {{occu.religion}}, {{occu.city}} {{occu.state}}, {{occu.country}}
                                                                         </span>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row ">
                                                                     <div class="col-md-12">
                                                                         <span class="send-intrest">
-                                                                            Send intrest
+                                                                           <a style="color: red" ng-click="sendInterest(occu.id_people)"> Send interest</a>
                                                                         </span>
                                                                         <hr/>
                                                                     </div>
                                                                 </div>
                                                             </div>
+
                                                         </div>
-                                                        <div class="row ">
-                                                            <div class=" col-xs-3 col-sm-3 col-md-4 ">
-                                                                <img class="imgae-circle spacer"
-                                                                     ng-src="../assets/images/prof1.jpg"/>
-                                                            </div>
-                                                            <div class="col-md-1 hidden-xs hidden-sm"></div>
-                                                            <div class="col-xs-8 col-sm-8 col-md-7">
-                                                                <div class="row ">
-                                                                    <div class="col-md-12">
-                                                        <span><span class="profile-name">Priya Renjini</span>&nbsp;<span
-                                                                class="profile-id"> (PD12345)</span></span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row ">
-                                                                    <div class="col-md-12">
-                                                                        <span class="profile-details">
-                                                                            25,5.3cms,Tamil,Hindu,Manal Tamilnadu, India
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row ">
-                                                                    <div class="col-md-12">
-                                                                        <span class="send-intrest">
-                                                                            Send intrest
-                                                                        </span>
-                                                                        <hr/>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row ">
-                                                                    <div class="col-md-12">
-                                                                        <span class="send-intrest">
-                                                                            View All <span class="profile-id">(500)</span>
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+
                                                     </div>
                                                     <!--<div class="col-md-1"></div>-->
                                                 </div>
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="nav-item nav-header">
+                                    <li class="nav-item nav-header" ng-if="discover.star.matches.length > 0">
                                         <div class="row">
                                             <div class="col-md-12">
                                             <span class="" ng-click="openStarsPreference()"><span
@@ -301,69 +205,37 @@
                                             <div class="col-md-12 margin-top-10 margin-bottom-10">
                                                 <div class="row ">
                                                     <div class="col-md-12">
-                                                        <div class="row ">
+                                                        <div class="row " ng-repeat="occu in discover.star.matches | limitTo:2">
                                                             <div class=" col-xs-3 col-sm-3 col-md-4 ">
-                                                                <img class="imgae-circle spacer"
-                                                                     ng-src="../assets/images/prof1.jpg"/>
+                                                                <img ng-if="occu.images.length > 0" class="imgae-circle spacer"
+                                                                     ng-src="{{occu.images[0].image}}"/>
+                                                                <img ng-if="occu.gender == 'male' && occu.images.length == 0" class="imgae-circle spacer"
+                                                                     ng-src="/assets/defaultImages/male_card.jpg"/>
+                                                                <img ng-if="occu.gender == 'female' && occu.images.length == 0" class="imgae-circle spacer"
+                                                                     ng-src="/assets/defaultImages/female_card.jpg"/>
                                                             </div>
                                                             <div class="col-md-1 hidden-xs hidden-sm"></div>
                                                             <div class="col-xs-8 col-sm-8 col-md-7">
                                                                 <div class="row ">
                                                                     <div class="col-md-12">
-                                                        <span><span class="profile-name">Priya Renjini</span>&nbsp;<span
-                                                                class="profile-id"> (PD12345)</span></span>
+                                                        <span><a ng-click="viewProfile(occu.id_people)"
+                                                                 class="profile-name">{{occu.name}}</a>&nbsp;<span
+                                                                class="profile-id"> ({{occu.id_people}})</span></span>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row ">
                                                                     <div class="col-md-12">
                                                                         <span class="profile-details">
-                                                                            25,5.3cms,Tamil,Hindu,Manal Tamilnadu, India
+                                                                            {{occu.age}}, {{occu.height}}cms, {{occu.mothertongue}}, {{occu.religion}}, {{occu.city}} {{occu.state}}, {{occu.country}}
                                                                         </span>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row ">
                                                                     <div class="col-md-12">
                                                                         <span class="send-intrest">
-                                                                            Send intrest
+                                                                           <a style="color: red" ng-click="sendInterest(occu.id_people)"> Send interest</a>
                                                                         </span>
                                                                         <hr/>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row ">
-                                                            <div class=" col-xs-3 col-sm-3 col-md-4 ">
-                                                                <img class="imgae-circle spacer"
-                                                                     ng-src="../assets/images/prof1.jpg"/>
-                                                            </div>
-                                                            <div class="col-md-1 hidden-xs hidden-sm"></div>
-                                                            <div class="col-xs-8 col-sm-8 col-md-7">
-                                                                <div class="row ">
-                                                                    <div class="col-md-12">
-                                                        <span><span class="profile-name">Priya Renjini</span>&nbsp;<span
-                                                                class="profile-id"> (PD12345)</span></span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row ">
-                                                                    <div class="col-md-12">
-                                                                        <span class="profile-details">
-                                                                            25,5.3cms,Tamil,Hindu,Manal Tamilnadu, India
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row ">
-                                                                    <div class="col-md-12">
-                                                                        <span class="send-intrest">
-                                                                            Send intrest
-                                                                        </span>
-                                                                        <hr/>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row ">
-                                                                    <div class="col-md-12">
-                                                                        <span class="send-intrest">
-                                                                            View All <span class="profile-id">(500)</span>
-                                                                        </span>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -374,7 +246,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="nav-item nav-header">
+                                    <li class="nav-item nav-header" ng-if="discover.family_values.matches.length > 0">
                                         <div class="row">
                                             <div class="col-md-12">
                                             <span class="" ng-click="openFamilyValuesPreference()"><span
@@ -391,69 +263,37 @@
                                             <div class="col-md-12 margin-top-10 margin-bottom-10">
                                                 <div class="row ">
                                                     <div class="col-md-12">
-                                                        <div class="row ">
+                                                        <div class="row " ng-repeat="occu in discover.family_values.matches | limitTo:2">
                                                             <div class=" col-xs-3 col-sm-3 col-md-4 ">
-                                                                <img class="imgae-circle spacer"
-                                                                     ng-src="../assets/images/prof1.jpg"/>
+                                                                <img ng-if="occu.images.length > 0" class="imgae-circle spacer"
+                                                                     ng-src="{{occu.images[0].image}}"/>
+                                                                <img ng-if="occu.gender == 'male' && occu.images.length == 0" class="imgae-circle spacer"
+                                                                     ng-src="/assets/defaultImages/male_card.jpg"/>
+                                                                <img ng-if="occu.gender == 'female' && occu.images.length == 0" class="imgae-circle spacer"
+                                                                     ng-src="/assets/defaultImages/female_card.jpg"/>
                                                             </div>
                                                             <div class="col-md-1 hidden-xs hidden-sm"></div>
                                                             <div class="col-xs-8 col-sm-8 col-md-7">
                                                                 <div class="row ">
                                                                     <div class="col-md-12">
-                                                        <span><span class="profile-name">Priya Renjini</span>&nbsp;<span
-                                                                class="profile-id"> (PD12345)</span></span>
+                                                        <span><a ng-click="viewProfile(occu.id_people)"
+                                                                 class="profile-name">{{occu.name}}</a>&nbsp;<span
+                                                                class="profile-id"> ({{occu.id_people}})</span></span>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row ">
                                                                     <div class="col-md-12">
                                                                         <span class="profile-details">
-                                                                            25,5.3cms,Tamil,Hindu,Manal Tamilnadu, India
+                                                                            {{occu.age}}, {{occu.height}}cms, {{occu.mothertongue}}, {{occu.religion}}, {{occu.city}} {{occu.state}}, {{occu.country}}
                                                                         </span>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row ">
                                                                     <div class="col-md-12">
                                                                         <span class="send-intrest">
-                                                                            Send intrest
+                                                                           <a style="color: red" ng-click="sendInterest(occu.id_people)"> Send interest</a>
                                                                         </span>
                                                                         <hr/>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row ">
-                                                            <div class=" col-xs-3 col-sm-3 col-md-4 ">
-                                                                <img class="imgae-circle spacer"
-                                                                     ng-src="../assets/images/prof1.jpg"/>
-                                                            </div>
-                                                            <div class="col-md-1 hidden-xs hidden-sm"></div>
-                                                            <div class="col-xs-8 col-sm-8 col-md-7">
-                                                                <div class="row ">
-                                                                    <div class="col-md-12">
-                                                        <span><span class="profile-name">Priya Renjini</span>&nbsp;<span
-                                                                class="profile-id"> (PD12345)</span></span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row ">
-                                                                    <div class="col-md-12">
-                                                                        <span class="profile-details">
-                                                                            25,5.3cms,Tamil,Hindu,Manal Tamilnadu, India
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row ">
-                                                                    <div class="col-md-12">
-                                                                        <span class="send-intrest">
-                                                                            Send intrest
-                                                                        </span>
-                                                                        <hr/>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row ">
-                                                                    <div class="col-md-12">
-                                                                        <span class="send-intrest">
-                                                                            View All <span class="profile-id">(500)</span>
-                                                                        </span>
                                                                     </div>
                                                                 </div>
                                                             </div>

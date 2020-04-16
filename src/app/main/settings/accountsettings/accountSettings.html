@@ -23,26 +23,32 @@
                         <div class="portlet-body form form-horizontal">
 <p> A valid e-mail id will be used to send you partner search mailers, member to member communication mailers and special offers.</p>
 <hr>
+
+
                             <div class="form-group">
+                                <div class="col-md-12" style="text-align: center;color: red">{{emailMsg}}</div>
+
 
                                 <div class="col-md-12">
                                     <label class=" uppercase  "> Email ID</label>
 
                                     <input type="text" class="form-control input-rounded"
-                                           placeholder="Enter Id"></div>
+                                           placeholder="Enter Id" ng-model="email"></div>
                             </div>
                             <hr>
                             <div class="form-group">
 
                                 <div class="col-md-12">
                                     <div class="pull-right">
+                                        <button type="button" class=" btn red input-rounded"
+                                                ng-click="resetPassword()">
+                                            Cancel
+                                        </button>&nbsp;
                                     <button type="button" class=" btn btn-default input-rounded"
-                                            ng-click="">
+                                            ng-click="changeEmail()">
                                         Save
-                                    </button>&nbsp;<button type="button" class=" btn red input-rounded"
-                                            ng-click="">
-                                        Reset
                                     </button>
+
                                     </div>
 
                                 </div>
@@ -51,6 +57,8 @@
                     </div>
 
                     <div class="portlet light bordered border-rounded">
+                        <div class="col-md-12" style="text-align: center;color: red">{{passwordMsg}}</div>
+
                         <div class="portlet-title" style="border: hidden">
                             <div class="caption ">
                                 <span class=" caption-subject  font-black  uppercase">Change password</span>
@@ -61,26 +69,29 @@
                         <div class="portlet-body form form-horizontal">
                             <p> Your password must have a minimum of 6 characters. We recomemended you chose an alphanumeric password.<span class=" font-green">E.g:password123</span></p>
                             <hr>
+                            <div style="color: red;text-align: center" ng-if="confirmPassword">{{confirmPasswordMsg}}</div>
+
                             <div class="form-group">
 
                                 <div class="col-md-12">
                                     <label class=" uppercase  "> Current password</label>
 
-                                    <input type="text" class="form-control input-rounded"
-                                           placeholder="Current Password"></div>
+                                    <input type="password" class="form-control input-rounded"
+                                           placeholder="Current Password" ng-model="password.current"></div>
                             </div>
                             <div class="form-group">
 
                                 <div class="col-md-6">
                                     <label class=" uppercase  "> New Password</label>
 
-                                    <input type="text" class="form-control input-rounded"
-                                           placeholder="New password"></div>
+                                    <input type="password" class="form-control input-rounded"
+                                           placeholder="New password" ng-model="password.newPassword">
+                                </div>
                                 <div class="col-md-6">
                                     <label class=" uppercase  "> Confirm password</label>
 
-                                    <input type="text" class="form-control input-rounded"
-                                           placeholder="Confirm password"></div>
+                                    <input type="password" class="form-control input-rounded"
+                                           placeholder="Confirm password" ng-model="password.confirmPassword"></div>
                             </div>
                             <hr>
                             <div class="form-group">
@@ -91,7 +102,7 @@
                                                 ng-click="">
                                             Cancel
                                         </button>&nbsp;<button type="button" class=" btn red input-rounded"
-                                                               ng-click="">
+                                                               ng-click="SavePassword()">
                                         Change Password
                                     </button>
                                     </div>

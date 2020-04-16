@@ -8,6 +8,8 @@
 
 
             <div class="row">
+                <div style="color: red;text-align: center;margin-bottom: 20px">{{message}}</div>
+
                 <div class="col-md-12 ">
                     <!-- BEGIN SAMPLE FORM PORTLET-->
                     <div class="portlet light bordered border-rounded">
@@ -16,33 +18,7 @@
                                 <!--<i class="icon-settings font-red-sunglo"></i>-->
                                 <span class="caption-subject bold uppercase"> Regular Search</span>
                             </div>
-                            <!--
-                                                        <div class="actions">
-                                                            <div class="btn-group">
-                                                                <a class="btn btn-sm green dropdown-toggle" href="javascript:;" data-toggle="dropdown"> Actions
-                                                                    <i class="fa fa-angle-down"></i>
-                                                                </a>
-                                                                <ul class="dropdown-menu pull-right">
-                                                                    <li>
-                                                                        <a href="javascript:;">
-                                                                            <i class="fa fa-pencil"></i> Edit </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="javascript:;">
-                                                                            <i class="fa fa-trash-o"></i> Delete </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="javascript:;">
-                                                                            <i class="fa fa-ban"></i> Ban </a>
-                                                                    </li>
-                                                                    <li class="divider"> </li>
-                                                                    <li>
-                                                                        <a href="javascript:;"> Make admin </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                            -->
+
                         </div>
 
 
@@ -53,25 +29,124 @@
 
                                     <label class=" uppercase font-weight "> Age</label>
 
-                                    <select class="form-control input-rounded ">
-                                        <option>Select</option>
-                                        <option>21</option>
-                                        <option>22</option>
-                                        <option>23</option>
-                                        <option>24</option>
-                                        <option>25</option>
+                                   <select class="form-control input-rounded " ng-model="regular.age_start" >
+                                        <option  value="">Select</option>
+                                        <span ng-if="profile.login_user.gender == 'male'">
+                                        <option  value="18">18</option>
+                                        <option  value="19">19</option>
+                                        <option  value="20">20</option>
+                                            </span>
+                                        <option  value="21">21</option>
+                                        <option  value="22">22</option>
+                                        <option  value="23">23</option>
+                                        <option  value="24">24</option>
+                                        <option  value="25">25</option>
+                                        <option  value="26">26</option>
+                                        <option  value="27">27</option>
+                                        <option  value="28">28</option>
+                                        <option  value="29">29</option>
+                                        <option  value="30">30</option>
+                                        <option  value="31">31</option>
+                                        <option  value="32">32</option>
+                                        <option  value="33">33</option>
+                                        <option  value="34">34</option>
+                                        <option  value="35">35</option>
+                                        <option  value="36">36</option>
+                                        <option  value="37">37</option>
+                                        <option  value="38">38</option>
+                                        <option  value="39">39</option>
+                                        <option  value="40">40</option>
+                                        <option  value="41">41</option>
+                                        <option  value="42">42</option>
+                                        <option  value="43">43</option>
+                                        <option  value="44">44</option>
+                                        <option  value="45">45</option>
+                                        <option  value="46">46</option>
+                                        <option  value="47">47</option>
+                                        <option  value="48">48</option>
+                                        <option  value="49">49</option>
+                                        <option  value="50">50</option>
+                                        <option  value="51">51</option>
+                                        <option  value="52">52</option>
+                                        <option  value="53">53</option>
+                                        <option  value="51">54</option>
+                                        <option  value="55">55</option>
+                                        <option  value="56">56</option>
+                                        <option  value="57">57</option>
+                                        <option  value="58">58</option>
+                                        <option  value="59">59</option>
+                                        <option  value="60">60</option>
+                                        <option  value="61">61</option>
+                                        <option  value="62">62</option>
+                                        <option  value="63">63</option>
+                                        <option  value="64">64</option>
+                                        <option  value="65">65</option>
+                                        <option  value="66">66</option>
+                                        <option  value="67">67</option>
+                                        <option  value="68">68</option>
+                                        <option  value="69">69</option>
+                                        <option  value="70">70</option>
                                     </select>
                                 </div>
                                 <div class="col-md-2">
                                     <label class=" uppercase font-weight "> &nbsp;</label>
-
-                                    <select class="form-control input-rounded ">
-                                        <option>Select</option>
-                                        <option>21</option>
-                                        <option>22</option>
-                                        <option>23</option>
-                                        <option>24</option>
-                                        <option>25</option>
+                                    <select placeholder="select" class="form-control input-rounded " ng-model="regular.age_end">
+                                        <option  value="">Select</option>
+                                         <span ng-if="profile.login_user.gender == 'male'">
+                                        <option  value="18">18</option>
+                                        <option  value="19">19</option>
+                                        <option  value="20">20</option>
+                                            </span>
+                                        <option  value="21">21</option>
+                                        <option  value="22">22</option>
+                                        <option  value="23">23</option>
+                                        <option  value="24">24</option>
+                                        <option  value="25">25</option>
+                                        <option  value="26">26</option>
+                                        <option  value="27">27</option>
+                                        <option  value="28">28</option>
+                                        <option  value="29">29</option>
+                                        <option  value="30">30</option>
+                                        <option  value="31">31</option>
+                                        <option  value="32">32</option>
+                                        <option  value="33">33</option>
+                                        <option  value="34">34</option>
+                                        <option  value="35">35</option>
+                                        <option  value="36">36</option>
+                                        <option  value="37">37</option>
+                                        <option  value="38">38</option>
+                                        <option  value="39">39</option>
+                                        <option  value="40">40</option>
+                                        <option  value="41">41</option>
+                                        <option  value="42">42</option>
+                                        <option  value="43">43</option>
+                                        <option  value="44">44</option>
+                                        <option  value="45">45</option>
+                                        <option  value="46">46</option>
+                                        <option  value="47">47</option>
+                                        <option  value="48">48</option>
+                                        <option  value="49">49</option>
+                                        <option  value="50">50</option>
+                                        <option  value="51">51</option>
+                                        <option  value="52">52</option>
+                                        <option  value="53">53</option>
+                                        <option  value="51">54</option>
+                                        <option  value="55">55</option>
+                                        <option  value="56">56</option>
+                                        <option  value="57">57</option>
+                                        <option  value="58">58</option>
+                                        <option  value="59">59</option>
+                                        <option  value="60">60</option>
+                                        <option  value="61">61</option>
+                                        <option  value="62">62</option>
+                                        <option  value="63">63</option>
+                                        <option  value="64">64</option>
+                                        <option  value="65">65</option>
+                                        <option  value="66">66</option>
+                                        <option  value="67">67</option>
+                                        <option  value="68">68</option>
+                                        <option  value="69">69</option>
+                                        <option  value="70">70</option>
                                     </select>
                                 </div>
 
@@ -79,54 +154,367 @@
                                 <div class="col-md-2 col-md-offset-2">
                                     <label class=" uppercase font-weight "> Height</label>
 
-                                    <select class="form-control input-rounded ">
-                                        <option>Select</option>
-                                        <option>170cm 5.7 feet</option>
-                                        <option>150cm 5.0 feet</option>
-                                        <option>170cm 5.7 feet</option>
-                                        <option>170cm 5.7 feet</option>
-                                        <option>160cm 5.3 feet</option>
+                                    <select class="form-control input-rounded " ng-model="regular.height_start">
+                                        <option  value="">Select</option>
+                                        <option  value="121">121 cms</option>
+                                        <option  value="122">122 cms</option>
+                                        <option  value="123">123 cms</option>
+                                        <option  value="124">124 cms</option>
+                                        <option  value="125">125 cms</option>
+                                        <option  value="126">126 cms</option>
+                                        <option  value="127">127 cms</option>
+                                        <option  value="128">128 cms</option>
+                                        <option  value="129">129 cms</option>
+                                        <option  value="130">130 cms</option>
+                                        <option  value="131">131 cms</option>
+                                        <option  value="132">132 cms</option>
+                                        <option  value="133">133 cms</option>
+                                        <option  value="134">134 cms</option>
+                                        <option  value="135">135 cms</option>
+                                        <option  value="136">136 cms</option>
+                                        <option  value="137">137 cms</option>
+                                        <option  value="138">138 cms
+                                        </option>
+                                        <option  value="139">139 cms
+                                        </option>
+                                        <option  value="140">140 cms
+                                        </option>
+                                        <option  value="141">141 cms
+                                        </option>
+                                        <option  value="142">142 cms
+                                        </option>
+                                        <option  value="143">143 cms
+                                        </option>
+                                        <option  value="144">144 cms
+                                        </option>
+                                        <option  value="145">145 cms
+                                        </option>
+                                        <option  value="146">146 cms
+                                        </option>
+                                        <option  value="147">147 cms
+                                        </option>
+                                        <option  value="148">148 cms
+                                        </option>
+                                        <option  value="149">149 cms
+                                        </option>
+                                        <option  value="150">150 cms
+                                        </option>
+                                        <option  value="151">151 cms
+                                        </option>
+                                        <option  value="152">152 cms
+                                        </option>
+                                        <option  value="153">153 cms
+                                        </option>
+                                        <option  value="154">154 cms
+                                        </option>
+                                        <option  value="155">155 cms
+                                        </option>
+                                        <option  value="156">156 cms
+                                        </option>
+                                        <option  value="157">157 cms
+                                        </option>
+                                        <option  value="158">158 cms
+                                        </option>
+                                        <option  value="159">159 cms
+                                        </option>
+                                        <option  value="160">160 cms
+                                        </option>
+                                        <option  value="161">161 cms
+                                        </option>
+                                        <option  value="162">162 cms
+                                        </option>
+                                        <option  value="163">163 cms
+                                        </option>
+                                        <option  value="164">164 cms
+                                        </option>
+                                        <option  value="165">165 cms
+                                        </option>
+                                        <option  value="166">166 cms
+                                        </option>
+                                        <option  value="167">167 cms
+                                        </option>
+                                        <option  value="168">168 cms
+                                        </option>
+                                        <option  value="169">169 cms
+                                        </option>
+                                        <option  value="170">170 cms
+                                        </option>
+                                        <option  value="171">171 cms
+                                        </option>
+                                        <option  value="172">172 cms
+                                        </option>
+                                        <option  value="173">173 cms
+                                        </option>
+                                        <option  value="174">174 cms
+                                        </option>
+                                        <option  value="175">175 cms
+                                        </option>
+                                        <option  value="176">176 cms
+                                        </option>
+                                        <option  value="177">177 cms
+                                        </option>
+                                        <option  value="178">178 cms
+                                        </option>
+                                        <option  value="179">179 cms
+                                        </option>
+                                        <option  value="180">180 cms
+                                        </option>
+                                        <option  value="181">181 cms
+                                        </option>
+                                        <option  value="182">182 cms
+                                        </option>
+                                        <option  value="183">183 cms
+                                        </option>
+                                        <option  value="184">184 cms
+                                        </option>
+                                        <option  value="185">185 cms
+                                        </option>
+                                        <option  value="186">186 cms
+                                        </option>
+                                        <option  value="187">187 cms
+                                        </option>
+                                        <option  value="188">188 cms
+                                        </option>
+                                        <option  value="189">189 cms
+                                        </option>
+                                        <option  value="190">190 cms
+                                        </option>
+                                        <option  value="191">191 cms
+                                        </option>
+                                        <option  value="192">192 cms
+                                        </option>
+                                        <option  value="193">193 cms
+                                        </option>
+                                        <option  value="194">194 cms
+                                        </option>
+                                        <option  value="195">195 cms
+                                        </option>
+                                        <option  value="196">196 cms
+                                        </option>
+                                        <option  value="197">197 cms</option>
+                                        <option  value="198">198cms</option>
+                                        <option  value="199">199 cms</option>
+                                        <option  value="200">200 cms</option>
+                                        <option  value="201">201 cms</option>
+                                        <option  value="202">202 cms</option>
+                                        <option  value="203">203 cms</option>
+                                        <option  value="204">204 cms</option>
+                                        <option  value="205">205 cms</option>
+                                        <option  value="206">206 cms</option>
+                                        <option  value="207">207 cms</option>
+                                        <option  value="208">208 cms</option>
+                                        <option  value="209">209 cms</option>
+                                        <option  value="210">210 cms</option>
+                                        <option  value="211">211 cms</option>
+                                        <option  value="212">212 cms</option>
+                                        <option  value="213">213 cms</option>
+
 
                                     </select>
+
                                 </div>
                                 <div class="col-md-2 ">
                                     <label class=" uppercase font-weight "> &nbsp;</label>
 
-                                    <select class="form-control input-rounded ">
-                                        <option>Select</option>
-                                        <option>170cm 5.7 feet</option>
-                                        <option>150cm 5.0 feet</option>
-                                        <option>170cm 5.7 feet</option>
-                                        <option>170cm 5.7 feet</option>
-                                        <option>160cm 5.3 feet</option>
+                                    <select class="form-control input-rounded " ng-model="regular.height_end">
+                                        <option  value="">Select</option>
+
+                                        <option  value="121">121 cms</option>
+                                        <option  value="122">122 cms</option>
+                                        <option  value="123">123 cms</option>
+                                        <option  value="124">124 cms</option>
+                                        <option  value="125">125 cms</option>
+                                        <option  value="126">126 cms</option>
+                                        <option  value="127">127 cms</option>
+                                        <option  value="128">128 cms</option>
+                                        <option  value="129">129 cms</option>
+                                        <option  value="130">130 cms</option>
+                                        <option  value="131">131 cms</option>
+                                        <option  value="132">132 cms</option>
+                                        <option  value="133">133 cms</option>
+                                        <option  value="134">134 cms</option>
+                                        <option  value="135">135 cms</option>
+                                        <option  value="136">136 cms</option>
+                                        <option  value="137">137 cms</option>
+                                        <option  value="138">138 cms
+                                        </option>
+                                        <option  value="139">139 cms
+                                        </option>
+                                        <option  value="140">140 cms
+                                        </option>
+                                        <option  value="141">141 cms
+                                        </option>
+                                        <option  value="142">142 cms
+                                        </option>
+                                        <option  value="143">143 cms
+                                        </option>
+                                        <option  value="144">144 cms
+                                        </option>
+                                        <option  value="145">145 cms
+                                        </option>
+                                        <option  value="146">146 cms
+                                        </option>
+                                        <option  value="147">147 cms
+                                        </option>
+                                        <option  value="148">148 cms
+                                        </option>
+                                        <option  value="149">149 cms
+                                        </option>
+                                        <option  value="150">150 cms
+                                        </option>
+                                        <option  value="151">151 cms
+                                        </option>
+                                        <option  value="152">152 cms
+                                        </option>
+                                        <option  value="153">153 cms
+                                        </option>
+                                        <option  value="154">154 cms
+                                        </option>
+                                        <option  value="155">155 cms
+                                        </option>
+                                        <option  value="156">156 cms
+                                        </option>
+                                        <option  value="157">157 cms
+                                        </option>
+                                        <option  value="158">158 cms
+                                        </option>
+                                        <option  value="159">159 cms
+                                        </option>
+                                        <option  value="160">160 cms
+                                        </option>
+                                        <option  value="161">161 cms
+                                        </option>
+                                        <option  value="162">162 cms
+                                        </option>
+                                        <option  value="163">163 cms
+                                        </option>
+                                        <option  value="164">164 cms
+                                        </option>
+                                        <option  value="165">165 cms
+                                        </option>
+                                        <option  value="166">166 cms
+                                        </option>
+                                        <option  value="167">167 cms
+                                        </option>
+                                        <option  value="168">168 cms
+                                        </option>
+                                        <option  value="169">169 cms
+                                        </option>
+                                        <option  value="170">170 cms
+                                        </option>
+                                        <option  value="171">171 cms
+                                        </option>
+                                        <option  value="172">172 cms
+                                        </option>
+                                        <option  value="173">173 cms
+                                        </option>
+                                        <option  value="174">174 cms
+                                        </option>
+                                        <option  value="175">175 cms
+                                        </option>
+                                        <option  value="176">176 cms
+                                        </option>
+                                        <option  value="177">177 cms
+                                        </option>
+                                        <option  value="178">178 cms
+                                        </option>
+                                        <option  value="179">179 cms
+                                        </option>
+                                        <option  value="180">180 cms
+                                        </option>
+                                        <option  value="181">181 cms
+                                        </option>
+                                        <option  value="182">182 cms
+                                        </option>
+                                        <option  value="183">183 cms
+                                        </option>
+                                        <option  value="184">184 cms
+                                        </option>
+                                        <option  value="185">185 cms
+                                        </option>
+                                        <option  value="186">186 cms
+                                        </option>
+                                        <option  value="187">187 cms
+                                        </option>
+                                        <option  value="188">188 cms
+                                        </option>
+                                        <option  value="189">189 cms
+                                        </option>
+                                        <option  value="190">190 cms
+                                        </option>
+                                        <option  value="191">191 cms
+                                        </option>
+                                        <option  value="192">192 cms
+                                        </option>
+                                        <option  value="193">193 cms
+                                        </option>
+                                        <option  value="194">194 cms
+                                        </option>
+                                        <option  value="195">195 cms
+                                        </option>
+                                        <option  value="196">196 cms
+                                        </option>
+                                        <option  value="197">197 cms</option>
+                                        <option  value="198">198cms</option>
+                                        <option  value="199">199 cms</option>
+                                        <option  value="200">200 cms</option>
+                                        <option  value="201">201 cms</option>
+                                        <option  value="202">202 cms</option>
+                                        <option  value="203">203 cms</option>
+                                        <option  value="204">204 cms</option>
+                                        <option  value="205">205 cms</option>
+                                        <option  value="206">206 cms</option>
+                                        <option  value="207">207 cms</option>
+                                        <option  value="208">208 cms</option>
+                                        <option  value="209">209 cms</option>
+                                        <option  value="210">210 cms</option>
+                                        <option  value="211">211 cms</option>
+                                        <option  value="212">212 cms</option>
+                                        <option  value="213">213 cms</option>
+
+
 
                                     </select>
+
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+
+                                <div class="col-md-4">
+
+                                    <div ng-if="regular.age_end != null && regular.age_start > regular.age_end" style="color: red">Sorry, Invalid age range.</div>
+                                </div>
+
+
+                                <div class="col-md-4 col-md-offset-2">
+                                    <div ng-if="regular.height_end != null && regular.height_start > regular.height_end" style="color: red">Sorry, Invalid height range.</div>
+
                                 </div>
 
                             </div>
                             <div class="form-group">
                                 <label class=" uppercase font-weight col-md-12 "> Marital Status</label>
-
-                                <div class="col-md-12">
+                               <div class="col-md-12">
                                     <label class="checkbox-inline" class="custon-text">
-                                        <input type="checkbox" icheckbox_flat-red class="icheck " ng-model="any">
+                                        <input type="radio" icheckbox_flat-red class="icheck " name="mstatus" value="any" ng-model="regular.maritalStatus">
                                         Any</label>
 
                                     <label class="checkbox-inline" class="custon-text">
-                                        <input type="checkbox" icheckbox_flat-red class="icheck " ng-model="unmarriedy">
-                                        Unmarried</label>
+                                        <input type="radio" icheckbox_flat-red class="icheck " name="mstatus" value="unmarried" ng-model="regular.maritalStatus">
+                                        Never Married</label>
 
                                     <label class="checkbox-inline" class="custon-text">
-                                        <input type="checkbox" icheckbox_flat-red class="icheck " ng-model="widow">
+                                        <input type="radio" icheckbox_flat-red class="icheck " name="mstatus" value="widow" ng-model="regular.maritalStatus">
                                         Widow</label>
 
                                     <label class="checkbox-inline" class="custon-text">
-                                        <input type="checkbox" icheckbox_flat-red class="icheck " ng-model="divorced">
+                                        <input type="radio" icheckbox_flat-red class="icheck " name="mstatus" value="divorced" ng-model="regular.maritalStatus">
                                         Divorced</label>
                                     <label class="checkbox-inline" class="custon-text">
-                                        <input type="checkbox" icheckbox_flat-red class="icheck "
-                                               ng-model="awaitingDivorce">
-                                        Divorce awaiting</label>
+                                        <input type="radio" icheckbox_flat-red class="icheck " name="mstatus" value="divorceAwaiting"
+                                               ng-model="regular.maritalStatus">
+                                        Awaiting divorce</label>
                                 </div>
                             </div>
 
@@ -135,63 +523,76 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Religion</label>
 
-                                    <select class="form-control input-rounded ">
-                                        <option>Select</option>
-                                        <option>Christian</option>
-                                        <option>Hindu</option>
-                                        <option>Muslim</option>
-                                        <option>Others</option>
-
-                                    </select>
+ <!--                                   <select multiple="multiple" class="multi-select form-control input-rounded "
+                                            ng-model="multiValue.religion"
+                                            ng-options="item.religion for item in religonList track by item.id_religion">
+                                    </select>-->
+                                    <div style="font-size: 15px">
+                                    <span ng-repeat="m in multiValue.religion" >
+                                        {{m.religion}}, </span>
+                                        </div>
+                                    <multiselect ch-limit="10" show-search="false"
+                                                 ng-model="multiValue.religion" options="religonList"
+                                                 id-prop="id_religion" display-prop="religion" labels="labels">
+                                    </multiselect>
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class=" uppercase font-weight  "> Mother toung</label>
-
-                                    <select class="form-control input-rounded ">
-                                        <option>Select Mother Toung</option>
-                                        <option>Malayalam</option>
-                                        <option>Tamil</option>
-                                        <option>Telengu</option>
-                                        <option>Kanada</option>
-                                        <option>English</option>
-                                        <option>Hindi</option>
-                                        <option>Others</option>
-
-
-                                    </select>
+                                    <label class=" uppercase font-weight  "> Mother tongue</label>
+<!--
+                                    <select multiple="multiple" class="multi-select form-control input-rounded "
+                                            ng-model="multiValue.mothertongue"
+                                            ng-options="item.mothertongue for item in motherTongueList track by item.id_mothertongue">
+                                    </select>-->
+                                    <div style="font-size: 15px">
+                                    <span ng-repeat="m in multiValue.mothertongue" >
+                                        {{m.mothertongue}}, </span>
+                                    </div>
+                                    <multiselect ch-limit="10" show-search="false"
+                                                 ng-model="multiValue.mothertongue" options="motherTongueList"
+                                                 id-prop="id_mothertongue" display-prop="mothertongue" labels="labels">
+                                    </multiselect>
                                 </div>
 
                             </div>
                             <div class="form-group">
 
                                 <div class="col-md-6">
-                                    <label class=" uppercase font-weight "> Cast</label>
+                                    <label class=" uppercase font-weight "> Occupation</label>
 
-                                    <select class="form-control input-rounded ">
-                                        <option>Select</option>
-                                        <option>Cast 1</option>
-                                        <option>Cast 2</option>
-                                        <option>Cast 3</option>
-                                        <option>Cast 4</option>
+                                 <!--   <select multiple="multiple" class="multi-select form-control input-rounded "
+                                            ng-model="multiValue.occupation"
+                                            ng-options="item.occupation for item in occupation track by item.id_occupation">
+                                    </select>-->
+                                    <div style="font-size: 15px">
+                                    <span ng-repeat="m in multiValue.occupation" >
+                                        {{m.occupation}}, </span>
+                                    </div>
 
-                                    </select>
+                                    <multiselect ch-limit="10" show-search="false"
+                                                 ng-model="multiValue.occupation" options="occupation"
+                                                 id-prop="id_occupation" display-prop="occupation" labels="labels">
+                                    </multiselect>
                                 </div>
 
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight  "> Country</label>
 
-                                    <select class="form-control input-rounded ">
-                                        <option>Select</option>
-                                        <option>India</option>
-                                        <option>UAE</option>
-                                        <option>USA</option>
-                                        <option>Bharin</option>
-                                        <option>Qatar</option>
-                                        <option>Others</option>
+                                    <!--<select multiple="multiple" class="multi-select form-control input-rounded "-->
+                                            <!--ng-model="multiValue.country"-->
+                                            <!--ng-options="item.country_name for item in countryList track by item.id_country">-->
+                                    <!--</select>-->
+                                    <div style="font-size: 15px">
+                                    <span ng-repeat="m in multiValue.country" >
+                                        {{m.country_name}}, </span>
+                                    </div>
+
+                                    <multiselect style="height:30px" ng-click="changes()" ch-limit="10" show-search="false"
+                                                 ng-model="multiValue.country" options="countryList"
+                                                 id-prop="id_country" display-prop="country_name" labels="labels">
+                                    </multiselect>
 
 
-                                    </select>
                                 </div>
 
                             </div>
@@ -200,33 +601,38 @@
                                 <div class="col-md-6">
                                     <label class=" uppercase font-weight "> Education</label>
 
-                                    <select class="form-control input-rounded ">
-                                        <option>Education Categories</option>
-                                        <option>X</option>
-                                        <option>XII</option>
-                                        <option>Bachelors</option>
-                                        <option>Masters</option>
-                                        <option>Ph.D</option>
-                                        <option>Others</option>
-
-                                    </select>
+                                   <!-- <select multiple="multiple" class="multi-select form-control input-rounded "
+                                            ng-model="multiValue.education"
+                                            ng-options="item.education for item in educationList track by item.id_education">
+                                    </select>-->
+                                    <div style="font-size: 15px">
+                                    <span ng-repeat="m in multiValue.education" >
+                                        {{m.education}}, </span>
+                                    </div>
+                                    <multiselect ch-limit="10" show-search="false"
+                                                 ng-model="multiValue.education" options="educationList"
+                                                 id-prop="id_education" display-prop="education" labels="labels">
+                                    </multiselect>
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class=" uppercase font-weight  "> &nbsp;</label>
-
-                                    <select class="form-control input-rounded ">
-                                        <option>Selected Categories</option>
-                                        <option>Malayalam</option>
-                                        <option>Tamil</option>
-                                        <option>Telengu</option>
-                                        <option>Kanada</option>
-                                        <option>English</option>
-                                        <option>Hindi</option>
-                                        <option>Others</option>
+                                    <label class=" uppercase font-weight  "> Education Category&nbsp;</label>
 
 
-                                    </select>
+                                   <!-- <select multiple="multiple" class="multi-select form-control input-rounded "
+                                            ng-model="multiValue.education_category"
+                                            ng-options="item.education_category for item in educationCategoryList
+                                             track by item.id_education_category">
+                                    </select>-->
+                                    <div style="font-size: 15px">
+                                    <span ng-repeat="m in multiValue.education_category" >
+                                        {{m.education_category}}, </span>
+                                    </div>
+
+                                    <multiselect ch-limit="10" show-search="false"
+                                                 ng-model="multiValue.education_category" options="educationCategoryList"
+                                                 id-prop="id_education_category" display-prop="education_category" labels="labels">
+                                    </multiselect>
                                 </div>
 
                             </div>
@@ -238,17 +644,17 @@
 
                                 <div class="col-md-12">
                                     <label class="checkbox-inline" class="custon-text">
-                                        <input type="checkbox" icheckbox_flat-red class="icheck " ng-model="withPhoto">
+                                        <input type="checkbox" icheckbox_flat-red class="icheck " ng-model="regular.showProfile.withPhoto">
                                         With Photo</label>
 
                                     <label class="checkbox-inline" class="custon-text">
                                         <input type="checkbox" icheckbox_flat-red class="icheck "
-                                               ng-model="withHoroscope">
+                                               ng-model="regular.showProfile.withHoroscope">
                                         With Horoscope</label>
 
                                     <label class="checkbox-inline" class="custon-text">
                                         <input type="checkbox" icheckbox_flat-red class="icheck "
-                                               ng-model="onlineRightNow">
+                                               ng-model="regular.showProfile.onlineRightNow">
                                         Online Right Now</label>
                                 </div>
                             </div>
@@ -260,36 +666,34 @@
                                 <div class="col-md-12">
                                     <label class="checkbox-inline" class="custon-text">
                                         <input type="checkbox" icheckbox_flat-red class="icheck "
-                                               ng-model="ignoredProfiles">
+                                               ng-model="regular.dontShowProfile.ignoredProfile">
                                         Ignored Profiles</label>
 
                                     <label class="checkbox-inline" class="custon-text">
                                         <input type="checkbox" icheckbox_flat-red class="icheck "
-                                               ng-model="profilesAlreadyContacted">
+                                               ng-model="regular.dontShowProfile.profileAlreadyContacted">
                                         Profiles Already Contacted</label>
 
                                     <label class="checkbox-inline" class="custon-text">
                                         <input type="checkbox" icheckbox_flat-red class="icheck "
-                                               ng-model="viewedProfiles">
+                                               ng-model="regular.dontShowProfile.viewed">
                                         Viewed Profiles</label>
 
                                     <label class="checkbox-inline" class="custon-text">
                                         <input type="checkbox" icheckbox_flat-red class="icheck "
-                                               ng-model="shortlistedProfiles">
+                                               ng-model="regular.dontShowProfile.shortlisted">
                                         Shortlisted Profiles</label>
                                 </div>
                             </div>
                             <hr>
                             <div class="form-group">
-                                <div class="col-md-offset-8">
-                                    <button type="button" class=" btn red input-rounded " ng-click="">
+                                <div class="pull-right">
+                                    <button type="button" class=" btn red input-rounded " ng-click="search('edit')">
+                                        Search
+                                    </button>
+                                    <button type="button" class=" btn red input-rounded " ng-click="search('save')">
                                         Save & Search
                                     </button>
-
-                                    <a ui-sref="searchresult" class=" btn red input-rounded"
-                                            >
-                                        Search
-                                    </a>
                                 </div>
                             </div>
 

@@ -1,0 +1,65 @@
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-title" style="color: #4cbcac;" >
+            <b>Contact Details of {{$ctrl.items.name}} ({{$ctrl.items.id}})</b>
+            <button class=" pull-right btn btn-circle btn-icon-only default" type="button" ng-click="$ctrl.cancel()"><i
+                    class="fa fa-times"></i></button>
+        </h4>
+    </div>
+
+    <div class="modal-body" >
+        <div class="row" style="margin: 20px" >
+
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="table-scrollable table-scrollable-borderless">
+                        <table class="table table-hover table-light">
+                            <tbody>
+                            <tr>
+                                <td style="width: 50%"> Primary Number</td>
+                                <td style="width: 30%">{{$ctrl.items.primary_number}}</td>
+
+                            </tr>
+                            <tr>
+                                <td style="width: 50%"> Contact Person</td>
+                                <td style="width: 30%">{{$ctrl.items.contact_Person}}</td>
+
+                            </tr>
+                           <tr>
+                                <td style="width: 50%"> Convenient Time</td>
+                                <td style="width: 30%">{{$ctrl.items.time}}</td>
+
+                            </tr>
+                            <tr>
+                                <td style="width: 50%"> Comments</td>
+                                <td style="width: 30%">{{$ctrl.items.comments}}</td>
+
+                            </tr>
+                            <tr>
+                                <td style="width: 50%"> Parents Contact Number</td>
+                                <td style="width: 30%">{{$ctrl.items.parents_contact_no}}</td>
+
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer" >
+            <div class="row" >
+                <div class="col-md-12" style="color: grey">
+                    To know more about packages call now 9999999999
+                </div>
+                <!--<div class="col-md-4" >-->
+                <!--&lt;!&ndash;<button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">OK</button>&ndash;&gt;-->
+
+                <!--</div>-->
+
+            </div>
+            <!--<button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>-->
+        </div>

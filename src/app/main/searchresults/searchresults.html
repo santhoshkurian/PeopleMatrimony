@@ -2,82 +2,66 @@
     <!-- BEGIN CONTENT BODY -->
     <div class="page-content">
         <!-- BEGIN PAGE HEAD-->
-        <div class="page-head">
+        <div class="page-head" style="margin-left: 20px">
 
 
             <div class="row">
+                <div class="col-md-12 text-right">
+                    <dir-pagination-controls
+                            max-size="5"
+                            direction-links="true"
+                            boundary-links="true" >
+                    </dir-pagination-controls>
+                </div>
+
                 <div class="col-md-12 ">
                     <div class="portlet light bordered">
                         <div class="portlet-title" style="border-bottom: 0px">
-                            <div class="caption green" style="font-size: 12px">
-                                <span class="caption-subject  bold "> Profile shorts :</span>
-                                <span> <input type="checkbox"/>Photo Available</span>
-                                <span> <input type="checkbox"/>Horoscope Available</span>
-                                <span> <input type="checkbox"/>On line Now</span>
-                                <span style="margin-left:20px"> More</span>
+                            <div class="caption green" style="font-size: 13px">
+                                <span class="caption-subject profile-sort   "> Profile shorts :</span>
+                                <span> <input class="filter-check-box" type="checkbox" ng-click="facetSearch()" ng-model="filterData.photo_available"/> Photo Available</span>
+                                <span> <input class="filter-check-box" type="checkbox" ng-click="facetSearch()" ng-model="filterData.horoscope_available"/> Horoscope Available</span>
+                                <span> <input class="filter-check-box" type="checkbox" ng-click="facetSearch()" ng-model="filterData.is_online"/> Online Now</span>
+                                <!--<span style="margin-left:20px"> More</span>-->
                             </div>
-                            <div class="actions">
-                                <div class="btn-group">
-                                    <a class="btn btn-sm red dropdown-toggle" href="javascript:;"
-                                       data-toggle="dropdown">
-                                        <i class="fa fa-bars"></i>
-                                    </a>
-                                    <a class="btn btn-sm red dropdown-toggle" href="javascript:;"
-                                       data-toggle="dropdown">
-                                        <i class="fa fa-map"></i>                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="fa fa-pencil"></i> Edit </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="fa fa-trash-o"></i> Delete </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="fa fa-ban"></i> Ban </a>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li>
-                                            <a href="javascript:;"> Make admin </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+
                         </div>
                         <div class="portlet-body form">
 
                         </div>
                     </div>
+                    <div  ng-if="showResult" class="portlet light  border-rounded ">
+                        Sorry, we couldn't find any suitable matches, try different criteria - <a ui-sref="search">Modify</a>
+                    </div>
+                    <div style="color: red;text-align: center">{{message}}</div>
+
+
+
+                                                            <span dir-paginate="item in matches|itemsPerPage:5">
+
                     <div class="portlet light bordered">
                         <div class="portlet-title" style="border-bottom: 0px">
                             <div class="caption ">
-                                <span class="caption-subject font-red-sunglo bold"> Priya Ranjini</span> <span>(P1234567)</span>
+                                <a ng-click="viewProfile(item.id_people)"><span class="caption-subject font-red-sunglo bold"> {{item.name}}</span> <span>({{item.id_people}})</span></a>
                                 <br/>
-                                <span style="font-size: 9px"> Profile created by parents</span>
+                                <span ng-if="item.profile_for != null && item.profile_for != ''" style="font-size: 11px"> Profile created by {{item.profile_for}}</span>
                             </div>
                             <div class="actions">
                                 <div class="btn-group">
                                     <a class="btn btn-sm  dropdown-toggle" href="javascript:;" data-toggle="dropdown">
-                                        <i class="fa fa-ellipsis-v"></i>
-                                    </a>
+<img src="/assets/icons/dot.png" >                               </a>
                                     <ul class="dropdown-menu pull-right">
                                         <li>
                                             <a href="javascript:;">
-                                                <i class="fa fa-pencil"></i> Edit </a>
+                                                <i class="fa fa-book"></i> Request Horoscope </a>
                                         </li>
                                         <li>
                                             <a href="javascript:;">
-                                                <i class="fa fa-trash-o"></i> Delete </a>
+                                                <i class="fa fa-openid"></i> View Horoscope </a>
                                         </li>
                                         <li>
                                             <a href="javascript:;">
-                                                <i class="fa fa-ban"></i> Ban </a>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li>
-                                            <a href="javascript:;"> Make admin </a>
+                                                <i class="fa fa-send-o"></i> Send SMS </a>
                                         </li>
                                     </ul>
                                 </div>
@@ -85,325 +69,103 @@
                         </div>
                         <div class="portlet-body form">
                             <div class="row">
-                                <div class="col-md-3">
-                                    <img style="height: 200px"
-                                         ng-src="../assets/images/prof1.jpg"/>
+                                <div class="col-md-4" style="padding:15px;text-align: center;">
+                                    <imageinfo images="item.images" gender="item.gender" reverse="viewAll(data)" reqstatus="item.photo_requested"
+                                            reqdetails="item.photo_req" id="item.id_people" reverse2="requests(data)"></imageinfo>
+
                                 </div>
-                                <div class="col-md-9">
-                                    <div class="row">
-                                        <div class="col-md-12" style="border-bottom: 1px solid #eef1f5;">
+                                <div class="col-md-8">
+                                    <div class="row" >
+                                        <div class="col-md-12" style="border-bottom: 1px solid #eef1f5;margin-top: 10px">
                                             <table width="100%" style="margin-bottom: 10px;" class="match-table">
                                                 <tr>
                                                     <td width="30%" class="first-row">Age/Height</td>
                                                     <td width="5%">:</td>
-                                                    <td width="45%">25,5`7</td>
+                                                    <td width="45%" class="details">{{item.age}},{{item.height}}</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="first-row">Religion</td>
                                                     <td>:</td>
-                                                    <td>Hindu</td>
+                                                    <td class="details">{{item.religion}}</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="first-row">Mother Tongue</td>
                                                     <td>:</td>
-                                                    <td>Tamil</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="first-row">Community</td>
-                                                    <td>:</td>
-                                                    <td>Vaniyakullak Kshathriya</td>
+                                                    <td class="details">{{item.mothertongue}}</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="first-row">Star</td>
                                                     <td>:</td>
-                                                    <td>Swathi</td>
+                                                    <td class="details">{{item.star}}</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="first-row">Education</td>
                                                     <td>:</td>
-                                                    <td>Btech</td>
+                                                    <td class="details">{{item.education}}</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="first-row">Profession/Income</td>
                                                     <td>:</td>
-                                                    <td>Software engineer</td>
+                                                    <td class="details">{{item.occupation}},{{item.income}}</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="first-row">Location</td>
                                                     <td>:</td>
-                                                    <td>Bangalore</td>
+                                                    <td class="details">{{item.city_name}}</td>
                                                 </tr>
                                             </table>
                                         </div>
-                                        <div class="col-md-12"
+                                        <div class="col-md-12 details"
                                              style="margin-bottom: 10px;margin-top: 10px;font-size: 12px">
-                                            Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
-                                            eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet
-                                            fermentum.
-                                            Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
+                                            {{item.about_family}}
                                         </div>
                                     </div>
                                 </div>
 
                             </div>
-                            <div class="row" style="text-transform: uppercase;text-align: center;">
-                                <div class="col-md-3"
-                                     style="padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro"><i
-                                        class="fa fa-star-o"></i> Shortlist
-                                </div>
-                                <div class="col-md-3"
-                                     style="padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro;text-align: center">
-                                    <i class="fa fa-phone"></i> Call now
-                                </div>
-                                <div class="col-md-3"
-                                     style="padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro"><i
-                                        class="fa fa-commenting-o"></i> Chat now
-                                </div>
-                                <div class="col-md-3"
-                                     style="padding: 20px;border: 1px solid #eef1f5;background-color: #e7505a"><i
-                                        class="fa fa-heart" style="color: white!important;font-size: 18px"></i> Send Interest
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="portlet light bordered">
-                        <div class="portlet-title" style="border-bottom: 0px">
-                            <div class="caption ">
-                                <span class="caption-subject font-red-sunglo bold"> Priya Ranjini</span> <span>(P1234567)</span>
-                                <br/>
-                                <span style="font-size: 9px"> Profile created by parents</span>
-                            </div>
-                            <div class="actions">
-                                <div class="btn-group">
-                                    <a class="btn btn-sm  dropdown-toggle" href="javascript:;" data-toggle="dropdown">
-                                        <i class="fa fa-ellipsis-v"></i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="fa fa-pencil"></i> Edit </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="fa fa-trash-o"></i> Delete </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="fa fa-ban"></i> Ban </a>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li>
-                                            <a href="javascript:;"> Make admin </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portlet-body form">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <img style="height: 200px"
-                                         ng-src="../assets/images/prof1.jpg"/>
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="row">
-                                        <div class="col-md-12" style="border-bottom: 1px solid #eef1f5;">
-                                            <table width="100%" style="margin-bottom: 10px;" class="match-table">
-                                                <tr>
-                                                    <td width="30%" class="first-row">Age/Height</td>
-                                                    <td width="5%">:</td>
-                                                    <td width="45%">25,5`7</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="first-row">Religion</td>
-                                                    <td>:</td>
-                                                    <td>Hindu</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="first-row">Mother Tongue</td>
-                                                    <td>:</td>
-                                                    <td>Tamil</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="first-row">Community</td>
-                                                    <td>:</td>
-                                                    <td>Vaniyakullak Kshathriya</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="first-row">Star</td>
-                                                    <td>:</td>
-                                                    <td>Swathi</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="first-row">Education</td>
-                                                    <td>:</td>
-                                                    <td>Btech</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="first-row">Profession/Income</td>
-                                                    <td>:</td>
-                                                    <td>Software engineer</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="first-row">Location</td>
-                                                    <td>:</td>
-                                                    <td>Bangalore</td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                        <div class="col-md-12"
-                                             style="margin-bottom: 10px;margin-top: 10px;font-size: 12px">
-                                            Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
-                                            eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet
-                                            fermentum.
-                                            Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
-                                        </div>
+                            <div class=" row vp-main-action" ng-if="mainlink !='shortlisted'">
+                                <div style="text-transform: uppercase;text-align: center;">
+                                    <div class="col-md-3 col-sm-3 col-xs-3"
+                                         style="height:60px;font-size:14px;padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro;cursor: pointer" ng-click="shortlist(item)"><i
+                                            class="fa fa-star-o"></i><span class="hidden-sm hidden-xs"> Shortlist</span>
                                     </div>
-                                </div>
-
-                            </div>
-                            <div class="row" style="text-transform: uppercase;text-align: center;">
-                                <div class="col-md-3"
-                                     style="padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro"><i
-                                        class="fa fa-star-o"></i> Shortlist
-                                </div>
-                                <div class="col-md-3"
-                                     style="padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro;text-align: center">
-                                    <i class="fa fa-phone"></i> Call now
-                                </div>
-                                <div class="col-md-3"
-                                     style="padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro"><i
-                                        class="fa fa-commenting-o"></i> Chat now
-                                </div>
-                                <div class="col-md-3"
-                                     style="padding: 20px;border: 1px solid #eef1f5;background-color: #e7505a"><i
-                                        class="fa fa-heart" style="color: white!important;font-size: 18px"></i> Send Interest
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="portlet light bordered">
-                        <div class="portlet-title" style="border-bottom: 0px">
-                            <div class="caption ">
-                                <span class="caption-subject font-red-sunglo bold"> Priya Ranjini</span> <span>(P1234567)</span>
-                                <br/>
-                                <span style="font-size: 9px"> Profile created by parents</span>
-                            </div>
-                            <div class="actions">
-                                <div class="btn-group">
-                                    <a class="btn btn-sm  dropdown-toggle" href="javascript:;" data-toggle="dropdown">
-                                        <i class="fa fa-ellipsis-v"></i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="fa fa-pencil"></i> Edit </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="fa fa-trash-o"></i> Delete </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <i class="fa fa-ban"></i> Ban </a>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li>
-                                            <a href="javascript:;"> Make admin </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portlet-body form">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <img style="height: 200px"
-                                         ng-src="../assets/images/prof1.jpg"/>
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="row">
-                                        <div class="col-md-12" style="border-bottom: 1px solid #eef1f5;">
-                                            <table width="100%" style="margin-bottom: 10px;" class="match-table">
-                                                <tr>
-                                                    <td width="30%" class="first-row">Age/Height</td>
-                                                    <td width="5%">:</td>
-                                                    <td width="45%">25,5`7</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="first-row">Religion</td>
-                                                    <td>:</td>
-                                                    <td>Hindu</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="first-row">Mother Tongue</td>
-                                                    <td>:</td>
-                                                    <td>Tamil</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="first-row">Community</td>
-                                                    <td>:</td>
-                                                    <td>Vaniyakullak Kshathriya</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="first-row">Star</td>
-                                                    <td>:</td>
-                                                    <td>Swathi</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="first-row">Education</td>
-                                                    <td>:</td>
-                                                    <td>Btech</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="first-row">Profession/Income</td>
-                                                    <td>:</td>
-                                                    <td>Software engineer</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="first-row">Location</td>
-                                                    <td>:</td>
-                                                    <td>Bangalore</td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                        <div class="col-md-12"
-                                             style="margin-bottom: 10px;margin-top: 10px;font-size: 12px">
-                                            Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
-                                            eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet
-                                            fermentum.
-                                            Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
-                                        </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3"
+                                         style="height:60px;font-size:14px;padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro;cursor: pointer">
+                                        <i class="fa fa-phone"></i> <span class="hidden-sm hidden-xs"> Contact Details</span>
                                     </div>
-                                </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3" ng-click="chatNowButton()"
+                                         style="height:60px;font-size:14px;padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro;cursor: pointer"><i
+                                            class="fa fa-commenting-o"></i> <span class="hidden-sm hidden-xs">  Chat now</span>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3" ng-click="sendInterest(item)"
+                                         style="height:60px;font-size:14px;padding: 20px;border: 1px solid #eef1f5;background-color:#e7505a;cursor: pointer"><i
+                                            class="fa fa-heart" style="color: white!important;font-size: 18px"></i><span class="hidden-sm hidden-xs" style="color: white"> Send Interest</span>
+                                    </div>
 
+                                </div>
                             </div>
-                            <div class="row" style="text-transform: uppercase;text-align: center;">
-                                <div class="col-md-3"
-                                     style="padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro"><i
-                                        class="fa fa-star-o"></i> Shortlist
-                                </div>
-                                <div class="col-md-3"
-                                     style="padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro;text-align: center">
-                                    <i class="fa fa-phone"></i> Call now
-                                </div>
-                                <div class="col-md-3"
-                                     style="padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro"><i
-                                        class="fa fa-commenting-o"></i> Chat now
-                                </div>
-                                <div class="col-md-3"
-                                     style="padding: 20px;border: 1px solid #eef1f5;background-color: #e7505a"><i
-                                        class="fa fa-heart" style="color: white!important;font-size: 18px"></i> Send Interest
-                                </div>
+                            <div class=" row vp-main-action" ng-if="mainlink =='shortlisted'">
+                                <div style="text-transform: uppercase;text-align: center;">
 
+                                    <div class="col-md-4"
+                                         style="padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro;text-align: center">
+                                        <i class="fa fa-phone"></i> Call now
+                                    </div>
+                                    <div class="col-md-4" ng-click="chatNowButton()"
+                                         style="padding: 20px;border: 1px solid #eef1f5;background-color: gainsboro"><i
+                                            class="fa fa-commenting-o"></i> Chat now
+                                    </div>
+                                    <div class="col-md-4"
+                                         style="padding: 20px;border: 1px solid #eef1f5;background-color: #e7505a"><i
+                                            class="fa fa-heart" style="color: white!important;font-size: 18px"></i> Send Interest
+                                    </div>
+
+                                </div>
                             </div>
 
                         </div>
                     </div>
+</span>
 
                 </div>
             </div>
@@ -412,3 +174,72 @@
 
     </div>
 </div>
+
+<script type="text/ng-template" id="enlargeSearchPhoto.html">
+    <div class="modal-header">
+        <h4 class="modal-title" id="enlarge" style="color: #4cbcac;font-weight: bold">
+            Profile Photos
+
+            <button class=" pull-right btn btn-circle btn-icon-only default" type="button" ng-click="$ctrl.cancel()"><i class="fa fa-times"></i></button>
+        </h4>
+    </div>
+    <div class="modal-body" id="modal-body" style="text-align: center">
+        <div class="row">
+        <img  class="modal-img"
+              ng-src="{{$ctrl.selectedImg}}"/>
+        </div>
+        <div class="row" style="margin-top: 20px;" >
+            <span ng-repeat="img in $ctrl.items">
+        <div class="col-md-1 col-xs-1 "  >
+            <img  style="height: 40px;width: 40px;border-radius: 25% !important;"
+                  ng-src="{{img.image}}" ng-click="$ctrl.vieImg(img.image)"/>
+        </div>
+                </span>
+            </div>
+    </div>
+
+</script>
+
+<script type="text/ng-template" id="searchResponseModal.html">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-title" style="color: #4cbcac;">
+            {{$ctrl.items.header}}
+
+            <button class=" pull-right btn btn-circle btn-icon-only default" type="button" ng-click="$ctrl.cancel()"><i class="fa fa-times"></i></button>
+        </h4>
+    </div>
+
+    <div class="modal-body">
+        <div class="row" style="margin: 20px">
+            <div class="col-md-4">
+                <img ng-if="$ctrl.items.img.length > 0" style="height: 90px;width: 90px;border-radius: 55% !important;"
+                     ng-src="{{$ctrl.items.img[0].image}}" ng-click="$ctrl.vieImg(img.image)"/>
+                <img ng-if="$ctrl.items.img.length == 0" style="height: 90px;width: 90px;border-radius: 55% !important;"
+                     src="assets/defaultImages/avatar.png" ng-click="$ctrl.vieImg(img.image)"/>
+            </div>
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-12">
+                        <span class="bold">{{$ctrl.items.name}}</span> <span> ({{$ctrl.items.id}})</span>
+                    </div>
+                    <div class="col-md-12" style="margin-top: 25px">
+                        <button type="button" class=" uppercase btn red input-rounded" ng-click="$ctrl.upgrade()">
+                            Upgrade Now
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="row">
+                <div class="col-md-12" style="color: grey">
+                    To know more about packages call now 9999999999
+                </div>
+
+
+            </div>
+            <!--<button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>-->
+        </div>
+</script>

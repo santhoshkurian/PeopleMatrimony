@@ -1,0 +1,815 @@
+<div class="page-content-wrapper page-content-wrapper1">
+    <!-- BEGIN CONTENT BODY -->
+    <div class="page-content1">
+        <!-- BEGIN PAGE HEAD-->
+        <div class="page-head">
+            <div ng-if="message != ''" class="alert alert-success">
+                {{message}}
+            </div>
+            <div ng-if="!paymentCompletion">
+                <div class="row">
+                <div class="col-md-12">
+                    <!--ng-if="!proceedPayment"-->
+                    <div class="portlet light " style="padding-top: 0px" >
+                        <div class=" row vp-main-action feature-header">
+                            <div class="col-md-2 vp-main-link2 "
+                                 ng-class="{'active-link': viewType == 'classic'}"
+                                 ng-click="selectType('classic')"
+                                    > CLASSIC
+                            </div>
+                            <div class=" col-md-3 vp-main-link2"
+                                 ng-class="{'active-link': viewType == 'flexible'}"
+                                 ng-click="selectType('flexible')"> FLEXIBLE PLAN
+                            </div>
+
+                        </div>
+                        <div class="row margin-top-40 margin-bottom-40 ">
+                                <span ng-if="viewType == 'classic'">
+                                                <div class="col-md-10 col-md-offset-1">
+                                                    <div class="row ">
+                                                        <div class="col-md-6" style="padding: 40px;">
+                                                            <div class="row" style="border: 3px solid gainsboro">
+                                                                <div class="col-md-12 col-sm-12 col-xs-12 feature-header ">
+                                                                    <div class="text-center margin-top-10 margin-bottom-10">
+                                                                        <span class="uppercase feature-header-text">3 months</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 col-sm-6 col-xs-6 col-md-border "
+                                                                     ng-click="PackageDetails(payment.classic3Months,'classic3')"
+                                                                     style="height: 210px">
+                                                                    <div class="row" style="text-align: center">
+                                                                        <div class="col-md-12 col-sm-12 col-xs-12 text-center margin-top-30">
+                                                                            <button type="button"
+                                                                                    class="btn  btn-outline" style="font-weight: bold;"
+                                                                                    ng-class="{'price-button': selectPackageDetails == 'classic3','price-button-light': selectPackageDetails != 'classic3'}">
+                                                                                Classic
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">
+                                                                        <span class="old-price" ng-class="{'price-color': selectPackageDetails == 'classic3','price-color-light': selectPackageDetails != 'classic3'}" style="font-size: 18px!important;">Rs {{payment.classic3Months.old_price}}</span>
+                                                                        </div>
+                                                                        <div class="col-md-12 col-sm-12 col-xs-12  margin-top-10">
+                                                                            <span class="new-price"
+                                                                                  ng-class="{'price-color': selectPackageDetails == 'classic3','price-color-light': selectPackageDetails != 'classic3'}">Rs {{payment.classic3Months.price}}</span>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </div>
+                                                                <div class="col-md-6 col-sm-6 col-xs-6 "
+                                                                     style="height: 210px"
+                                                                     ng-click="PackageDetails(payment.classicAdv3Months,'classic3Adv')">
+                                                                    <div class="row" style="text-align: center">
+                                                                        <div class="col-md-12 col-sm-12 col-xs-12 pull-left  margin-top-30">
+                                                                            <button type="button"
+                                                                                    class="btn btn-outline" style="font-weight: bold;"
+                                                                                    ng-class="{'price-button': selectPackageDetails == 'classic3Adv','price-button-light': selectPackageDetails != 'classic3Adv'}">
+                                                                                Classic Advantage
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">
+                                                                        <span class="old-price" ng-class="{'price-color': selectPackageDetails == 'classic3Adv','price-color-light': selectPackageDetails != 'classic3Adv'}" style="font-size: 18px!important;">Rs {{payment.classicAdv3Months.old_price}}</span>
+                                                                        </div>
+                                                                        <div class="col-md-12 col-sm-12 col-xs-12  margin-top-10">
+                                                                            <span class="new-price"
+                                                                                  ng-class="{'price-color': selectPackageDetails == 'classic3Adv','price-color-light': selectPackageDetails != 'classic3Adv'}">Rs {{payment.classicAdv3Months.price}}</span>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="col-md-6 col-sm-6 col-xs-6 col-md-border"
+                                                                     ng-class="{'make-payment-color': selectPackageDetails == 'classic3',
+                                                                                        'make-payment-color-light': selectPackageDetails != 'classic3'}">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12 margin-top-10 uppercase make-payment"
+                                                                             ng-click="selectPackage(payment.classic3Months)">
+                                                                            Make a payment
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 col-sm-6 col-xs-6"
+
+                                                                     ng-mouseover="setSelectedOption('classic-advantage-3months')"
+                                                                     ng-class="{'make-payment-color': selectPackageDetails == 'classic3Adv',
+                                                                                        'make-payment-color-light': selectPackageDetails != 'classic3Adv'}">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12 margin-top-10 uppercase make-payment"
+                                                                             ng-click="selectPackage(payment.classicAdv3Months)">
+                                                                            Make a payment
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6" style="padding: 40px;">
+                                                            <div class="row " style="border: 3px solid gainsboro">
+                                                                <div class="col-md-12 col-sm-12 col-xs-12 feature-header ">
+                                                                    <div class="text-center margin-top-10 margin-bottom-10">
+                                                                        <span class="uppercase feature-header-text">6 months</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 col-sm-6 col-xs-6 col-md-border "
+                                                                     ng-click="PackageDetails(payment.classic6Months,'classic6')"
+                                                                     style="height: 210px">
+                                                                    <div class="row" style="text-align: center">
+                                                                        <div class="col-md-12 col-sm-12 col-xs-12 text-center margin-top-30">
+                                                                            <button type="button"
+                                                                                    class="btn btn-outline " style="font-weight: bold;"
+                                                                                    ng-class="{'price-button': selectPackageDetails == 'classic6','price-button-light': selectPackageDetails != 'classic6'}">
+                                                                                Classic
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">
+                                                                            <span class="old-price" ng-class="{'price-color': selectPackageDetails == 'classic6','price-color-light': selectPackageDetails != 'classic6'}" style="font-size: 18px!important">Rs {{payment.classic6Months.old_price}}</span>
+                                                                        </div>
+                                                                        <div class="col-md-12 col-sm-12 col-xs-12  margin-top-10">
+                                                                            <span class="new-price"
+                                                                                  ng-class="{'price-color': selectPackageDetails == 'classic6','price-color-light': selectPackageDetails != 'classic6'}">Rs {{payment.classic6Months.price}}</span>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </div>
+                                                                <div class="col-md-6 col-sm-6 col-xs-6 "
+                                                                     style="height: 210px"
+                                                                     ng-click="PackageDetails(payment.classicAdv6Months,'classic6Adv')">
+                                                                    <div class="row" style="text-align: center">
+                                                                        <div class="col-md-12 col-sm-12 col-xs-12 pull-left  margin-top-30">
+                                                                            <button type="button"
+                                                                                    class="btn btn-outline " style="font-weight: bold;"
+                                                                                    ng-class="{'price-button': selectPackageDetails == 'classic6Adv','price-button-light': selectPackageDetails != 'classic6Adv'}">
+                                                                                Classic Advantage
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">
+                                                                        <span class="old-price" ng-class="{'price-color': selectPackageDetails == 'classic6Adv','price-color-light': selectPackageDetails != 'classic6Adv'}" style="font-size: 18px!important">Rs {{payment.classicAdv6Months.old_price}}</span>
+                                                                        </div>
+                                                                        <div class="col-md-12 col-sm-12 col-xs-12  margin-top-10">
+                                                                            <span class="new-price"
+                                                                                  ng-class="{'price-color': selectPackageDetails == 'classic6Adv','price-color-light': selectPackageDetails != 'classic6Adv'}">Rs {{payment.classicAdv6Months.price}}</span>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="col-md-6 col-sm-6 col-xs-6 col-md-border"
+                                                                     ng-class="{'make-payment-color': selectPackageDetails == 'classic6',
+                                                                                        'make-payment-color-light': selectPackageDetails != 'classic6'}"
+                                                                     ng-mouseover="setSelectedOption('classic-6months')"
+                                                                        >
+                                                                    <div class="row">
+                                                                        <div class="col-md-12 margin-top-10 uppercase make-payment"
+                                                                             ng-click="selectPackage(payment.classic6Months)">
+                                                                            Make a payment
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 col-sm-6 col-xs-6"
+                                                                     ng-class="{'make-payment-color': selectPackageDetails == 'classic6Adv',
+                                                                                        'make-payment-color-light': selectPackageDetails != 'classic6Adv'}"
+                                                                     ng-mouseover="setSelectedOption('classic-advantage-6months')"
+                                                                     style="height:45px;background-color: #eee;color:darkgrey">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12 margin-top-10 uppercase make-payment"
+                                                                             ng-click="selectPackage(payment.classicAdv6Months)">
+                                                                            Make a payment
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                        <div class="row" style="padding-left: 40px;padding-right: 40px;">
+                            <div class="col-md-10 col-md-offset-1">
+                                <div class="row ">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 feature-box  ">
+                                        <div class="row ">
+                                            <div class="col-md-3 col-sm-3 col-xs-3 margin-top-15 "
+                                                 style="text-align:center;">
+                                                                   <span style="color: #00AC8D"
+                                                                         class="socicon-btn socicon-btn-circle socicon-mail tooltips message-icon"
+                                                                         data-original-title="Mail"></span>
+
+                                                <div class="row ">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                                        <span style="font-size: 14px">Send unlimited <b>{{offer.msg}}</b> personalized messages</span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-3 col-sm-3 col-xs-3 margin-top-15 "
+                                                 style="text-align:center;">
+                                                                   <span style="color: #00AC8D;font-size: 30px"
+                                                                           ><i
+                                                                           class="icon-screen-smartphone"></i></span>
+
+                                                <div class="row ">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                                        <span style="font-size: 14px">Access <b>{{offer.verifiedMobile}}</b> verified mobile numbers</span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-3 col-sm-3 col-xs-3 margin-top-15 "
+                                                 style="text-align:center;" ng-if="offer.view_horoscope_of_members == 'yes'">
+                                                                    <span style="color: #00AC8D;font-size:30px"
+                                                                            ><i class="icon-globe"></i></span>
+
+                                                <div class="row ">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                                        <div style="font-size: 14px">View unlimited horoscopes</div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-3 col-sm-3 col-xs-3 margin-top-15 "
+                                                 style="text-align:center;">
+                                                <span style="color: #00AC8D;font-size: 30px"><i
+                                                        class="icon-tag"></i></span>
+
+                                                <div class="row ">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                                        <span style="font-size: 14px">Premium member tag for more responses</span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                    </span>
+                            <span ng-if="viewType == 'flexible'">
+
+                                <div class="row ">
+
+                                    <div class="col-md-10 col-md-offset-1">
+                                        <div class="row ">
+                                                <div class="col-md-5 payment-box" style="border: 3px solid gainsboro">
+                                                    <div class="row ">
+                                                        <div class="col-md-12 col-sm-12 col-xs-12 feature-header ">
+                                                            <div class="text-center margin-top-10 margin-bottom-10">
+                                                                <span class=" feature-header-text">FLEX</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-12 col-sm-12 col-xs-12"
+                                                             style="height: 210px"
+                                                             ng-click="PackageDetails(payment.flexible,'flexible1')">
+                                                            <div class="row" style="text-align: center">
+                                                                <div class="col-md-12 col-sm-12 col-xs-12 pull-left  margin-top-30">
+                                                                    <button type="button"
+                                                                            class="btn btn-outline " style="font-weight: bold"
+                                                                            ng-class="{'price-button': selectPackageDetails == 'flexible1','price-button-light': selectPackageDetails != 'flexible1'}">
+                                                                        Flexiable
+                                                                    </button>
+                                                                </div>
+                                                                <div class="col-md-12 col-sm-12 col-xs-12  margin-top-15">
+                                                                    <span class="old-price" ng-class="{'price-color': selectPackageDetails == 'classic6Adv','price-color-light': selectPackageDetails != 'classic6Adv'}" style="font-size: 18px!important">Rs {{payment.flexible.old_price}}</span>
+                                                                </div>
+                                                                <div class="col-md-12 col-sm-12 col-xs-12  margin-top-10">
+                                                                            <span class="new-price"
+                                                                                  ng-class="{'price-color': selectPackageDetails == 'flexible1','price-color-light': selectPackageDetails != 'flexible1'}">Rs {{payment.flexible.price}}</span>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+
+
+                                                        <div class="col-md-12 col-sm-12 col-xs-12"
+                                                             ng-class="{'make-payment-color': selectPackageDetails == 'flexible1',
+                                                                                        'make-payment-color-light': selectPackageDetails != 'flexible1'}"
+                                                             ng-mouseover="setSelectedOption('classic-advantage-6months')"
+                                                             style="height:45px;background-color: #eee;color:darkgrey">
+                                                            <div class="row">
+                                                                <div class="col-md-12 margin-top-10 uppercase make-payment"
+                                                                     ng-click="selectPackage(payment.flexible)">
+                                                                    Make a payment
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+                                <div class="row margin-top-40 ">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                        <div class="row">
+                                            <div class="col-md-1 margin-right-10"></div>
+                                            <div class="col-md-9">
+                                                <div class="row ">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12 feature-box  ">
+                                                        <div class="row ">
+                                                            <div class="col-md-3 col-sm-3 col-xs-3 margin-top-15 "
+                                                                 style="text-align:center;">
+                                                                   <span style="color: #00AC8D"
+                                                                         class="socicon-btn socicon-btn-circle socicon-mail tooltips message-icon"
+                                                                         data-original-title="Mail"></span>
+
+                                                                <div class="row ">
+                                                                    <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                                                        <span style="font-size: 14px">Send unlimited <b>{{offer.msg}}</b> personalized messages</span>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-md-3 col-sm-3 col-xs-3 margin-top-15 "
+                                                                 style="text-align:center;">
+                                                                   <span style="color: #00AC8D;font-size: 30px"
+                                                                           ><i
+                                                                           class="icon-screen-smartphone"></i></span>
+
+                                                                <div class="row ">
+                                                                    <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                                                        <span style="font-size: 14px">Access <b>{{offer.verifiedMobile}} 1111{{offer.view_horoscope_of_members}}</b> verified mobile numbers</span>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-md-3 col-sm-3 col-xs-3 margin-top-15 "
+                                                                 style="text-align:center;" ng-if="offer.view_horoscope_of_members == 'yes'">
+                                                                    <span style="color: #00AC8D;font-size:30px"
+                                                                            ><i class="icon-globe"></i></span>
+
+                                                                <div class="row ">
+                                                                    <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                                                        <div style="font-size: 14px">View unlimited horoscopes
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-md-3 col-sm-3 col-xs-3 margin-top-15 "
+                                                                 style="text-align:center;">
+                                                        <span style="color: #00AC8D;font-size: 30px"><i
+                                                                class="icon-tag"></i></span>
+
+                                                                <div class="row ">
+                                                                    <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                                                        <span style="font-size: 14px">Premium member tag for more responses</span>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-2"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </span>
+
+                        </div>
+
+                    </div>
+                </div>
+                </div>
+
+
+            </div>
+            <div ng-if="paymentCompletion" class="row">
+                <div class="col-md-12 ">
+                    <div class="portlet light " style="padding-top: 0px;height: 500px;">
+                        <div class="row">
+                            <div class="col-md-12 margin-top-40 text-center">
+                                <img style="max-height: 200px;!important;" ng-src="assets/images/paymentfail.jpg"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <span style="color: red"
+                                      class="text-center">Sorry Your payment transaction failed</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <span>Reason for failiure</span> &nbsp;<span style="color: red">Bank declined transaction</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 ">
+                                <p>
+                                    <b> gdgdgsfs gggdg sgfsgf fsfs fsgsg yiy yiiyiyyi yuyy ddd hgjjh hfasf
+                                        hhhhh hhhhh hhhhh hhchc giug ryrstrry yjyfsfg fsgdgfsfsf sfs </b>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <span><b>Note :</b></span> &nbsp;<span>Bafsgsgnk decedsh gsdgedhg transaction</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+            <!--ng-if="proceedPayment"-->
+            <!--<div  class="row">-->
+
+                <!--<div class="col-md-12 ">-->
+                    <!--<div class="row">-->
+                        <!--<div class="col-md-8">-->
+                            <!--<div class="portlet light bordered border-portlet" style="padding-top: 0px">-->
+                                <!--<div class="portlet-title select-payment-header">-->
+                                    <!--<div class="caption  ">-->
+                                        <!--<span class="caption-subject select-payment-header-text"> Select Payment Option</span>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="portlet-body form">-->
+                                    <!--<div class="row">-->
+                                        <!--<div class="col-md-12 ">-->
+                                            <!--<div class="col-md-10">-->
+                                                <!--<div class="row">-->
+                                                    <!--<div class="col-md-12 ">-->
+                                                        <!--<div class="col-md-12 ">-->
+                                                            <!--<div class="row ">-->
+                                                                <!--<ul class="nav nav-tabs">-->
+                                                                    <!--<li role="Credit"-->
+                                                                        <!--ng-class="{'active': selectedPayment == 'Credit'}"-->
+                                                                        <!--ng-click="setSelectedPayment('Credit')"><a-->
+                                                                            <!--href="#">Credit Card</a></li>-->
+                                                                    <!--&lt;!&ndash; <li role="Debit"><a href="#" ng-class="{'active': selectedPayment == 'Debit'}" ng-click="setSelectedPayment('Debit')">Debit Card</a></li>-->
+                                                                     <!--<li role="Net"><a href="#" ng-class="{'active': selectedPayment == 'Net'}" ng-click="setSelectedPayment('Net')">Net Baning&nbsp</a></li>-->
+                                                                     <!--<li role="Wallet"><a href="#" ng-class="{'active': selectedPayment == 'Wallet'}" ng-click="setSelectedPayment('Wallet')">Wallet</a></li>-->
+                                                     <!--&ndash;&gt;            </ul>-->
+                                                                <!--<div ng-if="selectedPayment == 'Credit'" class="row ">-->
+                                                                    <!--<div class="col-md-12 ">-->
+                                                                        <!--<div class="row">-->
+                                                                            <!--<div class="col-md-12 ">-->
+                                                                                <!--<div class="portlet-body form  form-horizontal">-->
+                                                                                    <!--<div class="form-group">-->
+                                                                                        <!--<div class="row">-->
+                                                                                            <!--<div class="col-md-12 col-sm-12 col-xs-12">-->
+                                                                                                <!--<div class="row">-->
+                                                                                                    <!--<div class="col-md-4">-->
+                                                                                                        <!--<label class="control-label "-->
+                                                                                                               <!--style="margin-left: 10px;">Credit-->
+                                                                                                            <!--Card-->
+                                                                                                            <!--Number</label>-->
+                                                                                                    <!--</div>-->
+                                                                                                    <!--<div class="col-md-6">-->
+                                                                                                        <!--<input type="text"-->
+                                                                                                               <!--class="form-control  input-rounded"-->
+                                                                                                               <!--ng-model="makePayment.c_no"/>-->
+                                                                                                        <!--<span ng-if="check.valid_c_no"-->
+                                                                                                              <!--class="make-payment-validate"> This field is required</span>-->
+
+                                                                                                    <!--</div>-->
+                                                                                                    <!--<div class="col-md-2">-->
+                                                                                                        <!--<img style="max-height: 30px;!important;"-->
+                                                                                                             <!--ng-src="assets/images/mastercard-logo-big.gif"/>-->
+                                                                                                    <!--</div>-->
+                                                                                                <!--</div>-->
+                                                                                            <!--</div>-->
+                                                                                        <!--</div>-->
+
+                                                                                    <!--</div>-->
+                                                                                    <!--<div class="form-group">-->
+                                                                                        <!--<div class="row">-->
+                                                                                            <!--<div class="col-md-12 col-sm-12 col-xs-12">-->
+                                                                                                <!--<div class="row">-->
+                                                                                                    <!--<div class="col-md-4">-->
+                                                                                                        <!--<label class="control-label "-->
+                                                                                                               <!--style="margin-left: 10px;">Credit-->
+                                                                                                            <!--Holder-->
+                                                                                                            <!--Name</label>-->
+                                                                                                    <!--</div>-->
+                                                                                                    <!--<div class="col-md-6">-->
+                                                                                                        <!--<input type="text"-->
+                                                                                                               <!--class="form-control  input-rounded"-->
+                                                                                                               <!--ng-model="makePayment.c_name"/>-->
+                                                                                                        <!--<span ng-if="check.valid_c_name"-->
+                                                                                                              <!--class="make-payment-validate"> This field is required</span>-->
+
+                                                                                                    <!--</div>-->
+                                                                                                    <!--<div class="col-md-2">-->
+                                                                                                    <!--</div>-->
+                                                                                                <!--</div>-->
+                                                                                            <!--</div>-->
+                                                                                        <!--</div>-->
+
+                                                                                    <!--</div>-->
+                                                                                    <!--<div class="form-group">-->
+                                                                                        <!--<div class="row">-->
+                                                                                            <!--<div class="col-md-12 col-sm-12 col-xs-12">-->
+                                                                                                <!--<div class="row">-->
+                                                                                                    <!--<div class="col-md-4">-->
+                                                                                                        <!--<label class="control-label "-->
+                                                                                                               <!--style="margin-left: 10px;">Card-->
+                                                                                                            <!--Expiry-->
+                                                                                                            <!--Date</label>-->
+                                                                                                    <!--</div>-->
+                                                                                                    <!--<div class="col-md-8">-->
+                                                                                                        <!--<div class="row">-->
+                                                                                                            <!--<div class="col-md-12 col-sm-12 col-xs-12">-->
+                                                                                                                <!--<div class="row">-->
+                                                                                                                    <!--<div class="col-md-6">-->
+                                                                                                                        <!--<select class="form-control input-rounded"-->
+                                                                                                                                <!--ng-model="makePayment.month"-->
+                                                                                                                                <!-->
+                                                                                                                            <!--<option value="01">-->
+                                                                                                                                <!--JAN-->
+                                                                                                                            <!--</option>-->
+                                                                                                                            <!--<option value="02">-->
+                                                                                                                                <!--FEB-->
+                                                                                                                            <!--</option>-->
+                                                                                                                            <!--<option value="03">-->
+                                                                                                                                <!--MAR-->
+                                                                                                                            <!--</option>-->
+                                                                                                                            <!--<option value="04">-->
+                                                                                                                                <!--APRIL-->
+                                                                                                                            <!--</option>-->
+                                                                                                                            <!--<option value="05">-->
+                                                                                                                                <!--MAY-->
+                                                                                                                            <!--</option>-->
+                                                                                                                            <!--<option value="06">-->
+                                                                                                                                <!--JUNE-->
+                                                                                                                            <!--</option>-->
+                                                                                                                            <!--<option value="07">-->
+                                                                                                                                <!--JULY-->
+                                                                                                                            <!--</option>-->
+                                                                                                                            <!--<option value="08">-->
+                                                                                                                                <!--AUG-->
+                                                                                                                            <!--</option>-->
+                                                                                                                            <!--<option value="09">-->
+                                                                                                                                <!--SEP-->
+                                                                                                                            <!--</option>-->
+                                                                                                                            <!--<option value="10">-->
+                                                                                                                                <!--OCT-->
+                                                                                                                            <!--</option>-->
+                                                                                                                            <!--<option value="11">-->
+                                                                                                                                <!--NOV-->
+                                                                                                                            <!--</option>-->
+                                                                                                                            <!--<option value="12">-->
+                                                                                                                                <!--DEC-->
+                                                                                                                            <!--</option>-->
+                                                                                                                        <!--</select>-->
+                                                                                                                        <!--<span ng-if="check.valid_month"-->
+                                                                                                                              <!--class="make-payment-validate"> This field is required</span>-->
+
+                                                                                                                    <!--</div>-->
+                                                                                                                    <!--<div class="col-md-6">-->
+                                                                                                                        <!--<select class="form-control input-rounded "-->
+                                                                                                                                <!--ng-model="makePayment.year">-->
+                                                                                                                            <!--<option value="2018">-->
+                                                                                                                                <!--2018-->
+                                                                                                                            <!--</option>-->
+                                                                                                                            <!--<option value="2018">-->
+                                                                                                                                <!--2018-->
+                                                                                                                            <!--</option>-->
+                                                                                                                            <!--<option value="2019">-->
+                                                                                                                                <!--2019-->
+                                                                                                                            <!--</option>-->
+                                                                                                                            <!--<option value="2020">-->
+                                                                                                                                <!--2020-->
+                                                                                                                            <!--</option>-->
+                                                                                                                            <!--<option value="2021">-->
+                                                                                                                                <!--2021-->
+                                                                                                                            <!--</option>-->
+                                                                                                                            <!--<option value="2022">-->
+                                                                                                                                <!--2022-->
+                                                                                                                            <!--</option>-->
+                                                                                                                            <!--<option value="2023">-->
+                                                                                                                                <!--2023-->
+                                                                                                                            <!--</option>-->
+                                                                                                                            <!--<option value="2024">-->
+                                                                                                                                <!--2024-->
+                                                                                                                            <!--</option>-->
+                                                                                                                            <!--<option value="2025">-->
+                                                                                                                                <!--2025-->
+                                                                                                                            <!--</option>-->
+                                                                                                                            <!--<option value="2026">-->
+                                                                                                                                <!--2026-->
+                                                                                                                            <!--</option>-->
+                                                                                                                            <!--<option value="2027">-->
+                                                                                                                                <!--2027-->
+                                                                                                                            <!--</option>-->
+                                                                                                                            <!--<option value="2028">-->
+                                                                                                                                <!--2028-->
+                                                                                                                            <!--</option>-->
+                                                                                                                            <!--<option value="2029">-->
+                                                                                                                                <!--2029-->
+                                                                                                                            <!--</option>-->
+                                                                                                                            <!--<option value="2030">-->
+                                                                                                                                <!--2030-->
+                                                                                                                            <!--</option>-->
+
+                                                                                                                        <!--</select>-->
+                                                                                                                        <!--<span ng-if="check.valid_year"-->
+                                                                                                                              <!--class="make-payment-validate"> This field is required</span>-->
+
+                                                                                                                    <!--</div>-->
+
+
+                                                                                                                <!--</div>-->
+                                                                                                            <!--</div>-->
+                                                                                                        <!--</div>-->
+
+
+                                                                                                    <!--</div>-->
+                                                                                                <!--</div>-->
+                                                                                            <!--</div>-->
+                                                                                        <!--</div>-->
+
+                                                                                    <!--</div>-->
+                                                                                    <!--<div class="form-group">-->
+                                                                                        <!--<div class="row">-->
+                                                                                            <!--<div class="col-md-12 col-sm-12 col-xs-12">-->
+                                                                                                <!--<div class="row">-->
+                                                                                                    <!--<div class="col-md-4">-->
+                                                                                                        <!--<label class="control-label "-->
+                                                                                                               <!--style="margin-left: 10px;">-->
+                                                                                                            <!--CCV</label>-->
+                                                                                                    <!--</div>-->
+                                                                                                    <!--<div class="col-md-6">-->
+                                                                                                        <!--<input type="text"-->
+                                                                                                               <!--class="form-control  input-rounded"-->
+                                                                                                               <!--ng-model="makePayment.ccv"-->
+                                                                                                                <!--/>-->
+                                                                                                        <!--<span ng-if="check.valid_ccv"-->
+                                                                                                              <!--class="make-payment-validate"> This field is required</span>-->
+                                                                                                    <!--</div>-->
+                                                                                                    <!--<div class="col-md-2">-->
+                                                                                                        <!--<img style="max-height: 30px;!important;"-->
+                                                                                                             <!--ng-src="assets/images/ccv.jpg"/>-->
+                                                                                                    <!--</div>-->
+                                                                                                <!--</div>-->
+                                                                                            <!--</div>-->
+                                                                                        <!--</div>-->
+
+                                                                                    <!--</div>-->
+                                                                                    <!--<div class="form-group">-->
+                                                                                        <!--<div class="row">-->
+                                                                                            <!--<div class="col-md-12 col-sm-12 col-xs-12">-->
+                                                                                                <!--<div class="row">-->
+                                                                                                    <!--<div class="col-md-4">-->
+                                                                                                    <!--</div>-->
+                                                                                                    <!--<div class="col-md-6">-->
+                                                                                                        <!--<div class="btn-group">-->
+                                                                                                            <!--<a class="btn btn-sm red input-rounded"-->
+                                                                                                               <!--ng-click="continuePayment()">-->
+                                                                                                                <!--PROCEDD-->
+                                                                                                                <!-->
+                                                                                                            <!--</a>-->
+                                                                                                        <!--</div>-->
+                                                                                                    <!--</div>-->
+                                                                                                    <!--<div class="col-md-2">-->
+                                                                                                    <!--</div>-->
+                                                                                                <!--</div>-->
+                                                                                            <!--</div>-->
+                                                                                        <!--</div>-->
+
+                                                                                    <!--</div>-->
+                                                                                <!--</div>-->
+                                                                            <!--</div>-->
+                                                                        <!--</div>-->
+
+
+                                                                    <!--</div>-->
+                                                                <!--</div>-->
+
+                                                            <!--</div>-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-md-2"></div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+
+                        <!--</div>-->
+                        <!--&lt;!&ndash;<div class="col-md-1"></div>&ndash;&gt;-->
+                        <!--<div class="col-md-4">-->
+
+                            <!--<div class="portlet light bordered border-portlet" style="padding-top: 0px">-->
+                                <!--<div class="portlet-title summary-payment-header">-->
+                                    <!--<div class="caption  ">-->
+                                        <!--<span class="caption-subject uppercase summary-payment-header-text text-center "> Summary</span>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="portlet-title select-payment-header summary-payment-margin-top">-->
+                                    <!--<div class="caption  ">-->
+                                        <!--<span class="caption-subject summary-payment-header-text-bottom text-center "> Membership Package </span>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="portlet-body form">-->
+                                    <!--<div class="row">-->
+                                        <!--<div class="col-md-12 ">-->
+                                            <!--<span class="profile-id"> YOU SELECTED :</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="row">-->
+                                        <!--<div class="col-md-12 margin-top-20 ">-->
+                                            <!--<div class="row">-->
+                                                <!--<div class="col-md-6 ">{{selectPayment.package_name}}-->
+                                                    <!--({{selectPayment.duration_months}} Months) :-->
+                                                <!--</div>-->
+                                                <!--<div class="col-md-6 ">RS {{selectPayment.price}}</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="col-md-12 margin-top-20 ">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="col-md-6 ">Dicount : </div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="col-md-6 ">RS 1000</div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="col-md-12 margin-top-20 ">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="col-md-6 ">Service Tax(@15%) : </div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="col-md-6 ">RS 450</div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--<hr/>-->
+                                    <!--<div class="row">-->
+                                        <!--<div class="col-md-12 ">-->
+                                            <!--<span class="profile-id"> YOU GET :</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="row">-->
+                                        <!--<div class="col-md-12 margin-top-20 ">-->
+                                            <!--<span>{{selectPayment.package_name}} ({{selectPayment.duration_months}} Months) </span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="row">-->
+                                        <!--<div class="col-md-12 margin-top-20 ">-->
+                                            <!--<span>ALL worth RS {{selectPayment.price}} </span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<hr/>-->
+                                    <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="col-md-12 margin-top-20 ">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<span style="color: #2ab4c0" >You Save : RS 1000 </span>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--</div>-->
+                                <!--<hr/>-->
+                                <!--<div class="portlet-title select-payment-header summary-payment-margin-top">-->
+                                    <!--<div class="caption  ">-->
+                                        <!--<span class="caption-subject summary-payment-header-text-bottom text-center "> Add-on Package </span>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="portlet-title margin-top-10 select-payment-header summary-payment-margin-top">-->
+                                    <!--<div class="caption  ">-->
+                                        <!--<span class="caption-subject summary-payment-header-text-bottom text-center "> No Add-on Package </span>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="portlet-title summary-payment-footer">-->
+                                    <!--<div class="caption  ">-->
+                                        <!--<span class="caption-subject uppercase summary-payment-header-text text-center "> Your Total : RS {{selectPayment.price}}</span>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<form id="paymentForm"
+      onsubmit="" method="post">
+    <input type="text" name="encRequest" id="enc" style="display: none"
+                 >
+ <input type="text" name="access_code" id="code" style="display: none">
+
+    <input type="submit" value="Submit" style="display: none">
+</form>

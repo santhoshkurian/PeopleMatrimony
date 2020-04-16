@@ -1,47 +1,6 @@
 <div class="page-sidebar-wrapper">
-    <div class="page-sidebar navbar-collapse collapse" style="border-radius: 10px">
-
-        <div class="row border-rounded-top" style="background-color:#f9fafc;height:37px;padding: 9px 14px 9px 9px;margin-top:10px">
-            <div class="col-md-12 bold" style="text-align: center;">My Saved Searches</div>
-        </div>
-
-        <div class="row border-rounded-bottom" style="background-color:white;padding: 9px 14px 9px 9px;">
-            <div class="col-md-12 " style="border-bottom: 1px solid #ddd;padding-bottom: 10px;padding-top: 10px">
-                <div class="row">
-                    <div class="col-md-8">
-                        <span class="bold">Search1</span>
-                        <br/>
-                        <br/>
-                        <span><a style="color: red">Edit</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
-                                style="color: red">Delete</a></span>
-                    </div>
-                    <div class="col-md4" style="line-height: 50px;text-align: center">
-                        <button class="btn btn-sm red">Search</button>
-                    </div>
-
-
-                </div>
-            </div>
-            <div class="col-md-12 " style="border-bottom: 1px solid #ddd;padding-bottom: 10px;padding-top: 10px">
-                <div class="row">
-                    <div class="col-md-8">
-                        <span class="bold">Search1</span>
-                        <br/>
-                        <br/>
-                        <span><a style="color: red">Edit</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
-                                style="color: red">Delete</a></span>
-                    </div>
-                    <div class="col-md4" style="line-height: 50px;text-align: center">
-                        <button class="btn btn-sm red">Search</button>
-                    </div>
-
-
-                </div>
-            </div>
-
-
-
-        </div>
+    <div class="page-sidebar navbar-collapse collapse" style="border-radius: 10px;
+    margin-top:20px">
 
         <div class="row border-rounded-top" style="background-color:#f9fafc;height:37px;padding: 9px 14px 9px 9px;margin-top:10px">
             <div class="col-md-12 bold" style="text-align: center;">Search by ID</div>
@@ -49,13 +8,46 @@
 
         <div class="row border-rounded-bottom" style="background-color:white;padding: 9px 14px 9px 9px;">
             <div class="input-group">
-                <input type="text" class="form-control input-rounded-pratial-left" placeholder="Enter ID">
+                <input type="text" class="form-control input-rounded-pratial-left" placeholder="Enter ID" ng-model="viewId">
                                                     <span class="input-group-btn">
-                                                        <button class="btn red input-rounded-pratial-right" type="button">Go</button>
+                                                        <button class="btn red input-rounded-pratial-right" ng-click="viewById(viewId)" type="button">Go</button>
                                                     </span>
             </div>
 
         </div>
+        <span ng-if="searchList.search.length > 0">
+
+        <div class="row border-rounded-top" style="background-color:#f9fafc;height:37px;padding: 9px 14px 9px 9px;margin-top:10px">
+            <div class="col-md-12 bold" style="text-align: center;">My Saved Searches</div>
         </div>
-        <!-- END SIDEBAR -->
+
+        <div class="row border-rounded-bottom" style="background-color:white;padding: 9px 14px 9px 9px;">
+            <span >
+            <div class="col-md-12 " style="border-bottom: 1px solid #ddd;padding-bottom: 10px;padding-top: 10px" ng-repeat = "item in searchList.search">
+                <div class="row">
+                    <div class="col-md-8">
+                        <span class="bold">{{item.search_name}}</span>
+                        <br/>
+                        <br/>
+                        <span><a style="color: red"  ng-click="editSearch(item)">Edit</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                            <a ng-click="deleteSearch(item.id_search)"
+                                style="color: red">Delete</a></span>
+                    </div>
+                    <div class="col-md4" style="line-height: 50px;text-align: center">
+                        <button class="btn btn-sm red" ng-click="searchexist(item)">Search</button>
+                    </div>
+
+
+                </div>
+            </div>
+
+                </span>
+
+
+
+
+        </div>
+</span>
     </div>
+    <!-- END SIDEBAR -->
+</div>

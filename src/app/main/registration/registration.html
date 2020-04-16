@@ -1,112 +1,177 @@
-<div class="col-md-12 margin-bottom-30 ">
+<div class="col-md-12 margin-bottom-30 " style="margin-top: 70px">
     <div class=" col-md-4 col-md-offset-4 ">
 
-        <div class="form-group margin-top-40">
-            <label class=" uppercase font-weight"> Maritial Status</label>
-            <select class="form-control input-rounded"><!--ng-model="candidate.maritalStatus"-->
-                <option>Select</option>
-                <option>Option 1</option>
-                <option>Option 2</option>
-                <option>Option 3</option>
-                <option>Option 4</option>
-                <option>Option 5</option>
+        <div class="form-group">
+            <div class="col-md-12 margin-top-15">
+
+            <label> Marital Status<span style="color: red">*</span></label>
+            <select class="form-control input-rounded "
+                    ng-model="step2.marital_status">
+                <option value="">Select</option>
+                <option value="never married">Never Married</option>
+                <option value="widow">Widowed</option>
+                <option value="divorced">Divorced</option>
+                <option value="awaiting divorce">Awaiting divorce</option>
             </select>
+            <span ng-if="showMS">
+                        <div class="user-error-msg-arrow" ></div>
+                        <div class="user-error-msg" >The selected marital status is invalid</div>
+                    </span>
+                </div>
         </div>
+        <div class="form-group ">
+            <div class="col-md-12 margin-top-15">
 
-  <div class="form-group ">
-            <label class=" uppercase font-weight"> Cast</label>
-            <select class="form-control input-rounded"><!--ng-model="candidate.cast"-->
-                <option>Select</option>
-                <option>Option 1</option>
-                <option>Option 2</option>
-                <option>Option 3</option>
-                <option>Option 4</option>
-                <option>Option 5</option>
+            <label> Caste<span style="color: red">*</span></label>
+            <select class="form-control input-rounded " ng-model="step2.caste"
+                       >
+                <option  value='0'>Select</option>
+                <option ng-repeat="obj in castList" value="{{obj.id_caste}}">{{obj.caste}}</option>
+
             </select>
-        </div>
-
-
-  <div class="form-group ">
-            <label class=" uppercase font-weight"> Country Living In</label>
-            <select class="form-control input-rounded" ><!--ng-model="candidate.country"-->
-                <option>Select</option>
-                <option>Option 1</option>
-                <option>Option 2</option>
-                <option>Option 3</option>
-                <option>Option 4</option>
-                <option>Option 5</option>
-            </select>
-        </div>
-
-
-  <div class="form-group ">
-            <label class=" uppercase font-weight"> State Living In</label>
-            <select class="form-control input-rounded" ><!--ng-model="candidate.state"-->
-                <option>Select</option>
-                <option>Option 1</option>
-                <option>Option 2</option>
-                <option>Option 3</option>
-                <option>Option 4</option>
-                <option>Option 5</option>
-            </select>
+            <span ng-if="showCaste">
+                        <div class="user-error-msg-arrow" ></div>
+                        <div class="user-error-msg" >Select Caste</div>
+                    </span>
+                </div>
         </div>
 
 
-  <div class="form-group ">
-            <label class=" uppercase font-weight"> City Living In</label>
-            <select class="form-control input-rounded" ><!--ng-model="candidate.city"-->
-                <option>Select</option>
-                <option>Option 1</option>
-                <option>Option 2</option>
-                <option>Option 3</option>
-                <option>Option 4</option>
-                <option>Option 5</option>
+        <div class="form-group ">
+            <div class="col-md-12 margin-top-15">
+
+            <label> Country Living In<span style="color: red">*</span></label>
+            <select class="form-control input-rounded " ng-model="step2.country"
+                    ng-click="selectCountry()">
+                <option value="0">Select</option>
+                <option ng-repeat="obj in countryList" value="{{obj.id_country}}">{{obj.country_name}}
+                </option>
             </select>
+             <span ng-if="showCountry">
+                        <div class="user-error-msg-arrow" ></div>
+                        <div class="user-error-msg" >Select your country</div>
+                    </span>
+                </div>
         </div>
 
 
-  <div class="form-group ">
-            <label class=" uppercase font-weight"> Height</label>
-            <select class="form-control input-rounded" ><!--ng-model="candidate.height"-->
-                <option>Select</option>
-                <option>Option 1</option>
-                <option>Option 2</option>
-                <option>Option 3</option>
-                <option>Option 4</option>
-                <option>Option 5</option>
+        <div class="form-group ">
+            <div class="col-md-12 margin-top-15">
+
+            <label > State Living In<span style="color: red">*</span></label>
+            <select class="form-control input-rounded " ng-model="step2.state"
+                    ng-click="selectState()">
+                <option value="0">Select</option>
+                <option ng-repeat="obj in stateList" value="{{obj.id_state}}">{{obj.state_name}}</option>
             </select>
+            <span ng-if="showState">
+                        <div class="user-error-msg-arrow" ></div>
+                        <div class="user-error-msg" >Select your state</div>
+                    </span>
+                </div>
         </div>
 
 
-  <div class="form-group ">
-            <label class=" uppercase font-weight"> Highest Education</label>
-            <select class="form-control input-rounded" ><!--ng-model="candidate.highestEducation"-->
-                <option>Select</option>
-                <option>Option 1</option>
-                <option>Option 2</option>
-                <option>Option 3</option>
-                <option>Option 4</option>
-                <option>Option 5</option>
+        <div class="form-group ">
+            <div class="col-md-12 margin-top-15">
+
+            <label > City Living In<span style="color: red">*</span></label>
+            <select class="form-control input-rounded " ng-model="step2.city"
+                    ng-click="selectCity(city)">
+                <option value="0">Select</option>
+                <option ng-repeat="obj in cityList" value="{{obj.id_city}}">{{obj.city_name}}</option>
             </select>
+            <span ng-if="showCity">
+                        <div class="user-error-msg-arrow" ></div>
+                        <div class="user-error-msg" >Select your city</div>
+                    </span>
+                </div>
         </div>
 
 
-  <div class="form-group ">
-            <label class=" uppercase font-weight"> Occupation</label>
-            <select class="form-control input-rounded" ><!--ng-model="candidate.occupation"-->
-                <option>Select</option>
-                <option>Option 1</option>
-                <option>Option 2</option>
-                <option>Option 3</option>
-                <option>Option 4</option>
-                <option>Option 5</option>
+        <div class="form-group ">
+            <div class="col-md-12 margin-top-15">
+
+            <label > Height<span style="color: red">*</span></label>
+            <select class="form-control input-rounded " ng-model="step2.height">
+                <option value="0">Select</option>
+                <option  value="137">4ft 6in- 137 cm</option>
+                <option  value="139">4ft 7in- 139 cm</option>
+                <option  value="142">4ft 8in- 142 cm</option>
+                <option  value="144">4ft 9in- 144 cm</option>
+                <option  value="147">4ft 10in- 147 cm</option>
+                <option  value="149">4ft 11in- 149 cm</option>
+                <option  value="152">5ft- 152 cm</option>
+                <option  value="154">5ft 1in- 154 cm</option>
+                <option  value="157">5ft 2in- 157 cm</option>
+                <option  value="160">5ft 3in- 160 cm</option>
+                <option  value="162">5ft 4in- 162 cm</option>
+                <option  value="165">5ft 5in- 165 cm</option>
+                <option  value="167">5ft 6in- 167 cm</option>
+                <option  value="170">5ft 7in- 170 cm</option>
+                <option  value="172">5ft 8in- 172 cm</option>
+                <option  value="175">5ft 9in- 175 cm</option>
+                <option  value="177">5ft 10in- 177 cm</option>
+                <option  value="180">5ft 11in- 180 cm</option>
+                <option  value="182">6ft- 182 cm</option>
+                <option  value="185">6ft 1in- 185 cm</option>
+                <option  value="187">6ft 2in- 187 cm</option>
+                <option  value="190">6ft 3in- 190 cm</option>
+                <option  value="193">6ft 4in- 193 cm</option>
+                <option  value="195">6ft 5in- 195 cm</option>
+                <option  value="198">6ft 6in- 198 cm</option>
+                <option  value="200">6ft 7in- 200 cm</option>
+                <option  value="203">6ft 8in- 203 cm</option>
+                <option  value="205">6ft 9in- 205 cm</option>
+                <option  value="208">6ft 10in- 208 cm</option>
+                <option  value="210">6ft 11in- 210 cm</option>
+
+
             </select>
+            <span ng-if="showHeight">
+                        <div class="user-error-msg-arrow" ></div>
+                        <div class="user-error-msg" >Select your height </div>
+                    </span>
+                </div>
+        </div>
+
+
+        <div class="form-group ">
+            <div class="col-md-12 margin-top-15">
+
+            <label> Highest Education<span style="color: red">*</span></label>
+            <select class="form-control input-rounded " ng-model="setProfession.education"
+                    ng-options="item.education for item in educationList track by item.id_education">
+                <option value="">Select</option>
+            </select>
+            <span ng-if="showEducation">
+                        <div class="user-error-msg-arrow" ></div>
+                        <div class="user-error-msg" >Select highest education</div>
+                    </span>
+                </div>
+        </div>
+
+
+        <div class="form-group ">
+            <div class="col-md-12 margin-top-15">
+
+            <label> Occupation<span style="color: red">*</span></label>
+            <select class="form-control input-rounded " ng-model="setProfession.occupation"
+                    ng-options="item.occupation for item in occupation track by item.id_occupation">
+                <option value="">Select</option>
+            </select>
+            <span ng-if="showOccupation">
+                        <div class="user-error-msg-arrow" ></div>
+                        <div class="user-error-msg" >select occupation</div>
+                    </span>
+                </div>
         </div>
 
         <div class="form-group ">
 
-            <div class="col-md-offset-2 col-md-8">
-                <button type="button" class=" center-block col-md-12 btn red input-rounded" ng-click="vm.registerCandidate()">
+            <div class="col-md-offset-2 col-md-8 margin-top-40">
+                <button type="button" class=" center-block col-md-12 btn red input-rounded"
+                        ng-click="vm.registerCandidateStep2()">
                     Complete Registration
                 </button>
             </div>

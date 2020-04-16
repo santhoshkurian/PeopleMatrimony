@@ -1,30 +1,30 @@
 <div class="page-sidebar-wrapper">
-       <div class="page-sidebar navbar-collapse collapse" style="border-radius: 10px">
+       <div class="page-sidebar navbar-collapse collapse" style="background-color: #e4e8eb!important;">
                 <ul class="page-sidebar-menu   " style="background-color: white" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
 
 
                     <li class="nav-item  active open">
                         <ul class="sub-menu settingnav" >
-                            <li style="background-color:#e8e6e8;height:37px;padding: 9px 14px 9px 30px;" class="nav-item " id="inbox">
+                            <!--<li style="background-color:#e8e6e8;height:37px;padding: 9px 14px 9px 30px;" class="nav-item " id="inbox">
                                     <span class="title"><b>Inbox</b></span>
-                            </li>
-                            <li  ng-class="{ activateSettingNavBar: isActive('/settings')}" class="nav-item " id="inbox">
-                                <a ui-sref="settings" class="nav-link ">
-                                    <span >ALL</span>
-                                </a>
-                            </li>
-                            <li ng-class="{ activateSettingNavBar: isActive('/settings/emailalerts')}" class="nav-item" id="pending">
-                                <a ui-sref="settings.emailalerts" class="nav-link ">
+                            </li>-->
+                            <!--<li   class="nav-item " >-->
+                                <!--<a  class="nav-link ">-->
+                                    <!--<span >ALL</span>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <li ng-class="{ activateSettingNavBar: isActive('/messages')}" class="nav-item" id="pending">
+                                <a ui-sref="messages" class="nav-link ">
                                     <span class="title">Pending</span>
                                 </a>
                             </li>
-                            <li ng-class="{ activateSettingNavBar: isActive('/settings/contactFilters')}" class="nav-item " id="accept">
-                                <a ui-sref="settings.contactFilters" class="nav-link ">
+                            <li ng-class="{ activateSettingNavBar: isActive('/messages/accept')}" class="nav-item " id="accept">
+                                <a ui-sref="messages.accept" class="nav-link ">
                                     <span class="title">Accepted</span>
                                 </a>
                             </li>
-                            <li ng-class="{ activateSettingNavBar: isActive('/settings/privacySettings')}" class="nav-item" id="decline">
-                                <a ui-sref="settings.privacySettings" class="nav-link ">
+                            <li ng-class="{ activateSettingNavBar: isActive('/messages/declined')}" class="nav-item" id="decline">
+                                <a ui-sref="messages.declined" class="nav-link ">
                                     <span class="title">Declined</span>
                                 </a>
                             </li>
@@ -37,14 +37,14 @@
 
                     <li class="nav-item  active open">
                         <ul class="sub-menu settingnav" >
-                            <li style="background-color:#e8e6e8;height:37px;padding: 9px 14px 9px 30px;" class="nav-item " id="inbox">
+                            <li style="background-color:#e8e6e8;height:37px;padding: 9px 14px 9px 30px;" class="nav-item " >
                                     <span ><b>Search message by id</b></span>
                             </li>
                             <li class="nav-item " style="text-align: center">
                                     <div class="input-group" style="width: 75%;margin: 25px; ">
-                                        <input type="text" class="form-control input-rounded-pratial-left" placeholder="Enter ID">
+                                        <input type="text" class="form-control input-rounded-pratial-left" placeholder="Enter ID" ng-model="viewId">
                                                     <span class="input-group-btn">
-                                                        <button class="btn red input-rounded-pratial-right" type="button">Go</button>
+                                                        <button class="btn red input-rounded-pratial-right" ng-click="viewById(viewId)" type="button">Go</button>
                                                     </span>
                                     </div>
 
